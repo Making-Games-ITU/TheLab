@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://cju1nsvvo6rxb" path="res://World/Props/Electricals/Computer/env_screen.gd" id="2_meyn4"]
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="3_72xl4"]
 [ext_resource type="Shader" uid="uid://cilu8q1ppqotc" path="res://World/Props/Electricals/Computer/env_screen.gdshader" id="4_72xl4"]
-[ext_resource type="FontFile" uid="uid://sdtsanxfgqys" path="res://UI/Fonts/Perfect DOS VGA 437.ttf" id="4_dbfr3"]
-[ext_resource type="Texture2D" uid="uid://dafbrpvpn6x5t" path="res://World/Props/Electricals/Computer/Colony.png" id="4_vv3lc"]
+[ext_resource type="Texture2D" uid="uid://civstqyumi8nl" path="res://UI/Screen/Oleg.png" id="4_j73bs"]
+[ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="5_j73bs"]
+[ext_resource type="Texture2D" uid="uid://dafbrpvpn6x5t" path="res://World/Props/Electricals/Computer/Colony.png" id="6_j73bs"]
+[ext_resource type="Texture2D" uid="uid://bk66ydditnowo" path="res://UI/Screen/Logo Kras.png" id="6_yefe0"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yefe0"]
 viewport_path = NodePath("SubViewport")
@@ -65,10 +67,19 @@ shadow_mesh = SubResource("ArrayMesh_rj0q2")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j73bs"]
 data = PackedVector3Array(0.011399999, -0.0025, 0.14209999, 0.010799999, 0.0013, 0.1383, -0.0224, 0.2368, 0.1383, -0.0224, 0.2368, 0.1383, -0.023, 0.24059999, 0.14209999, 0.011399999, -0.0025, 0.14209999, -0.0224, 0.2368, 0.1383, 0.010799999, 0.0013, 0.1383, -0.0009, 0.0001, 0.082899995, -0.0009, 0.0001, 0.082899995, -0.034199998, 0.2342, 0.0808, -0.0224, 0.2368, 0.1383, -0.034199998, 0.2342, 0.0808, -0.0009, 0.0001, 0.082899995, -0.0092, -0.00029999999, 0, -0.0092, -0.00029999999, 0, -0.042099997, 0.23189999, -0.0021, -0.034199998, 0.2342, 0.0808, -0.042099997, 0.23189999, -0.0021, -0.0092, -0.00029999999, 0, -0.0011, 0.0015, -0.082899995, -0.0011, 0.0015, -0.082899995, -0.0339, 0.23179999, -0.085, -0.042099997, 0.23189999, -0.0021, -0.0339, 0.23179999, -0.085, -0.0011, 0.0015, -0.082899995, 0.0105, 0.0036, -0.1383, 0.0105, 0.0036, -0.1383, -0.0218, 0.23259999, -0.1424, -0.0339, 0.23179999, -0.085, -0.0218, 0.23259999, -0.1424, 0.0105, 0.0036, -0.1383, 0.011, -0.0001, -0.14199999, 0.011, -0.0001, -0.14199999, -0.0224, 0.23629999, -0.1463, -0.0218, 0.23259999, -0.1424, 0.0111, -0.0013, 0, -0.0092, -0.00029999999, 0, -0.0009, 0.0001, 0.082899995, 0.0111, -0.0013, 0, -0.0011, 0.0015, -0.082899995, -0.0092, -0.00029999999, 0, 0.0111, -0.0013, 0, -0.0009, 0.0001, 0.082899995, 0.010799999, 0.0013, 0.1383, 0.0105, 0.0036, -0.1383, -0.0011, 0.0015, -0.082899995, 0.0111, -0.0013, 0, 0.0111, -0.0013, 0, 0.010799999, 0.0013, 0.1383, 0.011399999, -0.0025, 0.14209999, 0.011, -0.0001, -0.14199999, 0.0105, 0.0036, -0.1383, 0.0111, -0.0013, 0, 0.0111, -0.0013, 0, 0.011399999, -0.0025, 0.14209999, 0.0112, -0.0013, 0, 0.011, -0.0001, -0.14199999, 0.0111, -0.0013, 0, 0.0112, -0.0013, 0, -0.022699999, 0.2384, -0.0021, -0.042099997, 0.23189999, -0.0021, -0.0339, 0.23179999, -0.085, -0.022699999, 0.2384, -0.0021, -0.034199998, 0.2342, 0.0808, -0.042099997, 0.23189999, -0.0021, -0.022699999, 0.2384, -0.0021, -0.0339, 0.23179999, -0.085, -0.0218, 0.23259999, -0.1424, -0.0224, 0.2368, 0.1383, -0.034199998, 0.2342, 0.0808, -0.022699999, 0.2384, -0.0021, -0.022699999, 0.2384, -0.0021, -0.0218, 0.23259999, -0.1424, -0.0224, 0.23629999, -0.1463, -0.023, 0.24059999, 0.14209999, -0.0224, 0.2368, 0.1383, -0.022699999, 0.2384, -0.0021, -0.022699999, 0.2384, -0.0021, -0.0224, 0.23629999, -0.1463, -0.022699999, 0.2384, -0.0021, -0.023, 0.24059999, 0.14209999, -0.022699999, 0.2384, -0.0021, -0.022699999, 0.2384, -0.0021)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1so3"]
+bg_color = Color(0, 0.15294118, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_838ba"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+bg_color = Color(0.003921569, 0.06666667, 0, 1)
+border_color = Color(0.003921569, 0.06666667, 0, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j4o88"]
 shader = ExtResource("4_72xl4")
 shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_opacity = 0.042000001995
 shader_parameter/scanlines_width = 0.2000000095
 shader_parameter/grille_opacity = 0.0
 shader_parameter/resolution = Vector2(640, 480)
@@ -80,7 +91,7 @@ shader_parameter/roll_variation = 2.13100009796262
 shader_parameter/distort_intensity = 0.002000000095
 shader_parameter/noise_opacity = 0.0190000009025
 shader_parameter/noise_speed = 2.0
-shader_parameter/static_noise_intensity = 0.082000003895
+shader_parameter/static_noise_intensity = 0.0400000019
 shader_parameter/aberration = 4.7499999933364734e-08
 shader_parameter/brightness = 1.0
 shader_parameter/discolor = true
@@ -92,7 +103,7 @@ shader_parameter/vignette_opacity = 0.6010000285475
 [node name="env_screen" unique_id=1850738053 instance=ExtResource("1_hsbli")]
 script = ExtResource("2_meyn4")
 
-[node name="Computer_001" parent="." index="0" unique_id=2083030734]
+[node name="Computer_001" parent="." index="0" unique_id=766695767]
 material_override = SubResource("StandardMaterial3D_kbkat")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_c18cs")
@@ -104,24 +115,25 @@ transform = Transform3D(0.99999994, 1.8464126e-15, 0, 1.8464128e-15, 0.99999994,
 transform = Transform3D(0.99999994, 1.8464126e-15, 0, 1.8464128e-15, 0.99999994, 8.881784e-16, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_j73bs")
 
-[node name="SubViewport" type="SubViewport" parent="." index="1" unique_id=317716374]
-mesh_lod_threshold = 0.0
-anisotropic_filtering_level = 0
-
-[node name="Control" type="Control" parent="SubViewport" index="0" unique_id=1081790923]
-custom_maximum_size = Vector2(512, 512)
+[node name="Control" type="Control" parent="Computer_001" index="1" unique_id=1081790923]
+custom_minimum_size = Vector2(1024, 1024)
+custom_maximum_size = Vector2(1024, 1024)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 448.0
+offset_bottom = 700.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Bg" type="TextureRect" parent="SubViewport/Control" index="0" unique_id=91683163]
+[node name="Bg" type="TextureRect" parent="Computer_001/Control" index="0" unique_id=91683163]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -130,95 +142,437 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_72xl4")
 
-[node name="TabContainer" type="TabContainer" parent="SubViewport/Control" index="1" unique_id=999070812]
+[node name="TabContainer" type="TabContainer" parent="Computer_001/Control" index="1" unique_id=999070812]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
+current_tab = 2
 tabs_visible = false
 
-[node name="Home" type="Control" parent="SubViewport/Control/TabContainer" index="1" unique_id=1390079030]
+[node name="Home" type="Control" parent="Computer_001/Control/TabContainer" index="1" unique_id=1390079030]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Conony Status" type="Control" parent="SubViewport/Control/TabContainer" index="2" unique_id=285665264]
+[node name="Conony Status" type="Control" parent="Computer_001/Control/TabContainer" index="2" unique_id=285665264]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="TextureRect2" type="TextureRect" parent="SubViewport/Control/TabContainer/Conony Status" index="0" unique_id=1855904288]
+[node name="TextureRect3" type="TextureRect" parent="Computer_001/Control/TabContainer/Conony Status" index="0" unique_id=513143969]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = -180.0
-offset_right = 422.59763
-offset_bottom = 228.2641
+offset_left = 22.777832
+offset_top = -134.00006
+offset_right = 991.26514
+offset_bottom = 831.3342
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.44000062, 0.44000062)
-texture = ExtResource("4_vv3lc")
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("4_j73bs")
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="SubViewport/Control/TabContainer/Conony Status" index="1" unique_id=924423653]
+[node name="Label" type="Label" parent="Computer_001/Control/TabContainer/Conony Status" index="1" unique_id=924423653]
 layout_mode = 0
-offset_left = -206.0
-offset_top = -183.0
-offset_right = -45.0
-offset_bottom = -160.0
+offset_left = 70.00001
+offset_top = 266.0
+offset_right = 413.0
+offset_bottom = 292.0
 scale = Vector2(1.3265678, 1.4414505)
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("4_dbfr3")
-theme_override_font_sizes/font_size = 17
-text = "COLONY STATUS:"
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+text = "COLONY X349Y2489Z3948"
 
-[node name="Label2" type="Label" parent="SubViewport/Control/TabContainer/Conony Status" index="2" unique_id=1729066213]
+[node name="Label2" type="Label" parent="Computer_001/Control/TabContainer/Conony Status" index="2" unique_id=1729066213]
 layout_mode = 0
-offset_left = -206.0
-offset_top = -141.0
-offset_right = -43.0
-offset_bottom = 87.0
+offset_left = 73.0
+offset_top = 477.00003
+offset_right = 368.0
+offset_bottom = 503.00003
 scale = Vector2(1.3265678, 1.4414505)
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("4_dbfr3")
-theme_override_font_sizes/font_size = 13
-text = "Hailey McGuire
-Casey Parra
-Elyse Williamson
-Camille Sims
-Jordan Barrett
-Jessie Arellano
-Keanu Fry
-Bianca Alvarado
-Elizabeth Shields
-Ray Clements
-"
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+text = "Employee list 1/10"
 
-[node name="Wiki" type="Control" parent="SubViewport/Control/TabContainer" index="3" unique_id=924550663]
-visible = false
+[node name="Label3" type="Label" parent="Computer_001/Control/TabContainer/Conony Status" index="3" unique_id=630820624]
+layout_mode = 0
+offset_left = 77.00001
+offset_top = 532.0
+offset_right = 377.77618
+offset_bottom = 757.4939
+scale = Vector2(1.3265678, 1.4414505)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "Name: Oleg Sechovcov
+Age: 23
+Sex: Male
+Occupation: Engineer
+Status: Dead
+Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut ultrices augue. Curabitur posuere luctus"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="Computer_001/Control/TabContainer/Conony Status" index="4" unique_id=2041778782]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 320.0
+offset_right = 275.77893
+offset_bottom = 417.0
+scale = Vector2(1.3265678, 1.4414505)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "Mission: Mining
+Healthcare: Danger
+Citizens: 10"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Computer_001/Control/TabContainer/Conony Status" index="5" unique_id=1646646226]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 776.0
+offset_right = 889.3981
+offset_bottom = 834.0
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "NEXT"
+
+[node name="Wiki" type="Control" parent="Computer_001/Control/TabContainer" index="3" unique_id=924550663]
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="TabContainer" type="TabContainer" parent="SubViewport/Control/TabContainer/Wiki" index="0" unique_id=1115024217]
+[node name="TextureRect4" type="TextureRect" parent="Computer_001/Control/TabContainer/Wiki" index="0" unique_id=953747801]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -950.0001
+offset_top = -304.0
+offset_right = 18.487244
+offset_bottom = 661.33435
 grow_horizontal = 2
 grow_vertical = 2
-tabs_visible = false
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("4_j73bs")
+stretch_mode = 4
 
-[node name="ColorRect" type="ColorRect" parent="SubViewport/Control" index="2" unique_id=863287365]
+[node name="Label5" type="Label" parent="Computer_001/Control/TabContainer/Wiki" index="1" unique_id=1129495087]
+layout_mode = 0
+offset_left = 70.00001
+offset_top = 258.0
+offset_right = 413.0
+offset_bottom = 284.0
+scale = Vector2(1.3265678, 1.4414505)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+text = "WIKI by Kpac"
+
+[node name="Label6" type="Label" parent="Computer_001/Control/TabContainer/Wiki" index="2" unique_id=1910868874]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 477.00003
+offset_right = 368.0
+offset_bottom = 503.00003
+scale = Vector2(1.3265678, 1.4414505)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+text = "THE LAB"
+
+[node name="Button2" type="Button" parent="Computer_001/Control/TabContainer/Wiki" index="3" unique_id=314325777]
+layout_mode = 0
+offset_left = -456.0
+offset_top = 614.0
+offset_right = -102.60193
+offset_bottom = 672.0
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "NEXT"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Computer_001/Control/TabContainer/Wiki" index="4" unique_id=1717567204]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 526.0
+offset_right = 963.0
+offset_bottom = 875.0
+theme_override_constants/scrollbar_h_separation = 10
+theme_override_constants/scrollbar_v_separation = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_838ba")
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer" index="0" unique_id=374324410]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer" index="0" unique_id=97957960]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label7" type="Label" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1998065470]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus tortor vel enim dapibus, vitae mollis velit faucibus. Integer vel velit euismod, pulvinar magna eu, laoreet dolor. Praesent mollis luctus purus eu fermentum. Nullam vel mi non libero eleifend congue. Duis dignissim dolor arcu, eu consectetur nibh aliquam eu. Fusce at dolor ac odio ultrices interdum. Nulla mauris urna, sodales congue aliquam ut, accumsan finibus nulla. Mauris consectetur, velit et commodo rutrum, ipsum elit bibendum enim, vel gravida purus quam a justo. Proin non "
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer" index="1" unique_id=1353683399]
+custom_minimum_size = Vector2(200, 200)
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("6_j73bs")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer" index="1" unique_id=1766027878]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label7" type="Label" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer2" index="0" unique_id=1592127890]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus tortor vel enim dapibus, vitae mollis velit faucibus. Integer vel velit euismod, pulvinar magna eu, laoreet dolor. Praesent mollis luctus purus eu fermentum. Nullam vel mi non libero eleifend congue. Duis dignissim dolor arcu, eu consectetur nibh aliquam eu. Fusce at dolor ac odio ultrices interdum. Nulla mauris urna, sodales congue aliquam ut, accumsan finibus nulla. Mauris consectetur, velit et commodo rutrum, ipsum elit bibendum enim, vel gravida purus quam a justo. Proin non "
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer2" index="1" unique_id=906256694]
+custom_minimum_size = Vector2(200, 200)
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("6_j73bs")
+
+[node name="GridContainer" type="GridContainer" parent="Computer_001/Control/TabContainer/Wiki" index="5" unique_id=8510728]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 312.0
+offset_right = 962.0
+offset_bottom = 456.0
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 3
+
+[node name="Button5" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="0" unique_id=1313036780]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "LAB"
+
+[node name="Button6" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="1" unique_id=1167323691]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "COLONY"
+
+[node name="Button7" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="2" unique_id=375167008]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "TEST PROCEDURE"
+
+[node name="Button8" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="3" unique_id=1361806886]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "TEST SUBJECTS"
+
+[node name="Button9" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="4" unique_id=654160764]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "HOME"
+
+[node name="Button10" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="5" unique_id=1390751035]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "HOME"
+
+[node name="Button11" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="6" unique_id=781807469]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "HOME"
+
+[node name="Button12" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="7" unique_id=2050990921]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "HOME"
+
+[node name="Button13" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="8" unique_id=578234358]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "HOME"
+
+[node name="Button14" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="9" unique_id=701639355]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "HOME"
+
+[node name="Button15" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="10" unique_id=918721982]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "HOME"
+
+[node name="Button16" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="11" unique_id=1882585939]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "HOME"
+
+[node name="TextureRect4" type="TextureRect" parent="Computer_001/Control" index="2" unique_id=484345000]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -442.0
+offset_top = -410.0
+offset_right = 8.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("6_yefe0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label9" type="Label" parent="Computer_001/Control" index="3" unique_id=1873537589]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 221.0
+offset_right = 208.0
+offset_bottom = 247.0
+scale = Vector2(1.3265678, 1.4414505)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 15
+text = "C:\\Users\\Kpac\\Home"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Computer_001/Control" index="4" unique_id=237512890]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -272.0
+offset_top = 162.0
+offset_right = 408.0
+offset_bottom = 205.0
+grow_horizontal = 2
+theme_override_constants/separation = 25
+
+[node name="Button2" type="Button" parent="Computer_001/Control/HBoxContainer" index="0" unique_id=846114818]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "HOME"
+
+[node name="Button3" type="Button" parent="Computer_001/Control/HBoxContainer" index="1" unique_id=108815396]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "STATUS"
+
+[node name="Button4" type="Button" parent="Computer_001/Control/HBoxContainer" index="2" unique_id=899292171]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "WIKI"
+
+[node name="Button5" type="Button" parent="Computer_001/Control/HBoxContainer" index="3" unique_id=1943927062]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "UPLOAD"
+
+[node name="ColorRect" type="ColorRect" parent="Computer_001/Control" index="5" unique_id=863287365]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_j4o88")
-custom_minimum_size = Vector2(512, 512)
-custom_maximum_size = Vector2(512, 512)
+custom_minimum_size = Vector2(1024, 1024)
+custom_maximum_size = Vector2(1024, 1024)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -231,3 +585,9 @@ offset_right = 256.0
 offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="." index="1" unique_id=317716374]
+mesh_lod_threshold = 0.0
+scaling_3d_scale = 0.5
+anisotropic_filtering_level = 0
+size = Vector2i(1024, 1024)

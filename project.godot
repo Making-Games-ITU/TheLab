@@ -82,5 +82,4 @@ renderer/rendering_method.mobile="gl_compatibility"
 scaling_3d/mode=5
 scaling_3d/mode.ios=5
 scaling_3d/mode.macos=5
-scaling_3d/scale=0.5
 scaling_3d/fsr_sharpness=0.25
