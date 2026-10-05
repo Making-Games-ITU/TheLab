@@ -9,17 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://dafbrpvpn6x5t" path="res://World/Props/Electricals/Computer/Colony.png" id="6_j73bs"]
 [ext_resource type="Texture2D" uid="uid://bk66ydditnowo" path="res://UI/Screen/Logo Kras.png" id="6_yefe0"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yefe0"]
-viewport_path = NodePath("SubViewport")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_j73bs"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbkat"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_kbkat"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c18cs"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_yefe0")
+albedo_texture = SubResource("ViewportTexture_j73bs")
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_j73bs")
+emission_texture = SubResource("ViewportTexture_kbkat")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xrps"]
 resource_name = "Screen"
@@ -44,7 +44,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_c18cs"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wjs2v"]
 resource_local_to_scene = true
 resource_name = "Cube_046"
 _surfaces = [{
@@ -67,14 +67,20 @@ shadow_mesh = SubResource("ArrayMesh_rj0q2")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j73bs"]
 data = PackedVector3Array(0.011399999, -0.0025, 0.14209999, 0.010799999, 0.0013, 0.1383, -0.0224, 0.2368, 0.1383, -0.0224, 0.2368, 0.1383, -0.023, 0.24059999, 0.14209999, 0.011399999, -0.0025, 0.14209999, -0.0224, 0.2368, 0.1383, 0.010799999, 0.0013, 0.1383, -0.0009, 0.0001, 0.082899995, -0.0009, 0.0001, 0.082899995, -0.034199998, 0.2342, 0.0808, -0.0224, 0.2368, 0.1383, -0.034199998, 0.2342, 0.0808, -0.0009, 0.0001, 0.082899995, -0.0092, -0.00029999999, 0, -0.0092, -0.00029999999, 0, -0.042099997, 0.23189999, -0.0021, -0.034199998, 0.2342, 0.0808, -0.042099997, 0.23189999, -0.0021, -0.0092, -0.00029999999, 0, -0.0011, 0.0015, -0.082899995, -0.0011, 0.0015, -0.082899995, -0.0339, 0.23179999, -0.085, -0.042099997, 0.23189999, -0.0021, -0.0339, 0.23179999, -0.085, -0.0011, 0.0015, -0.082899995, 0.0105, 0.0036, -0.1383, 0.0105, 0.0036, -0.1383, -0.0218, 0.23259999, -0.1424, -0.0339, 0.23179999, -0.085, -0.0218, 0.23259999, -0.1424, 0.0105, 0.0036, -0.1383, 0.011, -0.0001, -0.14199999, 0.011, -0.0001, -0.14199999, -0.0224, 0.23629999, -0.1463, -0.0218, 0.23259999, -0.1424, 0.0111, -0.0013, 0, -0.0092, -0.00029999999, 0, -0.0009, 0.0001, 0.082899995, 0.0111, -0.0013, 0, -0.0011, 0.0015, -0.082899995, -0.0092, -0.00029999999, 0, 0.0111, -0.0013, 0, -0.0009, 0.0001, 0.082899995, 0.010799999, 0.0013, 0.1383, 0.0105, 0.0036, -0.1383, -0.0011, 0.0015, -0.082899995, 0.0111, -0.0013, 0, 0.0111, -0.0013, 0, 0.010799999, 0.0013, 0.1383, 0.011399999, -0.0025, 0.14209999, 0.011, -0.0001, -0.14199999, 0.0105, 0.0036, -0.1383, 0.0111, -0.0013, 0, 0.0111, -0.0013, 0, 0.011399999, -0.0025, 0.14209999, 0.0112, -0.0013, 0, 0.011, -0.0001, -0.14199999, 0.0111, -0.0013, 0, 0.0112, -0.0013, 0, -0.022699999, 0.2384, -0.0021, -0.042099997, 0.23189999, -0.0021, -0.0339, 0.23179999, -0.085, -0.022699999, 0.2384, -0.0021, -0.034199998, 0.2342, 0.0808, -0.042099997, 0.23189999, -0.0021, -0.022699999, 0.2384, -0.0021, -0.0339, 0.23179999, -0.085, -0.0218, 0.23259999, -0.1424, -0.0224, 0.2368, 0.1383, -0.034199998, 0.2342, 0.0808, -0.022699999, 0.2384, -0.0021, -0.022699999, 0.2384, -0.0021, -0.0218, 0.23259999, -0.1424, -0.0224, 0.23629999, -0.1463, -0.023, 0.24059999, 0.14209999, -0.0224, 0.2368, 0.1383, -0.022699999, 0.2384, -0.0021, -0.022699999, 0.2384, -0.0021, -0.0224, 0.23629999, -0.1463, -0.022699999, 0.2384, -0.0021, -0.023, 0.24059999, 0.14209999, -0.022699999, 0.2384, -0.0021, -0.022699999, 0.2384, -0.0021)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1so3"]
-bg_color = Color(0, 0.15294118, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_838ba"]
 content_margin_left = 20.0
 content_margin_top = 20.0
 bg_color = Color(0.003921569, 0.06666667, 0, 1)
 border_color = Color(0.003921569, 0.06666667, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8nt5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1so3"]
+bg_color = Color(0, 0.15294118, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4o88"]
+bg_color = Color(0.05015579, 0.19965261, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j4o88"]
 shader = ExtResource("4_72xl4")
@@ -103,10 +109,10 @@ shader_parameter/vignette_opacity = 0.6010000285475
 [node name="env_screen" unique_id=1850738053 instance=ExtResource("1_hsbli")]
 script = ExtResource("2_meyn4")
 
-[node name="Computer_001" parent="." index="0" unique_id=766695767]
-material_override = SubResource("StandardMaterial3D_kbkat")
+[node name="Computer_001" parent="." index="0" unique_id=2083030734]
+material_override = SubResource("StandardMaterial3D_c18cs")
 cast_shadow = 0
-mesh = SubResource("ArrayMesh_c18cs")
+mesh = SubResource("ArrayMesh_wjs2v")
 
 [node name="Area3D" type="Area3D" parent="Computer_001" index="0" unique_id=1151972204]
 transform = Transform3D(0.99999994, 1.8464126e-15, 0, 1.8464128e-15, 0.99999994, 8.881784e-16, 0, 0, 1, 0, 0, 0)
@@ -115,7 +121,13 @@ transform = Transform3D(0.99999994, 1.8464126e-15, 0, 1.8464128e-15, 0.99999994,
 transform = Transform3D(0.99999994, 1.8464126e-15, 0, 1.8464128e-15, 0.99999994, 8.881784e-16, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_j73bs")
 
-[node name="Control" type="Control" parent="Computer_001" index="1" unique_id=1081790923]
+[node name="SubViewport" type="SubViewport" parent="." index="1" unique_id=317716374]
+mesh_lod_threshold = 0.0
+scaling_3d_scale = 0.5
+anisotropic_filtering_level = 0
+size = Vector2i(1024, 1024)
+
+[node name="Control" type="Control" parent="SubViewport" index="0" unique_id=1081790923]
 custom_minimum_size = Vector2(1024, 1024)
 custom_maximum_size = Vector2(1024, 1024)
 layout_mode = 3
@@ -124,16 +136,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 448.0
-offset_bottom = 700.0
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Bg" type="TextureRect" parent="Computer_001/Control" index="0" unique_id=91683163]
+[node name="Bg" type="TextureRect" parent="SubViewport/Control" index="0" unique_id=91683163]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -142,27 +154,77 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_72xl4")
 
-[node name="TabContainer" type="TabContainer" parent="Computer_001/Control" index="1" unique_id=999070812]
+[node name="TabContainer" type="TabContainer" parent="SubViewport/Control" index="1" unique_id=999070812]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 2
+current_tab = 3
 tabs_visible = false
 
-[node name="Home" type="Control" parent="Computer_001/Control/TabContainer" index="1" unique_id=1390079030]
+[node name="Home" type="Control" parent="SubViewport/Control/TabContainer" index="1" unique_id=1390079030]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Conony Status" type="Control" parent="Computer_001/Control/TabContainer" index="2" unique_id=285665264]
+[node name="ScrollContainer2" type="ScrollContainer" parent="SubViewport/Control/TabContainer/Home" index="0" unique_id=998130168]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 279.0
+offset_right = 963.0
+offset_bottom = 875.0
+theme_override_constants/scrollbar_h_separation = 10
+theme_override_constants/scrollbar_v_separation = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_838ba")
+vertical_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/Control/TabContainer/Home/ScrollContainer2" index="0" unique_id=809354041]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="Label7" type="Label" parent="SubViewport/Control/TabContainer/Home/ScrollContainer2/VBoxContainer" index="0" unique_id=1995700793]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "<System> Currently logged into user Oleg Sechovcov"
+autowrap_mode = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SubViewport/Control/TabContainer/Home/ScrollContainer2/VBoxContainer" index="1" unique_id=656487343]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label7" type="Label" parent="SubViewport/Control/TabContainer/Home/ScrollContainer2/VBoxContainer/HBoxContainer3" index="0" unique_id=122070732]
+custom_maximum_size = Vector2(365, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "C:\\Users\\Kpac\\Oleg Sechovcov\\Console>"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="SubViewport/Control/TabContainer/Home/ScrollContainer2/VBoxContainer/HBoxContainer3" index="1" unique_id=526147037]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8nt5")
+text = "cd colony"
+caret_blink = true
+caret_force_displayed = true
+
+[node name="Conony Status" type="Control" parent="SubViewport/Control/TabContainer" index="2" unique_id=285665264]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Computer_001/Control/TabContainer/Conony Status" index="0" unique_id=513143969]
+[node name="TextureRect3" type="TextureRect" parent="SubViewport/Control/TabContainer/Conony Status" index="0" unique_id=513143969]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -179,7 +241,7 @@ scale = Vector2(0.36, 0.36)
 texture = ExtResource("4_j73bs")
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="Computer_001/Control/TabContainer/Conony Status" index="1" unique_id=924423653]
+[node name="Label" type="Label" parent="SubViewport/Control/TabContainer/Conony Status" index="1" unique_id=924423653]
 layout_mode = 0
 offset_left = 70.00001
 offset_top = 266.0
@@ -191,7 +253,7 @@ theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 25
 text = "COLONY X349Y2489Z3948"
 
-[node name="Label2" type="Label" parent="Computer_001/Control/TabContainer/Conony Status" index="2" unique_id=1729066213]
+[node name="Label2" type="Label" parent="SubViewport/Control/TabContainer/Conony Status" index="2" unique_id=1729066213]
 layout_mode = 0
 offset_left = 73.0
 offset_top = 477.00003
@@ -203,7 +265,7 @@ theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 25
 text = "Employee list 1/10"
 
-[node name="Label3" type="Label" parent="Computer_001/Control/TabContainer/Conony Status" index="3" unique_id=630820624]
+[node name="Label3" type="Label" parent="SubViewport/Control/TabContainer/Conony Status" index="3" unique_id=630820624]
 layout_mode = 0
 offset_left = 77.00001
 offset_top = 532.0
@@ -221,7 +283,7 @@ Status: Dead
 Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut ultrices augue. Curabitur posuere luctus"
 autowrap_mode = 3
 
-[node name="Label4" type="Label" parent="Computer_001/Control/TabContainer/Conony Status" index="4" unique_id=2041778782]
+[node name="Label4" type="Label" parent="SubViewport/Control/TabContainer/Conony Status" index="4" unique_id=2041778782]
 layout_mode = 0
 offset_left = 73.0
 offset_top = 320.0
@@ -236,7 +298,7 @@ Healthcare: Danger
 Citizens: 10"
 autowrap_mode = 3
 
-[node name="Button" type="Button" parent="Computer_001/Control/TabContainer/Conony Status" index="5" unique_id=1646646226]
+[node name="Button" type="Button" parent="SubViewport/Control/TabContainer/Conony Status" index="5" unique_id=1646646226]
 layout_mode = 0
 offset_left = 536.0
 offset_top = 776.0
@@ -248,28 +310,12 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
 text = "NEXT"
 
-[node name="Wiki" type="Control" parent="Computer_001/Control/TabContainer" index="3" unique_id=924550663]
+[node name="Wiki" type="Control" parent="SubViewport/Control/TabContainer" index="3" unique_id=924550663]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="TextureRect4" type="TextureRect" parent="Computer_001/Control/TabContainer/Wiki" index="0" unique_id=953747801]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -950.0001
-offset_top = -304.0
-offset_right = 18.487244
-offset_bottom = 661.33435
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.36, 0.36)
-texture = ExtResource("4_j73bs")
-stretch_mode = 4
-
-[node name="Label5" type="Label" parent="Computer_001/Control/TabContainer/Wiki" index="1" unique_id=1129495087]
+[node name="Label5" type="Label" parent="SubViewport/Control/TabContainer/Wiki" index="0" unique_id=1129495087]
 layout_mode = 0
 offset_left = 70.00001
 offset_top = 258.0
@@ -281,7 +327,7 @@ theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 25
 text = "WIKI by Kpac"
 
-[node name="Label6" type="Label" parent="Computer_001/Control/TabContainer/Wiki" index="2" unique_id=1910868874]
+[node name="Label6" type="Label" parent="SubViewport/Control/TabContainer/Wiki" index="1" unique_id=1910868874]
 layout_mode = 0
 offset_left = 73.0
 offset_top = 477.00003
@@ -293,19 +339,7 @@ theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 25
 text = "THE LAB"
 
-[node name="Button2" type="Button" parent="Computer_001/Control/TabContainer/Wiki" index="3" unique_id=314325777]
-layout_mode = 0
-offset_left = -456.0
-offset_top = 614.0
-offset_right = -102.60193
-offset_bottom = 672.0
-theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
-theme_override_fonts/font = ExtResource("5_j73bs")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "NEXT"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Computer_001/Control/TabContainer/Wiki" index="4" unique_id=1717567204]
+[node name="ScrollContainer" type="ScrollContainer" parent="SubViewport/Control/TabContainer/Wiki" index="2" unique_id=1717567204]
 layout_mode = 0
 offset_left = 77.0
 offset_top = 526.0
@@ -316,35 +350,16 @@ theme_override_constants/scrollbar_v_separation = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_838ba")
 vertical_scroll_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer" index="0" unique_id=374324410]
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/Control/TabContainer/Wiki/ScrollContainer" index="0" unique_id=374324410]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer" index="0" unique_id=97957960]
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer" index="0" unique_id=97957960]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label7" type="Label" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1998065470]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("5_j73bs")
-theme_override_font_sizes/font_size = 20
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus tortor vel enim dapibus, vitae mollis velit faucibus. Integer vel velit euismod, pulvinar magna eu, laoreet dolor. Praesent mollis luctus purus eu fermentum. Nullam vel mi non libero eleifend congue. Duis dignissim dolor arcu, eu consectetur nibh aliquam eu. Fusce at dolor ac odio ultrices interdum. Nulla mauris urna, sodales congue aliquam ut, accumsan finibus nulla. Mauris consectetur, velit et commodo rutrum, ipsum elit bibendum enim, vel gravida purus quam a justo. Proin non "
-autowrap_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer" index="1" unique_id=1353683399]
-custom_minimum_size = Vector2(200, 200)
-custom_maximum_size = Vector2(200, 200)
-layout_mode = 2
-texture = ExtResource("6_j73bs")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer" index="1" unique_id=1766027878]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label7" type="Label" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer2" index="0" unique_id=1592127890]
+[node name="Label7" type="Label" parent="SubViewport/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1998065470]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 1, 0, 1)
@@ -353,13 +368,32 @@ theme_override_font_sizes/font_size = 20
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus tortor vel enim dapibus, vitae mollis velit faucibus. Integer vel velit euismod, pulvinar magna eu, laoreet dolor. Praesent mollis luctus purus eu fermentum. Nullam vel mi non libero eleifend congue. Duis dignissim dolor arcu, eu consectetur nibh aliquam eu. Fusce at dolor ac odio ultrices interdum. Nulla mauris urna, sodales congue aliquam ut, accumsan finibus nulla. Mauris consectetur, velit et commodo rutrum, ipsum elit bibendum enim, vel gravida purus quam a justo. Proin non "
 autowrap_mode = 3
 
-[node name="TextureRect" type="TextureRect" parent="Computer_001/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer2" index="1" unique_id=906256694]
+[node name="TextureRect" type="TextureRect" parent="SubViewport/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer" index="1" unique_id=1353683399]
 custom_minimum_size = Vector2(200, 200)
 custom_maximum_size = Vector2(200, 200)
 layout_mode = 2
 texture = ExtResource("6_j73bs")
 
-[node name="GridContainer" type="GridContainer" parent="Computer_001/Control/TabContainer/Wiki" index="5" unique_id=8510728]
+[node name="HBoxContainer2" type="HBoxContainer" parent="SubViewport/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer" index="1" unique_id=1766027878]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label7" type="Label" parent="SubViewport/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer2" index="0" unique_id=1592127890]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus tortor vel enim dapibus, vitae mollis velit faucibus. Integer vel velit euismod, pulvinar magna eu, laoreet dolor. Praesent mollis luctus purus eu fermentum. Nullam vel mi non libero eleifend congue. Duis dignissim dolor arcu, eu consectetur nibh aliquam eu. Fusce at dolor ac odio ultrices interdum. Nulla mauris urna, sodales congue aliquam ut, accumsan finibus nulla. Mauris consectetur, velit et commodo rutrum, ipsum elit bibendum enim, vel gravida purus quam a justo. Proin non "
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport/Control/TabContainer/Wiki/ScrollContainer/VBoxContainer/HBoxContainer2" index="1" unique_id=906256694]
+custom_minimum_size = Vector2(200, 200)
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("6_j73bs")
+
+[node name="GridContainer" type="GridContainer" parent="SubViewport/Control/TabContainer/Wiki" index="3" unique_id=8510728]
 layout_mode = 0
 offset_left = 77.0
 offset_top = 312.0
@@ -369,7 +403,7 @@ theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 6
 columns = 3
 
-[node name="Button5" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="0" unique_id=1313036780]
+[node name="Button5" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="0" unique_id=1313036780]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -379,7 +413,7 @@ theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
 text = "LAB"
 
-[node name="Button6" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="1" unique_id=1167323691]
+[node name="Button6" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="1" unique_id=1167323691]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -389,7 +423,7 @@ theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
 text = "COLONY"
 
-[node name="Button7" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="2" unique_id=375167008]
+[node name="Button7" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="2" unique_id=375167008]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -397,9 +431,9 @@ theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
 theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "TEST PROCEDURE"
+text = "BASICS"
 
-[node name="Button8" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="3" unique_id=1361806886]
+[node name="Button8" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="3" unique_id=1361806886]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -409,7 +443,7 @@ theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
 text = "TEST SUBJECTS"
 
-[node name="Button9" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="4" unique_id=654160764]
+[node name="Button9" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="4" unique_id=654160764]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -417,9 +451,9 @@ theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
 theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "HOME"
+text = "VIRUSES*"
 
-[node name="Button10" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="5" unique_id=1390751035]
+[node name="Button10" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="5" unique_id=1390751035]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -427,9 +461,9 @@ theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
 theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "HOME"
+text = "MISSION"
 
-[node name="Button11" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="6" unique_id=781807469]
+[node name="Button11" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="6" unique_id=781807469]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -437,9 +471,9 @@ theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
 theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "HOME"
+text = "PLANETS"
 
-[node name="Button12" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="7" unique_id=2050990921]
+[node name="Button12" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="7" unique_id=2050990921]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -447,9 +481,9 @@ theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
 theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "HOME"
+text = "LOGS"
 
-[node name="Button13" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="8" unique_id=578234358]
+[node name="Button13" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="8" unique_id=578234358]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -457,9 +491,9 @@ theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
 theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "HOME"
+text = "MACHINERY*"
 
-[node name="Button14" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="9" unique_id=701639355]
+[node name="Button14" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="9" unique_id=701639355]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -467,9 +501,9 @@ theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
 theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "HOME"
+text = "COMMANDS"
 
-[node name="Button15" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="10" unique_id=918721982]
+[node name="Button15" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="10" unique_id=918721982]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -477,9 +511,8 @@ theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
 theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "HOME"
 
-[node name="Button16" type="Button" parent="Computer_001/Control/TabContainer/Wiki/GridContainer" index="11" unique_id=1882585939]
+[node name="Button16" type="Button" parent="SubViewport/Control/TabContainer/Wiki/GridContainer" index="11" unique_id=1882585939]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -487,9 +520,222 @@ theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
 theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "HOME"
 
-[node name="TextureRect4" type="TextureRect" parent="Computer_001/Control" index="2" unique_id=484345000]
+[node name="Upload" type="Control" parent="SubViewport/Control/TabContainer" index="4" unique_id=1051180311]
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Label5" type="Label" parent="SubViewport/Control/TabContainer/Upload" index="0" unique_id=767784819]
+layout_mode = 0
+offset_left = 70.00001
+offset_top = 258.0
+offset_right = 413.0
+offset_bottom = 284.0
+scale = Vector2(1.3265678, 1.4414505)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+text = "FILES UPLOADED"
+
+[node name="Label6" type="Label" parent="SubViewport/Control/TabContainer/Upload" index="1" unique_id=787827924]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 477.00003
+offset_right = 368.0
+offset_bottom = 503.00003
+scale = Vector2(1.3265678, 1.4414505)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+text = "UPLOAD RESULTS"
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="SubViewport/Control/TabContainer/Upload" index="2" unique_id=637140749]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 309.0
+offset_right = 963.0
+offset_bottom = 448.0
+theme_override_constants/scrollbar_h_separation = 10
+theme_override_constants/scrollbar_v_separation = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_838ba")
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/Control/TabContainer/Upload/ScrollContainer2" index="0" unique_id=978832194]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/Control/TabContainer/Upload/ScrollContainer2/VBoxContainer" index="0" unique_id=698862024]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label7" type="Label" parent="SubViewport/Control/TabContainer/Upload/ScrollContainer2/VBoxContainer/HBoxContainer" index="0" unique_id=468338366]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "First_Test.exp"
+autowrap_mode = 3
+
+[node name="Label8" type="Label" parent="SubViewport/Control/TabContainer/Upload/ScrollContainer2/VBoxContainer/HBoxContainer" index="1" unique_id=343025910]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "Denied"
+autowrap_mode = 3
+
+[node name="Label9" type="Label" parent="SubViewport/Control/TabContainer/Upload/ScrollContainer2/VBoxContainer/HBoxContainer" index="2" unique_id=1222270102]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "05/10/1982 13:05"
+autowrap_mode = 3
+
+[node name="Button6" type="Button" parent="SubViewport/Control/TabContainer/Upload/ScrollContainer2/VBoxContainer/HBoxContainer" index="3" unique_id=230008137]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "print"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SubViewport/Control/TabContainer/Upload/ScrollContainer2/VBoxContainer" index="1" unique_id=518521663]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label7" type="Label" parent="SubViewport/Control/TabContainer/Upload/ScrollContainer2/VBoxContainer/HBoxContainer2" index="0" unique_id=1267361833]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "Second_Test.exp"
+autowrap_mode = 3
+
+[node name="Label8" type="Label" parent="SubViewport/Control/TabContainer/Upload/ScrollContainer2/VBoxContainer/HBoxContainer2" index="1" unique_id=1881417274]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "Accepted"
+autowrap_mode = 3
+
+[node name="Label9" type="Label" parent="SubViewport/Control/TabContainer/Upload/ScrollContainer2/VBoxContainer/HBoxContainer2" index="2" unique_id=260118194]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 20
+text = "05/10/1982 13:10"
+autowrap_mode = 3
+
+[node name="Button6" type="Button" parent="SubViewport/Control/TabContainer/Upload/ScrollContainer2/VBoxContainer/HBoxContainer2" index="3" unique_id=2095039595]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "print"
+
+[node name="Upload Formular" type="Control" parent="SubViewport/Control/TabContainer/Upload" index="3" unique_id=1526304127]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button7" type="Button" parent="SubViewport/Control/TabContainer/Upload/Upload Formular" index="0" unique_id=626167618]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 771.0
+offset_right = 543.0
+offset_bottom = 826.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
+text = "Submit File"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/Control/TabContainer/Upload/Upload Formular" index="1" unique_id=153120854]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 550.0
+offset_right = 540.0
+offset_bottom = 603.5
+
+[node name="Label10" type="Label" parent="SubViewport/Control/TabContainer/Upload/Upload Formular/HBoxContainer" index="0" unique_id=634266194]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+text = "Document Name"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="SubViewport/Control/TabContainer/Upload/Upload Formular/HBoxContainer" index="1" unique_id=1195594181]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_j4o88")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SubViewport/Control/TabContainer/Upload/Upload Formular" index="2" unique_id=1772345334]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 619.0
+offset_right = 540.0
+offset_bottom = 672.5
+
+[node name="Label10" type="Label" parent="SubViewport/Control/TabContainer/Upload/Upload Formular/HBoxContainer2" index="0" unique_id=1252870000]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+text = "Patient Name"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="SubViewport/Control/TabContainer/Upload/Upload Formular/HBoxContainer2" index="1" unique_id=708045633]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_j4o88")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SubViewport/Control/TabContainer/Upload/Upload Formular" index="3" unique_id=702177048]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 692.0
+offset_right = 540.0
+offset_bottom = 745.5
+
+[node name="Label10" type="Label" parent="SubViewport/Control/TabContainer/Upload/Upload Formular/HBoxContainer3" index="0" unique_id=560966427]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_j73bs")
+theme_override_font_sizes/font_size = 25
+text = "Patient Weight"
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="SubViewport/Control/TabContainer/Upload/Upload Formular/HBoxContainer3" index="1" unique_id=789173280]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_j4o88")
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport/Control/TabContainer/Upload/Upload Formular" index="4" unique_id=1615512212]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 553.0
+offset_right = 898.0
+offset_bottom = 824.0
+texture = ExtResource("6_j73bs")
+
+[node name="TextureRect4" type="TextureRect" parent="SubViewport/Control" index="2" unique_id=484345000]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -507,19 +753,7 @@ texture = ExtResource("6_yefe0")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label9" type="Label" parent="Computer_001/Control" index="3" unique_id=1873537589]
-layout_mode = 0
-offset_left = 71.0
-offset_top = 221.0
-offset_right = 208.0
-offset_bottom = 247.0
-scale = Vector2(1.3265678, 1.4414505)
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("5_j73bs")
-theme_override_font_sizes/font_size = 15
-text = "C:\\Users\\Kpac\\Home"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Computer_001/Control" index="4" unique_id=237512890]
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/Control" index="3" unique_id=237512890]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -531,25 +765,25 @@ offset_bottom = 205.0
 grow_horizontal = 2
 theme_override_constants/separation = 25
 
-[node name="Button2" type="Button" parent="Computer_001/Control/HBoxContainer" index="0" unique_id=846114818]
+[node name="Button2" type="Button" parent="SubViewport/Control/HBoxContainer" index="0" unique_id=846114818]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
 theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "HOME"
+text = "CONSOLE"
 
-[node name="Button3" type="Button" parent="Computer_001/Control/HBoxContainer" index="1" unique_id=108815396]
+[node name="Button3" type="Button" parent="SubViewport/Control/HBoxContainer" index="1" unique_id=108815396]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
 theme_override_fonts/font = ExtResource("5_j73bs")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
-text = "STATUS"
+text = "COLONY"
 
-[node name="Button4" type="Button" parent="Computer_001/Control/HBoxContainer" index="2" unique_id=899292171]
+[node name="Button4" type="Button" parent="SubViewport/Control/HBoxContainer" index="2" unique_id=899292171]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
@@ -558,7 +792,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
 text = "WIKI"
 
-[node name="Button5" type="Button" parent="Computer_001/Control/HBoxContainer" index="3" unique_id=1943927062]
+[node name="Button5" type="Button" parent="SubViewport/Control/HBoxContainer" index="3" unique_id=1943927062]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.5825421, 0.99999994, 0.36546788, 1)
@@ -567,8 +801,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_r1so3")
 text = "UPLOAD"
 
-[node name="ColorRect" type="ColorRect" parent="Computer_001/Control" index="5" unique_id=863287365]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="SubViewport/Control" index="4" unique_id=863287365]
 z_index = 1
 material = SubResource("ShaderMaterial_j4o88")
 custom_minimum_size = Vector2(1024, 1024)
@@ -585,9 +818,3 @@ offset_right = 256.0
 offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="SubViewport" type="SubViewport" parent="." index="1" unique_id=317716374]
-mesh_lod_threshold = 0.0
-scaling_3d_scale = 0.5
-anisotropic_filtering_level = 0
-size = Vector2i(1024, 1024)
