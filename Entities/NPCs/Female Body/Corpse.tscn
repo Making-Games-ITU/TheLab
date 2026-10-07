@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dykrujop444l5"]
+
+[ext_resource type="PackedScene" uid="uid://b0oj0pp4t0v68" path="res://Entities/NPCs/Female Body/Corpse.fbx" id="1_cplnm"]
+
+[node name="Corpse" unique_id=852473659 instance=ExtResource("1_cplnm")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1140426675) index="0" unique_id=1886830957]
+bones/8/rotation = Quaternion(-0.5717717, -0.40698215, 0.5953891, -0.39109394)
+bones/32/rotation = Quaternion(0.0004964661, 0.008128689, 0.99810636, -0.060971715)
