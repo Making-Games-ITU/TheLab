@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dkjw1pfgodqn4"]
+
+[ext_resource type="PackedScene" uid="uid://d0flbk37ny21d" path="res://World/Items/Test Tube/Test_Tube_Liquid.fbx" id="1_buuyw"]
+[ext_resource type="Shader" uid="uid://ckhqpvo72mtd6" path="res://World/Items/Test Tube/stylized_liquid.gdshader" id="2_ltr7o"]
+
+[sub_resource type="Gradient" id="Gradient_7tj8f"]
+colors = PackedColorArray(0.9999998, 0.1228585, 0.21856046, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_03mnb"]
+gradient = SubResource("Gradient_7tj8f")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_idff6"]
+render_priority = 0
+shader = ExtResource("2_ltr7o")
+shader_parameter/liquid_height = 0.1
+shader_parameter/liquid_surface_color = Color(0.33051407, 0.7681083, 1, 1)
+shader_parameter/liquid_rim_gradient = SubResource("GradientTexture2D_03mnb")
+shader_parameter/rim_emission_intensity = 0.2
+shader_parameter/rim_exponent = 3.0
+shader_parameter/emission_intensity = 0.1
+shader_parameter/liquid_surface_gradient_size = 0.1
+shader_parameter/wobble = Vector2(0, 0)
+
+[node name="Test_Tube_Liquid" unique_id=1124276950 instance=ExtResource("1_buuyw")]
+
+[node name="Liquid" parent="." index="0" unique_id=164644510]
+material_override = SubResource("ShaderMaterial_idff6")
