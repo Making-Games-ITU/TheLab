@@ -732,7 +732,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="_boZWcU9_NK-lKn6VMLh" name="Game Loop">
-    <mxGraphModel dx="2085" dy="1162" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2658" dy="1501" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1036,7 +1036,7 @@
         <mxCell id="S6R8M-cMt9sNxHOUPgoP-91" parent="xc33IzmnXonfGCUeU-HJ-35" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=light-dark(#B2C2FF,#660033);strokeColor=none;fontColor=default;fillStyle=solid;gradientColor=none;arcSize=50;verticalAlign=middle;labelPosition=center;verticalLabelPosition=middle;align=center;" value="&lt;font&gt;Decide&lt;/font&gt;" vertex="1">
           <mxGeometry height="18" width="67" x="152" y="464.75" as="geometry" />
         </mxCell>
-        <mxCell id="xc33IzmnXonfGCUeU-HJ-36" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="Test phase" vertex="1">
+        <mxCell id="xc33IzmnXonfGCUeU-HJ-36" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" value="Experiment phase" vertex="1">
           <mxGeometry height="747.25" width="312" x="731" y="-181" as="geometry">
             <mxRectangle height="26" width="93" x="1146" y="226" as="alternateBounds" />
           </mxGeometry>
@@ -1169,6 +1169,9 @@
             <mxPoint x="24" y="120.74" as="sourcePoint" />
             <mxPoint x="24" y="32" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="eI-AxPnPE_NqMyHIg3Gh-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;arcSize=10;strokeColor=light-dark(#FFFFFF,#FF3333);fillColor=none;" value="&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;NEED&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;LEGEND&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="57.5" width="93" x="-516" y="482.25" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
