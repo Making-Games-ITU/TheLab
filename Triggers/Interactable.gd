@@ -3,8 +3,6 @@ extends Node3D
 
 signal interacted(interactor: Node)
 
-var is_open := false # only used by doors
-
 @export_group("General")
 @export var prompt_text := "<NO PROMPT SET>"
 @export var anim: AnimationPlayer = null
