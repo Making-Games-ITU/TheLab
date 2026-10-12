@@ -6,10 +6,11 @@
 [ext_resource type="Script" uid="uid://dn02qfwgu1uur" path="res://Resources/Player_Stats.gd" id="4_vvhu1"]
 [ext_resource type="PackedScene" uid="uid://p1s3d1dytn62" path="res://Entities/Player/Player.tscn" id="5_lbihj"]
 [ext_resource type="PackedScene" uid="uid://5k40ofk222ak" path="res://UI/UI_Computer_Screen.tscn" id="5_tfod6"]
-[ext_resource type="Script" uid="uid://lvgbwtbmp326" path="res://Triggers/Interactable.gd" id="6_raj38"]
 [ext_resource type="PackedScene" uid="uid://yomyius6rgy8" path="res://World/Props/Chairs/env_stool.tscn" id="7_8e0uq"]
+[ext_resource type="Script" uid="uid://7y5mut280vma" path="res://World/Interactables/Chair.gd" id="7_lbihj"]
 [ext_resource type="Texture2D" uid="uid://dqcgh22nr18s0" path="res://World/Props/Electricals/ScrollBtnTexture.png" id="8_i0vto"]
 [ext_resource type="Texture2D" uid="uid://ckryoryab5rok" path="res://World/Props/Electricals/Computer.png" id="9_3jf1l"]
+[ext_resource type="Script" uid="uid://x0iauagetd3t" path="res://World/Interactables/Button.gd" id="9_raj38"]
 [ext_resource type="Texture2D" uid="uid://dayrghnnvllag" path="res://World/Props/Electricals/Pc_Props_Texture.png" id="10_356ba"]
 [ext_resource type="Texture2D" uid="uid://c6ndouxyokit6" path="res://World/Props/Buttons/Emergancy_Btn_Texture.png" id="10_vvhu1"]
 [ext_resource type="Texture2D" uid="uid://c0w022qx5xjgy" path="res://World/Props/Electricals/KeyBaordTexture.png" id="11_i4lct"]
@@ -1260,14 +1261,13 @@ steps = NodePath("FmodEventEmitter3D")
 event_name = "event:/Walking"
 event_guid = "{438ca093-f602-408e-b164-e277a7b9c0af}"
 
-[node name="Chair" type="Node3D" parent="." unique_id=963422290 node_paths=PackedStringArray("area", "seat_point", "exit_point")]
+[node name="Chair" type="Node3D" parent="." unique_id=963422290 node_paths=PackedStringArray("seat_point", "exit_point", "area")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7644264, 0.6688992, -2.910489)
-script = ExtResource("6_raj38")
-kind = 3
-prompt_text = "Sit"
-area = NodePath("Area3D")
+script = ExtResource("7_lbihj")
 seat_point = NodePath("Seat_Point")
 exit_point = NodePath("Stand_Point")
+prompt_text = "Sit"
+area = NodePath("Area3D")
 
 [node name="Stand_Point" type="Marker3D" parent="Chair" unique_id=1892516576]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.428829, -0.63462067, -0.74336886)
@@ -1288,12 +1288,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0058683753, -0.64646167, -
 
 [node name="Button_Toy" type="Node3D" parent="." unique_id=538063524 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4634804, 1.4173853, -3.1474643)
-script = ExtResource("6_raj38")
-kind = 1
+script = ExtResource("9_raj38")
+button = 0
 prompt_text = "Toy"
 area = NodePath("Area3D")
 sound_emitter = NodePath("FmodEventEmitter3D")
-button = 0
 
 [node name="Area3D" type="Area3D" parent="Button_Toy" unique_id=1308932065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00079652667, 0.006574869, -0.0009481907)
@@ -1319,12 +1318,11 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
 [node name="Button_Pacifier" type="Node3D" parent="." unique_id=1878537386 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4566995, 1.4246124, -3.2347038)
-script = ExtResource("6_raj38")
-kind = 1
+script = ExtResource("9_raj38")
+button = 1
 prompt_text = "Pacifier"
 area = NodePath("Area3D")
 sound_emitter = NodePath("FmodEventEmitter3D")
-button = 1
 
 [node name="Area3D" type="Area3D" parent="Button_Pacifier" unique_id=1689080769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00065377355, -0.0014529228, 0.006355047)
@@ -1350,12 +1348,11 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
 [node name="Button_Food" type="Node3D" parent="." unique_id=1854732470 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46056032, 1.4157201, -3.3128471)
-script = ExtResource("6_raj38")
-kind = 1
+script = ExtResource("9_raj38")
+button = 2
 prompt_text = "Food"
 area = NodePath("Area3D")
 sound_emitter = NodePath("FmodEventEmitter3D")
-button = 2
 
 [node name="Area3D" type="Area3D" parent="Button_Food" unique_id=459841387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00065377355, 0.0063877106, 0.004533291)
@@ -1381,12 +1378,11 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
 [node name="Button_NewBaby" type="Node3D" parent="." unique_id=1192209680 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.66611975, 0, -0.74584484, 0, 1, 0, 0.74584484, 0, 0.66611975, 6.7504954, 1.3924853, -2.0537047)
-script = ExtResource("6_raj38")
-kind = 1
+script = ExtResource("9_raj38")
+button = 3
 prompt_text = "Get new baby"
 area = NodePath("Area3D")
 sound_emitter = NodePath("FmodEventEmitter3D")
-button = 3
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="Button_NewBaby" unique_id=1789262984]
 transform = Transform3D(1, 0, 0, 0, -1.1920929e-07, -0.99999994, 0, 0.99999994, -1.1920929e-07, 0, 0, 0)
