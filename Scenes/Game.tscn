@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://5k40ofk222ak" path="res://UI/UI_Computer_Screen.tscn" id="5_tfod6"]
 [ext_resource type="Script" uid="uid://lvgbwtbmp326" path="res://Triggers/Interactable.gd" id="6_raj38"]
 [ext_resource type="PackedScene" uid="uid://yomyius6rgy8" path="res://World/Props/Chairs/env_stool.tscn" id="7_8e0uq"]
+[ext_resource type="Script" uid="uid://7y5mut280vma" path="res://World/Interactables/Chair.gd" id="7_lbihj"]
 [ext_resource type="Texture2D" uid="uid://dqcgh22nr18s0" path="res://World/Props/Electricals/ScrollBtnTexture.png" id="8_i0vto"]
 [ext_resource type="Texture2D" uid="uid://ckryoryab5rok" path="res://World/Props/Electricals/Computer.png" id="9_3jf1l"]
 [ext_resource type="Texture2D" uid="uid://dayrghnnvllag" path="res://World/Props/Electricals/Pc_Props_Texture.png" id="10_356ba"]
@@ -1260,14 +1261,14 @@ steps = NodePath("FmodEventEmitter3D")
 event_name = "event:/Walking"
 event_guid = "{438ca093-f602-408e-b164-e277a7b9c0af}"
 
-[node name="Chair" type="Node3D" parent="." unique_id=963422290 node_paths=PackedStringArray("area", "seat_point", "exit_point")]
+[node name="Chair" type="Node3D" parent="." unique_id=963422290 node_paths=PackedStringArray("seat_point", "exit_point", "area")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7644264, 0.6688992, -2.910489)
-script = ExtResource("6_raj38")
+script = ExtResource("7_lbihj")
+seat_point = NodePath("Seat_Point")
+exit_point = NodePath("Stand_Point")
 kind = 3
 prompt_text = "Sit"
 area = NodePath("Area3D")
-seat_point = NodePath("Seat_Point")
-exit_point = NodePath("Stand_Point")
 
 [node name="Stand_Point" type="Marker3D" parent="Chair" unique_id=1892516576]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.428829, -0.63462067, -0.74336886)
