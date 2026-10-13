@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cn6dbn16mvias"
-path="res://.godot/imported/Env_Power_Supply.fbx-9770e0eb541922c2cb644b2ee27ac338.scn"
+uid="uid://bqbhgbilpru0j"
+path="res://.godot/imported/Prop_Xray_Station.fbx-c32de27f7723269dee8d98cccc98dc7d.scn"
 
 [deps]
 
-source_file="res://World/Props/Electricals/Env_Power_Supply.fbx"
-dest_files=["res://.godot/imported/Env_Power_Supply.fbx-9770e0eb541922c2cb644b2ee27ac338.scn"]
+source_file="res://World/Props/Xray/Prop_Xray_Station.fbx"
+dest_files=["res://.godot/imported/Prop_Xray_Station.fbx-c32de27f7723269dee8d98cccc98dc7d.scn"]
 
 [params]
 

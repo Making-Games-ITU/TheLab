@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bias2u8si11n0"]
+
+[ext_resource type="PackedScene" uid="uid://bqbhgbilpru0j" path="res://World/Props/Xray/Prop_Xray_Station.fbx" id="1_641ax"]
+[ext_resource type="Texture2D" uid="uid://7iq2tjgsi7ll" path="res://World/Props/Xray/Wires.png" id="2_i8g14"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wji8x"]
+albedo_texture = ExtResource("2_i8g14")
+
+[node name="Prop_Xray_Station" unique_id=1610762300 instance=ExtResource("1_641ax")]
+
+[node name="BézierCurve_003" parent="Screen" parent_id_path=PackedInt32Array(1580937720) index="0" unique_id=1787036342]
+material_override = SubResource("StandardMaterial3D_wji8x")

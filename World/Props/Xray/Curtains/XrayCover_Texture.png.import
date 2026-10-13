@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx0xssdqbuoou"
-path.s3tc="res://.godot/imported/Surgery_Machine_Texture.png-d10a5eafddbfcc333a4a3070704af481.s3tc.ctex"
+uid="uid://bqtvb3gtfiavw"
+path.s3tc="res://.godot/imported/XrayCover_Texture.png-38f64a3dead81810dd8e9933e016f5a0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://World/Props/Machines/Surgery_Machine_Texture.png"
-dest_files=["res://.godot/imported/Surgery_Machine_Texture.png-d10a5eafddbfcc333a4a3070704af481.s3tc.ctex"]
+source_file="res://World/Props/Xray/Curtains/XrayCover_Texture.png"
+dest_files=["res://.godot/imported/XrayCover_Texture.png-38f64a3dead81810dd8e9933e016f5a0.s3tc.ctex"]
 
 [params]
 

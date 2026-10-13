@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dg2kdr4dq6wye"]
+
+[ext_resource type="PackedScene" uid="uid://bk563wn5l28w3" path="res://World/Props/Machines/Blood Collector/Prop_Blood_Collector_Machine.fbx" id="1_sny63"]
+[ext_resource type="Texture2D" uid="uid://cyft1j0jh3k7j" path="res://World/Props/Machines/Blood Collector/BloodSampler_Texture.png" id="2_ssw6b"]
+[ext_resource type="Texture2D" uid="uid://dayrghnnvllag" path="res://World/Props/Electricals/Computer/Pc_Props_Texture.png" id="3_8np5n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a06ba"]
+albedo_texture = ExtResource("2_ssw6b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp7ly"]
+albedo_texture = ExtResource("2_ssw6b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6oc4"]
+albedo_texture = ExtResource("3_8np5n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iiwog"]
+albedo_texture = ExtResource("3_8np5n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mtuo"]
+albedo_texture = ExtResource("3_8np5n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g11a6"]
+albedo_texture = ExtResource("3_8np5n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hogln"]
+albedo_texture = ExtResource("3_8np5n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b12te"]
+albedo_texture = ExtResource("3_8np5n")
+
+[node name="Prop_Blood_Collector_Machine" unique_id=2139538409 instance=ExtResource("1_sny63")]
+
+[node name="Cube_004" parent="." index="0" unique_id=692029644]
+material_override = SubResource("StandardMaterial3D_a06ba")
+
+[node name="Cube_005" parent="." index="1" unique_id=1842866250]
+material_override = SubResource("StandardMaterial3D_cp7ly")
+
+[node name="Off_On-btn_001" parent="." index="2" unique_id=1268549279]
+material_override = SubResource("StandardMaterial3D_x6oc4")
+
+[node name="Off_On-btn_002" parent="." index="3" unique_id=527317303]
+material_override = SubResource("StandardMaterial3D_iiwog")
+
+[node name="Off_On-btn_003" parent="." index="4" unique_id=1413507842]
+material_override = SubResource("StandardMaterial3D_6mtuo")
+
+[node name="Open_Capsule_Button" parent="." index="5" unique_id=898128059]
+material_override = SubResource("StandardMaterial3D_g11a6")
+
+[node name="Open_Capsule_Button_001" parent="." index="6" unique_id=742595139]
+material_override = SubResource("StandardMaterial3D_hogln")
+
+[node name="Open_Capsule_Button_002" parent="." index="7" unique_id=1269907080]
+material_override = SubResource("StandardMaterial3D_b12te")

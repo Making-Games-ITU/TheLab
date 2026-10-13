@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://csbjoo1p6ge3t"
-path="res://.godot/imported/Env_Machine_Surgical.fbx-1370e6428d6d48a6bfd40f78f23b7780.scn"
+path="res://.godot/imported/Env_Machine_Surgical.fbx-24b33fe05c016bb9c29e89fde9f6f0b5.scn"
 
 [deps]
 
-source_file="res://World/Props/Machines/Env_Machine_Surgical.fbx"
-dest_files=["res://.godot/imported/Env_Machine_Surgical.fbx-1370e6428d6d48a6bfd40f78f23b7780.scn"]
+source_file="res://World/Props/Machines/Surgery Machine/Env_Machine_Surgical.fbx"
+dest_files=["res://.godot/imported/Env_Machine_Surgical.fbx-24b33fe05c016bb9c29e89fde9f6f0b5.scn"]
 
 [params]
 

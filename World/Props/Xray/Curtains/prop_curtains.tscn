@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dp6ay0uxk6bw7"]
+
+[ext_resource type="PackedScene" uid="uid://cjqsl3lsembfr" path="res://World/Props/Xray/Curtains/Prop_Curtains.fbx" id="1_7tv41"]
+[ext_resource type="Texture2D" uid="uid://dn0ql2qw784bs" path="res://World/Environments/Room/lab-wall.jpg" id="2_krkm1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ew6v"]
+albedo_texture = ExtResource("2_krkm1")
+
+[node name="Prop_Curtains" unique_id=164655211 instance=ExtResource("1_7tv41")]
+
+[node name="Cube_001" parent="." index="0" unique_id=1576350224]
+material_override = SubResource("StandardMaterial3D_3ew6v")
