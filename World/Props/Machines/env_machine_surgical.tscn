@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://l6wljvsc2bg1"]
-
-[ext_resource type="PackedScene" uid="uid://csbjoo1p6ge3t" path="res://World/Props/Machines/Env_Machine_Surgical.fbx" id="1_cwkid"]
-
-[node name="Env_Machine_Surgical" unique_id=1288491871 instance=ExtResource("1_cwkid")]

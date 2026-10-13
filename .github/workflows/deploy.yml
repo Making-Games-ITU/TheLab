@@ -1,9 +1,11 @@
-name: Build and Deploy Web to itch.io
+name: Build desktop (downloadable)
 
-# A merge into main produces a push event on main, so this single trigger
-# covers both "pushed straight to main" and "PR merged into main".
 on:
+  workflow_dispatch:       
   push:
+    branches:
+      - main               
+  pull_request:
     branches:
       - main
 
@@ -12,60 +14,66 @@ permissions:
 
 env:
   GODOT_VERSION: 4.7.2
-  ITCH_TARGET: primordialmass/the-lab  # <user>/<game>
+  GAME_NAME: TheLab
 
 jobs:
-  export-web:
-    name: Export Web build
+  export-desktop:
+    name: Export ${{ matrix.name }}
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.7.2
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # "preset" must match the preset name in Project -> Export exactly.
+          - name: windows
+            preset: "Windows Desktop"
+            file: TheLab.exe
+          - name: linux
+            preset: "Linux"
+            file: TheLab.x86_64
     steps:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Update
-        run: apt-get update && apt-get install -y libfontconfig1
+      - name: Install zip
+        run: apt-get update && apt-get install -y --no-install-recommends zip
 
       - name: Move export templates into place
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
 
+      # The FMOD *editor* plugin segfaults the headless editor during import.
+      # Exported games don't use it (the GDExtension and autoload stay), so
+      # it's off in this CI checkout only.
+      - name: Disable FMOD editor plugin (CI only)
+        run: |
+          sed -i 's#"res://addons/fmod/plugin\.cfg"##' project.godot
+          grep -n "enabled" project.godot
+
       - name: Import project resources
         run: godot --headless --import
 
-      - name: Export Web build
+      - name: Export ${{ matrix.name }} build
         run: |
-          mkdir -v -p build/web
-          godot --headless --export-release "Web" "$(pwd)/build/web/index.html"
+          mkdir -v -p "build/${{ matrix.name }}"
+          godot --headless --export-release "${{ matrix.preset }}" "$(pwd)/build/${{ matrix.name }}/${{ matrix.file }}" \
+            || echo "::warning::godot export exited non-zero (exit $?)"
+          test -f "build/${{ matrix.name }}/${{ matrix.file }}" \
+            || { echo "::error::Export did not produce ${{ matrix.file }}. Is the preset name correct?"; exit 1; }
+          find "build/${{ matrix.name }}" -type f | sort
 
-      - name: Upload build artifact
+      - name: Zip build
+        run: |
+          chmod +x "build/${{ matrix.name }}/${{ matrix.file }}" || true
+          cd "build/${{ matrix.name }}"
+          zip -r "../${GAME_NAME}-${{ matrix.name }}.zip" .
+
+      - name: Upload build
         uses: actions/upload-artifact@v7
         with:
-          name: web-build
-          path: build/web
-          retention-days: 3
-
-  deploy-itch:
-    name: Push to itch.io
-    needs: export-web
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download build artifact
-        uses: actions/download-artifact@v7
-        with:
-          name: web-build
-          path: build/web
-
-      - name: Install butler
-        run: |
-          curl -L -o butler.zip https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default
-          unzip butler.zip
-          chmod +x butler
-          ./butler -V
-
-      - name: Push build to itch.io
-        env:
-          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-        run: ./butler push build/web "$ITCH_TARGET:web"
+          name: ${{ env.GAME_NAME }}-${{ matrix.name }}
+          path: build/${{ env.GAME_NAME }}-${{ matrix.name }}.zip
+          retention-days: 7

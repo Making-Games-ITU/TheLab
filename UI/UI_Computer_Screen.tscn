@@ -2,20 +2,14 @@
 
 [ext_resource type="Script" uid="uid://2e1f8edmr2kf" path="res://UI/UI_Computer_Screen.gd" id="1_pssqn"]
 
-[sub_resource type="QuadMesh" id="1"]
-size = Vector2(3.5, 3)
+[sub_resource type="QuadMesh" id="QuadMesh_vweq0"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_28i8f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_oic2m"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukcq2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1des2"]
 resource_local_to_scene = true
-transparency = 1
-shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_28i8f")
-
-[sub_resource type="BoxShape3D" id="4"]
-size = Vector3(3, 2, 0.1)
+albedo_texture = SubResource("ViewportTexture_oic2m")
 
 [node name="ComputerScreen" type="Node3D" unique_id=1520417735]
 process_mode = 3
@@ -55,36 +49,21 @@ offset_right = 380.0
 offset_bottom = 300.0
 color = Color(0, 0.66749895, 1.347661e-06, 1)
 
+[node name="Baby_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=939785837]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Baby #:"
+
 [node name="Display_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=1411706259]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "WELL DONE!"
-
-[node name="Incorrect_Color" type="ColorRect" parent="SubViewport/GUI" unique_id=739142534]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(1, 0, 0, 1)
-
-[node name="Incorrect_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=205413971]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-translation_context = &"@onready var display_text = $SubViewport/GUI/Display_Text"
-text = "..."
+layout_mode = 0
+offset_left = 17.0
+offset_top = 45.26
+offset_right = 135.80505
+offset_bottom = 122.755005
 
 [node name="Quad" type="MeshInstance3D" parent="." unique_id=526908480]
 editor_description = "To setup this MeshInstance3D:
@@ -93,12 +72,5 @@ editor_description = "To setup this MeshInstance3D:
 * Set the Albedo Texture of StandardMaterial3D to new ViewportTexture and set the Viewport Path.
 * Transparency to Alpha.
 * Shading to Unshaded."
-mesh = SubResource("1")
-surface_material_override/0 = SubResource("StandardMaterial3D_ukcq2")
-
-[node name="Area3D" type="Area3D" parent="Quad" unique_id=942437969]
-collision_layer = 2
-input_capture_on_drag = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Quad/Area3D" unique_id=378674883]
-shape = SubResource("4")
+mesh = SubResource("QuadMesh_vweq0")
+surface_material_override/0 = SubResource("StandardMaterial3D_1des2")

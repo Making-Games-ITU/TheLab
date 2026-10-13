@@ -4,7 +4,7 @@ extends Node3D
 @onready var display_text = $SubViewport/GUI/Display_Text
 @onready var baby_text = $SubViewport/GUI/Baby_Text
 
-enum Answer {CORRECT,INCORRECT,NONE}
+enum Answer { CORRECT,INCORRECT,NONE }
 
 var _old_correct_count : int = 0
 var _old_wrong_count : int = 0
