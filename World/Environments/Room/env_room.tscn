@@ -89,4 +89,5 @@ shape = SubResource("ConcavePolygonShape3D_lcxuy")
 shape = SubResource("ConcavePolygonShape3D_3nexl")
 
 [node name="Window_001" parent="." index="12" unique_id=512004036]
+sorting_offset = 10.0
 material_override = ExtResource("2_6eb5k")

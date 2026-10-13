@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cmclndu1hvhfj"]
+
+[ext_resource type="PackedScene" uid="uid://b004tgc8ppsoe" path="res://World/Environments/Pit/Env_Pit.fbx" id="1_trsmc"]
+
+[node name="Env_Pit" unique_id=139446197 instance=ExtResource("1_trsmc")]
+
+[node name="Cube_002" parent="." index="0" unique_id=1517929390]
+transform = Transform3D(0.9448346, 0, 0, 0, 0.36831364, 0, 0, 0, 0.36831364, -0.09398174, -0.10506663, -0.0067510605)
+
+[node name="Cube_011" parent="." index="1" unique_id=1923675183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044901848, -0.10506663, 0.47668839)
