@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bhy0ipymuf831"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hcxrd"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wmawy"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="InteractableObject" type="Node3D" unique_id=1967147911]
+
+[node name="Area3D2" type="Area3D" parent="." unique_id=910346152]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D2" unique_id=1955774864]
+mesh = SubResource("BoxMesh_hcxrd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=229212492]
+shape = SubResource("BoxShape3D_wmawy")

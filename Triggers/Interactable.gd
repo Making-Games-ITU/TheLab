@@ -13,6 +13,7 @@ signal interacted(interactor: Node)
 @export var outline_material: ShaderMaterial = preload("res://Shaders/Outline_Shader_Material.tres")
 @export var outline_meshes: Array[MeshInstance3D] = [] # In case multiple things in mesh
 
+#REMEMBER TO SET COLLISION LAYER IN THE INSPECTOR OF THE AREA3D NODE FOR INTERACTION TO BE DETECTED WITH RAYCAST.
 func _ready() -> void:
 	if outline_meshes.is_empty(): # In case multiple things in mesh
 		for m in find_children("*", "MeshInstance3D", true, false):
