@@ -2,8 +2,8 @@ extends Node3D
 
 @onready var display_color = $SubViewport/GUI/Display_Color
 @onready var display_text = $SubViewport/GUI/Display_Text
-@onready var baby_text = $SubViewport/GUI/Baby_Text
-@onready var baby_needs_text = $SubViewport/GUI/Baby_Needs_Text
+@onready var body_text = $SubViewport/GUI/Body_Text
+@onready var body_condition_text = $SubViewport/GUI/Body_Condition_Text
 @onready var win_lose_text = $SubViewport/GUI/Win_Lose_Text
 
 enum Answer { CORRECT, INCORRECT, NONE }
@@ -57,19 +57,19 @@ func _check_for_next_baby() -> void:
 		win_lose_text.text = ""
 
 func _process(_delta: float) -> void:
-	baby_text.text = GameStats.baby_ID
-	baby_needs_text.text = GameStats.baby_feeling
+	body_text.text = GameStats.body_ID
+	body_condition_text.text = "WIP"
 
-	# Compare with != so a reset to 0 (new baby) doesn't leave stale counts behind
-	if GameStats.correct_count != _old_correct_count:
-		if GameStats.correct_count > _old_correct_count:
-			_show_answer(Answer.CORRECT)
-		_old_correct_count = GameStats.correct_count
-
-	if GameStats.wrong_count != _old_wrong_count:
-		if GameStats.wrong_count > _old_wrong_count:
-			_show_answer(Answer.INCORRECT)
-		_old_wrong_count = GameStats.wrong_count
-
-	_check_for_next_baby()
-	_check_win_lose()
+	## Compare with != so a reset to 0 (new baby) doesn't leave stale counts behind
+	#if GameStats.correct_count != _old_correct_count:
+		#if GameStats.correct_count > _old_correct_count:
+			#_show_answer(Answer.CORRECT)
+		#_old_correct_count = GameStats.correct_count
+#
+	#if GameStats.wrong_count != _old_wrong_count:
+		#if GameStats.wrong_count > _old_wrong_count:
+			#_show_answer(Answer.INCORRECT)
+		#_old_wrong_count = GameStats.wrong_count
+#
+	#_check_for_next_baby()
+	#_check_win_lose()

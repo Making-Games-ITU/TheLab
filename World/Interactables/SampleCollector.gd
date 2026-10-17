@@ -2,7 +2,7 @@ extends Interactable
 
 var _vial_inserted : bool = false
 var _sample_ready : bool = false
-@onready var _sample_collector = $Area3D2
+@onready var _sample_collector = $Area3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super() 
