@@ -5,7 +5,15 @@
 [ext_resource type="Script" uid="uid://cwlp16ommdbfg" path="res://Systems/Game_Manager.gd" id="3_rdrb8"]
 [ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="4_3cgfy"]
 [ext_resource type="PackedScene" uid="uid://p1s3d1dytn62" path="res://Entities/Player/Player.tscn" id="5_5643u"]
-[ext_resource type="Script" uid="uid://cmcmbnsforjle" path="res://World/Interactables/RequestBody.gd" id="7_rdrb8"]
+[ext_resource type="Script" uid="uid://dg1o1gujlh3uh" path="res://World/Interactables/BodyDisposal.gd" id="7_3cgfy"]
+[ext_resource type="Script" uid="uid://cmcmbnsforjle" path="res://World/Interactables/BodyRequest.gd" id="7_rdrb8"]
+[ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/VialCollect.gd" id="8_3cgfy"]
+[ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/SampleCollector.gd" id="9_5643u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qt5wh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qt5wh"]
+size = Vector3(10, 1, 10)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fo3i4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,11 +26,6 @@ sky_material = SubResource("ProceduralSkyMaterial_fo3i4")
 background_mode = 2
 sky = SubResource("Sky_ypogi")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qt5wh"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_qt5wh"]
-size = Vector3(10, 1, 10)
-
 [sub_resource type="BoxMesh" id="BoxMesh_hcxrd"]
 size = Vector3(0.5, 0.5, 0.5)
 
@@ -34,7 +37,7 @@ length = 0.001
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Area3D2/MeshInstance3D")
+tracks/0/path = NodePath("../Body")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 3.7469306, 4.064663, -2.5712483)
@@ -44,7 +47,7 @@ resource_name = "body incoming"
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Area3D2/MeshInstance3D")
+tracks/0/path = NodePath("../Body")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 3.7469306, 4.064663, -2.5712483, 1, 1, 1.3673282, 0.97200346, -2.551844)
@@ -55,9 +58,40 @@ _data = {
 &"body": SubResource("Animation_rdrb8")
 }
 
+[sub_resource type="BoxMesh" id="BoxMesh_ypogi"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdrb8"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rdrb8"]
+size = Vector3(0.5, 1.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3cgfy"]
+size = Vector3(0.5, 1.5, 0.5)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qt5wh"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5643u"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3cgfy"]
+material = SubResource("StandardMaterial3D_5643u")
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5643u"]
+size = Vector3(0.5, 0.5, 0.5)
+
 [node name="InteractableTest" type="Node3D" unique_id=52062334]
+
+[node name="Floor" type="Area3D" parent="." unique_id=321735157]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1899470193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_qt5wh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=804989797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_qt5wh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=235462954]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 18.463675, 0)
@@ -85,19 +119,10 @@ steps = NodePath("FmodEventEmitter3D")
 event_name = "event:/Walking"
 event_guid = "{438ca093-f602-408e-b164-e277a7b9c0af}"
 
-[node name="Area3D" type="Area3D" parent="." unique_id=321735157]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1899470193]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_qt5wh")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=804989797]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-mesh = SubResource("BoxMesh_qt5wh")
-
 [node name="RequestBody" type="Node3D" parent="." unique_id=1967147911 node_paths=PackedStringArray("anim", "area")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06898022, 0.83587205, -2.8790162)
 script = ExtResource("7_rdrb8")
+prompt_text = "Request New Body"
 anim = NodePath("Area3D2/Body drop")
 area = NodePath("Area3D2")
 
@@ -115,9 +140,11 @@ shape = SubResource("BoxShape3D_wmawy")
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_3cgfy")
 
-[node name="DisposeBody" type="Node3D" parent="." unique_id=1670078487 node_paths=PackedStringArray("area")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06898022, 0.83587205, -2.8790162)
-script = ExtResource("7_rdrb8")
+[node name="DisposeBody" type="Node3D" parent="." unique_id=1670078487 node_paths=PackedStringArray("anim", "area")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.836, -2.879)
+script = ExtResource("7_3cgfy")
+prompt_text = "Dispose body"
+anim = NodePath("../RequestBody/Area3D2/Body drop")
 area = NodePath("Area3D2")
 
 [node name="Area3D2" type="Area3D" parent="DisposeBody" unique_id=1830171072]
@@ -125,13 +152,42 @@ collision_layer = 256
 collision_mask = 256
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DisposeBody/Area3D2" unique_id=1266266661]
-mesh = SubResource("BoxMesh_hcxrd")
+mesh = SubResource("BoxMesh_ypogi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DisposeBody/Area3D2" unique_id=483944746]
-shape = SubResource("BoxShape3D_wmawy")
+shape = SubResource("BoxShape3D_rdrb8")
 
-[node name="Area3D2" type="Area3D" parent="." unique_id=2119932745]
+[node name="Vial Cabinet" type="Node3D" parent="." unique_id=260090014 node_paths=PackedStringArray("area")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.836, -2.879)
+script = ExtResource("8_3cgfy")
+prompt_text = "Take Empty Vial"
+area = NodePath("Area3D2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D2" unique_id=913074688]
+[node name="Area3D2" type="Area3D" parent="Vial Cabinet" unique_id=360833870]
+collision_layer = 256
+collision_mask = 256
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Vial Cabinet/Area3D2" unique_id=1057272166]
+mesh = SubResource("BoxMesh_rdrb8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vial Cabinet/Area3D2" unique_id=388310787]
+shape = SubResource("BoxShape3D_3cgfy")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=913074688]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.7469306, 4.064663, -2.5712483)
 mesh = SubResource("CapsuleMesh_qt5wh")
+
+[node name="SampleCollector" type="Node3D" parent="." unique_id=1217328641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.836, -2.879)
+script = ExtResource("9_5643u")
+prompt_text = "Insert empty vial"
+
+[node name="Area3D2" type="Area3D" parent="SampleCollector" unique_id=720737945]
+collision_layer = 256
+collision_mask = 256
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SampleCollector/Area3D2" unique_id=2080350444]
+mesh = SubResource("BoxMesh_3cgfy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SampleCollector/Area3D2" unique_id=635649312]
+shape = SubResource("BoxShape3D_5643u")

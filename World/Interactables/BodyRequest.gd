@@ -19,17 +19,12 @@ func _request_body() -> void:
 		print("Warning: Containment chamber at max capacity. Dispose current subject.")
 	else:
 		_new_body()
-		_increase_bodyID()
 		GameStats.body_exists = true
-		
-	
 
 func _new_body():
 	print("New subject requested")
 	_increase_bodyID()
 	print(GameStats.body_ID)
-
-	
 	# Body variance should be here
 	# Potential game difficulty increase would be set here
 
