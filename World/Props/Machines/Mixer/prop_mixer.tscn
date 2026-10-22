@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cdrmlpqjbyowt"]
+
+[ext_resource type="PackedScene" uid="uid://dh7hj18kfry5t" path="res://World/Props/Machines/Mixer/Prop_Mixer.fbx" id="1_c7708"]
+[ext_resource type="Texture2D" uid="uid://dpv6dd0ver3yb" path="res://World/Props/Machines/Mixer/NCentrifuge.png" id="2_sbv7e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82owd"]
+albedo_texture = ExtResource("2_sbv7e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyadt"]
+albedo_texture = ExtResource("2_sbv7e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_li5gh"]
+albedo_texture = ExtResource("2_sbv7e")
+
+[node name="Prop_Mixer" unique_id=1780799766 instance=ExtResource("1_c7708")]
+
+[node name="Centrifuge" parent="." index="0" unique_id=1104801522]
+material_override = SubResource("StandardMaterial3D_82owd")
+
+[node name="Cube_016" parent="Centrifuge" index="2" unique_id=1942725846]
+material_override = SubResource("StandardMaterial3D_qyadt")
+
+[node name="Rotor" parent="Centrifuge" index="3" unique_id=1628928166]
+material_override = SubResource("StandardMaterial3D_li5gh")

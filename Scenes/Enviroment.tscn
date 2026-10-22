@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://yomyius6rgy8" path="res://World/Props/Chairs/env_stool.tscn" id="8_a7i85"]
 [ext_resource type="PackedScene" uid="uid://d3gcvi4gahlb7" path="res://World/Props/Electricals/Computer/env_screen.tscn" id="8_d3l1s"]
 [ext_resource type="PackedScene" uid="uid://xvx3yha5ujc" path="res://World/Props/Tables/env_table_surgical.tscn" id="9_k45rw"]
-[ext_resource type="PackedScene" uid="uid://bp0030kh5o7rt" path="res://World/Props/Locker/env_locker.tscn" id="11_l5ogt"]
+[ext_resource type="PackedScene" uid="uid://bp0030kh5o7rt" path="res://World/Props/Storage/Locker/env_locker.tscn" id="11_l5ogt"]
 [ext_resource type="PackedScene" uid="uid://dbvq82xs7d6jo" path="res://World/Props/Buttons/Env_Button_Open_Close.fbx" id="12_vgklg"]
 [ext_resource type="PackedScene" uid="uid://bw8rwwy4vb3ck" path="res://World/Props/Buttons/env_button_emergancy.tscn" id="13_0i4t6"]
 [ext_resource type="PackedScene" uid="uid://b68fqtutgyrws" path="res://World/Props/Tables/env_table_no_sink.tscn" id="14_0i4t6"]
@@ -24,6 +24,12 @@
 [ext_resource type="PackedScene" uid="uid://dp6ay0uxk6bw7" path="res://World/Props/Xray/Curtains/prop_curtains.tscn" id="21_pp7um"]
 [ext_resource type="PackedScene" uid="uid://coimfyram3dq1" path="res://World/Props/Corpse Tube/prop_corpse_tube.tscn" id="22_2aye7"]
 [ext_resource type="PackedScene" uid="uid://5vn584og5dnk" path="res://World/Props/Doors/doors_sliding.tscn" id="23_bdc5n"]
+[ext_resource type="PackedScene" uid="uid://bofhacbjojc6c" path="res://World/Items/Vial/item_vial.tscn" id="25_yqnf3"]
+[ext_resource type="PackedScene" uid="uid://b6pfyhbaso5ix" path="res://World/Props/Machines/Micro Scope/prop_micro_scope.tscn" id="26_elwq1"]
+[ext_resource type="PackedScene" uid="uid://cdrmlpqjbyowt" path="res://World/Props/Machines/Mixer/prop_mixer.tscn" id="27_ldlh3"]
+[ext_resource type="PackedScene" uid="uid://bvdshqu0n2t6s" path="res://World/Props/Storage/Test Tube Storage/prop_test_tube_storage.tscn" id="28_ldlh3"]
+[ext_resource type="PackedScene" uid="uid://dt51tjc003vvj" path="res://World/Props/Machines/Filling/prop_filling_machine.tscn" id="29_e26fp"]
+[ext_resource type="PackedScene" uid="uid://ehrseny5tlqp" path="res://World/Items/Document/item_document.tscn" id="30_h0isr"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -82,6 +88,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5917645, 0, 7.336006)
 
 [node name="env_ceiling_lamp" parent="Lights" unique_id=216051645 instance=ExtResource("2_opveo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.6584425, 2.6358595, -10.420589)
+
+[node name="env_ceiling_lamp2" parent="Lights" unique_id=1281887983 instance=ExtResource("2_opveo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.6584425, 2.6358595, -7.4205894)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(1281887983, 1867769126) index="0" unique_id=1120609968]
+light_energy = 0.176
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+spot_attenuation = 1.37
+
+[node name="env_ceiling_lamp7" parent="Lights" unique_id=504080912 instance=ExtResource("2_opveo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -2.6584425, 2.6358595, -7.4205894)
+
+[node name="Cylinder" parent="Lights/env_ceiling_lamp7" index="0" unique_id=1867769126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp7/Cylinder" index="0" unique_id=1120609968]
+light_energy = 0.176
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+spot_attenuation = 1.37
+
+[node name="env_ceiling_lamp8" parent="Lights" unique_id=554296542 instance=ExtResource("2_opveo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.6584425, 2.6358595, -7.4205894)
+
+[node name="Cylinder" parent="Lights/env_ceiling_lamp8" index="0" unique_id=1867769126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7934365, 0, 0)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp8/Cylinder" index="0" unique_id=1120609968]
+light_energy = 0.176
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+spot_attenuation = 1.37
 
 [node name="env_ceiling_lamp4" parent="Lights" unique_id=1279039200 instance=ExtResource("2_opveo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.69838953, 2.603364, -11.7987995)
@@ -235,6 +274,9 @@ transform = Transform3D(0.66611975, 0, -0.74584484, 0, 1, 0, 0.74584484, 0, 0.66
 [node name="Env_Table_NoSink" parent="." unique_id=401042046 instance=ExtResource("14_0i4t6")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.6806741, 0.058715343, 0.3922211)
 
+[node name="Env_Table_NoSink" parent="Env_Table_NoSink" unique_id=1416737881 instance=ExtResource("14_0i4t6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.319326, 0.058715343, 0.011916071)
+
 [node name="Env_Table_Sink" parent="." unique_id=1923583669 instance=ExtResource("15_c84mv")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.7759504, 0.05871582, 0.39095306)
 
@@ -243,17 +285,6 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.77
 [node name="Corpse2" parent="." unique_id=1466353991 instance=ExtResource("17_f2bkq")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9020357, -0.124072075, -4.55774)
 
-[node name="Skeleton3D" parent="Corpse2/Armature" parent_id_path=PackedInt32Array(1466353991, 960439453) index="0" unique_id=1479897293]
-bones/5/rotation = Quaternion(-0.055, 0, 0, 1)
-bones/9/rotation = Quaternion(0.60373, 0.144338, -0.032733, 0.964496)
-bones/10/rotation = Quaternion(-0.04593, -0.201803, 0.052116, 0.953953)
-bones/21/rotation = Quaternion(0.587966, -0.127503, 0.028735, 0.967165)
-bones/22/rotation = Quaternion(-0.041269, 0.183861, -0.045087, 0.958243)
-bones/34/rotation = Quaternion(-0.162076, 0.049282, -0.029124, 0.859498)
-bones/37/rotation = Quaternion(-0.000548, 0.009011, 5.058099, 0.060969)
-bones/38/rotation = Quaternion(-0.052244, -0.001151, 0.036945, 0.998393)
-bones/39/rotation = Quaternion(-0.064889, -0.046908, 0.028623, 0.852329)
-
 [node name="Env_Pit" parent="Corpse2/Armature" parent_id_path=PackedInt32Array(1466353991, 960439453) index="1" unique_id=139446197 instance=ExtResource("18_vtb8b")]
 transform = Transform3D(-4.371139e-10, 0, 0.01, 7.54979e-10, 0.01, 3.3001178e-17, -0.01, 7.54979e-10, -4.371139e-10, 0.00025868416, 0.0012407209, -0.0009789392)
 
@@ -261,7 +292,7 @@ transform = Transform3D(-4.371139e-10, 0, 0.01, 7.54979e-10, 0.01, 3.3001178e-17
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0785131, 0.044901848, -0.10506663, 0.54307103)
 
 [node name="Prop_Xray_Station" parent="." unique_id=1610762300 instance=ExtResource("18_cpdng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.498054, 1.517076, -3.1365347)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4993663, 1.5193069, -3.1362112)
 
 [node name="Prop_Control_Panel" parent="." unique_id=1145011065 instance=ExtResource("19_03mnb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.548418, 1.3248205, -6)
@@ -287,6 +318,33 @@ transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70
 [node name="Doors_Sliding2" parent="." unique_id=95659695 instance=ExtResource("23_bdc5n")]
 transform = Transform3D(0, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0, 8.902527, 1.0764008, 0.0003851652)
 
+[node name="Item_Vial" parent="." unique_id=739392615 instance=ExtResource("25_yqnf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.168179, 0.7786383, -5.16376)
+
+[node name="Item_Vial2" parent="." unique_id=1852808638 instance=ExtResource("25_yqnf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0820475, 0.7786383, -4.7569327)
+
+[node name="Item_Vial3" parent="." unique_id=1729881472 instance=ExtResource("25_yqnf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9503372, 0.7786383, -5.0231147)
+
+[node name="Prop_Micro_Scope" parent="." unique_id=924130864 instance=ExtResource("26_elwq1")]
+transform = Transform3D(0.9349908, 0, 0.35467193, 0, 1, 0, -0.35467193, 0, 0.9349908, 0.45448697, 1.0137591, 0.20982832)
+
+[node name="Prop_Mixer" parent="." unique_id=1780799766 instance=ExtResource("27_ldlh3")]
+transform = Transform3D(0.9862329, 0, -0.16536295, 0, 1, 0, 0.16536295, 0, 0.9862329, 4.5032105, 0.9970198, 0.3052703)
+
+[node name="Prop_Test_Tube_Storage" parent="." unique_id=786496698 instance=ExtResource("28_ldlh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1474065, 0.9952153, 0.3004669)
+
+[node name="Prop_Filling_Machine" parent="." unique_id=1109295380 instance=ExtResource("29_e26fp")]
+transform = Transform3D(0.35674953, 0, 0.93420005, 0, 1, 0, -0.93420005, 0, 0.35674953, 2.8659246, 0.030189812, -2.559568)
+
+[node name="Item_document" parent="." unique_id=439975249 instance=ExtResource("30_h0isr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1509786, 1.0509942, -3.1255083)
+
+[editable path="Lights/env_ceiling_lamp2"]
+[editable path="Lights/env_ceiling_lamp7"]
+[editable path="Lights/env_ceiling_lamp8"]
 [editable path="Lights/env_ceiling_lamp4"]
 [editable path="Lights/env_ceiling_lamp6"]
 [editable path="Lights/env_ceiling_lamp3"]

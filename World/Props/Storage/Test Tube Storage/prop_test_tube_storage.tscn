@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bvdshqu0n2t6s"]
+
+[ext_resource type="PackedScene" uid="uid://ds6b27hjs6m8s" path="res://World/Props/Storage/Test Tube Storage/Prop_Test_Tube_Storage.fbx" id="1_exqxq"]
+[ext_resource type="Texture2D" uid="uid://dby18kwc4lr7e" path="res://World/Props/Storage/Test Tube Storage/Storage_Texture.png" id="2_vdgxc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w67co"]
+albedo_texture = ExtResource("2_vdgxc")
+
+[node name="Prop_Test_Tube_Storage" unique_id=786496698 instance=ExtResource("1_exqxq")]
+
+[node name="Cube_015" parent="." index="0" unique_id=840155606]
+material_override = SubResource("StandardMaterial3D_w67co")

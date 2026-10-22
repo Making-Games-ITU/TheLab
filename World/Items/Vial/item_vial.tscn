@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bofhacbjojc6c"]
+
+[ext_resource type="PackedScene" uid="uid://dwho5r8t676ia" path="res://World/Items/Vial/Item_Vial.fbx" id="1_ej313"]
+
+[node name="Item_Vial" unique_id=739392615 instance=ExtResource("1_ej313")]

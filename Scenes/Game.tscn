@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://1h75cfa5b4jp" path="res://World/Props/Tables/env_table.tscn" id="16_0iyqm"]
 [ext_resource type="PackedScene" uid="uid://dd4lliduo7nou" path="res://World/Props/Electricals/Power Supply/env_power_supply.tscn" id="17_jn8rg"]
 [ext_resource type="PackedScene" uid="uid://xvx3yha5ujc" path="res://World/Props/Tables/env_table_surgical.tscn" id="18_umnjm"]
-[ext_resource type="PackedScene" uid="uid://bp0030kh5o7rt" path="res://World/Props/Locker/env_locker.tscn" id="19_4eqlp"]
+[ext_resource type="PackedScene" uid="uid://bp0030kh5o7rt" path="res://World/Props/Storage/Locker/env_locker.tscn" id="19_4eqlp"]
 [ext_resource type="PackedScene" uid="uid://dbvq82xs7d6jo" path="res://World/Props/Buttons/Env_Button_Open_Close.fbx" id="21_rajel"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]

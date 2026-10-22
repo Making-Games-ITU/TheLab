@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyqiowj6eo8n3"
-path.s3tc="res://.godot/imported/locker_texture.png-7c47537f1494d63c87b3b89f0c96a09b.s3tc.ctex"
+uid="uid://dby18kwc4lr7e"
+path.s3tc="res://.godot/imported/Storage_Texture.png-85159b89c1825e13de466456119f9e02.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://World/Props/Locker/locker_texture.png"
-dest_files=["res://.godot/imported/locker_texture.png-7c47537f1494d63c87b3b89f0c96a09b.s3tc.ctex"]
+source_file="res://World/Props/Storage/Test Tube Storage/Storage_Texture.png"
+dest_files=["res://.godot/imported/Storage_Texture.png-85159b89c1825e13de466456119f9e02.s3tc.ctex"]
 
 [params]
 

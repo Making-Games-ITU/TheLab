@@ -1,67 +1,15 @@
-[gd_scene format=4 uid="uid://bias2u8si11n0"]
+[gd_scene format=3 uid="uid://bias2u8si11n0"]
 
 [ext_resource type="PackedScene" uid="uid://bqbhgbilpru0j" path="res://World/Props/Xray/Prop_Xray_Station.fbx" id="1_641ax"]
-[ext_resource type="Texture2D" uid="uid://7iq2tjgsi7ll" path="res://World/Props/Xray/Wires.png" id="2_i8g14"]
+[ext_resource type="Texture2D" uid="uid://dayrghnnvllag" path="res://World/Props/Electricals/Computer/Pc_Props_Texture.png" id="2_43iua"]
+[ext_resource type="PackedScene" uid="uid://dbvq82xs7d6jo" path="res://World/Props/Buttons/Env_Button_Open_Close.fbx" id="2_yfwwn"]
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="3_ocrte"]
 [ext_resource type="Texture2D" uid="uid://vmtaftgbh7lg" path="res://UI/Screen/images xray.jpg" id="5_yfwwn"]
 [ext_resource type="Texture2D" uid="uid://bk66ydditnowo" path="res://UI/Screen/Logo Kras.png" id="7_r85tw"]
 [ext_resource type="Shader" uid="uid://cilu8q1ppqotc" path="res://World/Props/Electricals/Computer/env_screen.gdshader" id="8_8rnuq"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wji8x"]
-albedo_texture = ExtResource("2_i8g14")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_f2h1h"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_yfwwn"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddh1l"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_f2h1h")
-emission_enabled = true
-emission_texture = SubResource("ViewportTexture_yfwwn")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tao35"]
-resource_name = "Screen"
-vertex_color_use_as_albedo = true
-albedo_color = Color(0, 0, 0, 1)
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_ba16b"]
-_surfaces = [{
-"aabb": AABB(-0.004709959, -0.24006596, -0.5374159, 0.030502811, 0.48013192, 1.0748317),
-"format": 34359742465,
-"index_count": 18,
-"index_data": PackedByteArray("AAABAAIAAwACAAEAAQAEAAMAAgAFAAAABgAAAAUABQAHAAYA"),
-"name": "Screen",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AFaau9rTdb6KLb8+AFaau9rTdb6MLb++AFaau9vTdT6KLb++iEvTPNvTdT4XlAm/iEvTPNrTdb4XlAm/AFaau9vTdT6MLb8+iEvTPNrTdb4WlAk/iEvTPNvTdT4WlAk/")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_ocrte"]
-resource_local_to_scene = true
-resource_name = "Cube_119"
-_surfaces = [{
-"aabb": AABB(-0.004709959, -0.24006596, -0.5374159, 0.030502811, 0.48013192, 1.0748317),
-"attribute_data": PackedByteArray("A/lPP0KYNz/ApjA+Qpg3P8CmMD6ejZw+A/lPP56NnD5JRk8/no2cPsdAcz+gjZw+x0BzP0KYNz9JRk8/Qpg3P2YeDj2ejZw+pHEzPp6NnD6kcTM+Qpg3P2YeDj1CmDc/"),
-"format": 34359742487,
-"index_count": 18,
-"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgA"),
-"material": SubResource("StandardMaterial3D_tao35"),
-"name": "Screen",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 12,
-"vertex_data": PackedByteArray("AFaau9rTdb6KLb8+AFaau9rTdb6MLb++AFaau9vTdT6KLb++AFaau9vTdT6MLb8+AFaau9vTdT6MLb8+iEvTPNvTdT4WlAk/iEvTPNrTdb4WlAk/AFaau9rTdb6KLb8+iEvTPNvTdT4XlAm/AFaau9vTdT6KLb++AFaau9rTdb6MLb++iEvTPNrTdb4XlAm/zQr/f82K/78AAM2KMXX/vwAAzYoxdf+/zQr/f82K/7/NCv9/zYr/vxIU/38RlP+/EhT/fxGU/7/NCv9/zYr/vwAAEZTta/+/AADNijF1/78AAM2KMXX/vwAAEZTta/+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ba16b")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocrte"]
+albedo_texture = ExtResource("2_43iua")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t8tf4"]
 shader = ExtResource("8_8rnuq")
@@ -89,12 +37,26 @@ shader_parameter/vignette_opacity = 0.6010000285475
 
 [node name="Prop_Xray_Station" unique_id=1610762300 instance=ExtResource("1_641ax")]
 
-[node name="BézierCurve_003" parent="Screen" parent_id_path=PackedInt32Array(620003155) index="0" unique_id=1694464395]
-material_override = SubResource("StandardMaterial3D_wji8x")
+[node name="Button_016" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="0" unique_id=919816798]
+visible = false
 
-[node name="Screen_001" parent="Screen" parent_id_path=PackedInt32Array(620003155) index="1" unique_id=13433809]
-material_override = SubResource("StandardMaterial3D_ddh1l")
-mesh = SubResource("ArrayMesh_ocrte")
+[node name="Button_018" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="1" unique_id=1664437820]
+visible = false
+
+[node name="Button_020" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="2" unique_id=1519569555]
+visible = false
+
+[node name="document_analyser_001" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="6" unique_id=1054824837]
+material_override = SubResource("StandardMaterial3D_ocrte")
+
+[node name="Env_Button_Open_Close" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="7" unique_id=893675333 instance=ExtResource("2_yfwwn")]
+transform = Transform3D(-2.3346624e-08, 0.84541595, -0.5341086, 3.69543e-08, 0.5341086, 0.84541595, 1, 0, -4.371139e-08, -0.15510023, -0.36299998, 0.01331576)
+
+[node name="Env_Button_Open_Close2" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="8" unique_id=1340962641 instance=ExtResource("2_yfwwn")]
+transform = Transform3D(-2.3346624e-08, 0.84541595, -0.5341086, 3.69543e-08, 0.5341086, 0.84541595, 1, 0, -4.371139e-08, -0.15510023, -0.36299998, -0.21085736)
+
+[node name="Env_Button_Open_Close3" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="9" unique_id=1226432371 instance=ExtResource("2_yfwwn")]
+transform = Transform3D(-2.3346624e-08, 0.84541595, -0.5341086, 3.69543e-08, 0.5341086, 0.84541595, 1, 0, -4.371139e-08, -0.15510023, -0.36299998, 0.21040495)
 
 [node name="SubViewport" type="SubViewport" parent="." index="1" unique_id=1673460539]
 mesh_lod_threshold = 0.0

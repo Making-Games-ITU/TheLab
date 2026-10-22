@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bp0030kh5o7rt"]
 
-[ext_resource type="PackedScene" uid="uid://blpm7gibov8yx" path="res://World/Props/Locker/env_locker.fbx" id="1_n7ws4"]
+[ext_resource type="PackedScene" uid="uid://blpm7gibov8yx" path="res://World/Props/Storage/Locker/env_locker.fbx" id="1_n7ws4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n7ws4"]
 size = Vector3(0.6010058, 1.9318831, 0.018656433)

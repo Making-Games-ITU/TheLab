@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dt51tjc003vvj"]
+
+[ext_resource type="PackedScene" uid="uid://botx15ubp71vd" path="res://World/Props/Machines/Filling/Prop_Filling_Machine.fbx" id="1_pf38o"]
+[ext_resource type="Texture2D" uid="uid://bo5h3uv6essgg" path="res://World/Props/Machines/Filling/Filling_Machine_Texture.png" id="2_oj07j"]
+[ext_resource type="Texture2D" uid="uid://7iq2tjgsi7ll" path="res://World/Props/Xray/Wires.png" id="3_nn66o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvm24"]
+albedo_texture = ExtResource("2_oj07j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxy24"]
+albedo_texture = ExtResource("3_nn66o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slsn5"]
+albedo_texture = ExtResource("3_nn66o")
+
+[node name="Prop_Filling_Machine" unique_id=1109295380 instance=ExtResource("1_pf38o")]
+
+[node name="Filling Machine" parent="." index="0" unique_id=237594103]
+material_override = SubResource("StandardMaterial3D_xvm24")
+
+[node name="Tube inserted" parent="Filling Machine" index="2" unique_id=567337108]
+material_override = SubResource("StandardMaterial3D_oxy24")
+
+[node name="Tube not inserted" parent="Filling Machine" index="3" unique_id=318791794]
+material_override = SubResource("StandardMaterial3D_slsn5")

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://blpm7gibov8yx"
-path="res://.godot/imported/env_locker.fbx-675dade09641a956dca9f8fa24321cf0.scn"
+path="res://.godot/imported/env_locker.fbx-81eac0d9d6b0ed6b4903d1c41d3f18d7.scn"
 
 [deps]
 
-source_file="res://World/Props/Locker/env_locker.fbx"
-dest_files=["res://.godot/imported/env_locker.fbx-675dade09641a956dca9f8fa24321cf0.scn"]
+source_file="res://World/Props/Storage/Locker/env_locker.fbx"
+dest_files=["res://.godot/imported/env_locker.fbx-81eac0d9d6b0ed6b4903d1c41d3f18d7.scn"]
 
 [params]
 
