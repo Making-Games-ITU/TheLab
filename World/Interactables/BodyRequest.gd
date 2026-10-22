@@ -14,6 +14,7 @@ func _request_body() -> void:
 	if anim:
 		if not GameStats.body_exists:
 			anim.play("body")
+			GameStats.toggle_sample_collector = true
 			
 	if (GameStats.body_exists):
 		print("Warning: Containment chamber at max capacity. Dispose current subject.")

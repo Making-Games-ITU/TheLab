@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cmcmbnsforjle" path="res://World/Interactables/BodyRequest.gd" id="7_rdrb8"]
 [ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/VialCollect.gd" id="8_3cgfy"]
 [ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/SampleCollector.gd" id="9_5643u"]
+[ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/ScanButton.gd" id="10_xli3v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt5wh"]
 
@@ -33,7 +34,6 @@ size = Vector3(0.5, 0.5, 0.5)
 size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="Animation" id="Animation_ypogi"]
-length = 0.001
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -81,6 +81,58 @@ size = Vector3(0.5, 0.5, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5643u"]
 size = Vector3(0.5, 0.5, 0.5)
 
+[sub_resource type="BoxMesh" id="BoxMesh_ayp1s"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qxe8q"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_ayp1s"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MeshInstance3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1.434371, 1.0976367, -4.346795)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MeshInstance3D2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.8358036, 2.352243, -2.624541)
+
+[sub_resource type="Animation" id="Animation_xli3v"]
+resource_name = "scan"
+length = 2.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MeshInstance3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.03333334, 1, 1.434371, 1.0976367, -4.346795, 1.0333333, 1, 1.434371, 1.0976367, -2.6848943, 1.9666667, 1, 1.434371, 1.0976367, -4.846325)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MeshInstance3D2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.8358036, 2.352243, -2.624541, 0.43333334, 1, 0.8358036, 1.067663, -2.624541)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ayp1s"]
+_data = {
+&"RESET": SubResource("Animation_ayp1s"),
+&"scan": SubResource("Animation_xli3v")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_bsur0"]
+size = Vector3(0.0715332, 1, 1.7587891)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wmawy"]
+
 [node name="InteractableTest" type="Node3D" unique_id=52062334]
 
 [node name="Floor" type="Area3D" parent="." unique_id=321735157]
@@ -116,6 +168,7 @@ look_sensitivity = 0.002
 steps = NodePath("FmodEventEmitter3D")
 
 [node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Player" unique_id=539171417]
+event_name = "event:/Walking"
 event_guid = "{438ca093-f602-408e-b164-e277a7b9c0af}"
 
 [node name="RequestBody" type="Node3D" parent="." unique_id=1967147911 node_paths=PackedStringArray("anim", "area")]
@@ -176,10 +229,11 @@ shape = SubResource("BoxShape3D_3cgfy")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.7469306, 4.064663, -2.5712483)
 mesh = SubResource("CapsuleMesh_qt5wh")
 
-[node name="SampleCollector" type="Node3D" parent="." unique_id=1217328641]
+[node name="SampleCollector" type="Node3D" parent="." unique_id=1217328641 node_paths=PackedStringArray("area")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.836, -2.879)
 script = ExtResource("9_5643u")
 prompt_text = "Insert empty vial"
+area = NodePath("Area3D")
 
 [node name="Area3D" type="Area3D" parent="SampleCollector" unique_id=720737945]
 collision_layer = 256
@@ -190,3 +244,35 @@ mesh = SubResource("BoxMesh_3cgfy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SampleCollector/Area3D" unique_id=635649312]
 shape = SubResource("BoxShape3D_5643u")
+
+[node name="ScanButton" type="Node3D" parent="." unique_id=1137887505 node_paths=PackedStringArray("anim", "area", "sound_emitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99611485, 1.5598254, -2.879)
+script = ExtResource("10_xli3v")
+anim = NodePath("AnimationPlayer")
+area = NodePath("Area3D")
+sound_emitter = NodePath("StartComputer")
+
+[node name="Area3D" type="Area3D" parent="ScanButton" unique_id=1833159517]
+collision_layer = 256
+collision_mask = 256
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ScanButton/Area3D" unique_id=1509266769]
+mesh = SubResource("BoxMesh_ayp1s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScanButton/Area3D" unique_id=1968386454]
+shape = SubResource("BoxShape3D_qxe8q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScanButton" unique_id=423791268]
+libraries/ = SubResource("AnimationLibrary_ayp1s")
+
+[node name="StartComputer" type="FmodEventEmitter3D" parent="ScanButton" unique_id=1243560116]
+event_name = "event:/StartComputer"
+event_guid = "{51fa1276-b424-472f-9576-399cbbc25281}"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1142561540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8358036, 2.352243, -2.624541)
+mesh = SubResource("BoxMesh_bsur0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1946563380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.434371, 1.0976367, -4.346795)
+mesh = SubResource("BoxMesh_wmawy")

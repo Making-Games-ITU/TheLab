@@ -12,3 +12,4 @@ enum Buttons { BUTTON1, BUTTON2, BUTTON3, NEW_BABY, NONE }
 var interacted_button : Buttons = Buttons.NONE
 
 var body_exists: bool = false
+var toggle_sample_collector : bool = false
