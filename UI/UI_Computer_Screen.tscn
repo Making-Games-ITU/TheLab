@@ -49,7 +49,7 @@ offset_right = 380.0
 offset_bottom = 300.0
 color = Color(0, 0.66749895, 1.347661e-06, 1)
 
-[node name="Baby_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=939785837]
+[node name="Body_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=939785837]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Baby #:"
 
-[node name="Baby_Needs_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=1586550287]
+[node name="Body_Condition_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=1586550287]
 layout_mode = 0
 offset_top = 30.0
 offset_right = 120.0
