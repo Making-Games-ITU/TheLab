@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://wcvo510x8n3s"]
+
+[ext_resource type="PackedScene" uid="uid://d0id15c3jra2u" path="res://World/Props/Storage/Lab Closet/Prop_Closet_Storage.fbx" id="1_bmxjx"]
+[ext_resource type="Material" uid="uid://b7abcjipmsvya" path="res://Shaders/GlassLessBlurry.tres" id="2_j8vn7"]
+
+[node name="Prop_Closet_Storage" unique_id=1322947913 instance=ExtResource("1_bmxjx")]
+
+[node name="Cube_023" parent="Closet" parent_id_path=PackedInt32Array(1804681444) index="0" unique_id=865780799]
+surface_material_override/1 = ExtResource("2_j8vn7")
+
+[node name="Cube_024" parent="Closet" parent_id_path=PackedInt32Array(1804681444) index="1" unique_id=1474555742]
+surface_material_override/1 = ExtResource("2_j8vn7")
