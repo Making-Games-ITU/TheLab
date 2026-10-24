@@ -6,6 +6,21 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82owd"]
 albedo_texture = ExtResource("2_sbv7e")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_sbv7e"]
+size = Vector3(0.05049967, 0.02179082, 0.011413265)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_82owd"]
+size = Vector3(0.021790832, 0.02179082, 0.011413265)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qyadt"]
+size = Vector3(0.021790832, 0.021790821, 0.011413265)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_li5gh"]
+size = Vector3(0.021790832, 0.021790817, 0.011413265)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ipw6s"]
+size = Vector3(0.05049967, 0.021790821, 0.011413265)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyadt"]
 albedo_texture = ExtResource("2_sbv7e")
 
@@ -14,11 +29,41 @@ albedo_texture = ExtResource("2_sbv7e")
 
 [node name="Prop_Mixer" unique_id=1780799766 instance=ExtResource("1_c7708")]
 
-[node name="Centrifuge" parent="." index="0" unique_id=1104801522]
+[node name="Centrifuge" parent="." index="0" unique_id=806758546]
 material_override = SubResource("StandardMaterial3D_82owd")
 
-[node name="Cube_016" parent="Centrifuge" index="2" unique_id=1942725846]
+[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_014" parent_id_path=PackedInt32Array(622341373) index="0" unique_id=1752392188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00036225375)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Centrifuge/Button_014/StaticBody3D" index="0" unique_id=915843227]
+shape = SubResource("BoxShape3D_sbv7e")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_030" parent_id_path=PackedInt32Array(1875603703) index="0" unique_id=994930561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00043012202)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Centrifuge/Button_030/StaticBody3D" index="0" unique_id=467885112]
+shape = SubResource("BoxShape3D_82owd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_034" parent_id_path=PackedInt32Array(1105651835) index="0" unique_id=1541948644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 5.5879354e-09, -0.00043012248)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Centrifuge/Button_034/StaticBody3D" index="0" unique_id=216699876]
+shape = SubResource("BoxShape3D_qyadt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_035" parent_id_path=PackedInt32Array(1254339072) index="0" unique_id=1897774263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.450581e-09, -0.00043012248)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Centrifuge/Button_035/StaticBody3D" index="0" unique_id=112637227]
+shape = SubResource("BoxShape3D_li5gh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_039" parent_id_path=PackedInt32Array(1359948062) index="0" unique_id=1655899079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8626451e-09, -0.00036225375)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Centrifuge/Button_039/StaticBody3D" index="0" unique_id=1816281034]
+shape = SubResource("BoxShape3D_ipw6s")
+
+[node name="Cube_016" parent="Centrifuge" index="5" unique_id=1559315088]
 material_override = SubResource("StandardMaterial3D_qyadt")
 
-[node name="Rotor" parent="Centrifuge" index="3" unique_id=1628928166]
+[node name="Rotor" parent="Centrifuge" index="6" unique_id=432062346]
 material_override = SubResource("StandardMaterial3D_li5gh")
