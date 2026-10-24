@@ -15,11 +15,11 @@ albedo_texture = ExtResource("3_nn66o")
 
 [node name="Prop_Filling_Machine" unique_id=1109295380 instance=ExtResource("1_pf38o")]
 
-[node name="Filling Machine" parent="." index="0" unique_id=237594103]
+[node name="Filling Machine" parent="." index="0" unique_id=138928400]
 material_override = SubResource("StandardMaterial3D_xvm24")
 
-[node name="Tube inserted" parent="Filling Machine" index="2" unique_id=567337108]
+[node name="Tube inserted" parent="Filling Machine" index="14" unique_id=1215748549]
 material_override = SubResource("StandardMaterial3D_oxy24")
 
-[node name="Tube not inserted" parent="Filling Machine" index="3" unique_id=318791794]
+[node name="Tube not inserted" parent="Filling Machine" index="15" unique_id=1555756252]
 material_override = SubResource("StandardMaterial3D_slsn5")
