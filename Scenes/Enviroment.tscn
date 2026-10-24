@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://ehrseny5tlqp" path="res://World/Items/Document/item_document.tscn" id="30_h0isr"]
 [ext_resource type="PackedScene" uid="uid://dljgppj1vdecd" path="res://World/Props/Storage/Metal Shelve/prop_metal_storage.tscn" id="31_rs8lg"]
 [ext_resource type="PackedScene" uid="uid://wcvo510x8n3s" path="res://World/Props/Storage/Lab Closet/prop_closet_storage.tscn" id="32_bndm0"]
+[ext_resource type="Shader" uid="uid://q0mb3yshd6df" path="res://Shaders/Micrograph.gdshader" id="32_jgty5"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -65,6 +66,18 @@ shader_parameter/dither_strength = 0.350000016625
 [sub_resource type="QuadMesh" id="QuadMesh_opveo"]
 material = SubResource("ShaderMaterial_bhlco")
 size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vq468"]
+shader = ExtResource("32_jgty5")
+shader_parameter/sample_seed = 1.0
+shader_parameter/mutation_amount = 0.2710000128725
+shader_parameter/cell_count = 30
+shader_parameter/parasite_count = 2
+shader_parameter/movement_speed = 0.2890000137275
+shader_parameter/background_color = Color(0.017632611, 0.018460648, 0.012919363, 1)
+shader_parameter/healthy_color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+shader_parameter/mutated_color = Color(0.39607844, 0.39607844, 0.39607844, 1)
+shader_parameter/parasite_color = Color(0.096204735, 0.09620475, 0.09620472, 1)
 
 [node name="Enviroment2" type="Node3D" unique_id=1402379142]
 
@@ -401,6 +414,34 @@ transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39
 
 [node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1717675311]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
+
+[node name="Micrograph" type="Control" parent="." unique_id=308824450]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Micrograph" unique_id=260998597]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0142752165, 0.014275218, 0.014275218, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Micrograph" unique_id=420387211]
+material = SubResource("ShaderMaterial_vq468")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 244.0
+offset_right = -244.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [editable path="Lights/env_ceiling_lamp"]
 [editable path="Lights/env_ceiling_lamp2"]
