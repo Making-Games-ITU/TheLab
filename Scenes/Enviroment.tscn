@@ -48,8 +48,8 @@
 [ext_resource type="Shader" uid="uid://cilu8q1ppqotc" path="res://World/Props/Electricals/Computer/env_screen.gdshader" id="32_8jp62"]
 [ext_resource type="PackedScene" uid="uid://wcvo510x8n3s" path="res://World/Props/Storage/Lab Closet/prop_closet_storage.tscn" id="32_bndm0"]
 [ext_resource type="Shader" uid="uid://q0mb3yshd6df" path="res://Shaders/Micrograph.gdshader" id="32_jgty5"]
-[ext_resource type="Texture2D" uid="uid://v2iw61n2xlo8" path="res://World/Props/Corpse Tube/Tube_Texture.png" id="38_8noli"]
-[ext_resource type="Texture2D" uid="uid://u77qgxck5ivr" path="res://World/Props/Corpse Tube/Grabling_Texture.png" id="39_fcoyl"]
+[ext_resource type="PackedScene" uid="uid://c7n36j11m4xl1" path="res://World/Props/Trolley/prop_curtains_trolly.tscn" id="33_wusdh"]
+[ext_resource type="PackedScene" uid="uid://kuc0qku4tytw" path="res://World/Props/Trolley/Prop_Trolley.fbx" id="34_0fdv0"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -2305,6 +2305,21 @@ mesh = SubResource("ArrayMesh_yfo5t")
 
 [node name="Env_Table_Sink" parent="Room/Props" unique_id=1923583669 instance=ExtResource("15_c84mv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44899845, 0.033261806, -6.2114015)
+
+[node name="Prop_Curtains_Trolly" parent="Room/Props" unique_id=2019036272 instance=ExtResource("33_wusdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0805423, 0.032699883, -4.6583595)
+
+[node name="Prop_Curtains_Trolly2" parent="Room/Props" unique_id=1063882810 instance=ExtResource("33_wusdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3026237, 0.032699883, -0.44252634)
+
+[node name="Prop_Trolley" parent="Room/Props" unique_id=928575320 instance=ExtResource("34_0fdv0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.067409, 0.032699823, -2.5995648)
+
+[node name="Prop_Trolley2" parent="Room/Props" unique_id=520443201 instance=ExtResource("34_0fdv0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.7208867, 0.032699943, 0.37001348)
+
+[node name="Prop_Trolley3" parent="Room/Props" unique_id=1355868471 instance=ExtResource("34_0fdv0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4995947, 0.032699943, 0.50941026)
 
 [node name="Doors" type="Node3D" parent="Room" unique_id=703968915]
 
