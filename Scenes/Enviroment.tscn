@@ -1467,7 +1467,6 @@ emission_energy_multiplier = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnjx7"]
 resource_name = "Tube"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("38_8noli")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1531,7 +1530,6 @@ shadow_mesh = SubResource("ArrayMesh_80cxa")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6e2f"]
 resource_name = "Grabling"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("39_fcoyl")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
