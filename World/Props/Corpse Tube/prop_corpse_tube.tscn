@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://coimfyram3dq1"]
+
+[ext_resource type="PackedScene" uid="uid://bmf1hapog6llq" path="res://World/Props/Corpse Tube/Prop_Corpse_Tube.fbx" id="1_q52ii"]
+
+[node name="Prop_Corpse_Tube" unique_id=1507349415 instance=ExtResource("1_q52ii")]

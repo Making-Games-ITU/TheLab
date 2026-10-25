@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b7abcjipmsvya"]
+
+[ext_resource type="Shader" uid="uid://cuy7unq0ml1sc" path="res://Shaders/frosted_glass.gdshader" id="1_757ly"]
+
+[resource]
+render_priority = 20
+shader = ExtResource("1_757ly")
+shader_parameter/color = Color(0.83137256, 1, 1, 1)
+shader_parameter/color_coat = 0.03999999910592
+shader_parameter/oilyness = 0.07999999821184
+shader_parameter/rim_amount = 0.05999999865888
+shader_parameter/rim_shape = 1.11999997869108
+shader_parameter/rim_color = Color(0.7291483, 0.9664435, 0.8604696, 1)
+shader_parameter/refraction_strength = -0.1
+shader_parameter/blur_amount = 0.70000002999012
+shader_parameter/roughness_affect = 0.35999999195328
+shader_parameter/roughness = 0.35999999195328

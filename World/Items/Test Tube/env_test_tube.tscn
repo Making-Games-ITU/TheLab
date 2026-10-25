@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dktx5llwjb5k"]
+
+[ext_resource type="PackedScene" uid="uid://dmaxnoxoa52fk" path="res://World/Items/Test Tube/Env_Test_Tube.fbx" id="1_dfd3n"]
+[ext_resource type="Texture2D" uid="uid://cj6c4l3nbywb2" path="res://World/Items/Test Tube/Test_Tube_Texture_.png" id="2_odb7c"]
+[ext_resource type="PackedScene" uid="uid://dkjw1pfgodqn4" path="res://World/Items/Test Tube/test_tube_liquid.tscn" id="3_xlt68"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odb7c"]
+transparency = 4
+albedo_texture = ExtResource("2_odb7c")
+
+[node name="Env_Test_Tube" unique_id=1480596381 instance=ExtResource("1_dfd3n")]
+
+[node name="Sphere" parent="." index="0" unique_id=554989024]
+material_override = SubResource("StandardMaterial3D_odb7c")
+
+[node name="Test_Tube_Liquid" parent="Sphere" index="0" unique_id=1124276950 instance=ExtResource("3_xlt68")]

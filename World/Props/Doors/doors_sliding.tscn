@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://5vn584og5dnk"]
+
+[ext_resource type="PackedScene" uid="uid://cjm32ic78s8qy" path="res://World/Props/Doors/Doors_Sliding.fbx" id="1_xtx2q"]
+[ext_resource type="Material" uid="uid://cbgyy02j4e3xn" path="res://Shaders/GlassBlurry.tres" id="2_2gm24"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xtx2q"]
+size = Vector3(0.5029479, 2.0925064, 0.12852037)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2gm24"]
+size = Vector3(0.5029479, 2.0925064, 0.12852037)
+
+[node name="Doors_Sliding" unique_id=1514953514 instance=ExtResource("1_xtx2q")]
+
+[node name="RightDoor_001" parent="RightDoor" parent_id_path=PackedInt32Array(726485585) index="0" unique_id=1934045414]
+sorting_offset = 10.0
+material_override = ExtResource("2_2gm24")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RightDoor" parent_id_path=PackedInt32Array(726485585) index="1" unique_id=1694342425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2514733, 2.3841858e-07, -2.0861626e-07)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightDoor/StaticBody3D" index="0" unique_id=1336303672]
+shape = SubResource("BoxShape3D_xtx2q")
+
+[node name="RightDoor_003" parent="RightDoor_002" parent_id_path=PackedInt32Array(1717675311) index="0" unique_id=1890527010]
+sorting_offset = 10.0
+material_override = ExtResource("2_2gm24")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RightDoor_002" parent_id_path=PackedInt32Array(1717675311) index="1" unique_id=1337561524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2514733, 2.3841858e-07, -2.0861626e-07)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightDoor_002/StaticBody3D" index="0" unique_id=33971325]
+shape = SubResource("BoxShape3D_2gm24")

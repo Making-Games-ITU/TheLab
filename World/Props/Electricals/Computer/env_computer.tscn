@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cj50v71m7e4op"]
+
+[ext_resource type="PackedScene" uid="uid://dmc3gyncqkext" path="res://World/Props/Electricals/Computer/Env_Computer.fbx" id="1_drb2k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_drb2k"]
+size = Vector3(0.01932554, 0.026708243, 0.031176712)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1jlc2"]
+size = Vector3(0.02955361, 0.033842325, 0.28196448)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7iho1"]
+size = Vector3(0.017852593, 0.052333966, 0.05399812)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mlaul"]
+size = Vector3(0.017852593, 0.052333966, 0.05399812)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sq57x"]
+size = Vector3(0.017852593, 0.052333966, 0.05399812)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1olqy"]
+size = Vector3(0.049886025, 0.07207398, 0.07026696)
+
+[node name="Env_Computer" unique_id=282123531 instance=ExtResource("1_drb2k")]
+
+[node name="Keyboard" parent="." index="2" unique_id=541933786]
+sorting_offset = 10.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Off_On-btn" parent_id_path=PackedInt32Array(214970185) index="0" unique_id=1933956211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030277842, -2.9802322e-08, -3.632158e-08)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Off_On-btn/StaticBody3D" index="0" unique_id=690045413]
+shape = SubResource("BoxShape3D_drb2k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="document_analyser" parent_id_path=PackedInt32Array(622070450) index="0" unique_id=345420798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0005364306, -5.5879354e-09, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="document_analyser/StaticBody3D" index="0" unique_id=478899794]
+shape = SubResource("BoxShape3D_1jlc2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="scroll_btn" parent_id_path=PackedInt32Array(1467737557) index="0" unique_id=210357577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5923516e-06, 0.0012384951, 0.00012146309)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scroll_btn/StaticBody3D" index="0" unique_id=1642682963]
+shape = SubResource("BoxShape3D_7iho1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="scroll_btn_001" parent_id_path=PackedInt32Array(1508582486) index="0" unique_id=903388212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5923516e-06, 0.0012384951, 0.00012146309)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scroll_btn_001/StaticBody3D" index="0" unique_id=1643795012]
+shape = SubResource("BoxShape3D_mlaul")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="scroll_btn_002" parent_id_path=PackedInt32Array(75632717) index="0" unique_id=115828955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5923516e-06, 0.0012384951, 0.00012146309)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scroll_btn_002/StaticBody3D" index="0" unique_id=93775991]
+shape = SubResource("BoxShape3D_sq57x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="syringe_analyser" parent_id_path=PackedInt32Array(740710369) index="0" unique_id=1635721072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006855391, -1.8626451e-08, 0.0018303171)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="syringe_analyser/StaticBody3D" index="0" unique_id=576506399]
+shape = SubResource("BoxShape3D_1olqy")
