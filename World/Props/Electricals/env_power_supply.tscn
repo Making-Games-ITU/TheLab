@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://dd4lliduo7nou"]
-
-[ext_resource type="PackedScene" uid="uid://cn6dbn16mvias" path="res://World/Props/Electricals/Env_Power_Supply.fbx" id="1_67k6h"]
-
-[node name="Env_Power_Supply" unique_id=1147005002 instance=ExtResource("1_67k6h")]
