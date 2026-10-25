@@ -13,7 +13,7 @@ func interact(interactor: Node) -> void:
 func _request_body() -> void:
 	if anim:
 		if not GameStats.body_exists:
-			anim.play("body")
+			anim.play("request")
 			GameStats.toggle_sample_collector = true
 			
 	if (GameStats.body_exists):
