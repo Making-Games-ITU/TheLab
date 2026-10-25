@@ -69,15 +69,24 @@ size = Vector2(2, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vq468"]
 shader = ExtResource("32_jgty5")
-shader_parameter/sample_seed = 1.0
-shader_parameter/mutation_amount = 0.2710000128725
-shader_parameter/cell_count = 30
-shader_parameter/parasite_count = 2
-shader_parameter/movement_speed = 0.2890000137275
-shader_parameter/background_color = Color(0.017632611, 0.018460648, 0.012919363, 1)
-shader_parameter/healthy_color = Color(0.39688927, 0.39688927, 0.39688924, 1)
-shader_parameter/mutated_color = Color(0.39607844, 0.39607844, 0.39607844, 1)
-shader_parameter/parasite_color = Color(0.096204735, 0.09620475, 0.09620472, 1)
+shader_parameter/background_color = Color(0.037854142, 0.046883598, 0.028402748, 1)
+shader_parameter/grain_strength = 0.05600000266
+shader_parameter/vignette_smoothness = 1.0000000149012
+shader_parameter/cell_color = Color(0.6039216, 0.62352943, 0.5764706, 1)
+shader_parameter/nucleus_color = Color(0.14125493, 0.1907635, 0.105146594, 1)
+shader_parameter/cell_size = 0.00999999977648
+shader_parameter/movement_speed = 0.2000000095
+shader_parameter/cell_amount = 50
+shader_parameter/parasite_color = Color(0.38403437, 0.4009617, 0.3600746, 1)
+shader_parameter/parasite_amount = 10
+shader_parameter/parasite_length = 0.02000000025148
+shader_parameter/parasite_thickness = 0.0010000000475
+shader_parameter/parasite_speed = 0.50000002375
+shader_parameter/parasite_wiggle = 0.800000038
+shader_parameter/mutation_percentage = 10.0
+shader_parameter/mutated_color = Color(0.6039216, 0.62352943, 0.5764706, 1)
+shader_parameter/mutation_distortion = 1.0
+shader_parameter/aspect_ratio = 1.0
 
 [node name="Enviroment2" type="Node3D" unique_id=1402379142]
 
