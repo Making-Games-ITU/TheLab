@@ -4,10 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="2_tfod6"]
 [ext_resource type="Script" uid="uid://ct1dqcskn76yb" path="res://Resources/Game_Stats.gd" id="3_rajel"]
 [ext_resource type="Script" uid="uid://dn02qfwgu1uur" path="res://Resources/Player_Stats.gd" id="4_vvhu1"]
-[ext_resource type="PackedScene" uid="uid://p1s3d1dytn62" path="res://Entities/Player/Player.tscn" id="5_lbihj"]
 [ext_resource type="PackedScene" uid="uid://5k40ofk222ak" path="res://UI/UI_Computer_Screen.tscn" id="5_tfod6"]
-[ext_resource type="Script" uid="uid://lvgbwtbmp326" path="res://Triggers/Interactable.gd" id="6_raj38"]
+[ext_resource type="Script" uid="uid://cue05ltltu7v3" path="res://Entities/Player/Player_Controller.gd" id="6_lbihj"]
 [ext_resource type="PackedScene" uid="uid://yomyius6rgy8" path="res://World/Props/Chairs/env_stool.tscn" id="7_8e0uq"]
+[ext_resource type="Script" uid="uid://b6y5rgjk5ts8k" path="res://UI/Interaction_Prompt.gd" id="7_raj38"]
+[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://Shaders/psx_camera_shader.gdshader" id="8_8e0uq"]
 [ext_resource type="Texture2D" uid="uid://dqcgh22nr18s0" path="res://World/Props/Electricals/Computer/ScrollBtnTexture.png" id="8_i0vto"]
 [ext_resource type="Texture2D" uid="uid://ckryoryab5rok" path="res://World/Props/Electricals/Computer/Computer.png" id="9_3jf1l"]
 [ext_resource type="Texture2D" uid="uid://dayrghnnvllag" path="res://World/Props/Electricals/Computer/Pc_Props_Texture.png" id="10_356ba"]
@@ -35,6 +36,30 @@ fog_light_energy = 0.0
 fog_density = 0.001
 adjustment_enabled = true
 adjustment_contrast = 0.975
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qt5wh"]
+radius = 0.20166016
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhlco"]
+render_priority = 0
+shader = ExtResource("8_8e0uq")
+shader_parameter/debug_mode = 0
+shader_parameter/debug_range = 50.0
+shader_parameter/enable_fog = false
+shader_parameter/fog_color = Color(0.8081357, 0.49642086, 0.10328529, 1)
+shader_parameter/noise_color = Color(0.61675495, 0.4631762, 5.7756904e-07, 1)
+shader_parameter/fog_distance = 25.0
+shader_parameter/fog_fade_range = 20.0000009025
+shader_parameter/enable_noise = false
+shader_parameter/noise_time_fac = 4.0
+shader_parameter/enable_color_limitation = true
+shader_parameter/color_levels = 6
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 0.350000016625
+
+[sub_resource type="QuadMesh" id="QuadMesh_vweq0"]
+material = SubResource("ShaderMaterial_bhlco")
+size = Vector2(2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_03mnb"]
 size = Vector3(0.48876953, 0.30639648, 0.46777344)
@@ -1247,17 +1272,80 @@ script = ExtResource("1_8r6kd")
 [node name="ComputerScreen" parent="." unique_id=1520417735 instance=ExtResource("5_tfod6")]
 transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0.44236022, 1.4501117, -2.9048572)
 
-[node name="Player" parent="." unique_id=1250894719 instance=ExtResource("5_lbihj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1250894719 node_paths=PackedStringArray("ray", "steps")]
+script = ExtResource("6_lbihj")
+ray = NodePath("Head/Camera3D/RayCast3D")
+steps = NodePath("FmodEventEmitter3D")
 
-[node name="Chair" type="Node3D" parent="." unique_id=963422290 node_paths=PackedStringArray("area", "seat_point", "exit_point")]
+[node name="HUD" type="CanvasLayer" parent="Player" unique_id=953703995]
+
+[node name="Control" type="Control" parent="Player/HUD" unique_id=1896062302]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label_Interact" type="Label" parent="Player/HUD/Control" unique_id=1281678602]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_raj38")
+
+[node name="Label" type="Label" parent="Player/HUD/Control" unique_id=1847119891]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.5
+offset_top = -11.5
+offset_right = 2.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1411222524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_qt5wh")
+
+[node name="Head" type="Node3D" parent="Player" unique_id=554348983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=1583008010]
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/Head/Camera3D" unique_id=1602418403]
+target_position = Vector3(0, 0, -1)
+collision_mask = 256
+collide_with_areas = true
+
+[node name="PSXMesh2" type="MeshInstance3D" parent="Player/Head/Camera3D" unique_id=204571253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1526204, 0, -1.11496)
+visible = false
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_vweq0")
+
+[node name="FmodListener3D" type="FmodListener3D" parent="Player/Head" unique_id=594045931]
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Player" unique_id=414440158]
+event_name = "event:/Walking"
+event_guid = "{438ca093-f602-408e-b164-e277a7b9c0af}"
+
+[node name="Chair" type="Node3D" parent="." unique_id=963422290]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7644264, 0.6688992, -2.910489)
-script = ExtResource("6_raj38")
-kind = 3
-prompt_text = "Sit"
-area = NodePath("Area3D")
-seat_point = NodePath("Seat_Point")
-exit_point = NodePath("Stand_Point")
 
 [node name="Stand_Point" type="Marker3D" parent="Chair" unique_id=1892516576]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.428829, -0.63462067, -0.74336886)
@@ -1276,13 +1364,8 @@ shape = SubResource("BoxShape3D_03mnb")
 [node name="Env_Stool" parent="Chair" unique_id=697425343 instance=ExtResource("7_8e0uq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0058683753, -0.64646167, -0.0096457)
 
-[node name="Button_Toy" type="Node3D" parent="." unique_id=538063524 node_paths=PackedStringArray("area")]
+[node name="Button_Toy" type="Node3D" parent="." unique_id=538063524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4634804, 1.4173853, -3.1474643)
-script = ExtResource("6_raj38")
-kind = 1
-prompt_text = "Toy"
-area = NodePath("Area3D")
-button = 0
 
 [node name="Area3D" type="Area3D" parent="Button_Toy" unique_id=1308932065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00079652667, 0.006574869, -0.0009481907)
@@ -1302,13 +1385,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5923516e-06, 0.0012384951, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Button_Toy/scroll_btn_002/StaticBody3D" unique_id=934232928]
 shape = SubResource("SphereShape3D_vweq0")
 
-[node name="Button_Pacifier" type="Node3D" parent="." unique_id=1878537386 node_paths=PackedStringArray("area")]
+[node name="Button_Pacifier" type="Node3D" parent="." unique_id=1878537386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4566995, 1.4246124, -3.2347038)
-script = ExtResource("6_raj38")
-kind = 1
-prompt_text = "Pacifier"
-area = NodePath("Area3D")
-button = 1
 
 [node name="Area3D" type="Area3D" parent="Button_Pacifier" unique_id=1689080769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00065377355, -0.0014529228, 0.006355047)
@@ -1328,13 +1406,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5923516e-06, 0.0012384951, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Button_Pacifier/scroll_btn_001/StaticBody3D" unique_id=2110819684]
 shape = SubResource("BoxShape3D_mlaul")
 
-[node name="Button_Food" type="Node3D" parent="." unique_id=1854732470 node_paths=PackedStringArray("area")]
+[node name="Button_Food" type="Node3D" parent="." unique_id=1854732470]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46056032, 1.4157201, -3.3128471)
-script = ExtResource("6_raj38")
-kind = 1
-prompt_text = "Food"
-area = NodePath("Area3D")
-button = 2
 
 [node name="Area3D" type="Area3D" parent="Button_Food" unique_id=459841387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00065377355, 0.0063877106, 0.004533291)
@@ -1354,13 +1427,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5923516e-06, 0.0012384951, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Button_Food/scroll_btn/StaticBody3D" unique_id=1429646278]
 shape = SubResource("BoxShape3D_7iho1")
 
-[node name="Button_NewBaby" type="Node3D" parent="." unique_id=1192209680 node_paths=PackedStringArray("area")]
+[node name="Button_NewBaby" type="Node3D" parent="." unique_id=1192209680]
 transform = Transform3D(0.66611975, 0, -0.74584484, 0, 1, 0, 0.74584484, 0, 0.66611975, 6.7504954, 1.3924853, -2.0537047)
-script = ExtResource("6_raj38")
-kind = 1
-prompt_text = "Get new baby"
-area = NodePath("Area3D")
-button = 3
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="Button_NewBaby" unique_id=1789262984]
 transform = Transform3D(1, 0, 0, 0, -1.1920929e-07, -0.99999994, 0, 0.99999994, -1.1920929e-07, 0, 0, 0)
