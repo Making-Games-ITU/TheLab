@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c7n36j11m4xl1"]
+
+[ext_resource type="PackedScene" uid="uid://d3v0any1luj7e" path="res://World/Props/Trolley/Prop_Curtains_Trolly.fbx" id="1_lehb4"]
+
+[node name="Prop_Curtains_Trolly" unique_id=2019036272 instance=ExtResource("1_lehb4")]
