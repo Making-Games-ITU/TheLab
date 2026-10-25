@@ -2,15 +2,23 @@ extends Node3D
 
 @onready var display_color = $SubViewport/GUI/Display_Color
 @onready var display_text = $SubViewport/GUI/Display_Text
-@onready var baby_text = $SubViewport/GUI/Baby_Text
+@onready var body_text = $SubViewport/GUI/Body_Text
+@onready var body_condition_text = $SubViewport/GUI/Body_Condition_Text
+@onready var win_lose_text = $SubViewport/GUI/Win_Lose_Text
 
-enum Answer { CORRECT,INCORRECT,NONE }
+enum Answer { CORRECT, INCORRECT, NONE }
+
+@export var result_display_time : float = 1.5  # seconds
 
 var _old_correct_count : int = 0
 var _old_wrong_count : int = 0
-var input : Answer = Answer.NONE
+var _clear_timer : Timer
 
 func _ready() -> void:
+	_clear_timer = Timer.new()
+	_clear_timer.one_shot = true
+	_clear_timer.timeout.connect(_on_clear_timer_timeout)
+	add_child(_clear_timer)
 	_checkAnswer(Answer.NONE)
 
 func _changeText(string: String):
@@ -31,17 +39,37 @@ func _checkAnswer(ans: Answer):
 			_changeText("")
 			_changeColor(Color.TRANSPARENT)
 
+func _show_answer(ans: Answer) -> void:
+	_checkAnswer(ans)
+	_clear_timer.start(result_display_time)  # restarts if already running
+
+func _on_clear_timer_timeout() -> void:
+	_checkAnswer(Answer.NONE)
+
+func _check_win_lose() -> void:
+	if GameStats.game_over:
+		win_lose_text.text = "YOU LOSE"
+
+func _check_for_next_baby() -> void:
+	if GameStats.ready_for_next_baby:
+		win_lose_text.text = "Get new baby"
+	else:
+		win_lose_text.text = ""
+
 func _process(_delta: float) -> void:
-	var _correct_count : int = GameStats.correct_count
-	var _wrong_count : int = GameStats.wrong_count
-	baby_text.text = GameStats.baby_ID
-	
-	if _correct_count > _old_correct_count:
-		_old_correct_count = _correct_count
-		input = Answer.CORRECT
-		
-	elif _wrong_count > _old_wrong_count:
-		_old_wrong_count = _wrong_count
-		input = Answer.INCORRECT
-	
-	_checkAnswer(input)
+	body_text.text = GameStats.body_ID
+	body_condition_text.text = "WIP"
+
+	## Compare with != so a reset to 0 (new baby) doesn't leave stale counts behind
+	#if GameStats.correct_count != _old_correct_count:
+		#if GameStats.correct_count > _old_correct_count:
+			#_show_answer(Answer.CORRECT)
+		#_old_correct_count = GameStats.correct_count
+#
+	#if GameStats.wrong_count != _old_wrong_count:
+		#if GameStats.wrong_count > _old_wrong_count:
+			#_show_answer(Answer.INCORRECT)
+		#_old_wrong_count = GameStats.wrong_count
+#
+	#_check_for_next_baby()
+	#_check_win_lose()

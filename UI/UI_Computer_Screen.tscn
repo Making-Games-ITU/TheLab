@@ -49,21 +49,35 @@ offset_right = 380.0
 offset_bottom = 300.0
 color = Color(0, 0.66749895, 1.347661e-06, 1)
 
-[node name="Baby_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=939785837]
+[node name="Body_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=939785837]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -16.0
+offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Baby #:"
 
+[node name="Body_Condition_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=1586550287]
+layout_mode = 0
+offset_top = 30.0
+offset_right = 120.0
+offset_bottom = 80.0
+text = "Baby is:"
+
 [node name="Display_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=1411706259]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 45.26
-offset_right = 135.80505
-offset_bottom = 122.755005
+offset_top = 60.0
+offset_right = 120.0
+offset_bottom = 110.0
+
+[node name="Win_Lose_Text" type="RichTextLabel" parent="SubViewport/GUI" unique_id=1308762744]
+layout_mode = 0
+offset_top = 90.0
+offset_right = 120.0
+offset_bottom = 140.0
 
 [node name="Quad" type="MeshInstance3D" parent="." unique_id=526908480]
 editor_description = "To setup this MeshInstance3D:

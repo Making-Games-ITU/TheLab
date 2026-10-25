@@ -4,7 +4,7 @@
 
 [node name="AudioManager" type="Node" unique_id=1869149764 node_paths=PackedStringArray("audio_event")]
 script = ExtResource("1_wuqcl")
-audio_event = NodePath("SadCry")
+audio_event = NodePath("")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1741193650]
 bank_paths = ["res://Audio/FMODBanks/Desktop/Master.strings.bank", "res://Audio/FMODBanks/Desktop/Master.bank", "res://Audio/FMODBanks/Desktop/SFX.bank", "res://Audio/FMODBanks/Desktop/Music.bank", "res://Audio/FMODBanks/Desktop/Ambient.bank"]
@@ -14,33 +14,22 @@ event_name = "event:/StartComputer"
 event_guid = "{51fa1276-b424-472f-9576-399cbbc25281}"
 
 [node name="Ambient" type="FmodEventEmitter3D" parent="." unique_id=1133235859]
-event_name = "event:/StartComputer"
-event_guid = "{51fa1276-b424-472f-9576-399cbbc25281}"
+event_name = "event:/Ambient"
+event_guid = "{18ac8d98-c22c-4b6c-807d-a0a7327f8b36}"
+autoplay = true
 
 [node name="Steps" type="FmodEventEmitter3D" parent="." unique_id=2145527534]
-event_name = "event:/StartComputer"
-event_guid = "{51fa1276-b424-472f-9576-399cbbc25281}"
+event_name = "event:/Walking"
+event_guid = "{438ca093-f602-408e-b164-e277a7b9c0af}"
 
 [node name="Button" type="FmodEventEmitter3D" parent="." unique_id=472582199]
-event_name = "event:/StartComputer"
-event_guid = "{51fa1276-b424-472f-9576-399cbbc25281}"
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
 [node name="WorkingComputer" type="FmodEventEmitter3D" parent="." unique_id=554596846]
-event_name = "event:/StartComputer"
-event_guid = "{51fa1276-b424-472f-9576-399cbbc25281}"
+event_name = "event:/ComputerWorkingSound"
+event_guid = "{455a2e2f-f7f9-4b6d-80bc-2e2b1b6719f4}"
 
 [node name="Slide" type="FmodEventEmitter3D" parent="." unique_id=252706286]
-event_name = "event:/StartComputer"
-event_guid = "{51fa1276-b424-472f-9576-399cbbc25281}"
-
-[node name="SadCry" type="FmodEventEmitter3D" parent="." unique_id=1372992067]
-event_name = "event:/StartComputer"
-event_guid = "{51fa1276-b424-472f-9576-399cbbc25281}"
-
-[node name="HappyBaby" type="FmodEventEmitter3D" parent="." unique_id=1617238917]
-event_name = "event:/StartComputer"
-event_guid = "{51fa1276-b424-472f-9576-399cbbc25281}"
-
-[node name="Puking" type="FmodEventEmitter3D" parent="." unique_id=1729566665]
-event_name = "event:/StartComputer"
-event_guid = "{51fa1276-b424-472f-9576-399cbbc25281}"
+event_name = "event:/Slide"
+event_guid = "{f87b244d-b263-4937-b64c-4c6070044e69}"

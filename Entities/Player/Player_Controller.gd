@@ -8,11 +8,16 @@ extends CharacterBody3D
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
+@export var steps:FmodEventEmitter3D
+
 var current_interactable: Interactable
+var is_steps_playing: bool = false
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	ray.add_exception(self)
+	steps.started.connect(func(): is_steps_playing = true)
+	steps.stopped.connect(func(): is_steps_playing = false)
 
 func _find_interactable(node: Node) -> Interactable:
 	# Walks up from the hit collider until it finds the Interactable that owns it
@@ -56,6 +61,7 @@ func _movement_input() -> void:
 
 func _physics_process(_delta: float) -> void:
 	_movement_input()
+	_handleStepsSFX()
 	_check_for_interactable()
 	if !PlayerStats.is_sitting:
 		move_and_slide()
@@ -80,3 +86,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		var _ray_cast_target : Interactable = PlayerStats.current_interactable
 		if is_instance_valid(_ray_cast_target):
 			_ray_cast_target.interact(self)
+			
+func _handleStepsSFX() -> void:
+	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	var is_moving: bool = input_dir.abs().x > 0 or input_dir.abs().y > 0
+	if is_moving:
+		if not is_steps_playing:
+			steps.play(false) 
+	else:
+		if is_steps_playing:
+			steps.stop()

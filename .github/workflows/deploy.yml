@@ -1,5 +1,7 @@
 name: Build desktop (downloadable)
 
+# Builds the offline Windows version (FMOD enabled) and uploads it as
+# a downloadable artifact (Actions run page -> Artifacts). Nothing is published.
 on:
   workflow_dispatch:       
   push:
@@ -26,19 +28,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # "preset" must match the preset name in Project -> Export exactly.
           - name: windows
             preset: "Windows Desktop"
             file: TheLab.exe
-          - name: linux
-            preset: "Linux"
-            file: TheLab.x86_64
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-
-      - name: Install zip
-        run: apt-get update && apt-get install -y --no-install-recommends zip
 
       - name: Move export templates into place
         run: |
@@ -47,14 +42,14 @@ jobs:
 
       # The FMOD *editor* plugin segfaults the headless editor during import.
       # Exported games don't use it (the GDExtension and autoload stay), so
-      # it's off in this CI checkout only.
+      # switch it off in this CI checkout only.
       - name: Disable FMOD editor plugin (CI only)
         run: |
           sed -i 's#"res://addons/fmod/plugin\.cfg"##' project.godot
           grep -n "enabled" project.godot
 
       - name: Import project resources
-        run: godot --headless --import
+        run: godot --headless --import || true
 
       - name: Export ${{ matrix.name }} build
         run: |
@@ -65,15 +60,9 @@ jobs:
             || { echo "::error::Export did not produce ${{ matrix.file }}. Is the preset name correct?"; exit 1; }
           find "build/${{ matrix.name }}" -type f | sort
 
-      - name: Zip build
-        run: |
-          chmod +x "build/${{ matrix.name }}/${{ matrix.file }}" || true
-          cd "build/${{ matrix.name }}"
-          zip -r "../${GAME_NAME}-${{ matrix.name }}.zip" .
-
       - name: Upload build
         uses: actions/upload-artifact@v7
         with:
           name: ${{ env.GAME_NAME }}-${{ matrix.name }}
-          path: build/${{ env.GAME_NAME }}-${{ matrix.name }}.zip
+          path: build/${{ matrix.name }}
           retention-days: 7

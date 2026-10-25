@@ -89,6 +89,7 @@ collide_with_areas = true
 
 [node name="PSXMesh2" type="MeshInstance3D" parent="Head/Camera3D" unique_id=204571253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1526204, 0, -1.11496)
+visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_vweq0")
 
