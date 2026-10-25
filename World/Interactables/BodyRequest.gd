@@ -14,6 +14,7 @@ func _request_body() -> void:
 	if anim:
 		if not GameStats.body_exists:
 			anim.play("request")
+			await anim.animation_finished
 			GameStats.toggle_sample_collector = true
 			
 	if (GameStats.body_exists):

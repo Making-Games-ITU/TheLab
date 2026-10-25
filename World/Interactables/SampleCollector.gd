@@ -3,7 +3,7 @@ extends Interactable
 var _vial_inserted : bool = false
 var _sample_ready : bool = false
 
-@onready var _sample_collector = $Area3D
+@export var _sample_collector : Area3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
@@ -16,6 +16,8 @@ func _toggle_interaction():
 	if GameStats.toggle_sample_collector:
 		_sample_collector.set_collision_layer_value(9, true)
 	else:
+		if anim:
+			anim.play("close")
 		_sample_collector.set_collision_layer_value(9, false)
 
 func interact(interactor: Node) -> void:
@@ -36,12 +38,12 @@ func _insert_vial():
 		prompt_text = "Take vial"
 		_refresh_prompt()
 	else:
-		print("No Vial in inventory. Take a new vial")
+		print("No Vial in inventory.")
 
 func _take_vial():
 	#PlayerStats.has_sample = true
 	_vial_inserted = false
 	print("Picked up Vial: ", PlayerStats.has_sample)
 	
-	prompt_text = "Insert empty Vial"
+	prompt_text = "Insert Vial"
 	_refresh_prompt()

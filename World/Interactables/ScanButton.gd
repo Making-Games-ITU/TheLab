@@ -6,20 +6,18 @@ func _ready() -> void:
 	_refresh_prompt()
 
 func interact(interactor: Node) -> void:
-	if GameStats.toggle_sample_collector:
+	if GameStats.body_exists:
 		_start_scan()
 	else:
 		print("Scanner not ready")
 	
 
 func _start_scan() -> void:
+	print("Starting scan")
 	if anim:
-		GameStats.toggle_sample_collector = false
 		anim.play("scan")
 		sound_emitter.play()
-		print("Starting scan")
 		await anim.animation_finished
 		print("Scan complete")
-		GameStats.toggle_sample_collector = true
 		
 	
