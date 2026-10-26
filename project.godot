@@ -33,7 +33,6 @@ VialStats="*uid://dvtfql07hor2"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
