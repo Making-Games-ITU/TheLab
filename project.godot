@@ -28,6 +28,7 @@ boot_splash/minimum_display_time=100
 PlayerStats="*uid://dn02qfwgu1uur"
 FmodManager="*uid://cds10pm7hwn3p"
 GameStats="*uid://ct1dqcskn76yb"
+VialStats="*uid://dvtfql07hor2"
 
 [display]
 
