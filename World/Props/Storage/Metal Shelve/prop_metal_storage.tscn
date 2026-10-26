@@ -2,4 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://cchmw6klgn8fw" path="res://World/Props/Storage/Metal Shelve/Prop_Metal_Storage.fbx" id="1_r7qvt"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_50ws8"]
+size = Vector3(1.8459473, 1.8977051, 0.4765625)
+
 [node name="Prop_Metal_Storage" unique_id=1869157670 instance=ExtResource("1_r7qvt")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=377458987]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=879700051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9354248, 0)
+shape = SubResource("BoxShape3D_50ws8")

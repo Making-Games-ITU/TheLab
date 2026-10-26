@@ -3,10 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://d0id15c3jra2u" path="res://World/Props/Storage/Lab Closet/Prop_Closet_Storage.fbx" id="1_bmxjx"]
 [ext_resource type="Material" uid="uid://b7abcjipmsvya" path="res://Shaders/GlassLessBlurry.tres" id="2_j8vn7"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_50ws8"]
+size = Vector3(0.8120117, 1.833374, 0.43133545)
+
 [node name="Prop_Closet_Storage" unique_id=1322947913 instance=ExtResource("1_bmxjx")]
 
-[node name="Cube_023" parent="Closet" parent_id_path=PackedInt32Array(1804681444) index="0" unique_id=865780799]
+[node name="Cube_023" parent="Closet" parent_id_path=PackedInt32Array(1032181265) index="0" unique_id=1340666293]
 surface_material_override/1 = ExtResource("2_j8vn7")
 
-[node name="Cube_024" parent="Closet" parent_id_path=PackedInt32Array(1804681444) index="1" unique_id=1474555742]
+[node name="Cube_024" parent="Closet" parent_id_path=PackedInt32Array(1032181265) index="1" unique_id=1897087944]
 surface_material_override/1 = ExtResource("2_j8vn7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1067877184]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1459904238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012207031, 1.000061, -0.0033874512)
+shape = SubResource("BoxShape3D_50ws8")
