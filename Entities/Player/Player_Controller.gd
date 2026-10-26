@@ -59,11 +59,18 @@ func _movement_input() -> void:
 		velocity.x = move_toward(velocity.x, 0, player_speed)
 		velocity.z = move_toward(velocity.z, 0, player_speed)
 
+func _update_vial_visibility() -> void:
+	if PlayerStats.has_new_vial or PlayerStats.has_sample:
+		%PlayerBloodVial.visible = true
+	else:
+		%PlayerBloodVial.visible = false
+
 func _physics_process(_delta: float) -> void:
-	_movement_input()
-	_handleStepsSFX()
 	_check_for_interactable()
-	if !PlayerStats.is_sitting:
+	_update_vial_visibility()
+	if !PlayerStats.is_sitting and !PlayerStats.is_analyzing:
+		_movement_input()
+		_handleStepsSFX()
 		move_and_slide()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -75,7 +82,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("escape"):
 		if PlayerStats.is_sitting:
 			PlayerStats.current_chair.stand(self)
-			get_viewport().set_input_as_handled()
+			get_viewport().set_input_as_handled() # What is this for again?
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
