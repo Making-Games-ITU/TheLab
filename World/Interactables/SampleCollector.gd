@@ -3,7 +3,6 @@ extends Interactable
 var _vial_inserted : bool = false
 var _sample_ready : bool = false
 
-@export var _sample_collector : Area3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
@@ -14,11 +13,11 @@ func _process(delta: float) -> void:
 
 func _toggle_interaction():
 	if GameStats.toggle_sample_collector:
-		_sample_collector.set_collision_layer_value(9, true)
+		area.set_collision_layer_value(9, true)
 	else:
 		if anim:
 			anim.play("close")
-		_sample_collector.set_collision_layer_value(9, false)
+		area.set_collision_layer_value(9, false)
 
 func interact(interactor: Node) -> void:
 	if _vial_inserted:

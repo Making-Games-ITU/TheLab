@@ -55,7 +55,7 @@ tracks/0/keys = PackedFloat32Array(0, 1, 3.7469306, 4.064663, -2.5712483, 1, 1, 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3cgfy"]
 _data = {
 &"RESET": SubResource("Animation_ypogi"),
-&"body": SubResource("Animation_rdrb8")
+&"request": SubResource("Animation_rdrb8")
 }
 
 [sub_resource type="BoxMesh" id="BoxMesh_ypogi"]
@@ -229,10 +229,11 @@ shape = SubResource("BoxShape3D_3cgfy")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.7469306, 4.064663, -2.5712483)
 mesh = SubResource("CapsuleMesh_qt5wh")
 
-[node name="SampleCollector" type="Node3D" parent="." unique_id=1217328641 node_paths=PackedStringArray("area")]
+[node name="SampleCollector" type="Node3D" parent="." unique_id=1217328641 node_paths=PackedStringArray("anim", "area")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.836, -2.879)
 script = ExtResource("9_5643u")
 prompt_text = "Insert empty vial"
+anim = NodePath("../RequestBody/Area3D2/Body drop")
 area = NodePath("Area3D")
 
 [node name="Area3D" type="Area3D" parent="SampleCollector" unique_id=720737945]

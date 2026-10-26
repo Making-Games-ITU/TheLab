@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bhcn0eyj5awrm" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_lamp.tscn" id="2_opveo"]
 [ext_resource type="PackedScene" uid="uid://bp60ytwrm06wj" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_red_lamp.tscn" id="3_3exyv"]
 [ext_resource type="Script" uid="uid://cwlp16ommdbfg" path="res://Systems/Game_Manager.gd" id="3_6c753"]
+[ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="4_jnwjh"]
 [ext_resource type="PackedScene" uid="uid://l6wljvsc2bg1" path="res://World/Props/Machines/Surgery Machine/env_machine_surgical.tscn" id="4_mqqbq"]
 [ext_resource type="PackedScene" uid="uid://1h75cfa5b4jp" path="res://World/Props/Tables/env_table.tscn" id="5_3exyv"]
 [ext_resource type="PackedScene" uid="uid://n10ynemp2f4b" path="res://World/Environments/Room/env_room.tscn" id="5_l5ogt"]
@@ -1089,12 +1090,6 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
 
-[sub_resource type="BoxMesh" id="BoxMesh_et6uj"]
-size = Vector3(0.5, 0.5, 0.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_conwj"]
-size = Vector3(0.5, 0.5, 0.5)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a06ba"]
 albedo_texture = ExtResource("30_bkfaf")
 
@@ -1139,6 +1134,12 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xwejj")
+
+[sub_resource type="BoxMesh" id="BoxMesh_et6uj"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_conwj"]
+size = Vector3(0.22919922, 0.5, 0.24438477)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp7ly"]
 albedo_texture = ExtResource("30_bkfaf")
@@ -1600,6 +1601,8 @@ script = ExtResource("2_eraeq")
 
 [node name="GameManager" type="Node" parent="." unique_id=1147127538]
 script = ExtResource("3_6c753")
+
+[node name="AudioManager" parent="." unique_id=1869149764 instance=ExtResource("4_jnwjh")]
 
 [node name="Lights" type="Node3D" parent="." unique_id=911679089]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5917645, 0, 7.336006)
@@ -2198,29 +2201,30 @@ transform = Transform3D(-0.9954268, 0, -0.09552744, 0, 1, 0, 0.09552744, 0, -0.9
 [node name="Prop_Filling_Machine" parent="Room/Machines" unique_id=1109295380 instance=ExtResource("29_e26fp")]
 transform = Transform3D(0.35674953, 0, 0.93420005, 0, 1, 0, -0.93420005, 0, 0.35674953, 3.0858433, 0.030189812, -3.2509754)
 
-[node name="Prop_Blood_Collector_Machine" type="Node3D" parent="Room/Machines" unique_id=2139538409 node_paths=PackedStringArray("_sample_collector", "area")]
+[node name="Prop_Blood_Collector_Machine" type="Node3D" parent="Room/Machines" unique_id=2139538409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5358453, 1.3214782, -5.44226)
-script = ExtResource("29_ntxbe")
-_sample_collector = NodePath("InteractableObject/Area3D2")
-prompt_text = "Insert Vial"
-area = NodePath("InteractableObject/Area3D2")
 
-[node name="InteractableObject" type="Node3D" parent="Room/Machines/Prop_Blood_Collector_Machine" unique_id=862109994]
-
-[node name="Area3D2" type="Area3D" parent="Room/Machines/Prop_Blood_Collector_Machine/InteractableObject" unique_id=1602709383]
-collision_layer = 257
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Machines/Prop_Blood_Collector_Machine/InteractableObject/Area3D2" unique_id=48850652]
-visible = false
-mesh = SubResource("BoxMesh_et6uj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Blood_Collector_Machine/InteractableObject/Area3D2" unique_id=1729115139]
-shape = SubResource("BoxShape3D_conwj")
-
-[node name="Cube_004" type="MeshInstance3D" parent="Room/Machines/Prop_Blood_Collector_Machine" unique_id=621941427]
+[node name="Cube_004" type="MeshInstance3D" parent="Room/Machines/Prop_Blood_Collector_Machine" unique_id=621941427 node_paths=PackedStringArray("area")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.03745842, -0.15410662, 0)
 material_override = SubResource("StandardMaterial3D_a06ba")
 mesh = SubResource("ArrayMesh_i21bn")
+script = ExtResource("29_ntxbe")
+prompt_text = "Insert Vial"
+area = NodePath("InteractableObject/Area3D2")
+
+[node name="InteractableObject" type="Node3D" parent="Room/Machines/Prop_Blood_Collector_Machine/Cube_004" unique_id=862109994]
+transform = Transform3D(0.49999997, 0, 0, 0, 0.49999997, 0, 0, 0, 0.5, 0.03745842, 0.15410662, -0.05304289)
+
+[node name="Area3D2" type="Area3D" parent="Room/Machines/Prop_Blood_Collector_Machine/Cube_004/InteractableObject" unique_id=1602709383]
+collision_layer = 257
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Machines/Prop_Blood_Collector_Machine/Cube_004/InteractableObject/Area3D2" unique_id=48850652]
+visible = false
+mesh = SubResource("BoxMesh_et6uj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Blood_Collector_Machine/Cube_004/InteractableObject/Area3D2" unique_id=1729115139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11196995, 0, 0.10930824)
+shape = SubResource("BoxShape3D_conwj")
 
 [node name="Cube_005" type="MeshInstance3D" parent="Room/Machines/Prop_Blood_Collector_Machine" unique_id=1143530675]
 material_override = SubResource("StandardMaterial3D_cp7ly")
