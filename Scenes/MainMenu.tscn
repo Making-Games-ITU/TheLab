@@ -1,0 +1,612 @@
+[gd_scene format=3 uid="uid://qnbpxqp3itbv"]
+
+[ext_resource type="PackedScene" uid="uid://dbvq82xs7d6jo" path="res://World/Props/Buttons/Env_Button_Open_Close.fbx" id="1_rrcx7"]
+[ext_resource type="Script" uid="uid://dr7kaeiwu4uks" path="res://UI/MainMenu/UI_Main_Menu.gd" id="2_8e205"]
+[ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="4_7v4os"]
+[ext_resource type="PackedScene" uid="uid://bhcn0eyj5awrm" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_lamp.tscn" id="5_2x1g0"]
+[ext_resource type="PackedScene" uid="uid://bp60ytwrm06wj" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_red_lamp.tscn" id="6_riqfo"]
+[ext_resource type="PackedScene" uid="uid://l6wljvsc2bg1" path="res://World/Props/Machines/Surgery Machine/env_machine_surgical.tscn" id="7_yxkem"]
+[ext_resource type="PackedScene" uid="uid://n10ynemp2f4b" path="res://World/Environments/Room/env_room.tscn" id="8_7v4os"]
+[ext_resource type="PackedScene" uid="uid://yomyius6rgy8" path="res://World/Props/Chairs/env_stool.tscn" id="8_o66vf"]
+[ext_resource type="PackedScene" uid="uid://dp6ay0uxk6bw7" path="res://World/Props/Xray/Curtains/prop_curtains.tscn" id="9_fipmv"]
+[ext_resource type="PackedScene" uid="uid://1h75cfa5b4jp" path="res://World/Props/Tables/env_table.tscn" id="9_pjscj"]
+[ext_resource type="PackedScene" uid="uid://dd4lliduo7nou" path="res://World/Props/Electricals/Power Supply/env_power_supply.tscn" id="10_m7n2d"]
+[ext_resource type="PackedScene" uid="uid://soh3pd56plwi" path="res://World/Props/Electricals/Control Panel/prop_control_panel.tscn" id="10_ydmd8"]
+[ext_resource type="PackedScene" uid="uid://xvx3yha5ujc" path="res://World/Props/Tables/env_table_surgical.tscn" id="11_65hh5"]
+[ext_resource type="PackedScene" uid="uid://dljgppj1vdecd" path="res://World/Props/Storage/Metal Shelve/prop_metal_storage.tscn" id="11_rplfc"]
+[ext_resource type="PackedScene" uid="uid://bp0030kh5o7rt" path="res://World/Props/Storage/Locker/env_locker.tscn" id="12_6byu3"]
+[ext_resource type="PackedScene" uid="uid://wcvo510x8n3s" path="res://World/Props/Storage/Lab Closet/prop_closet_storage.tscn" id="12_f3d0c"]
+[ext_resource type="PackedScene" uid="uid://bvdshqu0n2t6s" path="res://World/Props/Storage/Test Tube Storage/prop_test_tube_storage.tscn" id="14_pbfag"]
+[ext_resource type="PackedScene" uid="uid://bofhacbjojc6c" path="res://World/Items/Vial/item_vial.tscn" id="15_7xub0"]
+[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://Shaders/psx_camera_shader.gdshader" id="15_7467j"]
+[ext_resource type="PackedScene" uid="uid://ehrseny5tlqp" path="res://World/Items/Document/item_document.tscn" id="16_r4k1l"]
+[ext_resource type="PackedScene" uid="uid://bias2u8si11n0" path="res://World/Props/Xray/prop_xray_station.tscn" id="17_qwpoy"]
+[ext_resource type="PackedScene" uid="uid://b6pfyhbaso5ix" path="res://World/Props/Machines/Micro Scope/prop_micro_scope.tscn" id="18_8m3ho"]
+[ext_resource type="PackedScene" uid="uid://cdrmlpqjbyowt" path="res://World/Props/Machines/Mixer/prop_mixer.tscn" id="19_5rj5y"]
+[ext_resource type="PackedScene" uid="uid://dt51tjc003vvj" path="res://World/Props/Machines/Filling/prop_filling_machine.tscn" id="20_jvcv6"]
+[ext_resource type="PackedScene" uid="uid://dg2kdr4dq6wye" path="res://World/Props/Machines/Blood Collector/prop_blood_collector_machine.tscn" id="21_lcy8p"]
+[ext_resource type="PackedScene" uid="uid://cj50v71m7e4op" path="res://World/Props/Electricals/Computer/env_computer.tscn" id="23_jhlh1"]
+[ext_resource type="PackedScene" uid="uid://d3gcvi4gahlb7" path="res://World/Props/Electricals/Computer/env_screen.tscn" id="24_oor3o"]
+[ext_resource type="PackedScene" uid="uid://dykrujop444l5" path="res://Entities/NPCs/Female Body/Corpse.tscn" id="27_h64ul"]
+[ext_resource type="PackedScene" uid="uid://cmclndu1hvhfj" path="res://World/Environments/Pit/env_pit.tscn" id="28_y41we"]
+[ext_resource type="PackedScene" uid="uid://b68fqtutgyrws" path="res://World/Props/Tables/env_table_no_sink.tscn" id="29_drl2p"]
+[ext_resource type="PackedScene" uid="uid://coimfyram3dq1" path="res://World/Props/Corpse Tube/prop_corpse_tube.tscn" id="30_ydj5n"]
+[ext_resource type="PackedScene" uid="uid://xoplfxuvccwk" path="res://World/Props/Tables/env_table_sink.tscn" id="31_fw7q4"]
+[ext_resource type="PackedScene" uid="uid://c7n36j11m4xl1" path="res://World/Props/Trolley/prop_curtains_trolly.tscn" id="32_grj4f"]
+[ext_resource type="PackedScene" uid="uid://kuc0qku4tytw" path="res://World/Props/Trolley/Prop_Trolley.fbx" id="33_pj4f5"]
+[ext_resource type="PackedScene" uid="uid://5vn584og5dnk" path="res://World/Props/Doors/doors_sliding.tscn" id="35_k5x2d"]
+
+[sub_resource type="Environment" id="Environment_rrcx7"]
+background_energy_multiplier = 0.0
+ambient_light_source = 2
+ambient_light_color = Color(0.26961476, 0.255073, 0.1823487, 1)
+ambient_light_energy = 0.18
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.4177673, 0.391743, 0.3082522, 1)
+fog_light_energy = 0.0
+fog_density = 0.001
+adjustment_enabled = true
+adjustment_contrast = 0.975
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhlco"]
+render_priority = 0
+shader = ExtResource("15_7467j")
+shader_parameter/debug_mode = 0
+shader_parameter/debug_range = 50.0
+shader_parameter/enable_fog = false
+shader_parameter/fog_color = Color(0.8081357, 0.49642086, 0.10328529, 1)
+shader_parameter/noise_color = Color(0.61675495, 0.4631762, 5.7756904e-07, 1)
+shader_parameter/fog_distance = 25.0
+shader_parameter/fog_fade_range = 20.0000009025
+shader_parameter/enable_noise = false
+shader_parameter/noise_time_fac = 4.0
+shader_parameter/enable_color_limitation = true
+shader_parameter/color_levels = 6
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 0.350000016625
+
+[sub_resource type="QuadMesh" id="QuadMesh_2x1g0"]
+material = SubResource("ShaderMaterial_bhlco")
+size = Vector2(2, 2)
+
+[node name="MainMenu" type="Node3D" unique_id=946655024]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1361416045]
+environment = SubResource("Environment_rrcx7")
+
+[node name="AudioManager" parent="." unique_id=1869149764 instance=ExtResource("4_7v4os")]
+
+[node name="MainMenuUIManager" type="Control" parent="." unique_id=1732855505]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_8e205")
+
+[node name="OptionsMenu" type="Control" parent="MainMenuUIManager" unique_id=815750629]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 14.0
+offset_right = 1.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainMenuUIManager/OptionsMenu" unique_id=1548790507]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 298.0
+offset_right = 602.0
+offset_bottom = 399.0
+text = "Still more to do
+not sure why some of these are padded"
+
+[node name="Button" type="Button" parent="MainMenuUIManager/OptionsMenu" unique_id=1296730836]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 649.0
+offset_top = -207.0
+offset_right = -466.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuUIManager/OptionsMenu" unique_id=1233757650]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_top = -207.0
+offset_right = -524.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenuUIManager/OptionsMenu/VBoxContainer" unique_id=1433178642]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenuUIManager/OptionsMenu/VBoxContainer/HBoxContainer" unique_id=684422029]
+custom_minimum_size = Vector2(0, 20)
+custom_maximum_size = Vector2(80, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Volume"
+scroll_active = false
+
+[node name="MasterSlider" type="HSlider" parent="MainMenuUIManager/OptionsMenu/VBoxContainer/HBoxContainer" unique_id=1767043999]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MainMenuUIManager/OptionsMenu/VBoxContainer" unique_id=1154339789]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenuUIManager/OptionsMenu/VBoxContainer/HBoxContainer2" unique_id=317922461]
+custom_minimum_size = Vector2(0, 20)
+custom_maximum_size = Vector2(90, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resolution"
+scroll_active = false
+
+[node name="ResolutionOption" type="OptionButton" parent="MainMenuUIManager/OptionsMenu/VBoxContainer/HBoxContainer2" unique_id=14109718]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="FullscreenCheck" type="CheckButton" parent="MainMenuUIManager/OptionsMenu/VBoxContainer" unique_id=201525401]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Fullscreen"
+
+[node name="VSyncCheck" type="CheckButton" parent="MainMenuUIManager/OptionsMenu/VBoxContainer" unique_id=376190609]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "V-Sync (TODO)"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenuUIManager/OptionsMenu/VBoxContainer" unique_id=1456549156]
+layout_mode = 2
+text = "FPS Limiter (TODO)"
+fit_content = true
+
+[node name="Title" type="RichTextLabel" parent="MainMenuUIManager" unique_id=1607667724]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 90.0
+offset_right = 185.0
+offset_bottom = 130.0
+text = "NULL STRAIN"
+
+[node name="StartGame" type="Button" parent="MainMenuUIManager" unique_id=322344073]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 43.0
+offset_top = -188.0
+offset_right = -961.0
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
+
+[node name="Options" type="Button" parent="MainMenuUIManager" unique_id=648150090]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 41.0
+offset_top = -147.0
+offset_right = -960.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OPTIONS"
+
+[node name="Exit" type="Button" parent="MainMenuUIManager" unique_id=1020552321]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 41.0
+offset_top = -105.0
+offset_right = -960.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "QUIT"
+
+[node name="HoverSound" type="FmodEventEmitter3D" parent="MainMenuUIManager" unique_id=849949038]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+
+[node name="ClickSound" type="FmodEventEmitter3D" parent="MainMenuUIManager" unique_id=1851079377]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1384934528]
+transform = Transform3D(0.7321112, 0.08596458, -0.6757391, -3.2450105e-09, 0.9920051, 0.12619857, 0.6811851, -0.092391394, 0.72625804, 0.32986087, 1.8041809, -1.7080767)
+
+[node name="PSXMesh" type="MeshInstance3D" parent="Camera" unique_id=1022647019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1526204, 0, -1.11496)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_2x1g0")
+
+[node name="Lights" type="Node3D" parent="." unique_id=1823878613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5917645, 0, 7.336006)
+
+[node name="env_ceiling_lamp" parent="Lights" unique_id=216051645 instance=ExtResource("5_2x1g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.6584425, 2.6358595, -10.420589)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(216051645, 524783339) index="0" unique_id=1120609968]
+light_energy = 0.251
+
+[node name="env_ceiling_lamp2" parent="Lights" unique_id=697085238 instance=ExtResource("5_2x1g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.588459, 2.6358595, -7.4205894)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(697085238, 524783339) index="0" unique_id=1120609968]
+light_energy = 0.176
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+spot_range = 2.814
+spot_attenuation = 1.52
+
+[node name="env_ceiling_lamp7" parent="Lights" unique_id=706164487 instance=ExtResource("5_2x1g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.588459, 2.6358595, -7.4205894)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(706164487, 524783339) index="0" unique_id=1120609968]
+light_energy = 0.176
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+spot_attenuation = 1.37
+
+[node name="env_ceiling_lamp4" parent="Lights" unique_id=754436930 instance=ExtResource("5_2x1g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.69838953, 2.603364, -11.7987995)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(754436930, 524783339) index="0" unique_id=1120609968]
+light_energy = 0.08
+spot_range = 4.7193227
+spot_angle = 87.9047
+
+[node name="env_ceiling_lamp6" parent="Lights" unique_id=367568911 instance=ExtResource("5_2x1g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6280155, 2.603364, -7.3823385)
+
+[node name="Cylinder" parent="Lights/env_ceiling_lamp6" index="0" unique_id=524783339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12351322, 0, 0.01646936)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp6/Cylinder" index="0" unique_id=1120609968]
+light_energy = 0.169
+spot_range = 3.205
+spot_angle = 87.9047
+
+[node name="OmniLight3D" parent="Lights/env_ceiling_lamp6/Cylinder/SpotLight3D3" index="0" unique_id=125851175]
+light_energy = 9.405
+
+[node name="env_ceiling_lamp3" parent="Lights" unique_id=1911216042 instance=ExtResource("5_2x1g0")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.19090223, 1.961021, -11.82384)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(1911216042, 524783339) index="0" unique_id=1120609968]
+transform = Transform3D(0.88825995, -2.007844e-08, 0.45934123, -0.45934123, -3.8827075e-08, 0.88825995, 3.731543e-15, -0.99999976, -4.371138e-08, -4.7683716e-07, -0.050032616, 0)
+light_color = Color(0.56323135, 0.52731746, 0.5280909, 1)
+spot_range = 5.794
+spot_attenuation = 3.05
+spot_angle = 30.204771
+
+[node name="OmniLight3D" parent="Lights/env_ceiling_lamp3/Cylinder/SpotLight3D3" index="0" unique_id=125851175]
+transform = Transform3D(1, 0, -7.764702e-23, -2.627256e-15, 1, 3.5527137e-15, -3.7193987e-23, 0, 1, 0.044002533, 0, -0.095477104)
+
+[node name="env_ceiling_lamp5" parent="Lights" unique_id=2064023688 instance=ExtResource("5_2x1g0")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.94554186, -0.26759893, -11.886757)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(2064023688, 524783339) index="0" unique_id=1120609968]
+transform = Transform3D(0.7008144, -3.1181226e-08, 0.7133435, -0.7133435, -3.063358e-08, 0.7008144, 4.8694323e-15, -0.9999999, -4.371139e-08, -4.7683716e-07, -0.050032616, 0)
+light_color = Color(1, 0, 0.15951031, 1)
+light_energy = 0.4
+spot_range = 1.4978579
+spot_attenuation = 3.05
+spot_angle = 77.90309
+
+[node name="OmniLight3D" parent="Lights/env_ceiling_lamp5/Cylinder/SpotLight3D3" index="0" unique_id=125851175]
+transform = Transform3D(0.99999994, 1.7763573e-15, -1.5529406e-22, -4.5824427e-15, 1, 0, -2.7795197e-22, 7.1054274e-15, 0.99999994, 0.05667305, 0, -0.11997843)
+light_color = Color(0.9999997, 0.044246897, 0.0034288347, 1)
+light_energy = 1.442
+light_size = 0.047
+
+[node name="env_ceiling_red_lamp" parent="Lights" unique_id=1673076843 instance=ExtResource("6_riqfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50634813, 2.5960588, -8.739256)
+
+[node name="Env_Machine_Surgical" parent="Lights" unique_id=1288491871 instance=ExtResource("7_yxkem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7352805, 2.646977, -11.477769)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/Env_Machine_Surgical" unique_id=2013927513]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.2651062, -0.8911694, -0.90395737)
+light_color = Color(0.7090577, 0.48303944, 0.21913856, 1)
+light_energy = 2.332
+light_volumetric_fog_energy = 1.632
+shadow_enabled = true
+shadow_bias = 0.885
+shadow_normal_bias = 1.02
+shadow_opacity = 0.89
+shadow_blur = 0.0
+spot_range = 1.128
+spot_attenuation = -7.0
+spot_angle = 55.562355
+
+[node name="AreaLight3D" type="AreaLight3D" parent="Lights" unique_id=1529656266]
+transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -6.0564847, 1.4684366, -10.218113)
+light_color = Color(0.52248555, 0.68479013, 0.3408077, 1)
+light_energy = 0.475
+shadow_bias = 0.0
+area_range = 0.241
+area_attenuation = 0.798
+area_size = Vector2(0.5474415, 0.26740098)
+
+[node name="AreaLight3D5" type="AreaLight3D" parent="Lights" unique_id=304899468]
+transform = Transform3D(-1, 0, 1.3909066e-08, 0, 1, 0, -1.3909066e-08, 0, -1, -1.3093567, 1.182594, -8.352586)
+light_color = Color(0.6745098, 0.49411765, 0.34901962, 1)
+light_energy = 0.2
+shadow_bias = 0.0
+area_range = 3.156
+area_attenuation = 1.061
+area_size = Vector2(3.482142, 2.053)
+
+[node name="AreaLight3D7" type="AreaLight3D" parent="Lights" unique_id=1818541879]
+transform = Transform3D(1, 0, 7.351371e-08, 0, 1, 0, -7.351371e-08, 0, 1, -4.960122, 1.182594, -7.762663)
+light_color = Color(0.6745098, 0.49411765, 0.34901962, 1)
+light_energy = 0.2
+shadow_bias = 0.0
+area_range = 0.912
+area_attenuation = 1.061
+area_size = Vector2(1.4651814, 0.561)
+
+[node name="AreaLight3D8" type="AreaLight3D" parent="Lights" unique_id=174935212]
+transform = Transform3D(-1, 0, -1.6093648e-07, 0, 1, 0, 1.6093648e-07, 0, -1, -6.809536, 1.182594, -7.804395)
+light_color = Color(0.6745098, 0.49411765, 0.34901962, 1)
+light_energy = 0.2
+shadow_bias = 0.0
+area_range = 0.912
+area_attenuation = 1.061
+area_size = Vector2(0.009149432, 1.0104537)
+
+[node name="AreaLight3D9" type="AreaLight3D" parent="Lights" unique_id=1697630232]
+transform = Transform3D(1, 0, 2.4835924e-07, 0, 1, 0, -2.4835924e-07, 0, 1, -5.0520225, 0.86154795, -12.886417)
+light_color = Color(0.6745098, 0.49411765, 0.34901962, 1)
+light_energy = 0.439
+shadow_bias = 0.0
+area_range = 3.007
+area_attenuation = 1.061
+area_size = Vector2(3.9799168, 1.4376278)
+
+[node name="AreaLight3D10" type="AreaLight3D" parent="Lights" unique_id=1595809255]
+transform = Transform3D(2.0464785e-07, 0, -1, 0, 1, 0, 1, 0, 2.0464785e-07, -2.2203927, 0.9035975, -11.835926)
+light_color = Color(0.6745098, 0.49411765, 0.34901962, 1)
+light_energy = 0.439
+light_indirect_energy = 0.0
+shadow_bias = 0.0
+area_range = 3.252
+area_attenuation = 1.061
+area_size = Vector2(3.9799168, 1.7721441)
+
+[node name="AreaLight3D4" type="AreaLight3D" parent="Lights" unique_id=1371741405]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.004634, 1.182594, -8.148558)
+light_color = Color(0.6745098, 0.49411765, 0.34901962, 1)
+light_energy = 0.2
+shadow_bias = 0.0
+area_range = 3.156
+area_attenuation = 1.061
+area_size = Vector2(3.6875706, 1.5239124)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights" unique_id=1491655063]
+transform = Transform3D(0.81544703, 0, 0.5788318, -0.5676554, 0.19556129, 0.799702, -0.11319708, -0.9806915, 0.15946989, 0, 0, -3.4158838)
+light_energy = 0.0
+sky_mode = 1
+
+[node name="Room" type="Node3D" parent="." unique_id=91225976]
+
+[node name="Env_Room" parent="Room" unique_id=238921326 instance=ExtResource("8_7v4os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009624958, 0.0025100708, -0.0081954)
+
+[node name="Interactables" type="Node3D" parent="Room" unique_id=1769848729]
+
+[node name="Env_Stool" parent="Room/Interactables" unique_id=697425343 instance=ExtResource("8_o66vf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75855803, 0.022437535, -2.9201348)
+
+[node name="Prop_Curtains" parent="Room/Interactables" unique_id=164655211 instance=ExtResource("9_fipmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5156155, 2.4240956, -4.5071187)
+
+[node name="Cube_001" parent="Room/Interactables/Prop_Curtains" index="0" unique_id=712149409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07097316, 0)
+
+[node name="Cube_014" parent="Room/Interactables/Prop_Curtains" index="1" unique_id=1215536975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5948672, -4.7683716e-07)
+
+[node name="Prop_Control_Panel" parent="Room/Interactables" unique_id=1145011065 instance=ExtResource("10_ydmd8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.548418, 1.3248205, -6)
+
+[node name="Storage" type="Node3D" parent="Room" unique_id=765138510]
+
+[node name="Prop_Metal_Storage" parent="Room/Storage" unique_id=1869157670 instance=ExtResource("11_rplfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6473917, 0, -0.7392761)
+
+[node name="Prop_Closet_Storage" parent="Room/Storage" unique_id=1322947913 instance=ExtResource("12_f3d0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30165535, 0.030189991, 0.5397688)
+
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1032181265) index="0" unique_id=1340666293]
+transform = Transform3D(0.9847963, 0, 0.17371324, 0, 1, 0, -0.17371324, 0, 0.9847963, -0.40623677, 1.2193931, -0.18920648)
+
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1032181265) index="2" unique_id=808463335]
+transform = Transform3D(0.9980103, 0, -0.06305108, 0, 1, 0, 0.06305108, 0, 0.9980103, 0.40623674, 0.33802077, -0.18920648)
+
+[node name="Prop_Closet_Storage2" parent="Room/Storage" unique_id=1916056403 instance=ExtResource("12_f3d0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1489224, 0.060379982, -1.4530705)
+
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(1916056403, 1032181265) index="0" unique_id=1340666293]
+transform = Transform3D(0.9986644, 0, 0.051666856, 0, 1, 0, -0.051666856, 0, 0.9986644, -0.40623677, 1.2193931, -0.18920648)
+
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(1916056403, 1032181265) index="2" unique_id=808463335]
+transform = Transform3D(0.99973977, 0, -0.022809424, 0, 1, 0, 0.022809424, 0, 0.99973977, 0.40623665, 0.33802077, -0.18920648)
+
+[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(1916056403, 1032181265) index="3" unique_id=1459515881]
+transform = Transform3D(0.99992776, 0, 0.012020995, 0, 1, 0, -0.012020995, 0, 0.99992776, -0.40623677, 0.33802077, -0.18920648)
+
+[node name="env_locker" parent="Room/Storage" unique_id=1828827353 instance=ExtResource("12_6byu3")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.054465, 0, 0.35202485)
+
+[node name="env_locker2" parent="Room/Storage" unique_id=1512213402 instance=ExtResource("12_6byu3")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.054465, 0, 0.3520248)
+
+[node name="env_locker3" parent="Room/Storage" unique_id=773415506 instance=ExtResource("12_6byu3")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.054465, 0, 0.35202473)
+
+[node name="Prop_Test_Tube_Storage" parent="Room/Storage" unique_id=786496698 instance=ExtResource("14_pbfag")]
+transform = Transform3D(0.96555775, 0, -0.26018894, 0, 1, 0, 0.26018894, 0, 0.96555775, 2.1869125, 1.2749993, -0.72355986)
+
+[node name="Items" type="Node3D" parent="Room" unique_id=366632308]
+
+[node name="Item_Vial" parent="Room/Items" unique_id=739392615 instance=ExtResource("15_7xub0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3517891, 0.7421599, -0.6340709)
+
+[node name="Item_Vial2" parent="Room/Items" unique_id=1936913405 instance=ExtResource("15_7xub0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93749195, 0.7421599, -0.68672895)
+
+[node name="Item_Vial3" parent="Room/Items" unique_id=1659084638 instance=ExtResource("15_7xub0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1679415, 0.7421599, -0.77585727)
+
+[node name="Item_document" parent="Room/Items" unique_id=439975249 instance=ExtResource("16_r4k1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0023613, 1.0509942, -3.1255083)
+
+[node name="Machines" type="Node3D" parent="Room" unique_id=1917684642]
+
+[node name="Prop_Xray_Station" parent="Room/Machines" unique_id=1610762300 instance=ExtResource("17_qwpoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4993663, 1.5193069, -3.1362112)
+
+[node name="Prop_Micro_Scope" parent="Room/Machines" unique_id=924130864 instance=ExtResource("18_8m3ho")]
+transform = Transform3D(-0.93499076, 0, -0.354672, 0, 1, 0, 0.354672, 0, -0.93499076, 1.9996619, 0.9748792, -6.093265)
+
+[node name="Prop_Mixer" parent="Room/Machines" unique_id=1780799766 instance=ExtResource("19_5rj5y")]
+transform = Transform3D(-0.9954268, 0, -0.09552744, 0, 1, 0, 0.09552744, 0, -0.9954268, 3.0354338, 0.9792126, -6.231222)
+
+[node name="Prop_Filling_Machine" parent="Room/Machines" unique_id=1109295380 instance=ExtResource("20_jvcv6")]
+transform = Transform3D(0.35674953, 0, 0.93420005, 0, 1, 0, -0.93420005, 0, 0.35674953, 3.0858433, 0.030189812, -3.2509754)
+
+[node name="Prop_Blood_Collector_Machine" parent="Room/Machines" unique_id=2139538409 instance=ExtResource("21_lcy8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5358453, 1.3214782, -5.44226)
+
+[node name="Env_Power_Supply" parent="Room/Machines" unique_id=1147005002 instance=ExtResource("10_m7n2d")]
+transform = Transform3D(-0.8660254, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, -0.8660254, 0.26422167, 1.1109736, -2.4612887)
+
+[node name="Env_Computer" parent="Room/Machines" unique_id=282123531 instance=ExtResource("23_jhlh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.124107, 1.0089138, -3.0813434)
+
+[node name="env_screen" parent="Room/Machines/Env_Computer" unique_id=1850738053 instance=ExtResource("24_oor3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31119218, 0.33397794, 0.17390347)
+
+[node name="Props" type="Node3D" parent="Room" unique_id=1430379122]
+
+[node name="Env_Table" parent="Room/Props" unique_id=526195609 instance=ExtResource("9_pjscj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1068964, 0.034794867, -2.97155)
+
+[node name="Env_Table_Surgical" parent="Room/Props" unique_id=1613770615 instance=ExtResource("11_65hh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8456554, 0, -4.136529)
+
+[node name="Corpse2" parent="Room/Props" unique_id=852473659 instance=ExtResource("27_h64ul")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9020357, -0.124072075, -4.55774)
+
+[node name="Env_Pit" parent="Room/Props/Corpse2/Armature" parent_id_path=PackedInt32Array(852473659, 837968740) index="1" unique_id=139446197 instance=ExtResource("28_y41we")]
+transform = Transform3D(-4.371139e-10, 0, 0.01, 7.54979e-10, 0.01, 3.3001178e-17, -0.01, 7.54979e-10, -4.371139e-10, 0.00025868416, 0.0012407209, -0.0009789392)
+
+[node name="Cube_011" parent="Room/Props/Corpse2/Armature/Env_Pit" index="1" unique_id=527123488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0785131, 0.044901848, -0.10506663, 0.54307103)
+
+[node name="Env_Table_NoSink2" parent="Room/Props" unique_id=401042046 instance=ExtResource("29_drl2p")]
+transform = Transform3D(1, 0, 3.496911e-07, 0, 1, 0, -3.496911e-07, 0, 1, 2.5584826, 0.036102682, -6.2007523)
+
+[node name="Prop_Corpse_Tube" parent="Room/Props" unique_id=1507349415 instance=ExtResource("30_ydj5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9501696, 3.7467136, -4.552022)
+
+[node name="Env_Table_Sink" parent="Room/Props" unique_id=1923583669 instance=ExtResource("31_fw7q4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44899845, 0.033261806, -6.2114015)
+
+[node name="Prop_Curtains_Trolly" parent="Room/Props" unique_id=2019036272 instance=ExtResource("32_grj4f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0805423, 0.032699883, -4.6583595)
+
+[node name="Prop_Curtains_Trolly2" parent="Room/Props" unique_id=1804689591 instance=ExtResource("32_grj4f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3026237, 0.032699883, -0.44252634)
+
+[node name="Prop_Trolley" parent="Room/Props" unique_id=381052134 instance=ExtResource("33_pj4f5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.067409, 0.032699823, -2.5995648)
+
+[node name="Prop_Trolley2" parent="Room/Props" unique_id=1040552050 instance=ExtResource("33_pj4f5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.7208867, 0.032699943, 0.37001348)
+
+[node name="Prop_Trolley3" parent="Room/Props" unique_id=161568064 instance=ExtResource("33_pj4f5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4995947, 0.032699943, 0.50941026)
+
+[node name="Doors" type="Node3D" parent="Room" unique_id=2135345560]
+
+[node name="Env_Button_Open_Close" parent="Room/Doors" unique_id=22123590 instance=ExtResource("1_rrcx7")]
+transform = Transform3D(0.74218374, 0, -0.67019653, 0, 1, 0, 0.67019653, 0, 0.74218374, 7.6632915, 1.397426, -1.1211247)
+
+[node name="Env_Button_Open_Close2" parent="Room/Doors" unique_id=1539950812 instance=ExtResource("1_rrcx7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.84919, 1.397426, 0.707509)
+
+[node name="Doors_Sliding" parent="Room/Doors" unique_id=1514953514 instance=ExtResource("35_k5x2d")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 7.316954, 1.0764008, -1.6321357)
+
+[node name="Doors_Sliding2" parent="Room/Doors" unique_id=1522428191 instance=ExtResource("35_k5x2d")]
+transform = Transform3D(0, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0, 8.902527, 1.0764008, 0.0003851652)
+
+[node name="Doors_Sliding3" parent="Room/Doors" unique_id=1931538297 instance=ExtResource("35_k5x2d")]
+transform = Transform3D(-0.9999999, 0, 4.371138e-08, 0, 1, 0, -4.371138e-08, 0, -0.9999999, 0.033169, 1.0764008, -1.1191952)
+
+[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=778852150]
+transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39810574, 0, 0)
+
+[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1452491975]
+transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
+
+[connection signal="mouse_entered" from="MainMenuUIManager/OptionsMenu/Button" to="MainMenuUIManager" method="_on_button_hover"]
+[connection signal="pressed" from="MainMenuUIManager/OptionsMenu/Button" to="MainMenuUIManager" method="_on_options_pressed"]
+[connection signal="mouse_entered" from="MainMenuUIManager/StartGame" to="MainMenuUIManager" method="_on_button_hover"]
+[connection signal="pressed" from="MainMenuUIManager/StartGame" to="MainMenuUIManager" method="_on_start_game_pressed"]
+[connection signal="mouse_entered" from="MainMenuUIManager/Options" to="MainMenuUIManager" method="_on_button_hover"]
+[connection signal="pressed" from="MainMenuUIManager/Options" to="MainMenuUIManager" method="_on_options_pressed"]
+[connection signal="mouse_entered" from="MainMenuUIManager/Exit" to="MainMenuUIManager" method="_on_button_hover"]
+[connection signal="pressed" from="MainMenuUIManager/Exit" to="MainMenuUIManager" method="_on_exit_pressed"]
+
+[editable path="Lights/env_ceiling_lamp"]
+[editable path="Lights/env_ceiling_lamp2"]
+[editable path="Lights/env_ceiling_lamp7"]
+[editable path="Lights/env_ceiling_lamp4"]
+[editable path="Lights/env_ceiling_lamp6"]
+[editable path="Lights/env_ceiling_lamp3"]
+[editable path="Lights/env_ceiling_lamp5"]
+[editable path="Room/Interactables/Prop_Curtains"]
+[editable path="Room/Storage/Prop_Closet_Storage"]
+[editable path="Room/Storage/Prop_Closet_Storage2"]
+[editable path="Room/Props/Corpse2"]
+[editable path="Room/Props/Corpse2/Armature/Env_Pit"]
+[editable path="Room/Doors/Doors_Sliding3"]

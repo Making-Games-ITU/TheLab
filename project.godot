@@ -15,20 +15,21 @@ General/banks_path="res://Audio/FMODBanks/Desktop"
 [application]
 
 config/name="The LaB"
-run/main_scene="uid://dsmxw3r30htsq"
+run/main_scene="uid://qnbpxqp3itbv"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Floppy"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://c23mfw4ihpyex"
 config/icon="res://icon.svg"
-boot_splash/minimum_display_time=1000
+boot_splash/minimum_display_time=100
 
 [autoload]
 
 PlayerStats="*uid://dn02qfwgu1uur"
 FmodManager="*uid://cds10pm7hwn3p"
 GameStats="*uid://ct1dqcskn76yb"
+VialStats="*uid://dvtfql07hor2"
 
 [display]
 
