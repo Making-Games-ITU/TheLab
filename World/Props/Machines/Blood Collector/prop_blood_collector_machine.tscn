@@ -28,28 +28,37 @@ albedo_texture = ExtResource("3_8np5n")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b12te"]
 albedo_texture = ExtResource("3_8np5n")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_50ws8"]
+size = Vector3(0.3513794, 1.456665, 0.37261963)
+
 [node name="Prop_Blood_Collector_Machine" unique_id=2139538409 instance=ExtResource("1_sny63")]
 
-[node name="Cube_004" parent="." index="0" unique_id=692029644]
+[node name="Cube_004" parent="." index="0" unique_id=1576601656]
 material_override = SubResource("StandardMaterial3D_a06ba")
 
-[node name="Cube_005" parent="." index="1" unique_id=1842866250]
+[node name="Cube_005" parent="." index="1" unique_id=26577152]
 material_override = SubResource("StandardMaterial3D_cp7ly")
 
-[node name="Off_On-btn_001" parent="." index="2" unique_id=1268549279]
+[node name="Off_On-btn_001" parent="." index="3" unique_id=215087772]
 material_override = SubResource("StandardMaterial3D_x6oc4")
 
-[node name="Off_On-btn_002" parent="." index="3" unique_id=527317303]
+[node name="Off_On-btn_002" parent="." index="4" unique_id=227216765]
 material_override = SubResource("StandardMaterial3D_iiwog")
 
-[node name="Off_On-btn_003" parent="." index="4" unique_id=1413507842]
+[node name="Off_On-btn_003" parent="." index="5" unique_id=222009539]
 material_override = SubResource("StandardMaterial3D_6mtuo")
 
-[node name="Open_Capsule_Button" parent="." index="5" unique_id=898128059]
+[node name="Open_Capsule_Button" parent="." index="6" unique_id=441769535]
 material_override = SubResource("StandardMaterial3D_g11a6")
 
-[node name="Open_Capsule_Button_001" parent="." index="6" unique_id=742595139]
+[node name="Open_Capsule_Button_001" parent="." index="7" unique_id=228879624]
 material_override = SubResource("StandardMaterial3D_hogln")
 
-[node name="Open_Capsule_Button_002" parent="." index="7" unique_id=1269907080]
+[node name="Open_Capsule_Button_002" parent="." index="8" unique_id=1785575836]
 material_override = SubResource("StandardMaterial3D_b12te")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="9" unique_id=1036909557]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1729695676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09371948, 0.5203247, 0.083343506)
+shape = SubResource("BoxShape3D_50ws8")
