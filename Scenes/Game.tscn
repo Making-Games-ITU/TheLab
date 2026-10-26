@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cj50v71m7e4op" path="res://World/Props/Electricals/Computer/env_computer.tscn" id="21_7w24h"]
 [ext_resource type="PackedScene" uid="uid://dbvq82xs7d6jo" path="res://World/Props/Buttons/Env_Button_Open_Close.fbx" id="21_rajel"]
 [ext_resource type="PackedScene" uid="uid://d3gcvi4gahlb7" path="res://World/Props/Electricals/Computer/env_screen.tscn" id="22_6okg5"]
+[ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/VialCollect.gd" id="25_8e0uq"]
 [ext_resource type="PackedScene" uid="uid://dykrujop444l5" path="res://Entities/NPCs/Female Body/Corpse.tscn" id="25_e2w45"]
 [ext_resource type="PackedScene" uid="uid://cmclndu1hvhfj" path="res://World/Environments/Pit/env_pit.tscn" id="26_oo65k"]
 [ext_resource type="PackedScene" uid="uid://b68fqtutgyrws" path="res://World/Props/Tables/env_table_no_sink.tscn" id="27_smnwb"]
@@ -38,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://5vn584og5dnk" path="res://World/Props/Doors/doors_sliding.tscn" id="33_m15vq"]
 [ext_resource type="Shader" uid="uid://q0mb3yshd6df" path="res://Shaders/Micrograph.gdshader" id="34_a05uw"]
 [ext_resource type="PackedScene" uid="uid://ccbjica3ksi1c" path="res://World/Props/Trolley/prop_trolley.tscn" id="35_khy6b"]
+[ext_resource type="Script" uid="uid://7y5mut280vma" path="res://World/Interactables/Chair.gd" id="38_lmarx"]
 [ext_resource type="PackedScene" uid="uid://bhy0ipymuf831" path="res://Global Assets/InteractableObject.tscn" id="38_pti6k"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
@@ -52,6 +54,12 @@ fog_light_energy = 0.0
 fog_density = 0.001
 adjustment_enabled = true
 adjustment_contrast = 0.975
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_50ws8"]
+size = Vector3(0.43896484, 0.09716797, 0.5563965)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pti6k"]
+size = Vector3(0.5088043, 0.23570251, 0.28045654)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vq468"]
 shader = ExtResource("34_a05uw")
@@ -427,17 +435,58 @@ transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.4
 
 [node name="Interactables" type="Node3D" parent="." unique_id=491644675]
 
-[node name="Chair" parent="Interactables" unique_id=1967147911 instance=ExtResource("38_pti6k")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.805385, 0.95980513, -2.919565)
+[node name="Chair" type="Node3D" parent="Interactables" unique_id=832534440 node_paths=PackedStringArray("seat_point", "exit_point", "area", "sound_emitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.757, 0, -2.921)
+script = ExtResource("38_lmarx")
+seat_point = NodePath("SitPoint")
+exit_point = NodePath("StandPoint")
+prompt_text = "Sit"
+area = NodePath("Area3D")
+sound_emitter = NodePath("SitSound")
+
+[node name="SitPoint" type="Marker3D" parent="Interactables/Chair" unique_id=1600917033]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+
+[node name="StandPoint" type="Marker3D" parent="Interactables/Chair" unique_id=401142022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46164817, 1.1920929e-07, -0.8683226)
+
+[node name="Area3D" type="Area3D" parent="Interactables/Chair" unique_id=918822847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6378503, 0)
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Chair/Area3D" unique_id=835637493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022583008, 0.0012207031, 0)
+shape = SubResource("BoxShape3D_50ws8")
+
+[node name="SitSound" type="FmodEventEmitter3D" parent="Interactables/Chair" unique_id=824865748]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+
+[node name="Vial Cabinet" type="Node3D" parent="Interactables" unique_id=468691575 node_paths=PackedStringArray("area", "sound_emitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0120907, 1.2865258, -0.5496068)
+script = ExtResource("25_8e0uq")
+prompt_text = "Take Empty Vial"
+area = NodePath("Area3D")
+sound_emitter = NodePath("CabinetInteractSound")
+
+[node name="Area3D" type="Area3D" parent="Interactables/Vial Cabinet" unique_id=1923773698]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Vial Cabinet/Area3D" unique_id=580230272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16756439, 0.10617828, -0.19198608)
+shape = SubResource("BoxShape3D_pti6k")
+
+[node name="CabinetInteractSound" type="FmodEventEmitter3D" parent="Interactables/Vial Cabinet" unique_id=1991102569]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
 [node name="Microscope" parent="Interactables" unique_id=454965839 instance=ExtResource("38_pti6k")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.018333, 1.0131958, -5.8148017)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.00213, 1.2943975, -6.0734377)
 
 [node name="Mixer" parent="Interactables" unique_id=347589346 instance=ExtResource("38_pti6k")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.972598, 1.2029622, -5.7098837)
-
-[node name="VialShelves" parent="Interactables" unique_id=361484132 instance=ExtResource("38_pti6k")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.5121207, 1.4639528, -0.6290901)
 
 [node name="FillingMachine" parent="Interactables" unique_id=246823992 instance=ExtResource("38_pti6k")]
 transform = Transform3D(0.5, 0, 0, 0, 0.49999997, 0, 0, 0, 0.49999997, 2.8427312, 1.3946898, -3.312075)
