@@ -51,6 +51,7 @@
 [ext_resource type="Shader" uid="uid://q0mb3yshd6df" path="res://Shaders/Micrograph.gdshader" id="32_jgty5"]
 [ext_resource type="PackedScene" uid="uid://c7n36j11m4xl1" path="res://World/Props/Trolley/prop_curtains_trolly.tscn" id="33_wusdh"]
 [ext_resource type="PackedScene" uid="uid://kuc0qku4tytw" path="res://World/Props/Trolley/Prop_Trolley.fbx" id="34_0fdv0"]
+[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope.gd" id="35_cxs0b"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -1089,6 +1090,12 @@ shader_parameter/warp_amount = 0.0
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
+
+[sub_resource type="BoxMesh" id="BoxMesh_o8foo"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v8itv"]
+size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a06ba"]
 albedo_texture = ExtResource("30_bkfaf")
@@ -2192,8 +2199,23 @@ offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Prop_Micro_Scope" parent="Room/Machines" unique_id=924130864 instance=ExtResource("26_elwq1")]
+[node name="Prop_Micro_Scope" parent="Room/Machines" unique_id=924130864 node_paths=PackedStringArray("area") instance=ExtResource("26_elwq1")]
 transform = Transform3D(-0.93499076, 0, -0.354672, 0, 1, 0, 0.354672, 0, -0.93499076, 1.9996619, 0.9748792, -6.093265)
+script = ExtResource("35_cxs0b")
+prompt_text = ""
+area = NodePath("InteractableObject/Area3D2")
+
+[node name="InteractableObject" type="Node3D" parent="Room/Machines/Prop_Micro_Scope" unique_id=1406142366]
+
+[node name="Area3D2" type="Area3D" parent="Room/Machines/Prop_Micro_Scope/InteractableObject" unique_id=1579906458]
+collision_layer = 257
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Machines/Prop_Micro_Scope/InteractableObject/Area3D2" unique_id=879225402]
+visible = false
+mesh = SubResource("BoxMesh_o8foo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Micro_Scope/InteractableObject/Area3D2" unique_id=1119834465]
+shape = SubResource("BoxShape3D_v8itv")
 
 [node name="Prop_Mixer" parent="Room/Machines" unique_id=1780799766 instance=ExtResource("27_ldlh3")]
 transform = Transform3D(-0.9954268, 0, -0.09552744, 0, 1, 0, 0.09552744, 0, -0.9954268, 3.0354338, 0.9792126, -6.231222)
@@ -2346,7 +2368,8 @@ transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39
 [node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1477454735]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
 
-[node name="Micrograph" type="Control" parent="." unique_id=308824450]
+[node name="Micrograph" type="Control" parent="Room" unique_id=308824450]
+unique_name_in_owner = true
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -2355,7 +2378,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect2" type="ColorRect" parent="Micrograph" unique_id=260998597]
+[node name="ColorRect2" type="ColorRect" parent="Room/Micrograph" unique_id=260998597]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2364,7 +2387,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0142752165, 0.014275218, 0.014275218, 1)
 
-[node name="ColorRect" type="ColorRect" parent="Micrograph" unique_id=420387211]
+[node name="ColorRect" type="ColorRect" parent="Room/Micrograph" unique_id=420387211]
 material = SubResource("ShaderMaterial_vq468")
 layout_mode = 1
 anchors_preset = 15
