@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 	_toggle_interaction()
 
 func _toggle_interaction():
-	if GameStats.toggle_sample_collector:
+	if GameStats.vial_in_collector and VialStats.empty:
 		area.set_collision_layer_value(9, true)
 	else:
 		area.set_collision_layer_value(9, false)
@@ -20,5 +20,6 @@ func interact(interactor: Node) -> void:
 func _extractBlood() -> void:
 	if anim:
 		anim.play("extract")
+	VialStats.empty = false
 	VialStats.infection = 1
 	print(VialStats.infection)
