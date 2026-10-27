@@ -9,8 +9,9 @@ func interact(interactor: Node) -> void:
 	_get_new_vial()
 	
 func _get_new_vial():
-	if not PlayerStats.has_new_vial:
-		PlayerStats.has_new_vial = true
-		print(PlayerStats.has_new_vial)
-	else:
-		print("Already have an empty vial")
+	PlayerStats.has_new_vial = true
+	PlayerStats.has_sample = false
+	VialStats.empty = true
+	for key in VialStats.chemicals:
+		VialStats.chemicals[key] = VialStats.Chemical.new()
+	print(PlayerStats.has_new_vial," ", VialStats.infection)

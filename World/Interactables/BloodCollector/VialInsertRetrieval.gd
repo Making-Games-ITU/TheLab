@@ -1,11 +1,10 @@
 extends Interactable
 
-var _vial_inserted : bool = false
-var _sample_ready : bool = false
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
+	prompt_text = "Insert Vial"
+	_refresh_prompt()
 	_toggle_interaction() 
 
 func _process(delta: float) -> void:
@@ -20,7 +19,7 @@ func _toggle_interaction():
 		area.set_collision_layer_value(9, false)
 
 func interact(interactor: Node) -> void:
-	if _vial_inserted:
+	if GameStats.vial_in_collector:
 		if anim:
 			anim.play("remove")
 		_take_vial()
@@ -30,9 +29,8 @@ func interact(interactor: Node) -> void:
 		_insert_vial()	
 
 func _insert_vial():
-	if PlayerStats.has_new_vial: 
-		PlayerStats.has_new_vial = false
-		_vial_inserted = true
+	if PlayerStats.has_new_vial or PlayerStats.has_sample: 
+		GameStats.vial_in_collector = true
 		print("Vial inserted")
 		prompt_text = "Take vial"
 		_refresh_prompt()
@@ -40,8 +38,7 @@ func _insert_vial():
 		print("No Vial in inventory.")
 
 func _take_vial():
-	#PlayerStats.has_sample = true
-	_vial_inserted = false
+	GameStats.vial_in_collector = false
 	print("Picked up Vial: ", PlayerStats.has_sample)
 	
 	prompt_text = "Insert Vial"

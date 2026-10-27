@@ -51,8 +51,9 @@
 [ext_resource type="PackedScene" uid="uid://bhy0ipymuf831" path="res://Global Assets/InteractableObject.tscn" id="38_pti6k"]
 [ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope.gd" id="40_7av8l"]
 [ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/ScanButton.gd" id="46_lkuj1"]
+[ext_resource type="Script" uid="uid://b4kbgcr5ai4eq" path="res://World/Interactables/BloodCollector/SampleExtraction.gd" id="47_34hf4"]
 [ext_resource type="Texture2D" uid="uid://cyft1j0jh3k7j" path="res://World/Props/Machines/Blood Collector/BloodSampler_Texture.png" id="49_lkuj1"]
-[ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/SampleCollector.gd" id="50_lklsk"]
+[ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/VialInsertRetrieval.gd" id="50_lklsk"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -1134,6 +1135,18 @@ size = Vector3(0.5, 0.5, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wmawy"]
 size = Vector3(0.5, 0.5, 0.5)
 
+[sub_resource type="BoxMesh" id="BoxMesh_m15vq"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a05uw"]
+size = Vector3(0.22919922, 0.5, 0.24438477)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lklsk"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_34hf4"]
+size = Vector3(0.5, 0.5, 0.5)
+
 [sub_resource type="Animation" id="Animation_cw0sf"]
 length = 0.001
 tracks/0/type = "position_3d"
@@ -1179,12 +1192,6 @@ size = Vector3(0.5088043, 0.23570251, 0.28045654)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c3pyi"]
 size = Vector3(0.24023438, 0.5221863, 0.4683838)
-
-[sub_resource type="BoxMesh" id="BoxMesh_m15vq"]
-size = Vector3(0.5, 0.5, 0.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_a05uw"]
-size = Vector3(0.22919922, 0.5, 0.24438477)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vq468"]
 shader = ExtResource("34_a05uw")
@@ -1708,23 +1715,57 @@ transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.4
 
 [node name="Interactables" type="Node3D" parent="." unique_id=491644675]
 
+[node name="BloodCollector" type="Node3D" parent="Interactables" unique_id=2052986481]
+
+[node name="SampleExtraction" type="Node3D" parent="Interactables/BloodCollector" unique_id=1967147911]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.492851, 1.3797606, -5.287664)
+
+[node name="Area3D2" type="Area3D" parent="Interactables/BloodCollector/SampleExtraction" unique_id=910346152 node_paths=PackedStringArray("area")]
+collision_layer = 257
+script = ExtResource("47_34hf4")
+area = NodePath(".")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/BloodCollector/SampleExtraction/Area3D2" unique_id=1955774864]
+visible = false
+mesh = SubResource("BoxMesh_hcxrd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/BloodCollector/SampleExtraction/Area3D2" unique_id=229212492]
+shape = SubResource("BoxShape3D_wmawy")
+
+[node name="VialInsertRetrieval" type="Node3D" parent="Interactables/BloodCollector" unique_id=1038060743 node_paths=PackedStringArray("area")]
+transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.5, 6.5358453, 1.3214782, -5.4953027)
+script = ExtResource("50_lklsk")
+prompt_text = ""
+area = NodePath("Area3D2")
+
+[node name="Area3D2" type="Area3D" parent="Interactables/BloodCollector/VialInsertRetrieval" unique_id=460139767]
+collision_layer = 257
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/BloodCollector/VialInsertRetrieval/Area3D2" unique_id=481933250]
+visible = false
+mesh = SubResource("BoxMesh_m15vq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/BloodCollector/VialInsertRetrieval/Area3D2" unique_id=1991393216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11196995, 0, 0.10930824)
+shape = SubResource("BoxShape3D_a05uw")
+
 [node name="Scanner" type="Node3D" parent="Interactables" unique_id=609716927]
 
-[node name="ScanStart" type="Node3D" parent="Interactables/Scanner" unique_id=1967147911 node_paths=PackedStringArray("anim", "area")]
+[node name="ScanStart" type="Node3D" parent="Interactables/Scanner" unique_id=2047842121 node_paths=PackedStringArray("anim", "area")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 6.372153, 1.1773775, -3.3337753)
 script = ExtResource("46_lkuj1")
 anim = NodePath("../ScannerAnimation")
 area = NodePath("Area3D2")
 
-[node name="Area3D2" type="Area3D" parent="Interactables/Scanner/ScanStart" unique_id=910346152]
+[node name="Area3D2" type="Area3D" parent="Interactables/Scanner/ScanStart" unique_id=334460005]
 collision_layer = 257
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Scanner/ScanStart/Area3D2" unique_id=1955774864]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Scanner/ScanStart/Area3D2" unique_id=245686120]
 visible = false
-mesh = SubResource("BoxMesh_hcxrd")
+mesh = SubResource("BoxMesh_lklsk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Scanner/ScanStart/Area3D2" unique_id=229212492]
-shape = SubResource("BoxShape3D_wmawy")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Scanner/ScanStart/Area3D2" unique_id=401761398]
+shape = SubResource("BoxShape3D_34hf4")
 
 [node name="ScannerAnimation" type="AnimationPlayer" parent="Interactables/Scanner" unique_id=1108275115]
 root_node = NodePath("../..")
@@ -1803,22 +1844,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.972598, 1.2029622, -5
 
 [node name="FillingMachine" parent="Interactables" unique_id=246823992 instance=ExtResource("38_pti6k")]
 transform = Transform3D(0.5, 0, 0, 0, 0.49999997, 0, 0, 0, 0.49999997, 2.8427312, 1.3946898, -3.312075)
-
-[node name="SampleCollector" type="Node3D" parent="Interactables" unique_id=1038060743 node_paths=PackedStringArray("area")]
-transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.5, 6.5358453, 1.3214782, -5.4953027)
-script = ExtResource("50_lklsk")
-area = NodePath("Area3D2")
-
-[node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector" unique_id=460139767]
-collision_layer = 257
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/SampleCollector/Area3D2" unique_id=481933250]
-visible = false
-mesh = SubResource("BoxMesh_m15vq")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/SampleCollector/Area3D2" unique_id=1991393216]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11196995, 0, 0.10930824)
-shape = SubResource("BoxShape3D_a05uw")
 
 [node name="Micrograph" type="Control" parent="." unique_id=308824450]
 unique_name_in_owner = true

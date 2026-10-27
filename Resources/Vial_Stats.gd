@@ -4,6 +4,8 @@ extends Node
 # For example, can be used to update shader
 signal changed 
 
+var empty : bool = true
+
 # Infection related stats
 enum Infection {
 	NONE = 0,

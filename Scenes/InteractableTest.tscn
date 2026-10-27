@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://dg1o1gujlh3uh" path="res://World/Interactables/BodyDisposal.gd" id="7_3cgfy"]
 [ext_resource type="Script" uid="uid://cmcmbnsforjle" path="res://World/Interactables/BodyRequest.gd" id="7_rdrb8"]
 [ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/VialCollect.gd" id="8_3cgfy"]
-[ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/SampleCollector.gd" id="9_5643u"]
+[ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/VialInsertRetrieval.gd" id="9_5643u"]
 [ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/ScanButton.gd" id="10_xli3v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt5wh"]

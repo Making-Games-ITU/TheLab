@@ -13,3 +13,5 @@ var interacted_button : Buttons = Buttons.NONE
 
 var body_exists: bool = false
 var toggle_sample_collector : bool = false
+
+var vial_in_collector : bool = false
