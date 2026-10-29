@@ -2,7 +2,6 @@ extends Interactable
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(GameStats.chem_in_pip)
 	super()
 	prompt_text = "Place Chemical Bottle"
 	_refresh_prompt()

@@ -7,10 +7,6 @@ var body_state : Condition = Condition.NONE
 var body_number : int = 0
 var body_ID : String = ""
 
-#Button type enum will be depricated as indicidual functionality will extend interactable script
-enum Buttons { BUTTON1, BUTTON2, BUTTON3, NEW_BABY, NONE }
-var interacted_button : Buttons = Buttons.NONE
-
 var body_exists: bool = false
 var toggle_sample_collector : bool = false
 
