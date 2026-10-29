@@ -15,3 +15,12 @@ var body_exists: bool = false
 var toggle_sample_collector : bool = false
 
 var vial_in_collector : bool = false
+
+#Game world state
+#chemical enum should be independant from VialStats
+var current_chemical : VialStats.Composite
+
+#Chemical Machine stats. Should be moved to a seperate manager script when more complicated
+var vial_in_pip : bool = false
+var chem_in_pip : bool = true
+var amount = []

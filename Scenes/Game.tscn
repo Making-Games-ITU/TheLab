@@ -54,7 +54,9 @@
 [ext_resource type="Script" uid="uid://b4kbgcr5ai4eq" path="res://World/Interactables/BloodCollector/SampleExtraction.gd" id="47_34hf4"]
 [ext_resource type="Script" uid="uid://wgfiw1dd0nju" path="res://World/Interactables/BloodCollector/SampleInjection.gd" id="47_jamva"]
 [ext_resource type="Texture2D" uid="uid://cyft1j0jh3k7j" path="res://World/Props/Machines/Blood Collector/BloodSampler_Texture.png" id="49_lkuj1"]
-[ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/VialInsertRetrieval.gd" id="50_lklsk"]
+[ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/Vial2CollectorInteraction.gd" id="50_lklsk"]
+[ext_resource type="Script" uid="uid://cekegxoo7dsve" path="res://World/Interactables/FillingMachine/Vial2FillInteraction.gd" id="55_a05uw"]
+[ext_resource type="Script" uid="uid://l1n756bd47f6" path="res://World/Interactables/Chemical.gd" id="55_m15vq"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -1200,6 +1202,30 @@ size = Vector3(0.5088043, 0.23570251, 0.28045654)
 [sub_resource type="BoxShape3D" id="BoxShape3D_c3pyi"]
 size = Vector3(0.24023438, 0.5221863, 0.4683838)
 
+[sub_resource type="BoxMesh" id="BoxMesh_a05uw"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n2ugt"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n24vg"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ym08v"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ym08v"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ekww"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n2ugt"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n24vg"]
+size = Vector3(0.5, 0.5, 0.5)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vq468"]
 shader = ExtResource("34_a05uw")
 shader_parameter/background_color = Color(0.037854142, 0.046883598, 0.028402748, 1)
@@ -1579,6 +1605,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93749195, 0.7421599, -0.686
 
 [node name="Item_Vial3" parent="Room/Items" unique_id=1729881472 instance=ExtResource("13_pti6k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1679415, 0.7421599, -0.77585727)
+visible = false
 
 [node name="Item_document" parent="Room/Items" unique_id=439975249 instance=ExtResource("14_lmarx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0023613, 1.0509942, -3.1255083)
@@ -1867,8 +1894,77 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 [node name="Mixer" parent="Interactables" unique_id=347589346 instance=ExtResource("38_pti6k")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.972598, 1.2029622, -5.7098837)
 
-[node name="FillingMachine" parent="Interactables" unique_id=246823992 instance=ExtResource("38_pti6k")]
-transform = Transform3D(0.5, 0, 0, 0, 0.49999997, 0, 0, 0, 0.49999997, 2.8427312, 1.3946898, -3.312075)
+[node name="FillingMachine" type="Node3D" parent="Interactables" unique_id=246823992]
+transform = Transform3D(0.4642429, 0, -0.1856839, 0, 0.49999997, 0, 0.18568392, 0, 0.46424288, 3.0814927, 1.5677308, -3.5142221)
+
+[node name="VialInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=1975090306 node_paths=PackedStringArray("area")]
+transform = Transform3D(0.99999994, 0, -2.9802322e-08, 0, 0.99999994, 0, 2.9802322e-08, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("55_a05uw")
+area = NodePath("Area3D2")
+
+[node name="Area3D2" type="Area3D" parent="Interactables/FillingMachine/VialInsert" unique_id=696665237]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, 0, 0, 0)
+collision_layer = 257
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/FillingMachine/VialInsert/Area3D2" unique_id=113014634]
+visible = false
+mesh = SubResource("BoxMesh_a05uw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/FillingMachine/VialInsert/Area3D2" unique_id=1622428914]
+shape = SubResource("BoxShape3D_n2ugt")
+
+[node name="ChemicalInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=899868628]
+transform = Transform3D(0.9999999, 0, -3.5762787e-07, 0, 0.9999994, 0, 2.0861626e-07, 0, 0.99999976, 0.044023514, -0.4259827, 0.61992455)
+
+[node name="Area3D2" type="Area3D" parent="Interactables/FillingMachine/ChemicalInsert" unique_id=10372477]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, 0, 0, 0)
+collision_layer = 257
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/FillingMachine/ChemicalInsert/Area3D2" unique_id=1097651846]
+visible = false
+mesh = SubResource("BoxMesh_n24vg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/FillingMachine/ChemicalInsert/Area3D2" unique_id=126666325]
+shape = SubResource("BoxShape3D_ym08v")
+
+[node name="Chemicals" type="Node" parent="Interactables" unique_id=1235664218]
+
+[node name="ChemA" type="Node3D" parent="Interactables/Chemicals" unique_id=338335875 node_paths=PackedStringArray("bottle", "area")]
+transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, 0.9384341, 0.81866324, -0.70399356)
+script = ExtResource("55_m15vq")
+chemName = "Cocain"
+composite = 1
+bottle = NodePath("../../../Room/Items/Item_Vial2")
+prompt_text = ""
+area = NodePath("Area3D2")
+
+[node name="Area3D2" type="Area3D" parent="Interactables/Chemicals/ChemA" unique_id=363401324]
+collision_layer = 257
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Chemicals/ChemA/Area3D2" unique_id=1270986458]
+visible = false
+mesh = SubResource("BoxMesh_ym08v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Chemicals/ChemA/Area3D2" unique_id=2092788182]
+shape = SubResource("BoxShape3D_8ekww")
+
+[node name="ChemB" type="Node3D" parent="Interactables/Chemicals" unique_id=1608534894 node_paths=PackedStringArray("bottle", "area")]
+transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, 1.35014, 0.81866324, -0.627267)
+script = ExtResource("55_m15vq")
+chemName = "Dihydrogen Monoxide"
+composite = 2
+bottle = NodePath("../../../Room/Items/Item_Vial")
+area = NodePath("Area3D2")
+
+[node name="Area3D2" type="Area3D" parent="Interactables/Chemicals/ChemB" unique_id=546550359]
+collision_layer = 257
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Chemicals/ChemB/Area3D2" unique_id=4793595]
+visible = false
+mesh = SubResource("BoxMesh_n2ugt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Chemicals/ChemB/Area3D2" unique_id=1094094020]
+shape = SubResource("BoxShape3D_n24vg")
 
 [node name="Micrograph" type="Control" parent="." unique_id=308824450]
 unique_name_in_owner = true

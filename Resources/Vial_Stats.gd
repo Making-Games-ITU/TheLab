@@ -16,7 +16,7 @@ enum Infection {
 var infection: Infection = Infection.NONE
 
 # Chemical related stats
-enum Composite { A, B }
+enum Composite {None, A, B }
 class Chemical:
 	var quantity: float = 0.0
 	var integrated: bool = false
