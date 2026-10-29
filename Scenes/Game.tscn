@@ -281,13 +281,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5917645, 0, 7.336006)
 [node name="env_ceiling_lamp" parent="Lights" unique_id=216051645 instance=ExtResource("12_iyesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.6584425, 2.6358595, -10.420589)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(216051645, 769714627) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(216051645, 679007822) index="0" unique_id=1120609968]
 light_energy = 0.251
 
 [node name="env_ceiling_lamp2" parent="Lights" unique_id=1281887983 instance=ExtResource("12_iyesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(1281887983, 769714627) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(1281887983, 679007822) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -297,7 +297,7 @@ spot_attenuation = 1.52
 [node name="env_ceiling_lamp7" parent="Lights" unique_id=1968220180 instance=ExtResource("12_iyesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(1968220180, 769714627) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(1968220180, 679007822) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -306,7 +306,7 @@ spot_attenuation = 1.37
 [node name="env_ceiling_lamp4" parent="Lights" unique_id=1279039200 instance=ExtResource("12_iyesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.69838953, 2.603364, -11.7987995)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(1279039200, 769714627) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(1279039200, 679007822) index="0" unique_id=1120609968]
 light_energy = 0.08
 spot_range = 4.7193227
 spot_angle = 87.9047
@@ -314,7 +314,7 @@ spot_angle = 87.9047
 [node name="env_ceiling_lamp6" parent="Lights" unique_id=542833714 instance=ExtResource("12_iyesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6280155, 2.603364, -7.3823385)
 
-[node name="Cylinder" parent="Lights/env_ceiling_lamp6" index="0" unique_id=769714627]
+[node name="Cylinder" parent="Lights/env_ceiling_lamp6" index="0" unique_id=679007822]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12351322, 0, 0.01646936)
 
 [node name="SpotLight3D3" parent="Lights/env_ceiling_lamp6/Cylinder" index="0" unique_id=1120609968]
@@ -328,7 +328,7 @@ light_energy = 9.405
 [node name="env_ceiling_lamp3" parent="Lights" unique_id=945463757 instance=ExtResource("12_iyesh")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.19090223, 1.961021, -11.82384)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(945463757, 769714627) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(945463757, 679007822) index="0" unique_id=1120609968]
 transform = Transform3D(0.88825995, -2.007844e-08, 0.45934123, -0.45934123, -3.8827075e-08, 0.88825995, 3.731543e-15, -0.99999976, -4.371138e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(0.56323135, 0.52731746, 0.5280909, 1)
 spot_range = 5.794
@@ -341,7 +341,7 @@ transform = Transform3D(1, 0, -7.764702e-23, -2.627256e-15, 1, 3.5527137e-15, -3
 [node name="env_ceiling_lamp5" parent="Lights" unique_id=909074781 instance=ExtResource("12_iyesh")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.94554186, -0.26759893, -11.886757)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(909074781, 769714627) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(909074781, 679007822) index="0" unique_id=1120609968]
 transform = Transform3D(0.7008144, -3.1181226e-08, 0.7133435, -0.7133435, -3.063358e-08, 0.7008144, 4.8694323e-15, -0.9999999, -4.371139e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(1, 0, 0.15951031, 1)
 light_energy = 0.4
@@ -463,10 +463,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75855803, 0.022437535, -2.9
 [node name="Prop_Curtains" parent="Room/Interactables" unique_id=164655211 instance=ExtResource("7_jn8rg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5156155, 2.4240956, -4.5071187)
 
-[node name="Cube_001" parent="Room/Interactables/Prop_Curtains" index="0" unique_id=11110050]
+[node name="Cube_001" parent="Room/Interactables/Prop_Curtains" index="0" unique_id=1796740783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07097316, 0)
 
-[node name="Cube_014" parent="Room/Interactables/Prop_Curtains" index="1" unique_id=2141186617]
+[node name="Cube_014" parent="Room/Interactables/Prop_Curtains" index="1" unique_id=535317986]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5948672, -4.7683716e-07)
 
 [node name="Prop_Control_Panel" parent="Room/Interactables" unique_id=1145011065 instance=ExtResource("8_umnjm")]
@@ -480,22 +480,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6473917, 0, -0.7392761)
 [node name="Prop_Closet_Storage" parent="Room/Storage" unique_id=1322947913 instance=ExtResource("10_18uti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30165535, 0.030189991, 0.5397688)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 713073490) index="0" unique_id=2062270567]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1804681444) index="0" unique_id=865780799]
 transform = Transform3D(0.9847963, 0, 0.17371324, 0, 1, 0, -0.17371324, 0, 0.9847963, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 713073490) index="2" unique_id=2002260598]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1804681444) index="2" unique_id=1358779425]
 transform = Transform3D(0.9980103, 0, -0.06305108, 0, 1, 0, 0.06305108, 0, 0.9980103, 0.40623674, 0.33802077, -0.18920648)
 
 [node name="Prop_Closet_Storage2" parent="Room/Storage" unique_id=792493778 instance=ExtResource("10_18uti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1489224, 0.060379982, -1.4530705)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 713073490) index="0" unique_id=2062270567]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1804681444) index="0" unique_id=865780799]
 transform = Transform3D(0.9986644, 0, 0.051666856, 0, 1, 0, -0.051666856, 0, 0.9986644, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 713073490) index="2" unique_id=2002260598]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1804681444) index="2" unique_id=1358779425]
 transform = Transform3D(0.99973977, 0, -0.022809424, 0, 1, 0, 0.022809424, 0, 0.99973977, 0.40623665, 0.33802077, -0.18920648)
 
-[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 713073490) index="3" unique_id=1756927442]
+[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1804681444) index="3" unique_id=43209471]
 transform = Transform3D(0.99992776, 0, 0.012020995, 0, 1, 0, -0.012020995, 0, 0.99992776, -0.40623677, 0.33802077, -0.18920648)
 
 [node name="env_locker" parent="Room/Storage" unique_id=1828827353 instance=ExtResource("19_4eqlp")]
@@ -574,10 +574,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8456554, 0, -4.136529)
 [node name="Corpse2" parent="Room/Props" unique_id=1466353991 instance=ExtResource("25_e2w45")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9020357, -0.124072075, -4.55774)
 
-[node name="Env_Pit" parent="Room/Props/Corpse2/Armature" parent_id_path=PackedInt32Array(1466353991, 760562936) index="1" unique_id=139446197 instance=ExtResource("26_oo65k")]
+[node name="Env_Pit" parent="Room/Props/Corpse2/Armature" parent_id_path=PackedInt32Array(1466353991, 1064941855) index="1" unique_id=139446197 instance=ExtResource("26_oo65k")]
 transform = Transform3D(-4.371139e-10, 0, 0.01, 7.54979e-10, 0.01, 3.3001178e-17, -0.01, 7.54979e-10, -4.371139e-10, 0.00025868416, 0.0012407209, -0.0009789392)
 
-[node name="Cube_011" parent="Room/Props/Corpse2/Armature/Env_Pit" index="1" unique_id=1621834420]
+[node name="Cube_011" parent="Room/Props/Corpse2/Armature/Env_Pit" index="1" unique_id=1644152417]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0785131, 0.044901848, -0.10506663, 0.54307103)
 
 [node name="Env_Table_NoSink2" parent="Room/Props" unique_id=1416737881 instance=ExtResource("27_smnwb")]
@@ -618,10 +618,10 @@ transform = Transform3D(0, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0, 8.902527, 
 [node name="Doors_Sliding3" parent="Room/Doors" unique_id=868643664 instance=ExtResource("33_m15vq")]
 transform = Transform3D(-0.9999999, 0, 4.371138e-08, 0, 1, 0, -4.371138e-08, 0, -0.9999999, 0.033169, 1.0764008, -1.1191952)
 
-[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=1436266235]
+[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=2096640977]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39810574, 0, 0)
 
-[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1904287924]
+[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=682133513]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
 
 [node name="Interactables" type="Node3D" parent="." unique_id=491644675]
