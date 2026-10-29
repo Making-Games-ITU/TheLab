@@ -31,6 +31,12 @@ var damaged: bool = false
 const CENTRIFUGE_HIGH_SPEED: float = 3000.0
 const CENTRIFUGE_DAMAGE_SPEED: float = 6000.0
 
+func empty_vial() -> void:
+	infection = Infection.NONE
+	empty = true
+	for key in chemicals:
+		chemicals[key] = Chemical.new()
+
 # Adding chemical composition to vial
 # Used by that chemical machine
 func add_chemical(composite: Composite, amount: float) -> void:

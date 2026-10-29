@@ -52,6 +52,7 @@
 [ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope.gd" id="40_7av8l"]
 [ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/ScanButton.gd" id="46_lkuj1"]
 [ext_resource type="Script" uid="uid://b4kbgcr5ai4eq" path="res://World/Interactables/BloodCollector/SampleExtraction.gd" id="47_34hf4"]
+[ext_resource type="Script" uid="uid://wgfiw1dd0nju" path="res://World/Interactables/BloodCollector/SampleInjection.gd" id="47_jamva"]
 [ext_resource type="Texture2D" uid="uid://cyft1j0jh3k7j" path="res://World/Props/Machines/Blood Collector/BloodSampler_Texture.png" id="49_lkuj1"]
 [ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/VialInsertRetrieval.gd" id="50_lklsk"]
 
@@ -1129,6 +1130,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e5kbv")
 
+[sub_resource type="BoxMesh" id="BoxMesh_jamva"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m15vq"]
+size = Vector3(0.5, 0.5, 0.5)
+
 [sub_resource type="BoxMesh" id="BoxMesh_hcxrd"]
 size = Vector3(0.5, 0.5, 0.5)
 
@@ -1717,13 +1724,31 @@ transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.4
 
 [node name="BloodCollector" type="Node3D" parent="Interactables" unique_id=2052986481]
 
-[node name="SampleExtraction" type="Node3D" parent="Interactables/BloodCollector" unique_id=1967147911]
+[node name="SampleInjection" type="Node3D" parent="Interactables/BloodCollector" unique_id=1016508303 node_paths=PackedStringArray("area")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.492851, 1.3797606, -5.287664)
+script = ExtResource("47_jamva")
+prompt_text = "Inject"
+area = NodePath("Area3D2")
 
-[node name="Area3D2" type="Area3D" parent="Interactables/BloodCollector/SampleExtraction" unique_id=910346152 node_paths=PackedStringArray("area")]
+[node name="Area3D2" type="Area3D" parent="Interactables/BloodCollector/SampleInjection" unique_id=864781409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6509409, 0)
 collision_layer = 257
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/BloodCollector/SampleInjection/Area3D2" unique_id=250919491]
+visible = false
+mesh = SubResource("BoxMesh_jamva")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/BloodCollector/SampleInjection/Area3D2" unique_id=2095300171]
+shape = SubResource("BoxShape3D_m15vq")
+
+[node name="SampleExtraction" type="Node3D" parent="Interactables/BloodCollector" unique_id=1967147911 node_paths=PackedStringArray("area")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.492851, 1.3797606, -5.287664)
 script = ExtResource("47_34hf4")
-area = NodePath(".")
+prompt_text = "Extract"
+area = NodePath("Area3D2")
+
+[node name="Area3D2" type="Area3D" parent="Interactables/BloodCollector/SampleExtraction" unique_id=910346152]
+collision_layer = 257
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/BloodCollector/SampleExtraction/Area3D2" unique_id=1955774864]
 visible = false

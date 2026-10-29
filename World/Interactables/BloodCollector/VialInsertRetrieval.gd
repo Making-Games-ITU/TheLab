@@ -31,6 +31,8 @@ func interact(interactor: Node) -> void:
 func _insert_vial():
 	if PlayerStats.has_new_vial or PlayerStats.has_sample: 
 		GameStats.vial_in_collector = true
+		PlayerStats.has_new_vial = false
+		PlayerStats.has_sample = false
 		print("Vial inserted: ", GameStats.vial_in_collector)
 		prompt_text = "Take vial"
 		_refresh_prompt()
@@ -39,6 +41,11 @@ func _insert_vial():
 
 func _take_vial():
 	GameStats.vial_in_collector = false
+	if VialStats.empty:
+		PlayerStats.has_new_vial = true
+	else:
+		PlayerStats.has_sample = true
+	
 	print("Picked up Vial: ", GameStats.vial_in_collector)
 	
 	prompt_text = "Insert Vial"

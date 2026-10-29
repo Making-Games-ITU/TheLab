@@ -14,8 +14,5 @@ func interact(interactor: Node) -> void:
 func _get_new_vial():
 	PlayerStats.has_new_vial = true
 	PlayerStats.has_sample = false
-	VialStats.empty = true
-	VialStats.infection = 0
-	for key in VialStats.chemicals:
-		VialStats.chemicals[key] = VialStats.Chemical.new()
+	VialStats.empty_vial()
 	print(PlayerStats.has_new_vial," ", VialStats.infection)
