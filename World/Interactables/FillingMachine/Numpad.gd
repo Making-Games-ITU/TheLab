@@ -1,9 +1,12 @@
 extends IButton
 
 
-@export var number : int
+@export var number : String
  
 # Called when the node enters the scene tree for the first time.
 func _press_button() -> void:
-	GameStats.amount.append(number)	
-	print(GameStats.amount)
+	if GameStats.amount.is_empty() and number == "0":
+		pass
+	else:
+		GameStats.amount += number
+		print(GameStats.amount)

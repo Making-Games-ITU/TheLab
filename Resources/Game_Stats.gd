@@ -19,4 +19,7 @@ var current_chemical : VialStats.Composite
 #Chemical Machine stats. Should be moved to a seperate manager script when more complicated
 var vial_in_pip : bool = false
 var chem_in_pip : bool = false
-var amount = []
+var amount = ""
+
+func parseAmount () -> float:
+	return amount.to_float()

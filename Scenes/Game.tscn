@@ -60,6 +60,9 @@
 [ext_resource type="Texture2D" uid="uid://bo5h3uv6essgg" path="res://World/Props/Machines/Filling/Filling_Machine_Texture.png" id="56_ym08v"]
 [ext_resource type="Texture2D" uid="uid://c2l5yjfm8dh4" path="res://World/Props/Machines/Keyboard keys Texture.png" id="57_8ekww"]
 [ext_resource type="Script" uid="uid://6ckpxp75y6ji" path="res://World/Interactables/FillingMachine/Numpad.gd" id="58_dwhu0"]
+[ext_resource type="Script" uid="uid://b2eqg2tydo80s" path="res://World/Interactables/FillingMachine/AddChemical2Vial.gd" id="58_nojon"]
+[ext_resource type="Script" uid="uid://dxv013hmmsgpm" path="res://World/Interactables/FillingMachine/DecimalPointButton.gd" id="59_8ekww"]
+[ext_resource type="Script" uid="uid://bl6j4hu8sosqs" path="res://World/Interactables/FillingMachine/Clear.gd" id="60_dwhu0"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -2618,9 +2621,12 @@ mesh = SubResource("ArrayMesh_65i2f")
 
 [node name="Numpad" type="Node3D" parent="Interactables/FillingMachine" unique_id=2012790320]
 
-[node name="Button_002" type="MeshInstance3D" parent="Interactables/FillingMachine/Numpad" unique_id=1500694056]
+[node name="Button_002" type="MeshInstance3D" parent="Interactables/FillingMachine/Numpad" unique_id=1500694056 node_paths=PackedStringArray("area")]
 transform = Transform3D(-0.031389832, 0, 1.9997535, 0, 1.9999999, 0, -1.9997537, 0, -0.031389892, -0.12575674, 0.033544064, 0.55507374)
 mesh = SubResource("ArrayMesh_tni8d")
+script = ExtResource("58_nojon")
+prompt_text = "Start"
+area = NodePath("Area3D")
 
 [node name="Area3D" type="Area3D" parent="Interactables/FillingMachine/Numpad/Button_002" unique_id=716366824]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
@@ -2640,6 +2646,8 @@ shape = SubResource("BoxShape3D_pf38o")
 transform = Transform3D(-0.031389773, 0, 1.9997535, 0, 1.9999998, 0, -1.9997536, 0, -0.031389892, -0.12429023, 0.09891629, 0.639884)
 mesh = SubResource("ArrayMesh_hasen")
 script = ExtResource("58_dwhu0")
+number = "0"
+prompt_text = "0"
 area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/FillingMachine/Numpad/Button_num0" unique_id=831071368]
@@ -2659,7 +2667,8 @@ shape = SubResource("BoxShape3D_oxy24")
 transform = Transform3D(-0.031389773, 0, 1.9997535, 0, 1.9999998, 0, -1.9997536, 0, -0.031389892, -0.123263836, 0.09891629, 0.70524883)
 mesh = SubResource("ArrayMesh_42qdk")
 script = ExtResource("58_dwhu0")
-number = 1
+number = "1"
+prompt_text = "1"
 area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/FillingMachine/Numpad/Button_num1" unique_id=1405389250]
@@ -2679,7 +2688,8 @@ shape = SubResource("BoxShape3D_xvm24")
 transform = Transform3D(-0.031389773, 0, 1.9997535, 0, 1.9999998, 0, -1.9997536, 0, -0.031389892, -0.122238636, 0.09891629, 0.7706137)
 mesh = SubResource("ArrayMesh_sdbrh")
 script = ExtResource("58_dwhu0")
-number = 2
+number = "2"
+prompt_text = "2"
 area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/FillingMachine/Numpad/Button_num2" unique_id=1512282859]
@@ -2699,7 +2709,8 @@ shape = SubResource("BoxShape3D_nn66o")
 transform = Transform3D(-0.031389832, 0, 1.9997535, 0, 1.9999999, 0, -1.9997537, 0, -0.031389892, -0.12121248, 0.09891629, 0.83597803)
 mesh = SubResource("ArrayMesh_3ec81")
 script = ExtResource("58_dwhu0")
-number = 3
+number = "3"
+prompt_text = "3"
 area = NodePath("Area3D")
 
 [node name="Area3D" type="Area3D" parent="Interactables/FillingMachine/Numpad/Button_num3" unique_id=1200334095]
@@ -2719,7 +2730,8 @@ shape = SubResource("BoxShape3D_oj07j")
 transform = Transform3D(-0.031389773, 0, 1.9997535, 0, 1.9999998, 0, -1.9997536, 0, -0.031389892, -0.12429023, 0.033544064, 0.639884)
 mesh = SubResource("ArrayMesh_uywo6")
 script = ExtResource("58_dwhu0")
-number = 4
+number = "4"
+prompt_text = "4"
 area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/FillingMachine/Numpad/Button_num4" unique_id=987091653]
@@ -2739,7 +2751,8 @@ shape = SubResource("BoxShape3D_vvlld")
 transform = Transform3D(-0.031389773, 0, 1.9997535, 0, 1.9999998, 0, -1.9997536, 0, -0.031389892, -0.123263836, 0.033544064, 0.70524883)
 mesh = SubResource("ArrayMesh_wd5xs")
 script = ExtResource("58_dwhu0")
-number = 5
+number = "5"
+prompt_text = "5"
 area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/FillingMachine/Numpad/Button_num5" unique_id=1661277615]
@@ -2759,7 +2772,8 @@ shape = SubResource("BoxShape3D_wbrb6")
 transform = Transform3D(-0.031389773, 0, 1.9997535, 0, 1.9999998, 0, -1.9997536, 0, -0.031389892, -0.122238636, 0.033544064, 0.7706137)
 mesh = SubResource("ArrayMesh_86k53")
 script = ExtResource("58_dwhu0")
-number = 6
+number = "6"
+prompt_text = "6"
 area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/FillingMachine/Numpad/Button_num6" unique_id=1678480543]
@@ -2779,7 +2793,8 @@ shape = SubResource("BoxShape3D_ohxcp")
 transform = Transform3D(-0.031389832, 0, 1.9997535, 0, 1.9999999, 0, -1.9997537, 0, -0.031389892, -0.12121248, 0.033544064, 0.83597803)
 mesh = SubResource("ArrayMesh_bjwfa")
 script = ExtResource("58_dwhu0")
-number = 7
+number = "7"
+prompt_text = "7"
 area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/FillingMachine/Numpad/Button_num7" unique_id=963660818]
@@ -2799,7 +2814,8 @@ shape = SubResource("BoxShape3D_slsn5")
 transform = Transform3D(-0.031389773, 0, 1.9997535, 0, 1.9999998, 0, -1.9997536, 0, -0.031389892, -0.12429023, -0.031828642, 0.639884)
 mesh = SubResource("ArrayMesh_egkfr")
 script = ExtResource("58_dwhu0")
-number = 8
+number = "8"
+prompt_text = "8"
 area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/FillingMachine/Numpad/Button_num8" unique_id=1106552723]
@@ -2819,7 +2835,8 @@ shape = SubResource("BoxShape3D_0cgm4")
 transform = Transform3D(-0.031389832, 0, 1.9997535, 0, 1.9999999, 0, -1.9997537, 0, -0.031389892, -0.12326431, -0.031828642, 0.70524883)
 mesh = SubResource("ArrayMesh_r88kd")
 script = ExtResource("58_dwhu0")
-number = 9
+number = "9"
+prompt_text = "9"
 area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/FillingMachine/Numpad/Button_num9" unique_id=604237]
@@ -2835,9 +2852,12 @@ collision_layer = 257
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/FillingMachine/Numpad/Button_num9/Area3D" unique_id=774840151]
 shape = SubResource("BoxShape3D_5q87x")
 
-[node name="Button_point" type="MeshInstance3D" parent="Interactables/FillingMachine/Numpad" unique_id=1963443908]
+[node name="Button_point" type="MeshInstance3D" parent="Interactables/FillingMachine/Numpad" unique_id=1963443908 node_paths=PackedStringArray("area")]
 transform = Transform3D(-0.031389773, 0, 1.9997537, 0, 2, 0, -1.9997538, 0, -0.031389892, -0.122238636, -0.031828642, 0.7706137)
 mesh = SubResource("ArrayMesh_crnqj")
+script = ExtResource("59_8ekww")
+prompt_text = "."
+area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/FillingMachine/Numpad/Button_point" unique_id=77710944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 7.450581e-09, -0.00043012248)
@@ -2852,9 +2872,12 @@ collision_layer = 257
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/FillingMachine/Numpad/Button_point/Area3D" unique_id=2112000557]
 shape = SubResource("BoxShape3D_q54yr")
 
-[node name="Button_023" type="MeshInstance3D" parent="Interactables/FillingMachine/Numpad" unique_id=165689263]
+[node name="Button_023" type="MeshInstance3D" parent="Interactables/FillingMachine/Numpad" unique_id=165689263 node_paths=PackedStringArray("area")]
 transform = Transform3D(-0.031389773, 0, 1.9997535, 0, 1.9999998, 0, -1.9997536, 0, -0.031389892, -0.12121248, -0.031828642, 0.83597803)
 mesh = SubResource("ArrayMesh_0w54e")
+script = ExtResource("60_dwhu0")
+prompt_text = "Clear"
+area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/FillingMachine/Numpad/Button_023" unique_id=1491728788]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.450581e-09, -0.00043012248)
