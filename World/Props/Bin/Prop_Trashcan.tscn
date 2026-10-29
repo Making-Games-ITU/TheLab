@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://6g8r3exfe4vm"]
 
 [ext_resource type="PackedScene" uid="uid://b3hfbv5jw0nt2" path="res://World/Props/Bin/Prop_Trashcan.fbx" id="1_bx3hu"]
-[ext_resource type="Script" uid="uid://b2r7cte3y82gd" path="res://World/Interactables/VialDispose.gd" id="2_xvkwk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3hsde"]
 size = Vector3(0.38671875, 0.51171875, 0.44702148)
 
 [node name="Prop_Trashcan" unique_id=414120974 instance=ExtResource("1_bx3hu")]
-script = ExtResource("2_xvkwk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1539806859]
 
