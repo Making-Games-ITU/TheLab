@@ -13,3 +13,8 @@ var interacted_button : Buttons = Buttons.NONE
 
 var body_exists: bool = false
 var toggle_sample_collector : bool = false
+
+# If there is an active vial
+# True when picked up from shelf'
+# Until it is disposed in trash can
+var is_vial_used: bool = false
