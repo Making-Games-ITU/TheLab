@@ -505,6 +505,7 @@ bones/3/rotation = Quaternion(-0.15, 0, 0, 1)
 bones/4/rotation = Quaternion(-0.125, 0, 0, 1)
 
 [node name="Note" parent="Note_postnote2/Skeleton3D" index="0" unique_id=452260851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.820766e-11, 0.052927095)
 surface_material_override/1 = SubResource("StandardMaterial3D_jjvax")
 
 [node name="Note_document" parent="." unique_id=832524248 instance=ExtResource("32_5qiwk")]
@@ -520,7 +521,7 @@ bones/5/rotation = Quaternion(0.075, 0, 0, 1)
 material_overlay = SubResource("StandardMaterial3D_eraeq")
 
 [node name="Note_document2" parent="." unique_id=1030636860 instance=ExtResource("32_5qiwk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7553749, 0.7423364, -0.8525209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7553749, 0.7423364, -0.6433028)
 
 [node name="Skeleton3D" parent="Note_document2" index="0" unique_id=387256508]
 bones/5/rotation = Quaternion(0.59, 0, 0, 1)
@@ -528,7 +529,7 @@ bones/5/rotation = Quaternion(0.59, 0, 0, 1)
 [node name="Cube_027" parent="Note_document2/Skeleton3D" index="0" unique_id=986514553]
 material_overlay = SubResource("StandardMaterial3D_07v7r")
 
-[node name="Label" parent="Note_document2/Note Viewport/Control" parent_id_path=PackedInt32Array(1030636860, 647050364) index="1" unique_id=1296143046]
+[node name="Label" parent="Note_document2/Note Viewport/Control/TextureRect" parent_id_path=PackedInt32Array(1030636860, 1592876479) index="0" unique_id=1296143046]
 text = "Do not waste the substances they are very expensive. If you want to mix them, please use the Planetary Centrifugal Mixer. I have ordered more substances, they should arrive in aproximatly 2 days. If they do not arrive within these days, please contact the depot: 30 42 91 84
 
 Mia Janova"

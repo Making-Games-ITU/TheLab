@@ -6,16 +6,18 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7gqk6"]
 albedo_color = Color(1, 1, 0.41960785, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_qw3ju"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hcntn"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcntn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21rw2"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_qw3ju")
+albedo_texture = SubResource("ViewportTexture_hcntn")
 
 [node name="Note_postnote" unique_id=604695316 instance=ExtResource("1_dk4v5")]
 
 [node name="Skeleton3D" parent="." index="0" unique_id=1417392328]
+bones/2/position = Vector3(0, -2.3455633e-11, -0.0005366023)
+bones/2/scale = Vector3(1, 0.99999976, 0.99999976)
 bones/3/position = Vector3(0, 0.00036519952, 5.659408e-19)
 bones/3/rotation = Quaternion(-3.957723e-13, 0, 0, 1)
 bones/4/position = Vector3(0, 0.00036519958, -8.264198e-19)
@@ -23,7 +25,7 @@ bones/4/rotation = Quaternion(3.957723e-13, 0, 0, 1)
 
 [node name="Note" parent="Skeleton3D" index="0" unique_id=452260851]
 surface_material_override/0 = SubResource("StandardMaterial3D_7gqk6")
-surface_material_override/1 = SubResource("StandardMaterial3D_hcntn")
+surface_material_override/1 = SubResource("StandardMaterial3D_21rw2")
 
 [node name="Note Viewport" type="SubViewport" parent="." index="1" unique_id=2108383192]
 
