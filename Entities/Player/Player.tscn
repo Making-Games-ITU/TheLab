@@ -97,6 +97,5 @@ mesh = SubResource("QuadMesh_vweq0")
 [node name="PlayerBloodVial" parent="Head/Camera3D" unique_id=1480596381 instance=ExtResource("3_1des2")]
 unique_name_in_owner = true
 transform = Transform3D(-0.17739768, 0.25654864, -0.950112, -0.25010455, 0.9219758, 0.29564893, 0.95182866, 0.2900748, -0.0993924, 0.22726476, -0.2740264, -0.39170748)
-visible = false
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Head" unique_id=594045931]

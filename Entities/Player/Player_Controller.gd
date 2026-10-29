@@ -7,6 +7,7 @@ extends CharacterBody3D
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var blood_vial = %PlayerBloodVial
 
 @export var steps:FmodEventEmitter3D
 
@@ -18,6 +19,7 @@ func _ready() -> void:
 	ray.add_exception(self)
 	steps.started.connect(func(): is_steps_playing = true)
 	steps.stopped.connect(func(): is_steps_playing = false)
+	blood_vial.visible = false
 
 func _find_interactable(node: Node) -> Interactable:
 	# Walks up from the hit collider until it finds the Interactable that owns it
@@ -80,7 +82,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 	
 	if Input.is_action_just_pressed("escape"):
-		if PlayerStats.is_sitting:
+		if PlayerStats.is_analyzing:
+			%Micrograph.visible = false
+			PlayerStats.is_analyzing = false
+			%Microscope_Vial.visible = false
+			PlayerStats.has_sample = true
+		elif PlayerStats.is_sitting:
 			PlayerStats.current_chair.stand(self)
 			get_viewport().set_input_as_handled() # What is this for again?
 		else:
