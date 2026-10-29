@@ -23,3 +23,6 @@ var amount = ""
 
 func parseAmount () -> float:
 	return amount.to_float()
+
+#Vial in Mixer 
+var vial_in_mixer : bool = false

@@ -1,11 +1,6 @@
 extends Interactable
 
-
 var bodyIdString : String = "BODY #"
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	super()
 
 func interact(interactor: Node) -> void:
 	_request_body()

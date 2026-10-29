@@ -1,10 +1,5 @@
 extends Interactable
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	super()
-
-
 func interact(interactor: Node) -> void:
 	if GameStats.vial_in_collector:
 		print("YO remove the vial from the collector first")
