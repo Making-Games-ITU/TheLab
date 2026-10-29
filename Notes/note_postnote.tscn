@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dckgv8kqvmv4m"]
+
+[ext_resource type="PackedScene" uid="uid://dbdxiw3u5g08h" path="res://Notes/Note_postnote.fbx" id="1_dk4v5"]
+[ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="2_hcntn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7gqk6"]
+albedo_color = Color(1, 1, 0.41960785, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qw3ju"]
+viewport_path = NodePath("Note Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcntn"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_qw3ju")
+
+[node name="Note_postnote" unique_id=604695316 instance=ExtResource("1_dk4v5")]
+
+[node name="Skeleton3D" parent="." index="0" unique_id=1417392328]
+bones/3/position = Vector3(0, 0.00036519952, 5.659408e-19)
+bones/3/rotation = Quaternion(-3.957723e-13, 0, 0, 1)
+bones/4/position = Vector3(0, 0.00036519958, -8.264198e-19)
+bones/4/rotation = Quaternion(3.957723e-13, 0, 0, 1)
+
+[node name="Note" parent="Skeleton3D" index="0" unique_id=452260851]
+surface_material_override/0 = SubResource("StandardMaterial3D_7gqk6")
+surface_material_override/1 = SubResource("StandardMaterial3D_hcntn")
+
+[node name="Note Viewport" type="SubViewport" parent="." index="1" unique_id=2108383192]
+
+[node name="Control" type="Control" parent="Note Viewport" index="0" unique_id=302951096]
+custom_minimum_size = Vector2(512, 512)
+custom_maximum_size = Vector2(512, 512)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Note Viewport/Control" index="0" unique_id=191382450]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.41960785, 1)
+
+[node name="Label" type="Label" parent="Note Viewport/Control" index="1" unique_id=131675369]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 50.0
+offset_right = 278.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 25
+theme_override_constants/paragraph_spacing = -1
+theme_override_fonts/font = ExtResource("2_hcntn")
+text = "Follow these simple steps
+
+-	Insert the substance into the capsule slot
+-	Insert the testing tube into the left slot
+-	Connect the testing tube and the substance using the black tube
+-	Press the lock button
+-	Type the mg amount
+-	Press fill
+"

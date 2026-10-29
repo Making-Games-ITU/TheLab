@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bh0v05d78wm13"]
+
+[ext_resource type="PackedScene" uid="uid://bm3th10pmjglo" path="res://Notes/Note_document.fbx" id="1_lhq4c"]
+[ext_resource type="Texture2D" uid="uid://diw6gy4ed42do" path="res://Notes/paperTexture.png" id="2_1k7ho"]
+[ext_resource type="FontFile" uid="uid://c0j46o02p6oav" path="res://UI/Fonts/JPHSL.TTF" id="3_1k7ho"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnj3y"]
+albedo_texture = ExtResource("2_1k7ho")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1k7ho"]
+viewport_path = NodePath("Note Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pjlr"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_1k7ho")
+
+[node name="Note_document" unique_id=832524248 instance=ExtResource("1_lhq4c")]
+
+[node name="Cube_027" parent="Skeleton3D" parent_id_path=PackedInt32Array(387256508) index="0" unique_id=986514553]
+material_override = SubResource("StandardMaterial3D_xnj3y")
+material_overlay = SubResource("StandardMaterial3D_1pjlr")
+
+[node name="Note Viewport" type="SubViewport" parent="." index="1" unique_id=1966584251]
+size = Vector2i(523, 740)
+
+[node name="Control" type="Control" parent="Note Viewport" index="0" unique_id=647050364]
+custom_minimum_size = Vector2(523, 740)
+custom_maximum_size = Vector2(523, 740)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.5
+offset_top = -370.0
+offset_right = 261.5
+offset_bottom = 370.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Note Viewport/Control" index="0" unique_id=1592876479]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1k7ho")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Note Viewport/Control" index="1" unique_id=1296143046]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 50.0
+offset_right = 488.0
+offset_bottom = 680.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 25
+theme_override_constants/paragraph_spacing = -1
+theme_override_fonts/font = ExtResource("3_1k7ho")
+theme_override_font_sizes/font_size = 24
+text = "I am writing this guide once again, because SOMEBODY keeps magically losing the paper. The procedure itself is not that hard, just take an empty test tube, go to the blood collector machine and press some buttons, you will figure. After you get the warm blood, you will have to centrifuge it before using the microscope. That is pretty much it, I do not remember how the pipetting tool works, you can probably find the documentation somewhere else. PLEASE do not lose this paper, I am sick of rewriting this guide.
+
+Konstantin Markov"
+autowrap_mode = 2
