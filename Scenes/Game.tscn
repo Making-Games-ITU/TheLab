@@ -45,6 +45,7 @@
 [ext_resource type="Script" uid="uid://7y5mut280vma" path="res://World/Interactables/Chair.gd" id="38_lmarx"]
 [ext_resource type="PackedScene" uid="uid://bhy0ipymuf831" path="res://Global Assets/InteractableObject.tscn" id="38_pti6k"]
 [ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope.gd" id="40_7av8l"]
+[ext_resource type="PackedScene" uid="uid://6g8r3exfe4vm" path="res://World/Props/Bin/Prop_Trashcan.tscn" id="46_audqb"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -651,6 +652,9 @@ grow_vertical = 2
 
 [node name="Prop_Trolley" parent="." unique_id=1993639185 instance=ExtResource("35_khy6b")]
 transform = Transform3D(0.19923048, 0, -0.9799527, 0, 1, 0, 0.9799527, 0, 0.19923048, 4.028402, 0.03270006, -2.6081092)
+
+[node name="Prop_Trashcan" parent="." unique_id=414120974 instance=ExtResource("46_audqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16115761, 0.03270006, -4.833913)
 
 [editable path="Lights/env_ceiling_lamp"]
 [editable path="Lights/env_ceiling_lamp2"]
