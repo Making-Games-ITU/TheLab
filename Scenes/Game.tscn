@@ -57,6 +57,7 @@
 [ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/Vial2CollectorInteraction.gd" id="50_lklsk"]
 [ext_resource type="Script" uid="uid://cekegxoo7dsve" path="res://World/Interactables/FillingMachine/Vial2FillInteraction.gd" id="55_a05uw"]
 [ext_resource type="Script" uid="uid://l1n756bd47f6" path="res://World/Interactables/Chemical.gd" id="55_m15vq"]
+[ext_resource type="Script" uid="uid://bhlrg5gone8pe" path="res://World/Interactables/FillingMachine/Chem2FillInteraction.gd" id="56_n2ugt"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -1913,8 +1914,10 @@ mesh = SubResource("BoxMesh_a05uw")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/FillingMachine/VialInsert/Area3D2" unique_id=1622428914]
 shape = SubResource("BoxShape3D_n2ugt")
 
-[node name="ChemicalInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=899868628]
+[node name="ChemicalInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=899868628 node_paths=PackedStringArray("area")]
 transform = Transform3D(0.9999999, 0, -3.5762787e-07, 0, 0.9999994, 0, 2.0861626e-07, 0, 0.99999976, 0.044023514, -0.4259827, 0.61992455)
+script = ExtResource("56_n2ugt")
+area = NodePath("Area3D2")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/FillingMachine/ChemicalInsert" unique_id=10372477]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, 0, 0, 0)
