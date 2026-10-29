@@ -43,6 +43,9 @@
 [ext_resource type="PackedScene" uid="uid://xoplfxuvccwk" path="res://World/Props/Tables/env_table_sink.tscn" id="29_lklsk"]
 [ext_resource type="Texture2D" uid="uid://dpv6dd0ver3yb" path="res://World/Props/Machines/Mixer/NCentrifuge.png" id="29_pc5hm"]
 [ext_resource type="PackedScene" uid="uid://c7n36j11m4xl1" path="res://World/Props/Trolley/prop_curtains_trolly.tscn" id="30_34hf4"]
+[ext_resource type="Script" uid="uid://lkdsjbrid4f4" path="res://World/Interactables/Mixer/SpeedUp.gd" id="31_7edvx"]
+[ext_resource type="Script" uid="uid://dwpjw0uag8kcc" path="res://World/Interactables/Mixer/StartMix.gd" id="31_dgxei"]
+[ext_resource type="Script" uid="uid://qig5cjnduicm" path="res://World/Interactables/Mixer/SpeedDown.gd" id="32_w61tf"]
 [ext_resource type="PackedScene" uid="uid://5vn584og5dnk" path="res://World/Props/Doors/doors_sliding.tscn" id="33_m15vq"]
 [ext_resource type="Shader" uid="uid://q0mb3yshd6df" path="res://Shaders/Micrograph.gdshader" id="34_a05uw"]
 [ext_resource type="PackedScene" uid="uid://ccbjica3ksi1c" path="res://World/Props/Trolley/prop_trolley.tscn" id="35_khy6b"]
@@ -2710,34 +2713,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00036225375)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Mixer/Centrifuge/Button_014/StaticBody3D" unique_id=915843227]
 shape = SubResource("BoxShape3D_sbv7e")
 
-[node name="Button_030" type="MeshInstance3D" parent="Room/Machines/Prop_Mixer/Centrifuge" unique_id=1038804864]
+[node name="ButtonHigh" type="MeshInstance3D" parent="Room/Machines/Prop_Mixer/Centrifuge" unique_id=1038804864 node_paths=PackedStringArray("area")]
 transform = Transform3D(1, 0, 0, 0, 0.8660253, -0.5000001, 0, 0.5000001, 0.8660253, -0.028374791, 0.30790758, -0.24694577)
 mesh = SubResource("ArrayMesh_e70ii")
+script = ExtResource("31_7edvx")
+prompt_text = "Speed Up"
+area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Machines/Prop_Mixer/Centrifuge/Button_030" unique_id=994930561]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonHigh" unique_id=994930561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00043012202)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Mixer/Centrifuge/Button_030/StaticBody3D" unique_id=467885112]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonHigh/StaticBody3D" unique_id=467885112]
 shape = SubResource("BoxShape3D_82owd")
 
-[node name="Button_034" type="MeshInstance3D" parent="Room/Machines/Prop_Mixer/Centrifuge" unique_id=1117053194]
+[node name="Area3D" type="Area3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonHigh" unique_id=1371262098]
+collision_layer = 257
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonHigh/Area3D" unique_id=858525727]
+shape = SubResource("BoxShape3D_82owd")
+
+[node name="ButtonLow" type="MeshInstance3D" parent="Room/Machines/Prop_Mixer/Centrifuge" unique_id=1117053194 node_paths=PackedStringArray("area")]
 transform = Transform3D(1, 0, 0, 0, 0.8660253, -0.5000001, 0, 0.5000001, 0.8660253, -0.028374791, 0.2796005, -0.2632889)
 mesh = SubResource("ArrayMesh_df0ya")
+script = ExtResource("32_w61tf")
+prompt_text = "Speed Down"
+area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Machines/Prop_Mixer/Centrifuge/Button_034" unique_id=1541948644]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonLow" unique_id=1541948644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 5.5879354e-09, -0.00043012248)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Mixer/Centrifuge/Button_034/StaticBody3D" unique_id=216699876]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonLow/StaticBody3D" unique_id=216699876]
 shape = SubResource("BoxShape3D_qyadt")
 
-[node name="Button_035" type="MeshInstance3D" parent="Room/Machines/Prop_Mixer/Centrifuge" unique_id=1015838484]
+[node name="Area3D" type="Area3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonLow" unique_id=1450769160]
+collision_layer = 257
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonLow/Area3D" unique_id=348259556]
+shape = SubResource("BoxShape3D_qyadt")
+
+[node name="ButtonMix" type="MeshInstance3D" parent="Room/Machines/Prop_Mixer/Centrifuge" unique_id=1015838484]
 transform = Transform3D(1, 0, 0, 0, 0.8660253, -0.5000001, 0, 0.5000001, 0.8660253, -0.028374791, 0.25129342, -0.279632)
 mesh = SubResource("ArrayMesh_j6q31")
+script = ExtResource("31_dgxei")
+prompt_text = "Start Mixer"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Machines/Prop_Mixer/Centrifuge/Button_035" unique_id=1897774263]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonMix" unique_id=1897774263]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.450581e-09, -0.00043012248)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Mixer/Centrifuge/Button_035/StaticBody3D" unique_id=112637227]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonMix/StaticBody3D" unique_id=112637227]
+shape = SubResource("BoxShape3D_li5gh")
+
+[node name="Area3D" type="Area3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonMix" unique_id=532215193]
+collision_layer = 257
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Machines/Prop_Mixer/Centrifuge/ButtonMix/Area3D" unique_id=584208902]
 shape = SubResource("BoxShape3D_li5gh")
 
 [node name="Button_039" type="MeshInstance3D" parent="Room/Machines/Prop_Mixer/Centrifuge" unique_id=1501607590]

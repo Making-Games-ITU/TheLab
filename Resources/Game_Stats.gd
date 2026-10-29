@@ -26,3 +26,4 @@ func parseAmount () -> float:
 
 #Vial in Mixer 
 var vial_in_mixer : bool = false
+var mixer_speed = VialStats.Speed.Min

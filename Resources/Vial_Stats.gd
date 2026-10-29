@@ -31,6 +31,14 @@ var damaged: bool = false
 const CENTRIFUGE_HIGH_SPEED: float = 3000.0
 const CENTRIFUGE_DAMAGE_SPEED: float = 6000.0
 
+enum Speed {
+	Min,
+	Low,
+	Medium,
+	High,
+	Max
+}
+
 func empty_vial() -> void:
 	infection = Infection.NONE
 	empty = true
@@ -60,10 +68,19 @@ func centrifuge(rpm: float) -> void:
 	changed.emit()
 
 # Mixer (Centrifuge) functionality for integrating chemicals
-func integrate_chemical(composite: Composite) -> void:
+func integrate_chemical(composite: Composite, speed : Speed) -> void:
 	var chem: Chemical = chemicals[composite]
 	if chem.quantity > 0.0:
-		chem.integrated = true
+		match composite:
+			Composite.A:
+				if speed == Speed.Low:
+					chem.integrated = true
+					#Add if mixing damages
+			Composite.B:
+				if speed == Speed.Medium:
+					chem.integrated = true
+					#Add if mixing damages
+					
 		changed.emit()
 
 # Functions to check for infections
