@@ -512,8 +512,10 @@ transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.4
 transform = Transform3D(-0.32979673, -0.9403293, 0.08375627, -0.0004690634, -0.08855674, -0.9960711, 0.9440518, -0.32854018, 0.02876462, 2.9960604, 1.5099785, -3.4708824)
 
 [node name="Skeleton3D" parent="Notes/Note_postnote2" index="0" unique_id=1417392328]
+bones/1/position = Vector3(0, 0, -0.05)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
+bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
 [node name="Note" parent="Notes/Note_postnote2/Skeleton3D" index="0" unique_id=452260851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.820766e-11, 0.052927095)
@@ -526,11 +528,13 @@ transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.
 transform = Transform3D(0.98384583, 0, -0.17901795, 0, 1, 0, 0.17901795, 0, 0.98384583, 2.4596572, 0.9727782, -6.198906)
 
 [node name="Skeleton3D" parent="Notes/Note_document" index="0" unique_id=387256508]
-bones/1/position = Vector3(0, 0, 0)
+bones/1/position = Vector3(0, 0, -0.205)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
+bones/3/rotation = Quaternion(-0.025, 0, 0, 1)
 bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
+bones/4/rotation = Quaternion(0.035, 0, 0, 1)
 bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
-bones/5/rotation = Quaternion(-3.0313983e-16, 0, 0, 1)
+bones/5/rotation = Quaternion(-0.095, 0, 0, 1)
 
 [node name="Cube_027" parent="Notes/Note_document/Skeleton3D" index="0" unique_id=986514553]
 material_overlay = SubResource("StandardMaterial3D_6c753")
@@ -542,11 +546,11 @@ transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7553749, 0.7423364, -0.6433028)
 
 [node name="Skeleton3D" parent="Notes/Note_document2" index="0" unique_id=387256508]
-bones/1/position = Vector3(0, 0, 0)
+bones/1/position = Vector3(0, 0, -0.2)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
 bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
-bones/5/rotation = Quaternion(-3.0313983e-16, 0, 0, 1)
+bones/5/rotation = Quaternion(0.875, 0, 0, 1)
 
 [node name="Cube_027" parent="Notes/Note_document2/Skeleton3D" index="0" unique_id=986514553]
 material_overlay = SubResource("StandardMaterial3D_n0k3b")
