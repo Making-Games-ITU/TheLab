@@ -18,6 +18,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c18cs"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_j73bs")
+roughness = 0.6
 emission_enabled = true
 emission_texture = SubResource("ViewportTexture_kbkat")
 
@@ -109,7 +110,7 @@ shader_parameter/vignette_opacity = 0.6010000285475
 [node name="env_screen" unique_id=1850738053 instance=ExtResource("1_hsbli")]
 script = ExtResource("2_meyn4")
 
-[node name="Computer_001" parent="." index="0" unique_id=1420913803]
+[node name="Computer_001" parent="." index="0" unique_id=2083030734]
 material_override = SubResource("StandardMaterial3D_c18cs")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_wjs2v")

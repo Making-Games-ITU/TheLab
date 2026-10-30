@@ -23,6 +23,8 @@ bones/1/position = Vector3(0, 8.924582e-09, -0.20417066)
 material_override = SubResource("StandardMaterial3D_xnj3y")
 material_overlay = SubResource("StandardMaterial3D_fxwv4")
 
+[node name="Camera Marker" type="Marker3D" parent="Skeleton3D" index="1" unique_id=819025313]
+
 [node name="Note Viewport" type="SubViewport" parent="." index="1" unique_id=1966584251]
 size = Vector2i(523, 740)
 
