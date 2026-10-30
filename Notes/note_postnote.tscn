@@ -27,6 +27,8 @@ bones/4/rotation = Quaternion(3.957723e-13, 0, 0, 1)
 surface_material_override/0 = SubResource("StandardMaterial3D_7gqk6")
 surface_material_override/1 = SubResource("StandardMaterial3D_21rw2")
 
+[node name="Marker3D" type="Marker3D" parent="Skeleton3D" index="1" unique_id=1478483543]
+
 [node name="Note Viewport" type="SubViewport" parent="." index="1" unique_id=2108383192]
 
 [node name="Control" type="Control" parent="Note Viewport" index="0" unique_id=302951096]
