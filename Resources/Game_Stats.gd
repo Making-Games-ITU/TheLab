@@ -1,7 +1,6 @@
 extends Node
 
-#change Condition to some other variant of body
-enum Condition { HAPPY, SAD, ANGRY, NONE }
+# Add enum for vial, where it is in the world
 
 var body_state : Condition = Condition.NONE
 var body_number : int = 0
@@ -27,3 +26,8 @@ func parseAmount () -> float:
 #Vial in Mixer 
 var vial_in_mixer : bool = false
 var mixer_speed = VialStats.Speed.Min
+
+# If there is an active vial
+# True when picked up from shelf'
+# Until it is disposed in trash can
+var is_vial_used: bool = false
