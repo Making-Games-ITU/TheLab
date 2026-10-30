@@ -9,3 +9,5 @@ var is_analyzing: bool = false
 
 var has_new_vial : bool = false
 var has_sample : bool = false
+
+var has_chemical = false

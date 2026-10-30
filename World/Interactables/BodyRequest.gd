@@ -1,11 +1,6 @@
 extends Interactable
 
-
 var bodyIdString : String = "BODY #"
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	super()
 
 func interact(interactor: Node) -> void:
 	_request_body()
@@ -13,7 +8,8 @@ func interact(interactor: Node) -> void:
 func _request_body() -> void:
 	if anim:
 		if not GameStats.body_exists:
-			anim.play("body")
+			anim.play("request")
+			await anim.animation_finished
 			GameStats.toggle_sample_collector = true
 			
 	if (GameStats.body_exists):

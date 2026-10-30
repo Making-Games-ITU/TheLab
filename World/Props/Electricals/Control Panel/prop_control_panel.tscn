@@ -38,54 +38,45 @@ albedo_texture = ExtResource("4_qbyko")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_or3te"]
 albedo_texture = ExtResource("4_qbyko")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_50ws8"]
-size = Vector3(0.20092773, 1.7920532, 0.5411377)
-
 [node name="Prop_Control_Panel" unique_id=1145011065 instance=ExtResource("1_fmguf")]
 
-[node name="Button_002" parent="." index="0" unique_id=697103372]
+[node name="Button_002" parent="." index="0" unique_id=1336190526]
 visible = false
 material_override = SubResource("StandardMaterial3D_5e56c")
 
-[node name="Button_003" parent="." index="1" unique_id=648507779]
+[node name="Button_003" parent="." index="1" unique_id=949376838]
 visible = false
 material_override = SubResource("StandardMaterial3D_e38up")
 
-[node name="Button_004" parent="." index="2" unique_id=1433077567]
+[node name="Button_004" parent="." index="2" unique_id=491340643]
 visible = false
 material_override = SubResource("StandardMaterial3D_qmm1k")
 
-[node name="Button_005" parent="." index="3" unique_id=170662516]
+[node name="Button_005" parent="." index="3" unique_id=2043878997]
 visible = false
 material_override = SubResource("StandardMaterial3D_3jbc6")
 
-[node name="Button_006" parent="." index="4" unique_id=324907107]
+[node name="Button_006" parent="." index="4" unique_id=438071891]
 visible = false
 material_override = SubResource("StandardMaterial3D_hnvcg")
 
-[node name="Button_007" parent="." index="5" unique_id=575068371]
+[node name="Button_007" parent="." index="5" unique_id=1420675188]
 visible = false
 material_override = SubResource("StandardMaterial3D_thx28")
 
-[node name="Button_008" parent="." index="6" unique_id=742628377]
+[node name="Button_008" parent="." index="6" unique_id=1627960534]
 visible = false
 material_override = SubResource("StandardMaterial3D_ial0j")
 
-[node name="Button_009" parent="." index="7" unique_id=1433628793]
+[node name="Button_009" parent="." index="7" unique_id=2090946090]
 visible = false
 material_override = SubResource("StandardMaterial3D_wekkg")
 
-[node name="BézierCurve_009" parent="." index="8" unique_id=208598310]
+[node name="BézierCurve_009" parent="." index="8" unique_id=1082976390]
 material_override = SubResource("StandardMaterial3D_6t5fj")
 
-[node name="Cylinder_001" parent="." index="11" unique_id=1375712292]
+[node name="Cylinder_001" parent="." index="11" unique_id=762687715]
 material_override = SubResource("StandardMaterial3D_e0su6")
 
-[node name="Cylinder_002" parent="." index="12" unique_id=2142663618]
+[node name="Cylinder_002" parent="." index="12" unique_id=1636426110]
 material_override = SubResource("StandardMaterial3D_or3te")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="13" unique_id=465599183]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1984688638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012084961, 0.3960266, -0.010070801)
-shape = SubResource("BoxShape3D_50ws8")

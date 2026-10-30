@@ -55,106 +55,97 @@ albedo_texture = ExtResource("3_nn66o")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slsn5"]
 albedo_texture = ExtResource("3_nn66o")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_50ws8"]
-size = Vector3(0.54296875, 2.1619873, 0.34375)
-
 [node name="Prop_Filling_Machine" unique_id=1109295380 instance=ExtResource("1_pf38o")]
 
-[node name="Filling Machine" parent="." index="0" unique_id=348940257]
+[node name="Filling Machine" parent="." index="0" unique_id=138928400]
 material_override = SubResource("StandardMaterial3D_xvm24")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_002" parent_id_path=PackedInt32Array(645027606) index="0" unique_id=1633101140]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_002" parent_id_path=PackedInt32Array(1585059434) index="0" unique_id=1633101140]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00036225375)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_002/StaticBody3D" index="0" unique_id=1797524117]
 shape = SubResource("BoxShape3D_pf38o")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_004" parent_id_path=PackedInt32Array(2012744224) index="0" unique_id=1567171850]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_004" parent_id_path=PackedInt32Array(130980184) index="0" unique_id=1567171850]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00043012202)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_004/StaticBody3D" index="0" unique_id=1000555575]
 shape = SubResource("BoxShape3D_oj07j")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_006" parent_id_path=PackedInt32Array(1617448574) index="0" unique_id=1512282859]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_006" parent_id_path=PackedInt32Array(2065899072) index="0" unique_id=1512282859]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7252903e-09, 0, -0.00043012202)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_006/StaticBody3D" index="0" unique_id=1771769824]
 shape = SubResource("BoxShape3D_nn66o")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_008" parent_id_path=PackedInt32Array(2050831416) index="0" unique_id=1405389250]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_008" parent_id_path=PackedInt32Array(1785026951) index="0" unique_id=1405389250]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 0, -0.00043012202)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_008/StaticBody3D" index="0" unique_id=1351298208]
 shape = SubResource("BoxShape3D_xvm24")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_010" parent_id_path=PackedInt32Array(1762926989) index="0" unique_id=831071368]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_010" parent_id_path=PackedInt32Array(152234736) index="0" unique_id=831071368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00043012202)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_010/StaticBody3D" index="0" unique_id=858234213]
 shape = SubResource("BoxShape3D_oxy24")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_011" parent_id_path=PackedInt32Array(1097266242) index="0" unique_id=963660818]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_011" parent_id_path=PackedInt32Array(1372387529) index="0" unique_id=963660818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5879354e-09, -0.00043012248)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_011/StaticBody3D" index="0" unique_id=529417836]
 shape = SubResource("BoxShape3D_slsn5")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_012" parent_id_path=PackedInt32Array(1745246138) index="0" unique_id=1678480543]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_012" parent_id_path=PackedInt32Array(1672668539) index="0" unique_id=1678480543]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7252903e-09, 5.5879354e-09, -0.00043012248)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_012/StaticBody3D" index="0" unique_id=910433867]
 shape = SubResource("BoxShape3D_ohxcp")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_013" parent_id_path=PackedInt32Array(787165220) index="0" unique_id=1661277615]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_013" parent_id_path=PackedInt32Array(1467716391) index="0" unique_id=1661277615]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 5.5879354e-09, -0.00043012248)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_013/StaticBody3D" index="0" unique_id=318631332]
 shape = SubResource("BoxShape3D_wbrb6")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_022" parent_id_path=PackedInt32Array(69527315) index="0" unique_id=987091653]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_022" parent_id_path=PackedInt32Array(683748998) index="0" unique_id=987091653]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 5.5879354e-09, -0.00043012248)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_022/StaticBody3D" index="0" unique_id=1726283207]
 shape = SubResource("BoxShape3D_vvlld")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_023" parent_id_path=PackedInt32Array(931233655) index="0" unique_id=1491728788]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_023" parent_id_path=PackedInt32Array(693909586) index="0" unique_id=1491728788]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.450581e-09, -0.00043012248)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_023/StaticBody3D" index="0" unique_id=1516638022]
 shape = SubResource("BoxShape3D_he6av")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_024" parent_id_path=PackedInt32Array(1930638507) index="0" unique_id=77710944]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_024" parent_id_path=PackedInt32Array(1757756737) index="0" unique_id=77710944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 7.450581e-09, -0.00043012248)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_024/StaticBody3D" index="0" unique_id=1861133888]
 shape = SubResource("BoxShape3D_q54yr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_025" parent_id_path=PackedInt32Array(1997556148) index="0" unique_id=604237]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_025" parent_id_path=PackedInt32Array(1211178227) index="0" unique_id=604237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4901161e-08, 7.450581e-09, -0.00043012248)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_025/StaticBody3D" index="0" unique_id=1338433641]
 shape = SubResource("BoxShape3D_5q87x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_026" parent_id_path=PackedInt32Array(1202430848) index="0" unique_id=1106552723]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_026" parent_id_path=PackedInt32Array(1960559883) index="0" unique_id=1106552723]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2351742e-08, 7.450581e-09, -0.00043012248)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_026/StaticBody3D" index="0" unique_id=154874834]
 shape = SubResource("BoxShape3D_0cgm4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_027" parent_id_path=PackedInt32Array(72878040) index="0" unique_id=1575431456]
+[node name="StaticBody3D" type="StaticBody3D" parent="Filling Machine/Button_027" parent_id_path=PackedInt32Array(319183723) index="0" unique_id=1575431456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8626451e-09, -0.00036225375)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Filling Machine/Button_027/StaticBody3D" index="0" unique_id=2020677280]
 shape = SubResource("BoxShape3D_txd6c")
 
-[node name="Tube inserted" parent="Filling Machine" index="14" unique_id=707523190]
+[node name="Tube inserted" parent="Filling Machine" index="14" unique_id=1215748549]
 material_override = SubResource("StandardMaterial3D_oxy24")
 
-[node name="Tube not inserted" parent="Filling Machine" index="15" unique_id=2104180810]
+[node name="Tube not inserted" parent="Filling Machine" index="15" unique_id=1555756252]
 material_override = SubResource("StandardMaterial3D_slsn5")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=844217743]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=416437232]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58099365, 0)
-shape = SubResource("BoxShape3D_50ws8")
