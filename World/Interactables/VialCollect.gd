@@ -6,7 +6,7 @@ func _ready() -> void:
 
 func focus() -> void:
 	_update_prompt()
-	
+
 func _update_prompt() -> void:
 	_set_outline(true)
 	if GameStats.is_vial_used:
@@ -21,6 +21,7 @@ func interact(interactor: Node) -> void:
 	
 func _get_new_vial():
 	if not GameStats.is_vial_used:
+		VialStats.empty_vial()
 		PlayerStats.has_new_vial = true
 		GameStats.is_vial_used = true
 	else:
