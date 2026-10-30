@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://c7n36j11m4xl1" path="res://World/Props/Trolley/prop_curtains_trolly.tscn" id="33_wusdh"]
 [ext_resource type="PackedScene" uid="uid://kuc0qku4tytw" path="res://World/Props/Trolley/Prop_Trolley.fbx" id="34_0fdv0"]
 [ext_resource type="PackedScene" uid="uid://dckgv8kqvmv4m" path="res://Notes/note_postnote.tscn" id="35_0fdv0"]
+[ext_resource type="PackedScene" uid="uid://c5qlgxu4phaxk" path="res://World/Props/Vent/prop_vent.tscn" id="37_1d37y"]
 [ext_resource type="FontFile" uid="uid://sdtsanxfgqys" path="res://UI/Fonts/Perfect DOS VGA 437.ttf" id="37_jjvax"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
@@ -47,6 +48,7 @@ fog_enabled = true
 fog_light_color = Color(0.4177673, 0.391743, 0.3082522, 1)
 fog_light_energy = 0.0
 fog_density = 0.001
+volumetric_fog_enabled = true
 adjustment_enabled = true
 adjustment_contrast = 0.975
 
@@ -71,6 +73,27 @@ shader_parameter/dither_strength = 0.350000016625
 material = SubResource("ShaderMaterial_bhlco")
 size = Vector2(2, 2)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_jjvax"]
+viewport_path = NodePath("Note Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d37y"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_jjvax")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_eraeq"]
+viewport_path = NodePath("Note Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6c753"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_eraeq")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_07v7r"]
+viewport_path = NodePath("Note Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0k3b"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_07v7r")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vq468"]
 shader = ExtResource("32_jgty5")
 shader_parameter/background_color = Color(0.037854142, 0.046883598, 0.028402748, 1)
@@ -91,27 +114,6 @@ shader_parameter/mutation_percentage = 10.0
 shader_parameter/mutated_color = Color(0.6039216, 0.62352943, 0.5764706, 1)
 shader_parameter/mutation_distortion = 1.0
 shader_parameter/aspect_ratio = 1.0
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_5qiwk"]
-viewport_path = NodePath("Note Viewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvax"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_5qiwk")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_1d37y"]
-viewport_path = NodePath("Note Viewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eraeq"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_1d37y")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_6c753"]
-viewport_path = NodePath("Note Viewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07v7r"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_6c753")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4o88"]
 bg_color = Color(0, 0, 0, 0.49411765)
@@ -479,7 +481,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.06
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.7208867, 0.032699943, 0.37001348)
 
 [node name="Prop_Trolley3" parent="Room/Props" unique_id=1355868471 instance=ExtResource("34_0fdv0")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4995947, 0.032699943, 0.50941026)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.7498355, 0.032699943, 0.50941026)
 
 [node name="Doors" type="Node3D" parent="Room" unique_id=703968915]
 
@@ -503,6 +505,59 @@ transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39
 
 [node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=682133513]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
+
+[node name="Notes" type="Node3D" parent="." unique_id=649121461]
+
+[node name="Note_postnote2" parent="Notes" unique_id=604695316 instance=ExtResource("35_0fdv0")]
+transform = Transform3D(-0.32979673, -0.9403293, 0.08375627, -0.0004690634, -0.08855674, -0.9960711, 0.9440518, -0.32854018, 0.02876462, 2.9960604, 1.5099785, -3.4708824)
+
+[node name="Skeleton3D" parent="Notes/Note_postnote2" index="0" unique_id=1417392328]
+bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
+bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
+
+[node name="Note" parent="Notes/Note_postnote2/Skeleton3D" index="0" unique_id=452260851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.820766e-11, 0.052927095)
+surface_material_override/1 = SubResource("StandardMaterial3D_1d37y")
+
+[node name="Marker3D" parent="Notes/Note_postnote2/Skeleton3D" index="1" unique_id=1478483543]
+transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
+
+[node name="Note_document" parent="Notes" unique_id=832524248 instance=ExtResource("32_5qiwk")]
+transform = Transform3D(0.98384583, 0, -0.17901795, 0, 1, 0, 0.17901795, 0, 0.98384583, 2.4596572, 0.9727782, -6.198906)
+
+[node name="Skeleton3D" parent="Notes/Note_document" index="0" unique_id=387256508]
+bones/1/position = Vector3(0, 0, 0)
+bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
+bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
+bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
+bones/5/rotation = Quaternion(-3.0313983e-16, 0, 0, 1)
+
+[node name="Cube_027" parent="Notes/Note_document/Skeleton3D" index="0" unique_id=986514553]
+material_overlay = SubResource("StandardMaterial3D_6c753")
+
+[node name="Camera Marker" parent="Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
+transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
+
+[node name="Note_document2" parent="Notes" unique_id=1030636860 instance=ExtResource("32_5qiwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7553749, 0.7423364, -0.6433028)
+
+[node name="Skeleton3D" parent="Notes/Note_document2" index="0" unique_id=387256508]
+bones/1/position = Vector3(0, 0, 0)
+bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
+bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
+bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
+bones/5/rotation = Quaternion(-3.0313983e-16, 0, 0, 1)
+
+[node name="Cube_027" parent="Notes/Note_document2/Skeleton3D" index="0" unique_id=986514553]
+material_overlay = SubResource("StandardMaterial3D_n0k3b")
+
+[node name="Camera Marker" parent="Notes/Note_document2/Skeleton3D" index="1" unique_id=819025313]
+transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
+
+[node name="Label" parent="Notes/Note_document2/Note Viewport/Control/TextureRect" parent_id_path=PackedInt32Array(1030636860, 1592876479) index="0" unique_id=1296143046]
+text = "Do not waste the substances they are very expensive. If you want to mix them, please use the Planetary Centrifugal Mixer. I have ordered more substances, they should arrive in aproximatly 2 days. If they do not arrive within these days, please contact the depot: 30 42 91 84
+
+Mia Janova"
 
 [node name="Micrograph" type="Control" parent="." unique_id=308824450]
 visible = false
@@ -532,57 +587,6 @@ offset_left = 244.0
 offset_right = -244.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Note_postnote2" parent="." unique_id=604695316 instance=ExtResource("35_0fdv0")]
-transform = Transform3D(-0.32979673, -0.9403293, 0.08375627, -0.0004690634, -0.08855674, -0.9960711, 0.9440518, -0.32854018, 0.02876462, 2.9960604, 1.5099785, -3.4708824)
-
-[node name="Skeleton3D" parent="Note_postnote2" index="0" unique_id=1417392328]
-bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
-bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
-
-[node name="Note" parent="Note_postnote2/Skeleton3D" index="0" unique_id=452260851]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.820766e-11, 0.052927095)
-surface_material_override/1 = SubResource("StandardMaterial3D_jjvax")
-
-[node name="Marker3D" parent="Note_postnote2/Skeleton3D" index="1" unique_id=1478483543]
-transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
-
-[node name="Note_document" parent="." unique_id=832524248 instance=ExtResource("32_5qiwk")]
-transform = Transform3D(0.98384583, 0, -0.17901795, 0, 1, 0, 0.17901795, 0, 0.98384583, 2.4596572, 0.9727782, -6.198906)
-
-[node name="Skeleton3D" parent="Note_document" index="0" unique_id=387256508]
-bones/1/position = Vector3(0, 0, 0)
-bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
-bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
-bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
-bones/5/rotation = Quaternion(-3.0313983e-16, 0, 0, 1)
-
-[node name="Cube_027" parent="Note_document/Skeleton3D" index="0" unique_id=986514553]
-material_overlay = SubResource("StandardMaterial3D_eraeq")
-
-[node name="Camera Marker" parent="Note_document/Skeleton3D" index="1" unique_id=819025313]
-transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
-
-[node name="Note_document2" parent="." unique_id=1030636860 instance=ExtResource("32_5qiwk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7553749, 0.7423364, -0.6433028)
-
-[node name="Skeleton3D" parent="Note_document2" index="0" unique_id=387256508]
-bones/1/position = Vector3(0, 0, 0)
-bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
-bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
-bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
-bones/5/rotation = Quaternion(-3.0313983e-16, 0, 0, 1)
-
-[node name="Cube_027" parent="Note_document2/Skeleton3D" index="0" unique_id=986514553]
-material_overlay = SubResource("StandardMaterial3D_07v7r")
-
-[node name="Camera Marker" parent="Note_document2/Skeleton3D" index="1" unique_id=819025313]
-transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
-
-[node name="Label" parent="Note_document2/Note Viewport/Control/TextureRect" parent_id_path=PackedInt32Array(1030636860, 1592876479) index="0" unique_id=1296143046]
-text = "Do not waste the substances they are very expensive. If you want to mix them, please use the Planetary Centrifugal Mixer. I have ordered more substances, they should arrive in aproximatly 2 days. If they do not arrive within these days, please contact the depot: 30 42 91 84
-
-Mia Janova"
 
 [node name="Note Reader" type="Control" parent="." unique_id=1373980432]
 layout_mode = 3
@@ -630,6 +634,22 @@ text = "I am writing this guide once again, because SOMEBODY keeps magically los
 Konstantin Markov"
 scroll_active = false
 
+[node name="FogVolume" type="FogVolume" parent="." unique_id=1254751443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5343004, 0, -4.3681006)
+visible = false
+
+[node name="Prop_Vent" parent="." unique_id=1987298839 instance=ExtResource("37_1d37y")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.9324455, 0.7841163, -6.8150554)
+
+[node name="Prop_Vent2" parent="." unique_id=602600542 instance=ExtResource("37_1d37y")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.80820274, 0.7841163, -4.815055)
+
+[node name="Prop_Vent3" parent="." unique_id=636745261 instance=ExtResource("37_1d37y")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.86658007, 0.7841163, 0.80136603)
+
+[node name="Prop_Vent4" parent="." unique_id=595519769 instance=ExtResource("37_1d37y")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 7.86658, 0.7841163, 0.8013648)
+
 [editable path="Lights/env_ceiling_lamp"]
 [editable path="Lights/env_ceiling_lamp2"]
 [editable path="Lights/env_ceiling_lamp7"]
@@ -643,6 +663,6 @@ scroll_active = false
 [editable path="Room/Props/Corpse2"]
 [editable path="Room/Props/Corpse2/Armature/Env_Pit"]
 [editable path="Room/Doors/Doors_Sliding3"]
-[editable path="Note_postnote2"]
-[editable path="Note_document"]
-[editable path="Note_document2"]
+[editable path="Notes/Note_postnote2"]
+[editable path="Notes/Note_document"]
+[editable path="Notes/Note_document2"]
