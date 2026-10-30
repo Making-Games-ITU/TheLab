@@ -1,55 +1,338 @@
 [gd_scene format=3 uid="uid://dg2kdr4dq6wye"]
 
 [ext_resource type="PackedScene" uid="uid://bk563wn5l28w3" path="res://World/Props/Machines/Blood Collector/Prop_Blood_Collector_Machine.fbx" id="1_sny63"]
-[ext_resource type="Texture2D" uid="uid://cyft1j0jh3k7j" path="res://World/Props/Machines/Blood Collector/BloodSampler_Texture.png" id="2_ssw6b"]
 [ext_resource type="Texture2D" uid="uid://dayrghnnvllag" path="res://World/Props/Electricals/Computer/Pc_Props_Texture.png" id="3_8np5n"]
+[ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="3_a06ba"]
+[ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="4_cp7ly"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_i8nt5"]
+viewport_path = NodePath("Blood Collector/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_t4ntf"]
+viewport_path = NodePath("Blood Collector/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4o88"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_i8nt5")
+roughness = 0.6
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_t4ntf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3exb"]
+albedo_texture = ExtResource("3_8np5n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sny63"]
+albedo_texture = ExtResource("3_8np5n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssw6b"]
+albedo_texture = ExtResource("3_8np5n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8np5n"]
+albedo_texture = ExtResource("3_8np5n")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a06ba"]
-albedo_texture = ExtResource("2_ssw6b")
+albedo_texture = ExtResource("3_8np5n")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp7ly"]
-albedo_texture = ExtResource("2_ssw6b")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6oc4"]
 albedo_texture = ExtResource("3_8np5n")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iiwog"]
-albedo_texture = ExtResource("3_8np5n")
+[sub_resource type="Shader" id="Shader_xvm24"]
+code = "shader_type canvas_item;
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mtuo"]
-albedo_texture = ExtResource("3_8np5n")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g11a6"]
-albedo_texture = ExtResource("3_8np5n")
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hogln"]
-albedo_texture = ExtResource("3_8np5n")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b12te"]
-albedo_texture = ExtResource("3_8np5n")
+uniform bool overlay = false;
+
+uniform float scanlines_opacity : hint_range(0.0, 1.0) = 0.4;
+uniform float scanlines_width : hint_range(0.0, 0.5) = 0.25;
+uniform float grille_opacity : hint_range(0.0, 1.0) = 0.3;
+uniform vec2 resolution = vec2(640.0, 480.0);
+
+uniform bool pixelate = true;
+
+uniform bool roll = true;
+uniform float roll_speed = 8.0;
+uniform float roll_size : hint_range(0.0, 100.0) = 15.0;
+uniform float roll_variation : hint_range(0.1, 5.0) = 1.8;
+uniform float distort_intensity : hint_range(0.0, 0.2) = 0.05;
+
+uniform float noise_opacity : hint_range(0.0, 1.0) = 0.4;
+uniform float noise_speed = 5.0;
+
+uniform float static_noise_intensity : hint_range(0.0, 1.0) = 0.06;
+
+uniform float aberration : hint_range(-1.0, 1.0) = 0.03;
+uniform float brightness = 1.4;
+uniform bool discolor = true;
+
+uniform float warp_amount : hint_range(0.0, 5.0) = 1.0;
+uniform bool clip_warp = false;
+
+uniform float vignette_intensity = 0.4;
+uniform float vignette_opacity : hint_range(0.0, 1.0) = 0.5;
+
+
+
+vec2 random(vec2 uv){
+    uv = vec2(dot(uv, vec2(127.1,311.7)), dot(uv, vec2(269.5,183.3)));
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix(
+        mix(dot(random(uv_index + vec2(0.0,0.0)), uv_fract - vec2(0.0,0.0)),
+            dot(random(uv_index + vec2(1.0,0.0)), uv_fract - vec2(1.0,0.0)), blur.x),
+        mix(dot(random(uv_index + vec2(0.0,1.0)), uv_fract - vec2(0.0,1.0)),
+            dot(random(uv_index + vec2(1.0,1.0)), uv_fract - vec2(1.0,1.0)), blur.x), 
+        blur.y
+    ) * 0.5 + 0.5;
+}
+
+vec2 warp(vec2 uv){
+    vec2 delta = uv - 0.5;
+    float delta2 = dot(delta.xy, delta.xy);
+    float delta4 = delta2 * delta2;
+    float delta_offset = delta4 * warp_amount;
+    return uv + delta * delta_offset;
+}
+
+float border (vec2 uv){
+    float radius = min(warp_amount, 0.08);
+    radius = max(min(min(abs(radius * 2.0), abs(1.0)), abs(1.0)), 1e-5);
+    vec2 abs_uv = abs(uv * 2.0 - 1.0) - vec2(1.0, 1.0) + radius;
+    float dist = length(max(vec2(0.0), abs_uv)) / radius;
+    float square = smoothstep(0.96, 1.0, dist);
+    return clamp(1.0 - square, 0.0, 1.0);
+}
+
+float vignette(vec2 uv){
+    uv *= 1.0 - uv.xy;
+    float vignette = uv.x * uv.y * 15.0;
+    return pow(vignette, vignette_intensity * vignette_opacity);
+}
+
+
+void fragment()
+{
+    vec2 uv = overlay ? warp(SCREEN_UV) : warp(UV);
+    vec2 text_uv = uv;
+    vec2 roll_uv = vec2(0.0);
+    float time = roll ? TIME : 0.0;
+
+    if (pixelate){
+        text_uv = ceil(uv * resolution) / resolution;
+    }
+
+    float roll_line = 0.0;
+    if (roll || noise_opacity > 0.0){
+        roll_line = smoothstep(0.3, 0.9, sin(uv.y * roll_size - (time * roll_speed)));
+        roll_line *= roll_line * smoothstep(0.3, 0.9, sin(uv.y * roll_size * roll_variation - (time * roll_speed * roll_variation)));
+        roll_uv = vec2((roll_line * distort_intensity * (1.-UV.x)), 0.0);
+    }
+
+    vec4 text;
+    if (roll){
+        text.r = texture(SCREEN_TEXTURE, text_uv + roll_uv * 0.8 + vec2(aberration, 0.0) * .1).r;
+        text.g = texture(SCREEN_TEXTURE, text_uv + roll_uv * 1.2 - vec2(aberration, 0.0) * .1).g;
+        text.b = texture(SCREEN_TEXTURE, text_uv + roll_uv).b;
+        text.a = 1.0;
+    } else {
+        text.r = texture(SCREEN_TEXTURE, text_uv + vec2(aberration, 0.0) * .1).r;
+        text.g = texture(SCREEN_TEXTURE, text_uv - vec2(aberration, 0.0) * .1).g;
+        text.b = texture(SCREEN_TEXTURE, text_uv).b;
+        text.a = 1.0;
+    }
+
+    float r = text.r;
+    float g = text.g;
+    float b = text.b;
+
+    uv = warp(UV);
+
+    if (grille_opacity > 0.0){
+        float g_r = smoothstep(0.85, 0.95, abs(sin(uv.x * (resolution.x * 3.14159265))));
+        r = mix(r, r * g_r, grille_opacity);
+
+        float g_g = smoothstep(0.85, 0.95, abs(sin(1.05 + uv.x * (resolution.x * 3.14159265))));
+        g = mix(g, g * g_g, grille_opacity);
+
+        float b_b = smoothstep(0.85, 0.95, abs(sin(2.1 + uv.x * (resolution.x * 3.14159265))));
+        b = mix(b, b * b_b, grille_opacity);
+    }
+
+    text.r = clamp(r * brightness, 0.0, 1.0);
+    text.g = clamp(g * brightness, 0.0, 1.0);
+    text.b = clamp(b * brightness, 0.0, 1.0);
+
+    float scanlines = 0.5;
+    if (scanlines_opacity > 0.0){
+        scanlines = smoothstep(scanlines_width, scanlines_width + 0.5, abs(sin(uv.y * (resolution.y * 3.14159265))));
+        text.rgb = mix(text.rgb, text.rgb * vec3(scanlines), scanlines_opacity);
+    }
+
+    if (noise_opacity > 0.0){
+        float n = smoothstep(0.4, 0.5, noise(uv * vec2(2.0, 200.0) + vec2(10.0, (TIME * (noise_speed)))));
+        roll_line *= n * scanlines * clamp(random((ceil(uv * resolution) / resolution) + vec2(TIME * 0.8, 0.0)).x + 0.8, 0.0, 1.0);
+        text.rgb = clamp(mix(text.rgb, text.rgb + roll_line, noise_opacity), vec3(0.0), vec3(1.0));
+    }
+
+    if (static_noise_intensity > 0.0){
+        text.rgb += clamp(random((ceil(uv * resolution) / resolution) + fract(TIME)).x, 0.0, 1.0) * static_noise_intensity;
+    }
+
+    text.rgb *= border(uv);
+    text.rgb *= vignette(uv);
+
+    if (clip_warp){
+        text.a = border(uv);
+    }
+
+    if (discolor){
+        float saturation = 0.5;
+        float contrast = 1.2;
+        vec3 greyscale = vec3(text.r + text.g + text.b) / 3.;
+        text.rgb = mix(text.rgb, greyscale, saturation);
+
+        float midpoint = pow(0.5, 2.2);
+        text.rgb = (text.rgb - vec3(midpoint)) * contrast + midpoint;
+    }
+
+    COLOR = text;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8np5n"]
+shader = SubResource("Shader_xvm24")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.042000001995
+shader_parameter/scanlines_width = 0.2000000095
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.435
+shader_parameter/roll_size = 27.594001310715
+shader_parameter/roll_variation = 2.13100009796262
+shader_parameter/distort_intensity = 0.0050000002375
+shader_parameter/noise_opacity = 0.0350000016625
+shader_parameter/noise_speed = 2.0
+shader_parameter/static_noise_intensity = 0.07600000361
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0800000038
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.165
+shader_parameter/vignette_opacity = 0.6010000285475
 
 [node name="Prop_Blood_Collector_Machine" unique_id=2139538409 instance=ExtResource("1_sny63")]
 
-[node name="Cube_004" parent="." index="0" unique_id=692029644]
+[node name="Blood Collector" parent="." index="0" unique_id=1169960139]
+surface_material_override/1 = SubResource("StandardMaterial3D_j4o88")
+
+[node name="Open_Capsule_Button" parent="Blood Collector" index="1" unique_id=258556840]
+material_override = SubResource("StandardMaterial3D_k3exb")
+
+[node name="Off_On-btn_001" parent="Blood Collector/Open_Capsule_Button" index="0" unique_id=1597854419]
+transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_sny63")
+
+[node name="Open_Capsule_Button_001" parent="Blood Collector" index="2" unique_id=1888382415]
+material_override = SubResource("StandardMaterial3D_ssw6b")
+
+[node name="Off_On-btn_002" parent="Blood Collector/Open_Capsule_Button_001" index="0" unique_id=1891470137]
+transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_8np5n")
+
+[node name="Open_Capsule_Button_002" parent="Blood Collector" index="3" unique_id=1028078352]
 material_override = SubResource("StandardMaterial3D_a06ba")
 
-[node name="Cube_005" parent="." index="1" unique_id=1842866250]
+[node name="Off_On-btn_003" parent="Blood Collector/Open_Capsule_Button_002" index="0" unique_id=1667705623]
+transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_cp7ly")
 
-[node name="Off_On-btn_001" parent="." index="2" unique_id=1268549279]
-material_override = SubResource("StandardMaterial3D_x6oc4")
+[node name="SubViewport" type="SubViewport" parent="Blood Collector" index="4" unique_id=1295418101]
+mesh_lod_threshold = 0.0
+scaling_3d_scale = 0.5
+anisotropic_filtering_level = 0
 
-[node name="Off_On-btn_002" parent="." index="3" unique_id=527317303]
-material_override = SubResource("StandardMaterial3D_iiwog")
+[node name="Control" type="Control" parent="Blood Collector/SubViewport" index="0" unique_id=1749184050]
+custom_minimum_size = Vector2(512, 512)
+custom_maximum_size = Vector2(512, 512)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
-[node name="Off_On-btn_003" parent="." index="4" unique_id=1413507842]
-material_override = SubResource("StandardMaterial3D_6mtuo")
+[node name="Bg" type="TextureRect" parent="Blood Collector/SubViewport/Control" index="0" unique_id=721903596]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_a06ba")
 
-[node name="Open_Capsule_Button" parent="." index="5" unique_id=898128059]
-material_override = SubResource("StandardMaterial3D_g11a6")
+[node name="TabContainer" type="TabContainer" parent="Blood Collector/SubViewport/Control" index="1" unique_id=1439278877]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
 
-[node name="Open_Capsule_Button_001" parent="." index="6" unique_id=742595139]
-material_override = SubResource("StandardMaterial3D_hogln")
+[node name="Home" type="Control" parent="Blood Collector/SubViewport/Control/TabContainer" index="1" unique_id=1124729145]
+layout_mode = 2
+metadata/_tab_index = 0
 
-[node name="Open_Capsule_Button_002" parent="." index="7" unique_id=1269907080]
-material_override = SubResource("StandardMaterial3D_b12te")
+[node name="Progress Text2" type="Label" parent="Blood Collector/SubViewport/Control/TabContainer/Home" index="0" unique_id=240385587]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -2.0
+offset_right = 111.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_cp7ly")
+theme_override_font_sizes/font_size = 40
+text = "AWAITING"
+
+[node name="ColorRect" type="ColorRect" parent="Blood Collector/SubViewport/Control" index="2" unique_id=680595936]
+z_index = 1
+material = SubResource("ShaderMaterial_8np5n")
+custom_minimum_size = Vector2(512, 512)
+custom_maximum_size = Vector2(512, 512)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
