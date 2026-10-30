@@ -2,7 +2,6 @@ extends Node
 
 # Add enum for vial, where it is in the world
 
-var body_state : Condition = Condition.NONE
 var body_number : int = 0
 var body_ID : String = ""
 
