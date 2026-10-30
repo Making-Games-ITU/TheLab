@@ -18,6 +18,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c18cs"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_j73bs")
+roughness = 0.6
 emission_enabled = true
 emission_texture = SubResource("ViewportTexture_kbkat")
 

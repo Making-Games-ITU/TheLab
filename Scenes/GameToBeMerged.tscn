@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dsmxw3r30htsq"]
+[gd_scene format=4 uid="uid://cekl74jmfs4f8"]
 
 [ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="2_tfod6"]
 [ext_resource type="Script" uid="uid://dvtfql07hor2" path="res://Resources/Vial_Stats.gd" id="3_khy6b"]
