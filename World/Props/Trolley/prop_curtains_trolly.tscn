@@ -2,13 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://d3v0any1luj7e" path="res://World/Props/Trolley/Prop_Curtains_Trolly.fbx" id="1_lehb4"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_50ws8"]
-size = Vector3(0.21685791, 1.6106262, 1)
-
 [node name="Prop_Curtains_Trolly" unique_id=2019036272 instance=ExtResource("1_lehb4")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_018" parent_id_path=PackedInt32Array(1669462331) index="0" unique_id=1655513979]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_018/StaticBody3D" index="0" unique_id=1631518486]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0039978027, 0.8573456, 0)
-shape = SubResource("BoxShape3D_50ws8")

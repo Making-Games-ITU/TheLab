@@ -2,9 +2,6 @@ extends Interactable
 
 var is_open := false # only used by doors
 
-func _ready() -> void:
-	super()
-
 func interact(interactor: Node) -> void:
 	_toggle_door()
 	

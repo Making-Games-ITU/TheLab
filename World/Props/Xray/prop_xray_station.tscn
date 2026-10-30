@@ -35,30 +35,27 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_50ws8"]
-size = Vector3(0.39587402, 2.637207, 1.1721191)
-
 [node name="Prop_Xray_Station" unique_id=1610762300 instance=ExtResource("1_641ax")]
 
-[node name="Button_016" parent="X-Ray" parent_id_path=PackedInt32Array(319172080) index="0" unique_id=270728789]
+[node name="Button_016" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="0" unique_id=919816798]
 visible = false
 
-[node name="Button_018" parent="X-Ray" parent_id_path=PackedInt32Array(319172080) index="1" unique_id=175873451]
+[node name="Button_018" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="1" unique_id=1664437820]
 visible = false
 
-[node name="Button_020" parent="X-Ray" parent_id_path=PackedInt32Array(319172080) index="2" unique_id=1411139641]
+[node name="Button_020" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="2" unique_id=1519569555]
 visible = false
 
-[node name="document_analyser_001" parent="X-Ray" parent_id_path=PackedInt32Array(319172080) index="6" unique_id=366454296]
+[node name="document_analyser_001" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="6" unique_id=1054824837]
 material_override = SubResource("StandardMaterial3D_ocrte")
 
-[node name="Env_Button_Open_Close" parent="X-Ray" parent_id_path=PackedInt32Array(319172080) index="7" unique_id=893675333 instance=ExtResource("2_yfwwn")]
+[node name="Env_Button_Open_Close" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="7" unique_id=893675333 instance=ExtResource("2_yfwwn")]
 transform = Transform3D(-2.3346624e-08, 0.84541595, -0.5341086, 3.69543e-08, 0.5341086, 0.84541595, 1, 0, -4.371139e-08, -0.15510023, -0.36299998, 0.01331576)
 
-[node name="Env_Button_Open_Close2" parent="X-Ray" parent_id_path=PackedInt32Array(319172080) index="8" unique_id=1340962641 instance=ExtResource("2_yfwwn")]
+[node name="Env_Button_Open_Close2" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="8" unique_id=1340962641 instance=ExtResource("2_yfwwn")]
 transform = Transform3D(-2.3346624e-08, 0.84541595, -0.5341086, 3.69543e-08, 0.5341086, 0.84541595, 1, 0, -4.371139e-08, -0.15510023, -0.36299998, -0.21085736)
 
-[node name="Env_Button_Open_Close3" parent="X-Ray" parent_id_path=PackedInt32Array(319172080) index="9" unique_id=1226432371 instance=ExtResource("2_yfwwn")]
+[node name="Env_Button_Open_Close3" parent="X-Ray" parent_id_path=PackedInt32Array(1711281442) index="9" unique_id=1226432371 instance=ExtResource("2_yfwwn")]
 transform = Transform3D(-2.3346624e-08, 0.84541595, -0.5341086, 3.69543e-08, 0.5341086, 0.84541595, 1, 0, -4.371139e-08, -0.15510023, -0.36299998, 0.21040495)
 
 [node name="SubViewport" type="SubViewport" parent="." index="1" unique_id=1673460539]
@@ -183,9 +180,3 @@ offset_right = 256.0
 offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=1442951553]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=442435121]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08905029, -0.20727539, 0)
-shape = SubResource("BoxShape3D_50ws8")
