@@ -1139,13 +1139,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5917645, 0, 7.336006)
 [node name="env_ceiling_lamp" parent="Lights" unique_id=216051645 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.6584425, 2.6358595, -10.420589)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(216051645, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(216051645, 1660427015) index="0" unique_id=1120609968]
 light_energy = 0.251
 
 [node name="env_ceiling_lamp2" parent="Lights" unique_id=1281887983 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(1281887983, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(1281887983, 1660427015) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -1155,7 +1155,7 @@ spot_attenuation = 1.52
 [node name="env_ceiling_lamp7" parent="Lights" unique_id=1968220180 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(1968220180, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(1968220180, 1660427015) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -1164,7 +1164,7 @@ spot_attenuation = 1.37
 [node name="env_ceiling_lamp4" parent="Lights" unique_id=1279039200 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.69838953, 2.603364, -11.7987995)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(1279039200, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(1279039200, 1660427015) index="0" unique_id=1120609968]
 light_energy = 0.08
 spot_range = 4.7193227
 spot_angle = 87.9047
@@ -1172,7 +1172,7 @@ spot_angle = 87.9047
 [node name="env_ceiling_lamp6" parent="Lights" unique_id=542833714 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6280155, 2.603364, -7.3823385)
 
-[node name="Cylinder" parent="Lights/env_ceiling_lamp6" index="0" unique_id=127635554]
+[node name="Cylinder" parent="Lights/env_ceiling_lamp6" index="0" unique_id=1660427015]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12351322, 0, 0.01646936)
 
 [node name="SpotLight3D3" parent="Lights/env_ceiling_lamp6/Cylinder" index="0" unique_id=1120609968]
@@ -1186,7 +1186,7 @@ light_energy = 9.405
 [node name="env_ceiling_lamp3" parent="Lights" unique_id=945463757 instance=ExtResource("6_8au8g")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.19090223, 1.961021, -11.82384)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(945463757, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(945463757, 1660427015) index="0" unique_id=1120609968]
 transform = Transform3D(0.88825995, -2.007844e-08, 0.45934123, -0.45934123, -3.8827075e-08, 0.88825995, 3.731543e-15, -0.99999976, -4.371138e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(0.56323135, 0.52731746, 0.5280909, 1)
 spot_range = 5.794
@@ -1199,7 +1199,7 @@ transform = Transform3D(1, 0, -7.764702e-23, -2.627256e-15, 1, 3.5527137e-15, -3
 [node name="env_ceiling_lamp5" parent="Lights" unique_id=909074781 instance=ExtResource("6_8au8g")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.94554186, -0.26759893, -11.886757)
 
-[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(909074781, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(909074781, 1660427015) index="0" unique_id=1120609968]
 transform = Transform3D(0.7008144, -3.1181226e-08, 0.7133435, -0.7133435, -3.063358e-08, 0.7008144, 4.8694323e-15, -0.9999999, -4.371139e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(1, 0, 0.15951031, 1)
 light_energy = 0.4
@@ -1321,10 +1321,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75855803, 0.022437535, -2.9
 [node name="Prop_Curtains" parent="Room/Interactables" unique_id=164655211 instance=ExtResource("12_cqhyu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5156155, 2.4240956, -4.5071187)
 
-[node name="Cube_001" parent="Room/Interactables/Prop_Curtains" index="0" unique_id=123101083]
+[node name="Cube_001" parent="Room/Interactables/Prop_Curtains" index="0" unique_id=1052507480]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07097316, 0)
 
-[node name="Cube_014" parent="Room/Interactables/Prop_Curtains" index="1" unique_id=1332704989]
+[node name="Cube_014" parent="Room/Interactables/Prop_Curtains" index="1" unique_id=2014234706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5948672, -4.7683716e-07)
 
 [node name="Prop_Control_Panel" parent="Room/Interactables" unique_id=1145011065 instance=ExtResource("13_bfice")]
@@ -1338,22 +1338,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6473917, 0, -0.7392761)
 [node name="Prop_Closet_Storage" parent="Room/Storage" unique_id=1322947913 instance=ExtResource("15_8cf7x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30165535, 0.030189991, 0.5397688)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1913734634) index="0" unique_id=836803240]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 2091338991) index="0" unique_id=400144783]
 transform = Transform3D(0.9847963, 0, 0.17371324, 0, 1, 0, -0.17371324, 0, 0.9847963, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1913734634) index="2" unique_id=297532873]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 2091338991) index="2" unique_id=1487917189]
 transform = Transform3D(0.9980103, 0, -0.06305108, 0, 1, 0, 0.06305108, 0, 0.9980103, 0.40623674, 0.33802077, -0.18920648)
 
 [node name="Prop_Closet_Storage2" parent="Room/Storage" unique_id=792493778 instance=ExtResource("15_8cf7x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1489224, 0.060379982, -1.4530705)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="0" unique_id=836803240]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 2091338991) index="0" unique_id=400144783]
 transform = Transform3D(0.9986644, 0, 0.051666856, 0, 1, 0, -0.051666856, 0, 0.9986644, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="2" unique_id=297532873]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 2091338991) index="2" unique_id=1487917189]
 transform = Transform3D(0.99973977, 0, -0.022809424, 0, 1, 0, 0.022809424, 0, 0.99973977, 0.40623665, 0.33802077, -0.18920648)
 
-[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="3" unique_id=1308364603]
+[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 2091338991) index="3" unique_id=1135926359]
 transform = Transform3D(0.99992776, 0, 0.012020995, 0, 1, 0, -0.012020995, 0, 0.99992776, -0.40623677, 0.33802077, -0.18920648)
 
 [node name="env_locker" parent="Room/Storage" unique_id=1828827353 instance=ExtResource("16_ijner")]
@@ -1432,10 +1432,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8456554, 0, -4.136529)
 [node name="Corpse2" parent="Room/Props" unique_id=1466353991 instance=ExtResource("33_j2xn3")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9020357, -0.124072075, -4.55774)
 
-[node name="Env_Pit" parent="Room/Props/Corpse2/Armature" parent_id_path=PackedInt32Array(1466353991, 5932485) index="1" unique_id=139446197 instance=ExtResource("34_7m4c7")]
+[node name="Env_Pit" parent="Room/Props/Corpse2/Armature" parent_id_path=PackedInt32Array(1466353991, 2138107665) index="1" unique_id=139446197 instance=ExtResource("34_7m4c7")]
 transform = Transform3D(-4.371139e-10, 0, 0.01, 7.54979e-10, 0.01, 3.3001178e-17, -0.01, 7.54979e-10, -4.371139e-10, 0.00025868416, 0.0012407209, -0.0009789392)
 
-[node name="Cube_011" parent="Room/Props/Corpse2/Armature/Env_Pit" index="1" unique_id=1943592550]
+[node name="Cube_011" parent="Room/Props/Corpse2/Armature/Env_Pit" index="1" unique_id=1009247584]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0785131, 0.044901848, -0.10506663, 0.54307103)
 
 [node name="Env_Table_NoSink2" parent="Room/Props" unique_id=1416737881 instance=ExtResource("35_g543l")]
@@ -1445,7 +1445,13 @@ transform = Transform3D(1, 0, 3.496911e-07, 0, 1, 0, -3.496911e-07, 0, 1, 2.5584
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9501696, 3.7467136, -4.552022)
 
 [node name="Env_Table_Sink" parent="Room/Props" unique_id=1923583669 instance=ExtResource("37_vlaqs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44899845, 0.033261806, -6.2114015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44418573, 0.033261687, -6.2124114)
+
+[node name="Pipe" type="FmodEventEmitter3D" parent="Room/Props/Env_Table_Sink" unique_id=1625323390]
+event_name = "event:/PipeRunningLiquid"
+event_guid = "{693880c8-44a2-4820-9fe1-c32a31f2d83e}"
+autoplay = true
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 1.6675848, 0.04749298)
 
 [node name="Prop_Curtains_Trolly" parent="Room/Props" unique_id=2019036272 instance=ExtResource("38_c4wym")]
 transform = Transform3D(0.9960576, 0, 0.08870821, 0, 1, 0, -0.08870821, 0, 0.9960576, 3.0805423, 0.032699883, -4.3973866)
@@ -1476,10 +1482,10 @@ transform = Transform3D(0, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0, 8.902527, 
 [node name="Doors_Sliding3" parent="Room/Doors" unique_id=868643664 instance=ExtResource("41_6nk54")]
 transform = Transform3D(-0.9999999, 0, 4.371138e-08, 0, 1, 0, -4.371138e-08, 0, -0.9999999, 0.033169, 1.0764008, -1.1191952)
 
-[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=1265345812]
+[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=405000608]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39810574, 0, 0)
 
-[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1477454735]
+[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1788451281]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
 
 [node name="Interactables" type="Node3D" parent="." unique_id=491644675]
@@ -1529,8 +1535,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022583008, 0.0012207031, 0)
 shape = SubResource("BoxShape3D_50ws8")
 
 [node name="SitSound" type="FmodEventEmitter3D" parent="Interactables/Chair" unique_id=824865748]
-event_name = "event:/Button"
-event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+event_name = "event:/ComputerWorkingSound"
+event_guid = "{455a2e2f-f7f9-4b6d-80bc-2e2b1b6719f4}"
 
 [node name="Vial Cabinet" type="Node3D" parent="Interactables" unique_id=468691575 node_paths=PackedStringArray("area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0120907, 1.2865258, -0.5496068)
@@ -1549,8 +1555,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16756439, 0.10617828, -0.19
 shape = SubResource("BoxShape3D_pti6k")
 
 [node name="CabinetInteractSound" type="FmodEventEmitter3D" parent="Interactables/Vial Cabinet" unique_id=1991102569]
-event_name = "event:/Button"
-event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+event_name = "event:/PlaceTestTube"
+event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 
 [node name="Microscope" type="Node3D" parent="Interactables" unique_id=1380959164 node_paths=PackedStringArray("area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9965916, 1.1694366, -6.0701528)
@@ -1584,13 +1590,19 @@ collision_layer = 257
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014099121, -0.086517334, -0.016202927)
 shape = SubResource("BoxShape3D_afnf1")
 
+[node name="Button" type="FmodEventEmitter3D" parent="Interactables/RequestBody" unique_id=2024833424]
+event_name = "event:/NewBody"
+event_guid = "{d1d61b13-bb62-461f-ba2c-d240992960fc}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
+
 [node name="SampleCollector" type="Node3D" parent="Interactables" unique_id=1992102254]
 
-[node name="SampleInjection" type="Node3D" parent="Interactables/SampleCollector" unique_id=997938155 node_paths=PackedStringArray("area")]
+[node name="SampleInjection" type="Node3D" parent="Interactables/SampleCollector" unique_id=997938155 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.492851, 1.3797606, -5.287664)
 script = ExtResource("47_7fqgl")
 prompt_text = "Inject"
 area = NodePath("Area3D2")
+sound_emitter = NodePath("Button")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector/SampleInjection" unique_id=702679449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6509409, 0)
@@ -1603,11 +1615,17 @@ mesh = SubResource("BoxMesh_uxm04")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/SampleCollector/SampleInjection/Area3D2" unique_id=115799020]
 shape = SubResource("BoxShape3D_u3ia7")
 
-[node name="SampleExtraction" type="Node3D" parent="Interactables/SampleCollector" unique_id=1903185465 node_paths=PackedStringArray("area")]
+[node name="Button" type="FmodEventEmitter3D" parent="Interactables/SampleCollector/SampleInjection" unique_id=582502511]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
+
+[node name="SampleExtraction" type="Node3D" parent="Interactables/SampleCollector" unique_id=1903185465 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.492851, 1.3797606, -5.287664)
 script = ExtResource("48_ibhvd")
 prompt_text = "Extract"
 area = NodePath("Area3D2")
+sound_emitter = NodePath("Button")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector/SampleExtraction" unique_id=393872825]
 collision_layer = 257
@@ -1619,11 +1637,17 @@ mesh = SubResource("BoxMesh_wsh1n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/SampleCollector/SampleExtraction/Area3D2" unique_id=1132230391]
 shape = SubResource("BoxShape3D_0mwev")
 
-[node name="VialInsertRetrieval" type="Node3D" parent="Interactables/SampleCollector" unique_id=1353844329 node_paths=PackedStringArray("area")]
+[node name="Button" type="FmodEventEmitter3D" parent="Interactables/SampleCollector/SampleExtraction" unique_id=1492835823]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
+
+[node name="VialInsertRetrieval" type="Node3D" parent="Interactables/SampleCollector" unique_id=1353844329 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.5, 6.5358453, 1.3214782, -5.4953027)
 script = ExtResource("49_flbvb")
 prompt_text = ""
 area = NodePath("Area3D2")
+sound_emitter = NodePath("PlaceVial")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector/VialInsertRetrieval" unique_id=1975972684]
 collision_layer = 257
@@ -1636,17 +1660,23 @@ mesh = SubResource("BoxMesh_afnf1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11196995, 0, 0.10930824)
 shape = SubResource("BoxShape3D_ihdea")
 
+[node name="PlaceVial" type="FmodEventEmitter3D" parent="Interactables/SampleCollector/VialInsertRetrieval" unique_id=881675408]
+event_name = "event:/PlaceTestTube"
+event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
+
 [node name="Mixer" type="Node3D" parent="Interactables" unique_id=1400316112 node_paths=PackedStringArray("area")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.027682, 1.3108374, -6.3306904)
 script = ExtResource("50_w5fgd")
 area = NodePath("Area3D2")
 
-[node name="ButtonHigh" type="MeshInstance3D" parent="Interactables/Mixer" unique_id=1229461577 node_paths=PackedStringArray("area")]
+[node name="ButtonHigh" type="MeshInstance3D" parent="Interactables/Mixer" unique_id=1229461577 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(-1.9908535, -0.09552746, -0.16545837, 0, 1.7320507, -1.0000002, 0.19105488, -0.995427, -1.7241296, 0.11917353, -0.04743457, 0.68514824)
 mesh = SubResource("ArrayMesh_glmf0")
 script = ExtResource("52_mfbyv")
 prompt_text = "Speed Up"
 area = NodePath("Area3D")
+sound_emitter = NodePath("Button")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/Mixer/ButtonHigh" unique_id=361245176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00043012202)
@@ -1660,12 +1690,18 @@ collision_layer = 257
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Mixer/ButtonHigh/Area3D" unique_id=1108611890]
 shape = SubResource("BoxShape3D_d5068")
 
-[node name="ButtonLow" type="MeshInstance3D" parent="Interactables/Mixer" unique_id=1249915382 node_paths=PackedStringArray("area")]
+[node name="Button" type="FmodEventEmitter3D" parent="Interactables/Mixer/ButtonHigh" unique_id=585504555]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
+
+[node name="ButtonLow" type="MeshInstance3D" parent="Interactables/Mixer" unique_id=1249915382 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(-1.9908535, -0.09552746, -0.16545837, 0, 1.7320507, -1.0000002, 0.19105488, -0.995427, -1.7241296, 0.12229586, -0.10404849, 0.71768475)
 mesh = SubResource("ArrayMesh_p8cbq")
 script = ExtResource("53_okasj")
 prompt_text = "Speed Down"
 area = NodePath("Area3D")
+sound_emitter = NodePath("Button")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/Mixer/ButtonLow" unique_id=1862817167]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 5.5879354e-09, -0.00043012248)
@@ -1679,11 +1715,17 @@ collision_layer = 257
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Mixer/ButtonLow/Area3D" unique_id=775388798]
 shape = SubResource("BoxShape3D_lvi0n")
 
-[node name="ButtonMix" type="MeshInstance3D" parent="Interactables/Mixer" unique_id=882341621]
+[node name="Button" type="FmodEventEmitter3D" parent="Interactables/Mixer/ButtonLow" unique_id=327958135]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
+
+[node name="ButtonMix" type="MeshInstance3D" parent="Interactables/Mixer" unique_id=882341621 node_paths=PackedStringArray("sound_emitter")]
 transform = Transform3D(-1.9908535, -0.09552746, -0.16545837, 0, 1.7320507, -1.0000002, 0.19105488, -0.995427, -1.7241296, 0.12541866, -0.16066289, 0.75022125)
 mesh = SubResource("ArrayMesh_xnklg")
 script = ExtResource("54_kukxg")
 prompt_text = "Start Mixer"
+sound_emitter = NodePath("Mix")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Interactables/Mixer/ButtonMix" unique_id=1840461267]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.450581e-09, -0.00043012248)
@@ -1696,6 +1738,10 @@ collision_layer = 257
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Mixer/ButtonMix/Area3D" unique_id=132174015]
 shape = SubResource("BoxShape3D_c0qlh")
+
+[node name="Mix" type="FmodEventEmitter3D" parent="Interactables/Mixer/ButtonMix" unique_id=1260367630]
+event_guid = "{00000000-5645-0f73-0000-000000000000}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
 
 [node name="Area3D2" type="Area3D" parent="Interactables/Mixer" unique_id=1624132880]
 collision_layer = 257
@@ -1710,10 +1756,11 @@ shape = SubResource("BoxShape3D_ct7ee")
 [node name="FillingMachine" type="Node3D" parent="Interactables" unique_id=1517098998]
 transform = Transform3D(0.4642429, 0, -0.1856839, 0, 0.49999997, 0, 0.18568392, 0, 0.46424288, 3.0814927, 1.5677308, -3.5142221)
 
-[node name="VialInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=1960514374 node_paths=PackedStringArray("area")]
+[node name="VialInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=1960514374 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.99999994, 0, -2.9802322e-08, 0, 0.99999994, 0, 2.9802322e-08, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("55_j68t5")
 area = NodePath("Area3D2")
+sound_emitter = NodePath("InsertVial")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/FillingMachine/VialInsert" unique_id=162808820]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, 0, 0, 0)
@@ -1726,10 +1773,16 @@ mesh = SubResource("BoxMesh_c5x2l")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/FillingMachine/VialInsert/Area3D2" unique_id=1182664471]
 shape = SubResource("BoxShape3D_8tet1")
 
-[node name="ChemicalInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=261221955 node_paths=PackedStringArray("area")]
+[node name="InsertVial" type="FmodEventEmitter3D" parent="Interactables/FillingMachine/VialInsert" unique_id=23007979]
+event_name = "event:/PlaceTestTube"
+event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
+
+[node name="ChemicalInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=261221955 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.9999999, 0, -3.5762787e-07, 0, 0.9999994, 0, 2.0861626e-07, 0, 0.99999976, 0.044023514, -0.4259827, 0.61992455)
 script = ExtResource("56_wawjn")
 area = NodePath("Area3D2")
+sound_emitter = NodePath("InsertChemical")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/FillingMachine/ChemicalInsert" unique_id=655624551]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, 0, 0, 0)
@@ -1741,6 +1794,11 @@ mesh = SubResource("BoxMesh_c2hkf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/FillingMachine/ChemicalInsert/Area3D2" unique_id=1187325265]
 shape = SubResource("BoxShape3D_pu5rk")
+
+[node name="InsertChemical" type="FmodEventEmitter3D" parent="Interactables/FillingMachine/ChemicalInsert" unique_id=834617209]
+event_name = "event:/PipeRunningLiquid"
+event_guid = "{693880c8-44a2-4820-9fe1-c32a31f2d83e}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
 
 [node name="Prop_Filling_Machine" type="Node3D" parent="Interactables/FillingMachine" unique_id=2134814780]
 transform = Transform3D(-0.031389892, 0, 1.9997535, 0, 2, 0, -1.9997537, 0, -0.031389892, 0.20360184, -3.0750818, 0.48561)
@@ -2052,11 +2110,11 @@ collision_layer = 257
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/FillingMachine/Numpad/Button_027/Area3D" unique_id=658186321]
 shape = SubResource("BoxShape3D_1fwx3")
 
-[node name="ScanStart" type="Node3D" parent="Interactables" unique_id=2106335602 node_paths=PackedStringArray("anim", "area")]
+[node name="ScanStart" type="Node3D" parent="Interactables" unique_id=2106335602 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 6.299154, 1.2359427, -3.357747)
 script = ExtResource("64_1jytr")
-anim = NodePath("")
 area = NodePath("Area3D2")
+sound_emitter = NodePath("ScanStart")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/ScanStart" unique_id=238255176]
 collision_layer = 257
@@ -2068,15 +2126,21 @@ mesh = SubResource("BoxMesh_nj15a")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/ScanStart/Area3D2" unique_id=1550751053]
 shape = SubResource("BoxShape3D_3s4u2")
 
+[node name="ScanStart" type="FmodEventEmitter3D" parent="Interactables/ScanStart" unique_id=384340585]
+event_name = "event:/Scan"
+event_guid = "{0c1371f0-c702-44b9-bb0a-8c616e0c9c91}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
+
 [node name="Chemicals" type="Node" parent="Interactables" unique_id=1729937930]
 
-[node name="ChemA" type="Node3D" parent="Interactables/Chemicals" unique_id=1094829499 node_paths=PackedStringArray("area")]
+[node name="ChemA" type="Node3D" parent="Interactables/Chemicals" unique_id=1094829499 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, 0.9384341, 0.81866324, -0.70399356)
 script = ExtResource("65_srr11")
 chemName = "Cocain"
 composite = 1
 prompt_text = ""
 area = NodePath("Area3D2")
+sound_emitter = NodePath("Pick")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/Chemicals/ChemA" unique_id=1839609848]
 collision_layer = 257
@@ -2088,12 +2152,18 @@ mesh = SubResource("BoxMesh_nescf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Chemicals/ChemA/Area3D2" unique_id=438674333]
 shape = SubResource("BoxShape3D_uxm04")
 
-[node name="ChemB" type="Node3D" parent="Interactables/Chemicals" unique_id=617708475 node_paths=PackedStringArray("area")]
+[node name="Pick" type="FmodEventEmitter3D" parent="Interactables/Chemicals/ChemA" unique_id=2124193224]
+event_name = "event:/PlaceTestTube"
+event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
+
+[node name="ChemB" type="Node3D" parent="Interactables/Chemicals" unique_id=617708475 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, 1.35014, 0.81866324, -0.627267)
 script = ExtResource("65_srr11")
 chemName = "Dihydrogen Monoxide"
 composite = 2
 area = NodePath("Area3D2")
+sound_emitter = NodePath("Pick")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/Chemicals/ChemB" unique_id=1683261125]
 collision_layer = 257
@@ -2104,6 +2174,11 @@ mesh = SubResource("BoxMesh_u3ia7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Chemicals/ChemB/Area3D2" unique_id=1755611584]
 shape = SubResource("BoxShape3D_wsh1n")
+
+[node name="Pick" type="FmodEventEmitter3D" parent="Interactables/Chemicals/ChemB" unique_id=232238313]
+event_name = "event:/PlaceTestTube"
+event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1.0000001, 0, 0, 0, 1, 0, 0.06537247, -4.7683716e-07)
 
 [node name="Micrograph" type="Control" parent="." unique_id=308824450]
 unique_name_in_owner = true
