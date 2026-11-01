@@ -3,20 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://bk563wn5l28w3" path="res://World/Props/Machines/Blood Collector/Prop_Blood_Collector_Machine.fbx" id="1_sny63"]
 [ext_resource type="Texture2D" uid="uid://dayrghnnvllag" path="res://World/Props/Electricals/Computer/Pc_Props_Texture.png" id="3_8np5n"]
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="3_a06ba"]
+[ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="3_cp7ly"]
 [ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="4_cp7ly"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_i8nt5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_x6oc4"]
 viewport_path = NodePath("Blood Collector/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_t4ntf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_iiwog"]
 viewport_path = NodePath("Blood Collector/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4o88"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mtuo"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_i8nt5")
+albedo_texture = SubResource("ViewportTexture_x6oc4")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_t4ntf")
+emission_texture = SubResource("ViewportTexture_iiwog")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3exb"]
 albedo_texture = ExtResource("3_8np5n")
@@ -233,27 +234,30 @@ shader_parameter/vignette_opacity = 0.6010000285475
 
 [node name="Prop_Blood_Collector_Machine" unique_id=2139538409 instance=ExtResource("1_sny63")]
 
-[node name="Blood Collector" parent="." index="0" unique_id=1169960139]
-surface_material_override/1 = SubResource("StandardMaterial3D_j4o88")
+[node name="Blood Collector" parent="." index="0" unique_id=1648072013]
+surface_material_override/1 = SubResource("StandardMaterial3D_6mtuo")
 
-[node name="Open_Capsule_Button" parent="Blood Collector" index="1" unique_id=258556840]
+[node name="Open_Capsule_Button" parent="Blood Collector" index="1" unique_id=865747307]
 material_override = SubResource("StandardMaterial3D_k3exb")
+script = ExtResource("3_cp7ly")
 
-[node name="Off_On-btn_001" parent="Blood Collector/Open_Capsule_Button" index="0" unique_id=1597854419]
+[node name="Off_On-btn_001" parent="Blood Collector/Open_Capsule_Button" index="0" unique_id=493140703]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_sny63")
 
-[node name="Open_Capsule_Button_001" parent="Blood Collector" index="2" unique_id=1888382415]
+[node name="Open_Capsule_Button_001" parent="Blood Collector" index="2" unique_id=2013907341]
 material_override = SubResource("StandardMaterial3D_ssw6b")
+script = ExtResource("3_cp7ly")
 
-[node name="Off_On-btn_002" parent="Blood Collector/Open_Capsule_Button_001" index="0" unique_id=1891470137]
+[node name="Off_On-btn_002" parent="Blood Collector/Open_Capsule_Button_001" index="0" unique_id=417140535]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_8np5n")
 
-[node name="Open_Capsule_Button_002" parent="Blood Collector" index="3" unique_id=1028078352]
+[node name="Open_Capsule_Button_002" parent="Blood Collector" index="3" unique_id=1785087677]
 material_override = SubResource("StandardMaterial3D_a06ba")
+script = ExtResource("3_cp7ly")
 
-[node name="Off_On-btn_003" parent="Blood Collector/Open_Capsule_Button_002" index="0" unique_id=1667705623]
+[node name="Off_On-btn_003" parent="Blood Collector/Open_Capsule_Button_002" index="0" unique_id=1258623673]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_cp7ly")
 
