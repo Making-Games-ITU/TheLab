@@ -2606,19 +2606,19 @@ material_override = SubResource("StandardMaterial3D_fxoop")
 mesh = SubResource("ArrayMesh_3nchu")
 script = ExtResource("16_lkuj1")
 prompt_text = "Request body"
-anim = NodePath("InteractableObject/BodyRequestAnimation")
-area = NodePath("InteractableObject/Area3D2")
+anim = NodePath("BodyButton/BodyRequestAnimation")
+area = NodePath("BodyButton/Area3D2")
 
-[node name="InteractableObject" type="Node3D" parent="Room/Interactables/Prop_Control_Panel/RequestBody" unique_id=1031693646]
+[node name="BodyButton" type="Node3D" parent="Room/Interactables/Prop_Control_Panel/RequestBody" unique_id=1031693646]
 
-[node name="BodyRequestAnimation" type="AnimationPlayer" parent="Room/Interactables/Prop_Control_Panel/RequestBody/InteractableObject" unique_id=547738412]
+[node name="BodyRequestAnimation" type="AnimationPlayer" parent="Room/Interactables/Prop_Control_Panel/RequestBody/BodyButton" unique_id=547738412]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_72s1t")
 
-[node name="Area3D2" type="Area3D" parent="Room/Interactables/Prop_Control_Panel/RequestBody/InteractableObject" unique_id=1818303929]
+[node name="Area3D2" type="Area3D" parent="Room/Interactables/Prop_Control_Panel/RequestBody/BodyButton" unique_id=1818303929]
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Prop_Control_Panel/RequestBody/InteractableObject/Area3D2" unique_id=726015992]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Prop_Control_Panel/RequestBody/BodyButton/Area3D2" unique_id=726015992]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014099121, -0.086517334, 0.0010983944)
 shape = SubResource("BoxShape3D_fexxs")
 

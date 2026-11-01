@@ -5,18 +5,16 @@ var bodyIdString : String = "BODY #"
 func interact(interactor: Node) -> void:
 	_request_body()
 
-func _request_body() -> void:
-	if anim:
-		if not GameStats.body_exists:
-			anim.play("request")
-			await anim.animation_finished
-			GameStats.toggle_sample_collector = true
-			
+func _request_body() -> void:			
 	if (GameStats.body_exists):
 		print("Warning: Containment chamber at max capacity. Dispose current subject.")
 	else:
 		_new_body()
 		GameStats.body_exists = true
+		if anim:
+			anim.play("request")
+			await anim.animation_finished
+		GameStats.toggle_sample_collector = true
 
 func _new_body():
 	print("New subject requested")

@@ -1,8 +1,16 @@
 extends Node
 
 # Add enum for vial, where it is in the world
+# Replace vial_in_BLANK with the new enum types later
+enum VialLocation {
+	NONE,
+	PLAYER,
+	SAMPLECOLLECTOR,
+	MIXER,
+	FILLINGMACHINE,
+	MICROSCOPE
+}
 
-var body_state : Condition = Condition.NONE
 var body_number : int = 0
 var body_ID : String = ""
 
