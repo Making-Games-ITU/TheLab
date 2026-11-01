@@ -51,6 +51,7 @@
 [ext_resource type="Script" uid="uid://b4kbgcr5ai4eq" path="res://World/Interactables/BloodCollector/SampleExtraction.gd" id="48_6y8lh"]
 [ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/Vial2CollectorInteraction.gd" id="49_nescf"]
 [ext_resource type="Script" uid="uid://l1n756bd47f6" path="res://World/Interactables/Chemical.gd" id="50_6y8lh"]
+[ext_resource type="Script" uid="uid://cmcmbnsforjle" path="res://World/Interactables/BodyRequest.gd" id="51_nescf"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -222,6 +223,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4gnb2")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3hsde"]
+size = Vector3(0.34350586, 0.44073486, 0.34472656)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_50ws8"]
 size = Vector3(0.43896484, 0.09716797, 0.5563965)
 
@@ -231,8 +235,8 @@ size = Vector3(0.5088043, 0.23570251, 0.28045654)
 [sub_resource type="BoxShape3D" id="BoxShape3D_c3pyi"]
 size = Vector3(0.24023438, 0.5221863, 0.4683838)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3hsde"]
-size = Vector3(0.34350586, 0.44073486, 0.34472656)
+[sub_resource type="BoxShape3D" id="BoxShape3D_afnf1"]
+size = Vector3(0.08117676, 0.32696533, 0.08325195)
 
 [sub_resource type="BoxMesh" id="BoxMesh_uxm04"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -660,6 +664,26 @@ transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.4
 
 [node name="Interactables" type="Node3D" parent="." unique_id=491644675]
 
+[node name="Bin" type="Node3D" parent="Interactables" unique_id=104314256 node_paths=PackedStringArray("area", "sound_emitter", "outline_meshes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9914575, 1.3074355, -2.622666)
+script = ExtResource("45_2na2j")
+prompt_text = "Dispose Vial"
+area = NodePath("Area3D")
+sound_emitter = NodePath("FmodEventEmitter3D")
+outline_meshes = [NodePath("../../Room/Interactables/Prop_Trashcan/Cylinder_007")]
+
+[node name="Area3D" type="Area3D" parent="Interactables/Bin" unique_id=350096216]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Bin/Area3D" unique_id=1634946246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15280151, 0)
+shape = SubResource("BoxShape3D_3hsde")
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Interactables/Bin" unique_id=310854030]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+
 [node name="Chair" type="Node3D" parent="Interactables" unique_id=832534440 node_paths=PackedStringArray("seat_point", "exit_point", "area", "sound_emitter")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.757, 0, -2.921)
 script = ExtResource("42_mv0b0")
@@ -728,25 +752,69 @@ shape = SubResource("BoxShape3D_c3pyi")
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="Bin" type="Node3D" parent="Interactables" unique_id=104314256 node_paths=PackedStringArray("area", "sound_emitter", "outline_meshes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9914575, 1.3074355, -2.622666)
-script = ExtResource("45_2na2j")
-prompt_text = "Dispose Vial"
-area = NodePath("Area3D")
-sound_emitter = NodePath("FmodEventEmitter3D")
-outline_meshes = [NodePath("../../Room/Interactables/Prop_Trashcan/Cylinder_007")]
+[node name="RequestBody" type="Node3D" parent="Interactables" unique_id=763048088 node_paths=PackedStringArray("area")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5097575, 1.2176334, -6.127241)
+script = ExtResource("51_nescf")
+area = NodePath("Area3D2")
 
-[node name="Area3D" type="Area3D" parent="Interactables/Bin" unique_id=350096216]
-collision_layer = 256
-collision_mask = 256
+[node name="Area3D2" type="Area3D" parent="Interactables/RequestBody" unique_id=808875090]
+collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Bin/Area3D" unique_id=1634946246]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15280151, 0)
-shape = SubResource("BoxShape3D_3hsde")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/RequestBody/Area3D2" unique_id=1249883916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014099121, -0.086517334, -0.016202927)
+shape = SubResource("BoxShape3D_afnf1")
 
-[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Interactables/Bin" unique_id=310854030]
-event_name = "event:/Button"
-event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+[node name="SampleCollector" type="Node3D" parent="Interactables" unique_id=1992102254]
+
+[node name="SampleInjection" type="Node3D" parent="Interactables/SampleCollector" unique_id=997938155 node_paths=PackedStringArray("area")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.492851, 1.3797606, -5.287664)
+script = ExtResource("47_do57b")
+prompt_text = "Inject"
+area = NodePath("Area3D2")
+
+[node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector/SampleInjection" unique_id=702679449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6509409, 0)
+collision_layer = 257
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/SampleCollector/SampleInjection/Area3D2" unique_id=1007945834]
+visible = false
+mesh = SubResource("BoxMesh_uxm04")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/SampleCollector/SampleInjection/Area3D2" unique_id=115799020]
+shape = SubResource("BoxShape3D_u3ia7")
+
+[node name="SampleExtraction" type="Node3D" parent="Interactables/SampleCollector" unique_id=1903185465 node_paths=PackedStringArray("area")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.492851, 1.3797606, -5.287664)
+script = ExtResource("48_6y8lh")
+prompt_text = "Extract"
+area = NodePath("Area3D2")
+
+[node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector/SampleExtraction" unique_id=393872825]
+collision_layer = 257
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/SampleCollector/SampleExtraction/Area3D2" unique_id=1321501909]
+visible = false
+mesh = SubResource("BoxMesh_wsh1n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/SampleCollector/SampleExtraction/Area3D2" unique_id=1132230391]
+shape = SubResource("BoxShape3D_0mwev")
+
+[node name="VialInsertRetrieval" type="Node3D" parent="Interactables/SampleCollector" unique_id=1353844329 node_paths=PackedStringArray("area")]
+transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.5, 6.5358453, 1.3214782, -5.4953027)
+script = ExtResource("49_nescf")
+prompt_text = ""
+area = NodePath("Area3D2")
+
+[node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector/VialInsertRetrieval" unique_id=1975972684]
+collision_layer = 257
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/SampleCollector/VialInsertRetrieval/Area3D2" unique_id=2050125773]
+visible = false
+mesh = SubResource("BoxMesh_afnf1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/SampleCollector/VialInsertRetrieval/Area3D2" unique_id=1511309236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11196995, 0, 0.10930824)
+shape = SubResource("BoxShape3D_ihdea")
 
 [node name="Mixer" parent="Interactables" unique_id=347589346 instance=ExtResource("46_sapyd")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.972598, 1.2029622, -5.7098837)
@@ -754,70 +822,16 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.972598, 1.2029622, -5
 [node name="FillingMachine" parent="Interactables" unique_id=246823992 instance=ExtResource("46_sapyd")]
 transform = Transform3D(0.5, 0, 0, 0, 0.49999997, 0, 0, 0, 0.49999997, 2.8427312, 1.3946898, -3.312075)
 
-[node name="SampleCollector" parent="Interactables" unique_id=1718439341 instance=ExtResource("46_sapyd")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.353214, 1.0981882, -5.622205)
-
-[node name="SampleInjection" type="Node3D" parent="Interactables/SampleCollector" unique_id=449172032 node_paths=PackedStringArray("area")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.492851, 1.3797606, -5.287664)
-script = ExtResource("47_do57b")
-prompt_text = "Inject"
-area = NodePath("Area3D2")
-
-[node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector/SampleInjection" unique_id=833661906]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6509409, 0)
-collision_layer = 257
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/SampleCollector/SampleInjection/Area3D2" unique_id=354683273]
-visible = false
-mesh = SubResource("BoxMesh_uxm04")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/SampleCollector/SampleInjection/Area3D2" unique_id=109242625]
-shape = SubResource("BoxShape3D_u3ia7")
-
-[node name="SampleExtraction" type="Node3D" parent="Interactables/SampleCollector" unique_id=1379290588 node_paths=PackedStringArray("area")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.492851, 1.3797606, -5.287664)
-script = ExtResource("48_6y8lh")
-prompt_text = "Extract"
-area = NodePath("Area3D2")
-
-[node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector/SampleExtraction" unique_id=1882882583]
-collision_layer = 257
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/SampleCollector/SampleExtraction/Area3D2" unique_id=1607167509]
-visible = false
-mesh = SubResource("BoxMesh_wsh1n")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/SampleCollector/SampleExtraction/Area3D2" unique_id=1822573159]
-shape = SubResource("BoxShape3D_0mwev")
-
-[node name="VialInsertRetrieval" type="Node3D" parent="Interactables/SampleCollector" unique_id=969146931 node_paths=PackedStringArray("area")]
-transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.5, 6.5358453, 1.3214782, -5.4953027)
-script = ExtResource("49_nescf")
-prompt_text = ""
-area = NodePath("Area3D2")
-
-[node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector/VialInsertRetrieval" unique_id=466614019]
-collision_layer = 257
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/SampleCollector/VialInsertRetrieval/Area3D2" unique_id=1256800068]
-visible = false
-mesh = SubResource("BoxMesh_afnf1")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/SampleCollector/VialInsertRetrieval/Area3D2" unique_id=2003147833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11196995, 0, 0.10930824)
-shape = SubResource("BoxShape3D_ihdea")
-
 [node name="StartScanButton" parent="Interactables" unique_id=1535929993 instance=ExtResource("46_sapyd")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.353214, 1.0981882, -5.1049433)
 
 [node name="Chemicals" type="Node" parent="Interactables" unique_id=1729937930]
 
-[node name="ChemA" type="Node3D" parent="Interactables/Chemicals" unique_id=1094829499 node_paths=PackedStringArray("bottle", "area")]
+[node name="ChemA" type="Node3D" parent="Interactables/Chemicals" unique_id=1094829499 node_paths=PackedStringArray("area")]
 transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, 0.9384341, 0.81866324, -0.70399356)
 script = ExtResource("50_6y8lh")
 chemName = "Cocain"
 composite = 1
-bottle = NodePath("")
 prompt_text = ""
 area = NodePath("Area3D2")
 
@@ -831,12 +845,11 @@ mesh = SubResource("BoxMesh_nescf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Chemicals/ChemA/Area3D2" unique_id=438674333]
 shape = SubResource("BoxShape3D_uxm04")
 
-[node name="ChemB" type="Node3D" parent="Interactables/Chemicals" unique_id=617708475 node_paths=PackedStringArray("bottle", "area")]
+[node name="ChemB" type="Node3D" parent="Interactables/Chemicals" unique_id=617708475 node_paths=PackedStringArray("area")]
 transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, 1.35014, 0.81866324, -0.627267)
 script = ExtResource("50_6y8lh")
 chemName = "Dihydrogen Monoxide"
 composite = 2
-bottle = NodePath("")
 area = NodePath("Area3D2")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/Chemicals/ChemB" unique_id=1683261125]

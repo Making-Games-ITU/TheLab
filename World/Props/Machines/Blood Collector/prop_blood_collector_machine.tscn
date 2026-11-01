@@ -5,18 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="3_a06ba"]
 [ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="4_cp7ly"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_i8nt5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ssw6b"]
 viewport_path = NodePath("Blood Collector/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_t4ntf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_8np5n"]
 viewport_path = NodePath("Blood Collector/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4o88"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6oc4"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_i8nt5")
+albedo_texture = SubResource("ViewportTexture_ssw6b")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_t4ntf")
+emission_texture = SubResource("ViewportTexture_8np5n")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3exb"]
 albedo_texture = ExtResource("3_8np5n")
@@ -233,27 +233,27 @@ shader_parameter/vignette_opacity = 0.6010000285475
 
 [node name="Prop_Blood_Collector_Machine" unique_id=2139538409 instance=ExtResource("1_sny63")]
 
-[node name="Blood Collector" parent="." index="0" unique_id=1169960139]
-surface_material_override/1 = SubResource("StandardMaterial3D_j4o88")
+[node name="Blood Collector" parent="." index="0" unique_id=1038683653]
+surface_material_override/1 = SubResource("StandardMaterial3D_x6oc4")
 
-[node name="Open_Capsule_Button" parent="Blood Collector" index="1" unique_id=258556840]
+[node name="Open_Capsule_Button" parent="Blood Collector" index="1" unique_id=1692393384]
 material_override = SubResource("StandardMaterial3D_k3exb")
 
-[node name="Off_On-btn_001" parent="Blood Collector/Open_Capsule_Button" index="0" unique_id=1597854419]
+[node name="Off_On-btn_001" parent="Blood Collector/Open_Capsule_Button" index="0" unique_id=609925555]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_sny63")
 
-[node name="Open_Capsule_Button_001" parent="Blood Collector" index="2" unique_id=1888382415]
+[node name="Open_Capsule_Button_001" parent="Blood Collector" index="2" unique_id=274052053]
 material_override = SubResource("StandardMaterial3D_ssw6b")
 
-[node name="Off_On-btn_002" parent="Blood Collector/Open_Capsule_Button_001" index="0" unique_id=1891470137]
+[node name="Off_On-btn_002" parent="Blood Collector/Open_Capsule_Button_001" index="0" unique_id=2088715491]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_8np5n")
 
-[node name="Open_Capsule_Button_002" parent="Blood Collector" index="3" unique_id=1028078352]
+[node name="Open_Capsule_Button_002" parent="Blood Collector" index="3" unique_id=509680204]
 material_override = SubResource("StandardMaterial3D_a06ba")
 
-[node name="Off_On-btn_003" parent="Blood Collector/Open_Capsule_Button_002" index="0" unique_id=1667705623]
+[node name="Off_On-btn_003" parent="Blood Collector/Open_Capsule_Button_002" index="0" unique_id=791040720]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_cp7ly")
 
