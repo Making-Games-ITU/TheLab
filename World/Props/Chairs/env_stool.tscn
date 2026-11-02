@@ -7,8 +7,8 @@ size = Vector3(0.60089463, 1.4079075, 0.57308996)
 
 [node name="Env_Stool" unique_id=697425343 instance=ExtResource("1_rnxh6")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_035" parent_id_path=PackedInt32Array(1363121166) index="0" unique_id=588736982]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=588736982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05377844, 0.7039537, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_035/StaticBody3D" index="0" unique_id=861237325]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=861237325]
 shape = SubResource("BoxShape3D_rnxh6")
