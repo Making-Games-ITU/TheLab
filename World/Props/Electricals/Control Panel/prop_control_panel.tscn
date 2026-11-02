@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://de3wmww0d36tx" path="res://World/Props/Buttons/Door_Btn_Texture.png" id="2_ryem7"]
 [ext_resource type="Texture2D" uid="uid://7iq2tjgsi7ll" path="res://World/Props/Xray/Wires.png" id="3_ftr6u"]
 [ext_resource type="Texture2D" uid="uid://c6ndouxyokit6" path="res://World/Props/Buttons/Emergancy_Btn_Texture.png" id="4_qbyko"]
+[ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="5_ryem7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5e56c"]
 albedo_texture = ExtResource("2_ryem7")
@@ -80,3 +81,4 @@ material_override = SubResource("StandardMaterial3D_e0su6")
 
 [node name="Cylinder_002" parent="." index="12" unique_id=1636426110]
 material_override = SubResource("StandardMaterial3D_or3te")
+script = ExtResource("5_ryem7")

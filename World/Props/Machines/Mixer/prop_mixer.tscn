@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dh7hj18kfry5t" path="res://World/Props/Machines/Mixer/Prop_Mixer.fbx" id="1_c7708"]
 [ext_resource type="Texture2D" uid="uid://dpv6dd0ver3yb" path="res://World/Props/Machines/Mixer/NCentrifuge.png" id="2_sbv7e"]
+[ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="3_ipw6s"]
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="3_li5gh"]
 [ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="4_ipw6s"]
+[ext_resource type="PackedScene" uid="uid://dktx5llwjb5k" path="res://World/Items/Test Tube/env_test_tube.tscn" id="4_ukfv6"]
 [ext_resource type="Texture2D" uid="uid://bk66ydditnowo" path="res://UI/Screen/Logo Kras.png" id="5_ukfv6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82owd"]
@@ -30,18 +32,18 @@ albedo_texture = ExtResource("2_sbv7e")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_li5gh"]
 albedo_texture = ExtResource("2_sbv7e")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1d37y"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ukfv6"]
 viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_n0k3b"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6jv2y"]
 viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qiwk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2aac"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_1d37y")
+albedo_texture = SubResource("ViewportTexture_ukfv6")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_n0k3b")
+emission_texture = SubResource("ViewportTexture_6jv2y")
 
 [sub_resource type="Shader" id="Shader_wbrb6"]
 code = "shader_type canvas_item;
@@ -238,49 +240,162 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
 
+[sub_resource type="Animation" id="Animation_ukfv6"]
+resource_name = "Mixing"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Centrifuge/Rotor")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99999994, 0.09, 1, 0, 0.7071, 0, 0.7071, 0.18, 1, 0, 1, 0, 0, 0.27, 1, 0, 0.7071, 0, -0.7071, 0.36, 1, 0, 0, 0, -1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Centrifuge")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.033333335, 1, 0.001, 0, 0, 0.06666667, 1, -0.001, 0, -0.001, 0.1, 1, -0.001, 0, 0.001, 0.13333334, 1, -0.001, 0, 0.001, 0.17083001, 1, 0, 0, 0, 0.20971446, 1, 0.001, 0, 0, 0.25001332, 1, -0.001, 0, -0.001, 0.29306114, 1, -0.001, 0, 0.001, 0.3277822, 1, -0.001, 0, 0.01, 0.36666667, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_6jv2y"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Centrifuge/Rotor")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Centrifuge")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_b2aac"]
+resource_name = "Start Mixer"
+
+[sub_resource type="Animation" id="Animation_fa6i4"]
+resource_name = "Stop Mixer"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ju1k8"]
+_data = {
+&"Mixing": SubResource("Animation_ukfv6"),
+&"RESET": SubResource("Animation_6jv2y"),
+&"Start Mixer": SubResource("Animation_b2aac"),
+&"Stop Mixer": SubResource("Animation_fa6i4")
+}
+
 [node name="Prop_Mixer" unique_id=1780799766 instance=ExtResource("1_c7708")]
 
-[node name="Centrifuge" parent="." index="0" unique_id=729981905]
+[node name="Centrifuge" parent="." index="0" unique_id=566894824]
 material_override = SubResource("StandardMaterial3D_82owd")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_014" parent_id_path=PackedInt32Array(411749992) index="0" unique_id=1752392188]
+[node name="Button_014" parent="Centrifuge" index="0" unique_id=428855922]
+script = ExtResource("3_ipw6s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_014" index="0" unique_id=1752392188]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00036225375)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Centrifuge/Button_014/StaticBody3D" index="0" unique_id=915843227]
 shape = SubResource("BoxShape3D_sbv7e")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_030" parent_id_path=PackedInt32Array(1514510322) index="0" unique_id=994930561]
+[node name="Button_030" parent="Centrifuge" index="1" unique_id=1650517281]
+script = ExtResource("3_ipw6s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_030" index="0" unique_id=994930561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00043012202)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Centrifuge/Button_030/StaticBody3D" index="0" unique_id=467885112]
 shape = SubResource("BoxShape3D_82owd")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_034" parent_id_path=PackedInt32Array(1892805973) index="0" unique_id=1541948644]
+[node name="Button_034" parent="Centrifuge" index="2" unique_id=1275840515]
+script = ExtResource("3_ipw6s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_034" index="0" unique_id=1541948644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 5.5879354e-09, -0.00043012248)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Centrifuge/Button_034/StaticBody3D" index="0" unique_id=216699876]
 shape = SubResource("BoxShape3D_qyadt")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_035" parent_id_path=PackedInt32Array(470349788) index="0" unique_id=1897774263]
+[node name="Button_035" parent="Centrifuge" index="3" unique_id=755191895]
+script = ExtResource("3_ipw6s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_035" index="0" unique_id=1897774263]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.450581e-09, -0.00043012248)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Centrifuge/Button_035/StaticBody3D" index="0" unique_id=112637227]
 shape = SubResource("BoxShape3D_li5gh")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_039" parent_id_path=PackedInt32Array(2001162093) index="0" unique_id=1655899079]
+[node name="Button_039" parent="Centrifuge" index="4" unique_id=1051327229]
+script = ExtResource("3_ipw6s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Centrifuge/Button_039" index="0" unique_id=1655899079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8626451e-09, -0.00036225375)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Centrifuge/Button_039/StaticBody3D" index="0" unique_id=1816281034]
 shape = SubResource("BoxShape3D_ipw6s")
 
-[node name="Cube_016" parent="Centrifuge" index="5" unique_id=199092412]
+[node name="Cube_016" parent="Centrifuge" index="5" unique_id=2025561015]
 material_override = SubResource("StandardMaterial3D_qyadt")
 
-[node name="Rotor" parent="Centrifuge" index="6" unique_id=14066235]
+[node name="Rotor" parent="Centrifuge" index="6" unique_id=1447316547]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, 0, 0.0854803)
 material_override = SubResource("StandardMaterial3D_li5gh")
 
-[node name="Screen_003" parent="Centrifuge" index="7" unique_id=2093766726]
-surface_material_override/0 = SubResource("StandardMaterial3D_5qiwk")
+[node name="Vail_003" parent="Centrifuge/Rotor" index="0" unique_id=915117008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21358874, 0.0005976707)
+visible = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Centrifuge/Rotor" index="1" unique_id=81832763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2158162, -0.0009885579)
+light_color = Color(0.69150424, 0.51609683, 1, 1)
+light_energy = 0.81
+omni_range = 0.233
+omni_attenuation = 0.651
+
+[node name="Marker3D" type="Marker3D" parent="Centrifuge/Rotor" index="2" unique_id=491794958]
+transform = Transform3D(0.98480755, -0.17364816, 0, 0.17364816, 0.98480755, 0, 0, 0, 1, 0.08182119, 0.14374493, 0)
+
+[node name="Env_Test_Tube2" parent="Centrifuge/Rotor/Marker3D" index="0" unique_id=1480596381 instance=ExtResource("4_ukfv6")]
+transform = Transform3D(1.0000001, 1.4901161e-08, 0, -1.4901161e-08, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="Centrifuge/Rotor" index="3" unique_id=523785965]
+transform = Transform3D(0.98480755, 0.17364816, 0, -0.17364816, 0.98480755, 0, 0, 0, 1, -0.082967296, 0.14374493, 0)
+
+[node name="Env_Test_Tube3" parent="Centrifuge/Rotor/Marker3D2" index="0" unique_id=1905329782 instance=ExtResource("4_ukfv6")]
+transform = Transform3D(1.0000001, -1.4901161e-08, 0, 1.4901161e-08, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Marker3D3" type="Marker3D" parent="Centrifuge/Rotor" index="4" unique_id=836322283]
+transform = Transform3D(0.9961945, 0.08715573, 0, -0.08583162, 0.98106015, -0.17364816, -0.015134431, 0.17298739, 0.98480767, -0.041194264, 0.14374493, -0.07338198)
+
+[node name="Env_Test_Tube4" parent="Centrifuge/Rotor/Marker3D3" index="0" unique_id=2038377254 instance=ExtResource("4_ukfv6")]
+transform = Transform3D(1.0000001, -9.895302e-10, 0, -7.566996e-10, 1, -7.450581e-09, 0, 1.4901161e-08, 1, 0, 0, 0)
+
+[node name="Marker3D5" type="Marker3D" parent="Centrifuge/Rotor" index="5" unique_id=1036381623]
+transform = Transform3D(0.9961945, -0.08715573, 0, 0.08583162, 0.9810602, -0.17364816, 0.015134431, 0.17298739, 0.9848076, 0.040075544, 0.14374493, -0.074149534)
+
+[node name="Env_Test_Tube5" parent="Centrifuge/Rotor/Marker3D5" index="0" unique_id=1740121996 instance=ExtResource("4_ukfv6")]
+transform = Transform3D(1, -6.4610504e-09, 0, 8.1490725e-10, 0.99999994, 0, -4.656613e-10, 7.450581e-09, 1, 0, 0, 0)
+
+[node name="Marker3D4" type="Marker3D" parent="Centrifuge/Rotor" index="6" unique_id=243404251]
+transform = Transform3D(0.9961945, 0.08715573, 0, -0.08583162, 0.9810602, 0.17364816, 0.015134431, -0.17298739, 0.98480767, -0.041194264, 0.14374493, 0.07478577)
+
+[node name="Env_Test_Tube6" parent="Centrifuge/Rotor/Marker3D4" index="0" unique_id=1691825952 instance=ExtResource("4_ukfv6")]
+transform = Transform3D(1, 6.6356733e-09, 0, -6.4028427e-10, 0.99999994, 0, -4.656613e-10, -7.450581e-09, 1, 0, 0, 0)
+
+[node name="Marker3D6" type="Marker3D" parent="Centrifuge/Rotor" index="7" unique_id=620350027]
+transform = Transform3D(0.9961945, -0.08715574, 0, 0.08583162, 0.98106027, 0.17364816, -0.015134431, -0.1729874, 0.98480767, 0.040075544, 0.14374493, 0.07529953)
+
+[node name="Env_Test_Tube7" parent="Centrifuge/Rotor/Marker3D6" index="0" unique_id=248304220 instance=ExtResource("4_ukfv6")]
+transform = Transform3D(1.0000001, 8.440111e-09, 0, 6.9849193e-10, 1, 7.450581e-09, 0, -7.450581e-09, 1, 0, 0, 0)
+
+[node name="Screen_003" parent="Centrifuge" index="7" unique_id=1795268631]
+surface_material_override/0 = SubResource("StandardMaterial3D_b2aac")
 
 [node name="SubViewport" type="SubViewport" parent="Centrifuge/Screen_003" index="0" unique_id=1252515481]
 mesh_lod_threshold = 0.0
@@ -411,3 +526,6 @@ offset_right = 256.0
 offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=341594562]
+libraries/ = SubResource("AnimationLibrary_ju1k8")
