@@ -1282,6 +1282,7 @@ script = ExtResource("3_uhnig")
 environment = SubResource("Environment_na5xc")
 
 [node name="Player" parent="." unique_id=1250894719 node_paths=PackedStringArray("steps") instance=ExtResource("5_1uq5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03270018, 0)
 look_sensitivity = 0.005
 player_speed = 3.0
 steps = NodePath("StepsSound")
@@ -1378,8 +1379,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16756439, 0.10617828, -0.19
 shape = SubResource("BoxShape3D_pti6k")
 
 [node name="CabinetInteractSound" type="FmodEventEmitter3D" parent="Room/Interactables/Prop_Test_Tube_Storage/Vial Cabinet" unique_id=1991102569]
-event_name = "event:/Button"
-event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+event_name = "event:/PlaceTestTube"
+event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 
 [node name="Cube_016" type="MeshInstance3D" parent="Room/Interactables/Prop_Test_Tube_Storage" unique_id=1036036944]
 transform = Transform3D(5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, 5.9604645e-08, 0, 0, 0)
@@ -1453,8 +1454,8 @@ mesh = SubResource("BoxMesh_nescf")
 shape = SubResource("BoxShape3D_uxm04")
 
 [node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Room/Interactables/ChemA/ChemA" unique_id=1812587272]
-event_name = "event:/Button"
-event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+event_name = "event:/PlaceTestTube"
+event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 
 [node name="Vial2" type="MeshInstance3D" parent="Room/Interactables/ChemA" unique_id=1748844986]
 transform = Transform3D(-0.93009156, 0, 0.36732754, 0, 1, 0, -0.36732754, 0, -0.93009156, 0, 0, 0)
@@ -1679,6 +1680,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9501696, 3.7467136, -4.5520
 
 [node name="Env_Table_Sink" parent="Room/Props" unique_id=1923583669 instance=ExtResource("37_vlaqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44899845, 0.033261806, -6.2114015)
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Room/Props/Env_Table_Sink" unique_id=719380751]
+event_name = "event:/PipeRunningLiquid"
+event_guid = "{693880c8-44a2-4820-9fe1-c32a31f2d83e}"
+autoplay = true
+volume = 0.65
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.096113, 0)
 
 [node name="Prop_Curtains_Trolly" parent="Room/Props" unique_id=2019036272 instance=ExtResource("38_c4wym")]
 transform = Transform3D(0.9960576, 0, 0.08870821, 0, 1, 0, -0.08870821, 0, 0.9960576, 3.0805423, 0.032699883, -4.3973866)
@@ -1979,10 +1987,11 @@ transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.4
 
 [node name="Interactables" type="Node3D" parent="." unique_id=491644675]
 
-[node name="RequestBody" type="Node3D" parent="Interactables" unique_id=763048088 node_paths=PackedStringArray("area")]
+[node name="RequestBody" type="Node3D" parent="Interactables" unique_id=763048088 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5097575, 1.2176334, -6.127241)
 script = ExtResource("46_efrna")
 area = NodePath("Area3D2")
+sound_emitter = NodePath("FmodEventEmitter3D")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/RequestBody" unique_id=808875090]
 collision_layer = 257
@@ -1990,6 +1999,10 @@ collision_layer = 257
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/RequestBody/Area3D2" unique_id=1249883916]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014099121, -0.086517334, -0.016202927)
 shape = SubResource("BoxShape3D_afnf1")
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Interactables/RequestBody" unique_id=2027557631]
+event_name = "event:/PlaceTestTube"
+event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 
 [node name="SampleCollector" type="Node3D" parent="Interactables" unique_id=1992102254]
 
@@ -2010,11 +2023,12 @@ mesh = SubResource("BoxMesh_uxm04")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/SampleCollector/SampleInjection/Area3D2" unique_id=115799020]
 shape = SubResource("BoxShape3D_u3ia7")
 
-[node name="SampleExtraction" type="Node3D" parent="Interactables/SampleCollector" unique_id=1903185465 node_paths=PackedStringArray("area")]
+[node name="SampleExtraction" type="Node3D" parent="Interactables/SampleCollector" unique_id=1903185465 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.492851, 1.3797606, -5.287664)
 script = ExtResource("48_ibhvd")
 prompt_text = "Extract"
 area = NodePath("Area3D2")
+sound_emitter = NodePath("FmodEventEmitter3D")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector/SampleExtraction" unique_id=393872825]
 collision_layer = 257
@@ -2026,11 +2040,16 @@ mesh = SubResource("BoxMesh_wsh1n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/SampleCollector/SampleExtraction/Area3D2" unique_id=1132230391]
 shape = SubResource("BoxShape3D_0mwev")
 
-[node name="VialInsertRetrieval" type="Node3D" parent="Interactables/SampleCollector" unique_id=1353844329 node_paths=PackedStringArray("area")]
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Interactables/SampleCollector/SampleExtraction" unique_id=283204338]
+event_name = "event:/TubeFilling"
+event_guid = "{8cf97868-da60-42af-9bdb-b424ce6b26ca}"
+
+[node name="VialInsertRetrieval" type="Node3D" parent="Interactables/SampleCollector" unique_id=1353844329 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.5, 6.5358453, 1.3214782, -5.4953027)
 script = ExtResource("49_flbvb")
 prompt_text = ""
 area = NodePath("Area3D2")
+sound_emitter = NodePath("FmodEventEmitter3D")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/SampleCollector/VialInsertRetrieval" unique_id=1975972684]
 collision_layer = 257
@@ -2043,13 +2062,18 @@ mesh = SubResource("BoxMesh_afnf1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11196995, 0, 0.10930824)
 shape = SubResource("BoxShape3D_ihdea")
 
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Interactables/SampleCollector/VialInsertRetrieval" unique_id=908007467]
+event_name = "event:/PlaceTestTube"
+event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
+
 [node name="FillingMachine" type="Node3D" parent="Interactables" unique_id=1517098998]
 transform = Transform3D(0.4642429, 0, -0.1856839, 0, 0.49999997, 0, 0.18568392, 0, 0.46424288, 3.0814927, 1.5677308, -3.5142221)
 
-[node name="VialInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=1960514374 node_paths=PackedStringArray("area")]
+[node name="VialInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=1960514374 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.99999994, 0, -2.9802322e-08, 0, 0.99999994, 0, 2.9802322e-08, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("55_j68t5")
 area = NodePath("Area3D2")
+sound_emitter = NodePath("FmodEventEmitter3D")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/FillingMachine/VialInsert" unique_id=162808820]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, 0, 0, 0)
@@ -2062,10 +2086,15 @@ mesh = SubResource("BoxMesh_c5x2l")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/FillingMachine/VialInsert/Area3D2" unique_id=1182664471]
 shape = SubResource("BoxShape3D_8tet1")
 
-[node name="ChemicalInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=261221955 node_paths=PackedStringArray("area")]
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Interactables/FillingMachine/VialInsert" unique_id=987255692]
+event_name = "event:/PlaceTestTube"
+event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
+
+[node name="ChemicalInsert" type="Node3D" parent="Interactables/FillingMachine" unique_id=261221955 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.9999999, 0, -3.5762787e-07, 0, 0.9999994, 0, 2.0861626e-07, 0, 0.99999976, 0.044023514, -0.4259827, 0.61992455)
 script = ExtResource("56_wawjn")
 area = NodePath("Area3D2")
+sound_emitter = NodePath("FmodEventEmitter3D")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/FillingMachine/ChemicalInsert" unique_id=655624551]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, 0, 0, 0)
@@ -2077,6 +2106,10 @@ mesh = SubResource("BoxMesh_c2hkf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/FillingMachine/ChemicalInsert/Area3D2" unique_id=1187325265]
 shape = SubResource("BoxShape3D_pu5rk")
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Interactables/FillingMachine/ChemicalInsert" unique_id=1114304310]
+event_name = "event:/PlaceTestTube"
+event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 
 [node name="Prop_Filling_Machine" type="Node3D" parent="Interactables/FillingMachine" unique_id=2134814780]
 transform = Transform3D(-0.031389892, 0, 1.9997535, 0, 2, 0, -1.9997537, 0, -0.031389892, 0.20360184, -3.0750818, 0.48561)
@@ -2388,10 +2421,11 @@ collision_layer = 257
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/FillingMachine/Numpad/Button_027/Area3D" unique_id=658186321]
 shape = SubResource("BoxShape3D_1fwx3")
 
-[node name="ScanStart" type="Node3D" parent="Interactables" unique_id=2106335602 node_paths=PackedStringArray("area")]
+[node name="ScanStart" type="Node3D" parent="Interactables" unique_id=2106335602 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 6.299154, 1.2359427, -3.357747)
 script = ExtResource("64_1jytr")
 area = NodePath("Area3D2")
+sound_emitter = NodePath("FmodEventEmitter3D")
 
 [node name="Area3D2" type="Area3D" parent="Interactables/ScanStart" unique_id=238255176]
 collision_layer = 257
@@ -2402,6 +2436,10 @@ mesh = SubResource("BoxMesh_nj15a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/ScanStart/Area3D2" unique_id=1550751053]
 shape = SubResource("BoxShape3D_3s4u2")
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Interactables/ScanStart" unique_id=561889714]
+event_name = "event:/Scan"
+event_guid = "{0c1371f0-c702-44b9-bb0a-8c616e0c9c91}"
 
 [node name="Chemicals" type="Node" parent="Interactables" unique_id=1729937930]
 
