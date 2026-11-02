@@ -517,26 +517,26 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_a8bb1")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ahn08"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_455of"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_455of"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8kki"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ahn08")
+albedo_texture = SubResource("ViewportTexture_455of")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_a8kki"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6avb6"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6avb6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxoop"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_a8kki")
+albedo_texture = SubResource("ViewportTexture_6avb6")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fxoop"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_3nchu"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nchu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fexxs"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_fxoop")
+albedo_texture = SubResource("ViewportTexture_3nchu")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_afnf1"]
 size = Vector3(0.08117676, 0.32696533, 0.08325195)
@@ -1713,7 +1713,7 @@ bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
 [node name="Note" parent="Room/Notes/Note_postnote2/Skeleton3D" index="0" unique_id=452260851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.820766e-11, 0.052927095)
-surface_material_override/1 = SubResource("StandardMaterial3D_455of")
+surface_material_override/1 = SubResource("StandardMaterial3D_a8kki")
 
 [node name="Marker3D" parent="Room/Notes/Note_postnote2/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -1731,7 +1731,7 @@ bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(-0.095, 0, 0, 1)
 
 [node name="Cube_027" parent="Room/Notes/Note_document/Skeleton3D" index="0" unique_id=986514553]
-material_overlay = SubResource("StandardMaterial3D_6avb6")
+material_overlay = SubResource("StandardMaterial3D_fxoop")
 
 [node name="Camera Marker" parent="Room/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
@@ -1747,7 +1747,7 @@ bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(0.875, 0, 0, 1)
 
 [node name="Cube_027" parent="Room/Notes/Note_document2/Skeleton3D" index="0" unique_id=986514553]
-material_overlay = SubResource("StandardMaterial3D_3nchu")
+material_overlay = SubResource("StandardMaterial3D_fexxs")
 
 [node name="Camera Marker" parent="Room/Notes/Note_document2/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)

@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cni8jeu2b72ew"]
 
-[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://Shaders/psx_camera_shader.gdshader" id="2_h0tn0"]
 [ext_resource type="PackedScene" uid="uid://bhcn0eyj5awrm" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_lamp.tscn" id="2_opveo"]
 [ext_resource type="PackedScene" uid="uid://bp60ytwrm06wj" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_red_lamp.tscn" id="3_3exyv"]
 [ext_resource type="PackedScene" uid="uid://l6wljvsc2bg1" path="res://World/Props/Machines/Surgery Machine/env_machine_surgical.tscn" id="4_mqqbq"]
@@ -37,6 +36,12 @@
 [ext_resource type="PackedScene" uid="uid://dckgv8kqvmv4m" path="res://Notes/note_postnote.tscn" id="35_0fdv0"]
 [ext_resource type="PackedScene" uid="uid://c5qlgxu4phaxk" path="res://World/Props/Vent/prop_vent.tscn" id="37_1d37y"]
 [ext_resource type="FontFile" uid="uid://sdtsanxfgqys" path="res://UI/Fonts/Perfect DOS VGA 437.ttf" id="37_jjvax"]
+[ext_resource type="Texture2D" uid="uid://dme3rs0s5x0w3" path="res://World/Props/Vent/Smoke/T_smoke_flipbook.png" id="38_1d37y"]
+[ext_resource type="Script" uid="uid://ct1dqcskn76yb" path="res://Resources/Game_Stats.gd" id="39_8noli"]
+[ext_resource type="PackedScene" uid="uid://p1s3d1dytn62" path="res://Entities/Player/Player.tscn" id="39_eraeq"]
+[ext_resource type="Script" uid="uid://dn02qfwgu1uur" path="res://Resources/Player_Stats.gd" id="40_fcoyl"]
+[ext_resource type="Script" uid="uid://dvtfql07hor2" path="res://Resources/Vial_Stats.gd" id="41_ntxbe"]
+[ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="42_bkfaf"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -52,60 +57,39 @@ volumetric_fog_enabled = true
 adjustment_enabled = true
 adjustment_contrast = 0.975
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhlco"]
-render_priority = 0
-shader = ExtResource("2_h0tn0")
-shader_parameter/debug_mode = 0
-shader_parameter/debug_range = 50.0
-shader_parameter/enable_fog = false
-shader_parameter/fog_color = Color(0.8081357, 0.49642086, 0.10328529, 1)
-shader_parameter/noise_color = Color(0.61675495, 0.4631762, 5.7756904e-07, 1)
-shader_parameter/fog_distance = 25.0
-shader_parameter/fog_fade_range = 20.0000009025
-shader_parameter/enable_noise = false
-shader_parameter/noise_time_fac = 4.0
-shader_parameter/enable_color_limitation = true
-shader_parameter/color_levels = 6
-shader_parameter/enable_dithering = true
-shader_parameter/dither_strength = 0.350000016625
-
-[sub_resource type="QuadMesh" id="QuadMesh_opveo"]
-material = SubResource("ShaderMaterial_bhlco")
-size = Vector2(2, 2)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_jjvax"]
-viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_1d37y"]
-viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eraeq"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_jjvax")
-roughness = 0.6
-emission_enabled = true
-emission_texture = SubResource("ViewportTexture_1d37y")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_6c753"]
-viewport_path = NodePath("Note Viewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07v7r"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_6c753")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_n0k3b"]
-viewport_path = NodePath("Note Viewport")
+viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8noli"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_8noli"]
+viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcoyl"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_n0k3b")
+roughness = 0.6
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_8noli")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fcoyl"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ntxbe"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntxbe"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkfaf"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_fcoyl")
+albedo_texture = SubResource("ViewportTexture_ntxbe")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1pj6w"]
+viewport_path = NodePath("Note Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_conwj"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_1pj6w")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7n5mq"]
+viewport_path = NodePath("Note Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw0sf"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_7n5mq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vq468"]
 shader = ExtResource("32_jgty5")
@@ -131,23 +115,42 @@ shader_parameter/aspect_ratio = 1.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4o88"]
 bg_color = Color(0, 0, 0, 0.49411765)
 
-[node name="Enviroment2" type="Node3D" unique_id=1402379142]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4ntf"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.3372549)
+albedo_texture = ExtResource("38_1d37y")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_1d37y"]
+_data = [Vector2(0, 0.5138889), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_eraeq"]
+curve = SubResource("Curve_1d37y")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j4o88"]
+emission_shape_scale = Vector3(0.25, 0.25, 0.1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 21.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_eraeq")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_i8nt5"]
+
+[node name="Enviroment3" type="Node3D" unique_id=1402379142]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1270929269]
 environment = SubResource("Environment_na5xc")
-
-[node name="Head" type="Node3D" parent="." unique_id=800531847]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.031223774, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=2109481423]
-
-[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=346079503]
-target_position = Vector3(0, 0, -2)
-
-[node name="PSXMesh" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1713329921]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0763102, 0, -0.55748)
-extra_cull_margin = 16384.0
-mesh = SubResource("QuadMesh_opveo")
 
 [node name="Lights" type="Node3D" parent="." unique_id=911679089]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5917645, 0, 7.336006)
@@ -181,6 +184,22 @@ spot_attenuation = 1.37
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.69838953, 2.603364, -11.7987995)
 
 [node name="SpotLight3D3" parent="Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(1279039200, 679007822) index="0" unique_id=1120609968]
+light_energy = 0.08
+spot_range = 4.7193227
+spot_angle = 87.9047
+
+[node name="env_ceiling_lamp8" parent="Lights" unique_id=286847143 instance=ExtResource("2_opveo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -3.9874353, 2.603364, -13.490116)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp8/Cylinder" parent_id_path=PackedInt32Array(286847143, 679007822) index="0" unique_id=1120609968]
+light_energy = 0.08
+spot_range = 4.7193227
+spot_angle = 87.9047
+
+[node name="env_ceiling_lamp9" parent="Lights" unique_id=523450970 instance=ExtResource("2_opveo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -6.622664, 2.603364, -13.490116)
+
+[node name="SpotLight3D3" parent="Lights/env_ceiling_lamp9/Cylinder" parent_id_path=PackedInt32Array(523450970, 679007822) index="0" unique_id=1120609968]
 light_energy = 0.08
 spot_range = 4.7193227
 spot_angle = 87.9047
@@ -235,19 +254,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50634813, 2.5960588, -8.739
 [node name="Env_Machine_Surgical" parent="Lights" unique_id=1288491871 instance=ExtResource("4_mqqbq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7352805, 2.646977, -11.477769)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Lights/Env_Machine_Surgical" unique_id=1355630536]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.2651062, -0.8911694, -0.90395737)
-light_color = Color(0.7090577, 0.48303944, 0.21913856, 1)
-light_energy = 2.332
-light_volumetric_fog_energy = 1.632
-shadow_enabled = true
-shadow_bias = 0.885
-shadow_normal_bias = 1.02
-shadow_opacity = 0.89
-shadow_blur = 0.0
-spot_range = 1.128
-spot_attenuation = -7.0
-spot_angle = 55.562355
+[node name="Surgical_Machine" parent="Lights/Env_Machine_Surgical" index="0" unique_id=1718102366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46995258, 0, 0)
+
+[node name="Lower_Rotor" parent="Lights/Env_Machine_Surgical/Surgical_Machine" index="0" unique_id=1566095997]
+transform = Transform3D(0.99771136, 0, 0.06760674, 0, 1, 0, -0.06760674, 0, 0.99771136, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+
+[node name="SpotLight3D" parent="Lights/Env_Machine_Surgical/Surgical_Machine/Top_Rotor" parent_id_path=PackedInt32Array(1288491871, 1517855645) index="0" unique_id=1188054932]
+transform = Transform3D(0.9790139, -0.20379348, -8.908096e-09, 0, -4.371139e-08, 1, -0.20379348, -0.9790139, -4.2794056e-08, 0.001816839, -0.3693105, -0.92371374)
+light_energy = 1.302
+spot_range = 1.699
+spot_attenuation = -1.16
+spot_angle = 72.61
 
 [node name="AreaLight3D" type="AreaLight3D" parent="Lights" unique_id=1946787408]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -5.9701385, 1.4684366, -10.218113)
@@ -259,7 +277,7 @@ area_attenuation = 0.798
 area_size = Vector2(0.5474415, 0.26740098)
 
 [node name="AreaLight3D2" type="AreaLight3D" parent="Lights" unique_id=1215601240]
-transform = Transform3D(-0.36143976, 0, -0.9323955, 0, 1, 0, 0.9323955, 0, -0.36143976, -3.8193061, 1.5102966, -10.7078705)
+transform = Transform3D(-0.36143976, 0, -0.9323955, 0, 1, 0, 0.9323955, 0, -0.36143976, -3.4524279, 1.5102966, -10.7078705)
 light_color = Color(0.52248555, 0.68479013, 0.3408077, 1)
 light_energy = 0.233
 shadow_bias = 0.0
@@ -268,7 +286,7 @@ area_attenuation = 0.798
 area_size = Vector2(0.5474415, 0.26740098)
 
 [node name="AreaLight3D6" type="AreaLight3D" parent="Lights" unique_id=33005179]
-transform = Transform3D(0.99837226, -0.027190631, 0.05013402, 0, 0.879037, 0.47675347, -0.05703289, -0.47597748, 0.8776062, -3.5911162, 1.2561816, -13.146424)
+transform = Transform3D(0.9983723, -0.027190631, 0.050134026, 0, 0.879037, 0.4767535, -0.057032894, -0.47597748, 0.8776062, -3.9520493, 1.2561816, -13.146424)
 light_color = Color(0.52248555, 0.68479013, 0.3408077, 1)
 light_energy = 0.063
 shadow_bias = 0.0
@@ -434,7 +452,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4993663, 1.5193069, -3.1362
 transform = Transform3D(-0.93499076, 0, -0.354672, 0, 1, 0, 0.354672, 0, -0.93499076, 1.9996619, 0.9748792, -6.093265)
 
 [node name="Prop_Mixer" parent="Room/Machines" unique_id=1780799766 instance=ExtResource("27_ldlh3")]
-transform = Transform3D(-0.9954268, 0, -0.09552744, 0, 1, 0, 0.09552744, 0, -0.9954268, 3.0354338, 0.9792126, -6.231222)
+transform = Transform3D(-0.9954268, 0, -0.09552744, 0, 1, 0, 0.09552744, 0, -0.9954268, 2.6745005, 0.9792126, -6.231222)
 
 [node name="Env_Test_Tube2" parent="Room/Machines/Prop_Mixer/Centrifuge/Rotor/Marker3D" parent_id_path=PackedInt32Array(1780799766, 491794958) index="0" unique_id=1480596381]
 visible = false
@@ -455,10 +473,10 @@ visible = false
 visible = false
 
 [node name="Screen_003" parent="Room/Machines/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 729981905) index="7" unique_id=2093766726]
-surface_material_override/0 = SubResource("StandardMaterial3D_eraeq")
+surface_material_override/0 = SubResource("StandardMaterial3D_fcoyl")
 
 [node name="Prop_Filling_Machine" parent="Room/Machines" unique_id=1109295380 instance=ExtResource("29_e26fp")]
-transform = Transform3D(0.35674953, 0, 0.93420005, 0, 1, 0, -0.93420005, 0, 0.35674953, 3.0858433, 0.030189812, -3.2509754)
+transform = Transform3D(0.35674953, 0, 0.93420005, 0, 1, 0, -0.93420005, 0, 0.35674953, 3.4527216, 0.030189812, -3.2509754)
 
 [node name="Prop_Blood_Collector_Machine" parent="Room/Machines" unique_id=2139538409 instance=ExtResource("20_34y75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5358453, 1.3214782, -5.44226)
@@ -478,7 +496,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31119218, 0.33397794, 0.173
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1068964, 0.034794867, -2.97155)
 
 [node name="Env_Table_Surgical" parent="Room/Props" unique_id=1613770615 instance=ExtResource("9_k45rw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8456554, 0, -4.136529)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.315608, 0, -4.136529)
 
 [node name="Corpse2" parent="Room/Props" unique_id=1466353991 instance=ExtResource("17_f2bkq")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9020357, -0.124072075, -4.55774)
@@ -499,13 +517,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9501696, 3.7467136, -4.5520
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44899845, 0.033261806, -6.2114015)
 
 [node name="Prop_Curtains_Trolly" parent="Room/Props" unique_id=2019036272 instance=ExtResource("33_wusdh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0805423, 0.032699883, -4.6583595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.550495, 0.032699883, -4.7667284)
 
 [node name="Prop_Curtains_Trolly2" parent="Room/Props" unique_id=1063882810 instance=ExtResource("33_wusdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3026237, 0.032699883, -0.44252634)
 
 [node name="Prop_Trolley" parent="Room/Props" unique_id=928575320 instance=ExtResource("34_0fdv0")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.067409, 0.032699823, -2.5995648)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.5373616, 0.032699823, -2.5995648)
 
 [node name="Prop_Trolley2" parent="Room/Props" unique_id=520443201 instance=ExtResource("34_0fdv0")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.7208867, 0.032699943, 0.37001348)
@@ -537,6 +555,7 @@ transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
 
 [node name="Notes" type="Node3D" parent="." unique_id=649121461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36687827, 0, 0)
 
 [node name="Note_postnote2" parent="Notes" unique_id=604695316 instance=ExtResource("35_0fdv0")]
 transform = Transform3D(-0.32979673, -0.9403293, 0.08375627, -0.0004690634, -0.08855674, -0.9960711, 0.9440518, -0.32854018, 0.02876462, 2.9960604, 1.5099785, -3.4708824)
@@ -549,13 +568,13 @@ bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
 [node name="Note" parent="Notes/Note_postnote2/Skeleton3D" index="0" unique_id=452260851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.820766e-11, 0.052927095)
-surface_material_override/1 = SubResource("StandardMaterial3D_07v7r")
+surface_material_override/1 = SubResource("StandardMaterial3D_bkfaf")
 
 [node name="Marker3D" parent="Notes/Note_postnote2/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
 
 [node name="Note_document" parent="Notes" unique_id=832524248 instance=ExtResource("32_5qiwk")]
-transform = Transform3D(0.98384583, 0, -0.17901795, 0, 1, 0, 0.17901795, 0, 0.98384583, 2.4596572, 0.9727782, -6.198906)
+transform = Transform3D(0.98384583, 0, -0.17901795, 0, 1, 0, 0.17901795, 0, 0.98384583, 4.215642, 0.78654474, -4.712485)
 
 [node name="Skeleton3D" parent="Notes/Note_document" index="0" unique_id=387256508]
 bones/1/position = Vector3(0, 0, -0.205)
@@ -567,7 +586,7 @@ bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(-0.095, 0, 0, 1)
 
 [node name="Cube_027" parent="Notes/Note_document/Skeleton3D" index="0" unique_id=986514553]
-material_overlay = SubResource("StandardMaterial3D_8noli")
+material_overlay = SubResource("StandardMaterial3D_conwj")
 
 [node name="Camera Marker" parent="Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
@@ -583,7 +602,7 @@ bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(0.875, 0, 0, 1)
 
 [node name="Cube_027" parent="Notes/Note_document2/Skeleton3D" index="0" unique_id=986514553]
-material_overlay = SubResource("StandardMaterial3D_ntxbe")
+material_overlay = SubResource("StandardMaterial3D_cw0sf")
 
 [node name="Camera Marker" parent="Notes/Note_document2/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
@@ -623,6 +642,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Note Reader" type="Control" parent="." unique_id=1373980432]
+visible = false
 layout_mode = 3
 anchors_preset = 6
 anchor_left = 1.0
@@ -668,10 +688,6 @@ text = "I am writing this guide once again, because SOMEBODY keeps magically los
 Konstantin Markov"
 scroll_active = false
 
-[node name="FogVolume" type="FogVolume" parent="." unique_id=1254751443]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5343004, 0, -4.3681006)
-visible = false
-
 [node name="Prop_Vent" parent="." unique_id=1987298839 instance=ExtResource("37_1d37y")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.9324455, 0.7841163, -6.8150554)
 
@@ -684,13 +700,46 @@ transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.86
 [node name="Prop_Vent4" parent="." unique_id=595519769 instance=ExtResource("37_1d37y")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 7.86658, 0.7841163, 0.8013648)
 
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=195651132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9536495, 0.63520825, -6.6867976)
+material_override = SubResource("StandardMaterial3D_t4ntf")
+amount = 20
+amount_ratio = 0.7
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_j4o88")
+draw_pass_1 = SubResource("QuadMesh_i8nt5")
+
+[node name="GameStats" type="Node" parent="." unique_id=1711825777]
+script = ExtResource("39_8noli")
+
+[node name="PlayerStats" type="Node" parent="." unique_id=1458094953]
+script = ExtResource("40_fcoyl")
+
+[node name="VialStats" type="Node" parent="." unique_id=1421129637]
+script = ExtResource("41_ntxbe")
+
+[node name="AudioManager" parent="." unique_id=1869149764 instance=ExtResource("42_bkfaf")]
+
+[node name="Player" parent="." unique_id=1250894719 node_paths=PackedStringArray("steps") instance=ExtResource("39_eraeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03270018, 0)
+look_sensitivity = 0.005
+player_speed = 3.0
+steps = NodePath("StepsSound")
+
+[node name="StepsSound" type="FmodEventEmitter3D" parent="Player" unique_id=730055813]
+event_name = "event:/Walking"
+event_guid = "{438ca093-f602-408e-b164-e277a7b9c0af}"
+
 [editable path="Lights/env_ceiling_lamp"]
 [editable path="Lights/env_ceiling_lamp2"]
 [editable path="Lights/env_ceiling_lamp7"]
 [editable path="Lights/env_ceiling_lamp4"]
+[editable path="Lights/env_ceiling_lamp8"]
+[editable path="Lights/env_ceiling_lamp9"]
 [editable path="Lights/env_ceiling_lamp6"]
 [editable path="Lights/env_ceiling_lamp3"]
 [editable path="Lights/env_ceiling_lamp5"]
+[editable path="Lights/Env_Machine_Surgical"]
 [editable path="Room/Interactables/Prop_Curtains"]
 [editable path="Room/Storage/Prop_Closet_Storage"]
 [editable path="Room/Storage/Prop_Closet_Storage2"]

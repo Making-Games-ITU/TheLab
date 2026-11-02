@@ -70,7 +70,7 @@ func _update_vial_visibility() -> void:
 func _physics_process(_delta: float) -> void:
 	_check_for_interactable()
 	_update_vial_visibility()
-	if !PlayerStats.is_sitting and !PlayerStats.is_analyzing:
+	if !PlayerStats.is_sitting and !PlayerStats.is_analyzing and !PlayerStats.is_reading:
 		_movement_input()
 		_handleStepsSFX()
 		move_and_slide()
