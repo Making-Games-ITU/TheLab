@@ -19,6 +19,7 @@ run/main_scene="uid://qnbpxqp3itbv"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Floppy"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+run/max_fps=120
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://c23mfw4ihpyex"
 config/icon="res://icon.svg"

@@ -6,18 +6,18 @@
 [ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="3_cp7ly"]
 [ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="4_cp7ly"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ssw6b"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_8np5n"]
 viewport_path = NodePath("Blood Collector/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8np5n"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_a06ba"]
 viewport_path = NodePath("Blood Collector/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6oc4"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ssw6b")
+albedo_texture = SubResource("ViewportTexture_8np5n")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_8np5n")
+emission_texture = SubResource("ViewportTexture_a06ba")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3exb"]
 albedo_texture = ExtResource("3_8np5n")
@@ -232,32 +232,35 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_50ws8"]
+size = Vector3(0.17144775, 0.4335327, 0.21331787)
+
 [node name="Prop_Blood_Collector_Machine" unique_id=2139538409 instance=ExtResource("1_sny63")]
 
-[node name="Blood Collector" parent="." index="0" unique_id=1038683653]
+[node name="Blood Collector" parent="." index="0" unique_id=504701557]
 surface_material_override/1 = SubResource("StandardMaterial3D_x6oc4")
 
-[node name="Open_Capsule_Button" parent="Blood Collector" index="1" unique_id=1692393384]
+[node name="Open_Capsule_Button" parent="Blood Collector" index="1" unique_id=90519716]
 material_override = SubResource("StandardMaterial3D_k3exb")
 script = ExtResource("3_cp7ly")
 
-[node name="Off_On-btn_001" parent="Blood Collector/Open_Capsule_Button" index="0" unique_id=609925555]
+[node name="Off_On-btn_001" parent="Blood Collector/Open_Capsule_Button" index="0" unique_id=1592360265]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_sny63")
 
-[node name="Open_Capsule_Button_001" parent="Blood Collector" index="2" unique_id=274052053]
+[node name="Open_Capsule_Button_001" parent="Blood Collector" index="2" unique_id=1120057542]
 material_override = SubResource("StandardMaterial3D_ssw6b")
 script = ExtResource("3_cp7ly")
 
-[node name="Off_On-btn_002" parent="Blood Collector/Open_Capsule_Button_001" index="0" unique_id=2088715491]
+[node name="Off_On-btn_002" parent="Blood Collector/Open_Capsule_Button_001" index="0" unique_id=2048670605]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_8np5n")
 
-[node name="Open_Capsule_Button_002" parent="Blood Collector" index="3" unique_id=509680204]
+[node name="Open_Capsule_Button_002" parent="Blood Collector" index="3" unique_id=597956785]
 material_override = SubResource("StandardMaterial3D_a06ba")
 script = ExtResource("3_cp7ly")
 
-[node name="Off_On-btn_003" parent="Blood Collector/Open_Capsule_Button_002" index="0" unique_id=791040720]
+[node name="Off_On-btn_003" parent="Blood Collector/Open_Capsule_Button_002" index="0" unique_id=133612244]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_cp7ly")
 
@@ -340,3 +343,9 @@ offset_right = 256.0
 offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=742797447]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1681810830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018463135, 0.010223389, -0.0030822754)
+shape = SubResource("BoxShape3D_50ws8")
