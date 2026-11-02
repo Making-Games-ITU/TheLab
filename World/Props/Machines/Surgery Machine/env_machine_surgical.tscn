@@ -46,10 +46,10 @@ _data = {
 
 [node name="Env_Machine_Surgical" unique_id=1288491871 instance=ExtResource("1_cwkid")]
 
-[node name="Lower_Rotor" parent="Surgical_Machine" parent_id_path=PackedInt32Array(1718102366) index="0" unique_id=1566095997]
-transform = Transform3D(0.9977115, 0, 0.06760675, 0, 1, 0, -0.06760675, 0, 0.9977115, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+[node name="Lower_Rotor" parent="Surgical_Machine" parent_id_path=PackedInt32Array(1581174866) index="0" unique_id=1131787580]
+transform = Transform3D(0.9977114, 0, 0.06760675, 0, 1, 0, -0.06760675, 0, 0.9977114, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 
-[node name="Top_Rotor" parent="Surgical_Machine" parent_id_path=PackedInt32Array(1718102366) index="1" unique_id=1517855645]
+[node name="Top_Rotor" parent="Surgical_Machine" parent_id_path=PackedInt32Array(1581174866) index="1" unique_id=575798141]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52185893, 9.536743e-07)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Surgical_Machine/Top_Rotor" index="0" unique_id=1188054932]
@@ -66,6 +66,8 @@ spot_range = 1.128
 spot_attenuation = -7.0
 spot_angle = 55.562355
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Surgical_Machine" parent_id_path=PackedInt32Array(1718102366) index="2" unique_id=988358085]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Surgical_Machine" parent_id_path=PackedInt32Array(1581174866) index="2" unique_id=988358085]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_62u11")
+autoplay = &"Idle"
+next/Idle = &"Idle"

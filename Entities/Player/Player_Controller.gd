@@ -70,6 +70,7 @@ func _update_vial_visibility() -> void:
 func _physics_process(_delta: float) -> void:
 	_check_for_interactable()
 	_update_vial_visibility()
+	#Added is reading check Oleg
 	if !PlayerStats.is_sitting and !PlayerStats.is_analyzing and !PlayerStats.is_reading:
 		_movement_input()
 		_handleStepsSFX()
@@ -90,6 +91,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif PlayerStats.is_sitting:
 			PlayerStats.current_chair.stand(self)
 			get_viewport().set_input_as_handled() # What is this for again?
+		#region Added by Oleg
+		elif PlayerStats.is_reading:
+			print(PlayerStats.current_note.name)
+			PlayerStats.current_note._stop_reading()
+		#endregion
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
