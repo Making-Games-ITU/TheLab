@@ -14,13 +14,15 @@ func interact(interactor: Node) -> void:
 	if PlayerStats.has_chemical:
 		GameStats.current_chemical = VialStats.Composite.None
 		PlayerStats.has_chemical = false
-		bottle.visible = true
+		if bottle != null:
+			bottle.visible = true
 		print(GameStats.current_chemical)
 		
 		prompt_text = "Take " + chemName
 		_refresh_prompt()
 	else:
-		bottle.visible = false
+		if bottle != null:
+			bottle.visible = false
 		PlayerStats.has_chemical = true
 		GameStats.current_chemical = composite
 		print(GameStats.current_chemical)
