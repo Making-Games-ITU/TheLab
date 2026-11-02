@@ -342,6 +342,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pgio4")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_5eiyn"]
+viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8eewk"]
+viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahn08"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_5eiyn")
+roughness = 0.6
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_8eewk")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0y053"]
 resource_name = "Keys.001"
 transparency = 2
@@ -1270,6 +1283,7 @@ environment = SubResource("Environment_na5xc")
 
 [node name="Player" parent="." unique_id=1250894719 node_paths=PackedStringArray("steps") instance=ExtResource("5_1uq5q")]
 look_sensitivity = 0.005
+player_speed = 3.0
 steps = NodePath("StepsSound")
 
 [node name="StepsSound" type="FmodEventEmitter3D" parent="Player" unique_id=170051038]
@@ -1448,6 +1462,27 @@ mesh = SubResource("ArrayMesh_8eewk")
 
 [node name="Prop_Mixer" parent="Room/Interactables" unique_id=1780799766 instance=ExtResource("25_1wujq")]
 transform = Transform3D(-0.9954268, 0, -0.09552744, 0, 1, 0, 0.09552744, 0, -0.9954268, 3.0354338, 0.9792126, -6.231222)
+
+[node name="Env_Test_Tube2" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D" parent_id_path=PackedInt32Array(1780799766, 491794958) index="0" unique_id=1480596381]
+visible = false
+
+[node name="Env_Test_Tube3" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D2" parent_id_path=PackedInt32Array(1780799766, 523785965) index="0" unique_id=1905329782]
+visible = false
+
+[node name="Env_Test_Tube4" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D3" parent_id_path=PackedInt32Array(1780799766, 836322283) index="0" unique_id=2038377254]
+visible = false
+
+[node name="Env_Test_Tube5" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D5" parent_id_path=PackedInt32Array(1780799766, 1036381623) index="0" unique_id=1740121996]
+visible = false
+
+[node name="Env_Test_Tube6" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D4" parent_id_path=PackedInt32Array(1780799766, 243404251) index="0" unique_id=1691825952]
+visible = false
+
+[node name="Env_Test_Tube7" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D6" parent_id_path=PackedInt32Array(1780799766, 620350027) index="0" unique_id=248304220]
+visible = false
+
+[node name="Screen_003" parent="Room/Interactables/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 729981905) index="7" unique_id=2093766726]
+surface_material_override/0 = SubResource("StandardMaterial3D_ahn08")
 
 [node name="Mixer" type="Node3D" parent="Room/Interactables/Prop_Mixer" unique_id=1400316112 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(-0.49771345, 0, 0.047763728, 0, 0.5, 0, -0.047763728, 0, -0.49771345, -0.0017857552, 0.3316248, 0.09975433)
@@ -2401,6 +2436,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [editable path="Room/Interactables/Prop_Curtains"]
+[editable path="Room/Interactables/Prop_Mixer"]
 [editable path="Room/Storage/Prop_Closet_Storage"]
 [editable path="Room/Storage/Prop_Closet_Storage2"]
 [editable path="Room/Props/Corpse2"]
