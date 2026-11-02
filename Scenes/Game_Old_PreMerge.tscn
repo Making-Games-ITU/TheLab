@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dsmxw3r30htsq"]
+[gd_scene format=4 uid="uid://75w3vlcreqxd"]
 
 [ext_resource type="Script" uid="uid://ct1dqcskn76yb" path="res://Resources/Game_Stats.gd" id="1_8n4hx"]
 [ext_resource type="Script" uid="uid://dn02qfwgu1uur" path="res://Resources/Player_Stats.gd" id="2_6lsmp"]
