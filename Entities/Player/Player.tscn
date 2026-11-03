@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://cue05ltltu7v3" path="res://Entities/Player/Player_Controller.gd" id="2_kyqiw"]
 [ext_resource type="Script" uid="uid://b6y5rgjk5ts8k" path="res://UI/Interaction_Prompt.gd" id="2_vweq0"]
 [ext_resource type="PackedScene" uid="uid://dktx5llwjb5k" path="res://World/Items/Test Tube/env_test_tube.tscn" id="3_1des2"]
-[ext_resource type="PackedScene" uid="uid://dhp3l6bsot3qa" path="res://UI/HUD/note_reader.tscn" id="4_t38ms"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qt5wh"]
 radius = 0.20166016
@@ -79,10 +78,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_an6q6")
 text = "."
-metadata/_edit_use_anchors_ = true
-
-[node name="Note Reader" parent="HUD" unique_id=387344677 instance=ExtResource("4_t38ms")]
-visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1411222524]
