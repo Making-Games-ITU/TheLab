@@ -1,24 +1,40 @@
 extends Interactable
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
-	_toggle_interaction() 
 
-func _process(delta: float) -> void:
-	_toggle_interaction()
+func focus() -> void:
+	_set_outline(true)
+	_update_prompt()
 
-func _toggle_interaction():
-	if GameStats.vial_in_collector and not VialStats.empty:
-		area.set_collision_layer_value(9, true)
+func _update_prompt() -> void:
+	if GameStats.vial_in_collector:
+		if VialStats.empty:
+			prompt_text = "Vial is empty"
+		else:
+			if GameStats.body_exists:
+				prompt_text = "Inject serum"
+			else:
+				prompt_text = "No body to inject into"
 	else:
-		area.set_collision_layer_value(9, false)
+		prompt_text = "No vial in vial slot"
+	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
-	_inject()
-	
+	if GameStats.vial_in_collector:
+		if VialStats.empty:
+			print("Vial is empty")
+		else:
+			if GameStats.body_exists:
+				_inject()
+			else:
+				print("No body to inject into")
+	else:
+		print("No vial in vial slot")
+
 func _inject() -> void:
+	VialStats.empty_vial()
+	VialStats._update_liquid()
+	# Doesn't work
 	if anim:
 		anim.play("inject")
-	VialStats.empty_vial()
-	print(VialStats.infection)

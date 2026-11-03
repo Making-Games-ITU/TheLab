@@ -8,14 +8,14 @@ func focus() -> void:
 func _update_prompt() -> void:
 	_set_outline(true)
 	if GameStats.body_exists:
-		prompt_text = "Body requested"
+		prompt_text = "Body already requested"
 	else:
 		prompt_text = "Request new body"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
 	if GameStats.body_exists:
-		print("Body already exists")
+		print("Body already requested")
 	else:
 		_new_body()
 
