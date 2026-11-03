@@ -254,10 +254,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7352805, 2.646977, -11.477
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46995258, 0, 0)
 
 [node name="Lower_Rotor" parent="Lights/Env_Machine_Surgical/Surgical_Machine" index="0" unique_id=1131787580]
-transform = Transform3D(0.9153336, 0, 0.40269414, 0, 1, 0, -0.40269414, 0, 0.9153336, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.9977111, 0, 0.067606725, 0, 1, 0, -0.067606725, 0, 0.9977111, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 
 [node name="Top_Rotor" parent="Lights/Env_Machine_Surgical/Surgical_Machine" index="1" unique_id=575798141]
-transform = Transform3D(0.9790138, 0, -0.20379345, 0, 1, 0, 0.20379345, 0, 0.9790138, 0, -0.52185893, 9.536743e-07)
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, -0.52185893, 9.536743e-07)
 
 [node name="SpotLight3D" parent="Lights/Env_Machine_Surgical/Surgical_Machine/Top_Rotor" index="0" unique_id=1188054932]
 transform = Transform3D(0.9790139, -0.20379348, -8.908096e-09, 0, -4.371139e-08, 1, -0.20379348, -0.9790139, -4.2794056e-08, 0.001816839, -0.3693105, -0.92371374)

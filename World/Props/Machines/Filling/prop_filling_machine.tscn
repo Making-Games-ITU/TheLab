@@ -59,18 +59,18 @@ albedo_texture = ExtResource("3_nn66o")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slsn5"]
 albedo_texture = ExtResource("3_nn66o")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_vr6fo"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_oxy24"]
 viewport_path = NodePath("Filling Machine/screen/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2yqy6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_slsn5"]
 viewport_path = NodePath("Filling Machine/screen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxime"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohxcp"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_vr6fo")
+albedo_texture = SubResource("ViewportTexture_oxy24")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_2yqy6")
+emission_texture = SubResource("ViewportTexture_slsn5")
 
 [sub_resource type="Shader" id="Shader_xvm24"]
 code = "shader_type canvas_item;
@@ -437,7 +437,8 @@ material_override = SubResource("StandardMaterial3D_oxy24")
 material_override = SubResource("StandardMaterial3D_slsn5")
 
 [node name="screen" parent="Filling Machine" index="16" unique_id=843993216]
-material_override = SubResource("StandardMaterial3D_dxime")
+sorting_offset = 10.0
+material_override = SubResource("StandardMaterial3D_ohxcp")
 
 [node name="SubViewport" type="SubViewport" parent="Filling Machine/screen" index="0" unique_id=1772661657]
 mesh_lod_threshold = 0.0

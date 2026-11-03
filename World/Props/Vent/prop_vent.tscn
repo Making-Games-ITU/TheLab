@@ -1,5 +1,48 @@
 [gd_scene format=3 uid="uid://c5qlgxu4phaxk"]
 
 [ext_resource type="PackedScene" uid="uid://dp6lhs10ky1dy" path="res://World/Props/Vent/Prop_Vent.fbx" id="1_yerqu"]
+[ext_resource type="Texture2D" uid="uid://dme3rs0s5x0w3" path="res://World/Props/Vent/Smoke/T_smoke_flipbook.png" id="2_ipvy6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ye4f5"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.3372549)
+albedo_texture = ExtResource("2_ipvy6")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_kjwlu"]
+_data = [Vector2(0, 0.5138889), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_eraeq"]
+curve = SubResource("Curve_kjwlu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mn2gu"]
+emission_shape_scale = Vector3(0.25, 0.25, 0.1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 21.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_eraeq")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_er35a"]
 
 [node name="Prop_Vent" unique_id=1987298839 instance=ExtResource("1_yerqu")]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="0" unique_id=362940462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2292347)
+sorting_offset = 10.0
+material_override = SubResource("StandardMaterial3D_ye4f5")
+amount = 20
+amount_ratio = 0.7
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_mn2gu")
+draw_pass_1 = SubResource("QuadMesh_er35a")
