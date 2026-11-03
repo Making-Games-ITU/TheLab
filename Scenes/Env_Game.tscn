@@ -366,18 +366,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fxoop")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2k8f5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_4jfkv"]
 viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5lr74"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_lpeyk"]
 viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1hbw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7l37"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_2k8f5")
+albedo_texture = SubResource("ViewportTexture_4jfkv")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_5lr74")
+emission_texture = SubResource("ViewportTexture_lpeyk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0y053"]
 resource_name = "Keys.001"
@@ -541,39 +541,39 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rhknm")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_acgdh"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_mh3c7"]
 viewport_path = NodePath("Filling Machine/screen/SubViewport")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_hpx6n"]
-viewport_path = NodePath("Filling Machine/screen/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3v8q"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_acgdh")
-roughness = 0.6
-emission_enabled = true
-emission_texture = SubResource("ViewportTexture_hpx6n")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_4jfkv"]
-viewport_path = NodePath("Note Viewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpeyk"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_4jfkv")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_y7l37"]
-viewport_path = NodePath("Note Viewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mh3c7"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_y7l37")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yq4il"]
-viewport_path = NodePath("Note Viewport")
+viewport_path = NodePath("Filling Machine/screen/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttgfx"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_yq4il")
+albedo_texture = SubResource("ViewportTexture_mh3c7")
+roughness = 0.6
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_yq4il")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wb2lc"]
+viewport_path = NodePath("Note Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mn2k0"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_wb2lc")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_etk72"]
+viewport_path = NodePath("Note Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2k8f5"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_etk72")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5lr74"]
+viewport_path = NodePath("Note Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1hbw"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_5lr74")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_afnf1"]
 size = Vector3(0.08117676, 0.32696533, 0.08325195)
@@ -963,7 +963,7 @@ visible = false
 visible = false
 
 [node name="Screen_003" parent="Room/Interactables/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 566894824) index="7" unique_id=1795268631]
-surface_material_override/0 = SubResource("StandardMaterial3D_x1hbw")
+surface_material_override/0 = SubResource("StandardMaterial3D_y7l37")
 
 [node name="Mixer" type="Node3D" parent="Room/Interactables/Prop_Mixer" unique_id=1400316112 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(-0.49771345, 0, 0.047763728, 0, 0.5, 0, -0.047763728, 0, -0.49771345, -0.0017857552, 0.3316248, 0.09975433)
@@ -1124,12 +1124,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4993663, 1.5193069, -3.1362
 [node name="Prop_Filling_Machine" parent="Room/Machines" unique_id=1109295380 instance=ExtResource("40_pub0h")]
 transform = Transform3D(0.35674953, 0, 0.93420005, 0, 1, 0, -0.93420005, 0, 0.35674953, 3.0858433, 0.030189812, -3.2509754)
 
-[node name="Filling Machine" parent="Room/Machines/Prop_Filling_Machine" index="0" unique_id=922059769]
+[node name="interactable_indecator" parent="Room/Machines/Prop_Filling_Machine" index="0" unique_id=2142793944]
+transform = Transform3D(0.100000024, 0, -3.7252903e-09, 0, 0.1, 0, 3.7252903e-09, 0, 0.100000024, 0.02288723, 1.5432231, 0.17378509)
+
+[node name="Filling Machine" parent="Room/Machines/Prop_Filling_Machine" index="1" unique_id=922059769]
 transform = Transform3D(1.0000007, 0, -1.4901161e-07, 0, 1, 0, 1.4901161e-07, 0, 1.0000007, 0.13051987, 0.00054073334, 0.34141994)
 
 [node name="screen" parent="Room/Machines/Prop_Filling_Machine/Filling Machine" index="16" unique_id=843993216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1641532e-10, 0, -0.0017469628)
-material_override = SubResource("StandardMaterial3D_s3v8q")
+material_override = SubResource("StandardMaterial3D_ttgfx")
 
 [node name="Prop_Blood_Collector_Machine" parent="Room/Machines" unique_id=2139538409 instance=ExtResource("41_er8tr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5358453, 1.3214782, -5.44226)
@@ -1313,7 +1316,7 @@ area_attenuation = 0.798
 area_size = Vector2(0.5474415, 0.26740098)
 
 [node name="AreaLight3D2" type="AreaLight3D" parent="Room/Lights" unique_id=1429711815]
-transform = Transform3D(-0.36143976, 0, -0.9323955, 0, 1, 0, 0.9323955, 0, -0.36143976, -2.9686897, 1.5108373, -10.707998)
+transform = Transform3D(-0.36143976, 0, -0.9323955, 0, 1, 0, 0.9323955, 0, -0.36143976, -3.4503179, 1.5108373, -10.707998)
 light_color = Color(0.52248555, 0.68479013, 0.3408077, 1)
 light_energy = 0.233
 shadow_bias = 0.0
@@ -1445,7 +1448,7 @@ bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
 [node name="Note" parent="Room/Notes/Note_postnote2/Skeleton3D" index="0" unique_id=2111988921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.820766e-11, 0.052927095)
-surface_material_override/1 = SubResource("StandardMaterial3D_lpeyk")
+surface_material_override/1 = SubResource("StandardMaterial3D_mn2k0")
 
 [node name="Marker3D" parent="Room/Notes/Note_postnote2/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -1454,7 +1457,7 @@ transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.
 transform = Transform3D(0.98384583, 0, -0.17901795, 0, 1, 0, 0.17901795, 0, 0.98384583, 4.215642, 0.78654474, -4.712485)
 note_text = NodePath("Note Viewport/Control/TextureRect/Label")
 
-[node name="Skeleton3D" parent="Room/Notes/Note_document" index="0" unique_id=765364303]
+[node name="Skeleton3D" parent="Room/Notes/Note_document" index="1" unique_id=765364303]
 bones/1/position = Vector3(0, 0, -0.205)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/3/rotation = Quaternion(-0.025, 0, 0, 1)
@@ -1464,7 +1467,7 @@ bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(-0.095, 0, 0, 1)
 
 [node name="Cube_027" parent="Room/Notes/Note_document/Skeleton3D" index="0" unique_id=1710546245]
-material_overlay = SubResource("StandardMaterial3D_mh3c7")
+material_overlay = SubResource("StandardMaterial3D_2k8f5")
 
 [node name="Camera Marker" parent="Room/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
@@ -1473,7 +1476,7 @@ transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7553749, 0.7423364, -0.6433028)
 note_text = NodePath("Note Viewport/Control/TextureRect/Label")
 
-[node name="Skeleton3D" parent="Room/Notes/Note_document2" index="0" unique_id=765364303]
+[node name="Skeleton3D" parent="Room/Notes/Note_document2" index="1" unique_id=765364303]
 bones/1/position = Vector3(0, 0, -0.2)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
@@ -1481,7 +1484,7 @@ bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(0.875, 0, 0, 1)
 
 [node name="Cube_027" parent="Room/Notes/Note_document2/Skeleton3D" index="0" unique_id=1710546245]
-material_overlay = SubResource("StandardMaterial3D_ttgfx")
+material_overlay = SubResource("StandardMaterial3D_x1hbw")
 
 [node name="Camera Marker" parent="Room/Notes/Note_document2/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)

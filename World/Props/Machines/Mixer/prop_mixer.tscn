@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cdrmlpqjbyowt"]
 
 [ext_resource type="PackedScene" uid="uid://dh7hj18kfry5t" path="res://World/Props/Machines/Mixer/Prop_Mixer.fbx" id="1_c7708"]
+[ext_resource type="PackedScene" uid="uid://bokgfdlrgsox" path="res://UI/Interaction/interactable_indecator.tscn" id="2_6jv2y"]
 [ext_resource type="Texture2D" uid="uid://dpv6dd0ver3yb" path="res://World/Props/Machines/Mixer/NCentrifuge.png" id="2_sbv7e"]
 [ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="3_ipw6s"]
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="3_li5gh"]
@@ -292,7 +293,13 @@ _data = {
 
 [node name="Prop_Mixer" unique_id=1780799766 instance=ExtResource("1_c7708")]
 
-[node name="Centrifuge" parent="." index="0" unique_id=566894824]
+[node name="interactable_indecator" parent="." index="0" unique_id=2142793944 instance=ExtResource("2_6jv2y")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.3363677, 0.09236971)
+
+[node name="interactable_indecator2" parent="." index="1" unique_id=1823476609 instance=ExtResource("2_6jv2y")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.21206042, -0.29081914)
+
+[node name="Centrifuge" parent="." index="2" unique_id=566894824]
 material_override = SubResource("StandardMaterial3D_82owd")
 
 [node name="Button_014" parent="Centrifuge" index="0" unique_id=428855922]
@@ -527,5 +534,5 @@ offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=341594562]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3" unique_id=341594562]
 libraries/ = SubResource("AnimationLibrary_ju1k8")

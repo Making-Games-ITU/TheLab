@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://botx15ubp71vd" path="res://World/Props/Machines/Filling/Prop_Filling_Machine.fbx" id="1_pf38o"]
 [ext_resource type="Texture2D" uid="uid://bo5h3uv6essgg" path="res://World/Props/Machines/Filling/Filling_Machine_Texture.png" id="2_oj07j"]
+[ext_resource type="PackedScene" uid="uid://bokgfdlrgsox" path="res://UI/Interaction/interactable_indecator.tscn" id="2_slsn5"]
 [ext_resource type="Texture2D" uid="uid://7iq2tjgsi7ll" path="res://World/Props/Xray/Wires.png" id="3_nn66o"]
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="4_oxy24"]
 [ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="4_slsn5"]
@@ -272,7 +273,14 @@ data = PackedVector3Array(0.2478, 1.6386, -0.060799997, 0.2478, 1.6386, -0.09559
 
 [node name="Prop_Filling_Machine" unique_id=1109295380 instance=ExtResource("1_pf38o")]
 
-[node name="Filling Machine" parent="." index="0" unique_id=922059769]
+[node name="interactable_indecator" parent="." index="0" unique_id=2142793944 instance=ExtResource("2_slsn5")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.5432231, -0.114313364)
+small_size = Vector3(0, 0, 0)
+normal_size = Vector3(0.02, 0.02, 0.02)
+base_color = Color(1, 1, 1, 0.6666667)
+show_distance = 1.0
+
+[node name="Filling Machine" parent="." index="1" unique_id=922059769]
 material_override = SubResource("StandardMaterial3D_xvm24")
 
 [node name="Button_002" parent="Filling Machine" index="0" unique_id=1323906446]
