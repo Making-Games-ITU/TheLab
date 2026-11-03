@@ -33,18 +33,18 @@ albedo_texture = ExtResource("2_sbv7e")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_li5gh"]
 albedo_texture = ExtResource("2_sbv7e")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ukfv6"]
-viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_6jv2y"]
 viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2aac"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_b2aac"]
+viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fa6i4"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ukfv6")
+albedo_texture = SubResource("ViewportTexture_6jv2y")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_6jv2y")
+emission_texture = SubResource("ViewportTexture_b2aac")
 
 [sub_resource type="Shader" id="Shader_wbrb6"]
 code = "shader_type canvas_item;
@@ -276,12 +276,47 @@ tracks/1/path = NodePath("Centrifuge")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Centrifuge/Cube_016")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.49368808, 0, 0, 0.86963904)
 
 [sub_resource type="Animation" id="Animation_b2aac"]
 resource_name = "Start Mixer"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Centrifuge/Cube_016")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.49368808, 0, 0, 0.86963904, 1, 1, 0.0024153215, 0, 0, 0.9999971)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Centrifuge/Rotor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99999994, 0.6, 1, 0, -0.34938976, 0, 0.9369774, 0.96666664, 1, 0, 0.99999994, 0, -4.371138e-08)
 
 [sub_resource type="Animation" id="Animation_fa6i4"]
 resource_name = "Stop Mixer"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Centrifuge/Rotor")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.99999994, 0, -4.371138e-08, 0.96666664, 1, 0, 0, 0, 0.99999994)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Centrifuge/Cube_016")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.0024153215, 0, 0, 0.9999971, 0.96666664, 1, 0.49368808, 0, 0, 0.86963904)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ju1k8"]
 _data = {
@@ -348,10 +383,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8626451e-09, -0.0003622
 shape = SubResource("BoxShape3D_ipw6s")
 
 [node name="Cube_016" parent="Centrifuge" index="5" unique_id=2025561015]
+transform = Transform3D(1, 0, 0, 0, 0.5125441, -0.8586608, 0, 0.8586608, 0.5125441, 0, 0.33689988, 0.31028062)
 material_override = SubResource("StandardMaterial3D_qyadt")
 
 [node name="Rotor" parent="Centrifuge" index="6" unique_id=1447316547]
-transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, 0, 0.0854803)
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0, 0, 0.0854803)
 material_override = SubResource("StandardMaterial3D_li5gh")
 
 [node name="Vail_003" parent="Centrifuge/Rotor" index="0" unique_id=915117008]
@@ -402,7 +438,7 @@ transform = Transform3D(0.9961945, -0.08715574, 0, 0.08583162, 0.98106027, 0.173
 transform = Transform3D(1.0000001, 8.440111e-09, 0, 6.9849193e-10, 1, 7.450581e-09, 0, -7.450581e-09, 1, 0, 0, 0)
 
 [node name="Screen_003" parent="Centrifuge" index="7" unique_id=1795268631]
-surface_material_override/0 = SubResource("StandardMaterial3D_b2aac")
+surface_material_override/0 = SubResource("StandardMaterial3D_fa6i4")
 
 [node name="SubViewport" type="SubViewport" parent="Centrifuge/Screen_003" index="0" unique_id=1252515481]
 mesh_lod_threshold = 0.0
