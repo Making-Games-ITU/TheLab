@@ -1,42 +1,33 @@
 extends Interactable
 
-var _is_sample_placed: bool = false
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	super() # Replace with function body.
+	super()
 
 func focus() -> void:
+	_set_outline(true)
 	_update_prompt()
 
 func _update_prompt() -> void:
-	_set_outline(true)
 	if %Micrograph.visible:
 		InteractionPrompt.instance.hide_prompt()
 		return
-	if PlayerStats.has_vial:
-		prompt_text = "Place sample"
-	elif _is_sample_placed:
-		prompt_text = "Analyze sample"
+	elif GameStats.vial_in_microscope:
+		prompt_text = "Analyze vial"
 	else:
-		prompt_text = "No sample to be analyzed"
+		prompt_text = "No vial placed"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
 	if %Micrograph.visible:
 		%Micrograph.visible = false
+		%Control2.visible = false
 		PlayerStats.is_analyzing = false
-		%Microscope_Vial.visible = false
-		PlayerStats.has_vial = true
-	elif PlayerStats.has_vial:
-		_is_sample_placed = true
-		PlayerStats.has_vial = false
-		%Microscope_Vial.visible = true
-		print("Sample placed")
-	elif _is_sample_placed:
+		print("Returning from analyzing")
+	elif GameStats.vial_in_microscope:
 		%Micrograph.visible = true
+		%Control2.visible = true
 		PlayerStats.is_analyzing = true
 		print("Analyzing")
 	else:
-		return # play weird sound here
+		print("No vial placed")
 	_update_prompt()

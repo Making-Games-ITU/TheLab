@@ -3,10 +3,10 @@ extends Interactable
 var bodyIdString : String = "BODY #"
 
 func focus() -> void:
+	_set_outline(true)
 	_update_prompt()
 	
 func _update_prompt() -> void:
-	_set_outline(true)
 	if GameStats.body_exists:
 		prompt_text = "Body already requested"
 	else:

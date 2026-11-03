@@ -241,6 +241,7 @@ size = Vector3(0.17144775, 0.4335327, 0.21331787)
 surface_material_override/1 = SubResource("StandardMaterial3D_x6oc4")
 
 [node name="Open_Capsule_Button" parent="Blood Collector" index="1" unique_id=90519716]
+visible = false
 material_override = SubResource("StandardMaterial3D_k3exb")
 script = ExtResource("3_cp7ly")
 

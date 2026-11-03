@@ -1,32 +1,43 @@
 extends Interactable
 
-
 @export var chemName : String
 @export var composite : VialStats.Composite
-@export var bottle : Node
+@export var placeback_sound: FmodEventEmitter3D
 
 func _ready() -> void:
-	prompt_text = "Take " + chemName
-	_refresh_prompt()
 	super()
 
-func interact(interactor: Node) -> void:
-	if PlayerStats.has_chemical:
-		GameStats.current_chemical = VialStats.Composite.None
-		PlayerStats.has_chemical = false
-		if bottle != null:
-			bottle.visible = true
-		print(GameStats.current_chemical)
-		
+func focus() -> void:
+	_set_outline(true)
+	_update_prompt()
+
+func _update_prompt() -> void:
+	if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
 		prompt_text = "Take " + chemName
-		_refresh_prompt()
+	elif PlayerStats.is_holding == PlayerStats.HoldState.CHEMICAL:
+		prompt_text = "Place bottle back"
 	else:
-		if bottle != null:
-			bottle.visible = false
-		PlayerStats.has_chemical = true
-		GameStats.current_chemical = composite
-		print(GameStats.current_chemical)
-		
-		prompt_text = "Place " + chemName
-		_refresh_prompt()
-	
+		prompt_text = "Hands are full"
+	InteractionPrompt.instance.show_prompt(prompt_text)
+
+func interact(interactor: Node) -> void:
+	if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
+		_take_chemical()
+	elif PlayerStats.is_holding == PlayerStats.HoldState.CHEMICAL:
+		_place_chemical()
+	else:
+		print("No chemical in hand to put back")
+
+func _take_chemical() -> void:
+	PlayerStats.is_holding = PlayerStats.HoldState.CHEMICAL
+	GameStats.current_chemical = composite
+	_update_prompt()
+	AudioManager.one_shot(sound_emitter)
+	print("Chemical taken: ", GameStats.current_chemical)
+
+func _place_chemical() -> void:
+	GameStats.current_chemical = VialStats.Composite.None
+	PlayerStats.is_holding = PlayerStats.HoldState.NONE
+	_update_prompt()
+	AudioManager.one_shot(sound_emitter)
+	print("Chemical placed back")

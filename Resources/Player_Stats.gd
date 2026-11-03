@@ -8,5 +8,5 @@ var is_sitting: bool = false
 var is_analyzing: bool = false
 var is_reading: bool = false
 
-var has_vial: bool = false
-var has_chemical: bool = false
+enum HoldState { NONE, VIAL, CHEMICAL }
+var is_holding: HoldState = HoldState.NONE

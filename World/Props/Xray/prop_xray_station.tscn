@@ -325,12 +325,14 @@ vertical_alignment = 1
 
 [node name="X-Ray#Env_Button_Open_Close" parent="." index="2" unique_id=893675333 instance=ExtResource("2_yfwwn")]
 transform = Transform3D(-2.3346624e-08, 0.84541595, -0.5341086, 3.69543e-08, 0.5341086, 0.84541595, 1, 0, -4.371139e-08, -0.15510023, -0.36299998, 0.01960098)
+visible = false
 
 [node name="X-Ray#Env_Button_Open_Close2" parent="." index="3" unique_id=1340962641 instance=ExtResource("2_yfwwn")]
 transform = Transform3D(-2.3346624e-08, 0.84541595, -0.5341086, 3.69543e-08, 0.5341086, 0.84541595, 1, 0, -4.371139e-08, -0.15510023, -0.36299998, -0.23209783)
 
 [node name="X-Ray#Env_Button_Open_Close3" parent="." index="4" unique_id=1226432371 instance=ExtResource("2_yfwwn")]
 transform = Transform3D(-2.3346624e-08, 0.84541595, -0.5341086, 3.69543e-08, 0.5341086, 0.84541595, 1, 0, -4.371139e-08, -0.15510023, -0.36299998, 0.24597676)
+visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="5" unique_id=710841109]
 

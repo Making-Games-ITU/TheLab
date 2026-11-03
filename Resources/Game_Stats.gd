@@ -11,13 +11,13 @@ enum VialLocation {
 	MICROSCOPE
 }
 
-var body_number : int = 0
-var body_ID : String = ""
-
+# Other, to be figured out
+var body_number: int = 0
+var body_ID: String = ""
 var body_exists: bool = false
-var toggle_sample_collector : bool = true
-
-var vial_in_collector : bool = false
+var toggle_sample_collector: bool = true
+var vial_in_collector: bool = false
+var vial_in_microscope: bool = false
 
 #Game world state
 #chemical enum should be independant from VialStats

@@ -62,10 +62,16 @@ func _movement_input() -> void:
 		velocity.z = move_toward(velocity.z, 0, player_speed)
 
 func _update_vial_visibility() -> void:
-	if PlayerStats.has_vial:
-		%PlayerBloodVial.visible = true
-	else:
-		%PlayerBloodVial.visible = false
+	match PlayerStats.is_holding:
+		PlayerStats.HoldState.NONE:
+			%PlayerBloodVial.visible = false
+			%PlayerChemical.visible = false
+		PlayerStats.HoldState.VIAL:
+			%PlayerBloodVial.visible = true
+			%PlayerChemical.visible = false
+		PlayerStats.HoldState.CHEMICAL:
+			%PlayerBloodVial.visible = false
+			%PlayerChemical.visible = true
 
 func _physics_process(_delta: float) -> void:
 	_check_for_interactable()
@@ -88,8 +94,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		if PlayerStats.is_analyzing:
 			%Micrograph.visible = false
 			PlayerStats.is_analyzing = false
-			%Microscope_Vial.visible = false
-			PlayerStats.has_sample = true
 		elif PlayerStats.is_sitting:
 			PlayerStats.current_chair.stand(self)
 			get_viewport().set_input_as_handled() # What is this for again?

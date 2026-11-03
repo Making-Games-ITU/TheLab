@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dktx5llwjb5k"]
 
 [ext_resource type="PackedScene" uid="uid://dmaxnoxoa52fk" path="res://World/Items/Test Tube/Env_Test_Tube.fbx" id="1_dfd3n"]
+[ext_resource type="Script" uid="uid://brkkbysp3btvu" path="res://Systems/Vial_Shader_Preload.gd" id="2_invt4"]
 [ext_resource type="Texture2D" uid="uid://cj6c4l3nbywb2" path="res://World/Items/Test Tube/Test_Tube_Texture_.png" id="2_odb7c"]
 [ext_resource type="Material" uid="uid://dyqbwnorkux62" path="res://World/Items/Test Tube/Test_tube_liquid_shader_material.tres" id="4_invt4"]
 
@@ -49,6 +50,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_46t7e")
 
 [node name="Env_Test_Tube" unique_id=1480596381 instance=ExtResource("1_dfd3n")]
+script = ExtResource("2_invt4")
 
 [node name="Sphere" parent="." index="0" unique_id=1920956240]
 material_override = SubResource("StandardMaterial3D_odb7c")

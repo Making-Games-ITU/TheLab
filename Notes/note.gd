@@ -2,6 +2,7 @@ extends Interactable
 
 @export var note_camera: Camera3D 
 @export var note_text: Label
+@export var stop_reading_sound: FmodEventEmitter3D
 var player_camera: Camera3D
 
 func _ready() -> void:
@@ -31,12 +32,16 @@ func _start_reading() -> void:
 	PlayerStats.current_note = self
 	%NoteText.text = note_text.text
 	%NoteReader.visible = true
+	%Control2.visible = true
 	_update_prompt()
+	AudioManager.one_shot(sound_emitter)
 	print("Reading")
 
 func _stop_reading() -> void:
 	player_camera.make_current()
 	%NoteReader.visible = false
+	%Control2.visible = false
 	PlayerStats.is_reading = false
 	PlayerStats.current_note = null
+	AudioManager.one_shot(stop_reading_sound)
 	_update_prompt()

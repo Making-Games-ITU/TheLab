@@ -11,19 +11,24 @@ func focus() -> void:
 func _update_prompt() -> void:
 	if GameStats.is_vial_used:
 		prompt_text = "Vial already obtained"
+	elif PlayerStats.is_holding == PlayerStats.HoldState.CHEMICAL:
+		prompt_text = "Hands are full"
 	else:
 		prompt_text = "Take empty vial"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
-	if not GameStats.is_vial_used:
-		_get_new_vial()
-	else:
+	if GameStats.is_vial_used:
 		print("Vial already obtained")
+	elif PlayerStats.is_holding == PlayerStats.HoldState.CHEMICAL:
+		print("Hands are full")
+	else:
+		_get_new_vial()
 	
 func _get_new_vial():
 	VialStats.empty_vial()
 	VialStats._update_liquid()
-	PlayerStats.has_vial = true
+	PlayerStats.is_holding = PlayerStats.HoldState.VIAL
 	GameStats.is_vial_used = true
 	_update_prompt()
+	AudioManager.one_shot(sound_emitter)
