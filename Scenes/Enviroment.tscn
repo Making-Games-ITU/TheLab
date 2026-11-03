@@ -254,7 +254,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7352805, 2.646977, -11.477
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46995258, 0, 0)
 
 [node name="Lower_Rotor" parent="Lights/Env_Machine_Surgical/Surgical_Machine" index="0" unique_id=1131787580]
-transform = Transform3D(0.9977111, 0, 0.067606725, 0, 1, 0, -0.067606725, 0, 0.9977111, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.99771106, 0, 0.06760672, 0, 1, 0, -0.06760672, 0, 0.99771106, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 
 [node name="Top_Rotor" parent="Lights/Env_Machine_Surgical/Surgical_Machine" index="1" unique_id=575798141]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, -0.52185893, 9.536743e-07)
@@ -575,7 +575,7 @@ transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.
 [node name="Note_document" parent="Notes" unique_id=832524248 instance=ExtResource("32_5qiwk")]
 transform = Transform3D(0.98384583, 0, -0.17901795, 0, 1, 0, 0.17901795, 0, 0.98384583, 4.215642, 0.78654474, -4.712485)
 
-[node name="Skeleton3D" parent="Notes/Note_document" index="0" unique_id=765364303]
+[node name="Skeleton3D" parent="Notes/Note_document" index="1" unique_id=765364303]
 bones/1/position = Vector3(0, 0, -0.205)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/3/rotation = Quaternion(-0.025, 0, 0, 1)
@@ -593,7 +593,7 @@ transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.9
 [node name="Note_document2" parent="Notes" unique_id=1030636860 instance=ExtResource("32_5qiwk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7553749, 0.7423364, -0.6433028)
 
-[node name="Skeleton3D" parent="Notes/Note_document2" index="0" unique_id=765364303]
+[node name="Skeleton3D" parent="Notes/Note_document2" index="1" unique_id=765364303]
 bones/1/position = Vector3(0, 0, -0.2)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
