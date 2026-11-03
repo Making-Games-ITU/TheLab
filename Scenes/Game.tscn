@@ -5,11 +5,15 @@
 [ext_resource type="Script" uid="uid://dn02qfwgu1uur" path="res://Resources/Player_Stats.gd" id="2_yaffh"]
 [ext_resource type="Script" uid="uid://dvtfql07hor2" path="res://Resources/Vial_Stats.gd" id="3_uhnig"]
 [ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="4_jx2ny"]
-[ext_resource type="PackedScene" uid="uid://p1s3d1dytn62" path="res://Entities/Player/Player.tscn" id="5_1uq5q"]
+[ext_resource type="Script" uid="uid://cue05ltltu7v3" path="res://Entities/Player/Player_Controller.gd" id="6_6avb6"]
 [ext_resource type="PackedScene" uid="uid://bhcn0eyj5awrm" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_lamp.tscn" id="6_8au8g"]
 [ext_resource type="PackedScene" uid="uid://bp60ytwrm06wj" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_red_lamp.tscn" id="7_1vp2d"]
+[ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="7_fxoop"]
 [ext_resource type="PackedScene" uid="uid://l6wljvsc2bg1" path="res://World/Props/Machines/Surgery Machine/env_machine_surgical.tscn" id="8_0pvx0"]
+[ext_resource type="Script" uid="uid://b6y5rgjk5ts8k" path="res://UI/Interaction_Prompt.gd" id="8_3nchu"]
 [ext_resource type="PackedScene" uid="uid://n10ynemp2f4b" path="res://World/Environments/Room/env_room.tscn" id="9_66pql"]
+[ext_resource type="FontFile" uid="uid://sdtsanxfgqys" path="res://UI/Fonts/Perfect DOS VGA 437.ttf" id="10_3nchu"]
+[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://Shaders/psx_camera_shader.gdshader" id="10_72s1t"]
 [ext_resource type="PackedScene" uid="uid://6g8r3exfe4vm" path="res://World/Props/Bin/Prop_Trashcan.tscn" id="10_pxwqw"]
 [ext_resource type="PackedScene" uid="uid://yomyius6rgy8" path="res://World/Props/Chairs/env_stool.tscn" id="11_55fyr"]
 [ext_resource type="PackedScene" uid="uid://dp6ay0uxk6bw7" path="res://World/Props/Xray/Curtains/prop_curtains.tscn" id="12_cqhyu"]
@@ -82,6 +86,33 @@ fog_light_color = Color(0.4177673, 0.391743, 0.3082522, 1)
 fog_light_energy = 0.0
 fog_density = 0.001
 adjustment_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_761t5"]
+bg_color = Color(0, 0, 0, 0.49411765)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qt5wh"]
+radius = 0.20166016
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6avb6"]
+render_priority = 0
+shader = ExtResource("10_72s1t")
+shader_parameter/debug_mode = 0
+shader_parameter/debug_range = 50.0
+shader_parameter/enable_fog = false
+shader_parameter/fog_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
+shader_parameter/noise_color = Color(0.47760504, 0, 0.13786629, 1)
+shader_parameter/fog_distance = 50.0000023275
+shader_parameter/fog_fade_range = 60.0000028025
+shader_parameter/enable_noise = false
+shader_parameter/noise_time_fac = 2.04400009383012
+shader_parameter/enable_color_limitation = true
+shader_parameter/color_levels = 6
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 0.350000016625
+
+[sub_resource type="QuadMesh" id="QuadMesh_vweq0"]
+material = SubResource("ShaderMaterial_6avb6")
+size = Vector2(2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3hsde"]
 size = Vector3(0.38671875, 1.1364288, 0.4194336)
@@ -342,18 +373,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fxoop")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5eiyn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6avb6"]
 viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8eewk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_fxoop"]
 viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahn08"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nchu"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_5eiyn")
+albedo_texture = SubResource("ViewportTexture_6avb6")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_8eewk")
+emission_texture = SubResource("ViewportTexture_fxoop")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0y053"]
 resource_name = "Keys.001"
@@ -517,26 +548,26 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rhknm")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_455of"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_fexxs"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8kki"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72s1t"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_455of")
+albedo_texture = SubResource("ViewportTexture_fexxs")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6avb6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_rhknm"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxoop"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kfbds"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_6avb6")
+albedo_texture = SubResource("ViewportTexture_rhknm")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_3nchu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xp5l2"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fexxs"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3p6c0"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_3nchu")
+albedo_texture = SubResource("ViewportTexture_xp5l2")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_afnf1"]
 size = Vector3(0.08117676, 0.32696533, 0.08325195)
@@ -1285,11 +1316,129 @@ script = ExtResource("3_uhnig")
 unique_name_in_owner = true
 environment = SubResource("Environment_na5xc")
 
-[node name="Player" parent="." unique_id=1250894719 node_paths=PackedStringArray("steps") instance=ExtResource("5_1uq5q")]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1250894719 node_paths=PackedStringArray("ray", "steps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03270018, 0)
+script = ExtResource("6_6avb6")
+ray = NodePath("Head/Camera3D/RayCast3D")
 look_sensitivity = 0.005
 player_speed = 3.0
 steps = NodePath("StepsSound")
+
+[node name="HUD" type="CanvasLayer" parent="Player" unique_id=953703995]
+
+[node name="Control" type="Control" parent="Player/HUD" unique_id=1896062302]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label_Interact" type="Label" parent="Player/HUD/Control" unique_id=1281678602]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fxoop")
+script = ExtResource("8_3nchu")
+
+[node name="Label" type="Label" parent="Player/HUD/Control" unique_id=1847119891]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.5
+offset_top = -11.5
+offset_right = 2.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fxoop")
+text = "."
+
+[node name="NoteReader" type="Control" parent="Player/HUD" unique_id=387344677]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -746.0
+offset_top = -359.0
+offset_bottom = 359.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="Player/HUD/NoteReader" unique_id=1113198444]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 151.0
+offset_top = 88.0
+offset_right = -115.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_761t5")
+
+[node name="MarginContainer" type="MarginContainer" parent="Player/HUD/NoteReader/Panel" unique_id=1927887708]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="NoteText" type="RichTextLabel" parent="Player/HUD/NoteReader/Panel/MarginContainer" unique_id=658675149]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("10_3nchu")
+scroll_active = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1411222524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_qt5wh")
+
+[node name="Head" type="Node3D" parent="Player" unique_id=554348983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=1583008010]
+current = true
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/Head/Camera3D" unique_id=1602418403]
+target_position = Vector3(0, 0, -1)
+collision_mask = 256
+collide_with_areas = true
+
+[node name="PSXMesh2" type="MeshInstance3D" parent="Player/Head/Camera3D" unique_id=204571253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1526204, 0, -1.11496)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_vweq0")
+
+[node name="PlayerBloodVial" parent="Player/Head/Camera3D" unique_id=1480596381 instance=ExtResource("23_74b0p")]
+unique_name_in_owner = true
+transform = Transform3D(-0.17739768, 0.25654864, -0.950112, -0.25010455, 0.9219758, 0.29564893, 0.95182866, 0.2900748, -0.0993924, 0.22726476, -0.2740264, -0.39170748)
+
+[node name="FmodListener3D" type="FmodListener3D" parent="Player/Head" unique_id=594045931]
 
 [node name="StepsSound" type="FmodEventEmitter3D" parent="Player" unique_id=170051038]
 event_name = "event:/Walking"
@@ -1394,10 +1543,10 @@ mesh = SubResource("ArrayMesh_7w24h")
 [node name="Prop_Curtains" parent="Room/Interactables" unique_id=164655211 instance=ExtResource("12_cqhyu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5156155, 2.4240956, -4.5071187)
 
-[node name="Cube_001" parent="Room/Interactables/Prop_Curtains" index="0" unique_id=1441476468]
+[node name="Cube_001" parent="Room/Interactables/Prop_Curtains" index="0" unique_id=712149409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07097316, 0)
 
-[node name="Cube_014" parent="Room/Interactables/Prop_Curtains" index="1" unique_id=1052705257]
+[node name="Cube_014" parent="Room/Interactables/Prop_Curtains" index="1" unique_id=1215536975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5948672, -4.7683716e-07)
 
 [node name="Prop_Control_Panel" parent="Room/Interactables" unique_id=1145011065 instance=ExtResource("13_bfice")]
@@ -1426,7 +1575,7 @@ shape = SubResource("BoxShape3D_c3pyi")
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="Microscope_Vial" parent="Room/Interactables/Prop_Micro_Scope" unique_id=1480596381 instance=ExtResource("23_74b0p")]
+[node name="Microscope_Vial" parent="Room/Interactables/Prop_Micro_Scope" unique_id=731521136 instance=ExtResource("23_74b0p")]
 unique_name_in_owner = true
 transform = Transform3D(0.12909499, 0.93498373, -0.330362, -0.934984, 0.0037780665, -0.3546694, -0.33036202, 0.3546694, 0.8746828, -0.09021139, 0.14382523, -0.059872627)
 visible = false
@@ -1486,8 +1635,8 @@ visible = false
 [node name="Env_Test_Tube7" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D6" parent_id_path=PackedInt32Array(1780799766, 620350027) index="0" unique_id=248304220]
 visible = false
 
-[node name="Screen_003" parent="Room/Interactables/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 566894824) index="7" unique_id=1795268631]
-surface_material_override/0 = SubResource("StandardMaterial3D_ahn08")
+[node name="Screen_003" parent="Room/Interactables/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 1849590227) index="7" unique_id=2082704567]
+surface_material_override/0 = SubResource("StandardMaterial3D_3nchu")
 
 [node name="Mixer" type="Node3D" parent="Room/Interactables/Prop_Mixer" unique_id=1400316112 node_paths=PackedStringArray("area", "sound_emitter")]
 transform = Transform3D(-0.49771345, 0, 0.047763728, 0, 0.5, 0, -0.047763728, 0, -0.49771345, -0.0017857552, 0.3316248, 0.09975433)
@@ -1604,22 +1753,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6473917, 0, -0.7392761)
 [node name="Prop_Closet_Storage" parent="Room/Storage" unique_id=1322947913 instance=ExtResource("15_8cf7x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30165535, 0.030189991, 0.5397688)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1031409799) index="0" unique_id=1331836476]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1032181265) index="0" unique_id=1340666293]
 transform = Transform3D(0.9847963, 0, 0.17371324, 0, 1, 0, -0.17371324, 0, 0.9847963, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1031409799) index="2" unique_id=598413667]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1032181265) index="2" unique_id=808463335]
 transform = Transform3D(0.9980103, 0, -0.06305108, 0, 1, 0, 0.06305108, 0, 0.9980103, 0.40623674, 0.33802077, -0.18920648)
 
 [node name="Prop_Closet_Storage2" parent="Room/Storage" unique_id=792493778 instance=ExtResource("15_8cf7x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1489224, 0.060379982, -1.4530705)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1031409799) index="0" unique_id=1331836476]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1032181265) index="0" unique_id=1340666293]
 transform = Transform3D(0.9986644, 0, 0.051666856, 0, 1, 0, -0.051666856, 0, 0.9986644, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1031409799) index="2" unique_id=598413667]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1032181265) index="2" unique_id=808463335]
 transform = Transform3D(0.99973977, 0, -0.022809424, 0, 1, 0, 0.022809424, 0, 0.99973977, 0.40623665, 0.33802077, -0.18920648)
 
-[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1031409799) index="3" unique_id=1256624228]
+[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1032181265) index="3" unique_id=1459515881]
 transform = Transform3D(0.99992776, 0, 0.012020995, 0, 1, 0, -0.012020995, 0, 0.99992776, -0.40623677, 0.33802077, -0.18920648)
 
 [node name="env_locker" parent="Room/Storage" unique_id=1828827353 instance=ExtResource("16_ijner")]
@@ -1638,6 +1787,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1679415, 0.7421599, -0.7758
 
 [node name="Item_document" parent="Room/Items" unique_id=439975249 instance=ExtResource("20_7ewt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0023613, 1.0509942, -3.1255083)
+visible = false
 
 [node name="Machines" type="Node3D" parent="Room" unique_id=1228803031]
 
@@ -1670,10 +1820,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8456554, 0, -4.136529)
 [node name="Corpse2" parent="Room/Props" unique_id=1466353991 instance=ExtResource("33_j2xn3")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9020357, -0.124072075, -4.55774)
 
-[node name="Env_Pit" parent="Room/Props/Corpse2/Armature" parent_id_path=PackedInt32Array(1466353991, 960439453) index="1" unique_id=139446197 instance=ExtResource("34_7m4c7")]
+[node name="Env_Pit" parent="Room/Props/Corpse2/Armature" parent_id_path=PackedInt32Array(1466353991, 837968740) index="1" unique_id=139446197 instance=ExtResource("34_7m4c7")]
 transform = Transform3D(-4.371139e-10, 0, 0.01, 7.54979e-10, 0.01, 3.3001178e-17, -0.01, 7.54979e-10, -4.371139e-10, 0.00025868416, 0.0012407209, -0.0009789392)
 
-[node name="Cube_011" parent="Room/Props/Corpse2/Armature/Env_Pit" index="1" unique_id=1923675183]
+[node name="Cube_011" parent="Room/Props/Corpse2/Armature/Env_Pit" index="1" unique_id=527123488]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0785131, 0.044901848, -0.10506663, 0.54307103)
 
 [node name="Env_Table_NoSink2" parent="Room/Props" unique_id=1416737881 instance=ExtResource("35_g543l")]
@@ -1709,23 +1859,24 @@ transform = Transform3D(0.19923048, 0, -0.9799527, 0, 1, 0, 0.9799527, 0, 0.1992
 [node name="Note_postnote2" parent="Room/Notes" unique_id=604695316 instance=ExtResource("49_5eiyn")]
 transform = Transform3D(-0.32979673, -0.9403293, 0.08375627, -0.0004690634, -0.08855674, -0.9960711, 0.9440518, -0.32854018, 0.02876462, 2.9960604, 1.5099785, -3.4708824)
 
-[node name="Skeleton3D" parent="Room/Notes/Note_postnote2" index="0" unique_id=572857682]
+[node name="Skeleton3D" parent="Room/Notes/Note_postnote2" index="0" unique_id=469442063]
 bones/1/position = Vector3(0, 0, -0.05)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
-[node name="Note" parent="Room/Notes/Note_postnote2/Skeleton3D" index="0" unique_id=2111988921]
+[node name="Note" parent="Room/Notes/Note_postnote2/Skeleton3D" index="0" unique_id=2053084288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.820766e-11, 0.052927095)
-surface_material_override/1 = SubResource("StandardMaterial3D_a8kki")
+surface_material_override/1 = SubResource("StandardMaterial3D_72s1t")
 
 [node name="Marker3D" parent="Room/Notes/Note_postnote2/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
 
-[node name="Note_document" parent="Room/Notes" unique_id=832524248 instance=ExtResource("50_8eewk")]
+[node name="Note_document" parent="Room/Notes" unique_id=832524248 node_paths=PackedStringArray("note_text") instance=ExtResource("50_8eewk")]
 transform = Transform3D(0.98384583, 0, -0.17901795, 0, 1, 0, 0.17901795, 0, 0.98384583, 2.4596572, 0.9727782, -6.198906)
+note_text = NodePath("Note Viewport/Control/TextureRect/Label")
 
-[node name="Skeleton3D" parent="Room/Notes/Note_document" index="0" unique_id=765364303]
+[node name="Skeleton3D" parent="Room/Notes/Note_document" index="0" unique_id=670111044]
 bones/1/position = Vector3(0, 0, -0.205)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/3/rotation = Quaternion(-0.025, 0, 0, 1)
@@ -1734,24 +1885,25 @@ bones/4/rotation = Quaternion(0.035, 0, 0, 1)
 bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(-0.095, 0, 0, 1)
 
-[node name="Cube_027" parent="Room/Notes/Note_document/Skeleton3D" index="0" unique_id=1710546245]
-material_overlay = SubResource("StandardMaterial3D_fxoop")
+[node name="Cube_027" parent="Room/Notes/Note_document/Skeleton3D" index="0" unique_id=176868951]
+material_overlay = SubResource("StandardMaterial3D_kfbds")
 
 [node name="Camera Marker" parent="Room/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
 
-[node name="Note_document2" parent="Room/Notes" unique_id=1738567021 instance=ExtResource("50_8eewk")]
+[node name="Note_document2" parent="Room/Notes" unique_id=1738567021 node_paths=PackedStringArray("note_text") instance=ExtResource("50_8eewk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7553749, 0.7423364, -0.6433028)
+note_text = NodePath("Note Viewport/Control/TextureRect/Label")
 
-[node name="Skeleton3D" parent="Room/Notes/Note_document2" index="0" unique_id=765364303]
+[node name="Skeleton3D" parent="Room/Notes/Note_document2" index="0" unique_id=670111044]
 bones/1/position = Vector3(0, 0, -0.2)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
 bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(0.875, 0, 0, 1)
 
-[node name="Cube_027" parent="Room/Notes/Note_document2/Skeleton3D" index="0" unique_id=1710546245]
-material_overlay = SubResource("StandardMaterial3D_fexxs")
+[node name="Cube_027" parent="Room/Notes/Note_document2/Skeleton3D" index="0" unique_id=176868951]
+material_overlay = SubResource("StandardMaterial3D_3p6c0")
 
 [node name="Camera Marker" parent="Room/Notes/Note_document2/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
@@ -1767,13 +1919,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5917645, 0, 7.336006)
 [node name="env_ceiling_lamp" parent="Room/Lights" unique_id=216051645 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.6584425, 2.6358595, -10.420589)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(216051645, 1867769126) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(216051645, 524783339) index="0" unique_id=1120609968]
 light_energy = 0.251
 
 [node name="env_ceiling_lamp2" parent="Room/Lights" unique_id=431651021 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(431651021, 1867769126) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(431651021, 524783339) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -1783,7 +1935,7 @@ spot_attenuation = 1.52
 [node name="env_ceiling_lamp7" parent="Room/Lights" unique_id=45645241 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(45645241, 1867769126) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(45645241, 524783339) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -1792,7 +1944,7 @@ spot_attenuation = 1.37
 [node name="env_ceiling_lamp4" parent="Room/Lights" unique_id=507427365 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.69838953, 2.603364, -11.7987995)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(507427365, 1867769126) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(507427365, 524783339) index="0" unique_id=1120609968]
 light_energy = 0.08
 spot_range = 4.7193227
 spot_angle = 87.9047
@@ -1800,7 +1952,7 @@ spot_angle = 87.9047
 [node name="env_ceiling_lamp6" parent="Room/Lights" unique_id=2073783679 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6280155, 2.603364, -7.3823385)
 
-[node name="Cylinder" parent="Room/Lights/env_ceiling_lamp6" index="0" unique_id=1867769126]
+[node name="Cylinder" parent="Room/Lights/env_ceiling_lamp6" index="0" unique_id=524783339]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12351322, 0, 0.01646936)
 
 [node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp6/Cylinder" index="0" unique_id=1120609968]
@@ -1814,7 +1966,7 @@ light_energy = 9.405
 [node name="env_ceiling_lamp3" parent="Room/Lights" unique_id=1288938063 instance=ExtResource("6_8au8g")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.19090223, 1.961021, -11.82384)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(1288938063, 1867769126) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(1288938063, 524783339) index="0" unique_id=1120609968]
 transform = Transform3D(0.88825995, -2.007844e-08, 0.45934123, -0.45934123, -3.8827075e-08, 0.88825995, 3.731543e-15, -0.99999976, -4.371138e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(0.56323135, 0.52731746, 0.5280909, 1)
 spot_range = 5.794
@@ -1827,7 +1979,7 @@ transform = Transform3D(1, 0, -7.764702e-23, -2.627256e-15, 1, 3.5527137e-15, -3
 [node name="env_ceiling_lamp5" parent="Room/Lights" unique_id=793426471 instance=ExtResource("6_8au8g")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.94554186, -0.26759893, -11.886757)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(793426471, 1867769126) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(793426471, 524783339) index="0" unique_id=1120609968]
 transform = Transform3D(0.7008144, -3.1181226e-08, 0.7133435, -0.7133435, -3.063358e-08, 0.7008144, 4.8694323e-15, -0.9999999, -4.371139e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(1, 0, 0.15951031, 1)
 light_energy = 0.4
@@ -1983,10 +2135,10 @@ transform = Transform3D(0, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0, 8.902527, 
 [node name="Doors_Sliding3" parent="Room/Doors" unique_id=868643664 instance=ExtResource("41_6nk54")]
 transform = Transform3D(-0.9999999, 0, 4.371138e-08, 0, 1, 0, -4.371138e-08, 0, -0.9999999, 0.033169, 1.0764008, -1.1191952)
 
-[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=726485585]
+[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=778852150]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39810574, 0, 0)
 
-[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1717675311]
+[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1452491975]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
 
 [node name="Interactables" type="Node3D" parent="." unique_id=491644675]

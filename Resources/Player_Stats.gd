@@ -1,18 +1,13 @@
 extends Node
 
-@export var player_name: String = "John Science"
-
 var current_interactable: Interactable = null
 var current_chair: Interactable = null
+var current_note: Interactable = null
+
 var is_sitting: bool = false
 var is_analyzing: bool = false
- 
-#region added by Oleg
 var is_reading: bool = false
-var current_note: Note
-#endregion
 
-var has_new_vial : bool = false
-var has_sample : bool = false
-
-var has_chemical = false
+var has_new_vial: bool = false
+var has_sample: bool = false
+var has_chemical: bool = false

@@ -18,27 +18,31 @@ albedo_texture = SubResource("ViewportTexture_xnj3y")
 [sub_resource type="BoxShape3D" id="BoxShape3D_xnj3y"]
 size = Vector3(0.2806848, 0.027254816, 0.4082688)
 
-[node name="Note_document" unique_id=832524248 node_paths=PackedStringArray("note_camera", "note_text") instance=ExtResource("1_lhq4c")]
+[node name="Note_document" unique_id=832524248 node_paths=PackedStringArray("note_camera", "area", "outline_meshes") instance=ExtResource("1_lhq4c")]
 script = ExtResource("2_xnj3y")
 note_camera = NodePath("Skeleton3D/Camera Marker/Camera3D")
-note_text = NodePath("Note Viewport/Control/TextureRect/Label")
+prompt_text = "Read"
+area = NodePath("Skeleton3D/Cube_027/Area3D")
+outline_meshes = [NodePath("Skeleton3D/Cube_027")]
 
-[node name="Skeleton3D" parent="." index="0" unique_id=765364303]
+[node name="Skeleton3D" parent="." index="0" unique_id=670111044]
 bones/1/position = Vector3(0, 8.924582e-09, -0.20417066)
 
-[node name="Cube_027" parent="Skeleton3D" index="0" unique_id=1710546245]
+[node name="Cube_027" parent="Skeleton3D" index="0" unique_id=176868951]
 material_override = SubResource("StandardMaterial3D_xnj3y")
 material_overlay = SubResource("StandardMaterial3D_fxwv4")
 
 [node name="Area3D" type="Area3D" parent="Skeleton3D/Cube_027" index="0" unique_id=497656163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.000038e-06, 0)
 collision_layer = 256
+collision_mask = 256
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton3D/Cube_027/Area3D" index="0" unique_id=1001244833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012739779, 0)
 shape = SubResource("BoxShape3D_xnj3y")
 
 [node name="Camera Marker" type="Marker3D" parent="Skeleton3D" index="1" unique_id=819025313]
+transform = Transform3D(0.97118616, 0.2351559, -0.03871765, -0.007864049, 0.19399202, 0.9809716, 0.23819219, -0.9524016, 0.19025168, 0.13105392, 0.27532247, 0.11360516)
 
 [node name="Camera3D" type="Camera3D" parent="Skeleton3D/Camera Marker" index="0" unique_id=250922232]
 
