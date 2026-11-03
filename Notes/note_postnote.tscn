@@ -29,6 +29,8 @@ surface_material_override/1 = SubResource("StandardMaterial3D_21rw2")
 
 [node name="Marker3D" type="Marker3D" parent="Skeleton3D" index="1" unique_id=1478483543]
 
+[node name="Camera3D" type="Camera3D" parent="Skeleton3D/Marker3D" index="0" unique_id=1458400380]
+
 [node name="Note Viewport" type="SubViewport" parent="." index="1" unique_id=2108383192]
 
 [node name="Control" type="Control" parent="Note Viewport" index="0" unique_id=302951096]

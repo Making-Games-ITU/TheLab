@@ -2,28 +2,45 @@
 
 [ext_resource type="PackedScene" uid="uid://bm3th10pmjglo" path="res://Notes/Note_document.fbx" id="1_lhq4c"]
 [ext_resource type="Texture2D" uid="uid://diw6gy4ed42do" path="res://Notes/paperTexture.png" id="2_1k7ho"]
+[ext_resource type="Script" uid="uid://dfwqme4vae8iu" path="res://Notes/note.gd" id="2_xnj3y"]
 [ext_resource type="FontFile" uid="uid://c0j46o02p6oav" path="res://UI/Fonts/JPHSL.TTF" id="3_1k7ho"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnj3y"]
 albedo_texture = ExtResource("2_1k7ho")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1k7ho"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xnj3y"]
 viewport_path = NodePath("Note Viewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxwv4"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_1k7ho")
+albedo_texture = SubResource("ViewportTexture_xnj3y")
 
-[node name="Note_document" unique_id=832524248 instance=ExtResource("1_lhq4c")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnj3y"]
+size = Vector3(0.2806848, 0.027254816, 0.4082688)
 
-[node name="Skeleton3D" parent="." index="0" unique_id=387256508]
+[node name="Note_document" unique_id=832524248 node_paths=PackedStringArray("note_camera", "note_text") instance=ExtResource("1_lhq4c")]
+script = ExtResource("2_xnj3y")
+note_camera = NodePath("Skeleton3D/Camera Marker/Camera3D")
+note_text = NodePath("Note Viewport/Control/TextureRect/Label")
+
+[node name="Skeleton3D" parent="." index="0" unique_id=765364303]
 bones/1/position = Vector3(0, 8.924582e-09, -0.20417066)
 
-[node name="Cube_027" parent="Skeleton3D" index="0" unique_id=986514553]
+[node name="Cube_027" parent="Skeleton3D" index="0" unique_id=1710546245]
 material_override = SubResource("StandardMaterial3D_xnj3y")
 material_overlay = SubResource("StandardMaterial3D_fxwv4")
 
+[node name="Area3D" type="Area3D" parent="Skeleton3D/Cube_027" index="0" unique_id=497656163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.000038e-06, 0)
+collision_layer = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton3D/Cube_027/Area3D" index="0" unique_id=1001244833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012739779, 0)
+shape = SubResource("BoxShape3D_xnj3y")
+
 [node name="Camera Marker" type="Marker3D" parent="Skeleton3D" index="1" unique_id=819025313]
+
+[node name="Camera3D" type="Camera3D" parent="Skeleton3D/Camera Marker" index="0" unique_id=250922232]
 
 [node name="Note Viewport" type="SubViewport" parent="." index="1" unique_id=1966584251]
 size = Vector2i(523, 740)
