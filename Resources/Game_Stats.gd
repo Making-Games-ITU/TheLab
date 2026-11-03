@@ -39,3 +39,5 @@ var mixer_speed = VialStats.Speed.Min
 # True when picked up from shelf'
 # Until it is disposed in trash can
 var is_vial_used: bool = false
+
+var game_brightness: float = 1.0
