@@ -69,15 +69,17 @@ func _update_vial_visibility() -> void:
 
 func _physics_process(_delta: float) -> void:
 	_check_for_interactable()
-	_update_vial_visibility()
-	#Added is reading check Oleg
-	if !PlayerStats.is_sitting and !PlayerStats.is_analyzing and !PlayerStats.is_reading:
+	if not PlayerStats.is_sitting and not PlayerStats.is_analyzing and not PlayerStats.is_reading:
 		_movement_input()
 		_handleStepsSFX()
 		move_and_slide()
+		_update_vial_visibility()
+
+func _can_look() -> bool:
+	return not PlayerStats.is_analyzing and not PlayerStats.is_reading and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and _can_look():
 		head.rotate_y(-event.relative.x * look_sensitivity)
 		camera.rotate_x(-event.relative.y * look_sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(80))
@@ -91,11 +93,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif PlayerStats.is_sitting:
 			PlayerStats.current_chair.stand(self)
 			get_viewport().set_input_as_handled() # What is this for again?
-		#region Added by Oleg
 		elif PlayerStats.is_reading:
-			print(PlayerStats.current_note.name)
 			PlayerStats.current_note._stop_reading()
-		#endregion
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
