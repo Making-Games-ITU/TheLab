@@ -5,24 +5,25 @@ func _ready() -> void:
 	super()
 
 func focus() -> void:
+	_set_outline(true)
 	_update_prompt()
 	
 func _update_prompt() -> void:
-	_set_outline(true)
-	if PlayerStats.has_new_vial or PlayerStats.has_sample:
-		prompt_text = "Dispose sample"
+	if PlayerStats.has_vial:
+		prompt_text = "Dispose vial"
 	else:
-		prompt_text = "No sample to dispose"
+		prompt_text = "No vial to dispose"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
-	_dispose_vial()
+	if PlayerStats.has_vial:
+		_dispose_vial()
+	else:
+		print("No vial to dispose")
 	
 func _dispose_vial() -> void:
-	if PlayerStats.has_new_vial or PlayerStats.has_sample:
-		GameStats.is_vial_used = false
-		PlayerStats.has_new_vial = false
-		PlayerStats.has_sample = false
-		# Play some other sound here I guess
-	else:
-		return # Play oof sound here
+	VialStats.empty_vial()
+	VialStats._update_liquid()
+	GameStats.is_vial_used = false
+	PlayerStats.has_vial = false
+	_update_prompt()

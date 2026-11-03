@@ -14,7 +14,7 @@ func _update_prompt() -> void:
 	if %Micrograph.visible:
 		InteractionPrompt.instance.hide_prompt()
 		return
-	if PlayerStats.has_new_vial or PlayerStats.has_sample:
+	if PlayerStats.has_vial:
 		prompt_text = "Place sample"
 	elif _is_sample_placed:
 		prompt_text = "Analyze sample"
@@ -27,11 +27,10 @@ func interact(interactor: Node) -> void:
 		%Micrograph.visible = false
 		PlayerStats.is_analyzing = false
 		%Microscope_Vial.visible = false
-		PlayerStats.has_sample = true
-	elif PlayerStats.has_new_vial or PlayerStats.has_sample:
+		PlayerStats.has_vial = true
+	elif PlayerStats.has_vial:
 		_is_sample_placed = true
-		PlayerStats.has_new_vial = false
-		PlayerStats.has_sample = false
+		PlayerStats.has_vial = false
 		%Microscope_Vial.visible = true
 		print("Sample placed")
 	elif _is_sample_placed:

@@ -53,11 +53,9 @@ visible = false
 material_override = SubResource("StandardMaterial3D_e38up")
 
 [node name="Button_004" parent="." index="2" unique_id=1433077567]
-visible = false
 material_override = SubResource("StandardMaterial3D_qmm1k")
 
 [node name="Button_005" parent="." index="3" unique_id=170662516]
-visible = false
 material_override = SubResource("StandardMaterial3D_3jbc6")
 
 [node name="Button_006" parent="." index="4" unique_id=324907107]

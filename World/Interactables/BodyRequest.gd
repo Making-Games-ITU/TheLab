@@ -2,28 +2,35 @@ extends Interactable
 
 var bodyIdString : String = "BODY #"
 
-func interact(interactor: Node) -> void:
-	_request_body()
+func focus() -> void:
+	_update_prompt()
+	
+func _update_prompt() -> void:
+	_set_outline(true)
+	if GameStats.body_exists:
+		prompt_text = "Body requested"
+	else:
+		prompt_text = "Request new body"
+	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func _request_body() -> void:			
-	if (GameStats.body_exists):
-		print("Warning: Containment chamber at max capacity. Dispose current subject.")
+func interact(interactor: Node) -> void:
+	if GameStats.body_exists:
+		print("Body already exists")
 	else:
 		_new_body()
-		GameStats.body_exists = true
-		if anim:
-			anim.play("request")
-			await anim.animation_finished
-		GameStats.toggle_sample_collector = true
 
-func _new_body():
-	print("New subject requested")
-	_increase_bodyID()
-	print(GameStats.body_ID)
+func _new_body() -> void:
 	# Body variance should be here
 	# Potential game difficulty increase would be set here
-
-func _increase_bodyID() -> void:
+	print("New body requested: ", GameStats.body_ID)
 	GameStats.body_number += 1 
 	GameStats.body_ID = bodyIdString+ "%04d" % GameStats.body_number
-	
+	GameStats.body_exists = true
+	%Body.visible = true
+	if sound_emitter != null:
+		AudioManager.one_shot(sound_emitter)
+	_update_prompt()
+	# This below doesn't work yet
+	if anim:
+		anim.play("request")
+		await anim.animation_finished

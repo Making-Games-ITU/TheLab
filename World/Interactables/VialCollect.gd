@@ -5,27 +5,25 @@ func _ready() -> void:
 	super()
 
 func focus() -> void:
+	_set_outline(true)
 	_update_prompt()
 
 func _update_prompt() -> void:
-	_set_outline(true)
 	if GameStats.is_vial_used:
-		prompt_text = "Vial already collected"
+		prompt_text = "Vial already obtained"
 	else:
 		prompt_text = "Take empty vial"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-
 func interact(interactor: Node) -> void:
-	_get_new_vial()
+	if not GameStats.is_vial_used:
+		_get_new_vial()
+	else:
+		print("Vial already obtained")
 	
 func _get_new_vial():
-	if not GameStats.is_vial_used:
-		VialStats.empty_vial()
-		PlayerStats.has_new_vial = true
-		GameStats.is_vial_used = true
-	else:
-		return # Play sound effect
-
-
-# We need a trashcan to dispose a vial
+	VialStats.empty_vial()
+	VialStats._update_liquid()
+	PlayerStats.has_vial = true
+	GameStats.is_vial_used = true
+	_update_prompt()

@@ -62,7 +62,7 @@ func _movement_input() -> void:
 		velocity.z = move_toward(velocity.z, 0, player_speed)
 
 func _update_vial_visibility() -> void:
-	if PlayerStats.has_new_vial or PlayerStats.has_sample:
+	if PlayerStats.has_vial:
 		%PlayerBloodVial.visible = true
 	else:
 		%PlayerBloodVial.visible = false
