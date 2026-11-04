@@ -1,5 +1,8 @@
 extends Interactable
 
+@export var take_vial_sound: FmodEventEmitter3D
+@export var uninteractable_sound: FmodEventEmitter3D
+
 func _ready() -> void:
 	super()
 
@@ -22,18 +25,24 @@ func interact(interactor: Node) -> void:
 	elif PlayerStats.is_holding == PlayerStats.HoldState.VIAL:
 		_insert_vial()
 	else:
-		print("No vial to insert")
+		_uninteractable()
 
 func _insert_vial():
 	GameStats.vial_in_collector = true
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
 	%SampleCollectorVial.visible = true
-	print("Vial inserted")
+	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
+	print("Vial inserted")
 
 func _take_vial():
 	GameStats.vial_in_collector = false
 	PlayerStats.is_holding = PlayerStats.HoldState.VIAL
 	%SampleCollectorVial.visible = false
-	print("Picked up Vial")
+	AudioManager.one_shot(take_vial_sound)
 	_update_prompt()
+	print("Picked up Vial")
+
+func _uninteractable() -> void:
+	AudioManager.one_shot(uninteractable_sound)
+	print("No vial to insert or wrong object in hand")

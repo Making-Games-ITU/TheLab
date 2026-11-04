@@ -1,5 +1,7 @@
 extends Interactable
 
+@export var uninteractable_sound: FmodEventEmitter3D
+
 var _scanning: bool = false
 
 func _ready() -> void:
@@ -22,20 +24,25 @@ func _update_prompt() -> void:
 func interact(interactor: Node) -> void:
 	if GameStats.body_exists:
 		if _scanning:
-			print("Already scanning")
+			_uninteractable()
 		else:
 			_start_scan()
 	else:
-		print("No body to scan")
+		_uninteractable()
 
 func _start_scan() -> void:
 	_scanning = true
-	print("Starting scan")
+	AudioManager.one_shot(sound_emitter)
 	if anim:
 		anim.play("scan")
 		await anim.animation_finished
-		# Change screen output here
+		#TODO: Change screen output here
 		_scanning = false
 	else:
-		# Change screen output here
+		#TODO: Change screen output here
 		_scanning = false # bypassing anim for now
+	print("Scanned Body")
+
+func _uninteractable() -> void:
+	AudioManager.one_shot(uninteractable_sound)
+	print("No body to scan or already scanning")

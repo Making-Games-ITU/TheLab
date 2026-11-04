@@ -1,8 +1,9 @@
 extends Interactable
 
-@export var chemName : String
-@export var composite : VialStats.Composite
+@export var chemName: String
+@export var composite: VialStats.Composite
 @export var placeback_sound: FmodEventEmitter3D
+@export var uninteractable_sound: FmodEventEmitter3D
 
 func _ready() -> void:
 	super()
@@ -26,7 +27,7 @@ func interact(interactor: Node) -> void:
 	elif PlayerStats.is_holding == PlayerStats.HoldState.CHEMICAL:
 		_place_chemical()
 	else:
-		print("No chemical in hand to put back")
+		_uninteractable()
 
 func _take_chemical() -> void:
 	PlayerStats.is_holding = PlayerStats.HoldState.CHEMICAL
@@ -39,5 +40,9 @@ func _place_chemical() -> void:
 	GameStats.current_chemical = VialStats.Composite.None
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
 	_update_prompt()
-	AudioManager.one_shot(sound_emitter)
+	AudioManager.one_shot(placeback_sound)
 	print("Chemical placed back")
+
+func _uninteractable() -> void:
+	AudioManager.one_shot(uninteractable_sound)
+	print("No chemical in hand to put back")

@@ -1,5 +1,8 @@
 extends Interactable
 
+@export var exit_sound: FmodEventEmitter3D
+@export var uninteractable_sound: FmodEventEmitter3D
+
 func _ready() -> void:
 	super()
 
@@ -19,15 +22,27 @@ func _update_prompt() -> void:
 
 func interact(interactor: Node) -> void:
 	if %Micrograph.visible:
-		%Micrograph.visible = false
-		%Control2.visible = false
-		PlayerStats.is_analyzing = false
-		print("Returning from analyzing")
+		_exit_mircoscope()
 	elif GameStats.vial_in_microscope:
-		%Micrograph.visible = true
-		%Control2.visible = true
-		PlayerStats.is_analyzing = true
-		print("Analyzing")
+		_enter_microscope()
 	else:
-		print("No vial placed")
+		_uninteractable()
 	_update_prompt()
+
+func _enter_microscope() -> void:
+	%Micrograph.visible = true
+	%Control2.visible = true
+	PlayerStats.is_analyzing = true
+	AudioManager.one_shot(sound_emitter)
+	print("Analyzing")
+
+func _exit_mircoscope() -> void:
+	%Micrograph.visible = false
+	%Control2.visible = false
+	PlayerStats.is_analyzing = false
+	AudioManager.one_shot(exit_sound)
+	print("Returning from analyzing")
+
+func _uninteractable() -> void:
+	AudioManager.one_shot(uninteractable_sound)
+	print("No vial placed")

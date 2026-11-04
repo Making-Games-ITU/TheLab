@@ -1,5 +1,7 @@
 extends Interactable
 
+@export var uninteractable_sound: FmodEventEmitter3D
+
 func _ready() -> void:
 	super()
 
@@ -21,20 +23,21 @@ func _update_prompt() -> void:
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
-	if GameStats.vial_in_collector:
+	if GameStats.vial_in_collector and GameStats.body_exists:
 		if VialStats.empty:
-			print("Vial is empty")
+			_uninteractable()
 		else:
-			if GameStats.body_exists:
-				_inject()
-			else:
-				print("No body to inject into")
-	else:
-		print("No vial in vial slot")
+			_inject()
 
 func _inject() -> void:
 	VialStats.empty_vial()
 	VialStats._update_liquid()
+	AudioManager.one_shot(sound_emitter)
+	print("Serum injected")
 	# Doesn't work
 	if anim:
 		anim.play("inject")
+
+func _uninteractable() -> void:
+	AudioManager.one_shot(uninteractable_sound)
+	print("Vial is empty or No body to inject into or no vial ins collector")

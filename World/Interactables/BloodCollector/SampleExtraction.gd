@@ -1,5 +1,7 @@
 extends Interactable
 
+@export var uninteractable_sound: FmodEventEmitter3D
+
 func _ready() -> void:
 	super()
 
@@ -21,22 +23,22 @@ func _update_prompt() -> void:
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
-	if GameStats.vial_in_collector:
-		if VialStats.empty:
-			if GameStats.body_exists:
-				_extractBlood()
-			else:
-				print("No body to extract from")
-		else:
-			print("Vial not empty")
+	if GameStats.vial_in_collector and VialStats.empty and GameStats.body_exists:
+		_extractBlood()
 	else:
-		print("No vial in sample collector")
+		_uninteractable()
 	
 func _extractBlood() -> void:
 	VialStats.empty = false
+	#TODO: update based on body properties
 	VialStats.infection = 1
 	VialStats._update_liquid()
+	AudioManager.one_shot(sound_emitter)
 	print("Blood extracted with infection: ", VialStats.infection)
 	# Not working
 	if anim:
 		anim.play("extract")
+
+func _uninteractable() -> void:
+	AudioManager.one_shot(uninteractable_sound)
+	print("No body to extract from or Vial not empty or No vial in collector")

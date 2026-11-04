@@ -1,5 +1,7 @@
 extends Interactable
 
+@export var uninteractable_sound: FmodEventEmitter3D
+
 func focus() -> void:
 	_set_outline(true)
 	_update_prompt()
@@ -15,15 +17,18 @@ func interact(interactor: Node) -> void:
 	if GameStats.body_exists:
 		_dispose_body()
 	else:
-		print("No body to dispose")
+		_uninteractable()
 
 func _dispose_body():
-	print("Body disposed")
 	%Body.visible = false
 	GameStats.body_exists = false
-	if sound_emitter != null:
-		AudioManager.one_shot(sound_emitter)
+	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
+	print("Body disposed")
 	# This below doesn't work
 	if anim:
 		anim.play("RESET")
+
+func _uninteractable() -> void:
+	AudioManager.one_shot(uninteractable_sound)
+	print("No body to dispose")

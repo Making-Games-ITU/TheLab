@@ -1,6 +1,7 @@
 extends Interactable
 
-# Called when the node enters the scene tree for the first time.
+@export var uninteractable_sound: FmodEventEmitter3D
+
 func _ready() -> void:
 	super()
 
@@ -18,13 +19,11 @@ func _update_prompt() -> void:
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
-	if GameStats.is_vial_used:
-		print("Vial already obtained")
-	elif PlayerStats.is_holding == PlayerStats.HoldState.CHEMICAL:
-		print("Hands are full")
+	if GameStats.is_vial_used or PlayerStats.is_holding != PlayerStats.HoldState.NONE:
+		_uninteractable()
 	else:
 		_get_new_vial()
-	
+
 func _get_new_vial():
 	VialStats.empty_vial()
 	VialStats._update_liquid()
@@ -32,3 +31,7 @@ func _get_new_vial():
 	GameStats.is_vial_used = true
 	_update_prompt()
 	AudioManager.one_shot(sound_emitter)
+
+func _uninteractable() -> void:
+	AudioManager.one_shot(uninteractable_sound)
+	print("Vial already obtained or hands are full")

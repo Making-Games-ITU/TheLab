@@ -1,6 +1,8 @@
 extends Interactable
 
-# Called when the node enters the scene tree for the first time.
+@export var dispose_chemical_sound: FmodEventEmitter3D
+@export var uninteractable_sound: FmodEventEmitter3D
+
 func _ready() -> void:
 	super()
 
@@ -23,11 +25,12 @@ func interact(interactor: Node) -> void:
 	elif PlayerStats.is_holding == PlayerStats.HoldState.CHEMICAL:
 		_dispose_chemical()
 	else:
-		print("No vial to dispose")
+		_uninteractable()
 
 func _dispose_chemical() -> void:
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
 	_update_prompt()
+	AudioManager.one_shot(dispose_chemical_sound)
 
 func _dispose_vial() -> void:
 	VialStats.empty_vial()
@@ -35,3 +38,8 @@ func _dispose_vial() -> void:
 	GameStats.is_vial_used = false
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
 	_update_prompt()
+	AudioManager.one_shot(sound_emitter)
+
+func _uninteractable() -> void:
+	AudioManager.one_shot(uninteractable_sound)
+	print("No thing to dispose")
