@@ -27,10 +27,11 @@ var current_chemical : VialStats.Composite
 # Pipette stats
 var vial_in_pipette: bool = false
 var flask_in_pipette: bool = false
-var amount: String = ""
+var pipette_chemical_amount: String = ""
+const PIPETTE_CHARACTERS_MAX: int = 5
 
 func parseAmount () -> float:
-	return amount.to_float()
+	return pipette_chemical_amount.to_float()
 
 # Mixer 
 var vial_in_mixer: bool = false

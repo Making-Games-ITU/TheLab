@@ -63,10 +63,10 @@
 [ext_resource type="Script" uid="uid://bhlrg5gone8pe" path="res://World/Interactables/FillingMachine/Pipette_Flask_Slot.gd" id="56_n2ugt"]
 [ext_resource type="Texture2D" uid="uid://bo5h3uv6essgg" path="res://World/Props/Machines/Filling/Filling_Machine_Texture.png" id="56_ym08v"]
 [ext_resource type="Texture2D" uid="uid://c2l5yjfm8dh4" path="res://World/Props/Machines/Keyboard keys Texture.png" id="57_8ekww"]
-[ext_resource type="Script" uid="uid://6ckpxp75y6ji" path="res://World/Interactables/FillingMachine/Numpad.gd" id="58_dwhu0"]
-[ext_resource type="Script" uid="uid://b2eqg2tydo80s" path="res://World/Interactables/FillingMachine/AddChemical2Vial.gd" id="58_nojon"]
+[ext_resource type="Script" uid="uid://6ckpxp75y6ji" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Numbers.gd" id="58_dwhu0"]
+[ext_resource type="Script" uid="uid://b2eqg2tydo80s" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Start.gd" id="58_nojon"]
 [ext_resource type="Script" uid="uid://dxv013hmmsgpm" path="res://World/Interactables/FillingMachine/DecimalPointButton.gd" id="59_8ekww"]
-[ext_resource type="Script" uid="uid://bl6j4hu8sosqs" path="res://World/Interactables/FillingMachine/Clear.gd" id="60_dwhu0"]
+[ext_resource type="Script" uid="uid://bl6j4hu8sosqs" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Clear.gd" id="60_dwhu0"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0

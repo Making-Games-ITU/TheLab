@@ -80,11 +80,11 @@
 [ext_resource type="Texture2D" uid="uid://bopkn445to257" path="res://World/Items/Test Tube/Test_Tube_Texture.png" id="57_adeab"]
 [ext_resource type="Texture2D" uid="uid://bo5h3uv6essgg" path="res://World/Props/Machines/Filling/Filling_Machine_Texture.png" id="57_l06v1"]
 [ext_resource type="Texture2D" uid="uid://7iq2tjgsi7ll" path="res://World/Props/Xray/Wires.png" id="58_20nkh"]
-[ext_resource type="Script" uid="uid://b2eqg2tydo80s" path="res://World/Interactables/FillingMachine/AddChemical2Vial.gd" id="59_r0vx2"]
-[ext_resource type="Script" uid="uid://6ckpxp75y6ji" path="res://World/Interactables/FillingMachine/Numpad.gd" id="60_4hlmn"]
+[ext_resource type="Script" uid="uid://b2eqg2tydo80s" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Start.gd" id="59_r0vx2"]
+[ext_resource type="Script" uid="uid://6ckpxp75y6ji" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Numbers.gd" id="60_4hlmn"]
 [ext_resource type="PackedScene" uid="uid://c5qlgxu4phaxk" path="res://World/Props/Vent/prop_vent.tscn" id="61_icxu3"]
 [ext_resource type="Script" uid="uid://dxv013hmmsgpm" path="res://World/Interactables/FillingMachine/DecimalPointButton.gd" id="61_jhak5"]
-[ext_resource type="Script" uid="uid://bl6j4hu8sosqs" path="res://World/Interactables/FillingMachine/Clear.gd" id="62_kg4j1"]
+[ext_resource type="Script" uid="uid://bl6j4hu8sosqs" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Clear.gd" id="62_kg4j1"]
 [ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/ScanStartButton.gd" id="64_1jytr"]
 [ext_resource type="Script" uid="uid://l1n756bd47f6" path="res://World/Interactables/Chemical.gd" id="65_srr11"]
 
@@ -751,12 +751,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rvxuh")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rfssg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_bxgab"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c008f"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wgas"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_rfssg")
+albedo_texture = SubResource("ViewportTexture_bxgab")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7627"]
 albedo_texture = ExtResource("58_20nkh")
@@ -1554,18 +1554,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bobmc")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bxgab"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_8tnk5"]
 viewport_path = NodePath("Filling Machine/screen/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5wgas"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_rfssg"]
 viewport_path = NodePath("Filling Machine/screen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tnk5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c008f"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_bxgab")
+albedo_texture = SubResource("ViewportTexture_8tnk5")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_5wgas")
+emission_texture = SubResource("ViewportTexture_rfssg")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_2h8s2"]
 viewport_path = NodePath("Note Viewport")
@@ -2494,7 +2494,7 @@ bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
 [node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=2053084288]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_c008f")
+surface_material_override/1 = SubResource("StandardMaterial3D_5wgas")
 
 [node name="Marker3D" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -2594,22 +2594,30 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 [node name="Numapd" type="Node3D" parent="Room/Interactables/Pipette" unique_id=240507342]
 transform = Transform3D(0.35674965, 0, 0.9342, 0, 0.9999992, 0, -0.93419987, 0, 0.35674953, -0.19270492, 1.5887222, 0.04299879)
 
-[node name="Pipette_Button_start" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1688334138 node_paths=PackedStringArray("area")]
+[node name="Pipette_Button_0" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1168515478]
+transform = Transform3D(1.0000011, 0, 5.9604645e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000007, 0.035217762, 0.026767492, 0.006357193)
+script = ExtResource("60_4hlmn")
+
+[node name="Pipette_Button_Clear" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=85330077]
+transform = Transform3D(1.0000008, 0, 5.9604645e-08, 0, 1, 0, 0, 0, 1.0000007, -0.061809063, -0.03719139, 0.004874587)
+script = ExtResource("62_kg4j1")
+
+[node name="Button_start" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1688334138 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000007, 0, -1.1920929e-07, 0, 1.0000001, 0.078464985, -0.004219413, 0.011600852)
 mesh = SubResource("ArrayMesh_lhtyi")
 script = ExtResource("59_r0vx2")
 prompt_text = "Start"
 area = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_start" unique_id=1688243253]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_start" unique_id=1688243253]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_start/Area3D" unique_id=830220792]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_start/Area3D" unique_id=830220792]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 shape = SubResource("BoxShape3D_ggor0")
 
-[node name="Pipette_Button_num0" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=22376143 node_paths=PackedStringArray("area")]
+[node name="Button_num0" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=22376143 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000006, 0, -8.940697e-08, 0, 1.0000001, 0.036053896, 0.028466702, 0.0116683245)
 mesh = SubResource("ArrayMesh_gknap")
 script = ExtResource("60_4hlmn")
@@ -2617,20 +2625,20 @@ number = "0"
 prompt_text = "0"
 area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num0" unique_id=1252413592]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_num0" unique_id=1252413592]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00043012202)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num0/StaticBody3D" unique_id=1655318199]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num0/StaticBody3D" unique_id=1655318199]
 shape = SubResource("BoxShape3D_hqi5r")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num0" unique_id=216130385]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_num0" unique_id=216130385]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num0/Area3D" unique_id=1628009054]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num0/Area3D" unique_id=1628009054]
 shape = SubResource("BoxShape3D_hqi5r")
 
-[node name="Pipette_Button_num1" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1828298649 node_paths=PackedStringArray("area")]
+[node name="Button_num1" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1828298649 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000006, 0, -8.940697e-08, 0, 1.0000001, 0.0033669472, 0.028466702, 0.011668801)
 mesh = SubResource("ArrayMesh_vfdjh")
 script = ExtResource("60_4hlmn")
@@ -2638,20 +2646,20 @@ number = "1"
 prompt_text = "1"
 area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num1" unique_id=1443179767]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_num1" unique_id=1443179767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 0, -0.00043012202)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num1/StaticBody3D" unique_id=825924494]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num1/StaticBody3D" unique_id=825924494]
 shape = SubResource("BoxShape3D_6pbu0")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num1" unique_id=1745947827]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_num1" unique_id=1745947827]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num1/Area3D" unique_id=248867837]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num1/Area3D" unique_id=248867837]
 shape = SubResource("BoxShape3D_6pbu0")
 
-[node name="Pipette_Button_num2" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2000112969 node_paths=PackedStringArray("area")]
+[node name="Button_num2" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2000112969 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000006, 0, -8.940697e-08, 0, 1.0000001, -0.029319286, 0.028466702, 0.011668444)
 mesh = SubResource("ArrayMesh_m003k")
 script = ExtResource("60_4hlmn")
@@ -2659,20 +2667,20 @@ number = "2"
 prompt_text = "2"
 area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num2" unique_id=1470404878]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_num2" unique_id=1470404878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7252903e-09, 0, -0.00043012202)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num2/StaticBody3D" unique_id=866343929]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num2/StaticBody3D" unique_id=866343929]
 shape = SubResource("BoxShape3D_v8mt7")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num2" unique_id=1048273405]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_num2" unique_id=1048273405]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num2/Area3D" unique_id=1351425670]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num2/Area3D" unique_id=1351425670]
 shape = SubResource("BoxShape3D_v8mt7")
 
-[node name="Pipette_Button_num3" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=300431013 node_paths=PackedStringArray("area")]
+[node name="Button_num3" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=300431013 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000007, 0, -1.1920929e-07, 0, 1.0000001, -0.06200552, 0.028466702, 0.0116683245)
 mesh = SubResource("ArrayMesh_ioyry")
 script = ExtResource("60_4hlmn")
@@ -2680,20 +2688,20 @@ number = "3"
 prompt_text = "3"
 area = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num3" unique_id=1941560235]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_num3" unique_id=1941560235]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num3/Area3D" unique_id=1519974661]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num3/Area3D" unique_id=1519974661]
 shape = SubResource("BoxShape3D_1mghc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num3" unique_id=406761484]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_num3" unique_id=406761484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00043012202)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num3/StaticBody3D" unique_id=143303764]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num3/StaticBody3D" unique_id=143303764]
 shape = SubResource("BoxShape3D_1mghc")
 
-[node name="Pipette_Button_num4" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1854393745 node_paths=PackedStringArray("area")]
+[node name="Button_num4" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1854393745 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000006, 0, -8.940697e-08, 0, 1.0000001, 0.036053896, -0.004219413, 0.0116683245)
 mesh = SubResource("ArrayMesh_2fgnu")
 script = ExtResource("60_4hlmn")
@@ -2701,20 +2709,20 @@ number = "4"
 prompt_text = "4"
 area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num4" unique_id=1439077528]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_num4" unique_id=1439077528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 5.5879354e-09, -0.00043012248)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num4/StaticBody3D" unique_id=1612331031]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num4/StaticBody3D" unique_id=1612331031]
 shape = SubResource("BoxShape3D_fe7iu")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num4" unique_id=1291993401]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_num4" unique_id=1291993401]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num4/Area3D" unique_id=1446115686]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num4/Area3D" unique_id=1446115686]
 shape = SubResource("BoxShape3D_fe7iu")
 
-[node name="Pipette_Button_num5" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1943666066 node_paths=PackedStringArray("area")]
+[node name="Button_num5" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1943666066 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000006, 0, -8.940697e-08, 0, 1.0000001, 0.0033669472, -0.004219413, 0.011668801)
 mesh = SubResource("ArrayMesh_yqgxi")
 script = ExtResource("60_4hlmn")
@@ -2722,20 +2730,20 @@ number = "5"
 prompt_text = "5"
 area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num5" unique_id=1403380495]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_num5" unique_id=1403380495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 5.5879354e-09, -0.00043012248)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num5/StaticBody3D" unique_id=532323409]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num5/StaticBody3D" unique_id=532323409]
 shape = SubResource("BoxShape3D_mjgyk")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num5" unique_id=1181542012]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_num5" unique_id=1181542012]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num5/Area3D" unique_id=481192134]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num5/Area3D" unique_id=481192134]
 shape = SubResource("BoxShape3D_mjgyk")
 
-[node name="Pipette_Button_num6" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1069641910 node_paths=PackedStringArray("area")]
+[node name="Button_num6" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1069641910 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000006, 0, -8.940697e-08, 0, 1.0000001, -0.029319286, -0.004219413, 0.011668444)
 mesh = SubResource("ArrayMesh_knnvh")
 script = ExtResource("60_4hlmn")
@@ -2743,20 +2751,20 @@ number = "6"
 prompt_text = "6"
 area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num6" unique_id=55372447]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_num6" unique_id=55372447]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7252903e-09, 5.5879354e-09, -0.00043012248)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num6/StaticBody3D" unique_id=583162147]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num6/StaticBody3D" unique_id=583162147]
 shape = SubResource("BoxShape3D_8xymt")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num6" unique_id=1418801336]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_num6" unique_id=1418801336]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num6/Area3D" unique_id=2028476164]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num6/Area3D" unique_id=2028476164]
 shape = SubResource("BoxShape3D_8xymt")
 
-[node name="Pipette_Button_num7" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1525465045 node_paths=PackedStringArray("area")]
+[node name="Button_num7" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1525465045 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000007, 0, -1.1920929e-07, 0, 1.0000001, -0.06200552, -0.004219413, 0.0116683245)
 mesh = SubResource("ArrayMesh_kep8u")
 script = ExtResource("60_4hlmn")
@@ -2764,20 +2772,20 @@ number = "7"
 prompt_text = "7"
 area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num7" unique_id=1634158065]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_num7" unique_id=1634158065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5879354e-09, -0.00043012248)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num7/StaticBody3D" unique_id=1319204015]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num7/StaticBody3D" unique_id=1319204015]
 shape = SubResource("BoxShape3D_ydhua")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num7" unique_id=1056022188]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_num7" unique_id=1056022188]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num7/Area3D" unique_id=776648372]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num7/Area3D" unique_id=776648372]
 shape = SubResource("BoxShape3D_ydhua")
 
-[node name="Pipette_Button_num8" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1012971226 node_paths=PackedStringArray("area")]
+[node name="Button_num8" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1012971226 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000006, 0, -8.940697e-08, 0, 1.0000001, 0.036053896, -0.036905766, 0.0116683245)
 mesh = SubResource("ArrayMesh_7bg3b")
 script = ExtResource("60_4hlmn")
@@ -2785,20 +2793,20 @@ number = "8"
 prompt_text = "8"
 area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num8" unique_id=549206332]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_num8" unique_id=549206332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2351742e-08, 7.450581e-09, -0.00043012248)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num8/StaticBody3D" unique_id=694529465]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num8/StaticBody3D" unique_id=694529465]
 shape = SubResource("BoxShape3D_pub0h")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num8" unique_id=637326809]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_num8" unique_id=637326809]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num8/Area3D" unique_id=392112802]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num8/Area3D" unique_id=392112802]
 shape = SubResource("BoxShape3D_pub0h")
 
-[node name="Pipette_Button_num9" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1817801563 node_paths=PackedStringArray("area")]
+[node name="Button_num9" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1817801563 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000007, 0, -1.1920929e-07, 0, 1.0000001, 0.0033671856, -0.036905766, 0.011668682)
 mesh = SubResource("ArrayMesh_er8tr")
 script = ExtResource("60_4hlmn")
@@ -2806,75 +2814,75 @@ number = "9"
 prompt_text = "9"
 area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num9" unique_id=509416879]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_num9" unique_id=509416879]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4901161e-08, 7.450581e-09, -0.00043012248)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num9/StaticBody3D" unique_id=1722216709]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num9/StaticBody3D" unique_id=1722216709]
 shape = SubResource("BoxShape3D_j43ka")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num9" unique_id=1162712270]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_num9" unique_id=1162712270]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_num9/Area3D" unique_id=653658988]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_num9/Area3D" unique_id=653658988]
 shape = SubResource("BoxShape3D_j43ka")
 
-[node name="Pipette_Button_point" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1068641918 node_paths=PackedStringArray("area")]
+[node name="Button_point" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1068641918 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000002, 0, -2.9802322e-08, 0, 1.0000007, 0, -8.940697e-08, 0, 1.0000002, -0.029319286, -0.036905766, 0.011668444)
 mesh = SubResource("ArrayMesh_hgfxm")
 script = ExtResource("61_jhak5")
 prompt_text = "."
 area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_point" unique_id=1319723704]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_point" unique_id=1319723704]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 7.450581e-09, -0.00043012248)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_point/StaticBody3D" unique_id=1204792921]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_point/StaticBody3D" unique_id=1204792921]
 shape = SubResource("BoxShape3D_6jb06")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_point" unique_id=1472588549]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_point" unique_id=1472588549]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_point/Area3D" unique_id=367312090]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_point/Area3D" unique_id=367312090]
 shape = SubResource("BoxShape3D_6jb06")
 
-[node name="Pipette_Button_clear" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=894033959 node_paths=PackedStringArray("area")]
+[node name="Button_clear" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=894033959 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000006, 0, -8.940697e-08, 0, 1.0000001, -0.06200552, -0.036905766, 0.0116683245)
 mesh = SubResource("ArrayMesh_ioaj7")
 script = ExtResource("62_kg4j1")
 prompt_text = "Clear"
 area = NodePath("Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_clear" unique_id=1772368856]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_clear" unique_id=1772368856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.450581e-09, -0.00043012248)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_clear/StaticBody3D" unique_id=496001237]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_clear/StaticBody3D" unique_id=496001237]
 shape = SubResource("BoxShape3D_do1s2")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_clear" unique_id=1249677827]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_clear" unique_id=1249677827]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_clear/Area3D" unique_id=729506741]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_clear/Area3D" unique_id=729506741]
 shape = SubResource("BoxShape3D_do1s2")
 
-[node name="Pipette_Button_unlock" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1579383024]
+[node name="Button_unlock" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1579383024]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000007, 0, -1.1920929e-07, 0, 1.0000001, 0.078464985, -0.036905766, 0.011600852)
 visible = false
 mesh = SubResource("ArrayMesh_cr5s1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_unlock" unique_id=1343328691]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette/Numapd/Button_unlock" unique_id=1343328691]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8626451e-09, -0.00036225375)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_unlock/StaticBody3D" unique_id=1033692477]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_unlock/StaticBody3D" unique_id=1033692477]
 shape = SubResource("BoxShape3D_r5hl0")
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_unlock" unique_id=1356485447]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Button_unlock" unique_id=1356485447]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_unlock/Area3D" unique_id=416078376]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Numapd/Button_unlock/Area3D" unique_id=416078376]
 shape = SubResource("BoxShape3D_r5hl0")
 
 [node name="Pipette_Prop" type="Node3D" parent="Room/Interactables/Pipette" unique_id=1451228478]
@@ -2943,7 +2951,7 @@ transform = Transform3D(1.0000007, 0, -1.4901161e-07, 0, 1, 0, 1.4901161e-07, 0,
 
 [node name="screen" parent="Room/Machines/Pipette_DoesNothing/Filling Machine" index="16" unique_id=1099236844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1641532e-10, 0, -0.0017469628)
-material_override = SubResource("StandardMaterial3D_8tnk5")
+material_override = SubResource("StandardMaterial3D_c008f")
 
 [node name="Env_Power_Supply" parent="Room/Machines" unique_id=1147005002 instance=ExtResource("28_26pxs")]
 transform = Transform3D(-0.8660254, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, -0.8660254, 0.26422167, 1.1109736, -2.4612887)
