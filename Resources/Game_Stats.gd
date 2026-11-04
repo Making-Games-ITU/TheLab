@@ -20,11 +20,11 @@ var toggle_sample_collector: bool = true
 var vial_in_collector: bool = false
 var vial_in_microscope: bool = false
 
-#Game world state
-#chemical enum should be independant from VialStats
+# Game world state
+# chemical enum should be independant from VialStats
 var current_chemical : VialStats.Composite
 
-#Chemical Machine stats. Should be moved to a seperate manager script when more complicated
+# Chemical Machine stats. Should be moved to a seperate manager script when more complicated
 var vial_in_pip : bool = false
 var chem_in_pip : bool = false
 var amount = ""
@@ -32,13 +32,16 @@ var amount = ""
 func parseAmount () -> float:
 	return amount.to_float()
 
-#Vial in Mixer 
-var vial_in_mixer : bool = false
-var mixer_speed = VialStats.Speed.Min
+# Mixer 
+var vial_in_mixer: bool = false
+const MIXER_MIN_SPEED: int = 0
+const MIXER_MAX_SPEED: int = 5
+var mixer_current_speed: int = 0
 
 # If there is an active vial
 # True when picked up from shelf'
 # Until it is disposed in trash can
 var is_vial_used: bool = false
 
+# Other game settings
 var game_brightness: float = 1.0
