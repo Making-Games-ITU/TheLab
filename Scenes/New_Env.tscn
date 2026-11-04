@@ -2191,9 +2191,6 @@ mesh = SubResource("ArrayMesh_8eewk")
 [node name="Prop_Mixer" parent="Room/Interactables" unique_id=1780799766 instance=ExtResource("29_tub4b")]
 transform = Transform3D(-0.9954268, 0, -0.09552744, 0, 1, 0, 0.09552744, 0, -0.9954268, 3.0354338, 0.9792126, -6.231222)
 
-[node name="Cube_016" parent="Room/Interactables/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 566894824) index="5" unique_id=2025561015]
-transform = Transform3D(1, 0, 0, 0, 0.51254404, -0.8586607, 0, 0.8586607, 0.51254404, 0, 0.33689988, 0.31028062)
-
 [node name="Marker3D" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor" parent_id_path=PackedInt32Array(1780799766, 1447316547) index="2" unique_id=491794958]
 transform = Transform3D(0.9848072, -0.17364812, 0, 0.17364812, 0.9848072, 0, 0, 0, 1, 0.08182119, 0.14374493, 0)
 

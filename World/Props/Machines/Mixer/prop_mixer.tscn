@@ -340,14 +340,21 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("Centrifuge/Rotor")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99999994, 0.09, 1, 0, 0.7071, 0, 0.7071, 0.18, 1, 0, 1, 0, 0, 0.27, 1, 0, 0.7071, 0, -0.7071, 0.36, 1, 0, 0, 0, -1)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99999994, 0.09, 1, 0, 0.7071, 0, 0.7071, 0.18, 1, 0, 1, 0, 0, 0.27, 1, 0, 0.7071, 0, -0.7071)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Centrifuge")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.033333335, 1, 0.001, 0, 0, 0.06666667, 1, -0.001, 0, -0.001, 0.1, 1, -0.001, 0, 0.001, 0.13333334, 1, -0.001, 0, 0.001, 0.17083001, 1, 0, 0, 0, 0.20971446, 1, 0.001, 0, 0, 0.25001332, 1, -0.001, 0, -0.001, 0.29306114, 1, -0.001, 0, 0.001, 0.3277822, 1, -0.001, 0, 0.01, 0.36666667, 1, 0, 0, 0)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.033333335, 1, 0.001, 0, 0, 0.06666667, 1, -0.001, 0, -0.001, 0.1, 1, -0.001, 0, 0.001, 0.13333334, 1, -0.001, 0, 0.001, 0.17083001, 1, 0, 0, 0, 0.20971446, 1, 0.001, 0, 0, 0.25001332, 1, -0.001, 0, -0.001, 0.29306114, 1, -0.001, 0, 0.001)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Centrifuge/Cube_016")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.0025720892, 0, 0, 0.99999666, 0.3, 1, 0.0025721279, 0, 0, 0.99999666)
 
 [sub_resource type="Animation" id="Animation_6jv2y"]
 length = 0.001
@@ -472,7 +479,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8626451e-09, -0.0003622
 shape = SubResource("BoxShape3D_ipw6s")
 
 [node name="Cube_016" parent="Centrifuge" index="5" unique_id=2025561015]
-transform = Transform3D(1, 0, 0, 0, 0.5125441, -0.85866076, 0, 0.85866076, 0.5125441, 0, 0.33689988, 0.31028062)
+transform = Transform3D(1, 0, 0, 0, 0.51254404, -0.8586607, 0, 0.8586607, 0.51254404, 0, 0.33689988, 0.31028062)
 material_override = SubResource("StandardMaterial3D_qyadt")
 
 [node name="Rotor" parent="Centrifuge" index="6" unique_id=1447316547]
