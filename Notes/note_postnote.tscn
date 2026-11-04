@@ -1,21 +1,35 @@
 [gd_scene format=3 uid="uid://dckgv8kqvmv4m"]
 
 [ext_resource type="PackedScene" uid="uid://dbdxiw3u5g08h" path="res://Notes/Note_postnote.fbx" id="1_dk4v5"]
+[ext_resource type="Script" uid="uid://dfwqme4vae8iu" path="res://Notes/note.gd" id="2_7gqk6"]
 [ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="2_hcntn"]
+[ext_resource type="PackedScene" uid="uid://bokgfdlrgsox" path="res://UI/Interaction/interactable_indecator.tscn" id="3_21rw2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7gqk6"]
 albedo_color = Color(1, 1, 0.41960785, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hcntn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_21rw2"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21rw2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qw3ju"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_hcntn")
+albedo_texture = SubResource("ViewportTexture_21rw2")
 
-[node name="Note_postnote" unique_id=604695316 instance=ExtResource("1_dk4v5")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_7gqk6"]
+size = Vector3(0.109933645, 0.0021160762, 0.109933645)
 
-[node name="Skeleton3D" parent="." index="0" unique_id=1417392328]
+[node name="Note_postnote" unique_id=604695316 node_paths=PackedStringArray("note_camera", "note_text", "area") instance=ExtResource("1_dk4v5")]
+script = ExtResource("2_7gqk6")
+note_camera = NodePath("Skeleton3D/Marker3D/Camera3D")
+note_text = NodePath("Note Viewport/Control/Label")
+prompt_text = "Read"
+area = NodePath("Skeleton3D/Note/Area3D")
+
+[node name="interactable_indecator" parent="." index="0" unique_id=2142793944 instance=ExtResource("3_21rw2")]
+normal_size = Vector3(0.02, 0.02, 0.02)
+show_distance = 1.5
+
+[node name="Skeleton3D" parent="." index="1" unique_id=572857682]
 bones/2/position = Vector3(0, -2.3455633e-11, -0.0005366023)
 bones/2/scale = Vector3(1, 0.99999976, 0.99999976)
 bones/3/position = Vector3(0, 0.00036519952, 5.659408e-19)
@@ -23,15 +37,22 @@ bones/3/rotation = Quaternion(-3.957723e-13, 0, 0, 1)
 bones/4/position = Vector3(0, 0.00036519958, -8.264198e-19)
 bones/4/rotation = Quaternion(3.957723e-13, 0, 0, 1)
 
-[node name="Note" parent="Skeleton3D" index="0" unique_id=452260851]
+[node name="Note" parent="Skeleton3D" index="0" unique_id=2111988921]
 surface_material_override/0 = SubResource("StandardMaterial3D_7gqk6")
-surface_material_override/1 = SubResource("StandardMaterial3D_21rw2")
+surface_material_override/1 = SubResource("StandardMaterial3D_qw3ju")
+
+[node name="Area3D" type="Area3D" parent="Skeleton3D/Note" index="0" unique_id=846144044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9999217e-06, 0)
+collision_layer = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton3D/Note/Area3D" index="0" unique_id=1418644297]
+shape = SubResource("BoxShape3D_7gqk6")
 
 [node name="Marker3D" type="Marker3D" parent="Skeleton3D" index="1" unique_id=1478483543]
 
 [node name="Camera3D" type="Camera3D" parent="Skeleton3D/Marker3D" index="0" unique_id=1458400380]
 
-[node name="Note Viewport" type="SubViewport" parent="." index="1" unique_id=2108383192]
+[node name="Note Viewport" type="SubViewport" parent="." index="2" unique_id=2108383192]
 
 [node name="Control" type="Control" parent="Note Viewport" index="0" unique_id=302951096]
 custom_minimum_size = Vector2(512, 512)
@@ -73,7 +94,5 @@ text = "Follow these simple steps
 -	Insert the substance into the capsule slot
 -	Insert the testing tube into the left slot
 -	Connect the testing tube and the substance using the black tube
--	Press the lock button
--	Type the mg amount
--	Press fill
+-	Press start
 "

@@ -7,18 +7,18 @@
 [ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="3_cp7ly"]
 [ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="4_cp7ly"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_a06ba"]
+viewport_path = NodePath("Blood Collector/SubViewport")
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_cp7ly"]
 viewport_path = NodePath("Blood Collector/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_x6oc4"]
-viewport_path = NodePath("Blood Collector/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iiwog"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6oc4"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_cp7ly")
+albedo_texture = SubResource("ViewportTexture_a06ba")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_x6oc4")
+emission_texture = SubResource("ViewportTexture_cp7ly")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3exb"]
 albedo_texture = ExtResource("3_8np5n")
@@ -254,7 +254,7 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.0579156, 0.044459
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Blood Collector" parent="." index="4" unique_id=1648072013]
-surface_material_override/1 = SubResource("StandardMaterial3D_iiwog")
+surface_material_override/1 = SubResource("StandardMaterial3D_x6oc4")
 
 [node name="Open_Capsule_Button" parent="Blood Collector" index="1" unique_id=865747307]
 material_override = SubResource("StandardMaterial3D_k3exb")
