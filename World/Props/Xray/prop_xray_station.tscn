@@ -6,7 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dbvq82xs7d6jo" path="res://World/Props/Buttons/Env_Button_Open_Close.fbx" id="2_yfwwn"]
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="3_ocrte"]
 [ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="6_43iua"]
+[ext_resource type="Texture2D" uid="uid://b8oqn7umixgtj" path="res://UI/Scanner/X-Ray-chest-1.png" id="7_8rnuq"]
 [ext_resource type="Texture2D" uid="uid://bk66ydditnowo" path="res://UI/Screen/Logo Kras.png" id="7_r85tw"]
+[ext_resource type="Texture2D" uid="uid://cdmeve2r0y2tq" path="res://UI/Scanner/X-ray-chest-2.png" id="8_mm34u"]
+[ext_resource type="Texture2D" uid="uid://di6hfpf1hf3o8" path="res://UI/Scanner/X-RayScan_Chest-3.png" id="9_26gsw"]
+[ext_resource type="Texture2D" uid="uid://b3ty3k2ni425u" path="res://UI/Scanner/X-RayScan_Chest-4.png" id="10_e7hw3"]
+[ext_resource type="Texture2D" uid="uid://br5ecu0pa3fm1" path="res://UI/Scanner/X-RayScan_Chest-5.png" id="11_ww64v"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yfwwn"]
 viewport_path = NodePath("SubViewport")
@@ -304,6 +309,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="SubViewport/Control" index="3" unique_id=1751136062]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -326,39 +332,47 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LungStatusImages" type="Control" parent="SubViewport/Control" index="4" unique_id=818797951]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Lung_Status_1" type="TextureRect" parent="SubViewport/Control/LungStatusImages" index="0" unique_id=1102490866]
 visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1254.0
+offset_bottom = 1254.0
+texture = ExtResource("7_8rnuq")
 
 [node name="Lung_Status_2" type="TextureRect" parent="SubViewport/Control/LungStatusImages" index="1" unique_id=346060581]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("8_mm34u")
 
 [node name="Lung_Status_3" type="TextureRect" parent="SubViewport/Control/LungStatusImages" index="2" unique_id=702101879]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("9_26gsw")
 
 [node name="Lung_Status_4" type="TextureRect" parent="SubViewport/Control/LungStatusImages" index="3" unique_id=706886435]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("10_e7hw3")
 
 [node name="Lung_Status_5" type="TextureRect" parent="SubViewport/Control/LungStatusImages" index="4" unique_id=1205486954]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("11_ww64v")
 
 [node name="X-Ray#Env_Button_Open_Close" parent="." index="2" unique_id=893675333 instance=ExtResource("2_yfwwn")]
 transform = Transform3D(-2.3346624e-08, 0.84541595, -0.5341086, 3.69543e-08, 0.5341086, 0.84541595, 1, 0, -4.371139e-08, -0.15510023, -0.36299998, 0.01960098)
