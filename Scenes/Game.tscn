@@ -51,7 +51,10 @@
 [ext_resource type="PackedScene" uid="uid://coimfyram3dq1" path="res://World/Props/Corpse Tube/prop_corpse_tube.tscn" id="36_2wh7n"]
 [ext_resource type="PackedScene" uid="uid://xoplfxuvccwk" path="res://World/Props/Tables/env_table_sink.tscn" id="37_vlaqs"]
 [ext_resource type="PackedScene" uid="uid://c7n36j11m4xl1" path="res://World/Props/Trolley/prop_curtains_trolly.tscn" id="38_c4wym"]
+[ext_resource type="Material" uid="uid://bi51pe4jpik8c" path="res://UI/Microscope/micrograph_shader_material.tres" id="39_dawtf"]
+[ext_resource type="Script" uid="uid://bh8gi8rr6hqhl" path="res://UI/Microscope/Micrograph_Interactions.gd" id="39_t7v0h"]
 [ext_resource type="PackedScene" uid="uid://ccbjica3ksi1c" path="res://World/Props/Trolley/prop_trolley.tscn" id="39_x5bp3"]
+[ext_resource type="Material" uid="uid://dp0g3h3as5djp" path="res://UI/Microscope/micrograph_murky_shader_material.tres" id="40_icxu3"]
 [ext_resource type="PackedScene" uid="uid://dbvq82xs7d6jo" path="res://World/Props/Buttons/Env_Button_Open_Close.fbx" id="40_kfbnb"]
 [ext_resource type="PackedScene" uid="uid://5vn584og5dnk" path="res://World/Props/Doors/doors_sliding.tscn" id="41_6nk54"]
 [ext_resource type="Script" uid="uid://b2r7cte3y82gd" path="res://World/Interactables/VialDispose.gd" id="42_mjypk"]
@@ -63,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://dpv6dd0ver3yb" path="res://World/Props/Machines/Mixer/NCentrifuge.png" id="46_dawtf"]
 [ext_resource type="Script" uid="uid://cmcmbnsforjle" path="res://World/Interactables/BodyRequest.gd" id="46_efrna"]
 [ext_resource type="Script" uid="uid://wgfiw1dd0nju" path="res://World/Interactables/BloodCollector/SampleInjection.gd" id="47_7fqgl"]
+[ext_resource type="Script" uid="uid://cr6dcc77e8pgj" path="res://World/Interactables/Mixer/Centrifuge_Start.gd" id="47_dawtf"]
 [ext_resource type="Script" uid="uid://b4kbgcr5ai4eq" path="res://World/Interactables/BloodCollector/SampleExtraction.gd" id="48_ibhvd"]
 [ext_resource type="PackedScene" uid="uid://dckgv8kqvmv4m" path="res://Notes/note_postnote.tscn" id="49_5eiyn"]
 [ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/SampleCollector.gd" id="49_flbvb"]
@@ -71,7 +75,6 @@
 [ext_resource type="Texture2D" uid="uid://c2l5yjfm8dh4" path="res://World/Props/Machines/Keyboard keys Texture.png" id="51_fxfyd"]
 [ext_resource type="Script" uid="uid://lkdsjbrid4f4" path="res://World/Interactables/Mixer/Centrifuge_ButtonUp.gd" id="52_mfbyv"]
 [ext_resource type="Script" uid="uid://qig5cjnduicm" path="res://World/Interactables/Mixer/Centrifuge_ButtonDown.gd" id="53_okasj"]
-[ext_resource type="Script" uid="uid://dwpjw0uag8kcc" path="res://World/Interactables/Mixer/StartMix.gd" id="54_kukxg"]
 [ext_resource type="Script" uid="uid://cekegxoo7dsve" path="res://World/Interactables/FillingMachine/Vial2FillInteraction.gd" id="55_j68t5"]
 [ext_resource type="Script" uid="uid://bhlrg5gone8pe" path="res://World/Interactables/FillingMachine/Chem2FillInteraction.gd" id="56_wawjn"]
 [ext_resource type="Texture2D" uid="uid://bo5h3uv6essgg" path="res://World/Props/Machines/Filling/Filling_Machine_Texture.png" id="57_l06v1"]
@@ -83,7 +86,6 @@
 [ext_resource type="Script" uid="uid://bl6j4hu8sosqs" path="res://World/Interactables/FillingMachine/Clear.gd" id="62_kg4j1"]
 [ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/ScanStartButton.gd" id="64_1jytr"]
 [ext_resource type="Script" uid="uid://l1n756bd47f6" path="res://World/Interactables/Chemical.gd" id="65_srr11"]
-[ext_resource type="Shader" uid="uid://q0mb3yshd6df" path="res://Shaders/Micrograph.gdshader" id="66_skinb"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -610,27 +612,6 @@ shadow_mesh = SubResource("ArrayMesh_1gh1e")
 [sub_resource type="BoxShape3D" id="BoxShape3D_3s4u2"]
 size = Vector3(0.58251953, 0.2803955, 0.7027588)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vq468"]
-shader = ExtResource("66_skinb")
-shader_parameter/background_color = Color(0.037854142, 0.046883598, 0.028402748, 1)
-shader_parameter/grain_strength = 0.05600000266
-shader_parameter/vignette_smoothness = 1.0000000149012
-shader_parameter/cell_color = Color(0.6039216, 0.62352943, 0.5764706, 1)
-shader_parameter/nucleus_color = Color(0.14125493, 0.1907635, 0.105146594, 1)
-shader_parameter/cell_size = 0.00999999977648
-shader_parameter/movement_speed = 0.2000000095
-shader_parameter/cell_amount = 5
-shader_parameter/parasite_color = Color(0.38403437, 0.4009617, 0.3600746, 1)
-shader_parameter/parasite_amount = 10
-shader_parameter/parasite_length = 0.02000000025148
-shader_parameter/parasite_thickness = 0.0010000000475
-shader_parameter/parasite_speed = 0.50000002375
-shader_parameter/parasite_wiggle = 0.800000038
-shader_parameter/mutation_percentage = 10.0
-shader_parameter/mutated_color = Color(0.6039216, 0.62352943, 0.5764706, 1)
-shader_parameter/mutation_distortion = 1.0
-shader_parameter/aspect_ratio = 1.0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_kablx"]
 size = Vector3(0.23943329, 0.08419037, 0.33535767)
 
@@ -704,24 +685,27 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6avb6")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dawtf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_t7v0h"]
 viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_icxu3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_adeab"]
 viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adeab"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7tyq"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_dawtf")
+albedo_texture = SubResource("ViewportTexture_t7v0h")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_icxu3")
+emission_texture = SubResource("ViewportTexture_adeab")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_804um"]
 size = Vector3(0.025390625, 0.01953125, 0.016601563)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_awd84"]
 size = Vector3(0.0234375, 0.025390625, 0.021484375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_710me"]
+size = Vector3(0.049804688, 0.026367188, 0.022460938)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3hsde"]
 radius = 0.41445842
@@ -772,85 +756,39 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rvxuh")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0y053"]
-resource_name = "Keys.001"
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("51_fxfyd")
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_72s1t"]
-_surfaces = [{
-"aabb": AABB(-0.010895416, -0.010895401, -0.006136755, 0.021790832, 0.021790817, 0.011413265),
-"format": 34359742465,
-"index_count": 60,
-"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgAEAAAABQADAAAAAAAEAAUABgADAAUAAwAGAAEABwAFAAQABAACAAcABQAHAAYACAABAAYACQAHAAIACgACAAEAAgAKAAkAAQAIAAoABwAJAAsACwAGAAcACwAJAAoABgALAAgACgAIAAsA"),
-"name": "Keys.001",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 12,
-"vertex_data": PackedByteArray("sIIyPKCCMryT5qw7sIIyPKCCMrwlaJS7sIIyvKCCMrwlaJS7sIIyPLCCMjyT5qw7sIIyvKCCMryT5qw7sIIyvLCCMjyT5qw7sIIyPLCCMjwlaJS7sIIyvLCCMjwlaJS7oFbwO4BW8LvVFsm7oFbwu6BW8DvVFsm7oFbwu4BW8LvVFsm7oFbwO6BW8DvVFsm7")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_xnklg"]
-resource_name = "Cube_155"
-_surfaces = [{
-"aabb": AABB(-0.010895416, -0.010895401, -0.006136755, 0.021790832, 0.021790817, 0.011413265),
-"attribute_data": PackedByteArray("pF4gP5Imwj6kXiA/3gi6PopJKT/eCLo+ikkpP5Imwj6sJiM/wmi0PvEpJz/CaLQ+8SknPwZyxj6sJiM/BnLGPv2EKT+4BI8+fUkNP7gEjz59SQ0/pB7IPv2EKT+kHsg+8SknP8JotD6sJiM/wmi0PqwmIz8GcsY+8SknPwZyxj6KSSk/kibCPopJKT/eCLo+pF4gP94Iuj6kXiA/kibCPv2EKT+4BI8+7uckP3ZZmD6K5hE/dlmYPn1JDT+4BI8+fUkNP7gEjz6K5hE/dlmYPormET/myb4+fUkNP6QeyD6K5hE/dlmYPu7nJD92WZg+7uckP+bJvj6K5hE/5sm+Pn1JDT+kHsg+iuYRP+bJvj7u5yQ/5sm+Pv2EKT+kHsg+/YQpP6QeyD7u5yQ/5sm+Pu7nJD92WZg+/YQpP7gEjz4="),
-"format": 34359742487,
-"index_count": 60,
-"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQA"),
-"material": SubResource("StandardMaterial3D_0y053"),
-"name": "Keys.001",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 40,
-"vertex_data": PackedByteArray("sIIyPKCCMryT5qw7sIIyPKCCMrwlaJS7sIIyvKCCMrwlaJS7sIIyvKCCMryT5qw7sIIyvLCCMjwlaJS7sIIyvLCCMjyT5qw7sIIyvKCCMryT5qw7sIIyvKCCMrwlaJS7sIIyvLCCMjyT5qw7sIIyPLCCMjyT5qw7sIIyPKCCMryT5qw7sIIyvKCCMryT5qw7sIIyPLCCMjyT5qw7sIIyPLCCMjwlaJS7sIIyPKCCMrwlaJS7sIIyPKCCMryT5qw7sIIyvLCCMjyT5qw7sIIyvLCCMjwlaJS7sIIyPLCCMjwlaJS7sIIyPLCCMjyT5qw7sIIyvLCCMjwlaJS7oFbwu6BW8DvVFsm7oFbwO6BW8DvVFsm7sIIyPLCCMjwlaJS7sIIyPLCCMjwlaJS7oFbwO6BW8DvVFsm7oFbwO4BW8LvVFsm7sIIyPKCCMrwlaJS7oFbwO6BW8DvVFsm7oFbwu6BW8DvVFsm7oFbwu4BW8LvVFsm7oFbwO4BW8LvVFsm7sIIyPKCCMrwlaJS7oFbwO4BW8LvVFsm7oFbwu4BW8LvVFsm7sIIyvKCCMrwlaJS7sIIyvKCCMrwlaJS7oFbwu4BW8LvVFsm7oFbwu6BW8DvVFsm7sIIyvLCCMjwlaJS7/38AAAAA/7//fwAAAAD/v/9/AAAAAP+//38AAAAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9//38AAP8//3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//z////9//3//P////3//f/8/////f/9//z//f///AAD/P/9///8AAP8//3///wAA/z//f///AAD/Py7Y//8AAP+/Ltj//wAA/78u2P//AAD/vy7Y//8AAP+///8u2AAA59P//y7YAADn0///LtgAABas//8u2AAAFqz/////AAD/v/////8AAP+//////wAA/7//////AAD/vy7YAAAAAP+/LtgAAAAA/78u2AAAAAD/vy7YAAAAAP+/AAAu2NAn/78AAC7Y0Cf/vwAALtjQJ/+/AAAu2NAn/78=")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_72s1t")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_c0qlh"]
-size = Vector3(0.021790832, 0.021790817, 0.011413265)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_u7tyq"]
-viewport_path = NodePath("Filling Machine/screen/SubViewport")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_31hd8"]
 viewport_path = NodePath("Filling Machine/screen/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wv54p"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wv54p"]
+viewport_path = NodePath("Filling Machine/screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxgab"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_u7tyq")
+albedo_texture = SubResource("ViewportTexture_31hd8")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_31hd8")
+emission_texture = SubResource("ViewportTexture_wv54p")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bxgab"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5wgas"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wgas"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tnk5"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_bxgab")
+albedo_texture = SubResource("ViewportTexture_5wgas")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8tnk5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_rfssg"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rfssg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c008f"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_8tnk5")
+albedo_texture = SubResource("ViewportTexture_rfssg")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_c008f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_2h8s2"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2h8s2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbjl2"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_c008f")
+albedo_texture = SubResource("ViewportTexture_2h8s2")
 
 [sub_resource type="BoxMesh" id="BoxMesh_54o3n"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -1780,9 +1718,10 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 [node name="VialStorage" parent="Room/Interactables" unique_id=786496698 instance=ExtResource("17_yko3g")]
 transform = Transform3D(0.96555775, 0, -0.26018894, 0, 1, 0, 0.26018894, 0, 0.96555775, 2.1869125, 1.2749993, -0.72355986)
 
-[node name="Vial Cabinet" type="Node3D" parent="Room/Interactables/VialStorage" unique_id=468691575 node_paths=PackedStringArray("area", "sound_emitter", "outline_meshes")]
+[node name="Vial Cabinet" type="Node3D" parent="Room/Interactables/VialStorage" unique_id=468691575 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(0.96555775, 0, 0.26018894, 0, 1, 0, -0.26018894, 0, 0.96555775, -0.123539925, 0.011526585, 0.2134484)
 script = ExtResource("44_gby3u")
+uninteractable_sound = NodePath("UninteractableSound")
 prompt_text = "Take Empty Vial"
 area = NodePath("Area3D")
 sound_emitter = NodePath("TakeEmptyVialSound")
@@ -1809,10 +1748,10 @@ transform = Transform3D(5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, 5.9604645e-08, 0, 0
 material_override = SubResource("StandardMaterial3D_audqb")
 mesh = SubResource("ArrayMesh_7w24h")
 
-[node name="ChemicalBottleA" parent="Room/Interactables" unique_id=1852808638 instance=ExtResource("19_spkmo")]
+[node name="FlaskA" parent="Room/Interactables" unique_id=1852808638 instance=ExtResource("19_spkmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.077024, 0.7421599, -0.68672895)
 
-[node name="ChemA" type="Node3D" parent="Room/Interactables/ChemicalBottleA" unique_id=1094829499 node_paths=PackedStringArray("placeback_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="ChemA" type="Node3D" parent="Room/Interactables/FlaskA" unique_id=1094829499 node_paths=PackedStringArray("placeback_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, 0.0009421706, 0.07650334, -0.017264605)
 script = ExtResource("65_srr11")
 chemName = "Nitrogen"
@@ -1824,37 +1763,37 @@ area = NodePath("Area3D2")
 sound_emitter = NodePath("TakeChemSound")
 outline_meshes = [NodePath("../Vial2")]
 
-[node name="Area3D2" type="Area3D" parent="Room/Interactables/ChemicalBottleA/ChemA" unique_id=1839609848]
+[node name="Area3D2" type="Area3D" parent="Room/Interactables/FlaskA/ChemA" unique_id=1839609848]
 collision_layer = 257
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Interactables/ChemicalBottleA/ChemA/Area3D2" unique_id=1926663317]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Interactables/FlaskA/ChemA/Area3D2" unique_id=1926663317]
 visible = false
 mesh = SubResource("BoxMesh_nescf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/ChemicalBottleA/ChemA/Area3D2" unique_id=438674333]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/FlaskA/ChemA/Area3D2" unique_id=438674333]
 shape = SubResource("BoxShape3D_uxm04")
 
-[node name="PlacebackChemSound" type="FmodEventEmitter3D" parent="Room/Interactables/ChemicalBottleA/ChemA" unique_id=642989335]
+[node name="PlacebackChemSound" type="FmodEventEmitter3D" parent="Room/Interactables/FlaskA/ChemA" unique_id=642989335]
 event_name = "event:/PlaceTestTube"
 event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 transform = Transform3D(4.000001, 0, 4.7683716e-07, 0, 3.9999998, 0, -8.344652e-07, 0, 3.9999995, 0.32599592, 0.8268931, 0.61754704)
 
-[node name="TakeChemSound" type="FmodEventEmitter3D" parent="Room/Interactables/ChemicalBottleA/ChemA" unique_id=1812587272]
+[node name="TakeChemSound" type="FmodEventEmitter3D" parent="Room/Interactables/FlaskA/ChemA" unique_id=1812587272]
 event_name = "event:/PlaceTestTube"
 event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 
-[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/ChemicalBottleA/ChemA" unique_id=864176298]
+[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/FlaskA/ChemA" unique_id=864176298]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="Vial2" type="MeshInstance3D" parent="Room/Interactables/ChemicalBottleA" unique_id=1748844986]
+[node name="Vial2" type="MeshInstance3D" parent="Room/Interactables/FlaskA" unique_id=1748844986]
 transform = Transform3D(-0.93009156, 0, 0.36732754, 0, 1, 0, -0.36732754, 0, -0.93009156, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8eewk")
 
-[node name="ChemicalBottleB" parent="Room/Interactables" unique_id=92542467 instance=ExtResource("19_spkmo")]
+[node name="FlaskB" parent="Room/Interactables" unique_id=92542467 instance=ExtResource("19_spkmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3517891, 0.7421599, -0.6340709)
 
-[node name="ChemB" type="Node3D" parent="Room/Interactables/ChemicalBottleB" unique_id=617708475 node_paths=PackedStringArray("placeback_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="ChemB" type="Node3D" parent="Room/Interactables/FlaskB" unique_id=617708475 node_paths=PackedStringArray("placeback_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, -0.0016491413, 0.07650334, 0.00680387)
 script = ExtResource("65_srr11")
 chemName = "Water"
@@ -1866,29 +1805,29 @@ area = NodePath("Area3D2")
 sound_emitter = NodePath("TakeChemSound")
 outline_meshes = [NodePath("../Vial2")]
 
-[node name="Area3D2" type="Area3D" parent="Room/Interactables/ChemicalBottleB/ChemB" unique_id=1683261125]
+[node name="Area3D2" type="Area3D" parent="Room/Interactables/FlaskB/ChemB" unique_id=1683261125]
 collision_layer = 257
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Interactables/ChemicalBottleB/ChemB/Area3D2" unique_id=1134165083]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Interactables/FlaskB/ChemB/Area3D2" unique_id=1134165083]
 visible = false
 mesh = SubResource("BoxMesh_u3ia7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/ChemicalBottleB/ChemB/Area3D2" unique_id=1755611584]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/FlaskB/ChemB/Area3D2" unique_id=1755611584]
 shape = SubResource("BoxShape3D_wsh1n")
 
-[node name="TakeChemSound" type="FmodEventEmitter3D" parent="Room/Interactables/ChemicalBottleB/ChemB" unique_id=829589754]
+[node name="TakeChemSound" type="FmodEventEmitter3D" parent="Room/Interactables/FlaskB/ChemB" unique_id=829589754]
 event_name = "event:/PlaceTestTube"
 event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 
-[node name="PlacebackChemSound" type="FmodEventEmitter3D" parent="Room/Interactables/ChemicalBottleB/ChemB" unique_id=202564820]
+[node name="PlacebackChemSound" type="FmodEventEmitter3D" parent="Room/Interactables/FlaskB/ChemB" unique_id=202564820]
 event_name = "event:/PlaceTestTube"
 event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 
-[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/ChemicalBottleB/ChemB" unique_id=1727687309]
+[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/FlaskB/ChemB" unique_id=1727687309]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="Vial2" type="MeshInstance3D" parent="Room/Interactables/ChemicalBottleB" unique_id=1518358957]
+[node name="Vial2" type="MeshInstance3D" parent="Room/Interactables/FlaskB" unique_id=1518358957]
 transform = Transform3D(-0.93009156, 0, 0.36732754, 0, 1, 0, -0.36732754, 0, -0.93009156, 0, 0, 0)
 mesh = SubResource("ArrayMesh_5eiyn")
 
@@ -1927,20 +1866,20 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 [node name="Cylinder_007" type="MeshInstance3D" parent="Room/Interactables/Trashcan" unique_id=482392497]
 mesh = SubResource("ArrayMesh_6okg5")
 
-[node name="RequestDisposeBody" parent="Room/Interactables" unique_id=1145011065 instance=ExtResource("13_bfice")]
+[node name="BodyControls" parent="Room/Interactables" unique_id=1145011065 instance=ExtResource("13_bfice")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.548418, 1.3248205, -6)
 
-[node name="RequestBodyOutlineShape" type="MeshInstance3D" parent="Room/Interactables/RequestDisposeBody" unique_id=1611886249]
+[node name="RequestBodyOutlineShape" type="MeshInstance3D" parent="Room/Interactables/BodyControls" unique_id=1611886249]
 transform = Transform3D(0, -1, 2.9802322e-08, -2.9802322e-08, 0, -1, 1, -2.9802322e-08, 0, 0.0114712715, -0.2806611, -0.14437771)
 material_override = SubResource("StandardMaterial3D_5lr74")
 mesh = SubResource("ArrayMesh_x1hbw")
 
-[node name="DisposeBodyOutlineShape" type="MeshInstance3D" parent="Room/Interactables/RequestDisposeBody" unique_id=294562940]
+[node name="DisposeBodyOutlineShape" type="MeshInstance3D" parent="Room/Interactables/BodyControls" unique_id=294562940]
 transform = Transform3D(3.5762787e-07, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 3.5762787e-07, -0.001563549, 0.10934913, 0.115914345)
 material_override = SubResource("StandardMaterial3D_x1hbw")
 mesh = SubResource("ArrayMesh_acgdh")
 
-[node name="DisposeBody" type="Node3D" parent="Room/Interactables/RequestDisposeBody" unique_id=910071732 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="DisposeBody" type="Node3D" parent="Room/Interactables/BodyControls" unique_id=910071732 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
 script = ExtResource("25_3p6c0")
 uninteractable_sound = NodePath("UninteractableSound")
 prompt_text = "No body to dispose"
@@ -1948,23 +1887,23 @@ area = NodePath("Area3D")
 sound_emitter = NodePath("DisposeBodySound")
 outline_meshes = [NodePath("../DisposeBodyOutlineShape")]
 
-[node name="Area3D" type="Area3D" parent="Room/Interactables/RequestDisposeBody/DisposeBody" unique_id=1614724372]
+[node name="Area3D" type="Area3D" parent="Room/Interactables/BodyControls/DisposeBody" unique_id=1614724372]
 collision_layer = 256
 collision_mask = 256
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/RequestDisposeBody/DisposeBody/Area3D" unique_id=536554795]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/BodyControls/DisposeBody/Area3D" unique_id=536554795]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024047852, 0.108566284, 0.115234375)
 shape = SubResource("BoxShape3D_hatck")
 
-[node name="DisposeBodySound" type="FmodEventEmitter3D" parent="Room/Interactables/RequestDisposeBody/DisposeBody" unique_id=426703212]
+[node name="DisposeBodySound" type="FmodEventEmitter3D" parent="Room/Interactables/BodyControls/DisposeBody" unique_id=426703212]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/RequestDisposeBody/DisposeBody" unique_id=1920906374]
+[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/BodyControls/DisposeBody" unique_id=1920906374]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="RequestBody" type="Node3D" parent="Room/Interactables/RequestDisposeBody" unique_id=763048088 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="RequestBody" type="Node3D" parent="Room/Interactables/BodyControls" unique_id=763048088 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038660526, -0.10718715, -0.12724113)
 script = ExtResource("46_efrna")
 uninteractable_sound = NodePath("UninteractableSound")
@@ -1973,26 +1912,26 @@ area = NodePath("Area3D2")
 sound_emitter = NodePath("RequestBodySound")
 outline_meshes = [NodePath("../RequestBodyOutlineShape")]
 
-[node name="Area3D2" type="Area3D" parent="Room/Interactables/RequestDisposeBody/RequestBody" unique_id=808875090]
+[node name="Area3D2" type="Area3D" parent="Room/Interactables/BodyControls/RequestBody" unique_id=808875090]
 collision_layer = 256
 collision_mask = 256
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/RequestDisposeBody/RequestBody/Area3D2" unique_id=1249883916]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/BodyControls/RequestBody/Area3D2" unique_id=1249883916]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019744873, -0.1672802, -0.012845993)
 shape = SubResource("BoxShape3D_afnf1")
 
-[node name="RequestBodySound" type="FmodEventEmitter3D" parent="Room/Interactables/RequestDisposeBody/RequestBody" unique_id=2027557631]
+[node name="RequestBodySound" type="FmodEventEmitter3D" parent="Room/Interactables/BodyControls/RequestBody" unique_id=2027557631]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/RequestDisposeBody/RequestBody" unique_id=1741233438]
+[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/BodyControls/RequestBody" unique_id=1741233438]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="SampleCollector" parent="Room/Interactables" unique_id=2139538409 instance=ExtResource("27_nwyhs")]
+[node name="Sampler" parent="Room/Interactables" unique_id=2139538409 instance=ExtResource("27_nwyhs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5358453, 1.3214782, -5.44226)
 
-[node name="VialSlot" type="Node3D" parent="Room/Interactables/SampleCollector" unique_id=1353844329 node_paths=PackedStringArray("take_vial_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="VialSlot" type="Node3D" parent="Room/Interactables/Sampler" unique_id=1353844329 node_paths=PackedStringArray("take_vial_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.5, 0, 0, -0.05304289)
 script = ExtResource("49_flbvb")
 take_vial_sound = NodePath("TakeVialSound")
@@ -2002,27 +1941,27 @@ area = NodePath("Area3D2")
 sound_emitter = NodePath("InsertVialSound")
 outline_meshes = [NodePath("../VialSlotModel")]
 
-[node name="Area3D2" type="Area3D" parent="Room/Interactables/SampleCollector/VialSlot" unique_id=1975972684]
+[node name="Area3D2" type="Area3D" parent="Room/Interactables/Sampler/VialSlot" unique_id=1975972684]
 collision_layer = 256
 collision_mask = 256
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/SampleCollector/VialSlot/Area3D2" unique_id=1511309236]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Sampler/VialSlot/Area3D2" unique_id=1511309236]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12669182, 0.0121154785, 0.1101017)
 shape = SubResource("BoxShape3D_ihdea")
 
-[node name="InsertVialSound" type="FmodEventEmitter3D" parent="Room/Interactables/SampleCollector/VialSlot" unique_id=908007467]
+[node name="InsertVialSound" type="FmodEventEmitter3D" parent="Room/Interactables/Sampler/VialSlot" unique_id=908007467]
 event_name = "event:/PlaceTestTube"
 event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 
-[node name="TakeVialSound" type="FmodEventEmitter3D" parent="Room/Interactables/SampleCollector/VialSlot" unique_id=855579033]
+[node name="TakeVialSound" type="FmodEventEmitter3D" parent="Room/Interactables/Sampler/VialSlot" unique_id=855579033]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/SampleCollector/VialSlot" unique_id=2140308631]
+[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/Sampler/VialSlot" unique_id=2140308631]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="SampleExtractionButton" type="Node3D" parent="Room/Interactables/SampleCollector" unique_id=1903185465 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="Extract" type="Node3D" parent="Room/Interactables/Sampler" unique_id=1903185465 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0429945, 0.058282375, 0.15459585)
 script = ExtResource("48_ibhvd")
 uninteractable_sound = NodePath("UninteractableSound")
@@ -2031,23 +1970,23 @@ area = NodePath("Area3D2")
 sound_emitter = NodePath("ExtractBloodSound")
 outline_meshes = [NodePath("../ExtractButtonModel")]
 
-[node name="Area3D2" type="Area3D" parent="Room/Interactables/SampleCollector/SampleExtractionButton" unique_id=393872825]
+[node name="Area3D2" type="Area3D" parent="Room/Interactables/Sampler/Extract" unique_id=393872825]
 collision_layer = 256
 collision_mask = 256
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/SampleCollector/SampleExtractionButton/Area3D2" unique_id=1132230391]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Sampler/Extract/Area3D2" unique_id=1132230391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11000061, -0.09741211, -0.038936615)
 shape = SubResource("BoxShape3D_0mwev")
 
-[node name="ExtractBloodSound" type="FmodEventEmitter3D" parent="Room/Interactables/SampleCollector/SampleExtractionButton" unique_id=283204338]
+[node name="ExtractBloodSound" type="FmodEventEmitter3D" parent="Room/Interactables/Sampler/Extract" unique_id=283204338]
 event_name = "event:/TubeFilling"
 event_guid = "{8cf97868-da60-42af-9bdb-b424ce6b26ca}"
 
-[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/SampleCollector/SampleExtractionButton" unique_id=922830148]
+[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/Sampler/Extract" unique_id=922830148]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="SampleInjectionButton" type="Node3D" parent="Room/Interactables/SampleCollector" unique_id=997938155 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="Inject" type="Node3D" parent="Room/Interactables/Sampler" unique_id=997938155 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0429945, 0.058282375, 0.15459585)
 script = ExtResource("47_7fqgl")
 uninteractable_sound = NodePath("UninteractableSound")
@@ -2056,39 +1995,39 @@ area = NodePath("Area3D2")
 sound_emitter = NodePath("InjectSerumSound")
 outline_meshes = [NodePath("../InjectButtonModel")]
 
-[node name="Area3D2" type="Area3D" parent="Room/Interactables/SampleCollector/SampleInjectionButton" unique_id=702679449]
+[node name="Area3D2" type="Area3D" parent="Room/Interactables/Sampler/Inject" unique_id=702679449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6509409, 0)
 collision_layer = 256
 collision_mask = 256
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/SampleCollector/SampleInjectionButton/Area3D2" unique_id=115799020]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Sampler/Inject/Area3D2" unique_id=115799020]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10559082, 0.031929016, -0.037082672)
 shape = SubResource("BoxShape3D_u3ia7")
 
-[node name="InjectSerumSound" type="FmodEventEmitter3D" parent="Room/Interactables/SampleCollector/SampleInjectionButton" unique_id=100865]
+[node name="InjectSerumSound" type="FmodEventEmitter3D" parent="Room/Interactables/Sampler/Inject" unique_id=100865]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/SampleCollector/SampleInjectionButton" unique_id=2103715492]
+[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/Sampler/Inject" unique_id=2103715492]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="SampleCollectorVialModel" parent="Room/Interactables/SampleCollector" unique_id=2038031653 instance=ExtResource("23_74b0p")]
+[node name="SampleCollectorVialModel" parent="Room/Interactables/Sampler" unique_id=2038031653 instance=ExtResource("23_74b0p")]
 unique_name_in_owner = true
 transform = Transform3D(0.55915827, -0.8290609, 0, 0.8290609, 0.55915827, 0, 0, 0, 1, -0.10117912, -0.107896686, -0.00027418137)
 visible = false
 
-[node name="ExtractButtonModel" type="MeshInstance3D" parent="Room/Interactables/SampleCollector" unique_id=2071157027]
+[node name="ExtractButtonModel" type="MeshInstance3D" parent="Room/Interactables/Sampler" unique_id=2071157027]
 transform = Transform3D(-1, -2.3841852e-07, -1.04216045e-14, 0, -4.371139e-08, 1, -2.3841852e-07, 1, 4.371139e-08, -0.047725677, 0.04629159, 0.14804077)
 material_override = SubResource("StandardMaterial3D_dvu3f")
 mesh = SubResource("ArrayMesh_54o3n")
 
-[node name="InjectButtonModel" type="MeshInstance3D" parent="Room/Interactables/SampleCollector" unique_id=943983546]
+[node name="InjectButtonModel" type="MeshInstance3D" parent="Room/Interactables/Sampler" unique_id=943983546]
 transform = Transform3D(-1, -2.3841852e-07, -1.04216045e-14, 0, -4.371139e-08, 1, -2.3841852e-07, 1, 4.371139e-08, -0.047725677, -0.0037169456, 0.15085077)
 material_override = SubResource("StandardMaterial3D_dvu3f")
 mesh = SubResource("ArrayMesh_54o3n")
 
-[node name="VialSlotModel" type="MeshInstance3D" parent="Room/Interactables/SampleCollector" unique_id=1000813484]
+[node name="VialSlotModel" type="MeshInstance3D" parent="Room/Interactables/Sampler" unique_id=1000813484]
 transform = Transform3D(0.57224697, -0.8200813, 0, 0.8200813, 0.57224697, 0, 0, 0, 1, -0.03745842, -0.15410662, 0)
 mesh = SubResource("ArrayMesh_hpx6n")
 
@@ -2136,8 +2075,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("39_t7v0h")
 
-[node name="ColorRect2" type="ColorRect" parent="Room/Interactables/Microscope/Micrograph" unique_id=260998597]
+[node name="Background" type="ColorRect" parent="Room/Interactables/Microscope/Micrograph" unique_id=260998597]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2146,8 +2086,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0142752165, 0.014275218, 0.014275218, 1)
 
-[node name="ColorRect" type="ColorRect" parent="Room/Interactables/Microscope/Micrograph" unique_id=420387211]
-material = SubResource("ShaderMaterial_vq468")
+[node name="MurkyImage" type="ColorRect" parent="Room/Interactables/Microscope/Micrograph" unique_id=1929010702]
+unique_name_in_owner = true
+material = ExtResource("40_icxu3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 244.0
+offset_right = -244.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CellsImage" type="ColorRect" parent="Room/Interactables/Microscope/Micrograph" unique_id=420387211]
+unique_name_in_owner = true
+visible = false
+material = ExtResource("39_dawtf")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2233,6 +2187,12 @@ mesh = SubResource("ArrayMesh_mi7vx")
 [node name="Centrifuge" parent="Room/Interactables" unique_id=1780799766 instance=ExtResource("25_1wujq")]
 transform = Transform3D(-0.9954268, 0, -0.09552744, 0, 1, 0, 0.09552744, 0, -0.9954268, 3.0354338, 0.9792126, -6.231222)
 
+[node name="Button_035" parent="Room/Interactables/Centrifuge/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 1404650171) index="3" unique_id=1193204783]
+visible = false
+
+[node name="Button_039" parent="Room/Interactables/Centrifuge/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 1404650171) index="4" unique_id=357860620]
+visible = false
+
 [node name="Env_Test_Tube2" parent="Room/Interactables/Centrifuge/Centrifuge/Rotor/Marker3D" parent_id_path=PackedInt32Array(1780799766, 491794958) index="0" unique_id=1480596381]
 visible = false
 
@@ -2252,7 +2212,7 @@ visible = false
 visible = false
 
 [node name="Screen_003" parent="Room/Interactables/Centrifuge/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 1404650171) index="7" unique_id=1150244698]
-surface_material_override/0 = SubResource("StandardMaterial3D_adeab")
+surface_material_override/0 = SubResource("StandardMaterial3D_u7tyq")
 
 [node name="ButtonUp" type="Node3D" parent="Room/Interactables/Centrifuge" unique_id=309528295 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02814126, 0.31077486, -0.2508602)
@@ -2306,12 +2266,36 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
 [node name="ButtonM" type="Node3D" parent="Room/Interactables/Centrifuge" unique_id=906324566]
 transform = Transform3D(1.0000018, 0, -5.2154064e-08, 0, 1, 0, 5.2154064e-08, 0, 1.0000018, -0.028188944, 0.25366515, -0.28455448)
+visible = false
 
-[node name="ButtonStart" type="Node3D" parent="Room/Interactables/Centrifuge" unique_id=1852898229]
+[node name="ButtonStart" type="Node3D" parent="Room/Interactables/Centrifuge" unique_id=1852898229 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(1.0000011, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1.0000011, -0.04553747, 0.1858334, -0.32308865)
+script = ExtResource("47_dawtf")
+uninteractable_sound = NodePath("UninteractableSound")
+prompt_text = "Start Centrifuge"
+area = NodePath("Area3D")
+sound_emitter = NodePath("ButtonStartPressSound")
+outline_meshes = [NodePath("../Centrifuge/Button_014")]
+
+[node name="Area3D" type="Area3D" parent="Room/Interactables/Centrifuge/ButtonStart" unique_id=1724841389]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Centrifuge/ButtonStart/Area3D" unique_id=800284377]
+transform = Transform3D(0.9987694, -0.047763705, 0.012740433, 0.04776373, 0.8660254, -0.4977094, 0.012738906, 0.4977134, 0.8672409, 0, 0, 0)
+shape = SubResource("BoxShape3D_710me")
+
+[node name="ButtonStartPressSound" type="FmodEventEmitter3D" parent="Room/Interactables/Centrifuge/ButtonStart" unique_id=649060411]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+
+[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/Centrifuge/ButtonStart" unique_id=1581066095]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
 [node name="ButtonUnlock" type="Node3D" parent="Room/Interactables/Centrifuge" unique_id=194898079]
 transform = Transform3D(1.0000008, 0, -2.2351742e-08, 0, 1, 0, 2.2351742e-08, 0, 1.0000008, -0.04488945, 0.1572612, -0.33948278)
+visible = false
 
 [node name="VialSlot" type="Node3D" parent="Room/Interactables/Centrifuge" unique_id=1776241852 node_paths=PackedStringArray("take_vial_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(-0.49771369, 0, 0.04776375, 0, 0.5, 0, -0.04776375, 0, -0.49771369, -0.00082039833, 0.3316248, 0.08969402)
@@ -2347,29 +2331,6 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0, -0.30904078, 0.020683289)
 material_override = SubResource("StandardMaterial3D_t7v0h")
 mesh = SubResource("ArrayMesh_adeab")
-
-[node name="Mixer_ToBeMovedOut" type="Node3D" parent="Room/Interactables/Centrifuge" unique_id=1400316112]
-transform = Transform3D(-0.49771357, 0, 0.04776374, 0, 0.5, 0, -0.04776374, 0, -0.49771357, -0.0017857552, 0.3316248, 0.09975433)
-visible = false
-
-[node name="ButtonMix" type="MeshInstance3D" parent="Room/Interactables/Centrifuge/Mixer_ToBeMovedOut" unique_id=882341621]
-transform = Transform3D(-1.9908535, -0.09552746, -0.16545837, 0, 1.7320507, -1.0000002, 0.19105488, -0.995427, -1.7241296, 0.12541866, -0.16066289, 0.75022125)
-visible = false
-mesh = SubResource("ArrayMesh_xnklg")
-script = ExtResource("54_kukxg")
-prompt_text = "Start Mixer"
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Centrifuge/Mixer_ToBeMovedOut/ButtonMix" unique_id=1840461267]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.450581e-09, -0.00043012248)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Centrifuge/Mixer_ToBeMovedOut/ButtonMix/StaticBody3D" unique_id=1096616873]
-shape = SubResource("BoxShape3D_c0qlh")
-
-[node name="Area3D" type="Area3D" parent="Room/Interactables/Centrifuge/Mixer_ToBeMovedOut/ButtonMix" unique_id=1309819451]
-collision_layer = 257
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Centrifuge/Mixer_ToBeMovedOut/ButtonMix/Area3D" unique_id=132174015]
-shape = SubResource("BoxShape3D_c0qlh")
 
 [node name="Storage" type="Node3D" parent="Room" unique_id=727022939]
 
@@ -2426,7 +2387,7 @@ transform = Transform3D(1.0000007, 0, -1.4901161e-07, 0, 1, 0, 1.4901161e-07, 0,
 
 [node name="screen" parent="Room/Machines/Prop_Filling_Machine/Filling Machine" index="16" unique_id=80395574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1641532e-10, 0, -0.0017469628)
-material_override = SubResource("StandardMaterial3D_wv54p")
+material_override = SubResource("StandardMaterial3D_bxgab")
 
 [node name="Env_Power_Supply" parent="Room/Machines" unique_id=1147005002 instance=ExtResource("28_26pxs")]
 transform = Transform3D(-0.8660254, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, -0.8660254, 0.26422167, 1.1109736, -2.4612887)
@@ -2741,7 +2702,7 @@ bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
 [node name="Note" parent="Room/Notes/Note_postnote2/Skeleton3D" index="0" unique_id=1217831450]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.820766e-11, 0.052927095)
-surface_material_override/1 = SubResource("StandardMaterial3D_5wgas")
+surface_material_override/1 = SubResource("StandardMaterial3D_8tnk5")
 
 [node name="Marker3D" parent="Room/Notes/Note_postnote2/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -2762,7 +2723,7 @@ bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(-0.095, 0, 0, 1)
 
 [node name="Cube_027" parent="Room/Notes/Note_document/Skeleton3D" index="0" unique_id=1002453775]
-material_overlay = SubResource("StandardMaterial3D_rfssg")
+material_overlay = SubResource("StandardMaterial3D_c008f")
 
 [node name="Camera Marker" parent="Room/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
@@ -2789,7 +2750,7 @@ bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(0.875, 0, 0, 1)
 
 [node name="Cube_027" parent="Room/Notes/Note_document2/Skeleton3D" index="0" unique_id=1002453775]
-material_overlay = SubResource("StandardMaterial3D_2h8s2")
+material_overlay = SubResource("StandardMaterial3D_gbjl2")
 
 [node name="Camera Marker" parent="Room/Notes/Note_document2/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)

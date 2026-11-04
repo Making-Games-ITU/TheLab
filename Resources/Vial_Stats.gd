@@ -19,6 +19,9 @@ const CHEMICAL_COLORS := {
 var empty: bool = true
 var liquid_material: ShaderMaterial = preload("res://World/Items/Test Tube/Test_tube_liquid_shader_material.tres")
 
+# Micrograph shader related stats
+var micrograph_shader: ShaderMaterial = preload("res://UI/Microscope/micrograph_shader_material.tres")
+
 # Infection related stats
 enum Infection {
 	NONE = 0,
@@ -39,6 +42,7 @@ var chemicals: Dictionary = {
 }
 
 # Centrifuging related stats
+var murky: bool = false
 var centrifuged: bool = false
 var damaged: bool = false
 const CENTRIFUGE_HIGH_SPEED: float = 3000.0

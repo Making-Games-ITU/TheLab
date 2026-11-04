@@ -48,6 +48,7 @@ func _insert_vial():
 func _take_vial():
 	GameStats.vial_in_mixer = false
 	PlayerStats.is_holding = PlayerStats.HoldState.VIAL
+	_update_prompt()
 	AudioManager.one_shot(take_vial_sound)
 	print("Vial picked up")
 	#TODO

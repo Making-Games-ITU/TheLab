@@ -8,7 +8,7 @@ func _ready() -> void:
 func focus() -> void:
 	_set_outline(true)
 	_update_prompt()
-	
+
 func _update_prompt() -> void:
 	if GameStats.vial_in_collector:
 		if VialStats.empty:
@@ -27,15 +27,16 @@ func interact(interactor: Node) -> void:
 		_extractBlood()
 	else:
 		_uninteractable()
-	
+
 func _extractBlood() -> void:
 	VialStats.empty = false
-	#TODO: update based on body properties
-	VialStats.infection = 1
+	VialStats.murky = true
+	VialStats.micrograph_enable_murky_image()
+	VialStats.infection = VialStats.Infection.CELL_MUTATION
 	VialStats._update_liquid()
 	AudioManager.one_shot(sound_emitter)
 	print("Blood extracted with infection: ", VialStats.infection)
-	# Not working
+	#TODO
 	if anim:
 		anim.play("extract")
 
