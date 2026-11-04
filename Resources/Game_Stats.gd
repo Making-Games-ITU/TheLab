@@ -15,6 +15,7 @@ enum VialLocation {
 var body_number: int = 0
 var body_ID: String = ""
 var body_exists: bool = false
+var body_state: int = 3 # from 1 to 5, below 1 or above 5 = dead
 var toggle_sample_collector: bool = true
 var vial_in_collector: bool = false
 var vial_in_microscope: bool = false

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bqbhgbilpru0j" path="res://World/Props/Xray/Prop_Xray_Station.fbx" id="1_641ax"]
 [ext_resource type="Texture2D" uid="uid://dayrghnnvllag" path="res://World/Props/Electricals/Computer/Pc_Props_Texture.png" id="2_43iua"]
+[ext_resource type="Script" uid="uid://dhhwunayvjknu" path="res://Systems/Scanner_Interactions.gd" id="2_ocrte"]
 [ext_resource type="PackedScene" uid="uid://dbvq82xs7d6jo" path="res://World/Props/Buttons/Env_Button_Open_Close.fbx" id="2_yfwwn"]
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="3_ocrte"]
 [ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="6_43iua"]
@@ -23,7 +24,7 @@ emission_texture = SubResource("ViewportTexture_43iua")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43iua"]
 albedo_texture = ExtResource("2_43iua")
 
-[sub_resource type="Shader" id="Shader_yfwwn"]
+[sub_resource type="Shader" id="Shader_7pa1u"]
 code = "shader_type canvas_item;
 
 
@@ -195,7 +196,7 @@ void fragment()
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t8tf4"]
-shader = SubResource("Shader_yfwwn")
+shader = SubResource("Shader_7pa1u")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.042000001995
 shader_parameter/scanlines_width = 0.2000000095
@@ -222,6 +223,7 @@ shader_parameter/vignette_opacity = 0.6010000285475
 size = Vector3(0.43499756, 2.5447998, 0.7593384)
 
 [node name="Prop_Xray_Station" unique_id=1610762300 instance=ExtResource("1_641ax")]
+script = ExtResource("2_ocrte")
 
 [node name="Screen" parent="." index="0" unique_id=534853063]
 surface_material_override/1 = SubResource("StandardMaterial3D_ocrte")
@@ -322,6 +324,41 @@ text = "ERROR
 OFFLINE"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LungStatusImages" type="Control" parent="SubViewport/Control" index="4" unique_id=818797951]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lung_Status_1" type="TextureRect" parent="SubViewport/Control/LungStatusImages" index="0" unique_id=1102490866]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lung_Status_2" type="TextureRect" parent="SubViewport/Control/LungStatusImages" index="1" unique_id=346060581]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lung_Status_3" type="TextureRect" parent="SubViewport/Control/LungStatusImages" index="2" unique_id=702101879]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lung_Status_4" type="TextureRect" parent="SubViewport/Control/LungStatusImages" index="3" unique_id=706886435]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lung_Status_5" type="TextureRect" parent="SubViewport/Control/LungStatusImages" index="4" unique_id=1205486954]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="X-Ray#Env_Button_Open_Close" parent="." index="2" unique_id=893675333 instance=ExtResource("2_yfwwn")]
 transform = Transform3D(-2.3346624e-08, 0.84541595, -0.5341086, 3.69543e-08, 0.5341086, 0.84541595, 1, 0, -4.371139e-08, -0.15510023, -0.36299998, 0.01960098)

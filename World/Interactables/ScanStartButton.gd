@@ -1,8 +1,8 @@
 extends Interactable
 
 @export var uninteractable_sound: FmodEventEmitter3D
-
 var _scanning: bool = false
+signal scan_pressed
 
 func _ready() -> void:
 	super()
@@ -34,13 +34,16 @@ func _start_scan() -> void:
 	_scanning = true
 	AudioManager.one_shot(sound_emitter)
 	if anim:
+		scan_pressed.emit()
 		anim.play("scan")
 		await anim.animation_finished
 		#TODO: Change screen output here
 		_scanning = false
 	else:
+		# bypassing anim for now
+		scan_pressed.emit()
 		#TODO: Change screen output here
-		_scanning = false # bypassing anim for now
+		_scanning = false 
 	print("Scanned Body")
 
 func _uninteractable() -> void:

@@ -27,6 +27,7 @@ func _new_body() -> void:
 	GameStats.body_number += 1 
 	GameStats.body_ID = bodyIdString+ "%04d" % GameStats.body_number
 	GameStats.body_exists = true
+	GameStats.body_state = 3 # neutral
 	%Body.visible = true
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
