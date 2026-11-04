@@ -1,9 +1,11 @@
 extends Node
 
-#@onready var _centrifuge_start_button :=
-#@onready var _sampler_extract_button :=
-# scan_start_button.scan_pressed.connect(_on_enable_clear_image)
-# scan_start_button.scan_pressed.connect(_on_enable_murky_image)
+@onready var _centrifuge_start_button := %CentrifugeButtonStart
+@onready var _sampler_extract_button := %SamplerExtractButton
+
+func _ready():
+	_centrifuge_start_button.centrifuge_start_pressed.connect(_on_enable_clear_image)
+	_sampler_extract_button.sampler_extract_pressed.connect(_on_enable_murky_image)
 
 @onready var _micrograph_clear_image: ColorRect = %CellsImage
 @onready var _micrograph_murky_image: ColorRect = %MurkyImage

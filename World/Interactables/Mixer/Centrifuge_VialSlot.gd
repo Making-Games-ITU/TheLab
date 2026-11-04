@@ -2,6 +2,7 @@ extends Interactable
 
 @export var take_vial_sound: FmodEventEmitter3D
 @export var uninteractable_sound: FmodEventEmitter3D
+@onready var centrifuge_vial_model := %CentrifugeVialModel
 
 func _ready() -> void:
 	super()
@@ -40,6 +41,7 @@ func _insert_vial():
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
 	_update_prompt()
 	AudioManager.one_shot(sound_emitter)
+	centrifuge_vial_model.visible = true
 	print("Vial inserted")
 	#TODO
 	if anim:
@@ -50,6 +52,7 @@ func _take_vial():
 	PlayerStats.is_holding = PlayerStats.HoldState.VIAL
 	_update_prompt()
 	AudioManager.one_shot(take_vial_sound)
+	centrifuge_vial_model.visible = false
 	print("Vial picked up")
 	#TODO
 	if anim:

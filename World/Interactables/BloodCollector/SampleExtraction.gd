@@ -1,6 +1,7 @@
 extends Interactable
 
 @export var uninteractable_sound: FmodEventEmitter3D
+signal sampler_extract_pressed
 
 func _ready() -> void:
 	super()
@@ -31,7 +32,7 @@ func interact(interactor: Node) -> void:
 func _extractBlood() -> void:
 	VialStats.empty = false
 	VialStats.murky = true
-	VialStats.micrograph_enable_murky_image()
+	sampler_extract_pressed.emit()
 	VialStats.infection = VialStats.Infection.CELL_MUTATION
 	VialStats._update_liquid()
 	AudioManager.one_shot(sound_emitter)

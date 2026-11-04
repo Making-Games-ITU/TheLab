@@ -15,7 +15,10 @@ func _update_prompt() -> void:
 		InteractionPrompt.instance.hide_prompt()
 		return
 	elif GameStats.vial_in_microscope:
-		prompt_text = "Analyze vial"
+		if VialStats.empty:
+			prompt_text = "Vial is empty"
+		else:
+			prompt_text = "Analyze vial"
 	else:
 		prompt_text = "No vial placed"
 	InteractionPrompt.instance.show_prompt(prompt_text)
@@ -24,7 +27,10 @@ func interact(interactor: Node) -> void:
 	if %Micrograph.visible:
 		_exit_mircoscope()
 	elif GameStats.vial_in_microscope:
-		_enter_microscope()
+		if VialStats.empty:
+			_uninteractable()
+		else:
+			_enter_microscope()
 	else:
 		_uninteractable()
 	_update_prompt()

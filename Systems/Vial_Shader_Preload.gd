@@ -7,3 +7,4 @@ func _prewarm() -> void:
 	visible = true
 	await RenderingServer.frame_post_draw
 	visible = false
+	

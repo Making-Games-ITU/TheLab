@@ -24,10 +24,10 @@ var vial_in_microscope: bool = false
 # chemical enum should be independant from VialStats
 var current_chemical : VialStats.Composite
 
-# Chemical Machine stats. Should be moved to a seperate manager script when more complicated
-var vial_in_pip : bool = false
-var chem_in_pip : bool = false
-var amount = ""
+# Pipette stats
+var vial_in_pipette: bool = false
+var flask_in_pipette: bool = false
+var amount: String = ""
 
 func parseAmount () -> float:
 	return amount.to_float()
