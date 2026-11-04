@@ -83,7 +83,7 @@
 [ext_resource type="Script" uid="uid://b2eqg2tydo80s" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Start.gd" id="59_r0vx2"]
 [ext_resource type="Script" uid="uid://6ckpxp75y6ji" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Numbers.gd" id="60_4hlmn"]
 [ext_resource type="PackedScene" uid="uid://c5qlgxu4phaxk" path="res://World/Props/Vent/prop_vent.tscn" id="61_icxu3"]
-[ext_resource type="Script" uid="uid://dxv013hmmsgpm" path="res://World/Interactables/FillingMachine/DecimalPointButton.gd" id="61_jhak5"]
+[ext_resource type="Script" uid="uid://dxv013hmmsgpm" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Point.gd" id="61_jhak5"]
 [ext_resource type="Script" uid="uid://bl6j4hu8sosqs" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Clear.gd" id="62_kg4j1"]
 [ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/ScanStartButton.gd" id="64_1jytr"]
 [ext_resource type="Script" uid="uid://l1n756bd47f6" path="res://World/Interactables/Chemical.gd" id="65_srr11"]
@@ -2601,6 +2601,14 @@ script = ExtResource("60_4hlmn")
 [node name="Pipette_Button_Clear" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=85330077]
 transform = Transform3D(1.0000008, 0, 5.9604645e-08, 0, 1, 0, 0, 0, 1.0000007, -0.061809063, -0.03719139, 0.004874587)
 script = ExtResource("62_kg4j1")
+
+[node name="Pipette_Button_Start" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2106896159]
+transform = Transform3D(1.0000006, 0, 5.9604645e-08, 0, 1, 0, 0, 0, 1.0000006, 0.076924324, -0.0029777288, 0.0074020624)
+script = ExtResource("59_r0vx2")
+
+[node name="Pipette_Button_Point" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1092882085]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+script = ExtResource("61_jhak5")
 
 [node name="Button_start" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1688334138 node_paths=PackedStringArray("area")]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000007, 0, -1.1920929e-07, 0, 1.0000001, 0.078464985, -0.004219413, 0.011600852)

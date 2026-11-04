@@ -30,7 +30,7 @@ var flask_in_pipette: bool = false
 var pipette_chemical_amount: String = ""
 const PIPETTE_CHARACTERS_MAX: int = 5
 
-func parseAmount () -> float:
+func pipette_chemical_amount_string_to_float() -> float:
 	return pipette_chemical_amount.to_float()
 
 # Mixer 
