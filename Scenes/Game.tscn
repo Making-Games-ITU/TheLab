@@ -2317,8 +2317,8 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yxy3u"]
-size = Vector3(0.53796387, 1.3557129, 0.18652344)
+[sub_resource type="BoxShape3D" id="BoxShape3D_k0yef"]
+size = Vector3(0.1986084, 1.5731812, 0.5443115)
 
 [node name="Enviroment2" type="Node3D" unique_id=1402379142]
 
@@ -4176,11 +4176,11 @@ offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Collision" type="Area3D" parent="Room/Interactables/Pipette" unique_id=506606955]
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Pipette" unique_id=1398148896]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/Collision" unique_id=998116123]
-transform = Transform3D(0.35674956, 0, 0.9342, 0, 0.99999994, 0, -0.93420005, 0, 0.35674953, -0.04413581, 1.0002826, -0.054729223)
-shape = SubResource("BoxShape3D_yxy3u")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Pipette/StaticBody3D" unique_id=1816708013]
+transform = Transform3D(0.9344712, 0, -0.3560388, 0, 1, 0, 0.3560388, 0, 0.9344712, -0.045069695, 0.88809204, -0.05982256)
+shape = SubResource("BoxShape3D_k0yef")
 
 [node name="Storage" type="Node3D" parent="Room" unique_id=727022939]
 

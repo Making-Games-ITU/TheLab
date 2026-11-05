@@ -31,6 +31,7 @@ func interact(interactor: Node) -> void:
 			_inject()
 
 func _inject() -> void:
+	_check_if_successful()
 	VialStats.empty_vial()
 	VialStats._update_liquid()
 	AudioManager.one_shot(sound_emitter)
@@ -39,6 +40,38 @@ func _inject() -> void:
 	#TODO:
 	if anim:
 		anim.play("inject")
+
+func _check_if_successful() -> void:
+	# Body state already at minimum but keep trying = bad
+	if GameStats.body_state == 1:
+		GameStats.body_state += 1
+		_check_game_over()
+		return
+	# Vial is damaged = bad
+	if VialStats.damaged:
+		GameStats.body_state += 1
+		_check_game_over()
+		return
+	# Chemical in vial but not integrated = bad
+	for key in VialStats.chemicals:
+		if VialStats.chemicals[key].quantity > 0.0:
+			if not VialStats.chemicals[key].integrated:
+				GameStats.body_state += 1
+				_check_game_over()
+				return
+	# If vial has the wrong chemical in it = bad
+	if VialStats.infection == VialStats.InfectionType.CELL_MUTATION:
+		for key in VialStats.chemicals:
+			if VialStats.chemicals[key].quantity > 0.0:
+				if key != VialStats.Composite.HYDROGEN:
+					GameStats.body_state += 1
+					_check_game_over()
+					return
+	GameStats.body_state -= 1
+
+func _check_game_over() -> void:
+	if GameStats.body_state == 6:
+		get_tree().quit()
 
 func _uninteractable() -> void:
 	AudioManager.one_shot(uninteractable_sound)

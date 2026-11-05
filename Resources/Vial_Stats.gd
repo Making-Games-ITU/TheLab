@@ -10,8 +10,8 @@ const EMPTY_COLOR := Color(0.0, 0.0, 0.0)
 const DAMAGED_COLOR := Color(1.0, 1.0, 1.0)
 const BLOOD_COLOR := Color(1.0, 0.0, 0.0)
 const CHEMICAL_COLORS := {
-	Composite.A: Color(0.0, 1.0, 0.0),
-	Composite.B: Color(0.0, 0.0, 1.0),
+	Composite.HYDROGEN: Color(0.0, 1.0, 0.0),
+	Composite.NITROGEN: Color(0.0, 0.0, 1.0),
 }
 var empty: bool = true
 var liquid_material: ShaderMaterial = preload("res://World/Items/Test Tube/Test_tube_liquid_shader_material.tres")
@@ -20,14 +20,17 @@ var liquid_material: ShaderMaterial = preload("res://World/Items/Test Tube/Test_
 enum InfectionType { NONE, CELL_MUTATION, PARASITES, BOTH}
 var infection: InfectionType = InfectionType.NONE
 
+#TODO: Some form of cure variable for each infection
+#TODO: What cures Cell mutation?
+
 # Chemical related stats
-enum Composite { NONE, A, B }
+enum Composite { NONE, HYDROGEN, NITROGEN }
 class Chemical:
 	var quantity: float = 0.0
 	var integrated: bool = false
 var chemicals: Dictionary[Composite, Chemical] = {
-	Composite.A: Chemical.new(),
-	Composite.B: Chemical.new(),
+	Composite.HYDROGEN: Chemical.new(), # A
+	Composite.NITROGEN: Chemical.new(), # B
 }
 
 # Centrifuge related stats
@@ -95,14 +98,15 @@ func centrifuge(speed: int) -> void:
 		var chemical := chemicals[key]
 		if chemical.quantity <= 0.0:
 			continue
+		chemical.integrated = false
 		match key:
-			Composite.A:
+			Composite.HYDROGEN:
 				if speed >= CHEMICAL_A_INTEGRATION_SPEED:
 					chemical.integrated = true
 					attempts.append(true)
 				else:
 					attempts.append(false)
-			Composite.B:
+			Composite.NITROGEN:
 				if speed >= CHEMICAL_B_INTEGRATION_SPEED:
 					chemical.integrated = true
 					attempts.append(true)
