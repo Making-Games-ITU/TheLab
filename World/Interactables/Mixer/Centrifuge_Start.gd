@@ -31,9 +31,8 @@ func interact(interactor: Node) -> void:
 		_uninteractable()
 
 func _start_centrifuge():
-	if VialStats.murky:
-		VialStats.murky = false
-		centrifuge_start_pressed.emit() # For the micrograph
+	VialStats.centrifuge(GameStats.centrifuge_current_speed)
+	centrifuge_start_pressed.emit() # For the micrograph, should rename
 	_centrifuge_state_label.text = "Done"
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()

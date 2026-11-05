@@ -6,17 +6,15 @@ const FULL_HEIGHT := 0.5      # liquid_height when full; tune to your mesh
 const MAX_QUANTITY := 10.0    # total quantity that counts as full
 const BLOOD_AMOUNT := 0.2     # how strongly the blood counts in the color mix
 const MAX_CHEMICAL := 10.0    # total chemical amount that fills the vial
-const EMPTY_COLOR := Color.BLACK
-const BLOOD_COLOR := Color(0.8, 0.05, 0.1)
+const EMPTY_COLOR := Color(0.0, 0.0, 0.0)
+const DAMAGED_COLOR := Color(1.0, 1.0, 1.0)
+const BLOOD_COLOR := Color(1.0, 0.0, 0.0)
 const CHEMICAL_COLORS := {
-	Composite.A: Color(0.2, 0.9, 0.3),
-	Composite.B: Color(0.3, 0.4, 1.0),
+	Composite.A: Color(0.0, 1.0, 0.0),
+	Composite.B: Color(0.0, 0.0, 1.0),
 }
 var empty: bool = true
 var liquid_material: ShaderMaterial = preload("res://World/Items/Test Tube/Test_tube_liquid_shader_material.tres")
-
-# Micrograph shader related stats
-var micrograph_shader: ShaderMaterial = preload("res://UI/Microscope/micrograph_shader_material.tres")
 
 # Infection related stats
 enum InfectionType { NONE, CELL_MUTATION, PARASITES, BOTH}
@@ -27,7 +25,7 @@ enum Composite { NONE, A, B }
 class Chemical:
 	var quantity: float = 0.0
 	var integrated: bool = false
-var chemicals: Dictionary = {
+var chemicals: Dictionary[Composite, Chemical] = {
 	Composite.A: Chemical.new(),
 	Composite.B: Chemical.new(),
 }
@@ -36,9 +34,9 @@ var chemicals: Dictionary = {
 var murky: bool = false
 var centrifuged: bool = false
 var damaged: bool = false
-const CENTRIFUGE_HIGH_SPEED: float = 3000.0
-const CENTRIFUGE_DAMAGE_SPEED: float = 6000.0
-enum Speed { Min, Low, Medium, High, Max }
+const CHEMICAL_A_INTEGRATION_SPEED: int = 2
+const CHEMICAL_B_INTEGRATION_SPEED: int = 4
+const CENTRIFUGE_DAMAGE_SPEED: int = 5
 
 func _ready() -> void:
 	_update_liquid()
@@ -48,12 +46,15 @@ func _update_liquid() -> void:
 	if empty:
 		_set_liquid(-1.0, EMPTY_COLOR)
 		return
+	if damaged:
+		_set_liquid(1.0, DAMAGED_COLOR)
+		return
 	var total_chem := 0.0
 	var mix := BLOOD_COLOR * BLOOD_AMOUNT
 	for key in chemicals:
-		var q := get_quantity(key)
-		total_chem += q
-		mix += CHEMICAL_COLORS[key] * q
+		var _quantity: float = chemicals[key].quantity
+		total_chem += _quantity
+		mix += CHEMICAL_COLORS[key] * _quantity
 	var color := mix / (BLOOD_AMOUNT + total_chem)
 	var fill := clampf(total_chem / MAX_CHEMICAL, 0.0, 1.0)
 	_set_liquid(lerpf(MIN_HEIGHT, FULL_HEIGHT, fill), color)
@@ -83,35 +84,35 @@ func add_chemical(composite: Composite, amount: float) -> void:
 	_chemical.integrated = false
 	_update_liquid()
 
-# Mixer (Centrifuge) functionality for just the rotation
-func centrifuge(rpm: float) -> void:
-	if rpm >= CENTRIFUGE_HIGH_SPEED:
-		centrifuged = true
-	if rpm >= CENTRIFUGE_DAMAGE_SPEED:
+# Centrifuge
+func centrifuge(speed: int) -> void:
+	if speed >= CENTRIFUGE_DAMAGE_SPEED or damaged:
 		damaged = true
-
-# Mixer (Centrifuge) functionality for integrating chemicals
-func integrate_chemical(composite: Composite, speed : Speed) -> void:
-	var chem: Chemical = chemicals[composite]
-	if chem.quantity > 0.0:
-		match composite:
+		print("Centrifuge result: Damage (pre-check)")
+		return
+	var attempts: Array[bool]
+	for key: Composite in chemicals:
+		var chemical := chemicals[key]
+		if chemical.quantity <= 0.0:
+			continue
+		match key:
 			Composite.A:
-				if speed == Speed.Low:
-					chem.integrated = true
-					#Add if mixing damages
+				if speed >= CHEMICAL_A_INTEGRATION_SPEED:
+					chemical.integrated = true
+					attempts.append(true)
+				else:
+					attempts.append(false)
 			Composite.B:
-				if speed == Speed.Medium:
-					chem.integrated = true
-					#Add if mixing damages
-
-# Functions to check for infections
-func has_cell_mutation() -> bool:
-	return infection & InfectionType.CELL_MUTATION != 0
-func has_parasites() -> bool:
-	return infection & InfectionType.PARASITES != 0
-
-# Functions to check for chemical compositions
-func get_quantity(composite: Composite) -> float:
-	return chemicals[composite].quantity
-func is_integrated(composite: Composite) -> bool:
-	return chemicals[composite].integrated
+				if speed >= CHEMICAL_B_INTEGRATION_SPEED:
+					chemical.integrated = true
+					attempts.append(true)
+				else:
+					attempts.append(false)
+	for attempt in attempts:
+		if attempt == false:
+			damaged = true
+			print("Centrifuge result: Damage (attempt)")
+			return
+	murky = false
+	centrifuged = true
+	print("Centrifuge result: Success")

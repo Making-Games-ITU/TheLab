@@ -2940,7 +2940,8 @@ event_guid = "{8cf97868-da60-42af-9bdb-b424ce6b26ca}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="Inject" type="Node3D" parent="Room/Interactables/Sampler" unique_id=997938155 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="SamplerInjectButton" type="Node3D" parent="Room/Interactables/Sampler" unique_id=997938155 node_paths=PackedStringArray("uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+unique_name_in_owner = true
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0429945, 0.058282375, 0.15459585)
 script = ExtResource("47_7fqgl")
 uninteractable_sound = NodePath("UninteractableSound")
@@ -2949,20 +2950,20 @@ area = NodePath("Area3D2")
 sound_emitter = NodePath("InjectSerumSound")
 outline_meshes = [NodePath("../InjectButtonModel")]
 
-[node name="Area3D2" type="Area3D" parent="Room/Interactables/Sampler/Inject" unique_id=702679449]
+[node name="Area3D2" type="Area3D" parent="Room/Interactables/Sampler/SamplerInjectButton" unique_id=702679449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6509409, 0)
 collision_layer = 256
 collision_mask = 256
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Sampler/Inject/Area3D2" unique_id=115799020]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Sampler/SamplerInjectButton/Area3D2" unique_id=115799020]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10559082, 0.031929016, -0.037082672)
 shape = SubResource("BoxShape3D_u3ia7")
 
-[node name="InjectSerumSound" type="FmodEventEmitter3D" parent="Room/Interactables/Sampler/Inject" unique_id=100865]
+[node name="InjectSerumSound" type="FmodEventEmitter3D" parent="Room/Interactables/Sampler/SamplerInjectButton" unique_id=100865]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/Sampler/Inject" unique_id=2103715492]
+[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/Sampler/SamplerInjectButton" unique_id=2103715492]
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 

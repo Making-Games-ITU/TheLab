@@ -1,6 +1,7 @@
 extends Interactable
 
 @export var uninteractable_sound: FmodEventEmitter3D
+signal sampler_inject_pressed # For micrograph interactions script
 
 func _ready() -> void:
 	super()
@@ -33,8 +34,9 @@ func _inject() -> void:
 	VialStats.empty_vial()
 	VialStats._update_liquid()
 	AudioManager.one_shot(sound_emitter)
+	sampler_inject_pressed.emit()
 	print("Serum injected")
-	# Doesn't work
+	#TODO:
 	if anim:
 		anim.play("inject")
 

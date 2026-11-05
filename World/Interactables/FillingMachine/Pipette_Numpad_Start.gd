@@ -38,7 +38,7 @@ func _start_pipette() -> void:
 	_pipette_chemical_amount_label.text = "0.0 ml"
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
-	print("Adding ", _chemical_amount, " of ", _chemical, ". Current amount: ", VialStats.get_quantity(_chemical))
+	print("Adding chemical")
 
 func _uninteractable() -> void:
 	AudioManager.one_shot(uninteractable_sound)
