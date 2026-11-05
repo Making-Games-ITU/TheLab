@@ -3586,10 +3586,11 @@ mesh = SubResource("ArrayMesh_adeab")
 [node name="Pipette" type="Node3D" parent="Room/Interactables" unique_id=746896674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.828744, -0.09941912, -3.0970638)
 
-[node name="Pipette_Note" parent="Room/Interactables/Pipette" unique_id=2115422304 node_paths=PackedStringArray("note_camera", "stop_reading_sound", "area", "sound_emitter", "outline_meshes") instance=ExtResource("49_5eiyn")]
+[node name="Pipette_Note" parent="Room/Interactables/Pipette" unique_id=2115422304 node_paths=PackedStringArray("note_camera", "note_text", "stop_reading_sound", "area", "sound_emitter", "outline_meshes") instance=ExtResource("49_5eiyn")]
 transform = Transform3D(-0.39821026, -0.9136738, 0.08141864, -0.00046906166, -0.08855674, -0.9960711, 0.917294, -0.3966838, 0.0348356, -0.07380104, 1.5099785, -0.22427511)
 script = ExtResource("55_31hd8")
 note_camera = NodePath("Skeleton3D/Marker3D/Camera3D")
+note_text = NodePath("Note Viewport/Control/Label")
 stop_reading_sound = NodePath("StopReadingSound")
 prompt_text = "Read"
 area = NodePath("Area3D")
