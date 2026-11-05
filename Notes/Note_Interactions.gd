@@ -32,7 +32,7 @@ func _start_reading() -> void:
 	PlayerStats.current_note = self
 	%NoteText.text = note_text.text
 	%NoteReader.visible = true
-	%Control2.visible = true
+	%ExitFullscreenImage.visible = true
 	_update_prompt()
 	AudioManager.one_shot(sound_emitter)
 	print("Reading")
@@ -40,7 +40,7 @@ func _start_reading() -> void:
 func _stop_reading() -> void:
 	player_camera.make_current()
 	%NoteReader.visible = false
-	%Control2.visible = false
+	%ExitFullscreenImage.visible = false
 	PlayerStats.is_reading = false
 	PlayerStats.current_note = null
 	AudioManager.one_shot(stop_reading_sound)

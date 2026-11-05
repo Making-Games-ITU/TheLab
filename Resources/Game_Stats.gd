@@ -20,16 +20,14 @@ var toggle_sample_collector: bool = true
 var vial_in_collector: bool = false
 var vial_in_microscope: bool = false
 
-# Game world state
-# chemical enum should be independant from VialStats
-var current_chemical : VialStats.Composite
-
-# Pipette stats
+# Pipette
 var vial_in_pipette: bool = false
 var flask_in_pipette: bool = false
+var pipette_current_chemical: VialStats.Composite = VialStats.Composite.NONE
+var pipette_current_chemical_name: String = ""
 var pipette_chemical_amount: String = ""
+var pipette_point_added: bool = false
 const PIPETTE_CHARACTERS_MAX: int = 5
-
 func pipette_chemical_amount_string_to_float() -> float:
 	return pipette_chemical_amount.to_float()
 

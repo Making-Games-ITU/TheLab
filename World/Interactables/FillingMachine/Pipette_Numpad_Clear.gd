@@ -1,6 +1,7 @@
 extends Interactable
 
 @export var uninteractable_sound: FmodEventEmitter3D
+@onready var _pipette_chemical_amount_label: Label = %Pipette_Chemical_Amount_Label
 
 func _ready() -> void:
 	super()
@@ -24,6 +25,8 @@ func interact(interactor: Node) -> void:
 
 func _clear_chemical_amount() -> void:
 	GameStats.pipette_chemical_amount = ""
+	_pipette_chemical_amount_label.text = "0.0 ml"
+	GameStats.pipette_point_added = false
 	AudioManager.one_shot(sound_emitter)
 	print("Number cleared in pipette")
 

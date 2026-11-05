@@ -3,6 +3,8 @@ extends Node
 var current_interactable: Interactable = null
 var current_chair: Interactable = null
 var current_note: Interactable = null
+var current_chemical: VialStats.Composite = VialStats.Composite.NONE
+var current_chemical_name: String = ""
 
 var is_sitting: bool = false
 var is_analyzing: bool = false

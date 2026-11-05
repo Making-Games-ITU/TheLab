@@ -1,6 +1,6 @@
 extends Interactable
 
-@export var chemName: String
+@export var chemical_name: String
 @export var composite: VialStats.Composite
 @export var placeback_sound: FmodEventEmitter3D
 @export var uninteractable_sound: FmodEventEmitter3D
@@ -14,9 +14,9 @@ func focus() -> void:
 
 func _update_prompt() -> void:
 	if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
-		prompt_text = "Take " + chemName
+		prompt_text = "Take " + chemical_name
 	elif PlayerStats.is_holding == PlayerStats.HoldState.CHEMICAL:
-		prompt_text = "Place bottle back"
+		prompt_text = "Place flask back"
 	else:
 		prompt_text = "Hands are full"
 	InteractionPrompt.instance.show_prompt(prompt_text)
@@ -31,14 +31,15 @@ func interact(interactor: Node) -> void:
 
 func _take_chemical() -> void:
 	PlayerStats.is_holding = PlayerStats.HoldState.CHEMICAL
-	GameStats.current_chemical = composite
+	PlayerStats.current_chemical = composite
+	PlayerStats.current_chemical_name = chemical_name
 	_update_prompt()
 	AudioManager.one_shot(sound_emitter)
-	print("Chemical taken: ", GameStats.current_chemical)
+	print("Chemical taken: ", PlayerStats.current_chemical_name)
 
 func _place_chemical() -> void:
-	GameStats.current_chemical = VialStats.Composite.None
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
+	PlayerStats.current_chemical_name = ""
 	_update_prompt()
 	AudioManager.one_shot(placeback_sound)
 	print("Chemical placed back")

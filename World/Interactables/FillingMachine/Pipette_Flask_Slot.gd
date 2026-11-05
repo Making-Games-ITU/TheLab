@@ -3,6 +3,7 @@ extends Interactable
 @export var take_flask_sound: FmodEventEmitter3D
 @export var uninteractable_sound: FmodEventEmitter3D
 @onready var flask_vial_model := $Flask_Model
+@onready var _pipette_chemical_name_label: Label = %Pipette_Chemical_Name_Label
 
 func _ready() -> void:
 	super()
@@ -37,9 +38,13 @@ func interact(interactor: Node) -> void:
 			_uninteractable()
 
 func _insert_flask():
+	PlayerStats.is_holding = PlayerStats.HoldState.NONE
 	GameStats.flask_in_pipette = true
 	flask_vial_model.visible = true
-	PlayerStats.is_holding = PlayerStats.HoldState.NONE
+	GameStats.pipette_current_chemical = PlayerStats.current_chemical
+	PlayerStats.current_chemical = VialStats.Composite.NONE
+	GameStats.pipette_current_chemical_name = PlayerStats.current_chemical_name
+	_pipette_chemical_name_label.text = GameStats.pipette_current_chemical_name
 	AudioManager.one_shot(sound_emitter)
 	print("Flask inserted into pipette flask slot")
 	#TODO
@@ -49,7 +54,11 @@ func _insert_flask():
 func _take_flask():
 	GameStats.flask_in_pipette = false
 	flask_vial_model.visible = false
+	PlayerStats.current_chemical = GameStats.pipette_current_chemical
+	GameStats.pipette_current_chemical = VialStats.Composite.NONE
+	GameStats.pipette_current_chemical_name = ""
 	PlayerStats.is_holding = PlayerStats.HoldState.CHEMICAL
+	_pipette_chemical_name_label.text = "No flask"
 	AudioManager.one_shot(take_flask_sound)
 	_update_prompt()
 	print("Picked up flask from pipette flask slot")

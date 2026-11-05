@@ -1,14 +1,10 @@
 extends Node
 
-# Easy check if anything happened if needed
-# For example, can be used to update shader
-signal changed 
-
 # Vial shader related stats
-const MIN_HEIGHT := 0.15      # liquid_height with only blood
+const MIN_HEIGHT := 0.05      # liquid_height with only blood
 const FULL_HEIGHT := 0.5      # liquid_height when full; tune to your mesh
 const MAX_QUANTITY := 10.0    # total quantity that counts as full
-const BLOOD_AMOUNT := 2.0     # how strongly the blood counts in the color mix
+const BLOOD_AMOUNT := 0.2     # how strongly the blood counts in the color mix
 const MAX_CHEMICAL := 10.0    # total chemical amount that fills the vial
 const EMPTY_COLOR := Color.BLACK
 const BLOOD_COLOR := Color(0.8, 0.05, 0.1)
@@ -32,7 +28,7 @@ enum Infection {
 var infection: Infection = Infection.NONE
 
 # Chemical related stats
-enum Composite {None, A, B }
+enum Composite { NONE, A, B }
 class Chemical:
 	var quantity: float = 0.0
 	var integrated: bool = false
@@ -41,7 +37,7 @@ var chemicals: Dictionary = {
 	Composite.B: Chemical.new(),
 }
 
-# Centrifuging related stats
+# Centrifuge related stats
 var murky: bool = false
 var centrifuged: bool = false
 var damaged: bool = false
@@ -50,9 +46,9 @@ const CENTRIFUGE_DAMAGE_SPEED: float = 6000.0
 enum Speed { Min, Low, Medium, High, Max }
 
 func _ready() -> void:
-	changed.connect(_update_liquid)
 	_update_liquid()
 
+# Vial liquid shader update
 func _update_liquid() -> void:
 	if empty:
 		_set_liquid(-1.0, EMPTY_COLOR)
@@ -67,13 +63,14 @@ func _update_liquid() -> void:
 	var fill := clampf(total_chem / MAX_CHEMICAL, 0.0, 1.0)
 	_set_liquid(lerpf(MIN_HEIGHT, FULL_HEIGHT, fill), color)
 
+# Vial liquid shader uptade
 func _set_liquid(height: float, color: Color) -> void:
 	liquid_material.set_shader_parameter("liquid_height", height)
 	liquid_material.set_shader_parameter("liquid_surface_color", color.lightened(0.3))
-	# The body color comes from the rim gradient, so recolor its first point
 	var gradient_tex = liquid_material.get_shader_parameter("liquid_rim_gradient")
 	gradient_tex.gradient.set_color(0, color)
 
+# Reset vial
 func empty_vial() -> void:
 	infection = Infection.NONE
 	empty = true
@@ -81,22 +78,15 @@ func empty_vial() -> void:
 	centrifuged = false
 	for key in chemicals:
 		chemicals[key] = Chemical.new()
-	changed.emit()
+	_update_liquid()
 
-# Adding chemical composition to vial
-# Used by that chemical machine
+# Pipette: adding chemical composition to vial
 func add_chemical(composite: Composite, amount: float) -> void:
-	if amount <= 0.0:
-		return
 	empty = false
-	for key in chemicals:
-		var other: Chemical = chemicals[key]
-		if key != composite and other.quantity > 0.0 and not other.integrated:
-			damaged = true
-	var chem: Chemical = chemicals[composite]
-	chem.quantity += amount
-	chem.integrated = false
-	changed.emit()
+	var _chemical: Chemical = chemicals[composite]
+	_chemical.quantity += amount
+	_chemical.integrated = false
+	_update_liquid()
 
 # Mixer (Centrifuge) functionality for just the rotation
 func centrifuge(rpm: float) -> void:
@@ -104,7 +94,6 @@ func centrifuge(rpm: float) -> void:
 		centrifuged = true
 	if rpm >= CENTRIFUGE_DAMAGE_SPEED:
 		damaged = true
-	changed.emit()
 
 # Mixer (Centrifuge) functionality for integrating chemicals
 func integrate_chemical(composite: Composite, speed : Speed) -> void:
@@ -119,8 +108,6 @@ func integrate_chemical(composite: Composite, speed : Speed) -> void:
 				if speed == Speed.Medium:
 					chem.integrated = true
 					#Add if mixing damages
-					
-		changed.emit()
 
 # Functions to check for infections
 func has_cell_mutation() -> bool:

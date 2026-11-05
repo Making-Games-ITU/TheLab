@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://7iq2tjgsi7ll" path="res://World/Props/Xray/Wires.png" id="3_nn66o"]
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="4_oxy24"]
 [ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="4_slsn5"]
+[ext_resource type="Material" uid="uid://wqmtp5knmfxd" path="res://World/Interactables/Pipette/pipette_screen_material.tres" id="5_ohxcp"]
 [ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="5_slsn5"]
 [ext_resource type="Texture2D" uid="uid://bk66ydditnowo" path="res://UI/Screen/Logo Kras.png" id="6_ohxcp"]
 
@@ -58,19 +59,6 @@ albedo_texture = ExtResource("3_nn66o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slsn5"]
 albedo_texture = ExtResource("3_nn66o")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_oxy24"]
-viewport_path = NodePath("Filling Machine/screen/SubViewport")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_slsn5"]
-viewport_path = NodePath("Filling Machine/screen/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohxcp"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_oxy24")
-roughness = 0.6
-emission_enabled = true
-emission_texture = SubResource("ViewportTexture_slsn5")
 
 [sub_resource type="Shader" id="Shader_xvm24"]
 code = "shader_type canvas_item;
@@ -438,7 +426,7 @@ material_override = SubResource("StandardMaterial3D_slsn5")
 
 [node name="screen" parent="Filling Machine" index="16" unique_id=1099236844]
 sorting_offset = 10.0
-material_override = SubResource("StandardMaterial3D_ohxcp")
+material_override = ExtResource("5_ohxcp")
 
 [node name="SubViewport" type="SubViewport" parent="Filling Machine/screen" index="0" unique_id=1772661657]
 mesh_lod_threshold = 0.0

@@ -37,14 +37,14 @@ func interact(interactor: Node) -> void:
 
 func _enter_microscope() -> void:
 	%Micrograph.visible = true
-	%Control2.visible = true
+	%ExitFullscreenImage.visible = true
 	PlayerStats.is_analyzing = true
 	AudioManager.one_shot(sound_emitter)
 	print("Analyzing")
 
 func _exit_mircoscope() -> void:
 	%Micrograph.visible = false
-	%Control2.visible = false
+	%ExitFullscreenImage.visible = false
 	PlayerStats.is_analyzing = false
 	AudioManager.one_shot(exit_sound)
 	print("Returning from analyzing")

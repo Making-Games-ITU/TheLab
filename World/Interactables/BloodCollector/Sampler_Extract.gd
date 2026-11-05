@@ -1,7 +1,7 @@
 extends Interactable
 
 @export var uninteractable_sound: FmodEventEmitter3D
-signal sampler_extract_pressed
+signal sampler_extract_pressed # For micrograph interactions script
 
 func _ready() -> void:
 	super()
