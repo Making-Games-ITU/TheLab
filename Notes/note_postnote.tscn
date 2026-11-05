@@ -60,10 +60,10 @@ color = Color(1, 1, 0.41960785, 1)
 
 [node name="Label" type="Label" parent="Note Viewport/Control" index="1" unique_id=131675369]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 27.0
 offset_top = 50.0
-offset_right = 278.0
-offset_bottom = 111.0
+offset_right = 481.0
+offset_bottom = 437.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 25
 theme_override_constants/paragraph_spacing = -1
@@ -77,3 +77,4 @@ text = "Follow these simple steps
 -	Type the mg amount
 -	Press fill
 "
+autowrap_mode = 1
