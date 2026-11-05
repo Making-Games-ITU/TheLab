@@ -71,6 +71,8 @@ func _check_if_successful() -> void:
 
 func _check_game_over() -> void:
 	if GameStats.body_state == 6:
+		%GameOverScreen.visible = true
+		await get_tree().create_timer(2.0).timeout
 		get_tree().quit()
 
 func _uninteractable() -> void:
