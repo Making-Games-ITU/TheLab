@@ -2688,10 +2688,11 @@ mesh = SubResource("ArrayMesh_5eiyn")
 [node name="Notes" type="Node3D" parent="Room/Interactables" unique_id=1307095907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36687827, 0, 0)
 
-[node name="Body_request_Note" parent="Room/Interactables/Notes" unique_id=604695316 node_paths=PackedStringArray("note_camera", "stop_reading_sound", "area", "sound_emitter", "outline_meshes") instance=ExtResource("49_5eiyn")]
+[node name="Body_request_Note" parent="Room/Interactables/Notes" unique_id=604695316 node_paths=PackedStringArray("note_camera", "note_text", "stop_reading_sound", "area", "sound_emitter", "outline_meshes") instance=ExtResource("49_5eiyn")]
 transform = Transform3D(0.00981047, -0.9960237, 0.088547885, -0.00046906402, -0.08855674, -0.99607104, 0.99995166, 0.009730503, -0.0013360102, 6.2303333, 1.2194678, -5.993372)
 script = ExtResource("55_31hd8")
 note_camera = NodePath("Skeleton3D/Marker3D/Camera3D")
+note_text = NodePath("Note Viewport/Control/Label")
 stop_reading_sound = NodePath("StopReadingSound")
 prompt_text = "Read"
 area = NodePath("Area3D")
