@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bokgfdlrgsox"]
+
+[ext_resource type="Texture2D" uid="uid://bl04r40lo1a4s" path="res://UI/Interaction/Interaction_indicator.png" id="1_jl58y"]
+[ext_resource type="Script" uid="uid://5042iwt83hpd" path="res://UI/Interaction/Interactable_indicator.gd" id="2_hyb2o"]
+[ext_resource type="Texture2D" uid="uid://bei8fj01hb2hi" path="res://UI/Interaction/Interaction_indicator_Full.png" id="3_xde8c"]
+
+[node name="interactable_indecator" type="Sprite3D" unique_id=2142793944]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+sorting_offset = 10.0
+billboard = 1
+no_depth_test = true
+texture = ExtResource("1_jl58y")
+script = ExtResource("2_hyb2o")
+normal_indicator = ExtResource("1_jl58y")
+filled_indicator = ExtResource("3_xde8c")
+small_size = Vector3(0.005, 0.005, 0.005)
+normal_size = Vector3(0.02, 0.02, 0.02)
+hidden_color = Color(1, 1, 1, 0)
+base_color = Color(1, 1, 1, 0.34117648)
+show_distance = 1.0

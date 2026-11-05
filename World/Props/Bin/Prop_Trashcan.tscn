@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://6g8r3exfe4vm"]
 
 [ext_resource type="PackedScene" uid="uid://b3hfbv5jw0nt2" path="res://World/Props/Bin/Prop_Trashcan.fbx" id="1_bx3hu"]
+[ext_resource type="PackedScene" uid="uid://bokgfdlrgsox" path="res://UI/Interaction/interactable_indecator.tscn" id="2_xvkwk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3hsde"]
 size = Vector3(0.38671875, 0.51171875, 0.44702148)
 
 [node name="Prop_Trashcan" unique_id=414120974 instance=ExtResource("1_bx3hu")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1539806859]
+[node name="interactable_indecator" parent="." index="0" unique_id=2142793944 instance=ExtResource("2_xvkwk")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.35495484, 0)
+normal_size = Vector3(0.04, 0.04, 0.04)
+show_distance = 1.5
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=1539806859]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1997294369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24414063, 0)

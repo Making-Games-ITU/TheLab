@@ -23,5 +23,5 @@ shader_parameter/wobble = Vector2(0, 0)
 
 [node name="Test_Tube_Liquid" unique_id=1124276950 instance=ExtResource("1_buuyw")]
 
-[node name="Liquid" parent="." index="0" unique_id=164644510]
+[node name="Liquid" parent="." index="0" unique_id=343496087]
 material_override = SubResource("ShaderMaterial_idff6")

@@ -5,11 +5,11 @@
 [ext_resource type="Script" uid="uid://cwlp16ommdbfg" path="res://Systems/Game_Manager.gd" id="3_rdrb8"]
 [ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="4_3cgfy"]
 [ext_resource type="PackedScene" uid="uid://p1s3d1dytn62" path="res://Entities/Player/Player.tscn" id="5_5643u"]
-[ext_resource type="Script" uid="uid://dg1o1gujlh3uh" path="res://World/Interactables/BodyDisposal.gd" id="7_3cgfy"]
+[ext_resource type="Script" uid="uid://dg1o1gujlh3uh" path="res://World/Interactables/BodyDispose.gd" id="7_3cgfy"]
 [ext_resource type="Script" uid="uid://cmcmbnsforjle" path="res://World/Interactables/BodyRequest.gd" id="7_rdrb8"]
-[ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/VialCollect.gd" id="8_3cgfy"]
-[ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/Vial2CollectorInteraction.gd" id="9_5643u"]
-[ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/ScanButton.gd" id="10_xli3v"]
+[ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/Vial_GetTake.gd" id="8_3cgfy"]
+[ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/Sampler_VialSlot.gd" id="9_5643u"]
+[ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/Scanner_Start.gd" id="10_xli3v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt5wh"]
 

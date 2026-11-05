@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cdrmlpqjbyowt"]
 
 [ext_resource type="PackedScene" uid="uid://dh7hj18kfry5t" path="res://World/Props/Machines/Mixer/Prop_Mixer.fbx" id="1_c7708"]
+[ext_resource type="PackedScene" uid="uid://bokgfdlrgsox" path="res://UI/Interaction/interactable_indecator.tscn" id="2_6jv2y"]
 [ext_resource type="Texture2D" uid="uid://dpv6dd0ver3yb" path="res://World/Props/Machines/Mixer/NCentrifuge.png" id="2_sbv7e"]
 [ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="3_ipw6s"]
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="3_li5gh"]
@@ -32,18 +33,107 @@ albedo_texture = ExtResource("2_sbv7e")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_li5gh"]
 albedo_texture = ExtResource("2_sbv7e")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ukfv6"]
-viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
+[sub_resource type="Animation" id="Animation_ju1k8"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.08182119, 0.14374493, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5flxx"]
+resource_name = "insert"
+length = 0.7
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.013980566, 0.42207205, 0, 0.28999996, 1, 0.05283005, 0.30816188, 0, 0.46999997, 1, 0.06412695, 0.24409395, 0, 0.64, 1, 0.08182119, 0.14374493, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0.01830919, 0.9998323, 0.28999996, 1, 0, 0, 0.20633015, 0.9784823, 0.46999997, 1, 0, 0, 0.08715572, 0.99619466, 0.64, 1, 0, 0, 0.08715573, 0.99619466)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_vgqlu"]
+resource_name = "remove"
+length = 0.7
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.08182119, 0.14374493, 0, 0.2, 1, 0.06412695, 0.24409395, 0, 0.4, 1, 0.05283005, 0.30816188, 0, 0.7, 1, 0.013980566, 0.42207205, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0.08715573, 0.99619466, 0.19999999, 1, 0, 0, 0.08715572, 0.99619466, 0.4, 1, 0, 0, 0.20633015, 0.9784823, 0.7, 1, 0, 0, 0.01830919, 0.9998323)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vgqlu"]
+_data = {
+&"RESET": SubResource("Animation_ju1k8"),
+&"insert": SubResource("Animation_5flxx"),
+&"remove": SubResource("Animation_vgqlu")
+}
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6jv2y"]
 viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2aac"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_b2aac"]
+viewport_path = NodePath("Centrifuge/Screen_003/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fa6i4"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ukfv6")
+albedo_texture = SubResource("ViewportTexture_6jv2y")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_6jv2y")
+emission_texture = SubResource("ViewportTexture_b2aac")
 
 [sub_resource type="Shader" id="Shader_wbrb6"]
 code = "shader_type canvas_item;
@@ -250,14 +340,21 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("Centrifuge/Rotor")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99999994, 0.09, 1, 0, 0.7071, 0, 0.7071, 0.18, 1, 0, 1, 0, 0, 0.27, 1, 0, 0.7071, 0, -0.7071, 0.36, 1, 0, 0, 0, -1)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99999994, 0.09, 1, 0, 0.7071, 0, 0.7071, 0.18, 1, 0, 1, 0, 0, 0.27, 1, 0, 0.7071, 0, -0.7071)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Centrifuge")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.033333335, 1, 0.001, 0, 0, 0.06666667, 1, -0.001, 0, -0.001, 0.1, 1, -0.001, 0, 0.001, 0.13333334, 1, -0.001, 0, 0.001, 0.17083001, 1, 0, 0, 0, 0.20971446, 1, 0.001, 0, 0, 0.25001332, 1, -0.001, 0, -0.001, 0.29306114, 1, -0.001, 0, 0.001, 0.3277822, 1, -0.001, 0, 0.01, 0.36666667, 1, 0, 0, 0)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.033333335, 1, 0.001, 0, 0, 0.06666667, 1, -0.001, 0, -0.001, 0.1, 1, -0.001, 0, 0.001, 0.13333334, 1, -0.001, 0, 0.001, 0.17083001, 1, 0, 0, 0, 0.20971446, 1, 0.001, 0, 0, 0.25001332, 1, -0.001, 0, -0.001, 0.29306114, 1, -0.001, 0, 0.001)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Centrifuge/Cube_016")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.0025720892, 0, 0, 0.99999666, 0.3, 1, 0.0025721279, 0, 0, 0.99999666)
 
 [sub_resource type="Animation" id="Animation_6jv2y"]
 length = 0.001
@@ -275,12 +372,47 @@ tracks/1/path = NodePath("Centrifuge")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Centrifuge/Cube_016")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.49368808, 0, 0, 0.86963904)
 
 [sub_resource type="Animation" id="Animation_b2aac"]
 resource_name = "Start Mixer"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Centrifuge/Cube_016")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.49368808, 0, 0, 0.86963904, 1, 1, 0.0024153215, 0, 0, 0.9999971)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Centrifuge/Rotor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99999994, 0.6, 1, 0, -0.34938976, 0, 0.9369774, 0.96666664, 1, 0, 0.99999994, 0, -4.371138e-08)
 
 [sub_resource type="Animation" id="Animation_fa6i4"]
 resource_name = "Stop Mixer"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Centrifuge/Rotor")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.99999994, 0, -4.371138e-08, 0.96666664, 1, 0, 0, 0, 0.99999994)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Centrifuge/Cube_016")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.0024153215, 0, 0, 0.9999971, 0.96666664, 1, 0.49368808, 0, 0, 0.86963904)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ju1k8"]
 _data = {
@@ -292,7 +424,13 @@ _data = {
 
 [node name="Prop_Mixer" unique_id=1780799766 instance=ExtResource("1_c7708")]
 
-[node name="Centrifuge" parent="." index="0" unique_id=566894824]
+[node name="interactable_indecator" parent="." index="0" unique_id=2142793944 instance=ExtResource("2_6jv2y")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.3363677, 0.09236971)
+
+[node name="interactable_indecator2" parent="." index="1" unique_id=1823476609 instance=ExtResource("2_6jv2y")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.21206042, -0.29081914)
+
+[node name="Centrifuge" parent="." index="2" unique_id=566894824]
 material_override = SubResource("StandardMaterial3D_82owd")
 
 [node name="Button_014" parent="Centrifuge" index="0" unique_id=428855922]
@@ -341,10 +479,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8626451e-09, -0.0003622
 shape = SubResource("BoxShape3D_ipw6s")
 
 [node name="Cube_016" parent="Centrifuge" index="5" unique_id=2025561015]
+transform = Transform3D(1, 0, 0, 0, 0.51254404, -0.8586607, 0, 0.8586607, 0.51254404, 0, 0.33689988, 0.31028062)
 material_override = SubResource("StandardMaterial3D_qyadt")
 
 [node name="Rotor" parent="Centrifuge" index="6" unique_id=1447316547]
-transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, 0, 0.0854803)
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0, 0, 0.0854803)
 material_override = SubResource("StandardMaterial3D_li5gh")
 
 [node name="Vail_003" parent="Centrifuge/Rotor" index="0" unique_id=915117008]
@@ -359,43 +498,51 @@ omni_range = 0.233
 omni_attenuation = 0.651
 
 [node name="Marker3D" type="Marker3D" parent="Centrifuge/Rotor" index="2" unique_id=491794958]
-transform = Transform3D(0.98480755, -0.17364816, 0, 0.17364816, 0.98480755, 0, 0, 0, 1, 0.08182119, 0.14374493, 0)
+transform = Transform3D(0.98480725, -0.17364809, 0, 0.17364809, 0.98480725, 0, 0, 0, 1, 0.08182119, 0.14374493, 0)
 
 [node name="Env_Test_Tube2" parent="Centrifuge/Rotor/Marker3D" index="0" unique_id=1480596381 instance=ExtResource("4_ukfv6")]
 transform = Transform3D(1.0000001, 1.4901161e-08, 0, -1.4901161e-08, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Centrifuge/Rotor/Marker3D" index="1" unique_id=1405701845]
+libraries/ = SubResource("AnimationLibrary_vgqlu")
+
 [node name="Marker3D2" type="Marker3D" parent="Centrifuge/Rotor" index="3" unique_id=523785965]
-transform = Transform3D(0.98480755, 0.17364816, 0, -0.17364816, 0.98480755, 0, 0, 0, 1, -0.082967296, 0.14374493, 0)
+transform = Transform3D(0.98480743, 0.17364813, 0, -0.17364813, 0.98480743, 0, 0, 0, 1, -0.08447, 0.14457965, 0)
 
 [node name="Env_Test_Tube3" parent="Centrifuge/Rotor/Marker3D2" index="0" unique_id=1905329782 instance=ExtResource("4_ukfv6")]
-transform = Transform3D(1.0000001, -1.4901161e-08, 0, 1.4901161e-08, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 
 [node name="Marker3D3" type="Marker3D" parent="Centrifuge/Rotor" index="4" unique_id=836322283]
 transform = Transform3D(0.9961945, 0.08715573, 0, -0.08583162, 0.98106015, -0.17364816, -0.015134431, 0.17298739, 0.98480767, -0.041194264, 0.14374493, -0.07338198)
 
 [node name="Env_Test_Tube4" parent="Centrifuge/Rotor/Marker3D3" index="0" unique_id=2038377254 instance=ExtResource("4_ukfv6")]
 transform = Transform3D(1.0000001, -9.895302e-10, 0, -7.566996e-10, 1, -7.450581e-09, 0, 1.4901161e-08, 1, 0, 0, 0)
+visible = false
 
 [node name="Marker3D5" type="Marker3D" parent="Centrifuge/Rotor" index="5" unique_id=1036381623]
 transform = Transform3D(0.9961945, -0.08715573, 0, 0.08583162, 0.9810602, -0.17364816, 0.015134431, 0.17298739, 0.9848076, 0.040075544, 0.14374493, -0.074149534)
 
 [node name="Env_Test_Tube5" parent="Centrifuge/Rotor/Marker3D5" index="0" unique_id=1740121996 instance=ExtResource("4_ukfv6")]
 transform = Transform3D(1, -6.4610504e-09, 0, 8.1490725e-10, 0.99999994, 0, -4.656613e-10, 7.450581e-09, 1, 0, 0, 0)
+visible = false
 
 [node name="Marker3D4" type="Marker3D" parent="Centrifuge/Rotor" index="6" unique_id=243404251]
 transform = Transform3D(0.9961945, 0.08715573, 0, -0.08583162, 0.9810602, 0.17364816, 0.015134431, -0.17298739, 0.98480767, -0.041194264, 0.14374493, 0.07478577)
 
 [node name="Env_Test_Tube6" parent="Centrifuge/Rotor/Marker3D4" index="0" unique_id=1691825952 instance=ExtResource("4_ukfv6")]
 transform = Transform3D(1, 6.6356733e-09, 0, -6.4028427e-10, 0.99999994, 0, -4.656613e-10, -7.450581e-09, 1, 0, 0, 0)
+visible = false
 
 [node name="Marker3D6" type="Marker3D" parent="Centrifuge/Rotor" index="7" unique_id=620350027]
 transform = Transform3D(0.9961945, -0.08715574, 0, 0.08583162, 0.98106027, 0.17364816, -0.015134431, -0.1729874, 0.98480767, 0.040075544, 0.14374493, 0.07529953)
 
 [node name="Env_Test_Tube7" parent="Centrifuge/Rotor/Marker3D6" index="0" unique_id=248304220 instance=ExtResource("4_ukfv6")]
 transform = Transform3D(1.0000001, 8.440111e-09, 0, 6.9849193e-10, 1, 7.450581e-09, 0, -7.450581e-09, 1, 0, 0, 0)
+visible = false
 
 [node name="Screen_003" parent="Centrifuge" index="7" unique_id=1795268631]
-surface_material_override/0 = SubResource("StandardMaterial3D_b2aac")
+surface_material_override/0 = SubResource("StandardMaterial3D_fa6i4")
 
 [node name="SubViewport" type="SubViewport" parent="Centrifuge/Screen_003" index="0" unique_id=1252515481]
 mesh_lod_threshold = 0.0
@@ -527,5 +674,5 @@ offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=341594562]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3" unique_id=341594562]
 libraries/ = SubResource("AnimationLibrary_ju1k8")

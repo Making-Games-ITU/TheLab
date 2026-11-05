@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dyqbwnorkux62"]
+
+[ext_resource type="Shader" uid="uid://ckhqpvo72mtd6" path="res://World/Items/Test Tube/stylized_liquid.gdshader" id="1_m80tu"]
+
+[sub_resource type="Gradient" id="Gradient_7tj8f"]
+colors = PackedColorArray(0.9999998, 0.1228585, 0.21856046, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_03mnb"]
+gradient = SubResource("Gradient_7tj8f")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_m80tu")
+shader_parameter/liquid_height = -1.0
+shader_parameter/liquid_surface_color = Color(0, 0, 0, 1)
+shader_parameter/liquid_rim_gradient = SubResource("GradientTexture2D_03mnb")
+shader_parameter/rim_emission_intensity = 0.2
+shader_parameter/rim_exponent = 3.0
+shader_parameter/emission_intensity = 0.1
+shader_parameter/liquid_surface_gradient_size = 0.1
+shader_parameter/wobble = Vector2(0, 0)
