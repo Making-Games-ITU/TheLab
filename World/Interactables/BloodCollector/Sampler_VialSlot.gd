@@ -13,7 +13,10 @@ func focus() -> void:
 	
 func _update_prompt() -> void:
 	if GameStats.vial_in_collector:
-		prompt_text = "Take vial"
+		if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
+			prompt_text = "Take vial"
+		else:
+			prompt_text = "Hands are full"
 	elif PlayerStats.is_holding == PlayerStats.HoldState.VIAL:
 		prompt_text = "Insert vial"
 	else:
@@ -22,7 +25,10 @@ func _update_prompt() -> void:
 
 func interact(interactor: Node) -> void:
 	if GameStats.vial_in_collector:
-		_take_vial()
+		if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
+			_take_vial()
+		else:
+			_uninteractable()
 	elif PlayerStats.is_holding == PlayerStats.HoldState.VIAL:
 		_insert_vial()
 	else:
