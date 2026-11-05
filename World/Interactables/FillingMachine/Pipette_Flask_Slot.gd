@@ -40,7 +40,6 @@ func interact(interactor: Node) -> void:
 func _insert_flask():
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
 	GameStats.flask_in_pipette = true
-	flask_vial_model.visible = true
 	GameStats.pipette_current_chemical = PlayerStats.current_chemical
 	PlayerStats.current_chemical = VialStats.Composite.NONE
 	GameStats.pipette_current_chemical_name = PlayerStats.current_chemical_name
@@ -53,7 +52,6 @@ func _insert_flask():
 
 func _take_flask():
 	GameStats.flask_in_pipette = false
-	flask_vial_model.visible = false
 	PlayerStats.current_chemical = GameStats.pipette_current_chemical
 	GameStats.pipette_current_chemical = VialStats.Composite.NONE
 	GameStats.pipette_current_chemical_name = ""
@@ -64,7 +62,7 @@ func _take_flask():
 	print("Picked up flask from pipette flask slot")
 	#TODO
 	if anim:
-		anim.play("remove")
+		anim.play("take")
 
 func _uninteractable() -> void:
 	AudioManager.one_shot(uninteractable_sound)

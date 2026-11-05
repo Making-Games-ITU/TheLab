@@ -40,7 +40,6 @@ func interact(interactor: Node) -> void:
 func _insert_vial():
 	GameStats.vial_in_centrifuge = true
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
-	centrifuge_vial_model.visible = true
 	if VialStats.empty:
 		_centrifuge_state_label.text = "Vial empty"
 	else:
@@ -55,14 +54,13 @@ func _insert_vial():
 func _take_vial():
 	GameStats.vial_in_centrifuge = false
 	PlayerStats.is_holding = PlayerStats.HoldState.VIAL
-	centrifuge_vial_model.visible = false
 	_centrifuge_state_label.text = "No vial"
 	AudioManager.one_shot(take_vial_sound)
 	_update_prompt()
 	print("Vial picked up")
 	#TODO
 	if anim:
-		anim.play("remove")
+		anim.play("take")
 
 func _uninteractable() -> void:
 	AudioManager.one_shot(uninteractable_sound)

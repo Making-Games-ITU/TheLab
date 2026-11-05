@@ -30,16 +30,18 @@ func interact(interactor: Node) -> void:
 		_uninteractable()
 
 func _extractBlood() -> void:
-	VialStats.empty = false
-	VialStats.murky = true
-	sampler_extract_pressed.emit()
-	VialStats.infection = VialStats.InfectionType.CELL_MUTATION
-	VialStats._update_liquid()
-	AudioManager.one_shot(sound_emitter)
-	print("Blood extracted with infection: ", VialStats.infection)
 	#TODO
+	AudioManager.one_shot(sound_emitter)
 	if anim:
-		anim.play("extract")
+		anim.play("close")
+		await anim.animation_finished
+		VialStats.empty = false
+		VialStats.murky = true
+		sampler_extract_pressed.emit()
+		VialStats.infection = VialStats.InfectionType.CELL_MUTATION
+		VialStats._update_liquid()
+		print("Blood extracted with infection: ", VialStats.infection)
+		anim.play("open")
 
 func _uninteractable() -> void:
 	AudioManager.one_shot(uninteractable_sound)

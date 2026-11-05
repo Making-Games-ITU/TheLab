@@ -31,15 +31,17 @@ func interact(interactor: Node) -> void:
 			_inject()
 
 func _inject() -> void:
-	_check_if_successful()
-	VialStats.empty_vial()
-	VialStats._update_liquid()
-	AudioManager.one_shot(sound_emitter)
-	sampler_inject_pressed.emit()
-	print("Serum injected")
 	#TODO:
 	if anim:
-		anim.play("inject")
+		anim.play("close")
+		await anim.animation_finished
+		_check_if_successful()
+		VialStats.empty_vial()
+		VialStats._update_liquid()
+		sampler_inject_pressed.emit()
+		AudioManager.one_shot(sound_emitter)
+		print("Serum injected")
+		anim.play("open")
 
 func _check_if_successful() -> void:
 	# Body state already at minimum but keep trying = bad

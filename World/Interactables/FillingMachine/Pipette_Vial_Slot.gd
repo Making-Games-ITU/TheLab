@@ -40,10 +40,7 @@ func interact(interactor: Node) -> void:
 
 func _insert_vial():
 	GameStats.vial_in_pipette = true
-	pipette_vial_model.visible = true
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
-	pipette_vial_tube_on.visible = true
-	pipette_vial_tube_off.visible = false
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
 	print("Vial inserted into pipette vial slot")
@@ -53,16 +50,13 @@ func _insert_vial():
 
 func _take_vial():
 	GameStats.vial_in_pipette = false
-	pipette_vial_model.visible = false
 	PlayerStats.is_holding = PlayerStats.HoldState.VIAL
-	pipette_vial_tube_on.visible = false
-	pipette_vial_tube_off.visible = true
 	AudioManager.one_shot(take_vial_sound)
 	_update_prompt()
 	print("Picked up vial from pipette vial slot")
 	#TODO
 	if anim:
-		anim.play("remove")
+		anim.play("take")
 
 func _uninteractable() -> void:
 	AudioManager.one_shot(uninteractable_sound)

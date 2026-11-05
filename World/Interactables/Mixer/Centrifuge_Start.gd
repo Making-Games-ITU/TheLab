@@ -31,15 +31,21 @@ func interact(interactor: Node) -> void:
 		_uninteractable()
 
 func _start_centrifuge():
-	VialStats.centrifuge(GameStats.centrifuge_current_speed)
-	centrifuge_start_pressed.emit() # For the micrograph, should rename
-	_centrifuge_state_label.text = "Done"
-	AudioManager.one_shot(sound_emitter)
-	_update_prompt()
-	print("Centrifuged")
-	#TODO
-	if anim:
-		anim.play("remove")
+	
+	if anim and anim.animation_finished:
+		anim.play("Start Mixer")
+		await anim.animation_finished
+		_centrifuge_state_label.text = "Mixing"
+		AudioManager.one_shot(sound_emitter)
+		anim.play("Mixing")
+		await get_tree().create_timer(5).timeout
+		anim.play("Stop Mixer")
+		VialStats.centrifuge(GameStats.centrifuge_current_speed)
+		centrifuge_start_pressed.emit() # For the micrograph, should rename
+		_centrifuge_state_label.text = "Done"
+		_update_prompt()
+		print("Centrifuged")
+
 
 func _uninteractable() -> void:
 	AudioManager.one_shot(uninteractable_sound)

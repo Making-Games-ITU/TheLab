@@ -35,18 +35,26 @@ func interact(interactor: Node) -> void:
 		_uninteractable()
 
 func _insert_vial():
+	
+	if anim:
+		anim.play("insert")
+		print("playing insert anim")
+
+	AudioManager.one_shot(sound_emitter)
 	GameStats.vial_in_collector = true
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
-	sample_collector_vial.visible = true
-	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
 	print("Vial inserted")
 
 func _take_vial():
-	GameStats.vial_in_collector = false
-	PlayerStats.is_holding = PlayerStats.HoldState.VIAL
-	sample_collector_vial.visible = false
+	
 	AudioManager.one_shot(take_vial_sound)
+
+	if anim:
+		anim.play("take")
+	
+	PlayerStats.is_holding = PlayerStats.HoldState.VIAL
+	GameStats.vial_in_collector = false
 	_update_prompt()
 	print("Picked up Vial")
 
