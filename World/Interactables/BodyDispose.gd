@@ -20,14 +20,13 @@ func interact(interactor: Node) -> void:
 		_uninteractable()
 
 func _dispose_body():
-	%Body.visible = false
 	GameStats.body_exists = false
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
 	print("Body disposed")
 	# This below doesn't work
 	if anim:
-		anim.play("RESET")
+		anim.play("dispose_body")
 
 func _uninteractable() -> void:
 	AudioManager.one_shot(uninteractable_sound)

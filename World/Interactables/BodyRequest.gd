@@ -28,12 +28,12 @@ func _new_body() -> void:
 	GameStats.body_ID = bodyIdString+ "%04d" % GameStats.body_number
 	GameStats.body_exists = true
 	GameStats.body_state = 3 # neutral
-	%Body.visible = true
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
 	# This below doesn't work yet
 	if anim:
-		anim.play("request")
+		print("calling anim")
+		anim.play("order_body")
 		await anim.animation_finished
 
 func _uninteractable() -> void:

@@ -34,10 +34,10 @@ func _start_scan() -> void:
 	_scanning = true
 	AudioManager.one_shot(sound_emitter)
 	if anim:
-		scan_pressed.emit()
 		anim.play("scan")
 		await anim.animation_finished
 		#TODO: Change screen output here
+		scan_pressed.emit()
 		_scanning = false
 	else:
 		# bypassing anim for now

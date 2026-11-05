@@ -19,7 +19,6 @@ func _ready():
 func _on_scan_pressed() -> void:
 	lung_status_group.visible = false
 	offline_label.visible = true
-	await get_tree().create_timer(1.0).timeout
 	offline_label.visible = false
 	lung_status_group.visible = true
 	_show_lung_status(GameStats.body_state)
