@@ -67,6 +67,13 @@ func _check_if_successful() -> void:
 					GameStats.body_state += 1
 					_check_game_over()
 					return
+	# If no chemical is present
+	var no_chemicals = true
+	for key in VialStats.chemicals:
+		if VialStats.chemicals[key].quantity != 0.0:
+			no_chemicals = false
+	if no_chemicals:
+		return
 	GameStats.body_state -= 1
 
 func _check_game_over() -> void:
