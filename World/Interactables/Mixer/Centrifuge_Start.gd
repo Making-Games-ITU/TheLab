@@ -1,6 +1,7 @@
 extends Interactable
 
 @export var uninteractable_sound: FmodEventEmitter3D
+@onready var _centrifuge_state_label: Label = %Centrifuge_State_Label
 signal centrifuge_start_pressed
 
 func _ready() -> void:
@@ -11,7 +12,7 @@ func focus() -> void:
 	_update_prompt()
 	
 func _update_prompt() -> void:
-	if GameStats.vial_in_mixer:
+	if GameStats.vial_in_centrifuge:
 		if VialStats.empty:
 			prompt_text = "Vial is empty"
 		else:
@@ -21,7 +22,7 @@ func _update_prompt() -> void:
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
-	if GameStats.vial_in_mixer:
+	if GameStats.vial_in_centrifuge:
 		if VialStats.empty:
 			_uninteractable()
 		else:
@@ -32,10 +33,11 @@ func interact(interactor: Node) -> void:
 func _start_centrifuge():
 	if VialStats.murky:
 		VialStats.murky = false
-		centrifuge_start_pressed.emit()
-	_update_prompt()
+		centrifuge_start_pressed.emit() # For the micrograph
+	_centrifuge_state_label.text = "Done"
 	AudioManager.one_shot(sound_emitter)
-	print("Centrifuge started")
+	_update_prompt()
+	print("Centrifuged")
 	#TODO
 	if anim:
 		anim.play("remove")

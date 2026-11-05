@@ -33,7 +33,7 @@ func _extractBlood() -> void:
 	VialStats.empty = false
 	VialStats.murky = true
 	sampler_extract_pressed.emit()
-	VialStats.infection = VialStats.Infection.CELL_MUTATION
+	VialStats.infection = VialStats.InfectionType.CELL_MUTATION
 	VialStats._update_liquid()
 	AudioManager.one_shot(sound_emitter)
 	print("Blood extracted with infection: ", VialStats.infection)

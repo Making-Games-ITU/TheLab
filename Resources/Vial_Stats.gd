@@ -19,13 +19,8 @@ var liquid_material: ShaderMaterial = preload("res://World/Items/Test Tube/Test_
 var micrograph_shader: ShaderMaterial = preload("res://UI/Microscope/micrograph_shader_material.tres")
 
 # Infection related stats
-enum Infection {
-	NONE = 0,
-	CELL_MUTATION = 1,
-	PARASITES = 2,
-	BOTH = 3,
-}
-var infection: Infection = Infection.NONE
+enum InfectionType { NONE, CELL_MUTATION, PARASITES, BOTH}
+var infection: InfectionType = InfectionType.NONE
 
 # Chemical related stats
 enum Composite { NONE, A, B }
@@ -72,7 +67,7 @@ func _set_liquid(height: float, color: Color) -> void:
 
 # Reset vial
 func empty_vial() -> void:
-	infection = Infection.NONE
+	infection = InfectionType.NONE
 	empty = true
 	damaged = false
 	centrifuged = false
@@ -111,9 +106,9 @@ func integrate_chemical(composite: Composite, speed : Speed) -> void:
 
 # Functions to check for infections
 func has_cell_mutation() -> bool:
-	return infection & Infection.CELL_MUTATION != 0
+	return infection & InfectionType.CELL_MUTATION != 0
 func has_parasites() -> bool:
-	return infection & Infection.PARASITES != 0
+	return infection & InfectionType.PARASITES != 0
 
 # Functions to check for chemical compositions
 func get_quantity(composite: Composite) -> float:

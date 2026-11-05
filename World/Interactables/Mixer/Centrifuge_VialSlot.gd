@@ -3,6 +3,7 @@ extends Interactable
 @export var take_vial_sound: FmodEventEmitter3D
 @export var uninteractable_sound: FmodEventEmitter3D
 @onready var centrifuge_vial_model := %CentrifugeVialModel
+@onready var _centrifuge_state_label: Label = %Centrifuge_State_Label
 
 func _ready() -> void:
 	super()
@@ -12,7 +13,7 @@ func focus() -> void:
 	_update_prompt()
 	
 func _update_prompt() -> void:
-	if GameStats.vial_in_mixer:
+	if GameStats.vial_in_centrifuge:
 		if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
 			prompt_text = "Take vial"
 		else:
@@ -25,7 +26,7 @@ func _update_prompt() -> void:
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
-	if GameStats.vial_in_mixer:
+	if GameStats.vial_in_centrifuge:
 		if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
 			_take_vial()
 		else:
@@ -37,22 +38,27 @@ func interact(interactor: Node) -> void:
 			_uninteractable()
 
 func _insert_vial():
-	GameStats.vial_in_mixer = true
+	GameStats.vial_in_centrifuge = true
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
-	_update_prompt()
-	AudioManager.one_shot(sound_emitter)
 	centrifuge_vial_model.visible = true
+	if VialStats.empty:
+		_centrifuge_state_label.text = "Vial empty"
+	else:
+		_centrifuge_state_label.text = "Ready"
+	AudioManager.one_shot(sound_emitter)
+	_update_prompt()
 	print("Vial inserted")
 	#TODO
 	if anim:
 		anim.play("insert")
 
 func _take_vial():
-	GameStats.vial_in_mixer = false
+	GameStats.vial_in_centrifuge = false
 	PlayerStats.is_holding = PlayerStats.HoldState.VIAL
-	_update_prompt()
-	AudioManager.one_shot(take_vial_sound)
 	centrifuge_vial_model.visible = false
+	_centrifuge_state_label.text = "No vial"
+	AudioManager.one_shot(take_vial_sound)
+	_update_prompt()
 	print("Vial picked up")
 	#TODO
 	if anim:

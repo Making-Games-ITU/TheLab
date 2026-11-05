@@ -21,10 +21,7 @@ func _update_prompt() -> void:
 
 func interact(interactor: Node) -> void:
 	if GameStats.pipette_chemical_amount.length() < GameStats.PIPETTE_CHARACTERS_MAX:
-		if GameStats.pipette_chemical_amount.is_empty() and _prompt_text_original == "0":
-			_uninteractable()
-		else:
-			_add_number_to_pipette()
+		_add_number_to_pipette()
 	else:
 		_uninteractable()
 
@@ -35,4 +32,4 @@ func _add_number_to_pipette() -> void:
 
 func _uninteractable() -> void:
 	AudioManager.one_shot(uninteractable_sound)
-	print("Number in pipette is too long / First number can't be 0")
+	print("Number in pipette is too long")
