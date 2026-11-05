@@ -1,24 +1,23 @@
 [gd_scene format=3 uid="uid://dg2kdr4dq6wye"]
 
 [ext_resource type="PackedScene" uid="uid://bk563wn5l28w3" path="res://World/Props/Machines/Blood Collector/Prop_Blood_Collector_Machine.fbx" id="1_sny63"]
-[ext_resource type="PackedScene" uid="uid://bokgfdlrgsox" path="res://UI/Interaction/interactable_indecator.tscn" id="2_a06ba"]
 [ext_resource type="Texture2D" uid="uid://dayrghnnvllag" path="res://World/Props/Electricals/Computer/Pc_Props_Texture.png" id="3_8np5n"]
 [ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="3_a06ba"]
 [ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="3_cp7ly"]
 [ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="4_cp7ly"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_a06ba"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_8np5n"]
 viewport_path = NodePath("Blood Collector/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_cp7ly"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_a06ba"]
 viewport_path = NodePath("Blood Collector/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6oc4"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_a06ba")
+albedo_texture = SubResource("ViewportTexture_8np5n")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_cp7ly")
+emission_texture = SubResource("ViewportTexture_a06ba")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3exb"]
 albedo_texture = ExtResource("3_8np5n")
@@ -238,45 +237,31 @@ size = Vector3(0.17144775, 0.4335327, 0.21331787)
 
 [node name="Prop_Blood_Collector_Machine" unique_id=2139538409 instance=ExtResource("1_sny63")]
 
-[node name="interactable_indecator" parent="." index="0" unique_id=2142793944 instance=ExtResource("2_a06ba")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.08106509, -0.11954795, 0)
-
-[node name="interactable_indecator2" parent="." index="1" unique_id=1646248155 instance=ExtResource("2_a06ba")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.0579156, -0.06258603, 0.15103303)
-normal_size = Vector3(0.01, 0.01, 0.01)
-
-[node name="interactable_indecator3" parent="." index="2" unique_id=1320821882 instance=ExtResource("2_a06ba")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.0579156, -0.0066985264, 0.15103303)
-normal_size = Vector3(0.01, 0.01, 0.01)
-
-[node name="interactable_indecator4" parent="." index="3" unique_id=1107505702 instance=ExtResource("2_a06ba")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.0579156, 0.044459112, 0.15103303)
-normal_size = Vector3(0.01, 0.01, 0.01)
-
-[node name="Blood Collector" parent="." index="4" unique_id=1648072013]
+[node name="Blood Collector" parent="." index="0" unique_id=504701557]
 surface_material_override/1 = SubResource("StandardMaterial3D_x6oc4")
 
-[node name="Open_Capsule_Button" parent="Blood Collector" index="1" unique_id=865747307]
+[node name="Open_Capsule_Button" parent="Blood Collector" index="1" unique_id=90519716]
+visible = false
 material_override = SubResource("StandardMaterial3D_k3exb")
 script = ExtResource("3_cp7ly")
 
-[node name="Off_On-btn_001" parent="Blood Collector/Open_Capsule_Button" index="0" unique_id=493140703]
+[node name="Off_On-btn_001" parent="Blood Collector/Open_Capsule_Button" index="0" unique_id=1592360265]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_sny63")
 
-[node name="Open_Capsule_Button_001" parent="Blood Collector" index="2" unique_id=2013907341]
+[node name="Open_Capsule_Button_001" parent="Blood Collector" index="2" unique_id=1120057542]
 material_override = SubResource("StandardMaterial3D_ssw6b")
 script = ExtResource("3_cp7ly")
 
-[node name="Off_On-btn_002" parent="Blood Collector/Open_Capsule_Button_001" index="0" unique_id=417140535]
+[node name="Off_On-btn_002" parent="Blood Collector/Open_Capsule_Button_001" index="0" unique_id=2048670605]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_8np5n")
 
-[node name="Open_Capsule_Button_002" parent="Blood Collector" index="3" unique_id=1785087677]
+[node name="Open_Capsule_Button_002" parent="Blood Collector" index="3" unique_id=597956785]
 material_override = SubResource("StandardMaterial3D_a06ba")
 script = ExtResource("3_cp7ly")
 
-[node name="Off_On-btn_003" parent="Blood Collector/Open_Capsule_Button_002" index="0" unique_id=1258623673]
+[node name="Off_On-btn_003" parent="Blood Collector/Open_Capsule_Button_002" index="0" unique_id=133612244]
 transform = Transform3D(0.51, 1.8949967e-07, 5.90721e-15, 0, -5.4857793e-08, 0.895, 7.700783e-08, -1.255, -3.912169e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_cp7ly")
 
@@ -360,7 +345,7 @@ offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="5" unique_id=742797447]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=742797447]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1681810830]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018463135, 0.010223389, -0.0030822754)

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bm3th10pmjglo" path="res://Notes/Note_document.fbx" id="1_lhq4c"]
 [ext_resource type="Texture2D" uid="uid://diw6gy4ed42do" path="res://Notes/paperTexture.png" id="2_1k7ho"]
-[ext_resource type="Script" uid="uid://dfwqme4vae8iu" path="res://Notes/note.gd" id="2_xnj3y"]
+[ext_resource type="Script" uid="uid://dfwqme4vae8iu" path="res://Notes/Note_Interactions.gd" id="2_xnj3y"]
 [ext_resource type="FontFile" uid="uid://c0j46o02p6oav" path="res://UI/Fonts/JPHSL.TTF" id="3_1k7ho"]
 [ext_resource type="PackedScene" uid="uid://bokgfdlrgsox" path="res://UI/Interaction/interactable_indecator.tscn" id="3_fxwv4"]
 
