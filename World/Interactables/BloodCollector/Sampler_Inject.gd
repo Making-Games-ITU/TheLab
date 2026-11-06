@@ -1,6 +1,8 @@
 extends Interactable
 
 @export var uninteractable_sound: FmodEventEmitter3D
+@export var press_anim : ButtonPressAnimation 
+
 signal sampler_inject_pressed # For micrograph interactions script
 
 func _ready() -> void:
@@ -24,6 +26,7 @@ func _update_prompt() -> void:
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
+	press_anim.press()
 	if GameStats.vial_in_collector and GameStats.body_exists:
 		if VialStats.empty:
 			_uninteractable()

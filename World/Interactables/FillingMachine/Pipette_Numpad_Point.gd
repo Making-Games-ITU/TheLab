@@ -3,6 +3,7 @@ extends Interactable
 @export var uninteractable_sound: FmodEventEmitter3D
 @onready var _pipette_chemical_amount_label: Label = %Pipette_Chemical_Amount_Label
 var _prompt_text_original: String
+@export var press_anim : ButtonPressAnimation 
 
 func _ready() -> void:
 	super()
@@ -23,6 +24,7 @@ func _update_prompt() -> void:
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
+	press_anim.press()
 	if GameStats.pipette_point_added:
 		_uninteractable()
 	else:

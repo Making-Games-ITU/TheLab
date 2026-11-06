@@ -1,11 +1,5 @@
 [gd_scene format=3 uid="uid://bofhacbjojc6c"]
 
 [ext_resource type="PackedScene" uid="uid://dwho5r8t676ia" path="res://World/Items/Vial/Item_Vial.fbx" id="1_ej313"]
-[ext_resource type="PackedScene" uid="uid://bokgfdlrgsox" path="res://UI/Interaction/interactable_indecator.tscn" id="2_cydix"]
 
 [node name="Item_Vial" unique_id=739392615 instance=ExtResource("1_ej313")]
-
-[node name="interactable_indecator" parent="." index="0" unique_id=2142793944 instance=ExtResource("2_cydix")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.05302094, 0)
-normal_size = Vector3(0.02, 0.02, 0.02)
-show_distance = 1.25

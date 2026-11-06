@@ -2,6 +2,7 @@ extends Interactable
 
 @export var uninteractable_sound: FmodEventEmitter3D
 @onready var _centrifuge_speed_label: Label = %Centrifuge_Speed_Label
+@export var press_anim : ButtonPressAnimation 
 
 func _ready() -> void:
 	super()
@@ -18,6 +19,7 @@ func _update_prompt() -> void:
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
+	press_anim.press()
 	if GameStats.centrifuge_current_speed < GameStats.CENTRIFUGE_MAX_SPEED:
 		_increase_speed()
 	else:

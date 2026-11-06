@@ -25,7 +25,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var distance_to_player = global_position.distance_to(player_camera.global_position)
 	
-	if(distance_to_player < show_distance):
+	if(distance_to_player < show_distance && !PlayerStats.is_reading):
 		indicator_shown = true
 	else :
 		indicator_shown = false

@@ -1,4 +1,5 @@
 extends Node3D
+class_name ButtonPressAnimation
 
 @export var press_offset := Vector3(0,0,-0.02)
 @export var press_duration := 0.06
@@ -6,6 +7,7 @@ extends Node3D
 
 var start_position: Vector3
 var press_tween: Tween
+
 
 
 func _ready() -> void:

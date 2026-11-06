@@ -1,6 +1,7 @@
 extends Interactable
 
 @export var uninteractable_sound: FmodEventEmitter3D
+@export var press_anim : ButtonPressAnimation 
 
 func focus() -> void:
 	_set_outline(true)
@@ -14,6 +15,7 @@ func _update_prompt() -> void:
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
+	press_anim.press()
 	if GameStats.body_exists:
 		_dispose_body()
 	else:

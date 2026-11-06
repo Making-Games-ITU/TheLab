@@ -2,6 +2,8 @@ extends Interactable
 
 @export var uninteractable_sound: FmodEventEmitter3D
 @onready var _centrifuge_state_label: Label = %Centrifuge_State_Label
+@export var press_anim : ButtonPressAnimation 
+
 signal centrifuge_start_pressed
 
 func _ready() -> void:
@@ -22,6 +24,7 @@ func _update_prompt() -> void:
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
+	press_anim.press()
 	if GameStats.vial_in_centrifuge:
 		if VialStats.empty:
 			_uninteractable()
@@ -31,7 +34,7 @@ func interact(interactor: Node) -> void:
 		_uninteractable()
 
 func _start_centrifuge():
-	
+	press_anim.press()
 	if anim and anim.animation_finished:
 		anim.play("Start Mixer")
 		await anim.animation_finished
