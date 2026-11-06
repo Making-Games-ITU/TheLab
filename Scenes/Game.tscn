@@ -1828,18 +1828,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_duvii")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_a4o6x"]
-viewport_path = NodePath("SubViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_uiqyu"]
+viewport_path = NodePath("Room/Interactables/Sampler/Blood Collector/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0ohmx"]
-viewport_path = NodePath("SubViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_7ldm1"]
+viewport_path = NodePath("Room/Interactables/Scanner/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jt06q"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_a4o6x")
+albedo_texture = SubResource("ViewportTexture_uiqyu")
 roughness = 0.6
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_0ohmx")
+emission_texture = SubResource("ViewportTexture_7ldm1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uwpdn"]
 resource_name = "Door_Btn"
@@ -7031,7 +7031,7 @@ material_override = SubResource("StandardMaterial3D_2h8s2")
 mesh = SubResource("ArrayMesh_2nmvu")
 
 [node name="SampleCollectorVialMarker" type="Marker3D" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel" unique_id=1334363848]
-transform = Transform3D(0.9995712, -0.029278915, 0, 0.029278915, 0.9995712, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.9995712, -0.02927892, 0, 0.02927892, 0.9995712, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 
 [node name="SampleCollectorVialModel" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel/SampleCollectorVialMarker" unique_id=2038031653 instance=ExtResource("23_74b0p")]
@@ -7280,7 +7280,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4993663, 1.5193069, -3.1362
 script = ExtResource("41_gbjl2")
 
 [node name="Screen" type="MeshInstance3D" parent="Room/Interactables/Scanner" unique_id=1684522648]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1264323, -1.4424086, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12643242, -1.4424086, 0)
 mesh = SubResource("ArrayMesh_qaa84")
 surface_material_override/1 = SubResource("StandardMaterial3D_jt06q")
 
