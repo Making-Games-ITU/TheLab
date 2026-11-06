@@ -30,6 +30,7 @@ func interact(interactor: Node) -> void:
 func _add_number_to_pipette() -> void:
 	GameStats.pipette_chemical_amount += _prompt_text_original
 	_pipette_chemical_amount_label.text = GameStats.pipette_chemical_amount + " ml"
+	AudioManager.one_shot(sound_emitter)
 	print("Added number. Current number: ", GameStats.pipette_chemical_amount)
 
 func _uninteractable() -> void:

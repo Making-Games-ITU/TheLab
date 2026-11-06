@@ -40,6 +40,7 @@ func _add_point_to_pipette() -> void:
 		GameStats.pipette_chemical_amount += "."
 	_pipette_chemical_amount_label.text = GameStats.pipette_chemical_amount
 	GameStats.pipette_point_added = true
+	AudioManager.one_shot(sound_emitter)
 	print("Added point. Current number: ", GameStats.pipette_chemical_amount)
 
 func _uninteractable() -> void:
