@@ -5,6 +5,7 @@ extends Interactable
 
 var _scanning: bool = false
 signal scan_pressed
+signal scan_over
 
 func _ready() -> void:
 	super()
@@ -38,9 +39,9 @@ func _start_scan() -> void:
 	AudioManager.one_shot(sound_emitter)
 	if anim:
 		anim.play("scan")
-		await anim.animation_finished
-		#TODO: Change screen output here
 		scan_pressed.emit()
+		await anim.animation_finished
+		scan_over.emit()
 		_scanning = false
 	else:
 		# bypassing anim for now

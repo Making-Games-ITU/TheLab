@@ -30,7 +30,10 @@ func _new_body() -> void:
 	GameStats.body_number += 1 
 	GameStats.body_ID = bodyIdString+ "%04d" % GameStats.body_number
 	GameStats.body_exists = true
-	GameStats.body_state = 3 # neutral
+	if GameStats.difficulty_stage == 0:
+		GameStats.body_state = 1 # cured
+	else:
+		GameStats.body_state = 3 # neutral
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
 	# This below doesn't work yet

@@ -31,6 +31,10 @@ func _on_centrifuged() -> void:
 		total_chem += quantity
 		mix += VialStats.CHEMICAL_COLORS[key] * quantity
 	_set_cell_color(mix / (VialStats.BLOOD_AMOUNT + total_chem))
+	if VialStats.infection == VialStats.InfectionType.NONE:
+		_set_mutation_parameters(0)
+	elif VialStats.infection == VialStats.InfectionType.CELL_MUTATION:
+		_set_mutation_parameters(20)
 
 func _on_blood_injected() -> void:
 	_on_reset_micrograph()
@@ -42,3 +46,6 @@ func _on_reset_micrograph() -> void:
 
 func _set_cell_color(color: Color) -> void:
 	micrograph_shader.set_shader_parameter("cell_color", color)
+
+func _set_mutation_parameters(percent: int) -> void:
+	micrograph_shader.set_shader_parameter("mutation_percentage", percent)
