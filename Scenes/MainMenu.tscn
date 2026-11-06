@@ -7,19 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="4_7v4os"]
 [ext_resource type="PackedScene" uid="uid://bhcn0eyj5awrm" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_lamp.tscn" id="5_2x1g0"]
 [ext_resource type="PackedScene" uid="uid://6g8r3exfe4vm" path="res://World/Props/Bin/Prop_Trashcan.tscn" id="5_ydj5n"]
-[ext_resource type="Script" uid="uid://b2r7cte3y82gd" path="res://World/Interactables/Trashcan_Interactions.gd" id="6_fw7q4"]
 [ext_resource type="PackedScene" uid="uid://bp60ytwrm06wj" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_red_lamp.tscn" id="6_riqfo"]
 [ext_resource type="PackedScene" uid="uid://l6wljvsc2bg1" path="res://World/Props/Machines/Surgery Machine/env_machine_surgical.tscn" id="7_yxkem"]
 [ext_resource type="PackedScene" uid="uid://n10ynemp2f4b" path="res://World/Environments/Room/env_room.tscn" id="8_7v4os"]
 [ext_resource type="Texture2D" uid="uid://bx548vio7lxoi" path="res://World/Props/Chairs/Chair_Texture.png" id="8_grj4f"]
 [ext_resource type="PackedScene" uid="uid://yomyius6rgy8" path="res://World/Props/Chairs/env_stool.tscn" id="8_o66vf"]
 [ext_resource type="PackedScene" uid="uid://dp6ay0uxk6bw7" path="res://World/Props/Xray/Curtains/prop_curtains.tscn" id="9_fipmv"]
-[ext_resource type="Script" uid="uid://7y5mut280vma" path="res://World/Interactables/Chair.gd" id="9_pj4f5"]
 [ext_resource type="PackedScene" uid="uid://1h75cfa5b4jp" path="res://World/Props/Tables/env_table.tscn" id="9_pjscj"]
 [ext_resource type="PackedScene" uid="uid://dd4lliduo7nou" path="res://World/Props/Electricals/Power Supply/env_power_supply.tscn" id="10_m7n2d"]
 [ext_resource type="PackedScene" uid="uid://soh3pd56plwi" path="res://World/Props/Electricals/Control Panel/prop_control_panel.tscn" id="10_ydmd8"]
 [ext_resource type="PackedScene" uid="uid://xvx3yha5ujc" path="res://World/Props/Tables/env_table_surgical.tscn" id="11_65hh5"]
-[ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/Vial_GetTake.gd" id="11_k5x2d"]
 [ext_resource type="PackedScene" uid="uid://dljgppj1vdecd" path="res://World/Props/Storage/Metal Shelve/prop_metal_storage.tscn" id="11_rplfc"]
 [ext_resource type="PackedScene" uid="uid://bp0030kh5o7rt" path="res://World/Props/Storage/Locker/env_locker.tscn" id="12_6byu3"]
 [ext_resource type="PackedScene" uid="uid://wcvo510x8n3s" path="res://World/Props/Storage/Lab Closet/prop_closet_storage.tscn" id="12_f3d0c"]
@@ -27,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://bvdshqu0n2t6s" path="res://World/Props/Storage/Test Tube Storage/prop_test_tube_storage.tscn" id="14_pbfag"]
 [ext_resource type="PackedScene" uid="uid://bofhacbjojc6c" path="res://World/Items/Vial/item_vial.tscn" id="15_7xub0"]
 [ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://Shaders/psx_camera_shader.gdshader" id="15_7467j"]
-[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope_Look.gd" id="16_3qfoj"]
 [ext_resource type="PackedScene" uid="uid://ehrseny5tlqp" path="res://World/Items/Document/item_document.tscn" id="16_r4k1l"]
 [ext_resource type="PackedScene" uid="uid://dktx5llwjb5k" path="res://World/Items/Test Tube/env_test_tube.tscn" id="17_jbkk3"]
 [ext_resource type="PackedScene" uid="uid://bias2u8si11n0" path="res://World/Props/Xray/prop_xray_station.tscn" id="17_qwpoy"]
@@ -35,15 +31,11 @@
 [ext_resource type="Texture2D" uid="uid://c2l7wpxuyfj6w" path="res://World/Props/Machines/Micro Scope/Micro_Scope_Texture.png" id="18_q0bdy"]
 [ext_resource type="PackedScene" uid="uid://cdrmlpqjbyowt" path="res://World/Props/Machines/Mixer/prop_mixer.tscn" id="19_5rj5y"]
 [ext_resource type="PackedScene" uid="uid://dt51tjc003vvj" path="res://World/Props/Machines/Filling/prop_filling_machine.tscn" id="20_jvcv6"]
-[ext_resource type="Script" uid="uid://l1n756bd47f6" path="res://World/Interactables/Flask_GetTake.gd" id="20_x734p"]
 [ext_resource type="PackedScene" uid="uid://dg2kdr4dq6wye" path="res://World/Props/Machines/Blood Collector/prop_blood_collector_machine.tscn" id="21_lcy8p"]
 [ext_resource type="Texture2D" uid="uid://boe88ad2calwr" path="res://World/Items/Vial/Vial_V1_Texture.png" id="21_mbdwi"]
-[ext_resource type="Script" uid="uid://7twekmr5esqb" path="res://World/Interactables/Mixer/Centrifuge_VialSlot.gd" id="23_3y7mu"]
 [ext_resource type="PackedScene" uid="uid://cj50v71m7e4op" path="res://World/Props/Electricals/Computer/env_computer.tscn" id="23_jhlh1"]
 [ext_resource type="Texture2D" uid="uid://c2l5yjfm8dh4" path="res://World/Props/Machines/Keyboard keys Texture.png" id="24_l7o23"]
 [ext_resource type="PackedScene" uid="uid://d3gcvi4gahlb7" path="res://World/Props/Electricals/Computer/env_screen.tscn" id="24_oor3o"]
-[ext_resource type="Script" uid="uid://lkdsjbrid4f4" path="res://World/Interactables/Mixer/Centrifuge_ButtonUp.gd" id="25_283r2"]
-[ext_resource type="Script" uid="uid://qig5cjnduicm" path="res://World/Interactables/Mixer/Centrifuge_ButtonDown.gd" id="26_jaq52"]
 [ext_resource type="PackedScene" uid="uid://dykrujop444l5" path="res://Entities/NPCs/Female Body/Corpse.tscn" id="27_h64ul"]
 [ext_resource type="PackedScene" uid="uid://cmclndu1hvhfj" path="res://World/Environments/Pit/env_pit.tscn" id="28_y41we"]
 [ext_resource type="PackedScene" uid="uid://b68fqtutgyrws" path="res://World/Props/Tables/env_table_no_sink.tscn" id="29_drl2p"]
@@ -788,13 +780,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009624958, 0.0025100708, 
 [node name="Prop_Trashcan" parent="Room/Interactables" unique_id=414120974 instance=ExtResource("5_ydj5n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46595457, 0.0622589, -4.986761)
 
-[node name="Bin" type="Node3D" parent="Room/Interactables/Prop_Trashcan" unique_id=1965762368 node_paths=PackedStringArray("area", "sound_emitter", "outline_meshes")]
+[node name="Bin" type="Node3D" parent="Room/Interactables/Prop_Trashcan" unique_id=1965762368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010953337, 0.3500964, 0.0080628395)
-script = ExtResource("6_fw7q4")
-prompt_text = "Dispose Vial"
-area = NodePath("Area3D")
-sound_emitter = NodePath("FmodEventEmitter3D")
-outline_meshes = [NodePath("../Cylinder_007")]
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Prop_Trashcan/Bin" unique_id=495013788]
 collision_layer = 256
@@ -817,15 +804,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75855803, 0.022437535, -2.9
 [node name="Cube_036" type="MeshInstance3D" parent="Room/Interactables/Env_Stool" unique_id=1077018599]
 mesh = SubResource("ArrayMesh_0hi4a")
 
-[node name="Chair" type="Node3D" parent="Room/Interactables/Env_Stool" unique_id=801432737 node_paths=PackedStringArray("seat_point", "exit_point", "area", "sound_emitter", "outline_meshes")]
+[node name="Chair" type="Node3D" parent="Room/Interactables/Env_Stool" unique_id=801432737]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015580058, -0.022437535, -0.000865221)
-script = ExtResource("9_pj4f5")
-seat_point = NodePath("SitPoint")
-exit_point = NodePath("StandPoint")
-prompt_text = "Sit"
-area = NodePath("Area3D")
-sound_emitter = NodePath("SitSound")
-outline_meshes = [NodePath("../Cube_036")]
 
 [node name="SitPoint" type="Marker3D" parent="Room/Interactables/Env_Stool/Chair" unique_id=1324959040]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
@@ -849,13 +829,8 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 [node name="Prop_Test_Tube_Storage" parent="Room/Interactables" unique_id=786496698 instance=ExtResource("14_pbfag")]
 transform = Transform3D(0.96555775, 0, -0.26018894, 0, 1, 0, 0.26018894, 0, 0.96555775, 2.1869125, 1.2749993, -0.72355986)
 
-[node name="Vial Cabinet" type="Node3D" parent="Room/Interactables/Prop_Test_Tube_Storage" unique_id=1639674598 node_paths=PackedStringArray("area", "sound_emitter", "outline_meshes")]
+[node name="Vial Cabinet" type="Node3D" parent="Room/Interactables/Prop_Test_Tube_Storage" unique_id=1639674598]
 transform = Transform3D(0.96555775, 0, 0.26018894, 0, 1, 0, -0.26018894, 0, 0.96555775, -0.123539925, 0.011526585, 0.2134484)
-script = ExtResource("11_k5x2d")
-prompt_text = "Take Empty Vial"
-area = NodePath("Area3D")
-sound_emitter = NodePath("CabinetInteractSound")
-outline_meshes = [NodePath("../Cube_016")]
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Prop_Test_Tube_Storage/Vial Cabinet" unique_id=867727927]
 collision_layer = 256
@@ -889,13 +864,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.548418, 1.3248205, -6)
 [node name="Prop_Micro_Scope" parent="Room/Interactables" unique_id=924130864 instance=ExtResource("18_8m3ho")]
 transform = Transform3D(-0.93499076, 0, -0.354672, 0, 1, 0, 0.354672, 0, -0.93499076, 1.9996619, 0.9748792, -6.093265)
 
-[node name="Microscope" type="Node3D" parent="Room/Interactables/Prop_Micro_Scope" unique_id=101841300 node_paths=PackedStringArray("area", "sound_emitter", "outline_meshes")]
+[node name="Microscope" type="Node3D" parent="Room/Interactables/Prop_Micro_Scope" unique_id=101841300]
 transform = Transform3D(-0.93499076, 0, 0.354672, 0, 1, 0, -0.354672, 0, -0.93499076, 0.011067867, 0.19455737, -0.020520687)
-script = ExtResource("16_3qfoj")
-prompt_text = "Analyze sample"
-area = NodePath("Area3D")
-sound_emitter = NodePath("MicroscopeInteract")
-outline_meshes = [NodePath("../Micro_Scope2")]
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Prop_Micro_Scope/Microscope" unique_id=1150449159]
 collision_layer = 256
@@ -913,6 +883,7 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 unique_name_in_owner = true
 transform = Transform3D(0.12909499, 0.93498373, -0.330362, -0.934984, 0.0037780665, -0.3546694, -0.33036202, 0.3546694, 0.8746828, -0.09021139, 0.14382523, -0.059872627)
 visible = false
+script = null
 
 [node name="Micro_Scope2" type="MeshInstance3D" parent="Room/Interactables/Prop_Micro_Scope" unique_id=1589422023]
 mesh = SubResource("ArrayMesh_wb2qi")
@@ -920,14 +891,8 @@ mesh = SubResource("ArrayMesh_wb2qi")
 [node name="ChemA" parent="Room/Interactables" unique_id=739392615 instance=ExtResource("15_7xub0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93749195, 0.7421599, -0.68672895)
 
-[node name="ChemA" type="Node3D" parent="Room/Interactables/ChemA" unique_id=753644403 node_paths=PackedStringArray("area", "sound_emitter", "outline_meshes")]
+[node name="ChemA" type="Node3D" parent="Room/Interactables/ChemA" unique_id=753644403]
 transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, 0.0009421706, 0.07650334, -0.017264605)
-script = ExtResource("20_x734p")
-composite = 1
-prompt_text = ""
-area = NodePath("Area3D2")
-sound_emitter = NodePath("FmodEventEmitter3D")
-outline_meshes = [NodePath("../Vial2")]
 
 [node name="Area3D2" type="Area3D" parent="Room/Interactables/ChemA/ChemA" unique_id=1956218067]
 collision_layer = 257
@@ -950,24 +915,52 @@ mesh = SubResource("ArrayMesh_x2j76")
 [node name="Prop_Mixer" parent="Room/Interactables" unique_id=1780799766 instance=ExtResource("19_5rj5y")]
 transform = Transform3D(-0.9954268, 0, -0.09552744, 0, 1, 0, 0.09552744, 0, -0.9954268, 3.0354338, 0.9792126, -6.231222)
 
-[node name="Env_Test_Tube2" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D" parent_id_path=PackedInt32Array(1780799766, 491794958) index="0" unique_id=1480596381]
+[node name="Button_014" parent="Room/Interactables/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 47340845) index="0" unique_id=63601793]
+script = null
+
+[node name="Button_030" parent="Room/Interactables/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 47340845) index="1" unique_id=1738442795]
+script = null
+
+[node name="Button_034" parent="Room/Interactables/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 47340845) index="2" unique_id=1894733450]
+script = null
+
+[node name="Button_035" parent="Room/Interactables/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 47340845) index="3" unique_id=720092118]
+script = null
+
+[node name="Button_039" parent="Room/Interactables/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 47340845) index="4" unique_id=1566053173]
+script = null
+
+[node name="Marker3D" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor" parent_id_path=PackedInt32Array(1780799766, 1155696482) index="2" unique_id=491794958]
+transform = Transform3D(0.9848072, -0.1736481, 0, 0.1736481, 0.9848072, 0, 0, 0, 1, 0.08182119, 0.14374493, 0)
+
+[node name="Env_Test_Tube2" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D" index="0" unique_id=1480596381]
 visible = false
+script = null
+
+[node name="Env_Test_Tube3" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D2" parent_id_path=PackedInt32Array(1780799766, 523785965) index="0" unique_id=1905329782]
+script = null
+
+[node name="Env_Test_Tube4" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D3" parent_id_path=PackedInt32Array(1780799766, 836322283) index="0" unique_id=2038377254]
+script = null
+
+[node name="Env_Test_Tube5" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D5" parent_id_path=PackedInt32Array(1780799766, 1036381623) index="0" unique_id=1740121996]
+script = null
+
+[node name="Env_Test_Tube6" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D4" parent_id_path=PackedInt32Array(1780799766, 243404251) index="0" unique_id=1691825952]
+script = null
+
+[node name="Env_Test_Tube7" parent="Room/Interactables/Prop_Mixer/Centrifuge/Rotor/Marker3D6" parent_id_path=PackedInt32Array(1780799766, 620350027) index="0" unique_id=248304220]
+script = null
 
 [node name="Screen_003" parent="Room/Interactables/Prop_Mixer/Centrifuge" parent_id_path=PackedInt32Array(1780799766, 47340845) index="7" unique_id=703089377]
 surface_material_override/0 = SubResource("StandardMaterial3D_pj4f5")
 
-[node name="Mixer" type="Node3D" parent="Room/Interactables/Prop_Mixer" unique_id=58249525 node_paths=PackedStringArray("area", "sound_emitter")]
+[node name="Mixer" type="Node3D" parent="Room/Interactables/Prop_Mixer" unique_id=58249525]
 transform = Transform3D(-0.49771345, 0, 0.047763728, 0, 0.5, 0, -0.047763728, 0, -0.49771345, -0.0017857552, 0.3316248, 0.09975433)
-script = ExtResource("23_3y7mu")
-area = NodePath("Area3D2")
-sound_emitter = NodePath("FmodEventEmitter3D")
 
-[node name="ButtonHigh" type="MeshInstance3D" parent="Room/Interactables/Prop_Mixer/Mixer" unique_id=595229606 node_paths=PackedStringArray("area")]
+[node name="ButtonHigh" type="MeshInstance3D" parent="Room/Interactables/Prop_Mixer/Mixer" unique_id=595229606]
 transform = Transform3D(-1.9908535, -0.09552746, -0.16545837, 0, 1.7320507, -1.0000002, 0.19105488, -0.995427, -1.7241296, 0.11917353, -0.04743457, 0.68514824)
 mesh = SubResource("ArrayMesh_6kpt4")
-script = ExtResource("25_283r2")
-prompt_text = "Speed Up"
-area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Prop_Mixer/Mixer/ButtonHigh" unique_id=1626131147]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00043012202)
@@ -981,12 +974,9 @@ collision_layer = 257
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Prop_Mixer/Mixer/ButtonHigh/Area3D" unique_id=1156685605]
 shape = SubResource("BoxShape3D_yd4l5")
 
-[node name="ButtonLow" type="MeshInstance3D" parent="Room/Interactables/Prop_Mixer/Mixer" unique_id=1988317314 node_paths=PackedStringArray("area")]
+[node name="ButtonLow" type="MeshInstance3D" parent="Room/Interactables/Prop_Mixer/Mixer" unique_id=1988317314]
 transform = Transform3D(-1.9908535, -0.09552746, -0.16545837, 0, 1.7320507, -1.0000002, 0.19105488, -0.995427, -1.7241296, 0.12229586, -0.10404849, 0.71768475)
 mesh = SubResource("ArrayMesh_6yps2")
-script = ExtResource("26_jaq52")
-prompt_text = "Speed Down"
-area = NodePath("Area3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Interactables/Prop_Mixer/Mixer/ButtonLow" unique_id=588169889]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 5.5879354e-09, -0.00043012248)
