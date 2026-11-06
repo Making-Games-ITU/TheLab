@@ -7031,7 +7031,7 @@ material_override = SubResource("StandardMaterial3D_2h8s2")
 mesh = SubResource("ArrayMesh_2nmvu")
 
 [node name="SampleCollectorVialMarker" type="Marker3D" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel" unique_id=1334363848]
-transform = Transform3D(0.9995712, -0.029278921, 0, 0.029278921, 0.9995712, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.99957114, -0.029278923, 0, 0.029278923, 0.99957114, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 
 [node name="SampleCollectorVialModel" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel/SampleCollectorVialMarker" unique_id=2038031653 instance=ExtResource("23_74b0p")]
