@@ -42,5 +42,4 @@ func _new_body() -> void:
 		await anim.animation_finished
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("Body already requested")

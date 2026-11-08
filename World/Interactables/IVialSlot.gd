@@ -1,7 +1,7 @@
 class_name IVialSlot extends Interactable
 
 @export var take_vial_sound: FmodEventEmitter3D
-@export var vial_slot : GameStats.VialLocation
+@export var vial_slot: GameStats.VialLocation
 
 func focus() -> void:
 	_set_outline(true)

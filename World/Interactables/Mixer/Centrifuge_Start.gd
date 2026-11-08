@@ -11,9 +11,15 @@ func _ready() -> void:
 func focus() -> void:
 	_set_outline(true)
 	_update_prompt()
+
+func vial_in() -> bool:
+	if GameStats.vial_location == GameStats.VialLocation.CENTRIFUGE:
+		return true
+	else:
+		return false
 	
 func _update_prompt() -> void:
-	if GameStats.vial_in_centrifuge:
+	if vial_in():
 		if VialStats.empty:
 			prompt_text = "Vial is empty"
 		else:
@@ -24,7 +30,7 @@ func _update_prompt() -> void:
 
 func interact(interactor: Node) -> void:
 	press_anim.press()
-	if GameStats.vial_in_centrifuge:
+	if vial_in():
 		if VialStats.empty:
 			_uninteractable()
 		else:
@@ -50,5 +56,4 @@ func _start_centrifuge():
 
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("No vial in centrifuge or vial is empty")

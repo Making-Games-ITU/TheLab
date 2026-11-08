@@ -33,5 +33,4 @@ func _decrease_speed() -> void:
 	print("Mixer speed down, currently: ", GameStats.centrifuge_current_speed)
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("Can't go to lower speeds")

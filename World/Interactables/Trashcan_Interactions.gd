@@ -37,7 +37,6 @@ func _dispose_vial() -> void:
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
 	VialStats.empty_vial()
 	VialStats._update_liquid()
-	GameStats.is_vial_used = false
 	GameStats.vial_location = GameStats.VialLocation.NONE
 	_update_prompt()
 	AudioManager.one_shot(sound_emitter)

@@ -4,15 +4,18 @@ extends Interactable
 
 signal sampler_extract_pressed # For micrograph interactions script
 
-func _ready() -> void:
-	super()
-
 func focus() -> void:
 	_set_outline(true)
 	_update_prompt()
 
+func vial_in() -> bool:
+	if GameStats.vial_location == GameStats.VialLocation.SAMPLER:
+		return true
+	else:
+		return false
+
 func _update_prompt() -> void:
-	if GameStats.vial_in_collector:
+	if vial_in():
 		if VialStats.empty:
 			if GameStats.body_exists:
 				prompt_text = "Extract blood"
@@ -26,7 +29,7 @@ func _update_prompt() -> void:
 
 func interact(interactor: Node) -> void:
 	press_anim.press()
-	if GameStats.vial_in_collector and VialStats.empty and GameStats.body_exists:
+	if vial_in() and VialStats.empty and GameStats.body_exists:
 		_extractBlood()
 	else:
 		_uninteractable()
@@ -49,5 +52,4 @@ func _extractBlood() -> void:
 		anim.play("open")
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("No body to extract from or Vial not empty or No vial in collector")

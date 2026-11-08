@@ -31,5 +31,4 @@ func _clear_chemical_amount() -> void:
 	print("Number cleared in pipette")
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("No number to clear in pipette")
