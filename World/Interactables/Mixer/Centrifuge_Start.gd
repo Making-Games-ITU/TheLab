@@ -42,6 +42,7 @@ func _start_centrifuge():
 	press_anim.press()
 	if anim and anim.animation_finished:
 		anim.play("Start Mixer")
+		GameStats.vial_in_animation = true
 		await anim.animation_finished
 		_centrifuge_state_label.text = "Mixing"
 		AudioManager.one_shot(sound_emitter)
@@ -52,6 +53,7 @@ func _start_centrifuge():
 		centrifuge_start_pressed.emit() # For the micrograph, should rename
 		_centrifuge_state_label.text = "Done"
 		_update_prompt()
+		GameStats.vial_in_animation = false
 		print("Centrifuged")
 
 

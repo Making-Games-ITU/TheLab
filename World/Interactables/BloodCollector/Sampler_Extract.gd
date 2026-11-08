@@ -38,6 +38,7 @@ func _extractBlood() -> void:
 	#TODO
 	AudioManager.one_shot(sound_emitter)
 	if anim:
+		GameStats.vial_in_animation = true
 		anim.play("close")
 		await anim.animation_finished
 		VialStats.empty = false
@@ -50,6 +51,7 @@ func _extractBlood() -> void:
 		VialStats._update_liquid()
 		print("Blood extracted with infection: ", VialStats.infection)
 		anim.play("open")
+		GameStats.vial_in_animation = false
 
 func _uninteractable() -> void:
 	print("No body to extract from or Vial not empty or No vial in collector")

@@ -22,7 +22,7 @@ func _update_prompt() -> void:
 
 func interact(interactor: Node) -> void:
 	if vial_slot == GameStats.vial_location:
-		if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
+		if PlayerStats.is_holding == PlayerStats.HoldState.NONE and not GameStats.vial_in_animation:
 			_take_vial()
 		else:
 			_uninteractable()
@@ -54,4 +54,4 @@ func _take_vial():
 
 func _uninteractable() -> void:
 	super()
-	print("No vial to place or wrong item in hand")
+	print("No vial to place, wrong item in hand or animation in progress")

@@ -3,6 +3,7 @@ extends Node
 # Where the vial is
 enum VialLocation { NONE, PLAYER, SAMPLER, CENTRIFUGE, MICROSCOPE, PIPETTE }
 var vial_location: VialLocation = VialLocation.NONE
+var vial_in_animation = false
 
 # Body stats
 var body_number: int = 0
