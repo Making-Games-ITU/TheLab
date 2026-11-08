@@ -47,8 +47,8 @@ func update_string() -> void:
 		var t1 = float(i) / segments
 		var t2 = float(i + 1) / segments
 
-		var point_a = get_curve_point(start, end, t1)
-		var point_b = get_curve_point(start, end, t2)
+		var point_a = _get_curve_point(start, end, t1)
+		var point_b = _get_curve_point(start, end, t2)
 
 		var direction = point_b - point_a
 		var distance = direction.length()
@@ -64,7 +64,7 @@ func update_string() -> void:
 		)
 
 
-func get_curve_point(start: Vector3, end: Vector3, t: float) -> Vector3:
+func _get_curve_point(start: Vector3, end: Vector3, t: float) -> Vector3:
 	var point = start.lerp(end, t)
 
 	var sag = 4.0 * t * (1.0 - t) * sag_amount
