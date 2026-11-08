@@ -51,7 +51,7 @@
 [ext_resource type="PackedScene" uid="uid://ccbjica3ksi1c" path="res://World/Props/Trolley/prop_trolley.tscn" id="35_khy6b"]
 [ext_resource type="Script" uid="uid://7y5mut280vma" path="res://World/Interactables/Chair.gd" id="38_lmarx"]
 [ext_resource type="PackedScene" uid="uid://bhy0ipymuf831" path="res://Global Assets/InteractableObject.tscn" id="38_pti6k"]
-[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope_Look.gd" id="40_7av8l"]
+[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope/Microscope_Look.gd" id="40_7av8l"]
 [ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/Scanner_Start.gd" id="46_lkuj1"]
 [ext_resource type="Script" uid="uid://b4kbgcr5ai4eq" path="res://World/Interactables/BloodCollector/Sampler_Extract.gd" id="47_34hf4"]
 [ext_resource type="Script" uid="uid://wgfiw1dd0nju" path="res://World/Interactables/BloodCollector/Sampler_Inject.gd" id="47_jamva"]

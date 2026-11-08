@@ -51,7 +51,7 @@
 [ext_resource type="Script" uid="uid://b2r7cte3y82gd" path="res://World/Interactables/Trashcan_Interactions.gd" id="42_mjypk"]
 [ext_resource type="Script" uid="uid://7y5mut280vma" path="res://World/Interactables/Chair.gd" id="43_elhxc"]
 [ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/Vial_GetTake.gd" id="44_gby3u"]
-[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope_Look.gd" id="45_qebg0"]
+[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope/Microscope_Look.gd" id="45_qebg0"]
 [ext_resource type="Script" uid="uid://cmcmbnsforjle" path="res://World/Interactables/BodyRequest.gd" id="46_efrna"]
 [ext_resource type="Script" uid="uid://wgfiw1dd0nju" path="res://World/Interactables/BloodCollector/Sampler_Inject.gd" id="47_7fqgl"]
 [ext_resource type="Script" uid="uid://b4kbgcr5ai4eq" path="res://World/Interactables/BloodCollector/Sampler_Extract.gd" id="48_ibhvd"]

@@ -1,6 +1,5 @@
 extends Interactable
 
-@export var uninteractable_sound: FmodEventEmitter3D
 @onready var _centrifuge_speed_label: Label = %Centrifuge_Speed_Label
 @export var press_anim : ButtonPressAnimation 
 

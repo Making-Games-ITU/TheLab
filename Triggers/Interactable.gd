@@ -8,6 +8,7 @@ signal interacted(interactor: Node)
 @export var anim: AnimationPlayer = null
 @export var area: Area3D
 @export var sound_emitter: FmodEventEmitter3D
+@export var uninteractable_sound: FmodEventEmitter3D
 
 @export_group("Outline Shader")
 @export var outline_material: ShaderMaterial = preload("res://Shaders/Outline_Shader_Material.tres")
@@ -62,3 +63,6 @@ func interact(interactor: Node) -> void:
 func _refresh_prompt() -> void:
 	if PlayerStats.current_interactable == self:
 		InteractionPrompt.instance.show_prompt(prompt_text)
+
+func _uninteractable() -> void:
+	AudioManager.one_shot(uninteractable_sound)

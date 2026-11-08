@@ -1,7 +1,7 @@
 extends Interactable
 
 @export var exit_sound: FmodEventEmitter3D
-@export var uninteractable_sound: FmodEventEmitter3D
+
 
 func _ready() -> void:
 	super()

@@ -1,7 +1,6 @@
 extends Interactable
 
 @export var take_flask_sound: FmodEventEmitter3D
-@export var uninteractable_sound: FmodEventEmitter3D
 @onready var flask_vial_model := $Flask_Model
 @onready var _pipette_chemical_name_label: Label = %Pipette_Chemical_Name_Label
 

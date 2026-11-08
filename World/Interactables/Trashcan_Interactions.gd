@@ -1,7 +1,6 @@
 extends Interactable
 
 @export var dispose_chemical_sound: FmodEventEmitter3D
-@export var uninteractable_sound: FmodEventEmitter3D
 
 func _ready() -> void:
 	super()
@@ -39,6 +38,7 @@ func _dispose_vial() -> void:
 	VialStats.empty_vial()
 	VialStats._update_liquid()
 	GameStats.is_vial_used = false
+	GameStats.vial_location = GameStats.VialLocation.NONE
 	_update_prompt()
 	AudioManager.one_shot(sound_emitter)
 

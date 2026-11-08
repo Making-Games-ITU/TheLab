@@ -1,7 +1,6 @@
 extends Interactable
 
 @export var vial_place_sound: FmodEventEmitter3D
-@export var uninteractable_sound: FmodEventEmitter3D
 
 func _ready() -> void:
 	super()
@@ -46,12 +45,14 @@ func _get_new_vial() -> void:
 	VialStats._update_liquid()
 	PlayerStats.is_holding = PlayerStats.HoldState.VIAL
 	GameStats.is_vial_used = true
+	GameStats.vial_location = GameStats.VialLocation.PLAYER
 	_update_prompt()
 	AudioManager.one_shot(sound_emitter)
 	print("Vial taken")
 
 func _place_vial_back() -> void:
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
+	GameStats.vial_location = GameStats.VialLocation.NONE
 	GameStats.is_vial_used = false
 	_update_prompt()
 	AudioManager.one_shot(vial_place_sound)

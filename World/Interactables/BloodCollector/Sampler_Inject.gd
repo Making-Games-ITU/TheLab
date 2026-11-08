@@ -1,6 +1,5 @@
 extends Interactable
 
-@export var uninteractable_sound: FmodEventEmitter3D
 @export var press_anim : ButtonPressAnimation 
 
 signal sampler_inject_pressed # For micrograph interactions script
