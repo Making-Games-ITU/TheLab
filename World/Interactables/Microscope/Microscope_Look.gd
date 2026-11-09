@@ -1,20 +1,22 @@
 extends Interactable
 
 @export var exit_sound: FmodEventEmitter3D
-@export var uninteractable_sound: FmodEventEmitter3D
-
-func _ready() -> void:
-	super()
 
 func focus() -> void:
 	_set_outline(true)
 	_update_prompt()
+	
+func vial_in() -> bool:
+	if GameStats.vial_location == GameStats.VialLocation.MICROSCOPE:
+		return true
+	else:
+		return false
 
 func _update_prompt() -> void:
 	if %Micrograph.visible:
 		InteractionPrompt.instance.hide_prompt()
 		return
-	elif GameStats.vial_in_microscope:
+	elif vial_in():
 		if VialStats.empty:
 			prompt_text = "Vial is empty"
 		else:
@@ -26,7 +28,7 @@ func _update_prompt() -> void:
 func interact(interactor: Node) -> void:
 	if %Micrograph.visible:
 		_exit_mircoscope()
-	elif GameStats.vial_in_microscope:
+	elif vial_in():
 		if VialStats.empty:
 			_uninteractable()
 		else:
@@ -50,5 +52,4 @@ func _exit_mircoscope() -> void:
 	print("Returning from analyzing")
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("No vial placed")

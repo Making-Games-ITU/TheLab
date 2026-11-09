@@ -1,7 +1,6 @@
 extends Interactable
 
 @export var take_flask_sound: FmodEventEmitter3D
-@export var uninteractable_sound: FmodEventEmitter3D
 @onready var flask_vial_model := $Flask_Model
 @onready var _pipette_chemical_name_label: Label = %Pipette_Chemical_Name_Label
 
@@ -54,8 +53,9 @@ func _take_flask():
 	GameStats.flask_in_pipette = false
 	PlayerStats.current_chemical = GameStats.pipette_current_chemical
 	GameStats.pipette_current_chemical = VialStats.Composite.NONE
-	GameStats.pipette_current_chemical_name = ""
 	PlayerStats.is_holding = PlayerStats.HoldState.CHEMICAL
+	PlayerStats.current_chemical_name = GameStats.pipette_current_chemical_name
+	GameStats.pipette_current_chemical_name = ""
 	_pipette_chemical_name_label.text = "No flask"
 	AudioManager.one_shot(take_flask_sound)
 	_update_prompt()
@@ -65,5 +65,4 @@ func _take_flask():
 		anim.play("take")
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("No flask to insert or wrong object in hand or hands are full")

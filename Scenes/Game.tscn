@@ -35,7 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://dd4lliduo7nou" path="res://World/Props/Electricals/Power Supply/env_power_supply.tscn" id="28_26pxs"]
 [ext_resource type="Texture2D" uid="uid://c23tog38r0twt" path="res://World/Props/Bin/Bin_Texture.png" id="28_uiqyu"]
 [ext_resource type="PackedScene" uid="uid://cj50v71m7e4op" path="res://World/Props/Electricals/Computer/env_computer.tscn" id="29_3stm8"]
-[ext_resource type="Script" uid="uid://b3j7u7v8qj1gk" path="res://World/Interactables/Microscope_VialSlot.gd" id="30_1kkci"]
+[ext_resource type="Script" uid="uid://b3j7u7v8qj1gk" path="res://World/Interactables/Microscope/Microscope_VialSlot.gd" id="30_1kkci"]
 [ext_resource type="Texture2D" uid="uid://dv8dxroj4arh" path="res://World/Props/Electricals/Control Panel/ControlPanel_Texture.png" id="30_gbjl2"]
 [ext_resource type="PackedScene" uid="uid://d3gcvi4gahlb7" path="res://World/Props/Electricals/Computer/env_screen.tscn" id="30_gs008"]
 [ext_resource type="Texture2D" uid="uid://cj6c4l3nbywb2" path="res://World/Items/Test Tube/Test_Tube_Texture_.png" id="31_3p6c0"]
@@ -58,7 +58,7 @@
 [ext_resource type="Script" uid="uid://7y5mut280vma" path="res://World/Interactables/Chair.gd" id="43_elhxc"]
 [ext_resource type="Texture2D" uid="uid://cyft1j0jh3k7j" path="res://World/Props/Machines/Blood Collector/BloodSampler_Texture.png" id="44_dawtf"]
 [ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/Vial_GetTake.gd" id="44_gby3u"]
-[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope_Look.gd" id="45_qebg0"]
+[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope/Microscope_Look.gd" id="45_qebg0"]
 [ext_resource type="Texture2D" uid="uid://b8oqn7umixgtj" path="res://UI/Scanner/X-Ray-chest-1.png" id="45_uiqyu"]
 [ext_resource type="Texture2D" uid="uid://cdmeve2r0y2tq" path="res://UI/Scanner/X-ray-chest-2.png" id="46_cmcni"]
 [ext_resource type="Texture2D" uid="uid://dpv6dd0ver3yb" path="res://World/Props/Machines/Mixer/NCentrifuge.png" id="46_dawtf"]
@@ -76,16 +76,16 @@
 [ext_resource type="Texture2D" uid="uid://c2l5yjfm8dh4" path="res://World/Props/Machines/Keyboard keys Texture.png" id="51_fxfyd"]
 [ext_resource type="Script" uid="uid://lkdsjbrid4f4" path="res://World/Interactables/Mixer/Centrifuge_ButtonUp.gd" id="52_mfbyv"]
 [ext_resource type="Script" uid="uid://qig5cjnduicm" path="res://World/Interactables/Mixer/Centrifuge_ButtonDown.gd" id="53_okasj"]
-[ext_resource type="Script" uid="uid://cekegxoo7dsve" path="res://World/Interactables/FillingMachine/Pipette_Vial_Slot.gd" id="55_j68t5"]
-[ext_resource type="Script" uid="uid://bhlrg5gone8pe" path="res://World/Interactables/FillingMachine/Pipette_Flask_Slot.gd" id="56_wawjn"]
+[ext_resource type="Script" uid="uid://cekegxoo7dsve" path="res://World/Interactables/Pipette/Pipette_Vial_Slot.gd" id="55_j68t5"]
+[ext_resource type="Script" uid="uid://bhlrg5gone8pe" path="res://World/Interactables/Pipette/Pipette_Flask_Slot.gd" id="56_wawjn"]
 [ext_resource type="Texture2D" uid="uid://bopkn445to257" path="res://World/Items/Test Tube/Test_Tube_Texture.png" id="57_adeab"]
 [ext_resource type="Texture2D" uid="uid://bo5h3uv6essgg" path="res://World/Props/Machines/Filling/Filling_Machine_Texture.png" id="57_l06v1"]
 [ext_resource type="Texture2D" uid="uid://7iq2tjgsi7ll" path="res://World/Props/Xray/Wires.png" id="58_20nkh"]
-[ext_resource type="Script" uid="uid://b2eqg2tydo80s" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Start.gd" id="59_r0vx2"]
-[ext_resource type="Script" uid="uid://6ckpxp75y6ji" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Numbers.gd" id="60_4hlmn"]
+[ext_resource type="Script" uid="uid://b2eqg2tydo80s" path="res://World/Interactables/Pipette/Pipette_Numpad_Start.gd" id="59_r0vx2"]
+[ext_resource type="Script" uid="uid://6ckpxp75y6ji" path="res://World/Interactables/Pipette/Pipette_Numpad_Numbers.gd" id="60_4hlmn"]
 [ext_resource type="PackedScene" uid="uid://c5qlgxu4phaxk" path="res://World/Props/Vent/prop_vent.tscn" id="61_icxu3"]
-[ext_resource type="Script" uid="uid://dxv013hmmsgpm" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Point.gd" id="61_jhak5"]
-[ext_resource type="Script" uid="uid://bl6j4hu8sosqs" path="res://World/Interactables/FillingMachine/Pipette_Numpad_Clear.gd" id="62_kg4j1"]
+[ext_resource type="Script" uid="uid://dxv013hmmsgpm" path="res://World/Interactables/Pipette/Pipette_Numpad_Point.gd" id="61_jhak5"]
+[ext_resource type="Script" uid="uid://bl6j4hu8sosqs" path="res://World/Interactables/Pipette/Pipette_Numpad_Clear.gd" id="62_kg4j1"]
 [ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/Scanner_Start.gd" id="64_1jytr"]
 [ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="65_bxgab"]
 [ext_resource type="Script" uid="uid://l1n756bd47f6" path="res://World/Interactables/Flask_GetTake.gd" id="65_srr11"]
@@ -227,12 +227,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rhknm")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_cmcni"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_uiqyu"]
 viewport_path = NodePath("Note Viewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgib0"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_cmcni")
+albedo_texture = SubResource("ViewportTexture_uiqyu")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wse4m"]
 size = Vector3(0.10888672, 0.00920105, 0.10418701)
@@ -3188,12 +3188,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5wgas")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8bnxp"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_su416"]
 viewport_path = NodePath("Note Viewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6i1k7"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_8bnxp")
+albedo_texture = SubResource("ViewportTexture_su416")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7627"]
 albedo_texture = ExtResource("58_20nkh")
@@ -6530,16 +6530,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4459708, 1.2799517, -0.6539
 [node name="FlaskA" parent="Room/Interactables/FlasksOnShelf" unique_id=1852808638 instance=ExtResource("19_spkmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13224041, -0.015143156, -0.032790482)
 
-[node name="ChemA" type="Node3D" parent="Room/Interactables/FlasksOnShelf/FlaskA" unique_id=1094829499 node_paths=PackedStringArray("placeback_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="ChemA" type="Node3D" parent="Room/Interactables/FlasksOnShelf/FlaskA" unique_id=1094829499 node_paths=PackedStringArray("placeback_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, 0.0009421706, 0.07650334, -0.017264605)
 script = ExtResource("65_srr11")
 chemical_name = "Nitrogen"
-composite = 1
+composite = 2
 placeback_sound = NodePath("PlacebackChemSound")
-uninteractable_sound = NodePath("UninteractableSound")
 prompt_text = "Take"
 area = NodePath("Area3D2")
 sound_emitter = NodePath("TakeChemSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Vial2")]
 
 [node name="Area3D2" type="Area3D" parent="Room/Interactables/FlasksOnShelf/FlaskA/ChemA" unique_id=1839609848]
@@ -6572,16 +6572,16 @@ show_distance = 1.25
 [node name="FlaskB" parent="Room/Interactables/FlasksOnShelf" unique_id=92542467 instance=ExtResource("19_spkmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14252472, -0.015143156, 0.019867599)
 
-[node name="ChemB" type="Node3D" parent="Room/Interactables/FlasksOnShelf/FlaskB" unique_id=617708475 node_paths=PackedStringArray("placeback_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="ChemB" type="Node3D" parent="Room/Interactables/FlasksOnShelf/FlaskB" unique_id=617708475 node_paths=PackedStringArray("placeback_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, -0.0016491413, 0.07650334, 0.00680387)
 script = ExtResource("65_srr11")
 chemical_name = "Hydrogen"
-composite = 2
+composite = 1
 placeback_sound = NodePath("PlacebackChemSound")
-uninteractable_sound = NodePath("UninteractableSound")
 prompt_text = "Take"
 area = NodePath("Area3D2")
 sound_emitter = NodePath("TakeChemSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Vial2")]
 
 [node name="Area3D2" type="Area3D" parent="Room/Interactables/FlasksOnShelf/FlaskB/ChemB" unique_id=1683261125]
@@ -6624,13 +6624,13 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 1.2287274e-10, 0.061257716)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Body_request_Note" index="1" unique_id=1417392328]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Body_request_Note" index="1" unique_id=1832640565]
 bones/1/position = Vector3(0, 0, -0.05)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
-[node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=452260851]
+[node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=1766528207]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
 surface_material_override/1 = SubResource("StandardMaterial3D_tgib0")
 
@@ -6671,7 +6671,7 @@ sound_emitter = NodePath("StartReadingSound")
 normal_size = Vector3(0.04, 0.04, 0.04)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document" index="1" unique_id=387256508]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document" index="1" unique_id=1187144283]
 bones/1/position = Vector3(0, 0, -0.205)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/3/rotation = Quaternion(-0.025, 0, 0, 1)
@@ -6680,7 +6680,7 @@ bones/4/rotation = Quaternion(0.035, 0, 0, 1)
 bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(-0.095, 0, 0, 1)
 
-[node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=986514553]
+[node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=521642798]
 material_overlay = SubResource("StandardMaterial3D_n74rn")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
@@ -6709,14 +6709,14 @@ sound_emitter = NodePath("StartReadingSound")
 [node name="interactable_indecator" parent="Room/Interactables/Notes/Note_document2" index="0" unique_id=2142793944]
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document2" index="1" unique_id=387256508]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document2" index="1" unique_id=1187144283]
 bones/1/position = Vector3(0, 0, -0.2)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
 bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(0.875, 0, 0, 1)
 
-[node name="Cube_027" parent="Room/Interactables/Notes/Note_document2/Skeleton3D" index="0" unique_id=986514553]
+[node name="Cube_027" parent="Room/Interactables/Notes/Note_document2/Skeleton3D" index="0" unique_id=521642798]
 material_overlay = SubResource("StandardMaterial3D_0ohmx")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document2/Skeleton3D" index="1" unique_id=819025313]
@@ -6743,14 +6743,14 @@ sound_emitter = NodePath("StartReadingSound")
 [node name="interactable_indecator" parent="Room/Interactables/Notes/Note_document3" index="0" unique_id=2142793944]
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document3" index="1" unique_id=387256508]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document3" index="1" unique_id=1187144283]
 bones/1/position = Vector3(0, 0, -0.2)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
 bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(0.875, 0, 0, 1)
 
-[node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=986514553]
+[node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=521642798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0068823397, 0, 0.0066256523)
 material_overlay = SubResource("StandardMaterial3D_3e3v6")
 
@@ -6813,14 +6813,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 [node name="VialsOnShelf" parent="Room/Interactables" unique_id=786496698 instance=ExtResource("17_yko3g")]
 transform = Transform3D(-0.0119203925, 0, 0.99992895, 0, 1, 0, -0.99992895, 0, -0.0119203925, 4.6404066, 0.7812274, -4.1666245)
 
-[node name="Vial Cabinet" type="Node3D" parent="Room/Interactables/VialsOnShelf" unique_id=468691575 node_paths=PackedStringArray("vial_place_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="Vial Cabinet" type="Node3D" parent="Room/Interactables/VialsOnShelf" unique_id=468691575 node_paths=PackedStringArray("vial_place_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.96555775, 0, 0.26018894, 0, 1, 0, -0.26018894, 0, 0.96555775, -0.123539925, 0.011526585, 0.2134484)
 script = ExtResource("44_gby3u")
 vial_place_sound = NodePath("PlaceVialBackSound")
-uninteractable_sound = NodePath("UninteractableSound")
 prompt_text = "Take Empty Vial"
 area = NodePath("Area3D")
 sound_emitter = NodePath("TakeEmptyVialSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Cube_016")]
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/VialsOnShelf/Vial Cabinet" unique_id=1923773698]
@@ -6851,14 +6851,14 @@ mesh = SubResource("ArrayMesh_7w24h")
 [node name="Trashcan" parent="Room/Interactables" unique_id=414120974 instance=ExtResource("10_pxwqw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2990076, 0.06225896, -4.185083)
 
-[node name="Bin" type="Node3D" parent="Room/Interactables/Trashcan" unique_id=104314256 node_paths=PackedStringArray("dispose_chemical_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="Bin" type="Node3D" parent="Room/Interactables/Trashcan" unique_id=104314256 node_paths=PackedStringArray("dispose_chemical_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010953337, 0.3500964, 0.0080628395)
 script = ExtResource("42_mjypk")
 dispose_chemical_sound = NodePath("DisposeChemicalSound")
-uninteractable_sound = NodePath("UninteractableSound")
 prompt_text = "Dispose Vial"
 area = NodePath("Area3D")
 sound_emitter = NodePath("DisposeVialSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Cylinder_007")]
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Trashcan/Bin" unique_id=350096216]
@@ -6974,14 +6974,14 @@ mesh = SubResource("ArrayMesh_x1hbw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002319336, 0.048583984, 0)
 shape = SubResource("BoxShape3D_a4o6x")
 
-[node name="DisposeBody" type="Node3D" parent="Room/Interactables/BodyControls" unique_id=910071732 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "anim", "area", "sound_emitter", "outline_meshes")]
+[node name="DisposeBody" type="Node3D" parent="Room/Interactables/BodyControls" unique_id=910071732 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 script = ExtResource("25_3p6c0")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("../Dispose_Body_Button_Model")
 prompt_text = "No body to dispose"
 anim = NodePath("../../../Props/Prop_Corpse_Tube/AnimationPlayer")
 area = NodePath("Area3D")
 sound_emitter = NodePath("DisposeBodySound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Dispose_Body_Button_Model/DisposeBodyOutlineShape")]
 
 [node name="interactable_indecator" parent="Room/Interactables/BodyControls/DisposeBody" unique_id=191526086 instance=ExtResource("31_wv54p")]
@@ -7004,15 +7004,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73180676, -0.834773, 1.4093
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="RequestBody" type="Node3D" parent="Room/Interactables/BodyControls" unique_id=763048088 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "anim", "area", "sound_emitter", "outline_meshes")]
+[node name="RequestBody" type="Node3D" parent="Room/Interactables/BodyControls" unique_id=763048088 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038660526, -0.10718715, -0.12724113)
 script = ExtResource("46_efrna")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("../Request_Body_Button_Model")
 prompt_text = "Request new body"
 anim = NodePath("../../../Props/Prop_Corpse_Tube/AnimationPlayer")
 area = NodePath("Area3D2")
 sound_emitter = NodePath("RequestBodySound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Request_Body_Button_Model/RequestBodyOutlineShape")]
 
 [node name="interactable_indecator" parent="Room/Interactables/BodyControls/RequestBody" unique_id=1076925432 instance=ExtResource("31_wv54p")]
@@ -7043,7 +7043,7 @@ mesh = SubResource("ArrayMesh_jnpmn")
 surface_material_override/1 = SubResource("StandardMaterial3D_5wgas")
 
 [node name="VialSlotModel" type="MeshInstance3D" parent="Room/Interactables/Sampler/Blood Collector" unique_id=2010309649]
-transform = Transform3D(0.572247, -0.8200811, 0, 0.8200811, 0.572247, 0, 0, 0, 1, -0.03745842, -0.15410662, 0)
+transform = Transform3D(0.57224697, -0.8200811, 0, 0.8200811, 0.57224697, 0, 0, 0, 1, -0.03745842, -0.15410662, 0)
 mesh = SubResource("ArrayMesh_cq7cq")
 
 [node name="SampleCollectorVialOutline" type="Node3D" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel" unique_id=448502073]
@@ -7054,7 +7054,7 @@ material_override = SubResource("StandardMaterial3D_2h8s2")
 mesh = SubResource("ArrayMesh_2nmvu")
 
 [node name="SampleCollectorVialMarker" type="Marker3D" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel" unique_id=1334363848]
-transform = Transform3D(0.99957085, -0.029279022, 0, 0.029279022, 0.99957085, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.9995708, -0.029279022, 0, 0.029279022, 0.9995708, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 
 [node name="SampleCollectorVialModel" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel/SampleCollectorVialMarker" unique_id=2038031653 instance=ExtResource("23_74b0p")]
@@ -7198,15 +7198,16 @@ grow_vertical = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018463135, 0.010223389, -0.0030822754)
 shape = SubResource("BoxShape3D_8tnk5")
 
-[node name="VialSlot" type="Node3D" parent="Room/Interactables/Sampler" unique_id=1353844329 node_paths=PackedStringArray("take_vial_sound", "uninteractable_sound", "anim", "area", "sound_emitter", "outline_meshes")]
+[node name="VialSlot" type="Node3D" parent="Room/Interactables/Sampler" unique_id=1353844329 node_paths=PackedStringArray("take_vial_sound", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.5, 0, 0, -0.05304289)
 script = ExtResource("49_flbvb")
 take_vial_sound = NodePath("TakeVialSound")
-uninteractable_sound = NodePath("UninteractableSound")
+vial_slot = 2
 prompt_text = "Place vial"
 anim = NodePath("../Blood Collector/VialSlotModel/SampleCollectorVialMarker/AnimationPlayer")
 area = NodePath("Area3D2")
 sound_emitter = NodePath("InsertVialSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Blood Collector/VialSlotModel/SampleCollectorVialOutline/Sphere")]
 
 [node name="Area3D2" type="Area3D" parent="Room/Interactables/Sampler/VialSlot" unique_id=1975972684]
@@ -7233,16 +7234,16 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.040000007, 0, 0, 0, 0.040000007, 0, 0, 0, 0.040000003, -0.13559723, 0.031526804, 0.10543731)
 normal_size = Vector3(0.04, 0.04, 0.04)
 
-[node name="SamplerExtractButton" type="Node3D" parent="Room/Interactables/Sampler" unique_id=1903185465 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "anim", "area", "sound_emitter", "outline_meshes")]
+[node name="SamplerExtractButton" type="Node3D" parent="Room/Interactables/Sampler" unique_id=1903185465 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 unique_name_in_owner = true
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0429945, 0.003718257, 0.15459585)
 script = ExtResource("48_ibhvd")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("../Blood Collector/SamplerExtractButtonVisual")
 prompt_text = "Extract"
 anim = NodePath("../Blood Collector/VialSlotModel/AnimationPlayer")
 area = NodePath("Area3D2")
 sound_emitter = NodePath("ExtractBloodSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Blood Collector/SamplerExtractButtonVisual/Extract_Btn_Outline")]
 
 [node name="Area3D2" type="Area3D" parent="Room/Interactables/Sampler/SamplerExtractButton" unique_id=393872825]
@@ -7265,16 +7266,16 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.20000002, 0, 0, 0, 0.20000002, 0, 0, 0, 0.20000002, -0.24803925, -0.6491946, -0.045448303)
 normal_size = Vector3(0.1, 0.1, 0.1)
 
-[node name="SamplerInjectButton" type="Node3D" parent="Room/Interactables/Sampler" unique_id=997938155 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "anim", "area", "sound_emitter", "outline_meshes")]
+[node name="SamplerInjectButton" type="Node3D" parent="Room/Interactables/Sampler" unique_id=997938155 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 unique_name_in_owner = true
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0429945, 0.003718257, 0.15459585)
 script = ExtResource("47_7fqgl")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("../Blood Collector/SamplerInjectButtonVisual")
 prompt_text = "Inject"
 anim = NodePath("../Blood Collector/VialSlotModel/AnimationPlayer")
 area = NodePath("Area3D2")
 sound_emitter = NodePath("InjectSerumSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Blood Collector/SamplerInjectButtonVisual/Inject_Btn_Outline")]
 
 [node name="Area3D2" type="Area3D" parent="Room/Interactables/Sampler/SamplerInjectButton" unique_id=702679449]
@@ -7493,15 +7494,15 @@ transform = Transform3D(1, -3.785518e-08, -2.1855696e-08, 3.785518e-08, 1, 3.882
 material_override = SubResource("StandardMaterial3D_8bnxp")
 mesh = SubResource("ArrayMesh_acgdh")
 
-[node name="ScanStart" type="Node3D" parent="Room/Interactables/Scanner" unique_id=2106335602 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "anim", "area", "sound_emitter", "outline_meshes")]
+[node name="ScanStart" type="Node3D" parent="Room/Interactables/Scanner" unique_id=2106335602 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.20021248, -0.28336418, -0.22153592)
 script = ExtResource("64_1jytr")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("../Frame/StartScanButton")
 prompt_text = "Scan"
 anim = NodePath("../../../Props/Prop_Curtains/AnimationPlayer")
 area = NodePath("Area3D2")
 sound_emitter = NodePath("ScanStartSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Frame/StartScanButton/Scanner_Outline")]
 
 [node name="interactable_indecator" parent="Room/Interactables/Scanner/ScanStart" unique_id=1205790887 instance=ExtResource("31_wv54p")]
@@ -7572,13 +7573,14 @@ offset_right = -244.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Microscope_Vial" type="Node3D" parent="Room/Interactables/Microscope" unique_id=562917430 node_paths=PackedStringArray("take_vial_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="Microscope_Vial" type="Node3D" parent="Room/Interactables/Microscope" unique_id=562917430 node_paths=PackedStringArray("take_vial_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 script = ExtResource("30_1kkci")
 take_vial_sound = NodePath("TakeVialSound")
-uninteractable_sound = NodePath("UnintearactableSound")
+vial_slot = 4
 prompt_text = "Place vial"
 area = NodePath("Area3D")
 sound_emitter = NodePath("PlaceVialSound")
+uninteractable_sound = NodePath("UnintearactableSound")
 outline_meshes = [NodePath("../Vial_Outline")]
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Microscope/Microscope_Vial" unique_id=634038055]
@@ -7612,14 +7614,14 @@ unique_name_in_owner = true
 transform = Transform3D(0.12909497, 0.93498373, -0.33036196, -0.934984, 0.0037780665, -0.3546694, -0.330362, 0.35466942, 0.8746827, -0.09021139, 0.14382523, -0.059872627)
 visible = false
 
-[node name="Microscope" type="Node3D" parent="Room/Interactables/Microscope" unique_id=1380959164 node_paths=PackedStringArray("exit_sound", "uninteractable_sound", "area", "sound_emitter", "outline_meshes")]
+[node name="Microscope" type="Node3D" parent="Room/Interactables/Microscope" unique_id=1380959164 node_paths=PackedStringArray("exit_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(-0.93499076, 0, 0.354672, 0, 1, 0, -0.354672, 0, -0.93499076, 0.011067867, 0.19455737, -0.020520687)
 script = ExtResource("45_qebg0")
 exit_sound = NodePath("ExitMicroscopeSound")
-uninteractable_sound = NodePath("UninteractableSound")
 prompt_text = "Analyze sample"
 area = NodePath("Area3D")
 sound_emitter = NodePath("EnterMicroscopeSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Microscope_Outline")]
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Microscope/Microscope" unique_id=2114799810]
@@ -7784,14 +7786,14 @@ offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ButtonUp" type="Node3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge" unique_id=309528295 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="ButtonUp" type="Node3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge" unique_id=309528295 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 1, -0.028955221, 0.31077486, -0.25076723)
 script = ExtResource("52_mfbyv")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Up_Button_Model")
 prompt_text = "Increase speed"
 area = NodePath("Area3D")
 sound_emitter = NodePath("ButtonUpPressSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Up_Button_Model"), NodePath("Up_Button_Model")]
 
 [node name="Up_Button_Model" type="MeshInstance3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/ButtonUp" unique_id=1722837360]
@@ -7819,14 +7821,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="ButtonDown" type="Node3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge" unique_id=275119281 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="ButtonDown" type="Node3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge" unique_id=275119281 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.000001, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 1.000001, -0.029951334, 0.28331333, -0.26900005)
 script = ExtResource("53_okasj")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Down_Button_Model")
 prompt_text = "Decrease speed"
 area = NodePath("Area3D")
 sound_emitter = NodePath("ButtonDownPressSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Down_Button_Model"), NodePath("Down_Button_Model")]
 
 [node name="Down_Button_Model" type="MeshInstance3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/ButtonDown" unique_id=1579121493]
@@ -7862,16 +7864,16 @@ visible = false
 transform = Transform3D(0.9999982, 1.4901161e-08, 2.9802322e-08, 0, 0.8660253, -0.5000001, -4.4703484e-08, 0.49999923, 0.86602384, -0.00018548965, -0.002371788, 0.004922867)
 mesh = SubResource("ArrayMesh_j6q31")
 
-[node name="CentrifugeButtonStart" type="Node3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge" unique_id=1852898229 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "anim", "area", "sound_emitter", "outline_meshes")]
+[node name="CentrifugeButtonStart" type="Node3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge" unique_id=1852898229 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 unique_name_in_owner = true
 transform = Transform3D(1.0000011, 0, -4.4703484e-08, 0, 1, 0, 4.4703484e-08, 0, 1.0000011, -0.046351433, 0.1858334, -0.3229952)
 script = ExtResource("47_dawtf")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Start_Button_Model")
 prompt_text = "Start Centrifuge"
 anim = NodePath("../../AnimationPlayer")
 area = NodePath("Area3D")
 sound_emitter = NodePath("ButtonStartPressSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Start_Button_Model"), NodePath("Start_Button_Model")]
 
 [node name="Start_Button_Model" type="MeshInstance3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/CentrifugeButtonStart" unique_id=530873271]
@@ -7925,7 +7927,7 @@ omni_range = 0.233
 omni_attenuation = 0.651
 
 [node name="Marker3D" type="Marker3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/Prop_Rotor" unique_id=491794958]
-transform = Transform3D(0.9848069, -0.17364803, 0, 0.17364803, 0.9848069, 0, 0, 0, 1, 0.010244596, 0.32967758, -8.731149e-11)
+transform = Transform3D(0.98480666, -0.17364798, 0, 0.17364798, 0.98480666, 0, 0, 0, 1, 0.010244596, 0.32967758, -8.731149e-11)
 visible = false
 
 [node name="CentrifugeVialModel" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/Prop_Rotor/Marker3D" unique_id=1676914135 instance=ExtResource("23_74b0p")]
@@ -7954,15 +7956,16 @@ transform = Transform3D(0.9961945, -0.08715574, 0, 0.08583162, 0.98106027, 0.173
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Room/Interactables/Centrifuge" unique_id=341594562]
 libraries/ = SubResource("AnimationLibrary_ju1k8")
 
-[node name="VialSlot" type="Node3D" parent="Room/Interactables/Centrifuge" unique_id=1776241852 node_paths=PackedStringArray("take_vial_sound", "uninteractable_sound", "anim", "area", "sound_emitter", "outline_meshes")]
+[node name="VialSlot" type="Node3D" parent="Room/Interactables/Centrifuge" unique_id=1776241852 node_paths=PackedStringArray("take_vial_sound", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(-0.49771369, 0, 0.04776375, 0, 0.5, 0, -0.04776375, 0, -0.49771369, -0.00082039833, 0.3316248, 0.08969402)
 script = ExtResource("50_w5fgd")
 take_vial_sound = NodePath("VialTakeSound")
-uninteractable_sound = NodePath("UninteractableSound")
+vial_slot = 3
 prompt_text = "Insert vial"
 anim = NodePath("../Prop_Centrifuge/Prop_Rotor/Marker3D/AnimationPlayer")
 area = NodePath("Area3D")
 sound_emitter = NodePath("VialInsertSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Rotor Outline")]
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Centrifuge/VialSlot" unique_id=1624132880]
@@ -8008,13 +8011,13 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.010209445, -4.5401977e-10, 0.054237492)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Pipette/Pipette_Note" index="1" unique_id=1417392328]
+[node name="Skeleton3D" parent="Room/Interactables/Pipette/Pipette_Note" index="1" unique_id=1832640565]
 bones/1/position = Vector3(0, 0, -0.05)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
-[node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=452260851]
+[node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=1766528207]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
 surface_material_override/1 = SubResource("StandardMaterial3D_6i1k7")
 
@@ -8047,15 +8050,16 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="VialSlot" type="Node3D" parent="Room/Interactables/Pipette" unique_id=1627220676 node_paths=PackedStringArray("take_vial_sound", "uninteractable_sound", "anim", "area", "sound_emitter", "outline_meshes")]
+[node name="VialSlot" type="Node3D" parent="Room/Interactables/Pipette" unique_id=1627220676 node_paths=PackedStringArray("take_vial_sound", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.46424288, 0, -0.1856839, 0, 0.49999994, 0, 0.18568392, 0, 0.46424285, 0.0075746775, 1.5677308, -0.26050258)
 script = ExtResource("55_j68t5")
 take_vial_sound = NodePath("TakeVialSound")
-uninteractable_sound = NodePath("UninteractableSound")
+vial_slot = 5
 prompt_text = "Instert vial"
 anim = NodePath("Pipette_Vial_Marker/AnimationPlayer")
 area = NodePath("Area3D")
 sound_emitter = NodePath("PlaceVialSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Pipette_Vial_Outline")]
 
 [node name="Pipette_Vial_Tube_ON" type="MeshInstance3D" parent="Room/Interactables/Pipette/VialSlot" unique_id=917469759]
@@ -8110,15 +8114,15 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.022235807, -0.04712446, -0.07665987)
 normal_size = Vector3(0.04, 0.04, 0.04)
 
-[node name="FlaskSlot" type="Node3D" parent="Room/Interactables/Pipette" unique_id=1302249287 node_paths=PackedStringArray("take_flask_sound", "uninteractable_sound", "anim", "area", "sound_emitter", "outline_meshes")]
+[node name="FlaskSlot" type="Node3D" parent="Room/Interactables/Pipette" unique_id=1302249287 node_paths=PackedStringArray("take_flask_sound", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.46424282, 0, -0.18568403, 0, 0.49999967, 0, 0.185684, 0, 0.4642427, -0.087097764, 1.3547394, 0.035467386)
 script = ExtResource("56_wawjn")
 take_flask_sound = NodePath("TakeFlaskSound")
-uninteractable_sound = NodePath("UninteractableSound")
 prompt_text = "Instert flask"
 anim = NodePath("Flask_Marker/Flask_Model/AnimationPlayer")
 area = NodePath("Area3D")
 sound_emitter = NodePath("PlaceFlaskSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Flask_Outline")]
 
 [node name="Flask_Outline" type="MeshInstance3D" parent="Room/Interactables/Pipette/FlaskSlot" unique_id=1444221179]
@@ -8166,14 +8170,14 @@ normal_size = Vector3(0.04, 0.04, 0.04)
 [node name="Numapd" type="Node3D" parent="Room/Interactables/Pipette" unique_id=240507342]
 transform = Transform3D(0.35674965, 0, 0.9342, 0, 0.9999992, 0, -0.93419987, 0, 0.35674953, -0.19270492, 1.5887222, 0.04299879)
 
-[node name="Pipette_Button_Clear" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=85330077 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_Clear" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=85330077 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.000001, 0, 5.9604645e-08, 0, 1, 0, 0, 0, 1.0000007, -0.0618093, -0.03719139, 0.0048743486)
 script = ExtResource("62_kg4j1")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_Clear_Model")
 prompt_text = "Clear"
 area = NodePath("Area3D")
 sound_emitter = NodePath("PipetteClearButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_Clear_Model")]
 
 [node name="Button_Clear_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Clear" unique_id=894033959]
@@ -8202,14 +8206,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
-[node name="Pipette_Button_Point" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1092882085 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_Point" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1092882085 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000011, 0, 5.9604645e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000007, -0.028584957, -0.037837863, 0.003693819)
 script = ExtResource("61_jhak5")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_Point_Model")
 prompt_text = "."
 area = NodePath("Area3D")
 sound_emitter = NodePath("PipettePointButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_Point_Model")]
 
 [node name="Button_Point_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Point" unique_id=1068641918]
@@ -8238,14 +8242,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
-[node name="Pipette_Button_Start" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2106896159 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_Start" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2106896159 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000007, 0, 5.9604645e-08, 0, 1, 0, 0, 0, 1.0000007, 0.07692385, -0.0029777288, 0.007401943)
 script = ExtResource("59_r0vx2")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_Start_model")
 prompt_text = "Start"
 area = NodePath("Area3D")
 sound_emitter = NodePath("PipetteStartButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_Start_model")]
 
 [node name="Button_Start_model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Start" unique_id=1688334138]
@@ -8275,14 +8279,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
-[node name="Pipette_Button_0" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1168515478 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_0" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1168515478 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000011, 0, 5.9604645e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000007, 0.035217762, 0.026767492, 0.006357193)
 script = ExtResource("60_4hlmn")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_0_Model")
 prompt_text = "0"
 area = NodePath("Area3D")
 sound_emitter = NodePath("Pipette0ButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_0_Model")]
 
 [node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_0" unique_id=1613011864 instance=ExtResource("31_wv54p")]
@@ -8311,14 +8315,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="Pipette_Button_1" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1271553097 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_1" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1271553097 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, 0.004336357, 0.032991886, 0.0029250383)
 script = ExtResource("60_4hlmn")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_1_Model")
 prompt_text = "1"
 area = NodePath("Area3D")
 sound_emitter = NodePath("Pipette1ButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_1_Model")]
 
 [node name="Button_1_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_1" unique_id=1828298649]
@@ -8347,14 +8351,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0005249131, -0.0048464574, -3.7252902e-11)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
-[node name="Pipette_Button_2" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1126231518 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_2" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1126231518 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000006, 0, 5.9604645e-08, 0, 1, 0, 0, 0, 1.0000006, -0.029375076, 0.028849244, 0.0067534447)
 script = ExtResource("60_4hlmn")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_2_Model")
 prompt_text = "2"
 area = NodePath("Area3D")
 sound_emitter = NodePath("Pipette2ButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_2_Model")]
 
 [node name="Button_2_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_2" unique_id=2000112969]
@@ -8383,14 +8387,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
-[node name="Pipette_Button_3" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2107951534 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_3" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2107951534 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, -0.06055212, 0.028736353, 0.0052096844)
 script = ExtResource("60_4hlmn")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_3_Model")
 prompt_text = "3"
 area = NodePath("Area3D")
 sound_emitter = NodePath("Pipette3ButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_3_Model")]
 
 [node name="Button_3_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_3" unique_id=300431013]
@@ -8419,14 +8423,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
-[node name="Pipette_Button_4" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2037283692 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_4" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2037283692 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, 0.035738707, -0.0041867495, 0.006599903)
 script = ExtResource("60_4hlmn")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_4_Model")
 prompt_text = "4"
 area = NodePath("Area3D")
 sound_emitter = NodePath("Pipette4ButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_4_Model")]
 
 [node name="Button_4_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_4" unique_id=1854393745]
@@ -8455,14 +8459,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
-[node name="Pipette_Button_5" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=774701449 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_5" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=774701449 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, 0.0033946037, -0.0032867193, 0.0048576593)
 script = ExtResource("60_4hlmn")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_5_Model")
 prompt_text = "5"
 area = NodePath("Area3D")
 sound_emitter = NodePath("Pipette5ButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_5_Model")]
 
 [node name="Button_5_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_5" unique_id=1943666066]
@@ -8491,14 +8495,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
-[node name="Pipette_Button_6" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=914858766 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_6" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=914858766 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, -0.029093266, -0.0032912493, 0.006602049)
 script = ExtResource("60_4hlmn")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_6_Model")
 prompt_text = "6"
 area = NodePath("Area3D")
 sound_emitter = NodePath("Pipette6ButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_6_Model")]
 
 [node name="Button_6_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_6" unique_id=1069641910]
@@ -8527,14 +8531,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
-[node name="Pipette_Button_7" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1833253331 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_7" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1833253331 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, -0.0604558, -0.0035873652, 0.005895734)
 script = ExtResource("60_4hlmn")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_7_Model")
 prompt_text = "7"
 area = NodePath("Area3D")
 sound_emitter = NodePath("Pipette7ButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_7_Model")]
 
 [node name="Button_7_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_7" unique_id=1525465045]
@@ -8563,14 +8567,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
-[node name="Pipette_Button_8" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1015850918 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_8" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1015850918 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000005, 0, 5.9604645e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000005, 0.03579974, -0.036409616, 0.0065635443)
 script = ExtResource("60_4hlmn")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_8_Model")
 prompt_text = "8"
 area = NodePath("Area3D")
 sound_emitter = NodePath("Pipette8ButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_8_Model")]
 
 [node name="Button_8_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_8" unique_id=1012971226]
@@ -8599,14 +8603,14 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
-[node name="Pipette_Button_9" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=466533086 node_paths=PackedStringArray("uninteractable_sound", "press_anim", "area", "sound_emitter", "outline_meshes")]
+[node name="Pipette_Button_9" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=466533086 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, 0.0035271645, -0.03620076, 0.0054302216)
 script = ExtResource("60_4hlmn")
-uninteractable_sound = NodePath("UninteractableSound")
 press_anim = NodePath("Button_9_Model")
 prompt_text = "9"
 area = NodePath("Area3D")
 sound_emitter = NodePath("Pipette9ButtonSound")
+uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_9_Model")]
 
 [node name="Button_9_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_9" unique_id=1817801563]
@@ -8807,22 +8811,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6473917, 0, -0.7392761)
 [node name="Prop_Closet_Storage" parent="Room/Storage" unique_id=1322947913 instance=ExtResource("15_8cf7x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30165535, 0.030189991, 0.5397688)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1804681444) index="0" unique_id=865780799]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1913734634) index="0" unique_id=836803240]
 transform = Transform3D(0.9847963, 0, 0.17371324, 0, 1, 0, -0.17371324, 0, 0.9847963, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1804681444) index="2" unique_id=1358779425]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1913734634) index="2" unique_id=297532873]
 transform = Transform3D(0.9980103, 0, -0.06305108, 0, 1, 0, 0.06305108, 0, 0.9980103, 0.40623674, 0.33802077, -0.18920648)
 
 [node name="Prop_Closet_Storage2" parent="Room/Storage" unique_id=792493778 instance=ExtResource("15_8cf7x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1489224, 0.060379982, -1.4530705)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1804681444) index="0" unique_id=865780799]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="0" unique_id=836803240]
 transform = Transform3D(0.9986644, 0, 0.051666856, 0, 1, 0, -0.051666856, 0, 0.9986644, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1804681444) index="2" unique_id=1358779425]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="2" unique_id=297532873]
 transform = Transform3D(0.99973977, 0, -0.022809424, 0, 1, 0, 0.022809424, 0, 0.99973977, 0.40623665, 0.33802077, -0.18920648)
 
-[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1804681444) index="3" unique_id=43209471]
+[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="3" unique_id=1308364603]
 transform = Transform3D(0.99992776, 0, 0.012020995, 0, 1, 0, -0.012020995, 0, 0.99992776, -0.40623677, 0.33802077, -0.18920648)
 
 [node name="env_locker" parent="Room/Storage" unique_id=1828827353 instance=ExtResource("16_ijner")]
@@ -8856,13 +8860,13 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.010209445, -4.5401977e-10, 0.054237492)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Machines/Env_Computer/Note_COmputer" index="1" unique_id=1417392328]
+[node name="Skeleton3D" parent="Room/Machines/Env_Computer/Note_COmputer" index="1" unique_id=1832640565]
 bones/1/position = Vector3(0, 0, -0.05)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
-[node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=452260851]
+[node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=1766528207]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
 surface_material_override/1 = SubResource("StandardMaterial3D_2ld5i")
 
@@ -9296,13 +9300,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5917645, 0, 7.336006)
 [node name="env_ceiling_lamp" parent="Room/Lights" unique_id=216051645 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.6584425, 2.6358595, -10.420589)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(216051645, 679007822) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(216051645, 127635554) index="0" unique_id=1120609968]
 light_energy = 0.251
 
 [node name="env_ceiling_lamp2" parent="Room/Lights" unique_id=431651021 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(431651021, 679007822) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(431651021, 127635554) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -9312,7 +9316,7 @@ spot_attenuation = 1.52
 [node name="env_ceiling_lamp7" parent="Room/Lights" unique_id=45645241 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(45645241, 679007822) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(45645241, 127635554) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -9321,7 +9325,7 @@ spot_attenuation = 1.37
 [node name="env_ceiling_lamp4" parent="Room/Lights" unique_id=507427365 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.69838953, 2.603364, -11.7987995)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(507427365, 679007822) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(507427365, 127635554) index="0" unique_id=1120609968]
 light_energy = 0.08
 spot_range = 4.7193227
 spot_angle = 87.9047
@@ -9329,7 +9333,7 @@ spot_angle = 87.9047
 [node name="env_ceiling_lamp6" parent="Room/Lights" unique_id=2073783679 instance=ExtResource("6_8au8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6280155, 2.603364, -7.3823385)
 
-[node name="Cylinder" parent="Room/Lights/env_ceiling_lamp6" index="0" unique_id=679007822]
+[node name="Cylinder" parent="Room/Lights/env_ceiling_lamp6" index="0" unique_id=127635554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12351322, 0, 0.01646936)
 
 [node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp6/Cylinder" index="0" unique_id=1120609968]
@@ -9343,7 +9347,7 @@ light_energy = 9.405
 [node name="env_ceiling_lamp3" parent="Room/Lights" unique_id=1288938063 instance=ExtResource("6_8au8g")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.19090223, 1.961021, -11.82384)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(1288938063, 679007822) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(1288938063, 127635554) index="0" unique_id=1120609968]
 transform = Transform3D(0.88825995, -2.007844e-08, 0.45934123, -0.45934123, -3.8827075e-08, 0.88825995, 3.731543e-15, -0.99999976, -4.371138e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(0.56323135, 0.52731746, 0.5280909, 1)
 spot_range = 5.794
@@ -9356,7 +9360,7 @@ transform = Transform3D(1, 0, -7.764702e-23, -2.627256e-15, 1, 3.5527137e-15, -3
 [node name="env_ceiling_lamp5" parent="Room/Lights" unique_id=793426471 instance=ExtResource("6_8au8g")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.94554186, -0.26759893, -11.886757)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(793426471, 679007822) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(793426471, 127635554) index="0" unique_id=1120609968]
 transform = Transform3D(0.7008144, -3.1181226e-08, 0.7133435, -0.7133435, -3.063358e-08, 0.7008144, 4.8694323e-15, -0.9999999, -4.371139e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(1, 0, 0.15951031, 1)
 light_energy = 0.4
@@ -9518,10 +9522,10 @@ transform = Transform3D(0, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0, 8.902527, 
 [node name="Doors_Sliding3" parent="Room/Doors" unique_id=868643664 instance=ExtResource("41_6nk54")]
 transform = Transform3D(-0.9999999, 0, 4.371138e-08, 0, 1, 0, -4.371138e-08, 0, -0.9999999, 0.033169, 1.0764008, -1.1191952)
 
-[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=2096640977]
+[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=1265345812]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39810574, 0, 0)
 
-[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=682133513]
+[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1477454735]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
 
 [node name="Entities" type="Node3D" parent="Room" unique_id=950348517]

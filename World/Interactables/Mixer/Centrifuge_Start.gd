@@ -1,6 +1,5 @@
 extends Interactable
 
-@export var uninteractable_sound: FmodEventEmitter3D
 @onready var _centrifuge_state_label: Label = %Centrifuge_State_Label
 @export var press_anim : ButtonPressAnimation 
 
@@ -12,9 +11,15 @@ func _ready() -> void:
 func focus() -> void:
 	_set_outline(true)
 	_update_prompt()
+
+func vial_in() -> bool:
+	if GameStats.vial_location == GameStats.VialLocation.CENTRIFUGE:
+		return true
+	else:
+		return false
 	
 func _update_prompt() -> void:
-	if GameStats.vial_in_centrifuge:
+	if vial_in():
 		if VialStats.empty:
 			prompt_text = "Vial is empty"
 		else:
@@ -25,7 +30,7 @@ func _update_prompt() -> void:
 
 func interact(interactor: Node) -> void:
 	press_anim.press()
-	if GameStats.vial_in_centrifuge:
+	if vial_in():
 		if VialStats.empty:
 			_uninteractable()
 		else:
@@ -37,6 +42,7 @@ func _start_centrifuge():
 	press_anim.press()
 	if anim and anim.animation_finished:
 		anim.play("Start Mixer")
+		GameStats.vial_in_animation = true
 		await anim.animation_finished
 		_centrifuge_state_label.text = "Mixing"
 		AudioManager.one_shot(sound_emitter)
@@ -47,9 +53,9 @@ func _start_centrifuge():
 		centrifuge_start_pressed.emit() # For the micrograph, should rename
 		_centrifuge_state_label.text = "Done"
 		_update_prompt()
+		GameStats.vial_in_animation = false
 		print("Centrifuged")
 
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("No vial in centrifuge or vial is empty")
