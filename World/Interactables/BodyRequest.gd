@@ -1,6 +1,5 @@
 extends Interactable
 
-@export var uninteractable_sound: FmodEventEmitter3D
 @export var press_anim : ButtonPressAnimation 
 
 var bodyIdString : String = "BODY #"
@@ -43,5 +42,4 @@ func _new_body() -> void:
 		await anim.animation_finished
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("Body already requested")

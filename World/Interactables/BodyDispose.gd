@@ -1,6 +1,5 @@
 extends Interactable
 
-@export var uninteractable_sound: FmodEventEmitter3D
 @export var press_anim : ButtonPressAnimation 
 
 func focus() -> void:
@@ -33,5 +32,4 @@ func _dispose_body():
 		anim.play("dispose_body")
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("No body to dispose")

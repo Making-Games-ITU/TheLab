@@ -1,20 +1,14 @@
-extends Interactable
+class_name IVialSlot extends Interactable
 
 @export var take_vial_sound: FmodEventEmitter3D
-@export var uninteractable_sound: FmodEventEmitter3D
-@onready var pipette_vial_model := $Pipette_Vial
-@onready var pipette_vial_tube_on := $Pipette_Vial_Tube_ON
-@onready var pipette_vial_tube_off := $Pipette_Vial_Tube_OFF
-
-func _ready() -> void:
-	super()
+@export var vial_slot: GameStats.VialLocation
 
 func focus() -> void:
 	_set_outline(true)
 	_update_prompt()
 	
 func _update_prompt() -> void:
-	if GameStats.vial_in_pipette:
+	if vial_slot == GameStats.vial_location:
 		if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
 			prompt_text = "Take vial"
 		else:
@@ -23,12 +17,12 @@ func _update_prompt() -> void:
 		if PlayerStats.is_holding == PlayerStats.HoldState.VIAL:
 			prompt_text = "Insert vial"
 		else:
-			prompt_text = "No vial to insert"
+			prompt_text = "No vial in hand"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
-	if GameStats.vial_in_pipette:
-		if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
+	if vial_slot == GameStats.vial_location:
+		if PlayerStats.is_holding == PlayerStats.HoldState.NONE and not GameStats.vial_in_animation:
 			_take_vial()
 		else:
 			_uninteractable()
@@ -39,25 +33,25 @@ func interact(interactor: Node) -> void:
 			_uninteractable()
 
 func _insert_vial():
-	GameStats.vial_in_pipette = true
+	GameStats.vial_location = vial_slot
 	PlayerStats.is_holding = PlayerStats.HoldState.NONE
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
-	print("Vial inserted into pipette vial slot")
+	print("Vial inserted")
 	#TODO
 	if anim:
 		anim.play("insert")
 
 func _take_vial():
-	GameStats.vial_in_pipette = false
+	GameStats.vial_location = GameStats.VialLocation.PLAYER
 	PlayerStats.is_holding = PlayerStats.HoldState.VIAL
 	AudioManager.one_shot(take_vial_sound)
 	_update_prompt()
-	print("Picked up vial from pipette vial slot")
+	print("Vial picked up")
 	#TODO
 	if anim:
 		anim.play("take")
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
-	print("No vial to insert or wrong object in hand or hands are full")
+	super()
+	print("No vial to place, wrong item in hand or animation in progress")

@@ -1,13 +1,9 @@
 extends Node
 
 # Where the vial is
-var is_vial_used: bool = false
 enum VialLocation { NONE, PLAYER, SAMPLER, CENTRIFUGE, MICROSCOPE, PIPETTE }
 var vial_location: VialLocation = VialLocation.NONE
-var vial_in_collector: bool = false
-var vial_in_microscope: bool = false
-var vial_in_pipette: bool = false
-var vial_in_centrifuge: bool = false
+var vial_in_animation = false
 
 # Body stats
 var body_number: int = 0
