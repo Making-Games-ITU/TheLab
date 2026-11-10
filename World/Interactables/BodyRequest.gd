@@ -30,10 +30,9 @@ func _new_body() -> void:
 	print("New body requested: ", GameStats.body_ID)
 	
 	GameStats.body_exists = true
-	if GameStats.difficulty_stage == 0:
-		GameStats.body_state = 1 # cured
-	else:
-		GameStats.body_state = 3 # neutral
+	
+	GameManager.get_body_state()
+	
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
 	# This below doesn't work yet

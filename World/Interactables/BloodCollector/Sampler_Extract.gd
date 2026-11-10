@@ -46,7 +46,7 @@ func _extractBlood() -> void:
 		sampler_extract_pressed.emit()
 		
 		#check game progression level to get appropriate infection
-		GameManager.get_blood_type(GameStats.difficulty_stage)		
+		GameManager.get_infection_type()		
 		
 		VialStats._update_liquid()
 		print("Blood extracted with infection: ", VialStats.infection)
