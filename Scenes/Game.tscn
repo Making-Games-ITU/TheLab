@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ckyc14ylf8cdc" path="res://Systems/Startup_Manager.gd" id="1_8eewk"]
 [ext_resource type="Script" uid="uid://ct1dqcskn76yb" path="res://Resources/Game_Stats.gd" id="1_dy08l"]
 [ext_resource type="Script" uid="uid://dn02qfwgu1uur" path="res://Resources/Player_Stats.gd" id="2_yaffh"]
+[ext_resource type="Script" uid="uid://cwlp16ommdbfg" path="res://Systems/Game_Manager.gd" id="3_3e3v6"]
 [ext_resource type="Script" uid="uid://dvtfql07hor2" path="res://Resources/Vial_Stats.gd" id="3_uhnig"]
 [ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="4_jx2ny"]
 [ext_resource type="Script" uid="uid://cue05ltltu7v3" path="res://Entities/Player/Player_Controller.gd" id="6_6avb6"]
@@ -7794,6 +7795,9 @@ script = ExtResource("1_8eewk")
 
 [node name="GameStats" type="Node" parent="." unique_id=682835998]
 script = ExtResource("1_dy08l")
+
+[node name="GameManager" type="Node" parent="." unique_id=1150703565]
+script = ExtResource("3_3e3v6")
 
 [node name="PlayerStats" type="Node" parent="." unique_id=767234893]
 script = ExtResource("2_yaffh")

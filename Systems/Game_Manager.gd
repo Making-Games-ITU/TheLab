@@ -10,6 +10,13 @@ func _ready() -> void:
 	add_child(_clear_timer)
 	_clear_timer.start(next_timer)
 
+func get_blood_type(progress : int) -> void:
+	match progress:
+		0:
+			VialStats.infection = VialStats.InfectionType.NONE
+		_:
+			VialStats.infection = VialStats.InfectionType.CELL_MUTATION
+
 func check_if_successful() -> void:
 	# Body state already at minimum but keep trying = bad
 	if GameStats.body_state == 1:

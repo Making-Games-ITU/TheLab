@@ -25,9 +25,10 @@ func interact(interactor: Node) -> void:
 func _new_body() -> void:
 	#TODO: Body variance should be here
 	#TODO: Potential game difficulty increase would be set here
-	print("New body requested: ", GameStats.body_ID)
 	GameStats.body_number += 1 
 	GameStats.body_ID = bodyIdString+ "%04d" % GameStats.body_number
+	print("New body requested: ", GameStats.body_ID)
+	
 	GameStats.body_exists = true
 	if GameStats.difficulty_stage == 0:
 		GameStats.body_state = 1 # cured
