@@ -1,10 +1,6 @@
-class_name GameManager
 extends Node
 
 @export var next_timer: float =  1.0
-
-# Which baby emotion each physical button answers
-# var pressed : GameStats.Buttons = GameStats.interacted_button
 
 var _clear_timer : Timer
 
@@ -14,12 +10,43 @@ func _ready() -> void:
 	add_child(_clear_timer)
 	_clear_timer.start(next_timer)
 
-func _process(_delta: float) -> void:
-	pass
+func check_if_successful() -> void:
+	# Body state already at minimum but keep trying = bad
+	if GameStats.body_state == 1:
+		GameStats.body_state += 1
+		_check_game_over()
+		return
+	# Vial is damaged = bad
+	if VialStats.damaged:
+		GameStats.body_state += 1
+		_check_game_over()
+		return
+	# Chemical in vial but not integrated = bad
+	for key in VialStats.chemicals:
+		if VialStats.chemicals[key].quantity > 0.0:
+			if not VialStats.chemicals[key].integrated:
+				GameStats.body_state += 1
+				_check_game_over()
+				return
+	# If vial has the wrong chemical in it = bad
+	if VialStats.infection == VialStats.InfectionType.CELL_MUTATION:
+		for key in VialStats.chemicals:
+			if VialStats.chemicals[key].quantity > 0.0:
+				if key != VialStats.Composite.HYDROGEN:
+					GameStats.body_state += 1
+					_check_game_over()
+					return
+	# If no chemical is present
+	var no_chemicals = true
+	for key in VialStats.chemicals:
+		if VialStats.chemicals[key].quantity != 0.0:
+			no_chemicals = false
+	if no_chemicals:
+		return
+	GameStats.body_state -= 1
 
-
-
-func _game_over() -> void:
-	print("You lose!")
-	GameStats.game_over = true
-	# Scary stuff can be set here
+func _check_game_over() -> void:
+	if GameStats.body_state == 6:
+		%GameOverScreen.visible = true
+		await get_tree().create_timer(2.0).timeout
+		get_tree().quit()

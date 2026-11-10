@@ -41,7 +41,7 @@ func _inject() -> void:
 		GameStats.vial_in_animation = true
 		anim.play("close")
 		await anim.animation_finished
-		_check_if_successful()
+		GameManager.check_if_successful()
 		VialStats.empty_vial()
 		VialStats._update_liquid()
 		sampler_inject_pressed.emit()
@@ -50,7 +50,7 @@ func _inject() -> void:
 		anim.play("open")
 		GameStats.vial_in_animation = false
 
-func _check_if_successful() -> void:
+func check_if_successful() -> void:
 	# Body state already at minimum but keep trying = bad
 	if GameStats.body_state == 1:
 		GameStats.body_state += 1
@@ -92,5 +92,4 @@ func _check_game_over() -> void:
 		get_tree().quit()
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("Vial is empty or No body to inject into or no vial ins collector")

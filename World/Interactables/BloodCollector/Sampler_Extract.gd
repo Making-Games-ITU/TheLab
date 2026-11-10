@@ -44,10 +44,14 @@ func _extractBlood() -> void:
 		VialStats.empty = false
 		VialStats.murky = true
 		sampler_extract_pressed.emit()
+		
+		#check game progression level to get appropriate infection
 		if GameStats.difficulty_stage == 0:
 			VialStats.infection = VialStats.InfectionType.NONE
 		else:
 			VialStats.infection = VialStats.InfectionType.CELL_MUTATION
+		
+		
 		VialStats._update_liquid()
 		print("Blood extracted with infection: ", VialStats.infection)
 		anim.play("open")
