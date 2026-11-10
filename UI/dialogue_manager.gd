@@ -36,6 +36,8 @@ func _process(delta: float) -> void:
 	dialogue_text_box.visible_characters = maxi(dialogue_text_box.visible_characters, visables)
 	if dialogue_text_box.visible_characters >= dialogue_text_box.get_total_character_count():
 		current_sentece = null
+		await get_tree().create_timer(2.0).timeout
+		hide()
 
 func _next_sentence(next_sentence : Sentence):
 	dialogue_text_box.text = ""
@@ -48,6 +50,7 @@ func _next_sentence(next_sentence : Sentence):
 	#audioPlayer.finished.connect(_on_dialogue_finished)
 	audioPlayer.play()
 	current_sentece = next_sentence
+	show()
 	
 	
 func _on_dialogue_finished():

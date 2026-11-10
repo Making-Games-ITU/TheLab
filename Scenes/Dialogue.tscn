@@ -8011,6 +8011,7 @@ theme_override_font_sizes/font_size = 64
 text = "G A M E   O V E R"
 
 [node name="Dialogue" type="Control" parent="Player/HUD" unique_id=2073495250 node_paths=PackedStringArray("dialogue_text_box", "audioPlayer")]
+visible = false
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -8663,7 +8664,7 @@ material_override = SubResource("StandardMaterial3D_2h8s2")
 mesh = SubResource("ArrayMesh_2nmvu")
 
 [node name="SampleCollectorVialMarker" type="Marker3D" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel" unique_id=1334363848]
-transform = Transform3D(0.99957067, -0.029279018, 0, 0.029279018, 0.99957067, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.9995706, -0.029279016, 0, 0.029279016, 0.9995706, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 
 [node name="SampleCollectorVialModel" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel/SampleCollectorVialMarker" unique_id=2038031653 instance=ExtResource("12_3rwca")]
