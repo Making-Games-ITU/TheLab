@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bca81g8wiq6o6"]
+
+[ext_resource type="PackedScene" uid="uid://pw06wsmmfxt1" path="res://World/Interactables/Pin Board/Int_Pinboard.fbx" id="1_gcq8b"]
+
+[node name="Int_Pinboard" unique_id=928608774 instance=ExtResource("1_gcq8b")]
