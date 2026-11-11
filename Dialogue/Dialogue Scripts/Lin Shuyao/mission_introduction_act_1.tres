@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="DialogueAct" format=3 uid="uid://diftqqwjvnshc"]
+
+[ext_resource type="Script" uid="uid://csj4btbehj4g0" path="res://Dialogue/dialogue_act.gd" id="1_rkib2"]
+[ext_resource type="Script" uid="uid://bbug2xt6gy8sv" path="res://Dialogue/sentence.gd" id="2_p6gug"]
+
+[sub_resource type="Resource" id="Resource_fejia"]
+script = ExtResource("2_p6gug")
+phrases = Array[Dictionary]([{
+"end": 1.8,
+"start": 0.0,
+"text": "Hey!!! I can hear you in there. "
+}, {
+"end": 3.8,
+"start": 2.5,
+"text": "You should be Sergey Markov  "
+}, {
+"end": 5.5,
+"start": 4.38,
+"text": "the one replacing... "
+}, {
+"end": 6.5,
+"start": 5.8,
+"text": "Kravchenko"
+}])
+metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
+
+[resource]
+script = ExtResource("1_rkib2")
+sentences = Array[ExtResource("2_p6gug")]([SubResource("Resource_fejia")])
+metadata/_custom_type_script = "uid://csj4btbehj4g0"
