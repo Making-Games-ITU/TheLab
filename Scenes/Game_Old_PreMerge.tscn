@@ -43,7 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://5vn584og5dnk" path="res://World/Props/Doors/doors_sliding.tscn" id="41_bg0c8"]
 [ext_resource type="Script" uid="uid://7y5mut280vma" path="res://World/Interactables/Chair.gd" id="42_wxdqo"]
 [ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/Vial_GetTake.gd" id="43_kgwvm"]
-[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope_Look.gd" id="44_750ic"]
+[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope/Microscope_Look.gd" id="44_750ic"]
 [ext_resource type="Script" uid="uid://b2r7cte3y82gd" path="res://World/Interactables/Trashcan_Interactions.gd" id="45_fsofv"]
 [ext_resource type="PackedScene" uid="uid://bhy0ipymuf831" path="res://Global Assets/InteractableObject.tscn" id="46_vinaf"]
 [ext_resource type="Shader" uid="uid://q0mb3yshd6df" path="res://Shaders/Micrograph.gdshader" id="47_6e2nc"]

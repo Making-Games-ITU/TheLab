@@ -1,6 +1,5 @@
 extends Interactable
 
-@export var uninteractable_sound: FmodEventEmitter3D
 @onready var _pipette_chemical_amount_label: Label = %Pipette_Chemical_Amount_Label
 var _prompt_text_original: String
 @export var press_anim : ButtonPressAnimation 

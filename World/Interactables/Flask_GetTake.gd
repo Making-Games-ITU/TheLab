@@ -3,7 +3,6 @@ extends Interactable
 @export var chemical_name: String
 @export var composite: VialStats.Composite
 @export var placeback_sound: FmodEventEmitter3D
-@export var uninteractable_sound: FmodEventEmitter3D
 
 func _ready() -> void:
 	super()

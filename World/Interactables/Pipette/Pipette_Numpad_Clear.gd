@@ -1,6 +1,5 @@
 extends Interactable
 
-@export var uninteractable_sound: FmodEventEmitter3D
 @onready var _pipette_chemical_amount_label: Label = %Pipette_Chemical_Amount_Label
 @export var press_anim : ButtonPressAnimation 
 func _ready() -> void:
@@ -32,5 +31,4 @@ func _clear_chemical_amount() -> void:
 	print("Number cleared in pipette")
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
 	print("No number to clear in pipette")

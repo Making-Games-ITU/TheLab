@@ -1,19 +1,21 @@
 extends Interactable
 
-@export var uninteractable_sound: FmodEventEmitter3D
 @export var press_anim : ButtonPressAnimation 
 
 signal sampler_inject_pressed # For micrograph interactions script
-
-func _ready() -> void:
-	super()
 
 func focus() -> void:
 	_set_outline(true)
 	_update_prompt()
 
+func vial_in() -> bool:
+	if GameStats.vial_location == GameStats.VialLocation.SAMPLER:
+		return true
+	else:
+		return false
+
 func _update_prompt() -> void:
-	if GameStats.vial_in_collector:
+	if vial_in():
 		if VialStats.empty:
 			prompt_text = "Vial is empty"
 		else:
@@ -27,7 +29,7 @@ func _update_prompt() -> void:
 
 func interact(interactor: Node) -> void:
 	press_anim.press()
-	if GameStats.vial_in_collector and GameStats.body_exists:
+	if vial_in() and GameStats.body_exists:
 		if VialStats.empty:
 			_uninteractable()
 		else:
@@ -36,6 +38,7 @@ func interact(interactor: Node) -> void:
 func _inject() -> void:
 	#TODO:
 	if anim:
+		GameStats.vial_in_animation = true
 		anim.play("close")
 		await anim.animation_finished
 		_check_if_successful()
@@ -45,6 +48,7 @@ func _inject() -> void:
 		AudioManager.one_shot(sound_emitter)
 		print("Serum injected")
 		anim.play("open")
+		GameStats.vial_in_animation = false
 
 func _check_if_successful() -> void:
 	# Body state already at minimum but keep trying = bad
