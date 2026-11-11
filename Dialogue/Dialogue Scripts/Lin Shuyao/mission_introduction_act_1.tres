@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://csj4btbehj4g0" path="res://Dialogue/dialogue_act.gd" id="1_rkib2"]
 [ext_resource type="Script" uid="uid://bbug2xt6gy8sv" path="res://Dialogue/sentence.gd" id="2_p6gug"]
 
-[sub_resource type="Resource" id="Resource_fejia"]
+[sub_resource type="Resource" id="Resource_yvjjv"]
 script = ExtResource("2_p6gug")
 phrases = Array[Dictionary]([{
 "end": 1.8,
 "start": 0.0,
-"text": "Hey!!! I can hear you in there. "
+"text": "Hey! I can hear you in there. "
 }, {
 "end": 3.8,
 "start": 2.5,
@@ -22,9 +22,93 @@ phrases = Array[Dictionary]([{
 "start": 5.8,
 "text": "Kravchenko"
 }])
+sentence_id = "f3f09eb8-35a1-46e5-b468-a4878494cfe9"
+next_sentence_id = "6263c058-62b2-4def-921e-978a332b5144"
+metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
+
+[sub_resource type="Resource" id="Resource_pbrfv"]
+script = ExtResource("2_p6gug")
+phrases = Array[Dictionary]([{
+"end": 1.5,
+"start": 0.0,
+"text": "The door seems to be on lockdown; "
+}, {
+"end": 4.5,
+"start": 2.0,
+"text": "I heard that something is happening at the dining sector. "
+}])
+sentence_id = "6263c058-62b2-4def-921e-978a332b5144"
+next_sentence_id = "e43c0813-d836-499a-9d7f-1879744e3400"
+metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
+
+[sub_resource type="Resource" id="Resource_rkplp"]
+script = ExtResource("2_p6gug")
+phrases = Array[Dictionary]([{
+"end": 2.0,
+"start": 0.0,
+"text": "I was sent here by GRAKOWICZ to bring you this. "
+}, {
+"end": 4.0,
+"start": 2.5,
+"text": "It seems to be very important. "
+}, {
+"end": 6.0,
+"start": 4.5,
+"text": "Common now, take a look at it."
+}])
+sentence_id = "e43c0813-d836-499a-9d7f-1879744e3400"
+metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
+
+[sub_resource type="Resource" id="Resource_mdscu"]
+script = ExtResource("2_p6gug")
+phrases = Array[Dictionary]([{
+"end": 1.8,
+"start": 0.0,
+"text": "I assume you read the note, "
+}, {
+"end": 2.5,
+"start": 2.2,
+"text": "good. "
+}, {
+"end": 5.5,
+"start": 3.0,
+"text": "If you need more information about how the whole testing procedure works, "
+}, {
+"end": 7.5,
+"start": 5.8,
+"text": "there should be a pinboard in the lab."
+}])
+sentence_id = "c18da72b-b90b-491d-8be9-84f066fa8570"
+next_sentence_id = "f64dd0bb-bcbd-43ea-bd91-20b2a2c5606e"
+metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
+
+[sub_resource type="Resource" id="Resource_3rwca"]
+script = ExtResource("2_p6gug")
+phrases = Array[Dictionary]([{
+"end": 1.0,
+"start": 0.0,
+"text": "Good! "
+}, {
+"end": 2.2,
+"start": 1.5,
+"text": "The power is back on. "
+}, {
+"end": 3.5,
+"start": 2.4,
+"text": "I will go and find out what is happening in the dining sector. "
+}, {
+"end": 3.5,
+"start": 2.6,
+"text": "Maybe I will be able to turn off the lockdown. "
+}, {
+"end": 4.0,
+"start": 3.6,
+"text": "I will be back soon."
+}])
+sentence_id = "7eb6ec85-442b-4d72-8dd7-9f2558b68c04"
 metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
 
 [resource]
 script = ExtResource("1_rkib2")
-sentences = Array[ExtResource("2_p6gug")]([SubResource("Resource_fejia")])
+sentences = Array[ExtResource("2_p6gug")]([SubResource("Resource_yvjjv"), SubResource("Resource_pbrfv"), SubResource("Resource_rkplp"), SubResource("Resource_mdscu"), SubResource("Resource_3rwca")])
 metadata/_custom_type_script = "uid://csj4btbehj4g0"
