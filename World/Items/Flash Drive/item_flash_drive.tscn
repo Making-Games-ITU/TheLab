@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dtl4atslhsarl"]
+
+[ext_resource type="PackedScene" uid="uid://cpp32dys7feb3" path="res://World/Items/Flash Drive/Item_flash_drive.fbx" id="1_7wf0y"]
+[ext_resource type="Texture2D" uid="uid://c2kyfbgiooblx" path="res://World/Items/Flash Drive/FlashDrive_Texture.png" id="2_k2h3n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mh6w"]
+albedo_texture = ExtResource("2_k2h3n")
+
+[node name="Item_flash_drive" unique_id=1084068999 instance=ExtResource("1_7wf0y")]
+
+[node name="Cube_033" parent="." index="0" unique_id=932876190]
+surface_material_override/0 = SubResource("StandardMaterial3D_8mh6w")

@@ -5,6 +5,9 @@ class_name Dialogue_Manager
 var current_audioPlayer : AudioStreamPlayer3D
 var current_sentece : Sentence
 
+var test : bool = true
+var dialogue_time := 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -15,7 +18,13 @@ func _process(delta: float) -> void:
 	if current_sentece == null:
 		return
 	
-	var time := current_audioPlayer.get_playback_position()
+
+	if(test == true) :
+		dialogue_time += delta
+	else :
+		dialogue_time = maxf(dialogue_time, current_audioPlayer.get_playback_position())
+	
+	var time := dialogue_time
 	var visables := 0
 	var phrases := current_sentece.phrases
 	
@@ -41,7 +50,9 @@ func next_sentence(next_sentence : Sentence, next_character : Character):
 		
 	current_audioPlayer = next_character.audioPlayer
 	dialogue_text_box.visible_characters = 0
-	current_audioPlayer.stream = next_sentence.voice_over
-	current_audioPlayer.play()
+	
+	if(current_audioPlayer != null):
+		current_audioPlayer.play()
+		current_audioPlayer.stream = next_sentence.voice_over
 	current_sentece = next_sentence
 	show()
