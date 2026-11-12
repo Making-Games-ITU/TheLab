@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://05ojqspbnq6r"]
+
+[ext_resource type="PackedScene" uid="uid://bcdsfyqjibpmd" path="res://World/Props/Cardbox/Prop_Cardbox.fbx" id="1_kpcon"]
+
+[node name="Prop_Cardbox" unique_id=30555007 instance=ExtResource("1_kpcon")]

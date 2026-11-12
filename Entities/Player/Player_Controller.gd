@@ -82,14 +82,14 @@ func _update_vial_visibility() -> void:
 
 func _physics_process(_delta: float) -> void:
 	_check_for_interactable()
-	if not PlayerStats.is_sitting and not PlayerStats.is_analyzing and not PlayerStats.is_reading:
+	if not PlayerStats.is_sitting and not PlayerStats.is_analyzing and not PlayerStats.is_reading and not PlayerStats.in_cutscene:
 		_movement_input()
 		_handleStepsSFX()
 		move_and_slide()
 		_update_vial_visibility()
 
 func _can_look() -> bool:
-	return not PlayerStats.is_analyzing and not PlayerStats.is_reading and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+	return not PlayerStats.is_analyzing and not PlayerStats.is_reading and not PlayerStats.in_cutscene and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and _can_look():
