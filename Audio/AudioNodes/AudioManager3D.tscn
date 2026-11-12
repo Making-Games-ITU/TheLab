@@ -17,7 +17,7 @@ event_name = "event:/Ambient"
 event_guid = "{18ac8d98-c22c-4b6c-807d-a0a7327f8b36}"
 autoplay = true
 fmod_parameters/ProgressionLevel/id = 8395569915492118449
-fmod_parameters/ProgressionLevel = 0
+fmod_parameters/ProgressionLevel = 1
 fmod_parameters/ProgressionLevel/variant_type = 2
 
 [node name="Steps" type="FmodEventEmitter3D" parent="." unique_id=2145527534]

@@ -18,6 +18,10 @@ func progress() -> void:
 	_progression_level = GameStats.progression_level
 	_cured = GameStats.cured
 
+func check_danger_level() -> void:
+	var danger = GameStats.danger_level
+
+
 #Add a infection type for a given progression level here
 func get_infection_type() -> void:
 	progress()
@@ -72,7 +76,7 @@ func update_progression_level() -> void:
 			GameStats.progression_level = 0
 			GameStats.cured = 0
 			print("Level: 0 (healthy)")
-	
+
 
 func check_if_successful() -> void:
 	print(GameStats.body_state)
