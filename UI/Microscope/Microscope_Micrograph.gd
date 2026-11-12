@@ -56,7 +56,13 @@ func _set_cell_color(color: Color) -> void:
 	micrograph_shader.set_shader_parameter("cell_color", color)
 
 func _set_mutation_parameters(percent: int) -> void:
-	micrograph_shader.set_shader_parameter("mutation_percentage", percent)
+	if VialStats.chemicals[VialStats.Composite.NITROGEN].integrated:
+		micrograph_shader.set_shader_parameter("mutation_percentage", 0)
+	else:
+		micrograph_shader.set_shader_parameter("mutation_percentage", percent)
 
 func _set_parasite_parameters(amount: int) -> void:
-	micrograph_shader.set_shader_parameter("parasite_amount", amount)
+	if VialStats.chemicals[VialStats.Composite.HYDROGEN].integrated:
+		micrograph_shader.set_shader_parameter("parasite_amount", 0)
+	else:
+		micrograph_shader.set_shader_parameter("parasite_amount", amount)
