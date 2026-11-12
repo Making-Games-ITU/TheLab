@@ -18,9 +18,28 @@ func progress() -> void:
 	_progression_level = GameStats.progression_level
 	_cured = GameStats.cured
 
-func check_danger_level() -> void:
+func _set_danger_level() -> void:
+	progress()
+	
 	var danger = GameStats.danger_level
-
+	
+	match _progression_level:
+		0: #Control (Healthy)
+			danger = 0
+		1: #Parasites 
+			danger = 0
+			danger += GameStats.body_state - 3
+		2: #Mutation 
+			danger = 1
+			danger += GameStats.body_state - 3
+		3: #Both 
+			danger = 2
+			danger += GameStats.body_state - 3
+		_: #Add new stages here
+			danger = 0
+	
+	GameStats.danger_level = danger
+	#TODO: Set audio param to danger level here. 
 
 #Add a infection type for a given progression level here
 func get_infection_type() -> void:
@@ -44,19 +63,14 @@ func get_body_state() -> void:
 		0: #Control (Healthy)
 			GameStats.body_state = 1 # cured
 			GameStats.cured += 1
-			GameStats.danger_level = _progression_level
 		1: #Parasites 
 			GameStats.body_state = 3 # neutral
-			GameStats.danger_level = 0
 		2: #Mutation 
 			GameStats.body_state = 3 # neutral
-			GameStats.danger_level = 1
 		3: #Both 
 			GameStats.body_state = 3 # neutral
-			GameStats.danger_level = 2	
 		_: #Add new stages here
 			GameStats.body_state = 3 # neutral
-			GameStats.danger_level = _progression_level
 
 func update_progression_level() -> void:
 	progress()
@@ -103,7 +117,6 @@ func check_if_successful() -> void:
 	if no_chemicals:
 		return
 	
-	print(VialStats.infection)
 	match VialStats.infection:
 		1: #Mutation
 			_check_wrong_chemical(VialStats.Composite.HYDROGEN)
@@ -128,6 +141,7 @@ func check_if_successful() -> void:
 	_check_if_cured()
 
 func _check_if_cured() -> void:
+	_set_danger_level()
 	if GameStats.body_state == 1:
 		GameStats.cured += 1
 
@@ -140,6 +154,7 @@ func _check_wrong_chemical(chemical : VialStats.Composite) -> void:
 
 func _check_game_over() -> void:
 	print(GameStats.body_state)
+	_set_danger_level()
 	if GameStats.body_state == 6:
 		%GameOverScreen.visible = true
 		await get_tree().create_timer(2.0).timeout
