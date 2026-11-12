@@ -80,7 +80,8 @@ func check_if_successful() -> void:
 	if GameStats.body_state == 1:
 		print("Already cured")
 		return
-		
+	
+	
 	# Vial is damaged = bad
 	if VialStats.damaged:
 		GameStats.body_state += 1

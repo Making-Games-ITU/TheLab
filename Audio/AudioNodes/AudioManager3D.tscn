@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bxxmnfryavcoq" path="res://Audio/AudioManager.gd" id="1_wuqcl"]
 
-[node name="AudioManager" type="Node" unique_id=1869149764 node_paths=PackedStringArray("audio_event")]
+[node name="AudioManager" type="Node" unique_id=1869149764]
 script = ExtResource("1_wuqcl")
-audio_event = NodePath("")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1741193650]
 bank_paths = ["res://Audio/FMODBanks/Desktop/Master.strings.bank", "res://Audio/FMODBanks/Desktop/Master.bank", "res://Audio/FMODBanks/Desktop/SFX.bank", "res://Audio/FMODBanks/Desktop/Music.bank", "res://Audio/FMODBanks/Desktop/Ambient.bank"]
@@ -17,6 +16,9 @@ event_guid = "{51fa1276-b424-472f-9576-399cbbc25281}"
 event_name = "event:/Ambient"
 event_guid = "{18ac8d98-c22c-4b6c-807d-a0a7327f8b36}"
 autoplay = true
+fmod_parameters/ProgressionLevel/id = 8395569915492118449
+fmod_parameters/ProgressionLevel = 0
+fmod_parameters/ProgressionLevel/variant_type = 2
 
 [node name="Steps" type="FmodEventEmitter3D" parent="." unique_id=2145527534]
 event_name = "event:/Walking"
