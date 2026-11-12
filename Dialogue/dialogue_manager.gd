@@ -37,10 +37,7 @@ func _process(delta: float) -> void:
 		visables += floori(phrase_text.length() * progress)
 	dialogue_text_box.visible_characters = maxi(dialogue_text_box.visible_characters, visables)
 	if dialogue_text_box.visible_characters >= dialogue_text_box.get_total_character_count():
-		current_sentece = null
-		current_audioPlayer = null
-		await get_tree().create_timer(2.0).timeout
-		hide()
+		_on_finished_dialogue()
 
 func next_sentence(next_sentence : Sentence, next_character : Character):
 	dialogue_text_box.text = ""
@@ -56,3 +53,16 @@ func next_sentence(next_sentence : Sentence, next_character : Character):
 		current_audioPlayer.stream = next_sentence.voice_over
 	current_sentece = next_sentence
 	show()
+
+func _on_finished_dialogue():
+	var callback: Callable = current_sentece.on_finished
+	current_sentece = null
+	current_audioPlayer = null
+	dialogue_time = 0
+	await get_tree().create_timer(2).timeout
+	
+	if(current_sentece == null):
+		hide()
+	
+	if(callback.is_valid()):
+		callback.call()

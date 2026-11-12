@@ -1,4 +1,5 @@
 extends Interactable
+class_name Note_Interactions
 
 @export var note_camera: Camera3D 
 @export var note_text: Label

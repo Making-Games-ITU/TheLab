@@ -1,5 +1,5 @@
 extends Sprite3D
-
+class_name Interactable_Indecator
 @export var normal_indicator : Texture
 @export var filled_indicator : Texture
 

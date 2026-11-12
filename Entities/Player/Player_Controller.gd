@@ -66,12 +66,19 @@ func _update_vial_visibility() -> void:
 		PlayerStats.HoldState.NONE:
 			%PlayerBloodVial.visible = false
 			%PlayerChemical.visible = false
+			%PlayerFlashDrive.visible = false
 		PlayerStats.HoldState.VIAL:
 			%PlayerBloodVial.visible = true
 			%PlayerChemical.visible = false
+			%PlayerFlashDrive.visible = false
 		PlayerStats.HoldState.CHEMICAL:
 			%PlayerBloodVial.visible = false
 			%PlayerChemical.visible = true
+			%PlayerFlashDrive.visible = false
+		PlayerStats.HoldState.FLASH_DRIVE:
+			%PlayerFlashDrive.visible = true
+			%PlayerBloodVial.visible = false
+			%PlayerChemical.visible = false
 
 func _physics_process(_delta: float) -> void:
 	_check_for_interactable()
