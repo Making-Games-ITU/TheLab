@@ -93,30 +93,32 @@ func centrifuge(speed: int) -> void:
 		damaged = true
 		print("Centrifuge result: Damage (pre-check)")
 		return
-	var attempts: Array[bool]
+	
+	var _conflicting_intergration = false
+	
 	for key: Composite in chemicals:
 		var chemical := chemicals[key]
 		if chemical.quantity <= 0.0:
 			continue
-		chemical.integrated = false
-		match key:
-			Composite.HYDROGEN:
-				if speed >= CHEMICAL_A_INTEGRATION_SPEED:
-					chemical.integrated = true
-					attempts.append(true)
-				else:
-					attempts.append(false)
-			Composite.NITROGEN:
-				if speed >= CHEMICAL_B_INTEGRATION_SPEED:
-					chemical.integrated = true
-					attempts.append(true)
-				else:
-					attempts.append(false)
-	for attempt in attempts:
-		if attempt == false:
-			damaged = true
-			print("Centrifuge result: Damage (attempt)")
+		 
+		if chemical.integrated == true:
+			continue
+		
+		if  _conflicting_intergration:
+			damaged = true 
+			print("Attempting to integrate multiple chemicals: Sample damaged")
 			return
+		else:
+			match key:
+				Composite.HYDROGEN:
+					if speed >= CHEMICAL_A_INTEGRATION_SPEED:
+						chemical.integrated = true
+						_conflicting_intergration = true
+				Composite.NITROGEN:
+					if speed >= CHEMICAL_B_INTEGRATION_SPEED:
+						chemical.integrated = true
+						_conflicting_intergration = true
+
 	murky = false
 	centrifuged = true
 	print("Centrifuge result: Success")

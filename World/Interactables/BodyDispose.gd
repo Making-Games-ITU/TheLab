@@ -22,8 +22,7 @@ func interact(interactor: Node) -> void:
 
 func _dispose_body():
 	GameStats.body_exists = false
-	if GameStats.difficulty_stage == 0:
-		GameStats.difficulty_stage = 1
+	GameManager.update_progression_level()
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
 	print("Body disposed")
