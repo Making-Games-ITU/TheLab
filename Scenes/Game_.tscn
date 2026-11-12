@@ -429,13 +429,6 @@ bind/3/pose = Transform3D(-0.010000001, 0, 8.742278e-10, -8.742279e-10, -4.37113
 [sub_resource type="BoxShape3D" id="BoxShape3D_xnj3y"]
 size = Vector3(0.2806848, 0.6048972, 0.4082688)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2qbow"]
-viewport_path = NodePath("Note Viewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwlpm"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_2qbow")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_uuayd"]
 viewport_path = NodePath("Note Viewport")
 
@@ -9179,7 +9172,7 @@ transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.9
 text = "I am writing this guide once again, because SOMEBODY keeps magically losing the paper. The procedure itself is not that hard, just take an empty test tube, go to the blood collector machine and press some buttons, you will figure. After you get the warm blood, you will have to centrifuge it before using the microscope. That is pretty much it, I do not remember how the pipetting tool works, you can probably find the documentation somewhere else. After modifying the blood, it can be inserted back as a serum.
 PLEASE do not lose this paper, I am sick of rewriting this guide.
 
-Konstantin Markov"
+Aleksei Kravchenko"
 
 [node name="StartReadingSound" type="FmodEventEmitter3D" parent="Room/Interactables/Notes/Note_document" unique_id=1140588135]
 event_name = "event:/Button"
@@ -9335,40 +9328,6 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="Note_document2" parent="Room/Interactables/Notes" unique_id=1656219407 node_paths=PackedStringArray("note_text", "stop_reading_sound", "sound_emitter") instance=ExtResource("24_qpojx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59393024, 1.284944, -0.6433028)
-note_text = NodePath("Note Viewport/Control/TextureRect/Label")
-stop_reading_sound = NodePath("StopReadingSound")
-sound_emitter = NodePath("StartReadingSound")
-
-[node name="interactable_indecator" parent="Room/Interactables/Notes/Note_document2" index="0" unique_id=2142793944]
-show_distance = 1.0
-
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document2" index="1" unique_id=387256508]
-bones/1/position = Vector3(0, 0, -0.2)
-bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
-bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
-bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
-bones/5/rotation = Quaternion(0.875, 0, 0, 1)
-
-[node name="Cube_027" parent="Room/Interactables/Notes/Note_document2/Skeleton3D" index="0" unique_id=986514553]
-material_overlay = SubResource("StandardMaterial3D_jwlpm")
-
-[node name="Camera Marker" parent="Room/Interactables/Notes/Note_document2/Skeleton3D" index="1" unique_id=819025313]
-transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
-
-[node name="Label" parent="Room/Interactables/Notes/Note_document2/Note Viewport/Control/TextureRect" parent_id_path=PackedInt32Array(1656219407, 1592876479) index="0" unique_id=1296143046]
-text = "The three of them died today. All because of that damned thing. You are the only person we know who is probably not infected. Find something to fight this disease, please. Whatever. You are the only left.
-These two flasks are what the farmacist marked as the only hope of the colony. We know that each chemical has a specific use. The problem is identifying what is for what and how to combine both."
-
-[node name="StartReadingSound" type="FmodEventEmitter3D" parent="Room/Interactables/Notes/Note_document2" unique_id=1884555392]
-event_name = "event:/Button"
-event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
-
-[node name="StopReadingSound" type="FmodEventEmitter3D" parent="Room/Interactables/Notes/Note_document2" unique_id=1709427765]
-event_name = "event:/Button"
-event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
-
 [node name="Note_document3" parent="Room/Interactables/Notes" unique_id=1890468210 node_paths=PackedStringArray("note_text", "stop_reading_sound", "sound_emitter") instance=ExtResource("24_qpojx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6848076, 0.98729956, -5.882036)
 note_text = NodePath("Note Viewport/Control/TextureRect/Label")
@@ -9393,9 +9352,9 @@ material_overlay = SubResource("StandardMaterial3D_blfwb")
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
 
 [node name="Label" parent="Room/Interactables/Notes/Note_document3/Note Viewport/Control/TextureRect" parent_id_path=PackedInt32Array(1890468210, 1592876479) index="0" unique_id=1296143046]
-text = "Do not waste the substances they are very expensive. If you want to mix them, please use the Planetary Centrifugal Mixer. I have ordered more substances, they should arrive in aproximatly 2 days. If they do not arrive within these days, please contact the depot: 30 42 91 84
+text = "Do not waste the chemicals they are very expensive. If you want to mix them, please use the Planetary Centrifugal Mixer. I have ordered more chemicals, they should arrive in aproximatly 2 days. If they do not arrive within these days, please contact the depot: 30 42 91 84
 
-Mia Janova"
+Aleksei Kravchenko"
 
 [node name="StartReadingSound" type="FmodEventEmitter3D" parent="Room/Interactables/Notes/Note_document3" unique_id=2105589597]
 event_name = "event:/Button"
@@ -12898,7 +12857,7 @@ theme_override_fonts/font = ExtResource("27_77286")
 theme_override_font_sizes/font_size = 24
 text = "Infected body scan. Further treatment is required.
 
-Tested chemicals: 2mg hydrogen and no mixing."
+The body had visable parasites, tried injecting 3mg Nitrogen. The worms seem to grow and multiple."
 autowrap_mode = 2
 
 [node name="StartReadingSound" type="FmodEventEmitter3D" parent="Int_Pinboard/Prop_Pin/pin2/Note_document" unique_id=138632297]
@@ -13076,7 +13035,6 @@ autoplay = &"start"
 
 [editable path="Room/Interactables/Notes/Body_request_Note"]
 [editable path="Room/Interactables/Notes/Note_document"]
-[editable path="Room/Interactables/Notes/Note_document2"]
 [editable path="Room/Interactables/Notes/Note_document3"]
 [editable path="Room/Interactables/Pipette/Pipette_Note"]
 [editable path="Room/Storage/Prop_Closet_Storage"]
