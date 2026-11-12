@@ -10,5 +10,5 @@ var is_sitting: bool = false
 var is_analyzing: bool = false
 var is_reading: bool = false
 
-enum HoldState { NONE, VIAL, CHEMICAL }
+enum HoldState { NONE, VIAL, CHEMICAL, FLASH_DRIVE }
 var is_holding: HoldState = HoldState.NONE
