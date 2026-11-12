@@ -1,0 +1,332 @@
+[gd_scene format=4 uid="uid://b7p1lfq2gva7k"]
+
+[ext_resource type="Texture2D" uid="uid://cwqiungpi8jo5" path="res://World/Props/Cardbox/Cardbox_Texture.png" id="1_xxghi"]
+[ext_resource type="Texture2D" uid="uid://cu6m4f3h6t0b0" path="res://World/Props/Cardbox/Styrofoam_texture.jpg" id="2_5subg"]
+[ext_resource type="PackedScene" uid="uid://dowd5veaybyfp" path="res://World/Items/Flashlight/item_flashlight.tscn" id="3_x8pkj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2qsv"]
+resource_name = "Cardbox"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_xxghi")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jlu0i"]
+resource_name = "Styrofoam"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_5subg")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pa08x"]
+_surfaces = [{
+"aabb": AABB(-0.29380825, 0, -0.29380825, 0.5876165, 0.5876165, 0.5876165),
+"format": 34359742465,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAwACAAEABAACAAMAAgAEAAAAAwAFAAQABgAAAAQABAAFAAYABQADAAcAAQAHAAMABwAGAAUACAABAAAACQAHAAEAAQAIAAkABwAJAAoACgAGAAcACwAJAAgADAAAAAYABgAKAAwAAAAMAAgADQAMAAoADgAKAAkACgAOAA0ACQALAA4ADAANAA8ADwAIAAwADwANAA4ACAAPAAsADgALAA8A"),
+"name": "Cardbox",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("CW6WvgluFj8Jbpa+CW6WvgluFj8JbpY+CW6WvgAAAAAJbpY+CW6WPgAAAAAJbpY+CW6WvgAAAAAJbpa+CW6WPgAAAAAJbpa+CW6WPgluFj8Jbpa+CW6WPgluFj8JbpY+C6SQvgluFj8LpJA+C6SQPgluFj8LpJA+C6SQPgluFj8LpJC+C6SQPmD+wDwLpJA+C6SQvgluFj8LpJC+C6SQvmD+wDwLpJC+C6SQPmD+wDwLpJC+C6SQvmD+wDwLpJA+")
+}, {
+"aabb": AABB(-0.28250155, 0.547903, -0.28250155, 0.5650031, 1e-05, 0.5650031),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Styrofoam",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("C6SQvl9DDD8LpJA+C6SQvl9DDD8LpJC+C6SQPl9DDD8LpJC+C6SQPl9DDD8LpJA+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1ncff"]
+resource_name = "Cube_076"
+_surfaces = [{
+"aabb": AABB(-0.29380825, 0, -0.29380825, 0.5876165, 0.5876165, 0.5876165),
+"attribute_data": PackedByteArray("AAAAAP//fz8yRTkyt7lAP2xzez63uUA/a3N7PgAAgD9ETD0yTvI+P7tIuzIKWP8+bXN7PgxY/z5sc3s+TvI+P5hCgT4AAIA/mEKBPre5QD9O/P4+t7lAP038/j4AAIA/mEKBPk7yPj+YQoE+DFj/Pk78/j4MWP8+Tvz+Pk7yPj9u9wwzTHl6Pm5zez5QeXo+bXN7PjjJ+z5ETL0yOMn7PkKaPT/6UwA/mUIBP/pTAD+ZQgE/HvqGPkKaPT8e+oY+dB9AP7e5QD/N6T4/ZvFBP0F4Aj9m8UE/dB9APwAAgD+ZQgE/t7lAP83pPj9RyH4/QXgCP1HIfj+ZQgE/AACAP5lCAT9iGwI/JbQ9P2IbAj8ltD0/TvI+P5lCAT9O8j4/6fH5PjrJ+z6YQoE+Osn7PplCgT5iG4I+6vH5PmIbgj5Cmj0/TGuDPplCAT9Ka4M+mUIBPyDXmzxCmj0/INebPFu2ez/6UwA/tF4/P/pTAD+0Xj8/HvqGPly2ez8e+oY+"),
+"format": 34359742487,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGQAYABsAGgAcABgAGwAdABkAHAAaAB4AHQAbAB8AHgAfABwAHwAeAB0AIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwA"),
+"material": SubResource("StandardMaterial3D_y2qsv"),
+"name": "Cardbox",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("CW6WvgluFj8Jbpa+CW6WvgluFj8JbpY+CW6WvgAAAAAJbpY+CW6WvgAAAAAJbpa+CW6WPgluFj8Jbpa+CW6WvgluFj8Jbpa+CW6WvgAAAAAJbpa+CW6WPgAAAAAJbpa+CW6WPgluFj8JbpY+CW6WPgluFj8Jbpa+CW6WPgAAAAAJbpa+CW6WPgAAAAAJbpY+CW6WvgluFj8JbpY+CW6WPgluFj8JbpY+CW6WPgAAAAAJbpY+CW6WvgAAAAAJbpY+CW6WPgAAAAAJbpY+CW6WPgAAAAAJbpa+CW6WvgAAAAAJbpa+CW6WvgAAAAAJbpY+C6SQPmD+wDwLpJA+C6SQPgluFj8LpJA+C6SQvgluFj8LpJA+C6SQvmD+wDwLpJA+CW6WvgluFj8Jbpa+C6SQvgluFj8LpJC+C6SQvgluFj8LpJA+CW6WPgluFj8Jbpa+CW6WvgluFj8JbpY+C6SQPgluFj8LpJC+C6SQPgluFj8LpJA+CW6WPgluFj8JbpY+C6SQvmD+wDwLpJA+C6SQvmD+wDwLpJC+C6SQPmD+wDwLpJC+C6SQPmD+wDwLpJA+C6SQvmD+wDwLpJC+C6SQvgluFj8LpJC+C6SQPgluFj8LpJC+C6SQPmD+wDwLpJC+C6SQPmD+wDwLpJC+C6SQPgluFj8LpJC+C6SQPgluFj8LpJA+C6SQPmD+wDwLpJA+C6SQvmD+wDwLpJA+C6SQvgluFj8LpJA+C6SQvgluFj8LpJC+C6SQvmD+wDwLpJC+AAD/f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AID//////38AgP//////fwCA//////9/AID//////38AgP///3//fwCA////f/9/AID///9//38AgP///3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/fwAA//////9/AAD///7//38AAP//////fwAA////////////fwCA//////9/AID//////38AgP//////fwCA/3///////v//f//////+//9///8AAP7//3///wAA/v//f///AAD+//9///8AAP7//3///////v//f//////+//9//////////3//////////f/////////9//////////3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgP///3//fwCA////f/9/AID///9//38AgP///3//fwCA")
+}, {
+"aabb": AABB(-0.28250155, 0.547903, -0.28250155, 0.5650031, 1e-05, 0.5650031),
+"attribute_data": PackedByteArray("3AKAPbXQbz/cAoA9MBZ9PaT/bz8wFn09pP9vP7XQbz8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_jlu0i"),
+"name": "Styrofoam",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("C6SQvl9DDD8LpJA+C6SQvl9DDD8LpJC+C6SQPl9DDD8LpJC+C6SQPl9DDD8LpJA+/3///////7//f///////v/9///////+//3///////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_pa08x")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_w362h"]
+_surfaces = [{
+"aabb": AABB(-0.29380825, -0.0022711456, 0, 0.5876165, 0.004542291, 0.29380825),
+"format": 34359742465,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAACAAEAAAADAAUABQAEAAYAAQAGAAQABQAHAAAAAQAAAAcABgAHAAUABwAGAAEA"),
+"name": "Cardbox",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("CW6WPoDXFDsAAAAACW6WPoDXFLsAAAAACW6WPoDXFLsJbpY+CW6WPoDXFDsJbpY+CW6WvoDXFLsJbpY+CW6WvoDXFDsJbpY+CW6WvoDXFLsAAAAACW6WvoDXFDsAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_eat5r"]
+resource_name = "Cube_077"
+_surfaces = [{
+"aabb": AABB(-0.29380825, -0.0022711456, 0, 0.5876165, 0.004542291, 0.29380825),
+"attribute_data": PackedByteArray("l3g/PypPHz/+9D8/Kk8fP/70Pz9O8j4/l3g/P07yPj/Oev0+UHl6Pppz/j5QeXo+mnP+PjjJ+z7Oev0+OMn7Pm+5QT8qTx8/1TVCPypPHz/VNUI/TvI+P2+5QT9O8j4/5uNBP7e5QD9UUmE/t7lAP1RSYT8AAIA/5uNBPwAAgD+0Xj8/TmuDPrRePz+A1xs8Ic1eP4DXGzwhzV4/TmuDPg=="),
+"format": 34359742487,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAA"),
+"material": SubResource("StandardMaterial3D_y2qsv"),
+"name": "Cardbox",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("CW6WPoDXFDsAAAAACW6WPoDXFLsAAAAACW6WPoDXFLsJbpY+CW6WPoDXFDsJbpY+CW6WvoDXFDsAAAAACW6WvoDXFLsAAAAACW6WPoDXFLsAAAAACW6WPoDXFDsAAAAACW6WvoDXFDsJbpY+CW6WvoDXFLsJbpY+CW6WvoDXFLsAAAAACW6WvoDXFDsAAAAACW6WvoDXFDsJbpY+CW6WvoDXFDsAAAAACW6WPoDXFDsAAAAACW6WPoDXFDsJbpY+CW6WvoDXFLsJbpY+CW6WPoDXFLsJbpY+CW6WPoDXFLsAAAAACW6WvoDXFLsAAAAA////f/9/AID///9//38AgP///3//fwCA////f/9/AID//////38AgP//////fwCA//////9/AID//////38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/3//////////f/////////9//////////3//////////fwAA//////9/AAD//////38AAP//////fwAA/////w==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_w362h")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vcgo5"]
+_surfaces = [{
+"aabb": AABB(-0.29380825, -0.0022711456, -0.29380828, 0.5876165, 0.004542291, 0.29380825),
+"format": 34359742465,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAwABAAAAAgAEAAAABAACAAUAAAAGAAMABgAAAAQAAwAGAAcABAAHAAYABwAFAAMABQAHAAQA"),
+"name": "Cardbox",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("CW6WPoDXFDsAAACzCW6WPoDXFDsKbpa+CW6WPoDXFLsKbpa+CW6WvoDXFDsKbpa+CW6WPoDXFLsAAACzCW6WvoDXFLsKbpa+CW6WvoDXFDsAAACzCW6WvoDXFLsAAACz")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i3olr"]
+resource_name = "Cube_078"
+_surfaces = [{
+"aabb": AABB(-0.29380825, -0.0022711456, -0.29380828, 0.5876165, 0.004542291, 0.29380825),
+"attribute_data": PackedByteArray("RvpDP07yPj9G+kM/Kk8fP612RD8qTx8/rXZEP07yPj/FFmM/AACAP8UWYz+3uUA/KpNjP7e5QD8qk2M/AACAPx47Rj9O8j4/HjtGPypPHz+Et0Y/Kk8fP4O3Rj9O8j4/dB/APgAAAAB0H8A+JBl9PplCgT4gGX0+mkKBPgAAAAAAAIA/TmuDPpKRYD9Oa4M+kpFgP4DXGzwAAIA/gNcbPA=="),
+"format": 34359742487,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAA"),
+"material": SubResource("StandardMaterial3D_y2qsv"),
+"name": "Cardbox",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("CW6WPoDXFDsAAACzCW6WPoDXFDsKbpa+CW6WPoDXFLsKbpa+CW6WPoDXFLsAAACzCW6WvoDXFDsAAACzCW6WPoDXFDsAAACzCW6WPoDXFLsAAACzCW6WvoDXFLsAAACzCW6WvoDXFDsKbpa+CW6WvoDXFDsAAACzCW6WvoDXFLsAAACzCW6WvoDXFLsKbpa+CW6WvoDXFDsKbpa+CW6WPoDXFDsKbpa+CW6WPoDXFDsAAACzCW6WvoDXFDsAAACzCW6WvoDXFLsKbpa+CW6WvoDXFLsAAACzCW6WPoDXFLsAAACzCW6WPoDXFLsKbpa+////f/9/AID///9//38AgP///3//fwCA////f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/3///wAA/v//f///AAD+//9///8AAP7//3//////////fwAA//////9/AAD//////38AAP//////fwAA/////w==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vcgo5")
+
+[sub_resource type="Animation" id="Animation_lslay"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1.8495317, 1.3457015, -0.3172686)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Prop_Cardbox2/Box/Cube_020")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Prop_Cardbox5/Box/Cube_019")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Prop_Cardbox5/Box/Item_flashlight")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.038510103, 0.5575355, -0.137455)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Prop_Cardbox5/Box/Item_flashlight:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_di7sh"]
+resource_name = "start"
+length = 5.6
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1.8495317, 1.3457015, -0.3172686, 0.93333334, 1, 2.251965, 1.2535037, -0.4623521, 1.8666668, 1, 2.251965, 1.2535037, -0.4623521, 2.4, 1, 2.317, 1.5, -0.374, 3.25, 1, 2.3667789, 0.7984848, -0.39148957, 3.9166672, 1, 2.4804761, 0.6846179, -0.28006613, 4.577505, 1, 2.4804761, 0.6846179, -0.28006613, 4.8166666, 1, 2.4453435, 0.78205514, -0.34564078, 5.55, 1, 2.382237, 1.6138353, -0.114943296)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.28034055, -0.581959, -0.16949755, 0.7443141, 0.6333334, 1, -0.26756647, -0.14065091, -0.04991755, 0.95191056, 1.1833334, 1, -0.35695666, -0.11881298, 0.025082255, 0.9261945, 1.8666668, 1, -0.35695666, -0.11881298, 0.025082255, 0.9261945, 2.4, 1, -0.12610658, -0.6831466, -0.094442025, 0.7130838, 3.25, 1, 0.15002076, 0.87300503, 0.2681104, -0.37877804, 3.4669852, 1, 0.1500208, 0.87300503, 0.26811036, -0.378778, 3.9166672, 1, 0.21932133, 0.8481468, 0.39824542, -0.2719297, 4.577505, 1, 0.21932133, 0.8481468, 0.39824542, -0.2719297, 4.8166666, 1, 0.113576606, 0.93308014, 0.08552134, -0.33037546, 5.55, 1, 0.003339396, 0.7335716, 0.01150339, 0.67950654)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Prop_Cardbox2/Box/Cube_020")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0.7333334, 1, 0, 0, 0, 1, 1.1183333, 1, 0.8584135, 0, 0, 0.51295817)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Prop_Cardbox5/Box/Cube_019")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(3.2133179, 1, 0, 0, 0, 1, 3.476831, 1, -0.8215909, 0, 0, 0.5700775)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Prop_Cardbox5/Box/Item_flashlight")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(4.0693016, 1, 0.038510103, 0.5575355, -0.137455, 4.414378, 1, 0.038510103, 0.82133275, -0.137455, 4.5900536, 1, 0.09837167, 0.74232095, -0.38105553, 4.716666, 1, 0.1124547, 0.8918878, -0.49730918)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Prop_Cardbox5/Box/Item_flashlight")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(4.0693016, 1, 0, -0.40746558, 0, 0.9132206, 4.414378, 1, -0.42731288, -0.3601065, -0.19066072, 0.8070784, 4.5900536, 1, -0.25311232, -0.22495121, -0.41801375, 0.84296834)
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Prop_Cardbox5/Box/Item_flashlight:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.7280846),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2iirr"]
+_data = {
+&"RESET": SubResource("Animation_lslay"),
+&"start": SubResource("Animation_di7sh")
+}
+
+[node name="IntroductionCutscene" type="Node3D" unique_id=1689930074]
+
+[node name="Prop_Cardbox" type="Node3D" parent="." unique_id=1299431047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5429218, 0, 0.44657728)
+
+[node name="Box" type="MeshInstance3D" parent="Prop_Cardbox" unique_id=1345868955]
+mesh = SubResource("ArrayMesh_1ncff")
+
+[node name="Cube_019" type="MeshInstance3D" parent="Prop_Cardbox/Box" unique_id=972484011]
+transform = Transform3D(1, 0, 0, 0, 0.9984216, 0.05616224, 0, -0.05616224, 0.9984216, 0, 0.5898876, -0.29380825)
+mesh = SubResource("ArrayMesh_eat5r")
+
+[node name="Cube_020" type="MeshInstance3D" parent="Prop_Cardbox/Box" unique_id=1412955841]
+transform = Transform3D(1, 0, 0, 0, 0.99963796, -0.026904834, 0, 0.026904834, 0.99963796, 0, 0.5898876, 0.29380828)
+mesh = SubResource("ArrayMesh_i3olr")
+
+[node name="Prop_Cardbox3" type="Node3D" parent="." unique_id=1147539137]
+transform = Transform3D(-0.13309403, 0, -0.6260079, 0, 0.64, 0, 0.6260079, 0, -0.13309403, 2.5966208, 0.6097088, 0.53736854)
+
+[node name="Box" type="MeshInstance3D" parent="Prop_Cardbox3" unique_id=1406206205]
+mesh = SubResource("ArrayMesh_1ncff")
+
+[node name="Cube_019" type="MeshInstance3D" parent="Prop_Cardbox3/Box" unique_id=867467260]
+transform = Transform3D(1, 0, 0, 0, 0.9984216, 0.05616224, 0, -0.05616224, 0.9984216, 0, 0.5898876, -0.29380825)
+mesh = SubResource("ArrayMesh_eat5r")
+
+[node name="Cube_020" type="MeshInstance3D" parent="Prop_Cardbox3/Box" unique_id=1545488379]
+transform = Transform3D(1, 0, 0, 0, 0.99963796, -0.026904834, 0, 0.026904834, 0.99963796, 0, 0.5898876, 0.29380828)
+mesh = SubResource("ArrayMesh_i3olr")
+
+[node name="Prop_Cardbox5" type="Node3D" parent="." unique_id=1758431137]
+transform = Transform3D(0.078638695, 0, 0.63515025, 0, 0.64, 0, -0.63515025, 0, 0.078638695, 2.6433594, 0.04002559, -0.10318993)
+
+[node name="Box" type="MeshInstance3D" parent="Prop_Cardbox5" unique_id=718121084]
+mesh = SubResource("ArrayMesh_1ncff")
+
+[node name="Item_flashlight" parent="Prop_Cardbox5/Box" unique_id=1303338469 instance=ExtResource("3_x8pkj")]
+transform = Transform3D(0.66794366, 0, -0.7442119, 0, 0.9999998, 0, 0.744212, 0, 0.6679436, 0.038510103, 0.5575355, -0.137455)
+
+[node name="Cube_019" type="MeshInstance3D" parent="Prop_Cardbox5/Box" unique_id=594668094]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0.5898876, -0.29380825)
+mesh = SubResource("ArrayMesh_eat5r")
+
+[node name="Cube_020" type="MeshInstance3D" parent="Prop_Cardbox5/Box" unique_id=961144224]
+transform = Transform3D(1, 0, 0, 0, 0.99963796, -0.026904834, 0, 0.026904834, 0.99963796, 0, 0.5898876, 0.29380828)
+mesh = SubResource("ArrayMesh_i3olr")
+
+[node name="Prop_Cardbox4" type="Node3D" parent="." unique_id=168734234]
+transform = Transform3D(0.35412112, 0, 0.5331024, 0, 0.64, 0, -0.5331024, 0, 0.35412112, 2.1544297, 1.2737188, -0.7285498)
+
+[node name="Box" type="MeshInstance3D" parent="Prop_Cardbox4" unique_id=384107270]
+mesh = SubResource("ArrayMesh_1ncff")
+
+[node name="Cube_019" type="MeshInstance3D" parent="Prop_Cardbox4/Box" unique_id=1146362285]
+transform = Transform3D(1, 0, 0, 0, 0.9984216, 0.05616224, 0, -0.05616224, 0.9984216, 0, 0.5898876, -0.29380825)
+mesh = SubResource("ArrayMesh_eat5r")
+
+[node name="Cube_020" type="MeshInstance3D" parent="Prop_Cardbox4/Box" unique_id=1699922196]
+transform = Transform3D(1, 0, 0, 0, 0.99963796, -0.026904834, 0, 0.026904834, 0.99963796, 0, 0.5898876, 0.29380828)
+mesh = SubResource("ArrayMesh_i3olr")
+
+[node name="Prop_Cardbox2" type="Node3D" parent="." unique_id=2007962654]
+transform = Transform3D(0.525, 0, 0, 0, 0.525, 0, 0, 0, 0.525, 2.325032, 0.7418855, -0.73570395)
+
+[node name="Box" type="MeshInstance3D" parent="Prop_Cardbox2" unique_id=880093261]
+mesh = SubResource("ArrayMesh_1ncff")
+
+[node name="Cube_019" type="MeshInstance3D" parent="Prop_Cardbox2/Box" unique_id=2034588718]
+transform = Transform3D(1, 0, 0, 0, 0.9984216, 0.05616224, 0, -0.05616224, 0.9984216, 0, 0.5898876, -0.29380825)
+mesh = SubResource("ArrayMesh_eat5r")
+
+[node name="Cube_020" type="MeshInstance3D" parent="Prop_Cardbox2/Box" unique_id=972221792]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.5898876, 0.29380828)
+mesh = SubResource("ArrayMesh_i3olr")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=405460822]
+transform = Transform3D(0.023059588, 0.31772968, -0.9479006, 0.034423187, 0.9473386, 0.31837842, 0.9991413, -0.039971452, 0.010907965, 1.8495317, 1.3457015, -0.3172686)
+
+[node name="Cutscene Light" type="AreaLight3D" parent="." unique_id=255328128]
+transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 0, 1.9175929, 2.043182, 0.13598675)
+light_energy = 0.02
+area_range = 2.315
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1474905836]
+libraries/ = SubResource("AnimationLibrary_2iirr")
