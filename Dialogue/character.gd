@@ -8,7 +8,7 @@ class_name  Character
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	start_dialogue("f3f09eb8-35a1-46e5-b468-a4878494cfe9")
+	pass
 
 
 func start_dialogue(sentence_id: String) -> void:

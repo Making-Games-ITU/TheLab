@@ -133,7 +133,7 @@ mesh = SubResource("ArrayMesh_ni7iu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.027285278)
 
 [node name="pin" type="MeshInstance3D" parent="Prop_Pin" unique_id=180481230 node_paths=PackedStringArray("start_pin", "end_pin")]
-transform = Transform3D(1, 0, 0, 0, -1.1920929e-07, -0.99999994, 0, 0.99999994, -1.1920929e-07, -0.051556587, 0.1908078, 5.9604638e-08)
+transform = Transform3D(1, 0, 0, 0, -1.1920929e-07, -0.99999994, 0, 0.99999994, -1.1920929e-07, 0.31273672, 0.38829294, 5.9604638e-08)
 mesh = SubResource("ArrayMesh_ynpa1")
 script = ExtResource("2_v5b4j")
 start_pin = NodePath("Marker3D")

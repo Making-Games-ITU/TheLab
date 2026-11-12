@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://das5tbc84uvx1"]
+
+[ext_resource type="PackedScene" uid="uid://bm3th10pmjglo" path="res://Notes/Note_document.fbx" id="1_ejujo"]
+[ext_resource type="Script" uid="uid://dfwqme4vae8iu" path="res://Notes/Note_Interactions.gd" id="2_beusk"]
+[ext_resource type="PackedScene" uid="uid://bokgfdlrgsox" path="res://UI/Interaction/interactable_indecator.tscn" id="3_6q8ph"]
+[ext_resource type="Texture2D" uid="uid://diw6gy4ed42do" path="res://Notes/paperTexture.png" id="4_og5pq"]
+[ext_resource type="Texture2D" uid="uid://h1i7cuma0vfi" path="res://Notes/x_ray_texture_by_iamdkscully_d8v5htz-fullview.jpg" id="5_6q8ph"]
+[ext_resource type="FontFile" uid="uid://sdtsanxfgqys" path="res://UI/Fonts/Perfect DOS VGA 437.ttf" id="6_og5pq"]
+[ext_resource type="Texture2D" uid="uid://b3ty3k2ni425u" path="res://UI/Scanner/X-RayScan_Chest-4.png" id="7_62j53"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnj3y"]
+albedo_texture = ExtResource("4_og5pq")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x7553"]
+viewport_path = NodePath("Note Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tw62"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_x7553")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnj3y"]
+size = Vector3(0.2806848, 0.027254816, 0.4082688)
+
+[node name="Note_document" unique_id=832524248 node_paths=PackedStringArray("note_camera", "area", "outline_meshes") instance=ExtResource("1_ejujo")]
+script = ExtResource("2_beusk")
+note_camera = NodePath("Skeleton3D/Camera Marker/Camera3D")
+prompt_text = "Read"
+area = NodePath("Skeleton3D/Cube_027/Area3D")
+outline_meshes = [NodePath("Skeleton3D/Cube_027")]
+
+[node name="interactable_indecator" parent="." index="0" unique_id=2142793944 instance=ExtResource("3_6q8ph")]
+show_distance = 1.5
+
+[node name="Skeleton3D" parent="." index="1" unique_id=387256508]
+bones/1/position = Vector3(0, 8.924582e-09, -0.20417066)
+
+[node name="Cube_027" parent="Skeleton3D" index="0" unique_id=986514553]
+material_override = SubResource("StandardMaterial3D_xnj3y")
+material_overlay = SubResource("StandardMaterial3D_1tw62")
+
+[node name="Area3D" type="Area3D" parent="Skeleton3D/Cube_027" index="0" unique_id=497656163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.000038e-06, 0)
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton3D/Cube_027/Area3D" index="0" unique_id=1001244833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012739779, 0)
+shape = SubResource("BoxShape3D_xnj3y")
+
+[node name="Camera Marker" type="Marker3D" parent="Skeleton3D" index="1" unique_id=819025313]
+transform = Transform3D(0.97118616, 0.2351559, -0.03871765, -0.007864049, 0.19399202, 0.9809716, 0.23819219, -0.9524016, 0.19025168, 0.13105392, 0.27532247, 0.11360516)
+
+[node name="Camera3D" type="Camera3D" parent="Skeleton3D/Camera Marker" index="0" unique_id=250922232]
+
+[node name="Note Viewport" type="SubViewport" parent="." index="2" unique_id=1966584251]
+size = Vector2i(523, 740)
+
+[node name="Control" type="Control" parent="Note Viewport" index="0" unique_id=647050364]
+custom_minimum_size = Vector2(523, 740)
+custom_maximum_size = Vector2(523, 740)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.5
+offset_top = -370.0
+offset_right = 261.5
+offset_bottom = 370.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Note Viewport/Control" index="0" unique_id=1592876479]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_6q8ph")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Note Viewport/Control" index="1" unique_id=1296143046]
+custom_maximum_size = Vector2(450, -1)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 30.0
+offset_right = 261.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 25
+theme_override_constants/paragraph_spacing = -1
+theme_override_fonts/font = ExtResource("6_og5pq")
+theme_override_font_sizes/font_size = 16
+text = "Date: 12/11/1998
+Patient: Katerina Snova"
+autowrap_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Note Viewport/Control" index="2" unique_id=223636070]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.587341
+offset_top = 167.0
+offset_right = -22.587341
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_62j53")
+expand_mode = 1

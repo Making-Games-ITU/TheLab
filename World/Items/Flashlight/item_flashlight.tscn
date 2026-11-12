@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dowd5veaybyfp"]
+
+[ext_resource type="PackedScene" uid="uid://dyovgo0buw558" path="res://World/Items/Flashlight/Item_flashlight.fbx" id="1_fn8gj"]
+[ext_resource type="Texture2D" uid="uid://cahqw67kj7uef" path="res://World/Items/Flashlight/Flashlight_Texture.png" id="2_ai1e1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxypt"]
+albedo_texture = ExtResource("2_ai1e1")
+
+[node name="Item_flashlight" unique_id=1303338469 instance=ExtResource("1_fn8gj")]
+
+[node name="Flash_light" parent="." index="0" unique_id=1414433998]
+material_override = SubResource("StandardMaterial3D_nxypt")
