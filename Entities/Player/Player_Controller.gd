@@ -4,6 +4,8 @@ extends CharacterBody3D
 @export var ray: RayCast3D
 @export var look_sensitivity: float = 0.0005
 @export var player_speed: float = 5.0
+@export var flashlight: Light3D
+@export var flashlight_icon: TextureRect
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -116,7 +118,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		var _ray_cast_target : Interactable = PlayerStats.current_interactable
 		if is_instance_valid(_ray_cast_target):
 			_ray_cast_target.interact(self)
-			
+	
+	if event.is_action_pressed("flashlight"):
+		flashlight.visible = !flashlight.visible
+		# flashlight_icon.visible = !flashlight_icon.visible
+
 func _handleStepsSFX() -> void:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var is_moving: bool = input_dir.abs().x > 0 or input_dir.abs().y > 0
