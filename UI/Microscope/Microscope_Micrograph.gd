@@ -17,6 +17,8 @@ func _on_blood_extracted() -> void:
 	_micrograph_clear_image.visible = false
 	_micrograph_murky_image.visible = true
 	_set_cell_color(VialStats.BLOOD_COLOR)
+	_set_mutation_parameters(0)
+	_set_parasite_parameters(0)
 
 func _on_centrifuged() -> void:
 	_micrograph_clear_image.visible = true
@@ -33,7 +35,13 @@ func _on_centrifuged() -> void:
 	_set_cell_color(mix / (VialStats.BLOOD_AMOUNT + total_chem))
 	if VialStats.infection == VialStats.InfectionType.NONE:
 		_set_mutation_parameters(0)
+		_set_parasite_parameters(0)
 	elif VialStats.infection == VialStats.InfectionType.CELL_MUTATION:
+		_set_mutation_parameters(20)
+	elif VialStats.infection == VialStats.InfectionType.PARASITES:
+		_set_parasite_parameters(20)
+	elif VialStats.infection == VialStats.InfectionType.BOTH:
+		_set_parasite_parameters(20)
 		_set_mutation_parameters(20)
 
 func _on_blood_injected() -> void:
@@ -49,3 +57,6 @@ func _set_cell_color(color: Color) -> void:
 
 func _set_mutation_parameters(percent: int) -> void:
 	micrograph_shader.set_shader_parameter("mutation_percentage", percent)
+
+func _set_parasite_parameters(amount: int) -> void:
+	micrograph_shader.set_shader_parameter("parasite_amount", amount)

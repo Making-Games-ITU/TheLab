@@ -9156,7 +9156,7 @@ mesh = SubResource("ArrayMesh_jnpmn")
 surface_material_override/1 = SubResource("StandardMaterial3D_5wgas")
 
 [node name="VialSlotModel" type="MeshInstance3D" parent="Room/Interactables/Sampler/Blood Collector" unique_id=2010309649]
-transform = Transform3D(0.57224697, -0.8200811, 0, 0.8200811, 0.57224697, 0, 0, 0, 1, -0.03745842, -0.15410662, 0)
+transform = Transform3D(0.572247, -0.8200811, 0, 0.8200811, 0.572247, 0, 0, 0, 1, -0.03745842, -0.15410662, 0)
 mesh = SubResource("ArrayMesh_cq7cq")
 
 [node name="SampleCollectorVialOutline" type="Node3D" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel" unique_id=448502073]
@@ -10073,7 +10073,7 @@ omni_range = 0.233
 omni_attenuation = 0.651
 
 [node name="Marker3D" type="Marker3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/Prop_Rotor" unique_id=491794958]
-transform = Transform3D(0.9848062, -0.17364791, 0, 0.17364791, 0.9848062, 0, 0, 0, 1, 0.010244596, 0.32967758, -8.731149e-11)
+transform = Transform3D(0.9848061, -0.1736479, 0, 0.1736479, 0.9848061, 0, 0, 0, 1, 0.010244596, 0.32967758, -8.731149e-11)
 visible = false
 
 [node name="CentrifugeVialModel" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/Prop_Rotor/Marker3D" unique_id=1676914135 instance=ExtResource("12_3rwca")]
@@ -11873,7 +11873,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.99771094, 0, 0.06760671, 0, 1, 0, -0.06760671, 0, 0.99771094, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.9977109, 0, 0.06760671, 0, 1, 0, -0.06760671, 0, 0.9977109, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]

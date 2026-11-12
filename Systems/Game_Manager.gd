@@ -79,12 +79,9 @@ func update_progression_level() -> void:
 
 
 func check_if_successful() -> void:
-	print(GameStats.body_state)
-	# Body state already at minimum but keep trying = bad
 	if GameStats.body_state == 1:
 		print("Already cured")
 		return
-	
 	
 	# Vial is damaged = bad
 	if VialStats.damaged:
@@ -92,33 +89,57 @@ func check_if_successful() -> void:
 		_check_game_over()
 		return
 		
-	# Chemical in vial but not integrated = bad
+	var no_chemicals = true
+		
+	# Check for chemicals and if integrated
 	for key in VialStats.chemicals:
 		if VialStats.chemicals[key].quantity > 0.0:
+			no_chemicals = false
 			if not VialStats.chemicals[key].integrated:
 				GameStats.body_state += 1
 				_check_game_over()
 				return
 	
-	# If vial has the wrong chemical in it = bad
-	if VialStats.infection == VialStats.InfectionType.CELL_MUTATION:
-		for key in VialStats.chemicals:
-			if VialStats.chemicals[key].quantity > 0.0:
-				if key != VialStats.Composite.HYDROGEN:
-					GameStats.body_state += 1
-					_check_game_over()
-					return
-	
-	# If no chemical is present
-	var no_chemicals = true
-	for key in VialStats.chemicals:
-		if VialStats.chemicals[key].quantity != 0.0:
-			no_chemicals = false
 	if no_chemicals:
 		return
-	GameStats.body_state -= 1
+	
+	print(VialStats.infection)
+	match VialStats.infection:
+		1: #Mutation
+			_check_wrong_chemical(VialStats.Composite.HYDROGEN)
+			print("check hydrogen")
+		2: #Parasites
+			_check_wrong_chemical(VialStats.Composite.NITROGEN)
+			print("check nitroggen")
+		3: #both
+			if VialStats.chemicals[VialStats.Composite.NITROGEN].quantity <= 0.0:
+				VialStats.infection =  VialStats.InfectionType.CELL_MUTATION
+			elif VialStats.chemicals[VialStats.Composite.HYDROGEN].quantity <= 0.0:
+				VialStats.infection =  VialStats.InfectionType.PARASITES
+			else:
+				GameStats.body_state = 1
+		0:
+			#TODO: What should happen if no blood in vial? 
+			print("Missing blood in vial")
+		_: 
+			print("Something went wrong")
+			
+	print(GameStats.body_state)
+	_check_if_cured()
+
+func _check_if_cured() -> void:
+	if GameStats.body_state == 1:
+		GameStats.cured += 1
+
+func _check_wrong_chemical(chemical : VialStats.Composite) -> void:
+	if VialStats.chemicals[chemical].quantity > 0.0:
+		GameStats.body_state += 1
+		_check_game_over()
+	else:
+		GameStats.body_state = 1
 
 func _check_game_over() -> void:
+	print(GameStats.body_state)
 	if GameStats.body_state == 6:
 		%GameOverScreen.visible = true
 		await get_tree().create_timer(2.0).timeout
