@@ -1,5 +1,10 @@
 extends Node
 
+#Game Stats
+var progression_level: int = 0
+var danger_level: int = 0 
+var cured = 0
+
 # Where the vial is
 enum VialLocation { NONE, PLAYER, SAMPLER, CENTRIFUGE, MICROSCOPE, PIPETTE }
 var vial_location: VialLocation = VialLocation.NONE
@@ -11,7 +16,7 @@ var body_ID: String = ""
 var body_exists: bool = false
 var body_state: int = 3 # from 1 to 5, 1 healthy, 5 near death
 var toggle_sample_collector: bool = true # what for? not clear
-var difficulty_stage: int = 0
+
 
 # Pipette
 var flask_in_pipette: bool = false

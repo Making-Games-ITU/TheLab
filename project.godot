@@ -32,6 +32,7 @@ FmodManager="*uid://cds10pm7hwn3p"
 GameStats="*uid://ct1dqcskn76yb"
 VialStats="*uid://dvtfql07hor2"
 NoteReader="*uid://dhp3l6bsot3qa"
+GameManager="*uid://cwlp16ommdbfg"
 
 [display]
 
