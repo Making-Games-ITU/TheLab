@@ -2,6 +2,7 @@ extends Control
 class_name Dialogue_Manager
 
 @export var talk_sound: FmodEventEmitter3D
+@export var talk_sound: FmodEventEmitter3D
 @export var dialogue_text_box : RichTextLabel
 var current_audioPlayer : AudioStreamPlayer3D
 var current_sentece : Sentence
