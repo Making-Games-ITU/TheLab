@@ -1,133 +1,133 @@
 [gd_scene format=4 uid="uid://3pp6t41od3g6"]
 
-[ext_resource type="Script" uid="uid://ckyc14ylf8cdc" path="res://Systems/Startup_Manager.gd" id="1_vksxb"]
-[ext_resource type="Script" uid="uid://ct1dqcskn76yb" path="res://Resources/Game_Stats.gd" id="2_7ydb8"]
-[ext_resource type="Script" uid="uid://dn02qfwgu1uur" path="res://Resources/Player_Stats.gd" id="3_ur31s"]
-[ext_resource type="Script" uid="uid://dvtfql07hor2" path="res://Resources/Vial_Stats.gd" id="4_munjo"]
-[ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="5_2qbow"]
-[ext_resource type="Script" uid="uid://cwlp16ommdbfg" path="res://Systems/Game_Manager.gd" id="6_jwlpm"]
-[ext_resource type="Script" uid="uid://cue05ltltu7v3" path="res://Entities/Player/Player_Controller.gd" id="7_uuayd"]
-[ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="8_blfwb"]
-[ext_resource type="Script" uid="uid://b6y5rgjk5ts8k" path="res://UI/Interaction_Prompt.gd" id="9_u6uf2"]
-[ext_resource type="FontFile" uid="uid://sdtsanxfgqys" path="res://UI/Fonts/Perfect DOS VGA 437.ttf" id="10_djxsf"]
-[ext_resource type="Script" uid="uid://dmwrefytxkyap" path="res://Dialogue/dialogue_manager.gd" id="11_7ajcb"]
-[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://Shaders/psx_camera_shader.gdshader" id="12_g7mrd"]
-[ext_resource type="Texture2D" uid="uid://bvbwwifg5kqry" path="res://UI/HUD/flashlight_icon.png" id="12_munjo"]
-[ext_resource type="Script" uid="uid://c7c7mkglyjhtb" path="res://UI/HUD/flashlight.gd" id="13_7ydb8"]
-[ext_resource type="PackedScene" uid="uid://dktx5llwjb5k" path="res://World/Items/Test Tube/env_test_tube.tscn" id="13_txhat"]
-[ext_resource type="PackedScene" uid="uid://bofhacbjojc6c" path="res://World/Items/Vial/item_vial.tscn" id="14_bq2tk"]
-[ext_resource type="Script" uid="uid://dkx3dd7r6spta" path="res://Entities/Player/camera_zoom.gd" id="14_ur31s"]
-[ext_resource type="Texture2D" uid="uid://c2kyfbgiooblx" path="res://World/Items/Flash Drive/FlashDrive_Texture.png" id="15_0pkcf"]
-[ext_resource type="Texture2D" uid="uid://cqrugvifo6u28" path="res://World/Items/Document/FlashDrive_Texture.png" id="16_j4f66"]
-[ext_resource type="Script" uid="uid://ddrrcjch50pkt" path="res://Systems/Interactable_Shader_Preload.gd" id="17_su0a1"]
-[ext_resource type="Texture2D" uid="uid://r3x0tq8jke65" path="res://World/Items/Flashlight/t_flashlightpattern.png" id="18_o35xq"]
-[ext_resource type="PackedScene" uid="uid://n10ynemp2f4b" path="res://World/Environments/Room/env_room.tscn" id="19_sy1xl"]
-[ext_resource type="Script" uid="uid://l1n756bd47f6" path="res://World/Interactables/Flask_GetTake.gd" id="20_hnwc8"]
-[ext_resource type="Texture2D" uid="uid://boe88ad2calwr" path="res://World/Items/Vial/Vial_V1_Texture.png" id="21_6qtdy"]
-[ext_resource type="PackedScene" uid="uid://bokgfdlrgsox" path="res://UI/Interaction/interactable_indecator.tscn" id="22_4pbdx"]
-[ext_resource type="PackedScene" uid="uid://dckgv8kqvmv4m" path="res://Notes/note_postnote.tscn" id="23_fjgpu"]
-[ext_resource type="PackedScene" uid="uid://bh0v05d78wm13" path="res://Notes/note_document.tscn" id="24_qpojx"]
-[ext_resource type="Script" uid="uid://tn5r20sjuo4d" path="res://Notes/Note_Under_The_Door.gd" id="25_wtvda"]
-[ext_resource type="Texture2D" uid="uid://diw6gy4ed42do" path="res://Notes/paperTexture.png" id="26_nqb7s"]
-[ext_resource type="FontFile" uid="uid://c0j46o02p6oav" path="res://UI/Fonts/JPHSL.TTF" id="27_77286"]
-[ext_resource type="PackedScene" uid="uid://yomyius6rgy8" path="res://World/Props/Chairs/env_stool.tscn" id="28_rp4j6"]
-[ext_resource type="Texture2D" uid="uid://bx548vio7lxoi" path="res://World/Props/Chairs/Chair_Texture.png" id="29_ar2cx"]
-[ext_resource type="Script" uid="uid://7y5mut280vma" path="res://World/Interactables/Chair.gd" id="30_ayq5s"]
-[ext_resource type="PackedScene" uid="uid://bvdshqu0n2t6s" path="res://World/Props/Storage/Test Tube Storage/prop_test_tube_storage.tscn" id="31_53jjw"]
-[ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/Vial_GetTake.gd" id="32_jwxcl"]
-[ext_resource type="Texture2D" uid="uid://dby18kwc4lr7e" path="res://World/Props/Storage/Test Tube Storage/Storage_Texture.png" id="33_dky0u"]
-[ext_resource type="PackedScene" uid="uid://6g8r3exfe4vm" path="res://World/Props/Bin/Prop_Trashcan.tscn" id="34_try7l"]
-[ext_resource type="Script" uid="uid://b2r7cte3y82gd" path="res://World/Interactables/Trashcan_Interactions.gd" id="35_syntt"]
-[ext_resource type="Texture2D" uid="uid://c23tog38r0twt" path="res://World/Props/Bin/Bin_Texture.png" id="36_n73s1"]
-[ext_resource type="Texture2D" uid="uid://de3wmww0d36tx" path="res://World/Props/Buttons/Door_Btn_Texture.png" id="37_xtx11"]
-[ext_resource type="Texture2D" uid="uid://7iq2tjgsi7ll" path="res://World/Props/Xray/Wires.png" id="38_svi5g"]
-[ext_resource type="Texture2D" uid="uid://dv8dxroj4arh" path="res://World/Props/Electricals/Control Panel/ControlPanel_Texture.png" id="39_vjtwp"]
-[ext_resource type="Texture2D" uid="uid://c6ndouxyokit6" path="res://World/Props/Buttons/Emergancy_Btn_Texture.png" id="40_ygn6k"]
-[ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="41_wq0o1"]
-[ext_resource type="Script" uid="uid://dg1o1gujlh3uh" path="res://World/Interactables/BodyDispose.gd" id="42_j6pb3"]
-[ext_resource type="Script" uid="uid://cmcmbnsforjle" path="res://World/Interactables/BodyRequest.gd" id="43_f03g0"]
-[ext_resource type="Texture2D" uid="uid://cyft1j0jh3k7j" path="res://World/Props/Machines/Blood Collector/BloodSampler_Texture.png" id="44_a4uav"]
-[ext_resource type="Texture2D" uid="uid://cj6c4l3nbywb2" path="res://World/Items/Test Tube/Test_Tube_Texture_.png" id="45_qex1f"]
-[ext_resource type="Texture2D" uid="uid://bopkn445to257" path="res://World/Items/Test Tube/Test_Tube_Texture.png" id="46_yjj7s"]
-[ext_resource type="Texture2D" uid="uid://dayrghnnvllag" path="res://World/Props/Electricals/Computer/Pc_Props_Texture.png" id="47_vrgx3"]
-[ext_resource type="Script" uid="uid://vposirk8rd8l" path="res://World/Props/Electricals/machine_screen.gd" id="48_nwf0e"]
-[ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="49_xy377"]
-[ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/Sampler_VialSlot.gd" id="50_27rxj"]
-[ext_resource type="Script" uid="uid://b4kbgcr5ai4eq" path="res://World/Interactables/BloodCollector/Sampler_Extract.gd" id="51_tnxsi"]
-[ext_resource type="Script" uid="uid://wgfiw1dd0nju" path="res://World/Interactables/BloodCollector/Sampler_Inject.gd" id="52_v5opa"]
-[ext_resource type="Script" uid="uid://dhhwunayvjknu" path="res://Systems/Scanner_Interactions.gd" id="53_6hlya"]
-[ext_resource type="Texture2D" uid="uid://cr4bcfwjni1m7" path="res://World/Props/Xray/Xray_Texture.png" id="54_q765n"]
-[ext_resource type="Texture2D" uid="uid://bk66ydditnowo" path="res://UI/Screen/Logo Kras.png" id="55_8ummy"]
-[ext_resource type="Texture2D" uid="uid://cdmeve2r0y2tq" path="res://UI/Scanner/X-ray-chest-2.png" id="57_3xnn1"]
-[ext_resource type="Texture2D" uid="uid://di6hfpf1hf3o8" path="res://UI/Scanner/X-RayScan_Chest-3.png" id="58_6lxtf"]
-[ext_resource type="Texture2D" uid="uid://b3ty3k2ni425u" path="res://UI/Scanner/X-RayScan_Chest-4.png" id="59_khn1d"]
-[ext_resource type="Texture2D" uid="uid://cntf7vwfwcyhy" path="res://UI/Scanner/xray_new_1.jpg" id="59_munjo"]
-[ext_resource type="Texture2D" uid="uid://br5ecu0pa3fm1" path="res://UI/Scanner/X-RayScan_Chest-5.png" id="60_g1vis"]
-[ext_resource type="PackedScene" uid="uid://ehrseny5tlqp" path="res://World/Items/Document/item_document.tscn" id="61_4kt6o"]
-[ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/Scanner_Start.gd" id="62_uihnf"]
-[ext_resource type="PackedScene" uid="uid://b6pfyhbaso5ix" path="res://World/Props/Machines/Micro Scope/prop_micro_scope.tscn" id="63_cyika"]
-[ext_resource type="Script" uid="uid://bh8gi8rr6hqhl" path="res://UI/Microscope/Microscope_Micrograph.gd" id="64_3kuph"]
-[ext_resource type="Material" uid="uid://dp0g3h3as5djp" path="res://UI/Microscope/micrograph_murky_shader_material.tres" id="65_qr3ul"]
-[ext_resource type="Material" uid="uid://bi51pe4jpik8c" path="res://UI/Microscope/micrograph_shader_material.tres" id="66_bweqy"]
-[ext_resource type="Script" uid="uid://b3j7u7v8qj1gk" path="res://World/Interactables/Microscope/Microscope_VialSlot.gd" id="67_2455y"]
-[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope/Microscope_Look.gd" id="68_pobrt"]
-[ext_resource type="Texture2D" uid="uid://c2l7wpxuyfj6w" path="res://World/Props/Machines/Micro Scope/Micro_Scope_Texture.png" id="69_fw7n4"]
-[ext_resource type="Texture2D" uid="uid://dpv6dd0ver3yb" path="res://World/Props/Machines/Mixer/NCentrifuge.png" id="70_838j6"]
-[ext_resource type="Script" uid="uid://lkdsjbrid4f4" path="res://World/Interactables/Mixer/Centrifuge_ButtonUp.gd" id="71_jum2d"]
-[ext_resource type="Texture2D" uid="uid://c2l5yjfm8dh4" path="res://World/Props/Machines/Keyboard keys Texture.png" id="72_6a1bc"]
-[ext_resource type="Script" uid="uid://qig5cjnduicm" path="res://World/Interactables/Mixer/Centrifuge_ButtonDown.gd" id="73_v8jka"]
-[ext_resource type="Script" uid="uid://cr6dcc77e8pgj" path="res://World/Interactables/Mixer/Centrifuge_Start.gd" id="74_cy2os"]
-[ext_resource type="Script" uid="uid://7twekmr5esqb" path="res://World/Interactables/Mixer/Centrifuge_VialSlot.gd" id="75_00560"]
-[ext_resource type="Script" uid="uid://cekegxoo7dsve" path="res://World/Interactables/Pipette/Pipette_Vial_Slot.gd" id="76_s6fkl"]
-[ext_resource type="Script" uid="uid://bhlrg5gone8pe" path="res://World/Interactables/Pipette/Pipette_Flask_Slot.gd" id="77_xiff6"]
-[ext_resource type="Script" uid="uid://bl6j4hu8sosqs" path="res://World/Interactables/Pipette/Pipette_Numpad_Clear.gd" id="78_7xw5e"]
-[ext_resource type="Script" uid="uid://dxv013hmmsgpm" path="res://World/Interactables/Pipette/Pipette_Numpad_Point.gd" id="79_24hs8"]
-[ext_resource type="Script" uid="uid://b2eqg2tydo80s" path="res://World/Interactables/Pipette/Pipette_Numpad_Start.gd" id="80_6suqh"]
-[ext_resource type="Script" uid="uid://6ckpxp75y6ji" path="res://World/Interactables/Pipette/Pipette_Numpad_Numbers.gd" id="81_x8vyc"]
-[ext_resource type="Texture2D" uid="uid://bo5h3uv6essgg" path="res://World/Props/Machines/Filling/Filling_Machine_Texture.png" id="82_1etgj"]
-[ext_resource type="Script" uid="uid://d4kn5076g6ij1" path="res://World/Props/Electricals/Electrical_Box.gd" id="83_4vhak"]
-[ext_resource type="Texture2D" uid="uid://dvl7j0ttn4hjf" path="res://World/Props/Lamps/Ceiling Lamp/Ceiling_Lamp_Texture.png" id="84_lso2o"]
-[ext_resource type="PackedScene" uid="uid://dljgppj1vdecd" path="res://World/Props/Storage/Metal Shelve/prop_metal_storage.tscn" id="85_brh8d"]
-[ext_resource type="PackedScene" uid="uid://wcvo510x8n3s" path="res://World/Props/Storage/Lab Closet/prop_closet_storage.tscn" id="86_1qk2d"]
-[ext_resource type="PackedScene" uid="uid://bp0030kh5o7rt" path="res://World/Props/Storage/Locker/env_locker.tscn" id="87_gw1hp"]
-[ext_resource type="PackedScene" uid="uid://dd4lliduo7nou" path="res://World/Props/Electricals/Power Supply/env_power_supply.tscn" id="88_0ioe7"]
-[ext_resource type="Texture2D" uid="uid://ckryoryab5rok" path="res://World/Props/Electricals/Computer/Computer.png" id="89_ldbdb"]
-[ext_resource type="Texture2D" uid="uid://c0w022qx5xjgy" path="res://World/Props/Electricals/Computer/KeyBaordTexture.png" id="90_6anmh"]
-[ext_resource type="Texture2D" uid="uid://dqcgh22nr18s0" path="res://World/Props/Electricals/Computer/ScrollBtnTexture.png" id="91_mbjy8"]
-[ext_resource type="Script" uid="uid://cju1nsvvo6rxb" path="res://World/Props/Electricals/Computer/env_screen.gd" id="92_usng7"]
-[ext_resource type="Shader" uid="uid://cilu8q1ppqotc" path="res://World/Props/Electricals/Computer/env_screen.gdshader" id="93_wgf7h"]
-[ext_resource type="Texture2D" uid="uid://v2iw61n2xlo8" path="res://World/Props/Corpse Tube/Tube_Texture.png" id="94_ktchy"]
-[ext_resource type="Texture2D" uid="uid://u77qgxck5ivr" path="res://World/Props/Corpse Tube/Grabling_Texture.png" id="95_jsg64"]
-[ext_resource type="Texture2D" uid="uid://cvt1qdwvnwi3x" path="res://Entities/NPCs/Female Body/female_body_light_D.png" id="96_spowq"]
-[ext_resource type="Texture2D" uid="uid://qbnnugf7xpa0" path="res://Entities/NPCs/Female Body/head_female_light_D.png" id="97_ubcuf"]
-[ext_resource type="Texture2D" uid="uid://dn0ql2qw784bs" path="res://World/Environments/Room/lab-wall.jpg" id="98_jfxpu"]
-[ext_resource type="Texture2D" uid="uid://bqtvb3gtfiavw" path="res://World/Props/Xray/Curtains/XrayCover_Texture.png" id="99_f7sfh"]
-[ext_resource type="PackedScene" uid="uid://1h75cfa5b4jp" path="res://World/Props/Tables/env_table.tscn" id="100_saamr"]
-[ext_resource type="PackedScene" uid="uid://xvx3yha5ujc" path="res://World/Props/Tables/env_table_surgical.tscn" id="101_we7ay"]
-[ext_resource type="PackedScene" uid="uid://b68fqtutgyrws" path="res://World/Props/Tables/env_table_no_sink.tscn" id="102_2ukwm"]
-[ext_resource type="PackedScene" uid="uid://xoplfxuvccwk" path="res://World/Props/Tables/env_table_sink.tscn" id="103_pkkco"]
-[ext_resource type="PackedScene" uid="uid://c7n36j11m4xl1" path="res://World/Props/Trolley/prop_curtains_trolly.tscn" id="104_3vj7v"]
-[ext_resource type="PackedScene" uid="uid://ccbjica3ksi1c" path="res://World/Props/Trolley/prop_trolley.tscn" id="105_gyio6"]
-[ext_resource type="PackedScene" uid="uid://c5qlgxu4phaxk" path="res://World/Props/Vent/prop_vent.tscn" id="106_gsido"]
-[ext_resource type="Texture2D" uid="uid://l540lgh8bea3" path="res://World/Environments/Pit/MetalTexture.jpg" id="107_iodj2"]
-[ext_resource type="PackedScene" uid="uid://bhcn0eyj5awrm" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_lamp.tscn" id="108_lifbr"]
-[ext_resource type="Texture2D" uid="uid://dx0xssdqbuoou" path="res://World/Props/Machines/Surgery Machine/Surgery_Machine_Texture.png" id="109_56ufq"]
-[ext_resource type="PackedScene" uid="uid://dbvq82xs7d6jo" path="res://World/Props/Buttons/Env_Button_Open_Close.fbx" id="110_tsql7"]
-[ext_resource type="PackedScene" uid="uid://5vn584og5dnk" path="res://World/Props/Doors/doors_sliding.tscn" id="111_nb3u6"]
-[ext_resource type="Script" uid="uid://cseddomg6bhrb" path="res://Dialogue/character.gd" id="112_qn7jj"]
-[ext_resource type="Script" uid="uid://csj4btbehj4g0" path="res://Dialogue/dialogue_act.gd" id="113_jmepf"]
-[ext_resource type="Script" uid="uid://bbug2xt6gy8sv" path="res://Dialogue/sentence.gd" id="114_xb2jk"]
-[ext_resource type="Script" uid="uid://3wa1p6kxq2hw" path="res://Dialogue/Dialogue Scripts/Lin Shuyao/door_character_trigger.gd" id="115_t4gwu"]
-[ext_resource type="Script" uid="uid://c53bmyvleua0f" path="res://World/Props/Electricals/LightController.gd" id="116_xmn1q"]
-[ext_resource type="Texture2D" uid="uid://cvnkpfrqy6sut" path="res://World/Interactables/Pin Board/pinboard.jpg" id="117_82iss"]
-[ext_resource type="Script" uid="uid://xfr1koenip2p" path="res://World/Items/Document/pin_string.gd" id="118_1m3ty"]
-[ext_resource type="Script" uid="uid://dfwqme4vae8iu" path="res://Notes/Note_Interactions.gd" id="119_lnpp2"]
-[ext_resource type="Texture2D" uid="uid://h1i7cuma0vfi" path="res://Notes/x_ray_texture_by_iamdkscully_d8v5htz-fullview.jpg" id="120_yi6cf"]
-[ext_resource type="Script" uid="uid://dq2bw1uqj45u6" path="res://World/Items/Flash Drive/Flash_Drive.gd" id="121_7fhby"]
-[ext_resource type="Script" uid="uid://cbcky786oulwr" path="res://Scenes/Cut Scenes/introduction_cutscene.gd" id="122_yfmxj"]
-[ext_resource type="Texture2D" uid="uid://cwqiungpi8jo5" path="res://World/Props/Cardbox/Cardbox_Texture.png" id="123_7w40y"]
-[ext_resource type="Texture2D" uid="uid://cu6m4f3h6t0b0" path="res://World/Props/Cardbox/Styrofoam_texture.jpg" id="124_cyani"]
-[ext_resource type="PackedScene" uid="uid://dowd5veaybyfp" path="res://World/Items/Flashlight/item_flashlight.tscn" id="125_apjnh"]
+[ext_resource type="Script" uid="uid://ckyc14ylf8cdc" path="res://Systems/Startup_Manager.gd" id="1_slwoh"]
+[ext_resource type="Script" uid="uid://ct1dqcskn76yb" path="res://Resources/Game_Stats.gd" id="2_ucek8"]
+[ext_resource type="Script" uid="uid://dn02qfwgu1uur" path="res://Resources/Player_Stats.gd" id="3_52q12"]
+[ext_resource type="Script" uid="uid://dvtfql07hor2" path="res://Resources/Vial_Stats.gd" id="4_ax6kq"]
+[ext_resource type="PackedScene" uid="uid://d4yvwvd21kok" path="res://Audio/AudioNodes/AudioManager3D.tscn" id="5_8c4fr"]
+[ext_resource type="Script" uid="uid://cwlp16ommdbfg" path="res://Systems/Game_Manager.gd" id="6_37oxq"]
+[ext_resource type="Script" uid="uid://cue05ltltu7v3" path="res://Entities/Player/Player_Controller.gd" id="7_n07s0"]
+[ext_resource type="FontFile" uid="uid://l6gtpkyk3jxk" path="res://UI/Fonts/pixel-arial-14.otf" id="8_wjrn6"]
+[ext_resource type="Script" uid="uid://b6y5rgjk5ts8k" path="res://UI/Interaction_Prompt.gd" id="9_cjmb0"]
+[ext_resource type="FontFile" uid="uid://sdtsanxfgqys" path="res://UI/Fonts/Perfect DOS VGA 437.ttf" id="10_m26da"]
+[ext_resource type="Script" uid="uid://dmwrefytxkyap" path="res://Dialogue/dialogue_manager.gd" id="11_r1ony"]
+[ext_resource type="Texture2D" uid="uid://bvbwwifg5kqry" path="res://UI/HUD/flashlight_icon.png" id="12_hdxgc"]
+[ext_resource type="Texture2D" uid="uid://r3x0tq8jke65" path="res://World/Items/Flashlight/t_flashlightpattern.png" id="13_yc2co"]
+[ext_resource type="Script" uid="uid://c7c7mkglyjhtb" path="res://UI/HUD/flashlight.gd" id="14_0ojlp"]
+[ext_resource type="Script" uid="uid://dkx3dd7r6spta" path="res://Entities/Player/camera_zoom.gd" id="15_a5ota"]
+[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://Shaders/psx_camera_shader.gdshader" id="16_icatu"]
+[ext_resource type="PackedScene" uid="uid://dktx5llwjb5k" path="res://World/Items/Test Tube/env_test_tube.tscn" id="17_tq6mg"]
+[ext_resource type="PackedScene" uid="uid://bofhacbjojc6c" path="res://World/Items/Vial/item_vial.tscn" id="18_we5gq"]
+[ext_resource type="Texture2D" uid="uid://c2kyfbgiooblx" path="res://World/Items/Flash Drive/FlashDrive_Texture.png" id="19_hbyo7"]
+[ext_resource type="Texture2D" uid="uid://cqrugvifo6u28" path="res://World/Items/Document/FlashDrive_Texture.png" id="20_du17i"]
+[ext_resource type="Script" uid="uid://ddrrcjch50pkt" path="res://Systems/Interactable_Shader_Preload.gd" id="21_pmr4g"]
+[ext_resource type="PackedScene" uid="uid://n10ynemp2f4b" path="res://World/Environments/Room/env_room.tscn" id="22_wr204"]
+[ext_resource type="Script" uid="uid://l1n756bd47f6" path="res://World/Interactables/Flask_GetTake.gd" id="23_6qtya"]
+[ext_resource type="Texture2D" uid="uid://boe88ad2calwr" path="res://World/Items/Vial/Vial_V1_Texture.png" id="24_tnek7"]
+[ext_resource type="PackedScene" uid="uid://bokgfdlrgsox" path="res://UI/Interaction/interactable_indecator.tscn" id="25_8ll8u"]
+[ext_resource type="PackedScene" uid="uid://dckgv8kqvmv4m" path="res://Notes/note_postnote.tscn" id="26_a3tqg"]
+[ext_resource type="PackedScene" uid="uid://bh0v05d78wm13" path="res://Notes/note_document.tscn" id="27_jxr3g"]
+[ext_resource type="Script" uid="uid://tn5r20sjuo4d" path="res://Notes/Note_Under_The_Door.gd" id="28_mbf68"]
+[ext_resource type="Texture2D" uid="uid://diw6gy4ed42do" path="res://Notes/paperTexture.png" id="29_grssb"]
+[ext_resource type="FontFile" uid="uid://c0j46o02p6oav" path="res://UI/Fonts/JPHSL.TTF" id="30_r6lsp"]
+[ext_resource type="PackedScene" uid="uid://yomyius6rgy8" path="res://World/Props/Chairs/env_stool.tscn" id="31_mfanx"]
+[ext_resource type="Texture2D" uid="uid://bx548vio7lxoi" path="res://World/Props/Chairs/Chair_Texture.png" id="32_b7h5x"]
+[ext_resource type="Script" uid="uid://7y5mut280vma" path="res://World/Interactables/Chair.gd" id="33_1w8mw"]
+[ext_resource type="PackedScene" uid="uid://bvdshqu0n2t6s" path="res://World/Props/Storage/Test Tube Storage/prop_test_tube_storage.tscn" id="34_6gha7"]
+[ext_resource type="Script" uid="uid://cmu6cqokj011b" path="res://World/Interactables/Vial_GetTake.gd" id="35_b5esp"]
+[ext_resource type="Texture2D" uid="uid://dby18kwc4lr7e" path="res://World/Props/Storage/Test Tube Storage/Storage_Texture.png" id="36_on272"]
+[ext_resource type="PackedScene" uid="uid://6g8r3exfe4vm" path="res://World/Props/Bin/Prop_Trashcan.tscn" id="37_y70h1"]
+[ext_resource type="Script" uid="uid://b2r7cte3y82gd" path="res://World/Interactables/Trashcan_Interactions.gd" id="38_6gicp"]
+[ext_resource type="Texture2D" uid="uid://c23tog38r0twt" path="res://World/Props/Bin/Bin_Texture.png" id="39_std3y"]
+[ext_resource type="Texture2D" uid="uid://de3wmww0d36tx" path="res://World/Props/Buttons/Door_Btn_Texture.png" id="40_nvkrt"]
+[ext_resource type="Texture2D" uid="uid://7iq2tjgsi7ll" path="res://World/Props/Xray/Wires.png" id="41_a6xvn"]
+[ext_resource type="Texture2D" uid="uid://dv8dxroj4arh" path="res://World/Props/Electricals/Control Panel/ControlPanel_Texture.png" id="42_8v23g"]
+[ext_resource type="Texture2D" uid="uid://c6ndouxyokit6" path="res://World/Props/Buttons/Emergancy_Btn_Texture.png" id="43_hoj6u"]
+[ext_resource type="Script" uid="uid://bbmr57gnwtrd1" path="res://World/Props/Electricals/ButtonPressAnim.gd" id="44_c2x1s"]
+[ext_resource type="Script" uid="uid://dg1o1gujlh3uh" path="res://World/Interactables/BodyDispose.gd" id="45_kt2yo"]
+[ext_resource type="Script" uid="uid://cmcmbnsforjle" path="res://World/Interactables/BodyRequest.gd" id="46_mcuw2"]
+[ext_resource type="Texture2D" uid="uid://cyft1j0jh3k7j" path="res://World/Props/Machines/Blood Collector/BloodSampler_Texture.png" id="47_ffck8"]
+[ext_resource type="Texture2D" uid="uid://cj6c4l3nbywb2" path="res://World/Items/Test Tube/Test_Tube_Texture_.png" id="48_ij123"]
+[ext_resource type="Texture2D" uid="uid://bopkn445to257" path="res://World/Items/Test Tube/Test_Tube_Texture.png" id="49_dwt01"]
+[ext_resource type="Texture2D" uid="uid://dayrghnnvllag" path="res://World/Props/Electricals/Computer/Pc_Props_Texture.png" id="50_2i8gw"]
+[ext_resource type="Script" uid="uid://vposirk8rd8l" path="res://World/Props/Electricals/machine_screen.gd" id="51_4y2o5"]
+[ext_resource type="Texture2D" uid="uid://c27xix4yla2p2" path="res://UI/Screen/Bg.jpg" id="52_7tj8d"]
+[ext_resource type="Script" uid="uid://b7iwga3lawey0" path="res://World/Interactables/BloodCollector/Sampler_VialSlot.gd" id="53_oaw2t"]
+[ext_resource type="Script" uid="uid://b4kbgcr5ai4eq" path="res://World/Interactables/BloodCollector/Sampler_Extract.gd" id="54_0dvtn"]
+[ext_resource type="Script" uid="uid://wgfiw1dd0nju" path="res://World/Interactables/BloodCollector/Sampler_Inject.gd" id="55_ucn7y"]
+[ext_resource type="Script" uid="uid://dhhwunayvjknu" path="res://Systems/Scanner_Interactions.gd" id="56_bdnt5"]
+[ext_resource type="Texture2D" uid="uid://cr4bcfwjni1m7" path="res://World/Props/Xray/Xray_Texture.png" id="57_7ubud"]
+[ext_resource type="Texture2D" uid="uid://bk66ydditnowo" path="res://UI/Screen/Logo Kras.png" id="58_6x5lk"]
+[ext_resource type="Texture2D" uid="uid://cntf7vwfwcyhy" path="res://UI/Scanner/xray_new_1.jpg" id="59_g3jfi"]
+[ext_resource type="Texture2D" uid="uid://cdmeve2r0y2tq" path="res://UI/Scanner/X-ray-chest-2.png" id="60_73m62"]
+[ext_resource type="Texture2D" uid="uid://di6hfpf1hf3o8" path="res://UI/Scanner/X-RayScan_Chest-3.png" id="61_jcmlj"]
+[ext_resource type="Texture2D" uid="uid://b3ty3k2ni425u" path="res://UI/Scanner/X-RayScan_Chest-4.png" id="62_lwnoy"]
+[ext_resource type="Texture2D" uid="uid://br5ecu0pa3fm1" path="res://UI/Scanner/X-RayScan_Chest-5.png" id="63_pr1qh"]
+[ext_resource type="PackedScene" uid="uid://ehrseny5tlqp" path="res://World/Items/Document/item_document.tscn" id="64_ym8jw"]
+[ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/Scanner_Start.gd" id="65_0pku7"]
+[ext_resource type="PackedScene" uid="uid://b6pfyhbaso5ix" path="res://World/Props/Machines/Micro Scope/prop_micro_scope.tscn" id="66_tg0ye"]
+[ext_resource type="Script" uid="uid://bh8gi8rr6hqhl" path="res://UI/Microscope/Microscope_Micrograph.gd" id="67_s3r1p"]
+[ext_resource type="Material" uid="uid://dp0g3h3as5djp" path="res://UI/Microscope/micrograph_murky_shader_material.tres" id="68_jd3vj"]
+[ext_resource type="Material" uid="uid://bi51pe4jpik8c" path="res://UI/Microscope/micrograph_shader_material.tres" id="69_1aiaj"]
+[ext_resource type="Script" uid="uid://b3j7u7v8qj1gk" path="res://World/Interactables/Microscope/Microscope_VialSlot.gd" id="70_fe81d"]
+[ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope/Microscope_Look.gd" id="71_ra3sv"]
+[ext_resource type="Texture2D" uid="uid://c2l7wpxuyfj6w" path="res://World/Props/Machines/Micro Scope/Micro_Scope_Texture.png" id="72_d5ifo"]
+[ext_resource type="Texture2D" uid="uid://dpv6dd0ver3yb" path="res://World/Props/Machines/Mixer/NCentrifuge.png" id="73_6owub"]
+[ext_resource type="Script" uid="uid://lkdsjbrid4f4" path="res://World/Interactables/Mixer/Centrifuge_ButtonUp.gd" id="74_kj11c"]
+[ext_resource type="Texture2D" uid="uid://c2l5yjfm8dh4" path="res://World/Props/Machines/Keyboard keys Texture.png" id="75_4aq24"]
+[ext_resource type="Script" uid="uid://qig5cjnduicm" path="res://World/Interactables/Mixer/Centrifuge_ButtonDown.gd" id="76_ru6wt"]
+[ext_resource type="Script" uid="uid://cr6dcc77e8pgj" path="res://World/Interactables/Mixer/Centrifuge_Start.gd" id="77_3ev3l"]
+[ext_resource type="Script" uid="uid://7twekmr5esqb" path="res://World/Interactables/Mixer/Centrifuge_VialSlot.gd" id="78_s7idu"]
+[ext_resource type="Script" uid="uid://cekegxoo7dsve" path="res://World/Interactables/Pipette/Pipette_Vial_Slot.gd" id="79_ywtvq"]
+[ext_resource type="Script" uid="uid://bhlrg5gone8pe" path="res://World/Interactables/Pipette/Pipette_Flask_Slot.gd" id="80_un5dn"]
+[ext_resource type="Script" uid="uid://bl6j4hu8sosqs" path="res://World/Interactables/Pipette/Pipette_Numpad_Clear.gd" id="81_oh4yx"]
+[ext_resource type="Script" uid="uid://dxv013hmmsgpm" path="res://World/Interactables/Pipette/Pipette_Numpad_Point.gd" id="82_n8ryk"]
+[ext_resource type="Script" uid="uid://b2eqg2tydo80s" path="res://World/Interactables/Pipette/Pipette_Numpad_Start.gd" id="83_wqp32"]
+[ext_resource type="Script" uid="uid://6ckpxp75y6ji" path="res://World/Interactables/Pipette/Pipette_Numpad_Numbers.gd" id="84_b2jqc"]
+[ext_resource type="Texture2D" uid="uid://bo5h3uv6essgg" path="res://World/Props/Machines/Filling/Filling_Machine_Texture.png" id="85_up025"]
+[ext_resource type="Script" uid="uid://d4kn5076g6ij1" path="res://World/Props/Electricals/Electrical_Box.gd" id="86_tgm4w"]
+[ext_resource type="Texture2D" uid="uid://dvl7j0ttn4hjf" path="res://World/Props/Lamps/Ceiling Lamp/Ceiling_Lamp_Texture.png" id="87_ie1y1"]
+[ext_resource type="PackedScene" uid="uid://dljgppj1vdecd" path="res://World/Props/Storage/Metal Shelve/prop_metal_storage.tscn" id="88_uqhvq"]
+[ext_resource type="PackedScene" uid="uid://wcvo510x8n3s" path="res://World/Props/Storage/Lab Closet/prop_closet_storage.tscn" id="89_ymp40"]
+[ext_resource type="PackedScene" uid="uid://bp0030kh5o7rt" path="res://World/Props/Storage/Locker/env_locker.tscn" id="90_cshk5"]
+[ext_resource type="PackedScene" uid="uid://dd4lliduo7nou" path="res://World/Props/Electricals/Power Supply/env_power_supply.tscn" id="91_hl41i"]
+[ext_resource type="Texture2D" uid="uid://ckryoryab5rok" path="res://World/Props/Electricals/Computer/Computer.png" id="92_3qs1o"]
+[ext_resource type="Texture2D" uid="uid://c0w022qx5xjgy" path="res://World/Props/Electricals/Computer/KeyBaordTexture.png" id="93_puhvx"]
+[ext_resource type="Texture2D" uid="uid://dqcgh22nr18s0" path="res://World/Props/Electricals/Computer/ScrollBtnTexture.png" id="94_76q5i"]
+[ext_resource type="Script" uid="uid://cju1nsvvo6rxb" path="res://World/Props/Electricals/Computer/env_screen.gd" id="95_8yjvh"]
+[ext_resource type="Shader" uid="uid://cilu8q1ppqotc" path="res://World/Props/Electricals/Computer/env_screen.gdshader" id="96_tk4t4"]
+[ext_resource type="Texture2D" uid="uid://v2iw61n2xlo8" path="res://World/Props/Corpse Tube/Tube_Texture.png" id="97_gkvh7"]
+[ext_resource type="Texture2D" uid="uid://u77qgxck5ivr" path="res://World/Props/Corpse Tube/Grabling_Texture.png" id="98_3wjdc"]
+[ext_resource type="Texture2D" uid="uid://cvt1qdwvnwi3x" path="res://Entities/NPCs/Female Body/female_body_light_D.png" id="99_4xu0t"]
+[ext_resource type="Texture2D" uid="uid://qbnnugf7xpa0" path="res://Entities/NPCs/Female Body/head_female_light_D.png" id="100_aptb6"]
+[ext_resource type="Texture2D" uid="uid://dn0ql2qw784bs" path="res://World/Environments/Room/lab-wall.jpg" id="101_su4fj"]
+[ext_resource type="Texture2D" uid="uid://bqtvb3gtfiavw" path="res://World/Props/Xray/Curtains/XrayCover_Texture.png" id="102_85ct8"]
+[ext_resource type="PackedScene" uid="uid://1h75cfa5b4jp" path="res://World/Props/Tables/env_table.tscn" id="103_h7nch"]
+[ext_resource type="PackedScene" uid="uid://xvx3yha5ujc" path="res://World/Props/Tables/env_table_surgical.tscn" id="104_y6t1d"]
+[ext_resource type="PackedScene" uid="uid://b68fqtutgyrws" path="res://World/Props/Tables/env_table_no_sink.tscn" id="105_botyk"]
+[ext_resource type="PackedScene" uid="uid://xoplfxuvccwk" path="res://World/Props/Tables/env_table_sink.tscn" id="106_yjyv5"]
+[ext_resource type="PackedScene" uid="uid://c7n36j11m4xl1" path="res://World/Props/Trolley/prop_curtains_trolly.tscn" id="107_20taa"]
+[ext_resource type="PackedScene" uid="uid://ccbjica3ksi1c" path="res://World/Props/Trolley/prop_trolley.tscn" id="108_n8ub7"]
+[ext_resource type="PackedScene" uid="uid://c5qlgxu4phaxk" path="res://World/Props/Vent/prop_vent.tscn" id="109_35t23"]
+[ext_resource type="Texture2D" uid="uid://l540lgh8bea3" path="res://World/Environments/Pit/MetalTexture.jpg" id="110_n2y26"]
+[ext_resource type="PackedScene" uid="uid://bhcn0eyj5awrm" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_lamp.tscn" id="111_uourf"]
+[ext_resource type="Texture2D" uid="uid://dx0xssdqbuoou" path="res://World/Props/Machines/Surgery Machine/Surgery_Machine_Texture.png" id="112_tipgg"]
+[ext_resource type="PackedScene" uid="uid://dbvq82xs7d6jo" path="res://World/Props/Buttons/Env_Button_Open_Close.fbx" id="113_kw7y4"]
+[ext_resource type="PackedScene" uid="uid://5vn584og5dnk" path="res://World/Props/Doors/doors_sliding.tscn" id="114_yaq7e"]
+[ext_resource type="Script" uid="uid://cseddomg6bhrb" path="res://Dialogue/character.gd" id="115_uxm5w"]
+[ext_resource type="Script" uid="uid://csj4btbehj4g0" path="res://Dialogue/dialogue_act.gd" id="116_e4rqk"]
+[ext_resource type="Script" uid="uid://bbug2xt6gy8sv" path="res://Dialogue/sentence.gd" id="117_5ocq8"]
+[ext_resource type="Script" uid="uid://3wa1p6kxq2hw" path="res://Dialogue/Dialogue Scripts/Lin Shuyao/door_character_trigger.gd" id="118_ajpct"]
+[ext_resource type="Script" uid="uid://c53bmyvleua0f" path="res://World/Props/Electricals/LightController.gd" id="119_jxguy"]
+[ext_resource type="Texture2D" uid="uid://cvnkpfrqy6sut" path="res://World/Interactables/Pin Board/pinboard.jpg" id="120_xqkik"]
+[ext_resource type="Script" uid="uid://xfr1koenip2p" path="res://World/Items/Document/pin_string.gd" id="121_llfbv"]
+[ext_resource type="Script" uid="uid://dfwqme4vae8iu" path="res://Notes/Note_Interactions.gd" id="122_6inmf"]
+[ext_resource type="Texture2D" uid="uid://h1i7cuma0vfi" path="res://Notes/x_ray_texture_by_iamdkscully_d8v5htz-fullview.jpg" id="123_sekx7"]
+[ext_resource type="Script" uid="uid://dq2bw1uqj45u6" path="res://World/Items/Flash Drive/Flash_Drive.gd" id="124_4h1b4"]
+[ext_resource type="Script" uid="uid://cbcky786oulwr" path="res://Scenes/Cut Scenes/introduction_cutscene.gd" id="125_4iudj"]
+[ext_resource type="Texture2D" uid="uid://cwqiungpi8jo5" path="res://World/Props/Cardbox/Cardbox_Texture.png" id="126_2rajs"]
+[ext_resource type="Texture2D" uid="uid://cu6m4f3h6t0b0" path="res://World/Props/Cardbox/Styrofoam_texture.jpg" id="127_3o6vi"]
+[ext_resource type="PackedScene" uid="uid://dowd5veaybyfp" path="res://World/Items/Flashlight/item_flashlight.tscn" id="128_g2jwi"]
 
 [sub_resource type="Environment" id="Environment_na5xc"]
 background_energy_multiplier = 0.0
@@ -152,7 +152,7 @@ radius = 0.20166016
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6avb6"]
 render_priority = 0
-shader = ExtResource("12_g7mrd")
+shader = ExtResource("16_icatu")
 shader_parameter/debug_mode = 0
 shader_parameter/debug_range = 50.0
 shader_parameter/enable_fog = false
@@ -243,11 +243,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6q7df")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mh6w"]
-albedo_texture = ExtResource("15_0pkcf")
+albedo_texture = ExtResource("19_hbyo7")
 emission_enabled = true
 emission = Color(0.12591097, 0.12591079, 0.12591088, 1)
 emission_operator = 1
-emission_texture = ExtResource("16_j4f66")
+emission_texture = ExtResource("20_du17i")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bg5jm"]
 size = Vector3(0.4104004, 0.44750977, 0.375)
@@ -261,7 +261,7 @@ size = Vector3(0.5, 0.5, 0.5)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6k0b"]
 resource_name = "Vial_V1"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("21_6qtdy")
+albedo_texture = ExtResource("24_tnek7")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -337,25 +337,25 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rhknm")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_munjo"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_15wh3"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qbow"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l04be"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_munjo")
+albedo_texture = SubResource("ViewportTexture_15wh3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wse4m"]
 size = Vector3(0.10888672, 0.00920105, 0.10418701)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_jwlpm"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ex5nn"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uuayd"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7atnq"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_jwlpm")
+albedo_texture = SubResource("ViewportTexture_ex5nn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnj3y"]
-albedo_texture = ExtResource("26_nqb7s")
+albedo_texture = ExtResource("29_grssb")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yvjjv"]
 viewport_path = NodePath("Room/Interactables/Notes/Note_document_under_the_door/Note Viewport")
@@ -432,17 +432,17 @@ bind/3/pose = Transform3D(-0.010000001, 0, 8.742278e-10, -8.742279e-10, -4.37113
 [sub_resource type="BoxShape3D" id="BoxShape3D_xnj3y"]
 size = Vector3(0.2806848, 0.6048972, 0.4082688)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_blfwb"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_orm0h"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6uf2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03ebe"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_blfwb")
+albedo_texture = SubResource("ViewportTexture_orm0h")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ridl8"]
 resource_name = "Chair"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("29_ar2cx")
+albedo_texture = ExtResource("32_b7h5x")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -488,7 +488,7 @@ size = Vector3(0.43896484, 0.23815918, 0.5563965)
 size = Vector3(0.5088043, 0.23570251, 0.28045654)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_audqb"]
-albedo_texture = ExtResource("33_dky0u")
+albedo_texture = ExtResource("36_on272")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ce4wb"]
 resource_name = "TestTubeStorage"
@@ -606,10 +606,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ahn08")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_su416"]
-albedo_texture = ExtResource("36_n73s1")
+albedo_texture = ExtResource("39_std3y")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5e56c"]
-albedo_texture = ExtResource("37_xtx11")
+albedo_texture = ExtResource("40_nvkrt")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mr5l"]
 resource_name = "Door_Btn"
@@ -651,7 +651,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5g5yl")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e38up"]
-albedo_texture = ExtResource("37_xtx11")
+albedo_texture = ExtResource("40_nvkrt")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5wsc3"]
 _surfaces = [{
@@ -686,7 +686,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5wsc3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qmm1k"]
-albedo_texture = ExtResource("37_xtx11")
+albedo_texture = ExtResource("40_nvkrt")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6m558"]
 _surfaces = [{
@@ -721,7 +721,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6m558")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnvcg"]
-albedo_texture = ExtResource("37_xtx11")
+albedo_texture = ExtResource("40_nvkrt")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_w60yj"]
 _surfaces = [{
@@ -756,7 +756,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_w60yj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_thx28"]
-albedo_texture = ExtResource("37_xtx11")
+albedo_texture = ExtResource("40_nvkrt")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wpobe"]
 _surfaces = [{
@@ -791,7 +791,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wpobe")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ial0j"]
-albedo_texture = ExtResource("37_xtx11")
+albedo_texture = ExtResource("40_nvkrt")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_gx77m"]
 _surfaces = [{
@@ -826,7 +826,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gx77m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wekkg"]
-albedo_texture = ExtResource("37_xtx11")
+albedo_texture = ExtResource("40_nvkrt")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fepe4"]
 _surfaces = [{
@@ -861,7 +861,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fepe4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6t5fj"]
-albedo_texture = ExtResource("38_svi5g")
+albedo_texture = ExtResource("41_a6xvn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8usf"]
 resource_name = "Wires"
@@ -907,7 +907,7 @@ shadow_mesh = SubResource("ArrayMesh_2dvtt")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jecq"]
 resource_name = "ControlPanel"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("39_vjtwp")
+albedo_texture = ExtResource("42_8v23g")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -981,7 +981,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_10h18")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0su6"]
-albedo_texture = ExtResource("40_ygn6k")
+albedo_texture = ExtResource("43_hoj6u")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7n4cr"]
 resource_name = "Emergancy_Btn"
@@ -1023,7 +1023,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_04kr2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jbc6"]
-albedo_texture = ExtResource("37_xtx11")
+albedo_texture = ExtResource("40_nvkrt")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_w5j4k"]
 _surfaces = [{
@@ -1060,7 +1060,7 @@ shadow_mesh = SubResource("ArrayMesh_w5j4k")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1hbw"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("37_xtx11")
+albedo_texture = ExtResource("40_nvkrt")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmcni"]
 resource_name = "Door_Btn"
@@ -1102,7 +1102,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tgib0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_or3te"]
-albedo_texture = ExtResource("40_ygn6k")
+albedo_texture = ExtResource("43_hoj6u")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nvtux"]
 _surfaces = [{
@@ -1139,7 +1139,7 @@ shadow_mesh = SubResource("ArrayMesh_nvtux")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5lr74"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("40_ygn6k")
+albedo_texture = ExtResource("43_hoj6u")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7cva"]
 resource_name = "Emergancy_Btn"
@@ -1192,7 +1192,7 @@ size = Vector3(0.069885254, 0.10918045, 0.11071777)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_klpqf"]
 resource_name = "Material.001"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("44_a4uav")
+albedo_texture = ExtResource("47_ffck8")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1311,12 +1311,12 @@ shadow_mesh = SubResource("ArrayMesh_7qme1")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2h8s2"]
 transparency = 4
 albedo_color = Color(0, 0, 0, 0)
-albedo_texture = ExtResource("45_qex1f")
+albedo_texture = ExtResource("48_ij123")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvgug"]
 resource_name = "Test_Tube"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("46_yjj7s")
+albedo_texture = ExtResource("49_dwt01")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1482,7 +1482,7 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3exb"]
-albedo_texture = ExtResource("47_vrgx3")
+albedo_texture = ExtResource("50_2i8gw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qacbc"]
 resource_name = "Pc_Props"
@@ -1524,7 +1524,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gtuxb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sny63"]
-albedo_texture = ExtResource("47_vrgx3")
+albedo_texture = ExtResource("50_2i8gw")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7qwv2"]
 _surfaces = [{
@@ -1561,10 +1561,10 @@ shadow_mesh = SubResource("ArrayMesh_7qwv2")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4o6x"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("47_vrgx3")
+albedo_texture = ExtResource("50_2i8gw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssw6b"]
-albedo_texture = ExtResource("47_vrgx3")
+albedo_texture = ExtResource("50_2i8gw")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4v38e"]
 _surfaces = [{
@@ -1599,7 +1599,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4v38e")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8np5n"]
-albedo_texture = ExtResource("47_vrgx3")
+albedo_texture = ExtResource("50_2i8gw")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nv87o"]
 _surfaces = [{
@@ -1634,7 +1634,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nv87o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a06ba"]
-albedo_texture = ExtResource("47_vrgx3")
+albedo_texture = ExtResource("50_2i8gw")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cgr2l"]
 _surfaces = [{
@@ -1669,7 +1669,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cgr2l")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp7ly"]
-albedo_texture = ExtResource("47_vrgx3")
+albedo_texture = ExtResource("50_2i8gw")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ytif4"]
 _surfaces = [{
@@ -1913,7 +1913,7 @@ size = Vector3(0.15698242, 0.34220886, 0.36132813)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3lrr"]
 resource_name = "XRay"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("54_q765n")
+albedo_texture = ExtResource("57_7ubud")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -1929,7 +1929,7 @@ emission_energy_multiplier = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vamtb"]
 resource_name = "Wires"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("38_svi5g")
+albedo_texture = ExtResource("41_a6xvn")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -2227,7 +2227,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ugu6d")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43iua"]
-albedo_texture = ExtResource("47_vrgx3")
+albedo_texture = ExtResource("50_2i8gw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kl881"]
 resource_name = "Pc_Props"
@@ -2469,7 +2469,7 @@ size = Vector3(0.43499756, 2.5447998, 0.7593384)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yephe"]
 resource_name = "Door_Btn"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("37_xtx11")
+albedo_texture = ExtResource("40_nvkrt")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -2509,7 +2509,7 @@ shadow_mesh = SubResource("ArrayMesh_5o8rg")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u767m"]
 resource_name = "Door_Btn"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("37_xtx11")
+albedo_texture = ExtResource("40_nvkrt")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -2563,7 +2563,7 @@ size = Vector3(0.23943329, 0.08419037, 0.33535767)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dawtf"]
 transparency = 1
 blend_mode = 2
-albedo_texture = ExtResource("45_qex1f")
+albedo_texture = ExtResource("48_ij123")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kkci"]
 
@@ -2591,7 +2591,7 @@ size = Vector3(0.099365234, 0.09661102, 0.3194275)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8m7b"]
 resource_name = "MicroScope"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("69_fw7n4")
+albedo_texture = ExtResource("72_d5ifo")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -2631,7 +2631,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6avb6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82owd"]
-albedo_texture = ExtResource("70_838j6")
+albedo_texture = ExtResource("73_6owub")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clkqk"]
 resource_name = "Centrifuge"
@@ -2889,7 +2889,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("72_6a1bc")
+albedo_texture = ExtResource("75_4aq24")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -3064,7 +3064,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wp6ti")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyadt"]
-albedo_texture = ExtResource("70_838j6")
+albedo_texture = ExtResource("73_6owub")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hsgh3"]
 _surfaces = [{
@@ -3101,7 +3101,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hsgh3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_li5gh"]
-albedo_texture = ExtResource("70_838j6")
+albedo_texture = ExtResource("73_6owub")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rvxuh"]
 _surfaces = [{
@@ -3326,7 +3326,7 @@ radius = 0.3195398
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7v0h"]
 transparency = 1
 blend_mode = 1
-albedo_texture = ExtResource("70_838j6")
+albedo_texture = ExtResource("73_6owub")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7tyq"]
 resource_name = "Centrifuge"
@@ -3369,15 +3369,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5wgas")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_djxsf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ieb8s"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ajcb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_snifa"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_djxsf")
+albedo_texture = SubResource("ViewportTexture_ieb8s")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7627"]
-albedo_texture = ExtResource("38_svi5g")
+albedo_texture = ExtResource("41_a6xvn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wueo8"]
 resource_name = "Wires"
@@ -3421,7 +3421,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cmjlc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rj1iq"]
-albedo_texture = ExtResource("38_svi5g")
+albedo_texture = ExtResource("41_a6xvn")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_gayml"]
 _surfaces = [{
@@ -3460,12 +3460,12 @@ shadow_mesh = SubResource("ArrayMesh_gayml")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31hd8"]
 transparency = 1
 blend_mode = 2
-albedo_texture = ExtResource("45_qex1f")
+albedo_texture = ExtResource("48_ij123")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ldm1"]
 resource_name = "Test_Tube"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("46_yjj7s")
+albedo_texture = ExtResource("49_dwt01")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -3678,7 +3678,7 @@ size = Vector3(0.09765625, 0.39990234, 0.11016846)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adeab"]
 resource_name = "Vial_V1"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("21_6qtdy")
+albedo_texture = ExtResource("24_tnek7")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -3860,7 +3860,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("72_6a1bc")
+albedo_texture = ExtResource("75_4aq24")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -4356,12 +4356,12 @@ shadow_mesh = SubResource("ArrayMesh_kv50l")
 size = Vector3(0.05049967, 0.021790821, 0.011413265)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpirw"]
-albedo_texture = ExtResource("82_1etgj")
+albedo_texture = ExtResource("85_up025")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tjgo"]
 resource_name = "Filling_Machine"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("82_1etgj")
+albedo_texture = ExtResource("85_up025")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -4615,7 +4615,7 @@ size = Vector3(0.1986084, 1.5731812, 0.5443115)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqpro"]
 resource_name = "Ceiling_Lamp"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("84_lso2o")
+albedo_texture = ExtResource("87_ie1y1")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -4655,7 +4655,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wojfc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qgmpf"]
-albedo_texture = ExtResource("38_svi5g")
+albedo_texture = ExtResource("41_a6xvn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yk487"]
 resource_name = "Wires"
@@ -4701,7 +4701,7 @@ shadow_mesh = SubResource("ArrayMesh_4surw")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkplp"]
 resource_name = "ControlPanel"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("39_vjtwp")
+albedo_texture = ExtResource("42_8v23g")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -4784,7 +4784,7 @@ size = Vector3(0.15600586, 0.90283203, 0.5432129)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ycmg"]
 resource_name = "Computer"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("89_ldbdb")
+albedo_texture = ExtResource("92_3qs1o")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -4858,7 +4858,7 @@ shadow_mesh = SubResource("ArrayMesh_2okta")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i7uks"]
 resource_name = "Pc_Props"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("47_vrgx3")
+albedo_texture = ExtResource("50_2i8gw")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -4902,7 +4902,7 @@ albedo_color = Color(0.49478912, 0.5367714, 0.1924505, 1)
 resource_name = "Keyboard"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("90_6anmh")
+albedo_texture = ExtResource("93_puhvx")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -5744,7 +5744,7 @@ shadow_mesh = SubResource("ArrayMesh_u8j0u")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5s54v"]
 resource_name = "ScrollBtn"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("91_mbjy8")
+albedo_texture = ExtResource("94_76q5i")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -5949,7 +5949,7 @@ shadow_mesh = SubResource("ArrayMesh_rj0q2")
 data = PackedVector3Array(0.011399999, -0.0025, 0.14209999, 0.010799999, 0.0013, 0.1383, -0.0224, 0.2368, 0.1383, -0.0224, 0.2368, 0.1383, -0.023, 0.24059999, 0.14209999, 0.011399999, -0.0025, 0.14209999, -0.0224, 0.2368, 0.1383, 0.010799999, 0.0013, 0.1383, -0.0009, 0.0001, 0.082899995, -0.0009, 0.0001, 0.082899995, -0.034199998, 0.2342, 0.0808, -0.0224, 0.2368, 0.1383, -0.034199998, 0.2342, 0.0808, -0.0009, 0.0001, 0.082899995, -0.0092, -0.00029999999, 0, -0.0092, -0.00029999999, 0, -0.042099997, 0.23189999, -0.0021, -0.034199998, 0.2342, 0.0808, -0.042099997, 0.23189999, -0.0021, -0.0092, -0.00029999999, 0, -0.0011, 0.0015, -0.082899995, -0.0011, 0.0015, -0.082899995, -0.0339, 0.23179999, -0.085, -0.042099997, 0.23189999, -0.0021, -0.0339, 0.23179999, -0.085, -0.0011, 0.0015, -0.082899995, 0.0105, 0.0036, -0.1383, 0.0105, 0.0036, -0.1383, -0.0218, 0.23259999, -0.1424, -0.0339, 0.23179999, -0.085, -0.0218, 0.23259999, -0.1424, 0.0105, 0.0036, -0.1383, 0.011, -0.0001, -0.14199999, 0.011, -0.0001, -0.14199999, -0.0224, 0.23629999, -0.1463, -0.0218, 0.23259999, -0.1424, 0.0111, -0.0013, 0, -0.0092, -0.00029999999, 0, -0.0009, 0.0001, 0.082899995, 0.0111, -0.0013, 0, -0.0011, 0.0015, -0.082899995, -0.0092, -0.00029999999, 0, 0.0111, -0.0013, 0, -0.0009, 0.0001, 0.082899995, 0.010799999, 0.0013, 0.1383, 0.0105, 0.0036, -0.1383, -0.0011, 0.0015, -0.082899995, 0.0111, -0.0013, 0, 0.0111, -0.0013, 0, 0.010799999, 0.0013, 0.1383, 0.011399999, -0.0025, 0.14209999, 0.011, -0.0001, -0.14199999, 0.0105, 0.0036, -0.1383, 0.0111, -0.0013, 0, 0.0111, -0.0013, 0, 0.011399999, -0.0025, 0.14209999, 0.0112, -0.0013, 0, 0.011, -0.0001, -0.14199999, 0.0111, -0.0013, 0, 0.0112, -0.0013, 0, -0.022699999, 0.2384, -0.0021, -0.042099997, 0.23189999, -0.0021, -0.0339, 0.23179999, -0.085, -0.022699999, 0.2384, -0.0021, -0.034199998, 0.2342, 0.0808, -0.042099997, 0.23189999, -0.0021, -0.022699999, 0.2384, -0.0021, -0.0339, 0.23179999, -0.085, -0.0218, 0.23259999, -0.1424, -0.0224, 0.2368, 0.1383, -0.034199998, 0.2342, 0.0808, -0.022699999, 0.2384, -0.0021, -0.022699999, 0.2384, -0.0021, -0.0218, 0.23259999, -0.1424, -0.0224, 0.23629999, -0.1463, -0.023, 0.24059999, 0.14209999, -0.0224, 0.2368, 0.1383, -0.022699999, 0.2384, -0.0021, -0.022699999, 0.2384, -0.0021, -0.0224, 0.23629999, -0.1463, -0.022699999, 0.2384, -0.0021, -0.023, 0.24059999, 0.14209999, -0.022699999, 0.2384, -0.0021, -0.022699999, 0.2384, -0.0021)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j4o88"]
-shader = ExtResource("93_wgf7h")
+shader = ExtResource("96_tk4t4")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.042000001995
 shader_parameter/scanlines_width = 0.2000000095
@@ -5972,12 +5972,12 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_g7mrd"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_efy8e"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txhat"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23vak"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_g7mrd")
+albedo_texture = SubResource("ViewportTexture_efy8e")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7368"]
 resource_name = "Dark"
@@ -5990,7 +5990,7 @@ emission_energy_multiplier = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnjx7"]
 resource_name = "Tube"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("94_ktchy")
+albedo_texture = ExtResource("97_gkvh7")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -6054,7 +6054,7 @@ shadow_mesh = SubResource("ArrayMesh_80cxa")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6e2f"]
 resource_name = "Grabling"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("95_jsg64")
+albedo_texture = ExtResource("98_3wjdc")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -6094,7 +6094,7 @@ shadow_mesh = SubResource("ArrayMesh_ij3kj")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyrlg"]
 resource_name = "female_Base.001"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("96_spowq")
+albedo_texture = ExtResource("99_4xu0t")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2h8s2"]
@@ -6229,7 +6229,7 @@ bind/34/pose = Transform3D(-0.009903023, 0.0011452811, -0.00078519154, 0.0011474
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ik54s"]
 resource_name = "Material.001"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("97_ubcuf")
+albedo_texture = ExtResource("100_aptb6")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7ldm1"]
@@ -7556,7 +7556,7 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ew6v"]
-albedo_texture = ExtResource("98_jfxpu")
+albedo_texture = ExtResource("101_su4fj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42rjg"]
 resource_name = "Wall"
@@ -7600,7 +7600,7 @@ shadow_mesh = SubResource("ArrayMesh_3h2xf")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x54l1"]
 resource_name = "XrayCover"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("99_f7sfh")
+albedo_texture = ExtResource("102_85ct8")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -7746,7 +7746,7 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68ldy"]
 resource_name = "Pit"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("107_iodj2")
+albedo_texture = ExtResource("110_n2y26")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -7788,7 +7788,7 @@ shadow_mesh = SubResource("ArrayMesh_uh44j")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvjjv"]
 resource_name = "Ceiling_Lamp"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("84_lso2o")
+albedo_texture = ExtResource("87_ie1y1")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -7830,7 +7830,7 @@ shadow_mesh = SubResource("ArrayMesh_pbrfv")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkcis"]
 resource_name = "Surgery_Machine_Texture"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("109_56ufq")
+albedo_texture = ExtResource("112_tipgg")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -8010,7 +8010,7 @@ _data = {
 }
 
 [sub_resource type="Resource" id="Resource_4surw"]
-script = ExtResource("114_xb2jk")
+script = ExtResource("117_5ocq8")
 phrases = Array[Dictionary]([{
 "end": 1.8,
 "start": 0.0,
@@ -8033,7 +8033,7 @@ next_sentence_id = "6263c058-62b2-4def-921e-978a332b5144"
 metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
 
 [sub_resource type="Resource" id="Resource_yvjjv"]
-script = ExtResource("114_xb2jk")
+script = ExtResource("117_5ocq8")
 phrases = Array[Dictionary]([{
 "end": 1.5,
 "start": 0.0,
@@ -8048,7 +8048,7 @@ next_sentence_id = "e43c0813-d836-499a-9d7f-1879744e3400"
 metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
 
 [sub_resource type="Resource" id="Resource_pbrfv"]
-script = ExtResource("114_xb2jk")
+script = ExtResource("117_5ocq8")
 phrases = Array[Dictionary]([{
 "end": 2.0,
 "start": 0.0,
@@ -8066,7 +8066,7 @@ sentence_id = "e43c0813-d836-499a-9d7f-1879744e3400"
 metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
 
 [sub_resource type="Resource" id="Resource_rkplp"]
-script = ExtResource("114_xb2jk")
+script = ExtResource("117_5ocq8")
 phrases = Array[Dictionary]([{
 "end": 1.8,
 "start": 0.0,
@@ -8089,7 +8089,7 @@ next_sentence_id = "7eb6ec85-442b-4d72-8dd7-9f2558b68c04"
 metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
 
 [sub_resource type="Resource" id="Resource_mdscu"]
-script = ExtResource("114_xb2jk")
+script = ExtResource("117_5ocq8")
 phrases = Array[Dictionary]([{
 "end": 1.0,
 "start": 0.0,
@@ -8115,7 +8115,7 @@ sentence_id = "7eb6ec85-442b-4d72-8dd7-9f2558b68c04"
 metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
 
 [sub_resource type="Resource" id="Resource_3rwca"]
-script = ExtResource("114_xb2jk")
+script = ExtResource("117_5ocq8")
 phrases = Array[Dictionary]([{
 "end": 1.0,
 "start": 0.0,
@@ -8141,14 +8141,14 @@ sentence_id = "940724dd-fe4c-4689-a09e-d38e5a250648"
 metadata/_custom_type_script = "uid://bbug2xt6gy8sv"
 
 [sub_resource type="Resource" id="Resource_rg5i1"]
-script = ExtResource("113_jmepf")
-sentences = Array[ExtResource("114_xb2jk")]([SubResource("Resource_4surw"), SubResource("Resource_yvjjv"), SubResource("Resource_pbrfv"), SubResource("Resource_rkplp"), SubResource("Resource_mdscu"), SubResource("Resource_3rwca")])
+script = ExtResource("116_e4rqk")
+sentences = Array[ExtResource("117_5ocq8")]([SubResource("Resource_4surw"), SubResource("Resource_yvjjv"), SubResource("Resource_pbrfv"), SubResource("Resource_rkplp"), SubResource("Resource_mdscu"), SubResource("Resource_3rwca")])
 metadata/_custom_type_script = "uid://csj4btbehj4g0"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nvio"]
 resource_name = "Pinboard"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("117_82iss")
+albedo_texture = ExtResource("120_xqkik")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -8261,7 +8261,7 @@ shadow_mesh = SubResource("ArrayMesh_3wyno")
 albedo_color = Color(1, 0.28801426, 0.21860614, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2yx6"]
-albedo_texture = ExtResource("26_nqb7s")
+albedo_texture = ExtResource("29_grssb")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_lrejp"]
 viewport_path = NodePath("Int_Pinboard/Prop_Pin/pin/Note_document/Note Viewport")
@@ -8339,7 +8339,7 @@ bind/3/pose = Transform3D(-0.010000001, 0, 8.742278e-10, -8.742279e-10, -4.37113
 size = Vector3(0.2806848, 0.027254816, 0.4082688)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cae7k"]
-albedo_texture = ExtResource("26_nqb7s")
+albedo_texture = ExtResource("29_grssb")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vayfc"]
 viewport_path = NodePath("Int_Pinboard/Prop_Pin/pin2/Note_document/Note Viewport")
@@ -8361,7 +8361,7 @@ size = Vector3(0.607666, 0.61395264, 0.5957031)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2qsv"]
 resource_name = "Cardbox"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("123_7w40y")
+albedo_texture = ExtResource("126_2rajs")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -8369,7 +8369,7 @@ emission_energy_multiplier = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jlu0i"]
 resource_name = "Styrofoam"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("124_cyani")
+albedo_texture = ExtResource("127_3o6vi")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -8658,21 +8658,21 @@ _data = {
 [node name="Enviroment2" type="Node3D" unique_id=1402379142]
 
 [node name="StartupManager" type="Node" parent="." unique_id=1416027571]
-script = ExtResource("1_vksxb")
+script = ExtResource("1_slwoh")
 
 [node name="GameStats" type="Node" parent="." unique_id=682835998]
-script = ExtResource("2_7ydb8")
+script = ExtResource("2_ucek8")
 
 [node name="PlayerStats" type="Node" parent="." unique_id=767234893]
-script = ExtResource("3_ur31s")
+script = ExtResource("3_52q12")
 
 [node name="VialStats" type="Node" parent="." unique_id=388032727]
-script = ExtResource("4_munjo")
+script = ExtResource("4_ax6kq")
 
-[node name="AudioManager" parent="." unique_id=1869149764 instance=ExtResource("5_2qbow")]
+[node name="AudioManager" parent="." unique_id=1869149764 instance=ExtResource("5_8c4fr")]
 
 [node name="GameManager" type="Node" parent="." unique_id=440561049]
-script = ExtResource("6_jwlpm")
+script = ExtResource("6_37oxq")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1270929269]
 unique_name_in_owner = true
@@ -8680,7 +8680,7 @@ environment = SubResource("Environment_na5xc")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1250894719 node_paths=PackedStringArray("ray", "flashlight", "flashlight_icon", "steps", "on_off_sound")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0548801, 0.03270018, -0.109155595)
-script = ExtResource("7_uuayd")
+script = ExtResource("7_n07s0")
 ray = NodePath("Head/Camera3D/RayCast3D")
 look_sensitivity = 0.003
 player_speed = 2.0
@@ -8713,8 +8713,8 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("8_blfwb")
-script = ExtResource("9_u6uf2")
+theme_override_fonts/font = ExtResource("8_wjrn6")
+script = ExtResource("9_cjmb0")
 
 [node name="Label" type="Label" parent="Player/HUD/Control" unique_id=1847119891]
 layout_mode = 1
@@ -8729,7 +8729,7 @@ offset_right = 2.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("8_blfwb")
+theme_override_fonts/font = ExtResource("8_wjrn6")
 text = "."
 
 [node name="NoteReader" type="Control" parent="Player/HUD" unique_id=387344677]
@@ -8776,7 +8776,7 @@ theme_override_constants/margin_bottom = 30
 [node name="NoteText" type="RichTextLabel" parent="Player/HUD/NoteReader/Panel/MarginContainer" unique_id=658675149]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("10_djxsf")
+theme_override_fonts/normal_font = ExtResource("10_m26da")
 scroll_active = false
 
 [node name="ExitFullscreenImage" type="Control" parent="Player/HUD" unique_id=1603722817]
@@ -8895,7 +8895,7 @@ offset_right = 461.0
 offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 0
-script = ExtResource("11_7ajcb")
+script = ExtResource("11_r1ony")
 talk_sound = NodePath("../../../Room/Doors/Doors_Sliding2 Door Character/Door_Character_Trigger2/Talk")
 dialogue_text_box = NodePath("Panel/MarginContainer/RichTextLabel")
 
@@ -8924,7 +8924,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Player/HUD/Dialogue/Panel/MarginContainer" unique_id=294858919]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("10_djxsf")
+theme_override_fonts/normal_font = ExtResource("10_m26da")
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat quam id porta malesuada. Mauris fermentum lobortis urna sit amet iaculis. "
 scroll_active = false
 
@@ -8946,7 +8946,7 @@ anchor_bottom = 1.0
 offset_top = -64.0
 offset_right = 64.0
 grow_vertical = 0
-texture = ExtResource("12_munjo")
+texture = ExtResource("12_hdxgc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1411222524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -8959,7 +8959,7 @@ light_color = Color(0.97198135, 0.88566726, 0.827842, 1)
 light_energy = 0.146
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
-light_projector = ExtResource("18_o35xq")
+light_projector = ExtResource("13_yc2co")
 light_size = 1.0
 shadow_enabled = true
 shadow_opacity = 0.6
@@ -8967,8 +8967,9 @@ spot_range = 14.617
 spot_attenuation = 0.9
 spot_angle = 34.86
 spot_angle_attenuation = 2.8284302
-script = ExtResource("13_7ydb8")
+script = ExtResource("14_0ojlp")
 target = NodePath("../Head/Camera3D")
+rotation_speed = 15.0
 
 [node name="Flashlight" type="FmodEventEmitter3D" parent="Player/Flashligh_light" unique_id=400259354]
 event_name = "event:/Flashlight-On-Off"
@@ -8979,7 +8980,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=1583008010]
 current = true
-script = ExtResource("14_ur31s")
+script = ExtResource("15_a5ota")
 
 [node name="RayCast3D" type="RayCast3D" parent="Player/Head/Camera3D" unique_id=1602418403]
 target_position = Vector3(0, 0, -1)
@@ -8991,12 +8992,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1526204, 0, -1.11496)
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_vweq0")
 
-[node name="PlayerBloodVial" parent="Player/Head/Camera3D" unique_id=1480596381 instance=ExtResource("13_txhat")]
+[node name="PlayerBloodVial" parent="Player/Head/Camera3D" unique_id=1480596381 instance=ExtResource("17_tq6mg")]
 unique_name_in_owner = true
 transform = Transform3D(-0.17739768, 0.25654864, -0.950112, -0.25010455, 0.9219758, 0.29564893, 0.95182866, 0.2900748, -0.0993924, 0.22726476, -0.2740264, -0.39170748)
 visible = false
 
-[node name="PlayerChemical" parent="Player/Head/Camera3D" unique_id=739392615 instance=ExtResource("14_bq2tk")]
+[node name="PlayerChemical" parent="Player/Head/Camera3D" unique_id=739392615 instance=ExtResource("18_we5gq")]
 unique_name_in_owner = true
 transform = Transform3D(-0.8734329, 0.37187, 0.31436887, 0.18180539, 0.847949, -0.49792492, -0.45173222, -0.37775007, -0.8082343, 0.19564196, -0.18223095, -0.297392)
 visible = false
@@ -9013,7 +9014,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8mh6w")
 [node name="TestInteractable" type="Node3D" parent="Player/Head/Camera3D" unique_id=1243971245 node_paths=PackedStringArray("area", "outline_meshes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5393454)
 visible = false
-script = ExtResource("17_su0a1")
+script = ExtResource("21_pmr4g")
 prompt_text = ""
 area = NodePath("Area3D")
 outline_meshes = [NodePath("MeshInstance3D")]
@@ -9036,7 +9037,7 @@ event_guid = "{438ca093-f602-408e-b164-e277a7b9c0af}"
 
 [node name="Room" type="Node3D" parent="." unique_id=242960343]
 
-[node name="Env_Room" parent="Room" unique_id=238921326 instance=ExtResource("19_sy1xl")]
+[node name="Env_Room" parent="Room" unique_id=238921326 instance=ExtResource("22_wr204")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009624958, 0.0025100708, -0.0081954)
 
 [node name="Interactables" type="Node3D" parent="Room" unique_id=1043351866]
@@ -9044,12 +9045,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009624958, 0.0025100708, 
 [node name="FlasksOnShelf" type="Node3D" parent="Room/Interactables" unique_id=1022037863]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4459708, 1.2799517, -0.6539385)
 
-[node name="FlaskA" parent="Room/Interactables/FlasksOnShelf" unique_id=1852808638 instance=ExtResource("14_bq2tk")]
+[node name="FlaskA" parent="Room/Interactables/FlasksOnShelf" unique_id=1852808638 instance=ExtResource("18_we5gq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13224041, -0.015143156, -0.032790482)
 
 [node name="ChemA" type="Node3D" parent="Room/Interactables/FlasksOnShelf/FlaskA" unique_id=1094829499 node_paths=PackedStringArray("placeback_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, 0.0009421706, 0.07650334, -0.017264605)
-script = ExtResource("20_hnwc8")
+script = ExtResource("23_6qtya")
 chemical_name = "Nitrogen"
 composite = 2
 placeback_sound = NodePath("PlacebackChemSound")
@@ -9082,16 +9083,16 @@ event_guid = "{07eeedbc-0b55-4e3e-9515-90dfa24b0483}"
 transform = Transform3D(-0.93009156, 0, 0.36732754, 0, 1, 0, -0.36732754, 0, -0.93009156, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8eewk")
 
-[node name="interactable_indecator" parent="Room/Interactables/FlasksOnShelf/FlaskA/Vial2" unique_id=2142793944 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/FlasksOnShelf/FlaskA/Vial2" unique_id=2142793944 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.05302094, 0)
 show_distance = 1.25
 
-[node name="FlaskB" parent="Room/Interactables/FlasksOnShelf" unique_id=92542467 instance=ExtResource("14_bq2tk")]
+[node name="FlaskB" parent="Room/Interactables/FlasksOnShelf" unique_id=92542467 instance=ExtResource("18_we5gq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14252472, -0.015143156, 0.019867599)
 
 [node name="ChemB" type="Node3D" parent="Room/Interactables/FlasksOnShelf/FlaskB" unique_id=617708475 node_paths=PackedStringArray("placeback_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.24999994, 0, -2.9802322e-08, 0, 0.24999993, 0, 5.2154064e-08, 0, 0.24999996, -0.0016491413, 0.07650334, 0.00680387)
-script = ExtResource("20_hnwc8")
+script = ExtResource("23_6qtya")
 chemical_name = "Hydrogen"
 composite = 1
 placeback_sound = NodePath("PlacebackChemSound")
@@ -9123,14 +9124,14 @@ event_guid = "{07eeedbc-0b55-4e3e-9515-90dfa24b0483}"
 transform = Transform3D(-0.93009156, 0, 0.36732754, 0, 1, 0, -0.36732754, 0, -0.93009156, 0, 0, 0)
 mesh = SubResource("ArrayMesh_5eiyn")
 
-[node name="interactable_indecator" parent="Room/Interactables/FlasksOnShelf/FlaskB/Vial2" unique_id=1451147034 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/FlasksOnShelf/FlaskB/Vial2" unique_id=1451147034 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.05302094, 0)
 show_distance = 1.25
 
 [node name="Notes" type="Node3D" parent="Room/Interactables" unique_id=1307095907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36687827, 0, 0)
 
-[node name="Body_request_Note" parent="Room/Interactables/Notes" unique_id=604695316 node_paths=PackedStringArray("stop_reading_sound", "area", "sound_emitter", "outline_meshes") instance=ExtResource("23_fjgpu")]
+[node name="Body_request_Note" parent="Room/Interactables/Notes" unique_id=604695316 node_paths=PackedStringArray("stop_reading_sound", "area", "sound_emitter", "outline_meshes") instance=ExtResource("26_a3tqg")]
 transform = Transform3D(0.00981047, -0.9960237, 0.088547885, -0.00046906402, -0.08855674, -0.99607104, 0.99995166, 0.009730503, -0.0013360102, 6.2303333, 1.2194678, -5.435211)
 stop_reading_sound = NodePath("StopReadingSound")
 area = NodePath("Area3D")
@@ -9141,15 +9142,15 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 1.2287274e-10, 0.061257716)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Body_request_Note" index="1" unique_id=469442063]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Body_request_Note" index="1" unique_id=1417392328]
 bones/1/position = Vector3(0, 0, -0.05)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
-[node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=2053084288]
+[node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=452260851]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_2qbow")
+surface_material_override/1 = SubResource("StandardMaterial3D_l04be")
 
 [node name="Marker3D" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -9178,7 +9179,7 @@ event_guid = "{50664aa2-39a5-4cfd-8582-5e3f288bd415}"
 event_name = "event:/StopReading"
 event_guid = "{af35a86d-56a8-4c9d-9733-0a354783578f}"
 
-[node name="Note_document" parent="Room/Interactables/Notes" unique_id=832524248 node_paths=PackedStringArray("note_text", "stop_reading_sound", "sound_emitter") instance=ExtResource("24_qpojx")]
+[node name="Note_document" parent="Room/Interactables/Notes" unique_id=832524248 node_paths=PackedStringArray("note_text", "stop_reading_sound", "sound_emitter") instance=ExtResource("27_jxr3g")]
 transform = Transform3D(0.98384583, 0, -0.17901795, 0, 1, 0, 0.17901795, 0, 0.98384583, 4.215642, 0.78654474, -4.712485)
 note_text = NodePath("Note Viewport/Control/TextureRect/Label")
 stop_reading_sound = NodePath("StopReadingSound")
@@ -9188,7 +9189,7 @@ sound_emitter = NodePath("StartReadingSound")
 normal_size = Vector3(0.04, 0.04, 0.04)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document" index="1" unique_id=670111044]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document" index="1" unique_id=387256508]
 bones/1/position = Vector3(0, 0, -0.205)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/3/rotation = Quaternion(-0.025, 0, 0, 1)
@@ -9197,8 +9198,8 @@ bones/4/rotation = Quaternion(0.035, 0, 0, 1)
 bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(-0.095, 0, 0, 1)
 
-[node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=176868951]
-material_overlay = SubResource("StandardMaterial3D_uuayd")
+[node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=986514553]
+material_overlay = SubResource("StandardMaterial3D_7atnq")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
@@ -9219,7 +9220,7 @@ event_guid = "{af35a86d-56a8-4c9d-9733-0a354783578f}"
 
 [node name="Note_document_under_the_door" type="Node3D" parent="Room/Interactables/Notes" unique_id=581441886 node_paths=PackedStringArray("character_ref", "collision_shape", "note_camera", "note_text", "stop_reading_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(-0.17901799, 0, -0.98384583, 0, 1, 0, 0.98384583, 0, -0.17901799, 8.237365, 0.06847221, -0.10641232)
-script = ExtResource("25_wtvda")
+script = ExtResource("28_mbf68")
 character_ref = NodePath("../../../Doors/Doors_Sliding2 Door Character")
 collision_shape = NodePath("Skeleton3D/Cube_027/Area3D/CollisionShape3D")
 note_camera = NodePath("Skeleton3D/Camera Marker/Camera3D")
@@ -9230,7 +9231,7 @@ area = NodePath("Skeleton3D/Cube_027/Area3D")
 sound_emitter = NodePath("StartReadingSound")
 outline_meshes = [NodePath("Skeleton3D/Cube_027")]
 
-[node name="interactable_indecator" parent="Room/Interactables/Notes/Note_document_under_the_door" unique_id=116513706 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Notes/Note_document_under_the_door" unique_id=116513706 instance=ExtResource("25_8ll8u")]
 normal_size = Vector3(0.04, 0.04, 0.04)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Room/Interactables/Notes/Note_document_under_the_door" unique_id=658717488]
@@ -9331,7 +9332,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("26_nqb7s")
+texture = ExtResource("29_grssb")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Room/Interactables/Notes/Note_document_under_the_door/Note Viewport/Control/TextureRect" unique_id=102273398]
@@ -9344,7 +9345,7 @@ offset_bottom = 623.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 25
 theme_override_constants/paragraph_spacing = -1
-theme_override_fonts/font = ExtResource("27_77286")
+theme_override_fonts/font = ExtResource("30_r6lsp")
 theme_override_font_sizes/font_size = 24
 text = "This is serious matter MARKOV. You have been assigned  to perform a task without questioning the methods. Everything that is preformed in the lab, stays in the lab. Breaking the rule, will result in consequenses.
 
@@ -9363,7 +9364,7 @@ event_guid = "{50664aa2-39a5-4cfd-8582-5e3f288bd415}"
 event_name = "event:/StopReading"
 event_guid = "{af35a86d-56a8-4c9d-9733-0a354783578f}"
 
-[node name="Note_document3" parent="Room/Interactables/Notes" unique_id=1890468210 node_paths=PackedStringArray("note_text", "stop_reading_sound", "sound_emitter") instance=ExtResource("24_qpojx")]
+[node name="Note_document3" parent="Room/Interactables/Notes" unique_id=1890468210 node_paths=PackedStringArray("note_text", "stop_reading_sound", "sound_emitter") instance=ExtResource("27_jxr3g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6848076, 0.98729956, -5.882036)
 note_text = NodePath("Note Viewport/Control/TextureRect/Label")
 stop_reading_sound = NodePath("StopReadingSound")
@@ -9372,16 +9373,16 @@ sound_emitter = NodePath("StartReadingSound")
 [node name="interactable_indecator" parent="Room/Interactables/Notes/Note_document3" index="0" unique_id=2142793944]
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document3" index="1" unique_id=670111044]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document3" index="1" unique_id=387256508]
 bones/1/position = Vector3(0, 0, -0.2)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
 bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(0.875, 0, 0, 1)
 
-[node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=176868951]
+[node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=986514553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0068823397, 0, 0.0066256523)
-material_overlay = SubResource("StandardMaterial3D_u6uf2")
+material_overlay = SubResource("StandardMaterial3D_03ebe")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
@@ -9399,7 +9400,7 @@ event_guid = "{50664aa2-39a5-4cfd-8582-5e3f288bd415}"
 event_name = "event:/StopReading"
 event_guid = "{af35a86d-56a8-4c9d-9733-0a354783578f}"
 
-[node name="Chair" parent="Room/Interactables" unique_id=697425343 instance=ExtResource("28_rp4j6")]
+[node name="Chair" parent="Room/Interactables" unique_id=697425343 instance=ExtResource("31_mfanx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75855803, 0.022437535, -2.9201348)
 
 [node name="Cube_036" type="MeshInstance3D" parent="Room/Interactables/Chair" unique_id=1690538548]
@@ -9407,7 +9408,7 @@ mesh = SubResource("ArrayMesh_w61tf")
 
 [node name="Chair" type="Node3D" parent="Room/Interactables/Chair" unique_id=832534440 node_paths=PackedStringArray("seat_point", "exit_point", "stand_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015580058, -0.022437535, -0.000865221)
-script = ExtResource("30_ayq5s")
+script = ExtResource("33_1w8mw")
 seat_point = NodePath("SitPoint")
 exit_point = NodePath("StandPoint")
 stand_sound = NodePath("StandSound")
@@ -9439,12 +9440,12 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="VialsOnShelf" parent="Room/Interactables" unique_id=786496698 instance=ExtResource("31_53jjw")]
+[node name="VialsOnShelf" parent="Room/Interactables" unique_id=786496698 instance=ExtResource("34_6gha7")]
 transform = Transform3D(-0.0119203925, 0, 0.99992895, 0, 1, 0, -0.99992895, 0, -0.0119203925, 4.6404066, 0.7812274, -4.1666245)
 
 [node name="Vial Cabinet" type="Node3D" parent="Room/Interactables/VialsOnShelf" unique_id=468691575 node_paths=PackedStringArray("vial_place_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.96555775, 0, 0.26018894, 0, 1, 0, -0.26018894, 0, 0.96555775, -0.123539925, 0.011526585, 0.2134484)
-script = ExtResource("32_jwxcl")
+script = ExtResource("35_b5esp")
 vial_place_sound = NodePath("PlaceVialBackSound")
 prompt_text = "Take Empty Vial"
 area = NodePath("Area3D")
@@ -9477,12 +9478,12 @@ transform = Transform3D(5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, 5.9604645e-08, 0, 0
 material_override = SubResource("StandardMaterial3D_audqb")
 mesh = SubResource("ArrayMesh_7w24h")
 
-[node name="Trashcan" parent="Room/Interactables" unique_id=414120974 instance=ExtResource("34_try7l")]
+[node name="Trashcan" parent="Room/Interactables" unique_id=414120974 instance=ExtResource("37_y70h1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2990076, 0.06225896, -4.185083)
 
 [node name="Bin" type="Node3D" parent="Room/Interactables/Trashcan" unique_id=104314256 node_paths=PackedStringArray("dispose_chemical_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010953337, 0.3500964, 0.0080628395)
-script = ExtResource("35_syntt")
+script = ExtResource("38_6gicp")
 dispose_chemical_sound = NodePath("DisposeChemicalSound")
 prompt_text = "Dispose Vial"
 area = NodePath("Area3D")
@@ -9579,7 +9580,7 @@ mesh = SubResource("ArrayMesh_rvd8p")
 transform = Transform3D(3.5762787e-07, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 3.5762787e-07, -0.001563549, 0.10934913, 0.115914345)
 material_override = SubResource("StandardMaterial3D_3jbc6")
 mesh = SubResource("ArrayMesh_m03tc")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 
 [node name="DisposeBodyOutlineShape" type="MeshInstance3D" parent="Room/Interactables/BodyControls/Dispose_Body_Button_Model" unique_id=294562940]
 transform = Transform3D(0.99999994, 0, -2.842171e-14, 0, 1, 0, 2.842171e-14, 0, 0.99999994, 0, 0, 0)
@@ -9590,7 +9591,7 @@ mesh = SubResource("ArrayMesh_acgdh")
 transform = Transform3D(0, -1, 2.9802322e-08, -2.9802322e-08, 0, -1, 1, -2.9802322e-08, 0, 0.011471309, -0.28066108, -0.14437763)
 material_override = SubResource("StandardMaterial3D_or3te")
 mesh = SubResource("ArrayMesh_a6id0")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, -0.02, 0)
 
 [node name="RequestBodyOutlineShape" type="MeshInstance3D" parent="Room/Interactables/BodyControls/Request_Body_Button_Model" unique_id=1611886249]
@@ -9604,7 +9605,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002319336, 0.048583984, 0)
 shape = SubResource("BoxShape3D_a4o6x")
 
 [node name="DisposeBody" type="Node3D" parent="Room/Interactables/BodyControls" unique_id=910071732 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound")]
-script = ExtResource("42_j6pb3")
+script = ExtResource("45_kt2yo")
 press_anim = NodePath("../Dispose_Body_Button_Model")
 prompt_text = "No body to dispose"
 anim = NodePath("../../../Props/Prop_Corpse_Tube/AnimationPlayer")
@@ -9613,7 +9614,7 @@ sound_emitter = NodePath("DisposeBodySound")
 uninteractable_sound = NodePath("UninteractableSound")
 outline_material = null
 
-[node name="interactable_indecator" parent="Room/Interactables/BodyControls/DisposeBody" unique_id=191526086 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/BodyControls/DisposeBody" unique_id=191526086 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.104370475, 0.11302805)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/BodyControls/DisposeBody" unique_id=1614724372]
@@ -9635,7 +9636,7 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
 [node name="RequestBody" type="Node3D" parent="Room/Interactables/BodyControls" unique_id=763048088 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038660526, -0.10718715, -0.12724113)
-script = ExtResource("43_f03g0")
+script = ExtResource("46_mcuw2")
 press_anim = NodePath("../Request_Body_Button_Model")
 prompt_text = "Request new body"
 anim = NodePath("../../../Props/Prop_Corpse_Tube/AnimationPlayer")
@@ -9644,7 +9645,7 @@ sound_emitter = NodePath("RequestBodySound")
 uninteractable_sound = NodePath("UninteractableSound")
 outline_material = null
 
-[node name="interactable_indecator" parent="Room/Interactables/BodyControls/RequestBody" unique_id=1076925432 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/BodyControls/RequestBody" unique_id=1076925432 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, -0.17390132, -0.017513275)
 
 [node name="Area3D2" type="Area3D" parent="Room/Interactables/BodyControls/RequestBody" unique_id=808875090]
@@ -9686,7 +9687,7 @@ mesh = SubResource("ArrayMesh_2nmvu")
 transform = Transform3D(0.9995704, -0.029279068, 0, 0.029279068, 0.9995704, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 
-[node name="SampleCollectorVialModel" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel/SampleCollectorVialMarker" unique_id=2038031653 instance=ExtResource("13_txhat")]
+[node name="SampleCollectorVialModel" parent="Room/Interactables/Sampler/Blood Collector/VialSlotModel/SampleCollectorVialMarker" unique_id=2038031653 instance=ExtResource("17_tq6mg")]
 unique_name_in_owner = true
 script = null
 
@@ -9700,7 +9701,7 @@ libraries/ = SubResource("AnimationLibrary_rfssg")
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.053762913, -0.061935067, 0.15039778)
 material_override = SubResource("StandardMaterial3D_k3exb")
 mesh = SubResource("ArrayMesh_qsc4e")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(-0.02, 0, 0)
 
 [node name="Off_On-btn_001" type="MeshInstance3D" parent="Room/Interactables/Sampler/Blood Collector/SamplerInjectButtonVisual" unique_id=1597854419]
@@ -9728,7 +9729,7 @@ mesh = SubResource("ArrayMesh_ljx71")
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.053762913, -0.004372835, 0.15039778)
 material_override = SubResource("StandardMaterial3D_a06ba")
 mesh = SubResource("ArrayMesh_e5kbv")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(-0.02, 0, 0)
 
 [node name="Off_On-btn_003" type="MeshInstance3D" parent="Room/Interactables/Sampler/Blood Collector/SamplerExtractButtonVisual" unique_id=1667705623]
@@ -9745,7 +9746,7 @@ mesh = SubResource("ArrayMesh_4owog")
 mesh_lod_threshold = 0.0
 scaling_3d_scale = 0.5
 anisotropic_filtering_level = 0
-script = ExtResource("48_nwf0e")
+script = ExtResource("51_4y2o5")
 off_screen = NodePath("Control/Black")
 
 [node name="Control" type="Control" parent="Room/Interactables/Sampler/Blood Collector/SubViewport" unique_id=1749184050]
@@ -9773,7 +9774,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("49_xy377")
+texture = ExtResource("52_7tj8d")
 
 [node name="TabContainer" type="TabContainer" parent="Room/Interactables/Sampler/Blood Collector/SubViewport/Control" unique_id=1439278877]
 layout_mode = 1
@@ -9803,7 +9804,7 @@ offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("8_blfwb")
+theme_override_fonts/font = ExtResource("8_wjrn6")
 theme_override_font_sizes/font_size = 40
 text = "AWAITING"
 
@@ -9840,7 +9841,7 @@ shape = SubResource("BoxShape3D_8tnk5")
 
 [node name="VialSlot" type="Node3D" parent="Room/Interactables/Sampler" unique_id=1353844329 node_paths=PackedStringArray("take_vial_sound", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.5, 0, 0, -0.05304289)
-script = ExtResource("50_27rxj")
+script = ExtResource("53_oaw2t")
 take_vial_sound = NodePath("TakeVialSound")
 vial_slot = 2
 prompt_text = "Place vial"
@@ -9870,14 +9871,14 @@ event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator3" parent="Room/Interactables/Sampler/VialSlot" unique_id=149043076 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator3" parent="Room/Interactables/Sampler/VialSlot" unique_id=149043076 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.040000007, 0, 0, 0, 0.040000007, 0, 0, 0, 0.040000003, -0.13559723, 0.031526804, 0.10543731)
 normal_size = Vector3(0.04, 0.04, 0.04)
 
 [node name="SamplerExtractButton" type="Node3D" parent="Room/Interactables/Sampler" unique_id=1903185465 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound")]
 unique_name_in_owner = true
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0429945, 0.003718257, 0.15459585)
-script = ExtResource("51_tnxsi")
+script = ExtResource("54_0dvtn")
 press_anim = NodePath("../Blood Collector/SamplerExtractButtonVisual")
 prompt_text = "Extract"
 anim = NodePath("../Blood Collector/VialSlotModel/AnimationPlayer")
@@ -9902,14 +9903,14 @@ event_guid = "{8cf97868-da60-42af-9bdb-b424ce6b26ca}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator2" parent="Room/Interactables/Sampler/SamplerExtractButton" unique_id=1245283531 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator2" parent="Room/Interactables/Sampler/SamplerExtractButton" unique_id=1245283531 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.20000002, 0, 0, 0, 0.20000002, 0, 0, 0, 0.20000002, -0.24803925, -0.6491946, -0.045448303)
 normal_size = Vector3(0.1, 0.1, 0.1)
 
 [node name="SamplerInjectButton" type="Node3D" parent="Room/Interactables/Sampler" unique_id=997938155 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound")]
 unique_name_in_owner = true
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0429945, 0.003718257, 0.15459585)
-script = ExtResource("52_v5opa")
+script = ExtResource("55_ucn7y")
 press_anim = NodePath("../Blood Collector/SamplerInjectButtonVisual")
 prompt_text = "Inject"
 anim = NodePath("../Blood Collector/VialSlotModel/AnimationPlayer")
@@ -9935,13 +9936,13 @@ event_guid = "{64e65343-1661-47f4-872c-dc56f54fa0cb}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Sampler/SamplerInjectButton" unique_id=2126124774 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Sampler/SamplerInjectButton" unique_id=2126124774 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.24804586, -0.0782907, -0.045447353)
 normal_size = Vector3(0.1, 0.1, 0.1)
 
 [node name="Scanner" type="Node3D" parent="Room/Interactables" unique_id=1610762300]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4993663, 1.5193069, -2.715287)
-script = ExtResource("53_6hlya")
+script = ExtResource("56_bdnt5")
 
 [node name="Screen" type="MeshInstance3D" parent="Room/Interactables/Scanner" unique_id=1684522648]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12643242, -1.4424086, 0)
@@ -9985,7 +9986,7 @@ mesh_lod_threshold = 0.0
 scaling_3d_scale = 0.5
 anisotropic_filtering_level = 0
 size = Vector2i(1024, 1024)
-script = ExtResource("48_nwf0e")
+script = ExtResource("51_4y2o5")
 off_screen = NodePath("Control/Black")
 
 [node name="Control" type="Control" parent="Room/Interactables/Scanner/SubViewport" unique_id=1456015811]
@@ -10013,7 +10014,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("49_xy377")
+texture = ExtResource("52_7tj8d")
 
 [node name="Logo" type="TextureRect" parent="Room/Interactables/Scanner/SubViewport/Control" unique_id=1478675047]
 layout_mode = 1
@@ -10029,7 +10030,7 @@ offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.22, 0.22)
-texture = ExtResource("55_8ummy")
+texture = ExtResource("58_6x5lk")
 expand_mode = 1
 stretch_mode = 4
 
@@ -10061,7 +10062,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_constants/line_spacing = 8
-theme_override_fonts/font = ExtResource("8_blfwb")
+theme_override_fonts/font = ExtResource("8_wjrn6")
 theme_override_font_sizes/font_size = 55
 text = "ERROR
 OFFLINE"
@@ -10089,35 +10090,35 @@ offset_right = -256.0
 offset_bottom = -341.76
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("59_munjo")
+texture = ExtResource("59_g3jfi")
 
 [node name="Lung_Status_2" type="TextureRect" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages" unique_id=346060581]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("57_3xnn1")
+texture = ExtResource("60_73m62")
 
 [node name="Lung_Status_3" type="TextureRect" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages" unique_id=702101879]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("58_6lxtf")
+texture = ExtResource("61_jcmlj")
 
 [node name="Lung_Status_4" type="TextureRect" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages" unique_id=706886435]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("59_khn1d")
+texture = ExtResource("62_lwnoy")
 
 [node name="Lung_Status_5" type="TextureRect" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages" unique_id=1205486954]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("60_g1vis")
+texture = ExtResource("63_pr1qh")
 
 [node name="Black" type="ColorRect" parent="Room/Interactables/Scanner/SubViewport/Control" unique_id=1737060189]
 layout_mode = 1
@@ -10134,7 +10135,7 @@ color = Color(0, 0, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12973022, -0.18536377, -0.0035705566)
 shape = SubResource("BoxShape3D_3e3v6")
 
-[node name="Scanner_Document" parent="Room/Interactables/Scanner" unique_id=439975249 instance=ExtResource("61_4kt6o")]
+[node name="Scanner_Document" parent="Room/Interactables/Scanner" unique_id=439975249 instance=ExtResource("64_ym8jw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.497005, -0.46831274, 0.010702848)
 visible = false
 
@@ -10145,7 +10146,7 @@ mesh = SubResource("ArrayMesh_183b6")
 [node name="StartScanButton" type="MeshInstance3D" parent="Room/Interactables/Scanner/Frame" unique_id=1634321422]
 transform = Transform3D(1, -3.5527137e-15, 0, 0, 1, 7.7647024e-23, 0, -7.7647024e-23, 1, 0, 0, -0.021494627)
 mesh = SubResource("ArrayMesh_kfbds")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.02)
 
 [node name="Scanner_Outline" type="MeshInstance3D" parent="Room/Interactables/Scanner/Frame/StartScanButton" unique_id=1941175160]
@@ -10155,7 +10156,7 @@ mesh = SubResource("ArrayMesh_acgdh")
 
 [node name="ScanStart" type="Node3D" parent="Room/Interactables/Scanner" unique_id=2106335602 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.20021248, -0.28336418, -0.22153592)
-script = ExtResource("62_uihnf")
+script = ExtResource("65_0pku7")
 press_anim = NodePath("../Frame/StartScanButton")
 prompt_text = "Scan"
 anim = NodePath("../../../Props/Prop_Curtains/AnimationPlayer")
@@ -10164,7 +10165,7 @@ sound_emitter = NodePath("ScanStartSound")
 uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("../Frame/StartScanButton/Scanner_Outline")]
 
-[node name="interactable_indecator" parent="Room/Interactables/Scanner/ScanStart" unique_id=1205790887 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Scanner/ScanStart" unique_id=1205790887 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -0.07915497)
 normal_size = Vector3(0.2, 0.2, 0.2)
 
@@ -10184,7 +10185,7 @@ event_guid = "{0c1371f0-c702-44b9-bb0a-8c616e0c9c91}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="Microscope" parent="Room/Interactables" unique_id=924130864 instance=ExtResource("63_cyika")]
+[node name="Microscope" parent="Room/Interactables" unique_id=924130864 instance=ExtResource("66_tg0ye")]
 transform = Transform3D(-0.93499076, 0, -0.354672, 0, 1, 0, 0.354672, 0, -0.93499076, 1.9996619, 0.9748792, -6.093265)
 
 [node name="Micrograph" type="Control" parent="Room/Interactables/Microscope" unique_id=308824450]
@@ -10196,7 +10197,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("64_3kuph")
+script = ExtResource("67_s3r1p")
 
 [node name="Background" type="ColorRect" parent="Room/Interactables/Microscope/Micrograph" unique_id=260998597]
 layout_mode = 1
@@ -10209,7 +10210,7 @@ color = Color(0.0142752165, 0.014275218, 0.014275218, 1)
 
 [node name="MurkyImage" type="ColorRect" parent="Room/Interactables/Microscope/Micrograph" unique_id=1929010702]
 unique_name_in_owner = true
-material = ExtResource("65_qr3ul")
+material = ExtResource("68_jd3vj")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -10222,7 +10223,7 @@ grow_vertical = 2
 [node name="CellsImage" type="ColorRect" parent="Room/Interactables/Microscope/Micrograph" unique_id=420387211]
 unique_name_in_owner = true
 visible = false
-material = ExtResource("66_bweqy")
+material = ExtResource("69_1aiaj")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -10233,7 +10234,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Microscope_Vial" type="Node3D" parent="Room/Interactables/Microscope" unique_id=562917430 node_paths=PackedStringArray("take_vial_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
-script = ExtResource("67_2455y")
+script = ExtResource("70_fe81d")
 take_vial_sound = NodePath("TakeVialSound")
 vial_slot = 4
 prompt_text = "Place vial"
@@ -10268,14 +10269,14 @@ transform = Transform3D(0.12909497, 0.9349837, -0.330362, -0.93498397, 0.0037780
 material_override = SubResource("StandardMaterial3D_dawtf")
 mesh = SubResource("ArrayMesh_icxu3")
 
-[node name="Prop_Microscope_Vial" parent="Room/Interactables/Microscope" unique_id=731521136 instance=ExtResource("13_txhat")]
+[node name="Prop_Microscope_Vial" parent="Room/Interactables/Microscope" unique_id=731521136 instance=ExtResource("17_tq6mg")]
 unique_name_in_owner = true
 transform = Transform3D(0.12909497, 0.93498373, -0.33036196, -0.934984, 0.0037780665, -0.3546694, -0.330362, 0.35466942, 0.8746827, -0.09021139, 0.14382523, -0.059872627)
 visible = false
 
 [node name="Microscope" type="Node3D" parent="Room/Interactables/Microscope" unique_id=1380959164 node_paths=PackedStringArray("exit_sound", "ambient_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(-0.93499076, 0, 0.354672, 0, 1, 0, -0.354672, 0, -0.93499076, 0.011067867, 0.19455737, -0.020520687)
-script = ExtResource("68_pobrt")
+script = ExtResource("71_ra3sv")
 exit_sound = NodePath("ExitMicroscopeSound")
 ambient_sound = NodePath("MicroscopeAmbient")
 prompt_text = "Analyze sample"
@@ -10327,7 +10328,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wv54p")
 mesh_lod_threshold = 0.0
 scaling_3d_scale = 0.5
 anisotropic_filtering_level = 0
-script = ExtResource("48_nwf0e")
+script = ExtResource("51_4y2o5")
 off_screen = NodePath("Control/Black")
 
 [node name="Control" type="Control" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/Centrifuge_Screen/SubViewport" unique_id=472383052]
@@ -10349,7 +10350,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("49_xy377")
+texture = ExtResource("52_7tj8d")
 
 [node name="TabContainer" type="TabContainer" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/Centrifuge_Screen/SubViewport/Control" unique_id=1083007657]
 layout_mode = 1
@@ -10380,7 +10381,7 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("8_blfwb")
+theme_override_fonts/font = ExtResource("8_wjrn6")
 text = "Lock State: Unlocked"
 
 [node name="Centrifuge_Speed_Label" type="Label" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/Centrifuge_Screen/SubViewport/Control/TabContainer/Home" unique_id=1465097070]
@@ -10398,7 +10399,7 @@ offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("8_blfwb")
+theme_override_fonts/font = ExtResource("8_wjrn6")
 theme_override_font_sizes/font_size = 64
 text = "Speed: 3"
 
@@ -10417,7 +10418,7 @@ offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("8_blfwb")
+theme_override_fonts/font = ExtResource("8_wjrn6")
 theme_override_font_sizes/font_size = 64
 text = "No vial"
 
@@ -10432,7 +10433,7 @@ offset_bottom = -209.22198
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.36, 0.36)
-texture = ExtResource("55_8ummy")
+texture = ExtResource("58_6x5lk")
 expand_mode = 1
 stretch_mode = 4
 
@@ -10463,7 +10464,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="ButtonUp" type="Node3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge" unique_id=309528295 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 1, -0.028955221, 0.31077486, -0.25076723)
-script = ExtResource("71_jum2d")
+script = ExtResource("74_kj11c")
 press_anim = NodePath("Up_Button_Model")
 prompt_text = "Increase speed"
 area = NodePath("Area3D")
@@ -10474,10 +10475,10 @@ outline_meshes = [NodePath("Up_Button_Model"), NodePath("Up_Button_Model")]
 [node name="Up_Button_Model" type="MeshInstance3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/ButtonUp" unique_id=1722837360]
 transform = Transform3D(1, -1.4901161e-08, 0, 0, 0.8660253, -0.5000001, 2.9802322e-08, 0.5000001, 0.8660253, -0.00023341179, -0.002867341, 0.003914356)
 mesh = SubResource("ArrayMesh_e70ii")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
-[node name="interactable_indecator" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/ButtonUp/Up_Button_Model" unique_id=27017930 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/ButtonUp/Up_Button_Model" unique_id=27017930 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/ButtonUp" unique_id=477405739]
@@ -10498,7 +10499,7 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
 [node name="ButtonDown" type="Node3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge" unique_id=275119281 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.000001, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 1.000001, -0.029951334, 0.28331333, -0.26900005)
-script = ExtResource("73_v8jka")
+script = ExtResource("76_ru6wt")
 press_anim = NodePath("Down_Button_Model")
 prompt_text = "Decrease speed"
 area = NodePath("Area3D")
@@ -10509,10 +10510,10 @@ outline_meshes = [NodePath("Down_Button_Model"), NodePath("Down_Button_Model")]
 [node name="Down_Button_Model" type="MeshInstance3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/ButtonDown" unique_id=1579121493]
 transform = Transform3D(0.9999989, -7.450581e-09, 1.4901161e-08, 0, 0.8660253, -0.5000001, -1.4901161e-08, 0.49999958, 0.8660245, 0.0007622242, -0.0037127733, 0.0058045387)
 mesh = SubResource("ArrayMesh_df0ya")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
-[node name="interactable_indecator" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/ButtonDown/Down_Button_Model" unique_id=1693871318 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/ButtonDown/Down_Button_Model" unique_id=1693871318 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/ButtonDown" unique_id=1519713259]
@@ -10542,7 +10543,7 @@ mesh = SubResource("ArrayMesh_j6q31")
 [node name="CentrifugeButtonStart" type="Node3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge" unique_id=1852898229 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 unique_name_in_owner = true
 transform = Transform3D(1.0000011, 0, -4.4703484e-08, 0, 1, 0, 4.4703484e-08, 0, 1.0000011, -0.046351433, 0.1858334, -0.3229952)
-script = ExtResource("74_cy2os")
+script = ExtResource("77_3ev3l")
 press_anim = NodePath("Start_Button_Model")
 prompt_text = "Start Centrifuge"
 anim = NodePath("../../AnimationPlayer")
@@ -10554,10 +10555,10 @@ outline_meshes = [NodePath("Start_Button_Model"), NodePath("Start_Button_Model")
 [node name="Start_Button_Model" type="MeshInstance3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/CentrifugeButtonStart" unique_id=530873271]
 transform = Transform3D(0.9999989, 7.450581e-09, 2.9802322e-08, 0, 0.8660253, -0.5000001, -2.9802322e-08, 0.49999958, 0.86602443, 0.001136303, -0.0025494099, 0.0050640106)
 mesh = SubResource("ArrayMesh_vp3mi")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
-[node name="interactable_indecator" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/CentrifugeButtonStart/Start_Button_Model" unique_id=179652932 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/CentrifugeButtonStart/Start_Button_Model" unique_id=179652932 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/CentrifugeButtonStart" unique_id=1724841389]
@@ -10605,7 +10606,7 @@ omni_attenuation = 0.651
 transform = Transform3D(0.9848058, -0.17364784, 0, 0.17364784, 0.9848058, 0, 0, 0, 1, 0.010244596, 0.32967758, -8.731149e-11)
 visible = false
 
-[node name="CentrifugeVialModel" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/Prop_Rotor/Marker3D" unique_id=1676914135 instance=ExtResource("13_txhat")]
+[node name="CentrifugeVialModel" parent="Room/Interactables/Centrifuge/Prop_Centrifuge/Prop_Rotor/Marker3D" unique_id=1676914135 instance=ExtResource("17_tq6mg")]
 unique_name_in_owner = true
 transform = Transform3D(1.0000005, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000002, 0, 0, 0)
 script = null
@@ -10633,7 +10634,7 @@ libraries/ = SubResource("AnimationLibrary_ju1k8")
 
 [node name="VialSlot" type="Node3D" parent="Room/Interactables/Centrifuge" unique_id=1776241852 node_paths=PackedStringArray("take_vial_sound", "anim", "area", "sound_emitter", "uninteractable_sound")]
 transform = Transform3D(-0.49771369, 0, 0.04776375, 0, 0.5, 0, -0.04776375, 0, -0.49771369, -0.00082039833, 0.3316248, 0.08969402)
-script = ExtResource("75_00560")
+script = ExtResource("78_s7idu")
 take_vial_sound = NodePath("VialTakeSound")
 vial_slot = 3
 prompt_text = "Insert vial"
@@ -10667,14 +10668,14 @@ transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0, -0.30904
 material_override = SubResource("StandardMaterial3D_t7v0h")
 mesh = SubResource("ArrayMesh_adeab")
 
-[node name="interactable_indecator" parent="Room/Interactables/Centrifuge/VialSlot" unique_id=2096201878 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Centrifuge/VialSlot" unique_id=2096201878 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.1, 0.1, 0.1)
 
 [node name="Pipette" type="Node3D" parent="Room/Interactables" unique_id=746896674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.828744, -0.09941912, -3.0970638)
 
-[node name="Pipette_Note" parent="Room/Interactables/Pipette" unique_id=2115422304 node_paths=PackedStringArray("stop_reading_sound", "area", "sound_emitter", "outline_meshes") instance=ExtResource("23_fjgpu")]
+[node name="Pipette_Note" parent="Room/Interactables/Pipette" unique_id=2115422304 node_paths=PackedStringArray("stop_reading_sound", "area", "sound_emitter", "outline_meshes") instance=ExtResource("26_a3tqg")]
 transform = Transform3D(-0.39821026, -0.9136738, 0.08141864, -0.00046906166, -0.08855674, -0.9960711, 0.917294, -0.3966838, 0.0348356, -0.07380104, 1.5099785, -0.22427511)
 stop_reading_sound = NodePath("StopReadingSound")
 area = NodePath("Area3D")
@@ -10685,15 +10686,15 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.010209445, -4.5401977e-10, 0.054237492)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Pipette/Pipette_Note" index="1" unique_id=469442063]
+[node name="Skeleton3D" parent="Room/Interactables/Pipette/Pipette_Note" index="1" unique_id=1417392328]
 bones/1/position = Vector3(0, 0, -0.05)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
-[node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=2053084288]
+[node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=452260851]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_7ajcb")
+surface_material_override/1 = SubResource("StandardMaterial3D_snifa")
 
 [node name="Marker3D" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -10726,7 +10727,7 @@ event_guid = "{af35a86d-56a8-4c9d-9733-0a354783578f}"
 
 [node name="VialSlot" type="Node3D" parent="Room/Interactables/Pipette" unique_id=1627220676 node_paths=PackedStringArray("take_vial_sound", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.46424288, 0, -0.1856839, 0, 0.49999994, 0, 0.18568392, 0, 0.46424285, 0.0075746775, 1.5677308, -0.26050258)
-script = ExtResource("76_s6fkl")
+script = ExtResource("79_ywtvq")
 take_vial_sound = NodePath("TakeVialSound")
 vial_slot = 5
 prompt_text = "Instert vial"
@@ -10756,7 +10757,7 @@ mesh = SubResource("ArrayMesh_wv54p")
 transform = Transform3D(2.0000002, 0, 0, 0, 2.0000002, 0, 0, 0, 2.0000002, 0.035656184, -0.17279318, -0.075203836)
 visible = false
 
-[node name="Pipette_Vial" parent="Room/Interactables/Pipette/VialSlot/Pipette_Vial_Marker" unique_id=299186042 instance=ExtResource("13_txhat")]
+[node name="Pipette_Vial" parent="Room/Interactables/Pipette/VialSlot/Pipette_Vial_Marker" unique_id=299186042 instance=ExtResource("17_tq6mg")]
 script = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Room/Interactables/Pipette/VialSlot/Pipette_Vial_Marker" unique_id=2114767965]
@@ -10784,13 +10785,13 @@ event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/VialSlot" unique_id=1543488453 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/VialSlot" unique_id=1543488453 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.022235807, -0.04712446, -0.07665987)
 normal_size = Vector3(0.04, 0.04, 0.04)
 
 [node name="FlaskSlot" type="Node3D" parent="Room/Interactables/Pipette" unique_id=1302249287 node_paths=PackedStringArray("take_flask_sound", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.46424282, 0, -0.18568403, 0, 0.49999967, 0, 0.185684, 0, 0.4642427, -0.087097764, 1.3547394, 0.035467386)
-script = ExtResource("77_xiff6")
+script = ExtResource("80_un5dn")
 take_flask_sound = NodePath("TakeFlaskSound")
 prompt_text = "Instert flask"
 anim = NodePath("Flask_Marker/Flask_Model/AnimationPlayer")
@@ -10837,7 +10838,7 @@ event_guid = "{015aeaa5-183b-4dfa-baa2-7364481bb2d8}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/FlaskSlot" unique_id=1677228031 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/FlaskSlot" unique_id=1677228031 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.09182134, 0.21287553, 0.033956237)
 normal_size = Vector3(0.04, 0.04, 0.04)
 
@@ -10846,7 +10847,7 @@ transform = Transform3D(0.35674965, 0, 0.9342, 0, 0.9999992, 0, -0.93419987, 0, 
 
 [node name="Pipette_Button_Clear" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=85330077 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.000001, 0, 5.9604645e-08, 0, 1, 0, 0, 0, 1.0000007, -0.0618093, -0.03719139, 0.0048743486)
-script = ExtResource("78_7xw5e")
+script = ExtResource("81_oh4yx")
 press_anim = NodePath("Button_Clear_Model")
 prompt_text = "Clear"
 area = NodePath("Area3D")
@@ -10857,7 +10858,7 @@ outline_meshes = [NodePath("Button_Clear_Model")]
 [node name="Button_Clear_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Clear" unique_id=894033959]
 transform = Transform3D(0.99999917, 0, -2.9802322e-08, 0, 1.0000004, 0, -8.940697e-08, 0, 0.9999994, -0.00019598007, 0.00028562546, 0.00679338)
 mesh = SubResource("ArrayMesh_ioaj7")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Clear" unique_id=1249677827]
@@ -10876,13 +10877,13 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Clear" unique_id=503878294 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Clear" unique_id=503878294 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Pipette_Button_Point" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1092882085 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000011, 0, 5.9604645e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000007, -0.028584957, -0.037837863, 0.003693819)
-script = ExtResource("79_24hs8")
+script = ExtResource("82_n8ryk")
 press_anim = NodePath("Button_Point_Model")
 prompt_text = "."
 area = NodePath("Area3D")
@@ -10893,7 +10894,7 @@ outline_meshes = [NodePath("Button_Point_Model")]
 [node name="Button_Point_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Point" unique_id=1068641918]
 transform = Transform3D(0.99999934, 0, -8.940697e-08, 0, 1.0000007, 0, -5.9604645e-08, 0, 0.99999976, -0.00073480606, 0.00093209743, 0.007974505)
 mesh = SubResource("ArrayMesh_hgfxm")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Point" unique_id=1472588549]
@@ -10912,13 +10913,13 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Point" unique_id=858888503 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Point" unique_id=858888503 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Pipette_Button_Start" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2106896159 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000007, 0, 5.9604645e-08, 0, 1, 0, 0, 0, 1.0000007, 0.07692385, -0.0029777288, 0.007401943)
-script = ExtResource("80_6suqh")
+script = ExtResource("83_wqp32")
 press_anim = NodePath("Button_Start_model")
 prompt_text = "Start"
 area = NodePath("Area3D")
@@ -10929,7 +10930,7 @@ outline_meshes = [NodePath("Button_Start_model")]
 [node name="Button_Start_model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Start" unique_id=1688334138]
 transform = Transform3D(0.9999995, 0, -2.9802322e-08, 0, 1.0000005, 0, -1.1920929e-07, 0, 0.9999994, 0.0015411377, -0.001241684, 0.0041987896)
 mesh = SubResource("ArrayMesh_lhtyi")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Start" unique_id=1688243253]
@@ -10949,13 +10950,13 @@ event_guid = "{64e65343-1661-47f4-872c-dc56f54fa0cb}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Start" unique_id=372326958 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_Start" unique_id=372326958 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Pipette_Button_0" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1168515478 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000011, 0, 5.9604645e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000007, 0.035217762, 0.026767492, 0.006357193)
-script = ExtResource("81_x8vyc")
+script = ExtResource("84_b2jqc")
 press_anim = NodePath("Button_0_Model")
 prompt_text = "0"
 area = NodePath("Area3D")
@@ -10963,14 +10964,14 @@ sound_emitter = NodePath("Pipette0ButtonSound")
 uninteractable_sound = NodePath("UninteractableSound")
 outline_meshes = [NodePath("Button_0_Model")]
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_0" unique_id=1613011864 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_0" unique_id=1613011864 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.0005899848, 0.0005782847, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Button_0_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_0" unique_id=22376143]
 transform = Transform3D(0.9999993, 0, 0, 0, 1.0000006, 0, -8.940697e-08, 0, 0.99999964, 0.00083613396, 0.0016992092, 0.00531137)
 mesh = SubResource("ArrayMesh_gknap")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_0" unique_id=216130385]
@@ -10991,7 +10992,7 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
 [node name="Pipette_Button_1" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1271553097 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, 0.004336357, 0.032991886, 0.0029250383)
-script = ExtResource("81_x8vyc")
+script = ExtResource("84_b2jqc")
 press_anim = NodePath("Button_1_Model")
 prompt_text = "1"
 area = NodePath("Area3D")
@@ -11002,7 +11003,7 @@ outline_meshes = [NodePath("Button_1_Model")]
 [node name="Button_1_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_1" unique_id=1828298649]
 transform = Transform3D(1, 0, -5.9604645e-08, 0, 1.0000006, 0, -2.9802322e-08, 0, 1, -0.0009686947, -0.0045251846, 0.008743763)
 mesh = SubResource("ArrayMesh_vfdjh")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_1" unique_id=1745947827]
@@ -11021,13 +11022,13 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_1" unique_id=492022121 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_1" unique_id=492022121 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0005249131, -0.0048464574, -3.7252902e-11)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Pipette_Button_2" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1126231518 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000006, 0, 5.9604645e-08, 0, 1, 0, 0, 0, 1.0000006, -0.029375076, 0.028849244, 0.0067534447)
-script = ExtResource("81_x8vyc")
+script = ExtResource("84_b2jqc")
 press_anim = NodePath("Button_2_Model")
 prompt_text = "2"
 area = NodePath("Area3D")
@@ -11038,7 +11039,7 @@ outline_meshes = [NodePath("Button_2_Model")]
 [node name="Button_2_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_2" unique_id=2000112969]
 transform = Transform3D(0.99999964, 0, 0, 0, 1.0000006, 0, -1.7881393e-07, 0, 0.99999976, 5.555153e-05, -0.0003825426, 0.004915595)
 mesh = SubResource("ArrayMesh_m003k")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_2" unique_id=1048273405]
@@ -11057,13 +11058,13 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_2" unique_id=1351046417 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_2" unique_id=1351046417 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Pipette_Button_3" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2107951534 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, -0.06055212, 0.028736353, 0.0052096844)
-script = ExtResource("81_x8vyc")
+script = ExtResource("84_b2jqc")
 press_anim = NodePath("Button_3_Model")
 prompt_text = "3"
 area = NodePath("Area3D")
@@ -11074,7 +11075,7 @@ outline_meshes = [NodePath("Button_3_Model")]
 [node name="Button_3_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_3" unique_id=300431013]
 transform = Transform3D(1.0000002, 0, -5.9604645e-08, 0, 1.0000007, 0, -1.7881393e-07, 0, 1.0000001, -0.0014536381, -0.0002696514, 0.00645864)
 mesh = SubResource("ArrayMesh_ioyry")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_3" unique_id=1941560235]
@@ -11093,13 +11094,13 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_3" unique_id=1186259770 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_3" unique_id=1186259770 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Pipette_Button_4" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=2037283692 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, 0.035738707, -0.0041867495, 0.006599903)
-script = ExtResource("81_x8vyc")
+script = ExtResource("84_b2jqc")
 press_anim = NodePath("Button_4_Model")
 prompt_text = "4"
 area = NodePath("Area3D")
@@ -11110,7 +11111,7 @@ outline_meshes = [NodePath("Button_4_Model")]
 [node name="Button_4_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_4" unique_id=1854393745]
 transform = Transform3D(1, 0, -5.9604645e-08, 0, 1.0000006, 0, -2.9802322e-08, 0, 1, 0.00031518936, -3.2663345e-05, 0.005068302)
 mesh = SubResource("ArrayMesh_2fgnu")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_4" unique_id=1291993401]
@@ -11129,13 +11130,13 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_4" unique_id=601219834 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_4" unique_id=601219834 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Pipette_Button_5" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=774701449 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, 0.0033946037, -0.0032867193, 0.0048576593)
-script = ExtResource("81_x8vyc")
+script = ExtResource("84_b2jqc")
 press_anim = NodePath("Button_5_Model")
 prompt_text = "5"
 area = NodePath("Area3D")
@@ -11146,7 +11147,7 @@ outline_meshes = [NodePath("Button_5_Model")]
 [node name="Button_5_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_5" unique_id=1943666066]
 transform = Transform3D(1, 0, -5.9604645e-08, 0, 1.0000006, 0, -2.9802322e-08, 0, 1, -2.7179718e-05, -0.0009326935, 0.0068113804)
 mesh = SubResource("ArrayMesh_yqgxi")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_5" unique_id=1181542012]
@@ -11165,13 +11166,13 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_5" unique_id=1031884456 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_5" unique_id=1031884456 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Pipette_Button_6" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=914858766 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, -0.029093266, -0.0032912493, 0.006602049)
-script = ExtResource("81_x8vyc")
+script = ExtResource("84_b2jqc")
 press_anim = NodePath("Button_6_Model")
 prompt_text = "6"
 area = NodePath("Area3D")
@@ -11182,7 +11183,7 @@ outline_meshes = [NodePath("Button_6_Model")]
 [node name="Button_6_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_6" unique_id=1069641910]
 transform = Transform3D(1, 0, -5.9604645e-08, 0, 1.0000006, 0, -2.9802322e-08, 0, 1, -0.00022602081, -0.0009281635, 0.005066514)
 mesh = SubResource("ArrayMesh_knnvh")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_6" unique_id=1418801336]
@@ -11201,13 +11202,13 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_6" unique_id=162861589 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_6" unique_id=162861589 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Pipette_Button_7" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1833253331 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, -0.0604558, -0.0035873652, 0.005895734)
-script = ExtResource("81_x8vyc")
+script = ExtResource("84_b2jqc")
 press_anim = NodePath("Button_7_Model")
 prompt_text = "7"
 area = NodePath("Area3D")
@@ -11218,7 +11219,7 @@ outline_meshes = [NodePath("Button_7_Model")]
 [node name="Button_7_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_7" unique_id=1525465045]
 transform = Transform3D(1.0000001, 0, -5.9604645e-08, 0, 1.0000007, 0, -1.1920929e-07, 0, 1, -0.0015494823, -0.00063204765, 0.005772829)
 mesh = SubResource("ArrayMesh_kep8u")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_7" unique_id=1056022188]
@@ -11237,13 +11238,13 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_7" unique_id=1173254618 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_7" unique_id=1173254618 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Pipette_Button_8" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=1015850918 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000005, 0, 5.9604645e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000005, 0.03579974, -0.036409616, 0.0065635443)
-script = ExtResource("81_x8vyc")
+script = ExtResource("84_b2jqc")
 press_anim = NodePath("Button_8_Model")
 prompt_text = "8"
 area = NodePath("Area3D")
@@ -11254,7 +11255,7 @@ outline_meshes = [NodePath("Button_8_Model")]
 [node name="Button_8_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_8" unique_id=1012971226]
 transform = Transform3D(0.99999964, 0, -2.9802322e-08, 0, 1.0000006, 0, -1.4901161e-07, 0, 0.99999976, 0.0002539158, -0.00049614906, 0.00510478)
 mesh = SubResource("ArrayMesh_7bg3b")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, -0.003)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_8" unique_id=637326809]
@@ -11273,13 +11274,13 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_8" unique_id=1875121915 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_8" unique_id=1875121915 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Pipette_Button_9" type="Node3D" parent="Room/Interactables/Pipette/Numapd" unique_id=466533086 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000004, 0.0035271645, -0.03620076, 0.0054302216)
-script = ExtResource("81_x8vyc")
+script = ExtResource("84_b2jqc")
 press_anim = NodePath("Button_9_Model")
 prompt_text = "9"
 area = NodePath("Area3D")
@@ -11290,7 +11291,7 @@ outline_meshes = [NodePath("Button_9_Model")]
 [node name="Button_9_Model" type="MeshInstance3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_9" unique_id=1817801563]
 transform = Transform3D(1.0000001, 0, -5.9604645e-08, 0, 1.0000007, 0, -1.1920929e-07, 0, 1, -0.00015997887, -0.00070500374, 0.006238103)
 mesh = SubResource("ArrayMesh_er8tr")
-script = ExtResource("41_wq0o1")
+script = ExtResource("44_c2x1s")
 press_offset = Vector3(0, 0, 0.005)
 
 [node name="Area3D" type="Area3D" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_9" unique_id=1162712270]
@@ -11309,7 +11310,7 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
-[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_9" unique_id=1782011829 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Pipette/Numapd/Pipette_Button_9" unique_id=1782011829 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0007907128, -0.00083041255, 0)
 normal_size = Vector3(0.01, 0.01, 0.01)
 
@@ -11340,7 +11341,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ushcp")
 mesh_lod_threshold = 0.0
 scaling_3d_scale = 0.5
 anisotropic_filtering_level = 0
-script = ExtResource("48_nwf0e")
+script = ExtResource("51_4y2o5")
 off_screen = NodePath("Control/Black")
 
 [node name="Control" type="Control" parent="Room/Interactables/Pipette/Pipette_Screen/SubViewport" unique_id=1988175561]
@@ -11368,7 +11369,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("49_xy377")
+texture = ExtResource("52_7tj8d")
 
 [node name="TabContainer" type="TabContainer" parent="Room/Interactables/Pipette/Pipette_Screen/SubViewport/Control" unique_id=1678044232]
 layout_mode = 1
@@ -11399,7 +11400,7 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("8_blfwb")
+theme_override_fonts/font = ExtResource("8_wjrn6")
 text = "Lock State: Unlocked
 Connected: False
 Current Mixture: NULL"
@@ -11419,7 +11420,7 @@ offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("8_blfwb")
+theme_override_fonts/font = ExtResource("8_wjrn6")
 theme_override_font_sizes/font_size = 40
 text = "No flask"
 
@@ -11438,7 +11439,7 @@ offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("8_blfwb")
+theme_override_fonts/font = ExtResource("8_wjrn6")
 theme_override_font_sizes/font_size = 40
 text = "0.0 ml"
 
@@ -11453,7 +11454,7 @@ offset_bottom = -209.22198
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.36, 0.36)
-texture = ExtResource("55_8ummy")
+texture = ExtResource("58_6x5lk")
 expand_mode = 1
 stretch_mode = 4
 
@@ -11490,7 +11491,7 @@ shape = SubResource("BoxShape3D_k0yef")
 
 [node name="Prop_Control_Panel" type="Node3D" parent="Room/Interactables" unique_id=211557231 node_paths=PackedStringArray("led_light", "interaction_indicator", "collision_shape", "character_ref", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.084801, 1.3580971, -0.41638154)
-script = ExtResource("83_4vhak")
+script = ExtResource("86_tgm4w")
 led_light = NodePath("env_ceiling_lamp/Cylinder/OmniLight3D")
 on_color = Color(0, 1, 0, 1)
 interaction_indicator = NodePath("interactable_indecator")
@@ -11538,7 +11539,7 @@ collision_mask = 256
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002319336, 0.048583984, 0)
 shape = SubResource("BoxShape3D_eb24d")
 
-[node name="interactable_indecator" parent="Room/Interactables/Prop_Control_Panel" unique_id=1075630707 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Room/Interactables/Prop_Control_Panel" unique_id=1075630707 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.035272386, 0)
 
 [node name="TurnOnSound" type="FmodEventEmitter3D" parent="Room/Interactables/Prop_Control_Panel" unique_id=1795244188]
@@ -11551,39 +11552,39 @@ event_guid = "{07eeedbc-0b55-4e3e-9515-90dfa24b0483}"
 
 [node name="Storage" type="Node3D" parent="Room" unique_id=727022939]
 
-[node name="Prop_Metal_Storage" parent="Room/Storage" unique_id=1869157670 instance=ExtResource("85_brh8d")]
+[node name="Prop_Metal_Storage" parent="Room/Storage" unique_id=1869157670 instance=ExtResource("88_uqhvq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6473917, 0, -0.7392761)
 
-[node name="Prop_Closet_Storage" parent="Room/Storage" unique_id=1322947913 instance=ExtResource("86_1qk2d")]
+[node name="Prop_Closet_Storage" parent="Room/Storage" unique_id=1322947913 instance=ExtResource("89_ymp40")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30165535, 0.030189991, 0.5397688)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1032181265) index="0" unique_id=1340666293]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1804681444) index="0" unique_id=865780799]
 transform = Transform3D(0.9847963, 0, 0.17371324, 0, 1, 0, -0.17371324, 0, 0.9847963, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1032181265) index="2" unique_id=808463335]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1804681444) index="2" unique_id=1358779425]
 transform = Transform3D(0.9980103, 0, -0.06305108, 0, 1, 0, 0.06305108, 0, 0.9980103, 0.40623674, 0.33802077, -0.18920648)
 
-[node name="Prop_Closet_Storage2" parent="Room/Storage" unique_id=792493778 instance=ExtResource("86_1qk2d")]
+[node name="Prop_Closet_Storage2" parent="Room/Storage" unique_id=792493778 instance=ExtResource("89_ymp40")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1489224, 0.060379982, -1.4530705)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1032181265) index="0" unique_id=1340666293]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1804681444) index="0" unique_id=865780799]
 transform = Transform3D(0.9986644, 0, 0.051666856, 0, 1, 0, -0.051666856, 0, 0.9986644, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1032181265) index="2" unique_id=808463335]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1804681444) index="2" unique_id=1358779425]
 transform = Transform3D(0.99973977, 0, -0.022809424, 0, 1, 0, 0.022809424, 0, 0.99973977, 0.40623665, 0.33802077, -0.18920648)
 
-[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1032181265) index="3" unique_id=1459515881]
+[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1804681444) index="3" unique_id=43209471]
 transform = Transform3D(0.99992776, 0, 0.012020995, 0, 1, 0, -0.012020995, 0, 0.99992776, -0.40623677, 0.33802077, -0.18920648)
 
-[node name="env_locker2" parent="Room/Storage" unique_id=1582727982 instance=ExtResource("87_gw1hp")]
+[node name="env_locker2" parent="Room/Storage" unique_id=1582727982 instance=ExtResource("90_cshk5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.840117, 0, 0.35202494)
 
-[node name="env_locker3" parent="Room/Storage" unique_id=276966922 instance=ExtResource("87_gw1hp")]
+[node name="env_locker3" parent="Room/Storage" unique_id=276966922 instance=ExtResource("90_cshk5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.0935335, 0, 0.3520249)
 
 [node name="Machines" type="Node3D" parent="Room" unique_id=1228803031]
 
-[node name="Env_Power_Supply" parent="Room/Machines" unique_id=1147005002 instance=ExtResource("88_0ioe7")]
+[node name="Env_Power_Supply" parent="Room/Machines" unique_id=1147005002 instance=ExtResource("91_hl41i")]
 transform = Transform3D(-0.8660254, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, -0.8660254, 0.26422167, 1.1109736, -2.4612887)
 
 [node name="Env_Computer" type="Node3D" parent="Room/Machines" unique_id=282123531]
@@ -11752,7 +11753,7 @@ shape = SubResource("BoxShape3D_1olqy")
 
 [node name="env_screen" type="Node3D" parent="Room/Machines/Env_Computer" unique_id=1850738053]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31119218, 0.33397794, 0.17390347)
-script = ExtResource("92_usng7")
+script = ExtResource("95_8yjvh")
 
 [node name="Computer_001" type="MeshInstance3D" parent="Room/Machines/Env_Computer/env_screen" unique_id=1420913803]
 transform = Transform3D(-0.9901693, -0.13987477, -1.5122181e-07, -0.13987477, 0.9901692, -9.012474e-09, 1.509958e-07, 1.222824e-08, -1, 0, 0, 0)
@@ -11772,7 +11773,7 @@ mesh_lod_threshold = 0.0
 scaling_3d_scale = 0.5
 anisotropic_filtering_level = 0
 size = Vector2i(1024, 1024)
-script = ExtResource("48_nwf0e")
+script = ExtResource("51_4y2o5")
 off_screen = NodePath("Control/Black")
 
 [node name="Control" type="Control" parent="Room/Machines/Env_Computer/env_screen/SubViewport" unique_id=1081790923]
@@ -11800,7 +11801,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("49_xy377")
+texture = ExtResource("52_7tj8d")
 
 [node name="TextureRect4" type="TextureRect" parent="Room/Machines/Env_Computer/env_screen/SubViewport/Control" unique_id=484345000]
 layout_mode = 1
@@ -11816,7 +11817,7 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.36, 0.36)
-texture = ExtResource("55_8ummy")
+texture = ExtResource("58_6x5lk")
 expand_mode = 1
 stretch_mode = 4
 
@@ -11847,7 +11848,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Note_COmputer" parent="Room/Machines/Env_Computer" unique_id=820390700 node_paths=PackedStringArray("stop_reading_sound", "area", "sound_emitter", "outline_meshes") instance=ExtResource("23_fjgpu")]
+[node name="Note_COmputer" parent="Room/Machines/Env_Computer" unique_id=820390700 node_paths=PackedStringArray("stop_reading_sound", "area", "sound_emitter", "outline_meshes") instance=ExtResource("26_a3tqg")]
 transform = Transform3D(-0.058295637, 0.9943798, -0.08837891, -0.00046906507, -0.08855674, -0.9960711, -0.99829924, -0.05802524, 0.0056289323, 0.3196407, 0.5321536, 0.17041397)
 stop_reading_sound = NodePath("StopReadingSound")
 area = NodePath("Area3D")
@@ -11858,15 +11859,15 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.010209445, -4.5401977e-10, 0.054237492)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Machines/Env_Computer/Note_COmputer" index="1" unique_id=469442063]
+[node name="Skeleton3D" parent="Room/Machines/Env_Computer/Note_COmputer" index="1" unique_id=1417392328]
 bones/1/position = Vector3(0, 0, -0.05)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
-[node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=2053084288]
+[node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=452260851]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_txhat")
+surface_material_override/1 = SubResource("StandardMaterial3D_23vak")
 
 [node name="Marker3D" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -12245,16 +12246,16 @@ area_size = Vector2(1.409, 1.67)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Room/Props/Prop_Curtains" unique_id=2060133495]
 libraries/ = SubResource("AnimationLibrary_8tnk5")
 
-[node name="Env_Table" parent="Room/Props" unique_id=526195609 instance=ExtResource("100_saamr")]
+[node name="Env_Table" parent="Room/Props" unique_id=526195609 instance=ExtResource("103_h7nch")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1068964, 0.034794867, -2.97155)
 
-[node name="Env_Table_Surgical" parent="Room/Props" unique_id=1613770615 instance=ExtResource("101_we7ay")]
+[node name="Env_Table_Surgical" parent="Room/Props" unique_id=1613770615 instance=ExtResource("104_y6t1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3258905, 0.00054073334, -3.8293433)
 
-[node name="Env_Table_NoSink2" parent="Room/Props" unique_id=1416737881 instance=ExtResource("102_2ukwm")]
+[node name="Env_Table_NoSink2" parent="Room/Props" unique_id=1416737881 instance=ExtResource("105_botyk")]
 transform = Transform3D(1, 0, 3.496911e-07, 0, 1, 0, -3.496911e-07, 0, 1, 2.5584826, 0.036102682, -6.2007523)
 
-[node name="Env_Table_Sink" parent="Room/Props" unique_id=1923583669 instance=ExtResource("103_pkkco")]
+[node name="Env_Table_Sink" parent="Room/Props" unique_id=1923583669 instance=ExtResource("106_yjyv5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44899845, 0.033261806, -6.2114015)
 
 [node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Room/Props/Env_Table_Sink" unique_id=719380751]
@@ -12264,25 +12265,25 @@ autoplay = true
 volume = 0.65
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.096113, 0)
 
-[node name="Prop_Curtains_Trolly" parent="Room/Props" unique_id=2019036272 instance=ExtResource("104_3vj7v")]
+[node name="Prop_Curtains_Trolly" parent="Room/Props" unique_id=2019036272 instance=ExtResource("107_20taa")]
 transform = Transform3D(0.9960576, 0, 0.08870821, 0, 1, 0, -0.08870821, 0, 0.9960576, 3.6740563, 0.033240616, -4.5170164)
 
-[node name="Prop_Trolley" parent="Room/Props" unique_id=1993639185 instance=ExtResource("105_gyio6")]
+[node name="Prop_Trolley" parent="Room/Props" unique_id=1993639185 instance=ExtResource("108_n8ub7")]
 transform = Transform3D(0.19923048, 0, -0.9799527, 0, 1, 0, 0.9799527, 0, 0.19923048, 4.508637, 0.033240795, -2.3009236)
 
-[node name="Prop_Trolley2" parent="Room/Props" unique_id=928575320 instance=ExtResource("105_gyio6")]
+[node name="Prop_Trolley2" parent="Room/Props" unique_id=928575320 instance=ExtResource("108_n8ub7")]
 transform = Transform3D(-0.33355844, 0, -0.9427295, 0, 1, 0, 0.9427295, 0, -0.33355844, 5.3995357, 0.033240795, 0.4010279)
 
-[node name="Prop_Vent" parent="Room/Props" unique_id=1987298839 instance=ExtResource("106_gsido")]
+[node name="Prop_Vent" parent="Room/Props" unique_id=1987298839 instance=ExtResource("109_35t23")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.9324455, 0.7841163, -6.8150554)
 
-[node name="Prop_Vent2" parent="Room/Props" unique_id=1397373806 instance=ExtResource("106_gsido")]
+[node name="Prop_Vent2" parent="Room/Props" unique_id=1397373806 instance=ExtResource("109_35t23")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.80820274, 0.7841163, -4.815055)
 
-[node name="Prop_Vent3" parent="Room/Props" unique_id=2025460040 instance=ExtResource("106_gsido")]
+[node name="Prop_Vent3" parent="Room/Props" unique_id=2025460040 instance=ExtResource("109_35t23")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 1.4023032, 0.7841163, 0.80136603)
 
-[node name="Prop_Vent4" parent="Room/Props" unique_id=1170466387 instance=ExtResource("106_gsido")]
+[node name="Prop_Vent4" parent="Room/Props" unique_id=1170466387 instance=ExtResource("109_35t23")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 8.017609, 0.7841163, 0.8013648)
 
 [node name="Cube_002" type="MeshInstance3D" parent="Room/Props" unique_id=182766723]
@@ -12292,43 +12293,43 @@ mesh = SubResource("ArrayMesh_cmcni")
 [node name="Lights" type="Node3D" parent="Room" unique_id=1939149820]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5917645, 0, 7.336006)
 
-[node name="env_ceiling_lamp" parent="Room/Lights" unique_id=710454193 instance=ExtResource("108_lifbr")]
+[node name="env_ceiling_lamp" parent="Room/Lights" unique_id=710454193 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.6584425, 2.6358595, -10.420589)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(710454193, 524783339) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(710454193, 679007822) index="0" unique_id=1120609968]
 light_energy = 0.251
 
-[node name="env_ceiling_lamp2" parent="Room/Lights" unique_id=431651021 instance=ExtResource("108_lifbr")]
+[node name="env_ceiling_lamp2" parent="Room/Lights" unique_id=431651021 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(431651021, 524783339) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(431651021, 679007822) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 spot_range = 2.814
 spot_attenuation = 1.52
 
-[node name="env_ceiling_lamp7" parent="Room/Lights" unique_id=45645241 instance=ExtResource("108_lifbr")]
+[node name="env_ceiling_lamp7" parent="Room/Lights" unique_id=45645241 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(45645241, 524783339) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(45645241, 679007822) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 spot_attenuation = 1.37
 
-[node name="env_ceiling_lamp4" parent="Room/Lights" unique_id=507427365 instance=ExtResource("108_lifbr")]
+[node name="env_ceiling_lamp4" parent="Room/Lights" unique_id=507427365 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.69838953, 2.603364, -11.7987995)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(507427365, 524783339) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(507427365, 679007822) index="0" unique_id=1120609968]
 light_energy = 0.08
 spot_range = 4.7193227
 spot_angle = 87.9047
 
-[node name="env_ceiling_lamp6" parent="Room/Lights" unique_id=2073783679 instance=ExtResource("108_lifbr")]
+[node name="env_ceiling_lamp6" parent="Room/Lights" unique_id=2073783679 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6280155, 2.603364, -7.3823385)
 
-[node name="Cylinder" parent="Room/Lights/env_ceiling_lamp6" index="0" unique_id=524783339]
+[node name="Cylinder" parent="Room/Lights/env_ceiling_lamp6" index="0" unique_id=679007822]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12351322, 0, 0.01646936)
 
 [node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp6/Cylinder" index="0" unique_id=1120609968]
@@ -12339,10 +12340,10 @@ spot_angle = 87.9047
 [node name="OmniLight3D" parent="Room/Lights/env_ceiling_lamp6/Cylinder/SpotLight3D3" index="0" unique_id=125851175]
 light_energy = 9.405
 
-[node name="env_ceiling_lamp3" parent="Room/Lights" unique_id=1288938063 instance=ExtResource("108_lifbr")]
+[node name="env_ceiling_lamp3" parent="Room/Lights" unique_id=1288938063 instance=ExtResource("111_uourf")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.19090223, 1.961021, -11.82384)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(1288938063, 524783339) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(1288938063, 679007822) index="0" unique_id=1120609968]
 transform = Transform3D(0.88825995, -2.007844e-08, 0.45934123, -0.45934123, -3.8827075e-08, 0.88825995, 3.731543e-15, -0.99999976, -4.371138e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(0.56323135, 0.52731746, 0.5280909, 1)
 spot_range = 5.794
@@ -12352,10 +12353,10 @@ spot_angle = 30.204771
 [node name="OmniLight3D" parent="Room/Lights/env_ceiling_lamp3/Cylinder/SpotLight3D3" index="0" unique_id=125851175]
 transform = Transform3D(1, 0, -7.764702e-23, -2.627256e-15, 1, 3.5527137e-15, -3.7193987e-23, 0, 1, 0.044002533, 0, -0.095477104)
 
-[node name="env_ceiling_lamp5" parent="Room/Lights" unique_id=793426471 instance=ExtResource("108_lifbr")]
+[node name="env_ceiling_lamp5" parent="Room/Lights" unique_id=793426471 instance=ExtResource("111_uourf")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.94554186, -0.26759893, -11.886757)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(793426471, 524783339) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(793426471, 679007822) index="0" unique_id=1120609968]
 transform = Transform3D(0.7008144, -3.1181226e-08, 0.7133435, -0.7133435, -3.063358e-08, 0.7008144, 4.8694323e-15, -0.9999999, -4.371139e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(1, 0, 0.15951031, 1)
 light_energy = 0.4
@@ -12402,7 +12403,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.99771035, 0, 0.06760667, 0, 1, 0, -0.06760667, 0, 0.99771035, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.9977103, 0, 0.067606665, 0, 1, 0, -0.067606665, 0, 0.9977103, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]
@@ -12554,24 +12555,24 @@ sky_mode = 1
 
 [node name="Doors" type="Node3D" parent="Room" unique_id=703968915]
 
-[node name="Env_Button_Open_Close" parent="Room/Doors" unique_id=1946767615 instance=ExtResource("110_tsql7")]
+[node name="Env_Button_Open_Close" parent="Room/Doors" unique_id=1946767615 instance=ExtResource("113_kw7y4")]
 transform = Transform3D(0.74218374, 0, -0.67019653, 0, 1, 0, 0.67019653, 0, 0.74218374, 7.6632915, 1.397426, -1.1211247)
 visible = false
 
-[node name="Env_Button_Open_Close2" parent="Room/Doors" unique_id=1062441731 instance=ExtResource("110_tsql7")]
+[node name="Env_Button_Open_Close2" parent="Room/Doors" unique_id=1062441731 instance=ExtResource("113_kw7y4")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.84919, 1.397426, 0.707509)
 visible = false
 
-[node name="Doors_Sliding" parent="Room/Doors" unique_id=1514953514 instance=ExtResource("111_nb3u6")]
+[node name="Doors_Sliding" parent="Room/Doors" unique_id=1514953514 instance=ExtResource("114_yaq7e")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 7.316954, 1.0764008, -1.6321357)
 
-[node name="Doors_Sliding2 Door Character" parent="Room/Doors" unique_id=95659695 instance=ExtResource("111_nb3u6")]
+[node name="Doors_Sliding2 Door Character" parent="Room/Doors" unique_id=95659695 instance=ExtResource("114_yaq7e")]
 transform = Transform3D(0, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0, 8.902527, 1.0764008, 0.0003851652)
-script = ExtResource("112_qn7jj")
-dialogue_acts = Array[ExtResource("113_jmepf")]([SubResource("Resource_rg5i1")])
+script = ExtResource("115_uxm5w")
+dialogue_acts = Array[ExtResource("116_e4rqk")]([SubResource("Resource_rg5i1")])
 
 [node name="Door_Character_Trigger2" type="Node3D" parent="Room/Doors/Doors_Sliding2 Door Character" unique_id=1578621735 node_paths=PackedStringArray("knocking_sound", "character_ref")]
-script = ExtResource("115_t4gwu")
+script = ExtResource("118_ajpct")
 activation_distance = 3.0
 knocking_sound = NodePath("Knocking_Emitter")
 character_ref = NodePath("..")
@@ -12587,20 +12588,20 @@ event_name = "event:/Talk"
 event_guid = "{73fb4fdc-ad5a-4ecf-9464-1743aaea642c}"
 transform = Transform3D(0, 0, 0.99999976, 0, 1, 0, -0.99999976, 0, 0, -0.0003851651, 0.13082159, -0.12322426)
 
-[node name="Doors_Sliding3" parent="Room/Doors" unique_id=868643664 instance=ExtResource("111_nb3u6")]
+[node name="Doors_Sliding3" parent="Room/Doors" unique_id=868643664 instance=ExtResource("114_yaq7e")]
 transform = Transform3D(-0.9999999, 0, 4.371138e-08, 0, 1, 0, -4.371138e-08, 0, -0.9999999, 0.033169, 1.0764008, -1.1191952)
 
-[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=778852150]
+[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=2096640977]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39810574, 0, 0)
 
-[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1452491975]
+[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=682133513]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
 
 [node name="Entities" type="Node3D" parent="Room" unique_id=950348517]
 
 [node name="LightController" type="Node" parent="." unique_id=508098654 node_paths=PackedStringArray("lamp_lights", "area_lights", "machine_screens")]
 unique_name_in_owner = true
-script = ExtResource("116_xmn1q")
+script = ExtResource("119_jxguy")
 lamp_lights = [NodePath("../Room/Lights/env_ceiling_lamp/Cylinder/SpotLight3D3"), NodePath("../Room/Lights/env_ceiling_lamp/Cylinder/SpotLight3D3/OmniLight3D"), NodePath("../Room/Lights/env_ceiling_lamp2/Cylinder/SpotLight3D3"), NodePath("../Room/Lights/env_ceiling_lamp2/Cylinder/SpotLight3D3/OmniLight3D"), NodePath("../Room/Lights/env_ceiling_lamp7/Cylinder/SpotLight3D3"), NodePath("../Room/Lights/env_ceiling_lamp7/Cylinder/SpotLight3D3/OmniLight3D"), NodePath("../Room/Lights/env_ceiling_lamp4/Cylinder/SpotLight3D3"), NodePath("../Room/Lights/env_ceiling_lamp4/Cylinder/SpotLight3D3/OmniLight3D"), NodePath("../Room/Lights/env_ceiling_lamp6/Cylinder/SpotLight3D3"), NodePath("../Room/Lights/env_ceiling_lamp6/Cylinder/SpotLight3D3/OmniLight3D"), NodePath("../Room/Lights/env_ceiling_lamp3/Cylinder/SpotLight3D3"), NodePath("../Room/Lights/env_ceiling_lamp3/Cylinder/SpotLight3D3/OmniLight3D"), NodePath("../Room/Lights/env_ceiling_lamp5/Cylinder/SpotLight3D3"), NodePath("../Room/Lights/env_ceiling_lamp5/Cylinder/SpotLight3D3/OmniLight3D"), NodePath("../Room/Interactables/Centrifuge/Prop_Centrifuge/Prop_Rotor/OmniLight3D"), NodePath("../Room/Lights/Env_Machine_Surgical/Surgical_Machine/Top_Rotor/SpotLight3D"), NodePath("../Room/Lights/env_ceiling_red_lamp/Cylinder/SpotLight3D3/OmniLight3D"), NodePath("../Room/Lights/env_ceiling_red_lamp/Cylinder/SpotLight3D3")]
 area_lights = [NodePath("../Room/Lights/AreaLight3D"), NodePath("../Room/Lights/AreaLight3D"), NodePath("../Room/Lights/AreaLight3D2"), NodePath("../Room/Lights/AreaLight3D6"), NodePath("../Room/Lights/AreaLight3D3"), NodePath("../Room/Lights/AreaLight3D12"), NodePath("../Room/Lights/AreaLight3D11"), NodePath("../Room/Lights/AreaLight3D5"), NodePath("../Room/Lights/AreaLight3D7"), NodePath("../Room/Lights/AreaLight3D8"), NodePath("../Room/Lights/AreaLight3D9"), NodePath("../Room/Lights/AreaLight3D10"), NodePath("../Room/Lights/AreaLight3D4"), NodePath("../Room/Lights/AreaLight3D13")]
 machine_screens = [NodePath("../Room/Interactables/Sampler/Blood Collector/SubViewport"), NodePath("../Room/Interactables/Scanner/SubViewport"), NodePath("../Room/Interactables/Centrifuge/Prop_Centrifuge/Centrifuge_Screen/SubViewport"), NodePath("../Room/Interactables/Pipette/Pipette_Screen/SubViewport"), NodePath("../Room/Machines/Env_Computer/env_screen/SubViewport")]
@@ -12617,7 +12618,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.027285278)
 [node name="pin" type="MeshInstance3D" parent="Int_Pinboard/Prop_Pin" unique_id=180481230 node_paths=PackedStringArray("start_pin", "end_pin")]
 transform = Transform3D(1, 0, 0, 0, -1.1920929e-07, -0.99999994, 0, 0.99999994, -1.1920929e-07, 0.31273672, 0.38829294, 5.9604638e-08)
 mesh = SubResource("ArrayMesh_ynpa1")
-script = ExtResource("118_1m3ty")
+script = ExtResource("121_llfbv")
 start_pin = NodePath("Marker3D")
 end_pin = NodePath("../pin2/Marker3D")
 segments = 5
@@ -12625,7 +12626,7 @@ string_material = SubResource("StandardMaterial3D_oqv5i")
 
 [node name="Note_document" type="Node3D" parent="Int_Pinboard/Prop_Pin/pin" unique_id=1089155288 node_paths=PackedStringArray("note_camera", "note_text", "stop_reading_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(-0.99034786, -8.6578964e-08, 0.13860385, 8.742278e-08, -1, 0, 0.13860384, 1.2117132e-08, 0.990348, 0.028091786, 0.019024447, 0.16737428)
-script = ExtResource("119_lnpp2")
+script = ExtResource("122_6inmf")
 note_camera = NodePath("Skeleton3D/Camera Marker/Camera3D")
 note_text = NodePath("Note Viewport/Control/Label")
 stop_reading_sound = NodePath("StopReadingSound")
@@ -12634,7 +12635,7 @@ area = NodePath("Skeleton3D/Cube_027/Area3D")
 sound_emitter = NodePath("StartReadingSound")
 outline_meshes = [NodePath("Skeleton3D/Cube_027")]
 
-[node name="interactable_indecator" parent="Int_Pinboard/Prop_Pin/pin/Note_document" unique_id=1292365285 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Int_Pinboard/Prop_Pin/pin/Note_document" unique_id=1292365285 instance=ExtResource("25_8ll8u")]
 show_distance = 1.5
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Int_Pinboard/Prop_Pin/pin/Note_document" unique_id=4380040]
@@ -12735,7 +12736,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("120_yi6cf")
+texture = ExtResource("123_sekx7")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Int_Pinboard/Prop_Pin/pin/Note_document/Note Viewport/Control" unique_id=346174751]
@@ -12748,7 +12749,7 @@ offset_bottom = 86.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 25
 theme_override_constants/paragraph_spacing = -1
-theme_override_fonts/font = ExtResource("10_djxsf")
+theme_override_fonts/font = ExtResource("10_m26da")
 theme_override_font_sizes/font_size = 16
 text = "Date: 12/11/1998
 Patient: Katerina Snova"
@@ -12765,7 +12766,7 @@ offset_right = -22.587341
 offset_bottom = -163.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("59_khn1d")
+texture = ExtResource("62_lwnoy")
 expand_mode = 1
 
 [node name="StartReadingSound" type="FmodEventEmitter3D" parent="Int_Pinboard/Prop_Pin/pin/Note_document" unique_id=1619666570]
@@ -12784,7 +12785,7 @@ mesh = SubResource("ArrayMesh_ynpa1")
 
 [node name="Note_document" type="Node3D" parent="Int_Pinboard/Prop_Pin/pin2" unique_id=1620125052 node_paths=PackedStringArray("note_camera", "note_text", "stop_reading_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0, 0.018329397, 0.19593424)
-script = ExtResource("119_lnpp2")
+script = ExtResource("122_6inmf")
 note_camera = NodePath("Skeleton3D/Camera Marker/Camera3D")
 note_text = NodePath("Note Viewport/Control/TextureRect/Label")
 stop_reading_sound = NodePath("StopReadingSound")
@@ -12793,7 +12794,7 @@ area = NodePath("Skeleton3D/Cube_027/Area3D")
 sound_emitter = NodePath("StartReadingSound")
 outline_meshes = [NodePath("Skeleton3D/Cube_027")]
 
-[node name="interactable_indecator" parent="Int_Pinboard/Prop_Pin/pin2/Note_document" unique_id=1169303280 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Int_Pinboard/Prop_Pin/pin2/Note_document" unique_id=1169303280 instance=ExtResource("25_8ll8u")]
 show_distance = 1.5
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Int_Pinboard/Prop_Pin/pin2/Note_document" unique_id=361849299]
@@ -12894,7 +12895,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("26_nqb7s")
+texture = ExtResource("29_grssb")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Int_Pinboard/Prop_Pin/pin2/Note_document/Note Viewport/Control/TextureRect" unique_id=1249859561]
@@ -12907,7 +12908,7 @@ offset_bottom = 623.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 25
 theme_override_constants/paragraph_spacing = -1
-theme_override_fonts/font = ExtResource("27_77286")
+theme_override_fonts/font = ExtResource("30_r6lsp")
 theme_override_font_sizes/font_size = 24
 text = "Infected body scan. Further treatment is required.
 
@@ -12930,7 +12931,7 @@ mesh = SubResource("ArrayMesh_ynpa1")
 
 [node name="Note_document" type="Node3D" parent="Int_Pinboard/Prop_Pin/pin4" unique_id=1898750088 node_paths=PackedStringArray("note_camera", "note_text", "stop_reading_sound", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0, 0.018329397, 0.19593424)
-script = ExtResource("119_lnpp2")
+script = ExtResource("122_6inmf")
 note_camera = NodePath("Skeleton3D/Camera Marker/Camera3D")
 note_text = NodePath("Note Viewport/Control/TextureRect/Label")
 stop_reading_sound = NodePath("StopReadingSound")
@@ -12939,7 +12940,7 @@ area = NodePath("Skeleton3D/Cube_027/Area3D")
 sound_emitter = NodePath("StartReadingSound")
 outline_meshes = [NodePath("Skeleton3D/Cube_027")]
 
-[node name="interactable_indecator" parent="Int_Pinboard/Prop_Pin/pin4/Note_document" unique_id=2032043895 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Int_Pinboard/Prop_Pin/pin4/Note_document" unique_id=2032043895 instance=ExtResource("25_8ll8u")]
 show_distance = 1.5
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Int_Pinboard/Prop_Pin/pin4/Note_document" unique_id=952471413]
@@ -13040,7 +13041,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("26_nqb7s")
+texture = ExtResource("29_grssb")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Int_Pinboard/Prop_Pin/pin4/Note_document/Note Viewport/Control/TextureRect" unique_id=96578157]
@@ -13053,7 +13054,7 @@ offset_bottom = 623.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 25
 theme_override_constants/paragraph_spacing = -1
-theme_override_fonts/font = ExtResource("27_77286")
+theme_override_fonts/font = ExtResource("30_r6lsp")
 theme_override_font_sizes/font_size = 24
 text = "Infected body scan. Further treatment is required.
 
@@ -13078,7 +13079,7 @@ mesh = SubResource("ArrayMesh_ynpa1")
 
 [node name="Item_flash_drive" type="Node3D" parent="." unique_id=1084068999 node_paths=PackedStringArray("collision_shape", "character_ref", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(0.6288724, 0, -0.77750856, 0, 1, 0, 0.77750856, 0, 0.6288724, -0.51851225, 0.03957075, -4.8832784)
-script = ExtResource("121_7fhby")
+script = ExtResource("124_4h1b4")
 flash_drive_name = "Electric flash drive"
 collision_shape = NodePath("Area3D/CollisionShape3D")
 character_ref = NodePath("../Room/Doors/Doors_Sliding2 Door Character")
@@ -13086,7 +13087,7 @@ area = NodePath("Area3D")
 sound_emitter = NodePath("TakeFlashDriveSound")
 outline_meshes = [NodePath("flash_drive_model2")]
 
-[node name="interactable_indecator" parent="Item_flash_drive" unique_id=566408492 instance=ExtResource("22_4pbdx")]
+[node name="interactable_indecator" parent="Item_flash_drive" unique_id=566408492 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.035272386, 0)
 
 [node name="flash_drive_model" type="MeshInstance3D" parent="Item_flash_drive" unique_id=932876190]
@@ -13120,7 +13121,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28634644, 0)
 shape = SubResource("BoxShape3D_j4o88")
 
 [node name="IntroductionCutscene" type="Node3D" parent="." unique_id=1689930074 node_paths=PackedStringArray("flashlight")]
-script = ExtResource("122_yfmxj")
+script = ExtResource("125_4iudj")
 flashlight = NodePath("../Player/Flashligh_light")
 
 [node name="Prop_Cardbox" type="Node3D" parent="IntroductionCutscene" unique_id=1299431047]
@@ -13169,7 +13170,7 @@ transform = Transform3D(0.078638695, 0, 0.63515025, 0, 0.64, 0, -0.63515025, 0, 
 [node name="Box" type="MeshInstance3D" parent="IntroductionCutscene/Prop_Cardbox5" unique_id=718121084]
 mesh = SubResource("ArrayMesh_1ncff")
 
-[node name="Item_flashlight" parent="IntroductionCutscene/Prop_Cardbox5/Box" unique_id=1303338469 instance=ExtResource("125_apjnh")]
+[node name="Item_flashlight" parent="IntroductionCutscene/Prop_Cardbox5/Box" unique_id=1303338469 instance=ExtResource("128_g2jwi")]
 transform = Transform3D(0.66794366, 0, -0.7442119, 0, 0.9999998, 0, 0.744212, 0, 0.6679436, 0.038510103, 0.5575355, -0.137455)
 
 [node name="Cube_019" type="MeshInstance3D" parent="IntroductionCutscene/Prop_Cardbox5/Box" unique_id=594668094]
