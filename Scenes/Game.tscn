@@ -58,11 +58,12 @@
 [ext_resource type="Script" uid="uid://dhhwunayvjknu" path="res://Systems/Scanner_Interactions.gd" id="56_bdnt5"]
 [ext_resource type="Texture2D" uid="uid://cr4bcfwjni1m7" path="res://World/Props/Xray/Xray_Texture.png" id="57_7ubud"]
 [ext_resource type="Texture2D" uid="uid://bk66ydditnowo" path="res://UI/Screen/Logo Kras.png" id="58_6x5lk"]
-[ext_resource type="Texture2D" uid="uid://cntf7vwfwcyhy" path="res://UI/Scanner/xray_new_1.jpg" id="59_g3jfi"]
-[ext_resource type="Texture2D" uid="uid://cdmeve2r0y2tq" path="res://UI/Scanner/X-ray-chest-2.png" id="60_73m62"]
-[ext_resource type="Texture2D" uid="uid://di6hfpf1hf3o8" path="res://UI/Scanner/X-RayScan_Chest-3.png" id="61_jcmlj"]
+[ext_resource type="Texture2D" uid="uid://bmp855tawa21o" path="res://UI/Scanner/Chest/X-Ray_Scan_chest_0.png" id="59_ucek8"]
+[ext_resource type="Texture2D" uid="uid://kfmp2fjmx4od" path="res://UI/Scanner/Chest/X-Ray_Scan_Chest_1.png" id="60_52q12"]
+[ext_resource type="Texture2D" uid="uid://d3q028pr3dt57" path="res://UI/Scanner/Chest/X-Ray_Scan_Chest_2.png" id="61_ax6kq"]
+[ext_resource type="Texture2D" uid="uid://b06iuw3g0ynq3" path="res://UI/Scanner/Chest/X-Ray_Scan_Chest_3.png" id="62_8c4fr"]
 [ext_resource type="Texture2D" uid="uid://b3ty3k2ni425u" path="res://UI/Scanner/X-RayScan_Chest-4.png" id="62_lwnoy"]
-[ext_resource type="Texture2D" uid="uid://br5ecu0pa3fm1" path="res://UI/Scanner/X-RayScan_Chest-5.png" id="63_pr1qh"]
+[ext_resource type="Texture2D" uid="uid://by5yvlthji8" path="res://UI/Scanner/Chest/X-Ray_Scan_chest_4.png" id="63_37oxq"]
 [ext_resource type="PackedScene" uid="uid://ehrseny5tlqp" path="res://World/Items/Document/item_document.tscn" id="64_ym8jw"]
 [ext_resource type="Script" uid="uid://dquyjky5tjb8x" path="res://World/Interactables/Scanner_Start.gd" id="65_0pku7"]
 [ext_resource type="PackedScene" uid="uid://b6pfyhbaso5ix" path="res://World/Props/Machines/Micro Scope/prop_micro_scope.tscn" id="66_tg0ye"]
@@ -337,22 +338,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rhknm")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_15wh3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_n07s0"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l04be"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjrn6"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_15wh3")
+albedo_texture = SubResource("ViewportTexture_n07s0")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wse4m"]
 size = Vector3(0.10888672, 0.00920105, 0.10418701)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ex5nn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_cjmb0"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7atnq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m26da"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ex5nn")
+albedo_texture = SubResource("ViewportTexture_cjmb0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnj3y"]
 albedo_texture = ExtResource("29_grssb")
@@ -432,12 +433,12 @@ bind/3/pose = Transform3D(-0.010000001, 0, 8.742278e-10, -8.742279e-10, -4.37113
 [sub_resource type="BoxShape3D" id="BoxShape3D_xnj3y"]
 size = Vector3(0.2806848, 0.6048972, 0.4082688)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_orm0h"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_r1ony"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03ebe"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdxgc"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_orm0h")
+albedo_texture = SubResource("ViewportTexture_r1ony")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ridl8"]
 resource_name = "Chair"
@@ -3369,12 +3370,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5wgas")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ieb8s"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_yc2co"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_snifa"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ojlp"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ieb8s")
+albedo_texture = SubResource("ViewportTexture_yc2co")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7627"]
 albedo_texture = ExtResource("41_a6xvn")
@@ -5972,12 +5973,12 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_efy8e"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_a5ota"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23vak"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_icatu"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_efy8e")
+albedo_texture = SubResource("ViewportTexture_a5ota")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7368"]
 resource_name = "Dark"
@@ -9150,7 +9151,7 @@ bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
 [node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=452260851]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_l04be")
+surface_material_override/1 = SubResource("StandardMaterial3D_wjrn6")
 
 [node name="Marker3D" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -9199,7 +9200,7 @@ bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(-0.095, 0, 0, 1)
 
 [node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=986514553]
-material_overlay = SubResource("StandardMaterial3D_7atnq")
+material_overlay = SubResource("StandardMaterial3D_m26da")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
@@ -9382,7 +9383,7 @@ bones/5/rotation = Quaternion(0.875, 0, 0, 1)
 
 [node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=986514553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0068823397, 0, 0.0066256523)
-material_overlay = SubResource("StandardMaterial3D_03ebe")
+material_overlay = SubResource("StandardMaterial3D_hdxgc")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
@@ -10079,46 +10080,293 @@ grow_vertical = 2
 
 [node name="Lung_Status_1" type="TextureRect" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages" unique_id=1102490866]
 visible = false
-custom_maximum_size = Vector2(512, 512)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 256.0
-offset_top = 170.24
-offset_right = -256.0
-offset_bottom = -341.76
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.32501
+offset_top = -311.385
+offset_right = 306.6754
+offset_bottom = -2.3850098
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("59_g3jfi")
+scale = Vector2(1.435, 1.435)
+texture = ExtResource("59_ucek8")
+
+[node name="Scan Text" type="Label" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages/Lung_Status_1" unique_id=786500704]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -453.84167
+offset_top = -85.24216
+offset_right = -223.84167
+offset_bottom = -44.242157
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_wjrn6")
+theme_override_font_sizes/font_size = 30
+text = "Scan: LUNGS"
+vertical_alignment = 1
+
+[node name="Information" type="Label" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages/Lung_Status_1" unique_id=1468280009]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -451.05423
+offset_top = -46.914627
+offset_right = -221.05423
+offset_bottom = 286.0854
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_wjrn6")
+theme_override_font_sizes/font_size = 30
+text = "-------- ---
+--------- - - -
+--- -- -- -- ---
+
+**----/----"
 
 [node name="Lung_Status_2" type="TextureRect" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages" unique_id=346060581]
 visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("60_73m62")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.32501
+offset_top = -311.385
+offset_right = 306.6754
+offset_bottom = -2.3850098
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.435, 1.435)
+texture = ExtResource("60_52q12")
+
+[node name="Scan Text" type="Label" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages/Lung_Status_2" unique_id=99064045]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -453.84167
+offset_top = -85.24216
+offset_right = -223.84167
+offset_bottom = -44.242157
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_wjrn6")
+theme_override_font_sizes/font_size = 30
+text = "Scan: LUNGS"
+vertical_alignment = 1
+
+[node name="Information" type="Label" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages/Lung_Status_2" unique_id=1691275641]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -451.05423
+offset_top = -46.914627
+offset_right = -221.05423
+offset_bottom = 286.0854
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_wjrn6")
+theme_override_font_sizes/font_size = 30
+text = "-------- ---
+--------- - - -
+--- -- -- -- ---
+
+**----/----"
 
 [node name="Lung_Status_3" type="TextureRect" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages" unique_id=702101879]
 visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("61_jcmlj")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.32501
+offset_top = -311.385
+offset_right = 306.6754
+offset_bottom = -2.3850098
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.435, 1.435)
+texture = ExtResource("61_ax6kq")
+
+[node name="Scan Text" type="Label" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages/Lung_Status_3" unique_id=1426328349]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -453.84167
+offset_top = -85.24216
+offset_right = -223.84167
+offset_bottom = -44.242157
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_wjrn6")
+theme_override_font_sizes/font_size = 30
+text = "Scan: LUNGS"
+vertical_alignment = 1
+
+[node name="Information" type="Label" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages/Lung_Status_3" unique_id=1848955623]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -451.05423
+offset_top = -46.914627
+offset_right = -221.05423
+offset_bottom = 286.0854
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_wjrn6")
+theme_override_font_sizes/font_size = 30
+text = "-------- ---
+--------- - - -
+--- -- -- -- ---
+
+**----/----"
 
 [node name="Lung_Status_4" type="TextureRect" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages" unique_id=706886435]
 visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("62_lwnoy")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.32501
+offset_top = -311.385
+offset_right = 306.6754
+offset_bottom = -2.3850098
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.435, 1.435)
+texture = ExtResource("62_8c4fr")
+
+[node name="Scan Text" type="Label" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages/Lung_Status_4" unique_id=1803657441]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -453.84167
+offset_top = -85.24216
+offset_right = -223.84167
+offset_bottom = -44.242157
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_wjrn6")
+theme_override_font_sizes/font_size = 30
+text = "Scan: LUNGS"
+vertical_alignment = 1
+
+[node name="Information" type="Label" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages/Lung_Status_4" unique_id=579097120]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -451.05423
+offset_top = -46.914627
+offset_right = -221.05423
+offset_bottom = 286.0854
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_wjrn6")
+theme_override_font_sizes/font_size = 30
+text = "-------- ---
+--------- - - -
+--- -- -- -- ---
+
+**----/----"
 
 [node name="Lung_Status_5" type="TextureRect" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages" unique_id=1205486954]
 visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("63_pr1qh")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.32501
+offset_top = -311.385
+offset_right = 306.6754
+offset_bottom = -2.3850098
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.435, 1.435)
+texture = ExtResource("63_37oxq")
+
+[node name="Scan Text" type="Label" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages/Lung_Status_5" unique_id=1672472709]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -453.84167
+offset_top = -85.24216
+offset_right = -223.84167
+offset_bottom = -44.242157
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_wjrn6")
+theme_override_font_sizes/font_size = 30
+text = "Scan: LUNGS"
+vertical_alignment = 1
+
+[node name="Information" type="Label" parent="Room/Interactables/Scanner/SubViewport/Control/LungStatusImages/Lung_Status_5" unique_id=1778429501]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -451.05423
+offset_top = -46.914627
+offset_right = -221.05423
+offset_bottom = 286.0854
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_wjrn6")
+theme_override_font_sizes/font_size = 30
+text = "-------- ---
+--------- - - -
+--- -- -- -- ---
+
+**----/----"
 
 [node name="Black" type="ColorRect" parent="Room/Interactables/Scanner/SubViewport/Control" unique_id=1737060189]
 layout_mode = 1
@@ -10694,7 +10942,7 @@ bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
 [node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=452260851]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_snifa")
+surface_material_override/1 = SubResource("StandardMaterial3D_0ojlp")
 
 [node name="Marker3D" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -11867,7 +12115,7 @@ bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
 [node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=452260851]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_23vak")
+surface_material_override/1 = SubResource("StandardMaterial3D_icatu")
 
 [node name="Marker3D" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -12403,7 +12651,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.9977103, 0, 0.067606665, 0, 1, 0, -0.067606665, 0, 0.9977103, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.9977102, 0, 0.067606665, 0, 1, 0, -0.067606665, 0, 0.9977102, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]
@@ -12458,7 +12706,7 @@ area_attenuation = 0.798
 area_size = Vector2(0.2227974, 0.21999359)
 
 [node name="AreaLight3D3" type="AreaLight3D" parent="Room/Lights" unique_id=1764081202]
-transform = Transform3D(-0.0033848472, 0, -0.9999942, 0, 1, 0, 0.9999942, 0, -0.0033848472, -0.37948334, 1.7125783, -10.426028)
+transform = Transform3D(-0.0033848472, 0, -0.9999942, 0, 1, 0, 0.9999942, 0, -0.0033848472, -0.3808857, 1.7125783, -10.011727)
 light_color = Color(0.52248555, 0.68479013, 0.3408077, 1)
 light_energy = 0.656
 shadow_bias = 0.0
