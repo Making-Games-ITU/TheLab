@@ -11,18 +11,15 @@ func focus() -> void:
 
 func _update_prompt() -> void:
 	if GameStats.vial_location == GameStats.VialLocation.NONE:
-		if PlayerStats.is_holding == PlayerStats.HoldState.VIAL:
-			if VialStats.empty:
-				prompt_text = "Place vial back"
-			else:
-				prompt_text = "Vial not empty"
-		else:
-			prompt_text = "Vial already obtained"
-	else:
 		if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
-			prompt_text = "Take empty vial"
+			prompt_text = "Take vial"
 		else:
-			prompt_text = "Hands are full"
+			prompt_text = "Hands full"
+	else:
+		if PlayerStats.is_holding == PlayerStats.HoldState.VIAL and VialStats.empty:
+			prompt_text = "Place vial back"
+		else:
+			prompt_text = "Vial not empty"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(interactor: Node) -> void:
