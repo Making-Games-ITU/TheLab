@@ -1,6 +1,7 @@
 extends Control
 class_name Dialogue_Manager
 
+@export var talk_sound: FmodEventEmitter3D
 @export var dialogue_text_box : RichTextLabel
 var current_audioPlayer : AudioStreamPlayer3D
 var current_sentece : Sentence
@@ -35,6 +36,7 @@ func _process(delta: float) -> void:
 		var phrase_text: String = phrase["text"]
 		var progress := clampf(inverse_lerp(phrase["start"], phrase["end"], time), 0.0, 1.0)
 		visables += floori(phrase_text.length() * progress)
+		talk_sound.play()
 	dialogue_text_box.visible_characters = maxi(dialogue_text_box.visible_characters, visables)
 	if dialogue_text_box.visible_characters >= dialogue_text_box.get_total_character_count():
 		_on_finished_dialogue()

@@ -12,6 +12,7 @@ extends CharacterBody3D
 @onready var blood_vial = %PlayerBloodVial
 
 @export var steps:FmodEventEmitter3D
+@export var on_off_sound: FmodEventEmitter3D
 
 var current_interactable: Interactable
 var is_steps_playing: bool = false
@@ -121,6 +122,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("flashlight"):
 		flashlight.visible = !flashlight.visible
+		on_off_sound.play()
 		# flashlight_icon.visible = !flashlight_icon.visible
 
 func _handleStepsSFX() -> void:

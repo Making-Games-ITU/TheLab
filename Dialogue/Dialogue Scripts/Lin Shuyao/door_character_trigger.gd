@@ -21,4 +21,5 @@ func _process(delta: float) -> void:
 
 func _start_event():
 	character_ref.start_dialogue("f3f09eb8-35a1-46e5-b468-a4878494cfe9")
+	knocking_sound.queue_free()
 	triggered = true
