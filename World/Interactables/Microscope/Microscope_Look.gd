@@ -1,6 +1,7 @@
 extends Interactable
 
 @export var exit_sound: FmodEventEmitter3D
+@export var ambient_sound: FmodEventEmitter3D
 
 func focus() -> void:
 	_set_outline(true)
@@ -42,6 +43,7 @@ func _enter_microscope() -> void:
 	%ExitFullscreenImage.visible = true
 	PlayerStats.is_analyzing = true
 	AudioManager.one_shot(sound_emitter)
+	ambient_sound.play()
 	print("Analyzing")
 
 func _exit_mircoscope() -> void:
@@ -49,6 +51,7 @@ func _exit_mircoscope() -> void:
 	%ExitFullscreenImage.visible = false
 	PlayerStats.is_analyzing = false
 	AudioManager.one_shot(exit_sound)
+	ambient_sound.stop()
 	print("Returning from analyzing")
 
 func _uninteractable() -> void:

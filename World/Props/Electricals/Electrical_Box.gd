@@ -22,6 +22,7 @@ func _update_prompt() -> void:
 func interact(interactor: Node) -> void:
 	if PlayerStats.is_holding == PlayerStats.HoldState.FLASH_DRIVE:
 		_turn_on_electricity()
+		sound_emitter.play()
 		
 	else:
 		_uninteractable()
