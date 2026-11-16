@@ -5,6 +5,7 @@ extends Node
 var _clear_timer : Timer
 var _progression_level = GameStats.progression_level
 var _cured = GameStats.cured
+@onready var ambientEmmiter = $"/root/Enviroment2/Ambient"
 
 func _ready() -> void:
 	progress()
@@ -90,6 +91,7 @@ func update_progression_level() -> void:
 			GameStats.progression_level = 0
 			GameStats.cured = 0
 			print("Level: 0 (healthy)")
+	ambientEmmiter.set_parameter("ProgressionLevel",GameStats.progression_level)
 
 
 func check_if_successful() -> void:

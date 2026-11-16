@@ -19,5 +19,5 @@ static func modify_parameter(event_emitter_3d: FmodEventEmitter3D, parameter: St
 
 #Currently only ambient has another parameter, so made a specific function only for ambient
 func update_ambient_param(danger : int) -> void:
-	ambient.set_parameter("Progression Level", danger) 
+	ambient.set_parameter("ProgressionLevel", danger) 
 	print("Ambient progression level: ",ambient.get_parameter("Progression Level"))
