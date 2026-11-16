@@ -2,7 +2,6 @@ extends Control
 class_name Dialogue_Manager
 
 @export var talk_sound: FmodEventEmitter3D
-@export var talk_sound: FmodEventEmitter3D
 @export var dialogue_text_box : RichTextLabel
 var current_audioPlayer : AudioStreamPlayer3D
 var current_sentece : Sentence
@@ -37,7 +36,6 @@ func _process(delta: float) -> void:
 		var phrase_text: String = phrase["text"]
 		var progress := clampf(inverse_lerp(phrase["start"], phrase["end"], time), 0.0, 1.0)
 		visables += floori(phrase_text.length() * progress)
-		
 	dialogue_text_box.visible_characters = maxi(dialogue_text_box.visible_characters, visables)
 	if dialogue_text_box.text[dialogue_text_box.visible_characters-1]!=" ":
 		talk_sound.play()
