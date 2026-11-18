@@ -1,7 +1,12 @@
 extends Machine
+class_name Microscope
 
 @export var exit_sound: FmodEventEmitter3D
 @export var ambient_sound: FmodEventEmitter3D
+
+var  microscope_zoomed : Signal
+var  microscope_exit : Signal
+var times_interacted : int
 
 func focus() -> void:
 	_set_outline(true)
@@ -39,6 +44,8 @@ func _on_interact(interactor: Node) -> void:
 	_update_prompt()
 
 func _enter_microscope() -> void:
+	microscope_zoomed.emit()
+	times_interacted += 1
 	%Micrograph.visible = true
 	%ExitFullscreenImage.visible = true
 	PlayerStats.is_analyzing = true

@@ -2,6 +2,8 @@ extends Node
 class_name Horror_Event
 
 @export var id : String
+var event_started : bool = false
+var event_ended : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
