@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://drrbwbtvsv4cy"]
+
+[ext_resource type="Texture2D" uid="uid://kfmp2fjmx4od" path="res://UI/Scanner/Chest/X-Ray_Scan_Chest_1.png" id="1_cfu45"]
+
+[resource]
+albedo_texture = ExtResource("1_cfu45")
+emission_enabled = true
+emission_energy_multiplier = 0.5
+emission_texture = ExtResource("1_cfu45")
