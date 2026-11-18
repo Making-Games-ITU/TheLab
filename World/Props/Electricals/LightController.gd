@@ -10,9 +10,13 @@ signal turn_off_all_lights_signal
 signal turn_on_all_lights_signal
 
 func _ready() -> void:
+	turn_on_all_machines()
+	return
 	turn_off_all_lights_signal.connect(turn_off_all_lights)
 	turn_on_all_lights_signal.connect(turn_on_all_lights)
 	turn_off_all_lights()
+	
+	
 
 func turn_off_all_lights():
 	for lamp in lamp_lights:
@@ -32,3 +36,8 @@ func turn_on_all_machines():
 	GameStats.power = true
 	for machine in machine_screens:
 		machine.screen_on(true)
+
+func turn_off_all_machines():
+	GameStats.power = false
+	for machine in machine_screens:
+		machine.screen_on(false)

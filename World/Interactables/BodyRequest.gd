@@ -1,8 +1,10 @@
 extends Machine
+class_name Request_Body
 
 @export var press_anim : ButtonPressAnimation 
 
 var bodyIdString : String = "BODY #"
+signal on_body_order
 
 func focus() -> void:
 	_set_outline(true)
@@ -28,7 +30,8 @@ func _new_body() -> void:
 	GameStats.body_number += 1 
 	GameStats.body_ID = bodyIdString+ "%04d" % GameStats.body_number
 	print("New body requested: ", GameStats.body_ID)
-	
+	on_body_order.emit()
+
 	GameStats.body_exists = true
 	
 	GameManager.get_body_state()
