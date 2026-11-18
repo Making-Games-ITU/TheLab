@@ -1,11 +1,12 @@
 extends Node
-
 @export var next_timer: float =  1.0
 
 var _clear_timer : Timer
 var _progression_level = GameStats.progression_level
 var _cured = GameStats.cured
 @onready var ambientEmmiter = $"/root/Enviroment2/Ambient"
+
+signal progression_update()
 
 func _ready() -> void:
 	progress()
@@ -40,6 +41,8 @@ func _set_danger_level() -> void:
 			danger = 0
 	
 	GameStats.danger_level = danger
+	
+	progression_update.emit()
 	#TODO: Set audio param to danger level here. 
 
 #Add a infection type for a given progression level here
