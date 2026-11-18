@@ -112,6 +112,7 @@
 [ext_resource type="PackedScene" uid="uid://c7n36j11m4xl1" path="res://World/Props/Trolley/prop_curtains_trolly.tscn" id="110_gtta6"]
 [ext_resource type="PackedScene" uid="uid://ccbjica3ksi1c" path="res://World/Props/Trolley/prop_trolley.tscn" id="111_iws4q"]
 [ext_resource type="PackedScene" uid="uid://c5qlgxu4phaxk" path="res://World/Props/Vent/prop_vent.tscn" id="112_tral7"]
+[ext_resource type="Script" uid="uid://bo81ba328a7no" path="res://Horror Events/Small Events/Vents/InTheVents.gd" id="113_3xpj8"]
 [ext_resource type="Texture2D" uid="uid://l540lgh8bea3" path="res://World/Environments/Pit/MetalTexture.jpg" id="113_xnxdt"]
 [ext_resource type="PackedScene" uid="uid://bhcn0eyj5awrm" path="res://World/Props/Lamps/Ceiling Lamp/env_ceiling_lamp.tscn" id="114_soh28"]
 [ext_resource type="Texture2D" uid="uid://dx0xssdqbuoou" path="res://World/Props/Machines/Surgery Machine/Surgery_Machine_Texture.png" id="115_y1jwy"]
@@ -7759,6 +7760,18 @@ _data = {
 &"scan": SubResource("Animation_5wgas")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_s04wv"]
+size = Vector3(1.5646667, 1, 1.605957)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcxrd"]
+size = Vector3(1.4227295, 1, 1.7543945)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wmawy"]
+size = Vector3(1.4541016, 1, 1.7993164)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qt5wh"]
+size = Vector3(1.6958008, 1, 1.7814941)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68ldy"]
 resource_name = "Pit"
 vertex_color_use_as_albedo = true
@@ -9023,6 +9036,7 @@ collide_with_areas = true
 
 [node name="PSXMesh2" type="MeshInstance3D" parent="Player/Head/Camera3D" unique_id=204571253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1526204, 0, -1.11496)
+visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_vweq0")
 
@@ -10501,7 +10515,7 @@ offset_right = -244.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Event_EyeBallScare" type="Control" parent="Room/Interactables/Microscope/Micrograph" unique_id=1347128403 node_paths=PackedStringArray("horrorSoundEmitter", "eyeControl")]
+[node name="Event_EyeBallScare" type="Control" parent="Room/Interactables/Microscope/Micrograph" unique_id=1347128403 node_paths=PackedStringArray("horror_sound_emitter", "video_player_layer", "eye_control", "microscope")]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -10510,8 +10524,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("71_e6wnv")
-horrorSoundEmitter = NodePath("EyeScare")
-eyeControl = NodePath(".")
+horror_sound_emitter = NodePath("EyeScare")
+video_player_layer = NodePath("VideoStreamPlayer")
+eye_control = NodePath(".")
+microscope = NodePath("../../Microscope")
 id = "3cdd7801-23b4-4c12-b5a3-9c88fde16d85"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/Interactables/Microscope/Micrograph/Event_EyeBallScare" unique_id=1892240952]
@@ -12562,29 +12578,70 @@ transform = Transform3D(0.19923048, 0, -0.9799527, 0, 1, 0, 0.9799527, 0, 0.1992
 [node name="Prop_Trolley2" parent="Room/Props" unique_id=928575320 instance=ExtResource("111_iws4q")]
 transform = Transform3D(-0.33355844, 0, -0.9427295, 0, 1, 0, 0.9427295, 0, -0.33355844, 5.3995357, 0.033240795, 0.4010279)
 
-[node name="Prop_Vent" parent="Room/Props" unique_id=1987298839 instance=ExtResource("112_tral7")]
+[node name="Prop_Vent" parent="Room/Props" unique_id=1987298839 node_paths=PackedStringArray("horror_sound_emitter", "area") instance=ExtResource("112_tral7")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.9324455, 0.7841163, -6.8150554)
+script = ExtResource("113_3xpj8")
+horror_sound_emitter = NodePath("InTheVentsSFX")
+area = NodePath("Area3D")
+id = "1"
 
 [node name="InTheVentsSFX" type="FmodEventEmitter3D" parent="Room/Props/Prop_Vent" unique_id=1141779761]
 event_name = "event:/Deprecatted/BabyCrying"
 event_guid = "{7ced835a-c86c-4673-b9b2-df3fdf90351f}"
 
-[node name="Prop_Vent2" parent="Room/Props" unique_id=1397373806 instance=ExtResource("112_tral7")]
+[node name="Area3D" type="Area3D" parent="Room/Props/Prop_Vent" unique_id=1865858439]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Props/Prop_Vent/Area3D" unique_id=365062779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09712219, 0, -0.30297852)
+shape = SubResource("BoxShape3D_s04wv")
+
+[node name="Prop_Vent2" parent="Room/Props" unique_id=1397373806 node_paths=PackedStringArray("horror_sound_emitter", "area") instance=ExtResource("112_tral7")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.80820274, 0.7841163, -4.815055)
+script = ExtResource("113_3xpj8")
+horror_sound_emitter = NodePath("InTheVentsSFX")
+area = NodePath("Area3D")
+id = "2"
 
 [node name="InTheVentsSFX" type="FmodEventEmitter3D" parent="Room/Props/Prop_Vent2" unique_id=1450686537]
 event_name = "event:/Deprecatted/BabyCrying"
 event_guid = "{7ced835a-c86c-4673-b9b2-df3fdf90351f}"
 
-[node name="Prop_Vent3" parent="Room/Props" unique_id=2025460040 instance=ExtResource("112_tral7")]
+[node name="Area3D" type="Area3D" parent="Room/Props/Prop_Vent2" unique_id=1396087271]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Props/Prop_Vent2/Area3D" unique_id=324935432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21136475, 0, -0.64698416)
+shape = SubResource("BoxShape3D_hcxrd")
+
+[node name="Prop_Vent3" parent="Room/Props" unique_id=2025460040 node_paths=PackedStringArray("horror_sound_emitter", "area") instance=ExtResource("112_tral7")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 1.4023032, 0.7841163, 0.80136603)
+script = ExtResource("113_3xpj8")
+horror_sound_emitter = NodePath("InTheVentsSFX")
+area = NodePath("Area3D")
+id = "3"
 
 [node name="InTheVentsSFX" type="FmodEventEmitter3D" parent="Room/Props/Prop_Vent3" unique_id=287113020]
 event_name = "event:/Deprecatted/BabyCrying"
 event_guid = "{7ced835a-c86c-4673-b9b2-df3fdf90351f}"
 
-[node name="Prop_Vent4" parent="Room/Props" unique_id=1170466387 instance=ExtResource("112_tral7")]
+[node name="Area3D" type="Area3D" parent="Room/Props/Prop_Vent3" unique_id=175711703]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Props/Prop_Vent3/Area3D" unique_id=252214457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22705126, 0, -0.3996582)
+shape = SubResource("BoxShape3D_wmawy")
+
+[node name="Prop_Vent4" parent="Room/Props" unique_id=1170466387 node_paths=PackedStringArray("horror_sound_emitter", "area") instance=ExtResource("112_tral7")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 8.017609, 0.7841163, 0.8013648)
+script = ExtResource("113_3xpj8")
+horror_sound_emitter = NodePath("InTheVentsSFX")
+area = NodePath("Area3D")
+id = "4"
+
+[node name="Area3D" type="Area3D" parent="Room/Props/Prop_Vent4" unique_id=2111891452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.34465e-07)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Props/Prop_Vent4/Area3D" unique_id=759433101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3479004, 0, -0.39074725)
+shape = SubResource("BoxShape3D_qt5wh")
 
 [node name="InTheVentsSFX" type="FmodEventEmitter3D" parent="Room/Props/Prop_Vent4" unique_id=233378500]
 event_name = "event:/Deprecatted/BabyCrying"
@@ -12707,7 +12764,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.99770963, 0, 0.06760662, 0, 1, 0, -0.06760662, 0, 0.99770963, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.9977096, 0, 0.06760662, 0, 1, 0, -0.06760662, 0, 0.9977096, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]
