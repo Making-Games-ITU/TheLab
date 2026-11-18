@@ -29,5 +29,6 @@ func turn_on_all_lights():
 	%WorldEnvironment.environment.set_ambient_light_energy(0.2)
 
 func turn_on_all_machines():
+	GameStats.power = true
 	for machine in machine_screens:
 		machine.screen_on(true)

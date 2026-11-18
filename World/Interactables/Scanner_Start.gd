@@ -1,4 +1,4 @@
-extends Interactable
+extends Machine
 
 @export var press_anim : ButtonPressAnimation 
 
@@ -23,7 +23,7 @@ func _update_prompt() -> void:
 		prompt_text = "No body to scan"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func _on_interact(interactor: Node) -> void:
 	press_anim.press()
 	if GameStats.body_exists:
 		if _scanning:
@@ -50,5 +50,5 @@ func _start_scan() -> void:
 	print("Scanned Body")
 
 func _uninteractable() -> void:
-	AudioManager.one_shot(uninteractable_sound)
+	super()
 	print("No body to scan or already scanning")
