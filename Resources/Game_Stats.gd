@@ -1,6 +1,7 @@
 extends Node
 
 #Game Stats
+var power = false
 var progression_level: int = 0
 var danger_level: int = 0 
 var cured = 0

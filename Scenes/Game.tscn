@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://3pp6t41od3g6"]
+[gd_scene format=4 uid="uid://rapakqteimbf"]
 
 [ext_resource type="Script" uid="uid://ckyc14ylf8cdc" path="res://Systems/Startup_Manager.gd" id="1_slwoh"]
 [ext_resource type="Script" uid="uid://ct1dqcskn76yb" path="res://Resources/Game_Stats.gd" id="2_ucek8"]
