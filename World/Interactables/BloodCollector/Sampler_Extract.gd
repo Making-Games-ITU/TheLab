@@ -1,4 +1,4 @@
-extends Interactable
+extends Machine
 
 @export var press_anim : ButtonPressAnimation 
 
@@ -27,7 +27,7 @@ func _update_prompt() -> void:
 		prompt_text = "No vial in vial slot"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func _on_interact(interactor: Node) -> void:
 	press_anim.press()
 	if vial_in() and VialStats.empty and GameStats.body_exists:
 		_extractBlood()
