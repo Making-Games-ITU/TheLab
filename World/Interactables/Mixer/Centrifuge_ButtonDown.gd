@@ -1,4 +1,4 @@
-extends Interactable
+extends Machine
 
 @onready var _centrifuge_speed_label: Label = %Centrifuge_Speed_Label
 @export var press_anim : ButtonPressAnimation 
@@ -17,7 +17,7 @@ func _update_prompt() -> void:
 		prompt_text = "Speed at minimum"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func _on_interact(interactor: Node) -> void:
 	press_anim.press()
 	if GameStats.centrifuge_current_speed > GameStats.CENTRIFUGE_MIN_SPEED:
 		_decrease_speed()

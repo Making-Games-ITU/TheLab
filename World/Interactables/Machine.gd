@@ -1,7 +1,6 @@
 class_name Machine extends Interactable
 
 func interact(interactor: Node) -> void:
-	print("i am machine")
 	if GameStats.power:
 		_on_interact(interactor)
 	else:

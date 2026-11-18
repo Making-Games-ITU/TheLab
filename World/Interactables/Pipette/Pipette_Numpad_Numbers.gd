@@ -1,4 +1,4 @@
-extends Interactable
+extends Machine
 
 @onready var _pipette_chemical_amount_label: Label = %Pipette_Chemical_Amount_Label
 @export var press_anim : ButtonPressAnimation 
@@ -19,7 +19,7 @@ func _update_prompt() -> void:
 		prompt_text = "Number too long"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func _on_interact(interactor: Node) -> void:
 	press_anim.press()
 	if GameStats.pipette_chemical_amount.length() < GameStats.PIPETTE_CHARACTERS_MAX:
 		_add_number_to_pipette()

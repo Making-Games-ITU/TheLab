@@ -1,4 +1,4 @@
-extends Interactable
+extends Machine
 
 @onready var _centrifuge_state_label: Label = %Centrifuge_State_Label
 @export var press_anim : ButtonPressAnimation 
@@ -28,7 +28,7 @@ func _update_prompt() -> void:
 		prompt_text = "No vial in centrifuge"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func _on_interact(interactor: Node) -> void:
 	press_anim.press()
 	if vial_in():
 		if VialStats.empty:

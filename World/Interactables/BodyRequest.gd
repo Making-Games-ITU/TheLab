@@ -1,4 +1,4 @@
-extends Interactable
+extends Machine
 
 @export var press_anim : ButtonPressAnimation 
 
@@ -15,7 +15,7 @@ func _update_prompt() -> void:
 		prompt_text = "Request new body"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func _on_interact(interactor: Node) -> void:
 	press_anim.press()
 	if GameStats.body_exists:
 		_uninteractable()

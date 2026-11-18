@@ -1,4 +1,4 @@
-extends Interactable
+extends Machine
 
 @export var exit_sound: FmodEventEmitter3D
 @export var ambient_sound: FmodEventEmitter3D
@@ -26,7 +26,7 @@ func _update_prompt() -> void:
 		prompt_text = "No vial placed"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func _on_interact(interactor: Node) -> void:
 	if %Micrograph.visible:
 		_exit_mircoscope()
 	elif vial_in():
