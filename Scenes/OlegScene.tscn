@@ -9634,7 +9634,6 @@ anim = NodePath("../../../Props/Prop_Corpse_Tube/AnimationPlayer")
 area = NodePath("Area3D")
 sound_emitter = NodePath("DisposeBodySound")
 uninteractable_sound = NodePath("UninteractableSound")
-outline_material = null
 
 [node name="interactable_indecator" parent="Room/Interactables/BodyControls/DisposeBody" unique_id=191526086 instance=ExtResource("26_rpsft")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.104370475, 0.11302805)
@@ -9665,7 +9664,6 @@ anim = NodePath("../../../Props/Prop_Corpse_Tube/AnimationPlayer")
 area = NodePath("Area3D2")
 sound_emitter = NodePath("RequestBodySound")
 uninteractable_sound = NodePath("UninteractableSound")
-outline_material = null
 
 [node name="interactable_indecator" parent="Room/Interactables/BodyControls/RequestBody" unique_id=1076925432 instance=ExtResource("26_rpsft")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, -0.17390132, -0.017513275)
@@ -9906,7 +9904,6 @@ anim = NodePath("../Blood Collector/VialSlotModel/AnimationPlayer")
 area = NodePath("Area3D2")
 sound_emitter = NodePath("ExtractBloodSound")
 uninteractable_sound = NodePath("UninteractableSound")
-outline_material = null
 
 [node name="Area3D2" type="Area3D" parent="Room/Interactables/Sampler/SamplerExtractButton" unique_id=393872825]
 collision_layer = 256
@@ -9938,7 +9935,6 @@ anim = NodePath("../Blood Collector/VialSlotModel/AnimationPlayer")
 area = NodePath("Area3D2")
 sound_emitter = NodePath("InjectSerumSound")
 uninteractable_sound = NodePath("UninteractableSound")
-outline_material = null
 
 [node name="Area3D2" type="Area3D" parent="Room/Interactables/Sampler/SamplerInjectButton" unique_id=702679449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6509409, 0)
@@ -10501,7 +10497,7 @@ offset_right = -244.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Event_EyeBallScare" type="Control" parent="Room/Interactables/Microscope/Micrograph" unique_id=1347128403 node_paths=PackedStringArray("horrorSoundEmitter", "eyeControl")]
+[node name="Event_EyeBallScare" type="Control" parent="Room/Interactables/Microscope/Micrograph" unique_id=1347128403 node_paths=PackedStringArray("horror_sound_emitter", "video_player_layer", "eye_control", "microscope")]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -10510,8 +10506,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("71_fkccq")
-horrorSoundEmitter = NodePath("EyeScare")
-eyeControl = NodePath(".")
+horror_sound_emitter = NodePath("EyeScare")
+video_player_layer = NodePath("VideoStreamPlayer")
+eye_control = NodePath(".")
+microscope = NodePath("../../Microscope")
 id = "3cdd7801-23b4-4c12-b5a3-9c88fde16d85"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/Interactables/Microscope/Micrograph/Event_EyeBallScare" unique_id=1892240952]
@@ -10527,7 +10525,8 @@ autoplay = true
 loop = true
 
 [node name="EyeScare" type="FmodEventEmitter2D" parent="Room/Interactables/Microscope/Micrograph/Event_EyeBallScare" unique_id=311099796]
-event_guid = "{00000070-006c-0000-6100-000074000000}"
+event_name = "event:/EmergencyChoir"
+event_guid = "{e11c711d-0c9f-4683-9bc6-5cb6e8144a59}"
 position = Vector2(205, -2)
 
 [node name="Microscope_Vial" type="Node3D" parent="Room/Interactables/Microscope" unique_id=562917430 node_paths=PackedStringArray("take_vial_sound", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]

@@ -1,6 +1,7 @@
 extends Machine
-
+class_name Body_Dispose
 @export var press_anim : ButtonPressAnimation 
+var body_disposed : int
 
 func focus() -> void:
 	_set_outline(true)
@@ -21,6 +22,7 @@ func _on_interact(interactor: Node) -> void:
 		_uninteractable()
 
 func _dispose_body():
+	body_disposed += 1
 	GameStats.body_exists = false
 	GameManager.update_progression_level()
 	AudioManager.one_shot(sound_emitter)
