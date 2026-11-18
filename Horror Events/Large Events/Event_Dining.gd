@@ -12,7 +12,7 @@ extends Horror_Event
 
 @export var second_room : Node3D
 
-@export var second_to_start : float = 60
+@export var second_to_start : float = 230
 
 @export var flashlight_spotlight : Light3D
 @export var flashlight_pointlight : Light3D
