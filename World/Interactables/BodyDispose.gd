@@ -25,6 +25,7 @@ func _dispose_body():
 	body_disposed += 1
 	GameStats.body_exists = false
 	GameManager.update_progression_level()
+	GameStats.has_scanned = false
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
 	print("Body disposed")

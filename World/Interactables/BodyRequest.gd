@@ -28,11 +28,9 @@ func _new_body() -> void:
 	GameStats.body_number += 1 
 	GameStats.body_ID = bodyIdString+ "%04d" % GameStats.body_number
 	print("New body requested: ", GameStats.body_ID)
-	
 	GameStats.body_exists = true
-	
+	GameStats.has_scanned = false
 	GameManager.get_body_state()
-	
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
 	# This below doesn't work yet

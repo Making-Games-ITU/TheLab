@@ -9631,7 +9631,6 @@ anim = NodePath("../../../Props/Prop_Corpse_Tube/AnimationPlayer")
 area = NodePath("Area3D")
 sound_emitter = NodePath("DisposeBodySound")
 uninteractable_sound = NodePath("UninteractableSound")
-outline_material = null
 
 [node name="interactable_indecator" parent="Room/Interactables/BodyControls/DisposeBody" unique_id=191526086 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.104370475, 0.11302805)
@@ -9662,7 +9661,6 @@ anim = NodePath("../../../Props/Prop_Corpse_Tube/AnimationPlayer")
 area = NodePath("Area3D2")
 sound_emitter = NodePath("RequestBodySound")
 uninteractable_sound = NodePath("UninteractableSound")
-outline_material = null
 
 [node name="interactable_indecator" parent="Room/Interactables/BodyControls/RequestBody" unique_id=1076925432 instance=ExtResource("25_8ll8u")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, -0.17390132, -0.017513275)
@@ -9936,7 +9934,6 @@ anim = NodePath("../Blood Collector/VialSlotModel/AnimationPlayer")
 area = NodePath("Area3D2")
 sound_emitter = NodePath("InjectSerumSound")
 uninteractable_sound = NodePath("UninteractableSound")
-outline_material = null
 
 [node name="Area3D2" type="Area3D" parent="Room/Interactables/Sampler/SamplerInjectButton" unique_id=702679449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6509409, 0)
@@ -10497,7 +10494,7 @@ event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 [node name="RequestScanPaper" type="Node3D" parent="Room/Interactables/Scanner" unique_id=156045202 node_paths=PackedStringArray("press_anim", "anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.20021248, -0.28336418, 0.21439195)
 script = ExtResource("71_wjrn6")
-press_anim = NodePath("../Frame/StartScanButton")
+press_anim = NodePath("../RequestScanPaperButtonBase/RequestScanPaperbutton")
 prompt_text = "Request Scan Paper"
 anim = NodePath("../../../Props/Prop_Curtains/AnimationPlayer")
 area = NodePath("Area3D2")

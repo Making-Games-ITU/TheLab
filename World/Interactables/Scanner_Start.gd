@@ -2,7 +2,6 @@ extends Machine
 
 @export var press_anim : ButtonPressAnimation 
 
-var _scanning: bool = false
 signal scan_pressed
 signal scan_over
 
@@ -15,7 +14,7 @@ func focus() -> void:
 
 func _update_prompt() -> void:
 	if GameStats.body_exists:
-		if _scanning:
+		if GameStats.is_scanning:
 			prompt_text = "Already scanning"
 		else:
 			prompt_text = "Scan body state"
@@ -26,7 +25,7 @@ func _update_prompt() -> void:
 func _on_interact(interactor: Node) -> void:
 	press_anim.press()
 	if GameStats.body_exists:
-		if _scanning:
+		if GameStats.is_scanning:
 			_uninteractable()
 		else:
 			_start_scan()
@@ -34,19 +33,20 @@ func _on_interact(interactor: Node) -> void:
 		_uninteractable()
 
 func _start_scan() -> void:
-	_scanning = true
+	GameStats.is_scanning = true
 	AudioManager.one_shot(sound_emitter)
 	if anim:
 		anim.play("scan")
 		scan_pressed.emit()
 		await anim.animation_finished
 		scan_over.emit()
-		_scanning = false
+		GameStats.is_scanning = false
 	else:
 		# bypassing anim for now
 		scan_pressed.emit()
 		#TODO: Change screen output here
-		_scanning = false 
+		GameStats.is_scanning = false 
+	GameStats.has_scanned = true
 	print("Scanned Body")
 
 func _uninteractable() -> void:

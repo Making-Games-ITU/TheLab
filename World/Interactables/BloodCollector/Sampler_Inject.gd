@@ -49,6 +49,7 @@ func _inject() -> void:
 		print("Serum injected")
 		anim.play("open")
 		GameStats.vial_in_animation = false
+	GameStats.has_scanned = false
 
 func _uninteractable() -> void:
 	print("Vial is empty or No body to inject into or no vial ins collector")

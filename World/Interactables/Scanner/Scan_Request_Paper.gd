@@ -2,10 +2,6 @@ extends Machine
 
 @export var press_anim : ButtonPressAnimation 
 
-var _scanning: bool = false
-signal scan_pressed
-signal scan_over
-
 func _ready() -> void:
 	super()
 
@@ -14,41 +10,29 @@ func focus() -> void:
 	_update_prompt()
 
 func _update_prompt() -> void:
-	if GameStats.body_exists:
-		if _scanning:
-			prompt_text = "Already scanning"
+	if GameStats.has_scanned:
+		if GameStats.is_scanning:
+			prompt_text = "Scanning in progress"
 		else:
-			prompt_text = "Scan body state"
+			prompt_text = "Request Scan Paper"
 	else:
-		prompt_text = "No body to scan"
+		prompt_text = "Body not scanned"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func _on_interact(interactor: Node) -> void:
 	press_anim.press()
-	if GameStats.body_exists:
-		if _scanning:
+	if GameStats.has_scanned:
+		if GameStats.is_scanning:
 			_uninteractable()
 		else:
-			_start_scan()
+			_get_scan_paper()
 	else:
 		_uninteractable()
 
-func _start_scan() -> void:
-	_scanning = true
+func _get_scan_paper() -> void:
 	AudioManager.one_shot(sound_emitter)
-	if anim:
-		anim.play("scan")
-		scan_pressed.emit()
-		await anim.animation_finished
-		scan_over.emit()
-		_scanning = false
-	else:
-		# bypassing anim for now
-		scan_pressed.emit()
-		#TODO: Change screen output here
-		_scanning = false 
-	print("Scanned Body")
+	print("Got scan paper")
 
 func _uninteractable() -> void:
 	super()
-	print("No body to scan or already scanning")
+	print("Scanning in progress or body not scanned")
