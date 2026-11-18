@@ -30,7 +30,7 @@ func turn_on_all_lights():
 		lamp.show()
 	for area in area_lights:
 		area.show()
-	%WorldEnvironment.environment.set_ambient_light_energy(0.2)
+	%WorldEnvironment.environment.set_ambient_light_energy(0.13)
 
 func turn_on_all_machines():
 	GameStats.power = true
