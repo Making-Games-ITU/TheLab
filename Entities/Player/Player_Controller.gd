@@ -128,6 +128,10 @@ func _unhandled_input(event: InputEvent) -> void:
 func force_turn_off_flashlight():
 	flashlight.visible = false
 	on_off_sound.play()
+	
+func force_turn_on_flashlight():
+	flashlight.visible = true
+	on_off_sound.play()
 
 func _handleStepsSFX() -> void:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")

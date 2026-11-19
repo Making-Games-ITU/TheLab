@@ -1,10 +1,11 @@
 extends Horror_Event
+class_name Event_Dining
 
 @export var horror_start_sound_emitter : FmodEventEmitter2D
 @export var horror_scream_sound_emitter : FmodEventEmitter3D
 @export var horror_eating_sound_emitter : FmodEventEmitter3D
 @export var horror_scare_sound_emitter : FmodEventEmitter2D
-
+@export var follow_player : Event_Dining_Follow_Player
 
 @export var door : Node3D
 @export var collision_shape_left_door : CollisionShape3D
@@ -52,13 +53,11 @@ func _character_eating_scare() :
 	horror_eating_sound_emitter.stop()
 	await get_tree().create_timer(3).timeout
 	horror_scream_sound_emitter.play()
-	await get_tree().create_timer(7).timeout
-	%Glitch.show()
-	horror_scare_sound_emitter.play()
-	await get_tree().create_timer(1).timeout
-	%Glitch.hide()
-	stop_event()
-
+	await get_tree().create_timer(5).timeout
+	PlayerStats.flashlight_is_dead = false
+	player.force_turn_on_flashlight()
+	follow_player.start_event()
+	
 
 func start_event():
 	horror_eating_sound_emitter.play()
@@ -78,4 +77,8 @@ func start_event():
 
 func stop_event():
 	event_ended = true
+	%Glitch.show()
+	horror_scare_sound_emitter.play()
+	await get_tree().create_timer(1).timeout
+	%Glitch.hide()
 	get_tree().quit()
