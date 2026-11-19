@@ -79,6 +79,7 @@
 [ext_resource type="Script" uid="uid://b3j7u7v8qj1gk" path="res://World/Interactables/Microscope/Microscope_VialSlot.gd" id="70_fe81d"]
 [ext_resource type="Script" uid="uid://d28bhnkdfvlse" path="res://Horror Events/Small Events/Eyeball/event_eye_ball_scare.gd" id="71_n07s0"]
 [ext_resource type="Script" uid="uid://b1xnx7telqd13" path="res://World/Interactables/Microscope/Microscope_Look.gd" id="71_ra3sv"]
+[ext_resource type="Script" uid="uid://bgdj4f80ohqk4" path="res://World/Interactables/Scanner/Scan_Request_Paper.gd" id="71_wjrn6"]
 [ext_resource type="Texture2D" uid="uid://c2l7wpxuyfj6w" path="res://World/Props/Machines/Micro Scope/Micro_Scope_Texture.png" id="72_d5ifo"]
 [ext_resource type="VideoStream" uid="uid://bnu2hwilse1e2" path="res://Horror Events/Small Events/Eyeball/EyeDarker.ogv" id="72_wjrn6"]
 [ext_resource type="Texture2D" uid="uid://dpv6dd0ver3yb" path="res://World/Props/Machines/Mixer/NCentrifuge.png" id="73_6owub"]
@@ -136,9 +137,14 @@
 [ext_resource type="Texture2D" uid="uid://h1i7cuma0vfi" path="res://Notes/x_ray_texture_by_iamdkscully_d8v5htz-fullview.jpg" id="123_sekx7"]
 [ext_resource type="Script" uid="uid://dq2bw1uqj45u6" path="res://World/Items/Flash Drive/Flash_Drive.gd" id="124_4h1b4"]
 [ext_resource type="Script" uid="uid://cbcky786oulwr" path="res://Scenes/Cut Scenes/introduction_cutscene.gd" id="125_4iudj"]
+[ext_resource type="Material" uid="uid://drrbwbtvsv4cy" path="res://UI/Scanner/scanner_chest_image_material_1.tres" id="125_52q12"]
+[ext_resource type="Material" uid="uid://jgva3yu7qcwv" path="res://UI/Scanner/scanner_chest_image_material_0.tres" id="125_n07s0"]
 [ext_resource type="Texture2D" uid="uid://cwqiungpi8jo5" path="res://World/Props/Cardbox/Cardbox_Texture.png" id="126_2rajs"]
 [ext_resource type="Texture2D" uid="uid://cu6m4f3h6t0b0" path="res://World/Props/Cardbox/Styrofoam_texture.jpg" id="127_3o6vi"]
+[ext_resource type="Material" uid="uid://cc0udrqxbxf0l" path="res://UI/Scanner/scanner_chest_image_material_2.tres" id="127_wjrn6"]
+[ext_resource type="Material" uid="uid://bquoogenmrmo1" path="res://UI/Scanner/scanner_chest_image_material_3.tres" id="128_cjmb0"]
 [ext_resource type="PackedScene" uid="uid://dowd5veaybyfp" path="res://World/Items/Flashlight/item_flashlight.tscn" id="128_g2jwi"]
+[ext_resource type="Material" uid="uid://dsyj6rg6adyam" path="res://UI/Scanner/scanner_chest_image_material_4.tres" id="129_m26da"]
 [ext_resource type="Texture2D" uid="uid://dktd4tvwfudpk" path="res://World/Props/Doors/Sliding_Door_Texture.png" id="131_icatu"]
 [ext_resource type="Material" uid="uid://cbgyy02j4e3xn" path="res://Shaders/GlassBlurry.tres" id="132_tq6mg"]
 [ext_resource type="PackedScene" uid="uid://dn0a5yjl4x20d" path="res://World/Props/Meat/prop_meat.tscn" id="136_m26da"]
@@ -633,22 +639,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rhknm")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tq6mg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wr204"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_we5gq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6qtya"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_tq6mg")
+albedo_texture = SubResource("ViewportTexture_wr204")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wse4m"]
 size = Vector3(0.10888672, 0.00920105, 0.10418701)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hbyo7"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_tnek7"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_du17i"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ll8u"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_hbyo7")
+albedo_texture = SubResource("ViewportTexture_tnek7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnj3y"]
 albedo_texture = ExtResource("29_grssb")
@@ -728,12 +734,12 @@ bind/3/pose = Transform3D(-0.010000001, 0, 8.742278e-10, -8.742279e-10, -4.37113
 [sub_resource type="BoxShape3D" id="BoxShape3D_xnj3y"]
 size = Vector3(0.2806848, 0.6048972, 0.4082688)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_pmr4g"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_a3tqg"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr204"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxr3g"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_pmr4g")
+albedo_texture = SubResource("ViewportTexture_a3tqg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ridl8"]
 resource_name = "Chair"
@@ -2853,6 +2859,89 @@ albedo_texture = SubResource("CompressedTexture2D_su416")
 [sub_resource type="BoxShape3D" id="BoxShape3D_3s4u2"]
 size = Vector3(0.58251953, 0.2803955, 0.7027588)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr204"]
+resource_name = "Door_Btn"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("40_nvkrt")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6qtya"]
+_surfaces = [{
+"aabb": AABB(-0.058651567, -0.058651567, 0.0032627848, 0.11730313, 0.11730313, 0.055388782),
+"format": 34359742465,
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgAEAAAABQADAAAAAAAEAAUABgADAAUAAwAGAAEABwAFAAQABAACAAcABQAHAAYACAACAAEACAAJAAIACgACAAkACQAIAAoACwAIAAEACgAMAAIADAAHAAIACgAIAA0ADQAIAAsADQAOAAoADAAPAAcAEAAHAA8ADwAMABAAEQAMAAoACgAOABEAEAAMABEAEgAOAA0AEgARAA4AEQATABAAEgATABEAEAAUAAcAEgANABUACwAVAA0AEgAVAAsAEAATABYAEgAWABMAFgAUABAAFAAGAAcAEgAXABYAFgAXABgAGAAXABIAGAAUABYAGQAUABgAFAAZAAYAGAAGABkAEgAaABgAGAAaAAYACwAaABIAGgABAAYACwABABsAGgAbAAEAGwAaAAsA"),
+"name": "Door_Btn",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("4UJMveFCTD180zA84UJMveFCTD2gPHA94UJMPeFCTD2gPHA94UJMveFCTL180zA84UJMPeFCTD180zA84UJMPeFCTL180zA84UJMveFCTL2gPHA94UJMPeFCTL2gPHA9DmdAPaA8cD2gPHA9smlOPbJpTj2gPHA9oDxwPQ5nQD2gPHA9DmdAvaA8cD2gPHA9oDxwPQ5nQL2gPHA9DmdAPaA8cD1y1FU7oDxwPQ5nQD1y1FU7smlOPbJpTr2gPHA9DmdAPaA8cL2gPHA9oDxwPQ5nQL1y1FU7oDxwvQ5nQD1y1FU7DmdAPaA8cL1y1FU7DmdAvaA8cL2gPHA9DmdAvaA8cD1y1FU7DmdAvaA8cL1y1FU7oDxwvQ5nQL1y1FU7oDxwvQ5nQL2gPHA9smlOvbJpTr2gPHA9oDxwvQ5nQD2gPHA9smlOvbJpTj2gPHA9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tnek7"]
+resource_name = "Cube_047"
+_surfaces = [{
+"aabb": AABB(-0.058651567, -0.058651567, 0.0032627848, 0.11730313, 0.11730313, 0.055388782),
+"attribute_data": PackedByteArray("mhdmP2zzNj88OUQ/bPM2Pzw5RD/SCgU/mhdmP9IKBT/r9ao+bC1/P+r1qj6UmDg/zQ8cP5SYOD/NDxw/bC1/P5oXZj/SCgU/PDlEP9IKBT88OUQ/ckSmPpoXZj9yRKY++KgmPkDQDz44EZc+QNAPPjgRlz5Suas++KgmPlK5qz47OUQ/uKP8PZkXZj+4o/w9mRdmPyD6oj47OUQ/IPqiPo77mz5mVXk/mqunPrnpdj82JJc+bC1/P01T1TxmVXk/amQRPWwtfz87lFI7uul2P0JT1Tw6AjI/5pNSO+ZtND9jZBE9MyosP437mz45AjI/NSSXPjMqLD+aq6c+5W00P5JhGz+W8Ac/kmEbPxSB+D4UlEI/FIH4PhSUQj+W8Ac/nhEnPxgxlz6SYRs/GDGXPpJhGz8omBE+nhEnPyiYET71tB0/lipQP/W0HT+KekQ/d+dEP4p6RD9350Q/lipQP1gUID5ATtk9WBQgPlBnGz7wk1I7UGcbPvCTUjtATtk9kmEbP2h7mj4UlEI/aHuaPhSUQj8Ugfg+kmEbPxSB+D4UlEI/bPM2P5JhGz9s8zY/kmEbP5bwBz8UlEI/lvAHP2VkET2kA68+mqunPgiLvz6aq6c+WEEiPzUklz6iA68+NiSXPgqFKj9rZBE9CoUqP1SUUjtYQSI/AJRSOwiLvz5YFCA+VLmrPvCTUjtUuas+8JNSO1BnGz5YFCA+UGcbPnfnRD9sLX8/9bQdP2wtfz/1tB0/lipQP3fnRD+WKlA/mqunPuVtND84PZs+ZGEyP437mz45AjI/mqunPrnpdj85PZs+O/Z4P477mz5mVXk/NiSXPmwtfz85PZs+O/Z4P477mz5mVXk/amQRPWwtfz+cOOE8O/Z4P01T1TxmVXk/O5RSO7rpdj+cOOE8O/Z4P01T1TxmVXk/5pNSO+ZtND+ROOE8ZGEyP0JT1Tw6AjI/Y2QRPTMqLD+ROOE8ZGEyP0JT1Tw6AjI/NSSXPjMqLD84PZs+ZGEyP437mz45AjI/"),
+"format": 34359742487,
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFwAYABkAGgAbABwAHQAeAB8AIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAANAA1ADYANgA3ADQAOAA5ADoAOAA7ADkAOAA6ADwAOAA8AD0AOAA9AD4AOAA+AD8AQABBAEIAQgBDAEAARABFAEYARgBHAEQASABJAEoASABLAEkASwBMAEkASwBNAEwATgBPAFAATgBRAE8AUQBSAE8AUQBTAFIAVABVAFYAVABXAFUAVwBYAFUAVwBZAFgAWgBbAFwAWgBdAFsAXQBeAFsAXQBfAF4A"),
+"material": SubResource("StandardMaterial3D_wr204"),
+"name": "Door_Btn",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 96,
+"vertex_data": PackedByteArray("4UJMveFCTD180zA84UJMveFCTD2gPHA94UJMPeFCTD2gPHA94UJMPeFCTD180zA84UJMveFCTD180zA84UJMPeFCTD180zA84UJMPeFCTL180zA84UJMveFCTL180zA84UJMPeFCTD180zA84UJMPeFCTD2gPHA94UJMPeFCTL2gPHA94UJMPeFCTL180zA84UJMPeFCTL180zA84UJMPeFCTL2gPHA94UJMveFCTL2gPHA94UJMveFCTL180zA84UJMveFCTL180zA84UJMveFCTL2gPHA94UJMveFCTD2gPHA94UJMveFCTD180zA8smlOvbJpTr2gPHA9DmdAvaA8cL2gPHA9oDxwvQ5nQL2gPHA9smlOvbJpTj2gPHA9oDxwvQ5nQD2gPHA9DmdAvaA8cD2gPHA9smlOPbJpTj2gPHA9DmdAPaA8cD2gPHA9oDxwPQ5nQD2gPHA9smlOPbJpTr2gPHA9oDxwPQ5nQL2gPHA9DmdAPaA8cL2gPHA9oDxwvQ5nQL2gPHA9DmdAvaA8cL2gPHA9DmdAvaA8cL1y1FU7oDxwvQ5nQL1y1FU7oDxwvQ5nQD1y1FU7DmdAvaA8cD1y1FU7DmdAvaA8cD2gPHA9oDxwvQ5nQD2gPHA9oDxwPQ5nQL1y1FU7DmdAPaA8cL1y1FU7DmdAPaA8cL2gPHA9oDxwPQ5nQL2gPHA9oDxwPQ5nQD2gPHA9DmdAPaA8cD2gPHA9DmdAPaA8cD1y1FU7oDxwPQ5nQD1y1FU7DmdAPaA8cL2gPHA9DmdAPaA8cL1y1FU7DmdAvaA8cL1y1FU7DmdAvaA8cL2gPHA9oDxwvQ5nQD1y1FU7oDxwvQ5nQD2gPHA9oDxwvQ5nQL2gPHA9oDxwvQ5nQL1y1FU7oDxwvQ5nQD1y1FU7DmdAvaA8cL1y1FU7DmdAPaA8cL1y1FU7oDxwvQ5nQL1y1FU7oDxwPQ5nQL1y1FU7oDxwPQ5nQD1y1FU7DmdAPaA8cD1y1FU7DmdAvaA8cD1y1FU7DmdAvaA8cD2gPHA9DmdAvaA8cD1y1FU7DmdAPaA8cD1y1FU7DmdAPaA8cD2gPHA9oDxwPQ5nQD2gPHA9oDxwPQ5nQD1y1FU7oDxwPQ5nQL1y1FU7oDxwPQ5nQL2gPHA9DmdAPaA8cL2gPHA94UJMPeFCTL2gPHA9smlOPbJpTr2gPHA9DmdAvaA8cL2gPHA94UJMveFCTL2gPHA9smlOvbJpTr2gPHA9oDxwvQ5nQL2gPHA94UJMveFCTL2gPHA9smlOvbJpTr2gPHA9oDxwvQ5nQD2gPHA94UJMveFCTD2gPHA9smlOvbJpTj2gPHA9DmdAvaA8cD2gPHA94UJMveFCTD2gPHA9smlOvbJpTj2gPHA9DmdAPaA8cD2gPHA94UJMPeFCTD2gPHA9smlOPbJpTj2gPHA9oDxwPQ5nQD2gPHA94UJMPeFCTD2gPHA9smlOPbJpTj2gPHA9oDxwPQ5nQL2gPHA94UJMPeFCTL2gPHA9smlOPbJpTr2gPHA9/38AAP//////fwAA//////9/AAD//////38AAP//////f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgAAA/3//////AAD/f/////8AAP9//////wAA/3///////3////9//7//f////3//v/9/////f/+//3////9//7////9//3//v////3//f/+/////f/9//7////9//3//v/9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP8//z///////z//P///////P/8///////8//z///////z//v/8//5//P/+//z//n/8//7//P/+f/z//v/8//5//v/8//3//v/+//z//f/+//7//P/9//7//v/8//3//v/+//7//f/+//7//v/9//7//v/+//3//v/+//7//f/+//38AAP//////fwAA//////9/AAD//////38AAP////8AAP9//////wAA/3//////AAD/f/////8AAP9/////////////fwCA//////9/AID//////38AgP//////fwCA//////9/AID//////38AgP//////fwCA//////9/AID/f////3//v/9/////f/+//3////9//7//f////3//v////3//f/+/////f/9//7////9//3//v////3//f/+//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//38AgACA/3//f/9/AID/f/9//38AgP9//3/+fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3/+fwCA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6qtya")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3tqg"]
+resource_name = "Door_Btn"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("40_nvkrt")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jxr3g"]
+_surfaces = [{
+"aabb": AABB(-0.04822525, -0.04822525, -1.6763806e-07, 0.0964505, 0.0964505, 0.03312267),
+"format": 34359742465,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAABQAEAAIAAAAEAAUAAwAGAAIAAgAGAAUABwABAAAAAwABAAcACAAAAAUAAAAIAAcABQAGAAkAAwAJAAYACAAFAAoACQAKAAUABwAIAAsACwADAAcACAAMAAsADQADAAsACwAMAA0AAwANAAkACAAOAAwACAAKAA4ADQAMAA4ADgAKAAkADQAPAAkACQAPAA4ADgAPAA0A"),
+"name": "Door_Btn",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("14dFvceKHr0AADS014dFvceKHr12qwc9x4oevdeHRb12qwc9x4oevdeHRT12qwc9x4oevdeHRb0AADS0x4oePdeHRb0AADS0x4oePdeHRb12qwc914dFvceKHj12qwc914dFvceKHj0AADS014dFPceKHr12qwc914dFPceKHr0AADS0x4oevdeHRT0AADS0x4oePdeHRT0AADS0x4oePdeHRT12qwc914dFPceKHj0AADS014dFPceKHj12qwc9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mbf68"]
+resource_name = "Cube_063"
+_surfaces = [{
+"aabb": AABB(-0.04822525, -0.04822525, -1.6763806e-07, 0.0964505, 0.0964505, 0.03312267),
+"attribute_data": PackedByteArray("nYxGP2wtfz9I/V0/bC1/P0j9XT+upnU/nYxGP66mdT8UlEI/miOEPmkjKz+aI4Q+aSMrPxgxlz4UlEI/GDGXPsC8Zz+SNhA/ay1/P5I2ED9rLX8/1K8GP8C8Zz/UrwY/cKJfP8G8Zz9wol8/bC1/Py8paT9sLX8/LylpP8G8Zz9pIys/mKfaPWkjKz+aI4Q+FJRCP5ojhD4UlEI/mKfaPer1qj7Y3PI+9v8SP2zzNj9qvBk/+DYwP2m8GT/W3PI+9v8SP+5j5T7Rbrg+8GPlPuv1qj74NjA/0m64PmzzNj+djEY/0+lOP52MRj+upnU/SP1dP66mdT9I/V0/0+lOP2stfz9t8zY/ay1/P5I2ED/AvGc/kjYQP8C8Zz9t8zY/ay1/P9SvBj9rLX8/8uW/PsC8Zz/y5b8+wLxnP9SvBj/Rbrg+nhniPmm8GT84H04+9f8SP2gtMz7Rbrg+bC0zPun1qj48H04+6vWqPrag1D72/xI/nhniPmm8GT+2oNQ+"),
+"format": 34359742487,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFAAWABcAFAAXABgAFAAYABkAFAAaABUAGgAbABUAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKAAqACsAKAArACwAKAAsAC0AKAAuACkALgAvACkA"),
+"material": SubResource("StandardMaterial3D_a3tqg"),
+"name": "Door_Btn",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("14dFvceKHr0AADS014dFvceKHr12qwc9x4oevdeHRb12qwc9x4oevdeHRb0AADS014dFvceKHj12qwc914dFvceKHj0AADS0x4oevdeHRT0AADS0x4oevdeHRT12qwc9x4oePdeHRT12qwc9x4oePdeHRT0AADS014dFPceKHj0AADS014dFPceKHj12qwc914dFPceKHr12qwc914dFPceKHr0AADS0x4oePdeHRb0AADS0x4oePdeHRb12qwc914dFvceKHr0AADS014dFvceKHj0AADS014dFvceKHj12qwc914dFvceKHr12qwc9x4oevdeHRT12qwc914dFPceKHr12qwc9x4oePdeHRb12qwc9x4oevdeHRb12qwc914dFvceKHr12qwc914dFvceKHj12qwc9x4oePdeHRT12qwc914dFPceKHj12qwc9x4oePdeHRb0AADS0x4oevdeHRb0AADS0x4oevdeHRb12qwc9x4oePdeHRb12qwc9x4oevdeHRT0AADS0x4oePdeHRT0AADS0x4oePdeHRT12qwc9x4oevdeHRT12qwc914dFPceKHj0AADS014dFPceKHr0AADS014dFPceKHr12qwc914dFPceKHj12qwc914dFvceKHj0AADS0x4oePdeHRb0AADS014dFPceKHr0AADS014dFPceKHj0AADS0x4oePdeHRT0AADS0x4oevdeHRT0AADS014dFvceKHr0AADS0x4oevdeHRb0AADS0/z//P/9//z//P/8//3//P/8//z//f/8//z//P/9//z//P/+//3//P/8//7//f/8//z//v/9//z//P/+//3//P/+//7///wAA/7//v///AAD/v/+///8AAP+//7///wAA/7//P/8//1//v/8//z//X/+//z//P/9f/7//P/8//18AAP9//3//PwAA/3//f/8/AAD/f/9//z8AAP9//3//P/9//3//f/5//3//f/9//n//f/9//3/+f/9//3//f/5//3//f/9//n//f/9//3/+f/9//3//f/5//3//f/9//n//fwAA/3//P/9/AAD/f/8//38AAP9//z//fwAA/3//P/9//////wAA/3//////AAD/f/////8AAP9//////wAA////f///AAD///9///8AAP///3///wAA////f///AAD//wAA/3/+f///AAD/f/5///8AAP9//n///wAA/3/+f///AAD/f/5///8AAP9//n///wAA/3/+f///AAD/f/5/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jxr3g")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6qtya"]
+size = Vector3(0.58251953, 0.2803955, 0.7027588)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_kablx"]
 size = Vector3(0.23943329, 0.08419037, 0.33535767)
 
@@ -3665,12 +3754,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5wgas")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6qtya"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_mbf68"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tnek7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grssb"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_6qtya")
+albedo_texture = SubResource("ViewportTexture_mbf68")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7627"]
 albedo_texture = ExtResource("41_a6xvn")
@@ -6268,12 +6357,12 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8ll8u"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_r6lsp"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3tqg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfanx"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_8ll8u")
+albedo_texture = SubResource("ViewportTexture_r6lsp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7368"]
 resource_name = "Dark"
@@ -8974,6 +9063,9 @@ albedo_texture = SubResource("ViewportTexture_vayfc")
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdy7s"]
 size = Vector3(0.2806848, 0.027254816, 0.4082688)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_b7h5x"]
+size = Vector2(0.2, 0.2)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwlkk"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
@@ -9706,7 +9798,7 @@ player = NodePath("../../Player")
 [node name="env_ceiling_lamp8" parent="Room/SecondRoom" unique_id=1858274480 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 12.223913, 2.6358595, 13.462999)
 
-[node name="SpotLight3D3" parent="Room/SecondRoom/env_ceiling_lamp8/Cylinder" parent_id_path=PackedInt32Array(1858274480, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/SecondRoom/env_ceiling_lamp8/Cylinder" parent_id_path=PackedInt32Array(1858274480, 524783339) index="0" unique_id=1120609968]
 light_energy = 0.362
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -10053,7 +10145,6 @@ event_name = "event:/Stinger"
 event_guid = "{d0681edb-3e86-4a03-a470-4e2fd8ce505c}"
 
 [node name="Horror_Start_Emitter" type="FmodEventEmitter2D" parent="Room/SecondRoom" unique_id=1422938785]
-event_name = "event:/NoMercy"
 event_guid = "{932806a1-d1a5-4eba-a1d8-6435bfb0c2d0}"
 
 [node name="Flashlight_Trigger_Box" type="Area3D" parent="Room/SecondRoom" unique_id=1687895238]
@@ -10193,15 +10284,15 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 1.2287274e-10, 0.061257716)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Body_request_Note" index="1" unique_id=1832640565]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Body_request_Note" index="1" unique_id=469442063]
 bones/1/position = Vector3(0, 0, -0.05)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
-[node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=1766528207]
+[node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=2053084288]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_we5gq")
+surface_material_override/1 = SubResource("StandardMaterial3D_6qtya")
 
 [node name="Marker3D" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -10240,7 +10331,7 @@ sound_emitter = NodePath("StartReadingSound")
 normal_size = Vector3(0.04, 0.04, 0.04)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document" index="1" unique_id=1187144283]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document" index="1" unique_id=670111044]
 bones/1/position = Vector3(0, 0, -0.205)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/3/rotation = Quaternion(-0.025, 0, 0, 1)
@@ -10249,8 +10340,8 @@ bones/4/rotation = Quaternion(0.035, 0, 0, 1)
 bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(-0.095, 0, 0, 1)
 
-[node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=521642798]
-material_overlay = SubResource("StandardMaterial3D_du17i")
+[node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=176868951]
+material_overlay = SubResource("StandardMaterial3D_8ll8u")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
@@ -10424,16 +10515,16 @@ sound_emitter = NodePath("StartReadingSound")
 [node name="interactable_indecator" parent="Room/Interactables/Notes/Note_document3" index="0" unique_id=2142793944]
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document3" index="1" unique_id=1187144283]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document3" index="1" unique_id=670111044]
 bones/1/position = Vector3(0, 0, -0.2)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
 bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(0.875, 0, 0, 1)
 
-[node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=521642798]
+[node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=176868951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0068823397, 0, 0.0066256523)
-material_overlay = SubResource("StandardMaterial3D_wr204")
+material_overlay = SubResource("StandardMaterial3D_jxr3g")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
@@ -11479,6 +11570,46 @@ event_guid = "{0c1371f0-c702-44b9-bb0a-8c616e0c9c91}"
 event_name = "event:/Button"
 event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
 
+[node name="RequestScanPaperButtonBase" type="MeshInstance3D" parent="Room/Interactables/Scanner" unique_id=611259766]
+transform = Transform3D(-2.1855692e-08, 0.86602545, 0.49999997, 3.7855173e-08, 0.49999997, -0.86602545, -1, 0, -4.371139e-08, -0.19166946, -0.3046006, 0.20017815)
+mesh = SubResource("ArrayMesh_tnek7")
+
+[node name="RequestScanPaperbutton" type="MeshInstance3D" parent="Room/Interactables/Scanner/RequestScanPaperButtonBase" unique_id=426096357]
+transform = Transform3D(1, -3.5527137e-15, 0, 0, 1, 7.7647024e-23, 0, -7.7647024e-23, 1, 0, 0, -0.021494627)
+mesh = SubResource("ArrayMesh_mbf68")
+script = ExtResource("44_c2x1s")
+press_offset = Vector3(0, 0, 0.02)
+
+[node name="RequestScanPaper" type="Node3D" parent="Room/Interactables/Scanner" unique_id=1284978459 node_paths=PackedStringArray("press_anim", "area", "sound_emitter", "uninteractable_sound", "outline_meshes")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.20021248, -0.28336418, 0.21439195)
+script = ExtResource("71_wjrn6")
+press_anim = NodePath("../RequestScanPaperButtonBase/RequestScanPaperbutton")
+prompt_text = "Request Scan Paper"
+area = NodePath("Area3D2")
+sound_emitter = NodePath("RequestScanPaperSound")
+uninteractable_sound = NodePath("UninteractableSound")
+outline_meshes = [NodePath("../RequestScanPaperButtonBase/RequestScanPaperbutton")]
+
+[node name="interactable_indecator" parent="Room/Interactables/Scanner/RequestScanPaper" unique_id=6384399 instance=ExtResource("25_8ll8u")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -0.07915497)
+normal_size = Vector3(0.2, 0.2, 0.2)
+
+[node name="Area3D2" type="Area3D" parent="Room/Interactables/Scanner/RequestScanPaper" unique_id=970079239]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Interactables/Scanner/RequestScanPaper/Area3D2" unique_id=1633617705]
+transform = Transform3D(0.8651867, -0.50144917, 0, 0.50144917, 0.8651867, 0, 0, 0, 0.99999976, 0.019367218, -0.11568928, -0.06805229)
+shape = SubResource("BoxShape3D_6qtya")
+
+[node name="RequestScanPaperSound" type="FmodEventEmitter3D" parent="Room/Interactables/Scanner/RequestScanPaper" unique_id=2099345328]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+
+[node name="UninteractableSound" type="FmodEventEmitter3D" parent="Room/Interactables/Scanner/RequestScanPaper" unique_id=908674249]
+event_name = "event:/Button"
+event_guid = "{8ca4aa05-f608-4df3-985e-2d8aaf712449}"
+
 [node name="Microscope" parent="Room/Interactables" unique_id=924130864 instance=ExtResource("66_tg0ye")]
 transform = Transform3D(-0.93499076, 0, -0.354672, 0, 1, 0, 0.354672, 0, -0.93499076, 1.9996619, 0.9748792, -6.093265)
 
@@ -12012,15 +12143,15 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.010209445, -4.5401977e-10, 0.054237492)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Pipette/Pipette_Note" index="1" unique_id=1832640565]
+[node name="Skeleton3D" parent="Room/Interactables/Pipette/Pipette_Note" index="1" unique_id=469442063]
 bones/1/position = Vector3(0, 0, -0.05)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
-[node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=1766528207]
+[node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=2053084288]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_tnek7")
+surface_material_override/1 = SubResource("StandardMaterial3D_grssb")
 
 [node name="Marker3D" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -12884,22 +13015,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6473917, 0, -0.7392761)
 [node name="Prop_Closet_Storage" parent="Room/Storage" unique_id=1322947913 instance=ExtResource("89_ymp40")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30165535, 0.030189991, 0.5397688)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1913734634) index="0" unique_id=836803240]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1032181265) index="0" unique_id=1340666293]
 transform = Transform3D(0.9847963, 0, 0.17371324, 0, 1, 0, -0.17371324, 0, 0.9847963, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1913734634) index="2" unique_id=297532873]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1032181265) index="2" unique_id=808463335]
 transform = Transform3D(0.9980103, 0, -0.06305108, 0, 1, 0, 0.06305108, 0, 0.9980103, 0.40623674, 0.33802077, -0.18920648)
 
 [node name="Prop_Closet_Storage2" parent="Room/Storage" unique_id=792493778 instance=ExtResource("89_ymp40")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1489224, 0.060379982, -1.4530705)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="0" unique_id=836803240]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1032181265) index="0" unique_id=1340666293]
 transform = Transform3D(0.9986644, 0, 0.051666856, 0, 1, 0, -0.051666856, 0, 0.9986644, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="2" unique_id=297532873]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1032181265) index="2" unique_id=808463335]
 transform = Transform3D(0.99973977, 0, -0.022809424, 0, 1, 0, 0.022809424, 0, 0.99973977, 0.40623665, 0.33802077, -0.18920648)
 
-[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="3" unique_id=1308364603]
+[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1032181265) index="3" unique_id=1459515881]
 transform = Transform3D(0.99992776, 0, 0.012020995, 0, 1, 0, -0.012020995, 0, 0.99992776, -0.40623677, 0.33802077, -0.18920648)
 
 [node name="env_locker2" parent="Room/Storage" unique_id=1582727982 instance=ExtResource("90_cshk5")]
@@ -13185,15 +13316,15 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.010209445, -4.5401977e-10, 0.054237492)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Machines/Env_Computer/Note_COmputer" index="1" unique_id=1832640565]
+[node name="Skeleton3D" parent="Room/Machines/Env_Computer/Note_COmputer" index="1" unique_id=469442063]
 bones/1/position = Vector3(0, 0, -0.05)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.09, -0.04, 0, 1)
 
-[node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=1766528207]
+[node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=2053084288]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_a3tqg")
+surface_material_override/1 = SubResource("StandardMaterial3D_mfanx")
 
 [node name="Marker3D" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -14026,13 +14157,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5917645, 0, 7.336006)
 [node name="env_ceiling_lamp" parent="Room/Lights" unique_id=710454193 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.6584425, 2.6358595, -10.420589)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(710454193, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(710454193, 524783339) index="0" unique_id=1120609968]
 light_energy = 0.251
 
 [node name="env_ceiling_lamp2" parent="Room/Lights" unique_id=431651021 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(431651021, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(431651021, 524783339) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -14042,7 +14173,7 @@ spot_attenuation = 1.52
 [node name="env_ceiling_lamp7" parent="Room/Lights" unique_id=45645241 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(45645241, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(45645241, 524783339) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -14051,7 +14182,7 @@ spot_attenuation = 1.37
 [node name="env_ceiling_lamp4" parent="Room/Lights" unique_id=507427365 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.69838953, 2.603364, -11.7987995)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(507427365, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(507427365, 524783339) index="0" unique_id=1120609968]
 light_energy = 0.08
 spot_range = 4.7193227
 spot_angle = 87.9047
@@ -14059,7 +14190,7 @@ spot_angle = 87.9047
 [node name="env_ceiling_lamp6" parent="Room/Lights" unique_id=2073783679 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6280155, 2.603364, -7.3823385)
 
-[node name="Cylinder" parent="Room/Lights/env_ceiling_lamp6" index="0" unique_id=127635554]
+[node name="Cylinder" parent="Room/Lights/env_ceiling_lamp6" index="0" unique_id=524783339]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12351322, 0, 0.01646936)
 
 [node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp6/Cylinder" index="0" unique_id=1120609968]
@@ -14073,7 +14204,7 @@ light_energy = 9.405
 [node name="env_ceiling_lamp3" parent="Room/Lights" unique_id=1288938063 instance=ExtResource("111_uourf")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.19090223, 1.961021, -11.82384)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(1288938063, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(1288938063, 524783339) index="0" unique_id=1120609968]
 transform = Transform3D(0.88825995, -2.007844e-08, 0.45934123, -0.45934123, -3.8827075e-08, 0.88825995, 3.731543e-15, -0.99999976, -4.371138e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(0.56323135, 0.52731746, 0.5280909, 1)
 spot_range = 5.794
@@ -14086,7 +14217,7 @@ transform = Transform3D(1, 0, -7.764702e-23, -2.627256e-15, 1, 3.5527137e-15, -3
 [node name="env_ceiling_lamp5" parent="Room/Lights" unique_id=793426471 instance=ExtResource("111_uourf")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.94554186, -0.26759893, -11.886757)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(793426471, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(793426471, 524783339) index="0" unique_id=1120609968]
 transform = Transform3D(0.7008144, -3.1181226e-08, 0.7133435, -0.7133435, -3.063358e-08, 0.7008144, 4.8694323e-15, -0.9999999, -4.371139e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(1, 0, 0.15951031, 1)
 light_energy = 0.4
@@ -14133,7 +14264,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.99770904, 0, 0.06760658, 0, 1, 0, -0.06760658, 0, 0.99770904, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.997709, 0, 0.067606576, 0, 1, 0, -0.067606576, 0, 0.997709, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]
@@ -14349,10 +14480,10 @@ transform = Transform3D(0, 0, 0.99999976, 0, 1, 0, -0.99999976, 0, 0, -0.0003851
 [node name="Doors_Sliding3" parent="Room/Doors" unique_id=868643664 instance=ExtResource("114_yaq7e")]
 transform = Transform3D(-0.9999999, 0, 4.371138e-08, 0, 1, 0, -4.371138e-08, 0, -0.9999999, 0.033169, 1.0764008, -1.1191952)
 
-[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=1265345812]
+[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=778852150]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39810574, 0, 0)
 
-[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1477454735]
+[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1452491975]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
 
 [node name="Doors_Sliding2" parent="Room/Doors" unique_id=239039258 instance=ExtResource("114_yaq7e")]
@@ -14700,6 +14831,39 @@ transform = Transform3D(1, 0, 0, 0, -1.1920929e-07, -0.99999994, 0, 0.99999994, 
 mesh = SubResource("ArrayMesh_ynpa1")
 
 [node name="Marker3D" type="Marker3D" parent="Int_Pinboard/Prop_Pin/pin3" unique_id=565121321]
+
+[node name="Scanner_Chests" type="Node3D" parent="Int_Pinboard" unique_id=1810205670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87552595, 0.010210156, 0)
+
+[node name="Pin_Scanner_Chest_0" type="MeshInstance3D" parent="Int_Pinboard/Scanner_Chests" unique_id=941294263]
+transform = Transform3D(-0.9940801, -0.0002494385, -0.108649336, 0.108643815, 0.008059882, -0.99404806, 0.0011236547, -0.9999676, -0.007985069, -0.0014185905, 0.46502328, -0.061463237)
+visible = false
+material_override = ExtResource("125_n07s0")
+mesh = SubResource("PlaneMesh_b7h5x")
+
+[node name="Pin_Scanner_Chest_1" type="MeshInstance3D" parent="Int_Pinboard/Scanner_Chests" unique_id=1678818818]
+transform = Transform3D(-0.99646086, -0.0017907978, 0.08403958, -0.08405115, 0.007862375, -0.99643034, 0.0011236547, -0.9999676, -0.007985069, -0.09074259, 0.22836924, -0.061463237)
+visible = false
+material_override = ExtResource("125_52q12")
+mesh = SubResource("PlaneMesh_b7h5x")
+
+[node name="Pin_Scanner_Chest_2" type="MeshInstance3D" parent="Int_Pinboard/Scanner_Chests" unique_id=1476608725]
+transform = Transform3D(-0.9981881, -0.00064120337, -0.060166806, 0.060159743, 0.008038205, -0.99815625, 0.0011236544, -0.99996746, -0.0079850685, 0.00036764145, 0.003559351, -0.061463237)
+visible = false
+material_override = ExtResource("127_wjrn6")
+mesh = SubResource("PlaneMesh_b7h5x")
+
+[node name="Pin_Scanner_Chest_3" type="MeshInstance3D" parent="Int_Pinboard/Scanner_Chests" unique_id=1356378662]
+transform = Transform3D(-0.9925379, -0.0020888608, 0.12191798, -0.12193067, 0.007788488, -0.992508, 0.0011236544, -0.99996746, -0.0079850685, -0.116689205, -0.22694027, -0.061463237)
+visible = false
+material_override = ExtResource("128_cjmb0")
+mesh = SubResource("PlaneMesh_b7h5x")
+
+[node name="Pin_Scanner_Chest_4" type="MeshInstance3D" parent="Int_Pinboard/Scanner_Chests" unique_id=98294896]
+transform = Transform3D(-0.9993732, -0.0014054343, 0.035370834, -0.035380892, 0.007940319, -0.99934244, 0.0011236545, -0.99996746, -0.0079850685, 0.01879692, -0.4528302, -0.061463237)
+visible = false
+material_override = ExtResource("129_m26da")
+mesh = SubResource("PlaneMesh_b7h5x")
 
 [node name="Item_flash_drive" type="Node3D" parent="." unique_id=1084068999 node_paths=PackedStringArray("collision_shape", "character_ref", "area", "sound_emitter", "outline_meshes")]
 transform = Transform3D(0.6288724, 0, -0.77750856, 0, 1, 0, 0.77750856, 0, 0.6288724, -0.51851225, 0.03957075, -4.8832784)
