@@ -28,6 +28,7 @@ func start_event():
 	corpse_on_table.show()
 	GameStats.power = false
 	await get_tree().create_timer(2.4).timeout
+	if(event_ended == true) : return
 	corpse_in_chamber.hide()
 
 func stop_event():
