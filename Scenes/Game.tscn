@@ -13284,6 +13284,7 @@ door = NodePath("../Doors/Doors_Sliding2 Door Character")
 collision_shape_left_door = NodePath("../Doors/Doors_Sliding2 Door Character/RightDoor/StaticBody3D/CollisionShape3D")
 collision_shape_right_door = NodePath("../Doors/Doors_Sliding2 Door Character/RightDoor_002/StaticBody3D/CollisionShape3D")
 second_room = NodePath(".")
+second_to_start = 10.0
 flashlight_spotlight = NodePath("Item_flashlight/SpotLight3D")
 flashlight_pointlight = NodePath("Item_flashlight/OmniLight3D")
 dining_spotlight = NodePath("env_ceiling_lamp8/Cylinder/SpotLight3D3")
@@ -13663,13 +13664,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6764221, 1.1516113, 2.09159
 shape = SubResource("BoxShape3D_i8nt5")
 
 [node name="Horror_Scream_Emitter" type="FmodEventEmitter3D" parent="Room/SecondRoom" unique_id=177550693]
-event_name = "event:/Deprecatted/BabyCrying"
-event_guid = "{7ced835a-c86c-4673-b9b2-df3fdf90351f}"
+event_name = "event:/Scream"
+event_guid = "{5f317fe1-9dad-4076-81c4-c415b38dc58b}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.359165, -2.3841858e-07, 16.432909)
 
 [node name="Horror_Eating_Emitter" type="FmodEventEmitter3D" parent="Room/SecondRoom" unique_id=1497154338]
-event_name = "event:/Deprecatted/SickBaby"
-event_guid = "{720b23d7-3bd5-4fad-85df-2278638ab7af}"
+event_name = "event:/Eating"
+event_guid = "{1c7f7029-8319-4766-804f-3e3dc4027b25}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9286375, -2.3841858e-07, 13.69895)
 
 [node name="Prop_meat" parent="Room" unique_id=1197802962 instance=ExtResource("136_m26da")]
@@ -14938,7 +14939,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.99770886, 0, 0.06760657, 0, 1, 0, -0.06760657, 0, 0.99770886, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.9977088, 0, 0.06760657, 0, 1, 0, -0.06760657, 0, 0.9977088, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]
