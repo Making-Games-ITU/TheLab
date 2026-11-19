@@ -40,7 +40,7 @@ func _turn_off_flashlight_grounded():
 	collision_shape_left_door.set_deferred("disabled", false)
 	collision_shape_right_door.set_deferred("disabled", false)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _character_eating_scare() :

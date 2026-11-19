@@ -1,7 +1,7 @@
 extends Node
 @export var next_timer: float =  1.0
 
-var _clear_timer : Timer
+# var _clear_timer : Timer
 var _progression_level = GameStats.progression_level
 var _cured = GameStats.cured
 @onready var ambientEmmiter = $"/root/Enviroment2/Ambient"

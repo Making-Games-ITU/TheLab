@@ -21,7 +21,7 @@ func _ready() -> void:
 			stop_event()
 	)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func start_event():

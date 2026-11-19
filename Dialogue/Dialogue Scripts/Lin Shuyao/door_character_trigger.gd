@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(triggered): return
 	var distance_to_player = global_position.distance_to(player_camera.global_position)
 	if(distance_to_player < activation_distance):
