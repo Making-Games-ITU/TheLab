@@ -19,7 +19,7 @@ func _update_prompt() -> void:
 		prompt_text = "Number too long"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func _on_interact(interactor: Node) -> void:
+func _on_interact(_interactor: Node) -> void:
 	press_anim.press()
 	if GameStats.pipette_chemical_amount.length() < GameStats.PIPETTE_CHARACTERS_MAX:
 		_add_number_to_pipette()

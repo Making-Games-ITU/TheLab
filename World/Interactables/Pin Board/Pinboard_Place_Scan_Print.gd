@@ -18,7 +18,7 @@ func _update_prompt() -> void:
 	prompt_text = "Place print"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func _on_interact(interactor: Node) -> void:
+func _on_interact(_interactor: Node) -> void:
 	_place_scan_print()
 
 func _hide_player_prints() -> void:

@@ -24,7 +24,7 @@ func _update_prompt() -> void:
 		prompt_text = "Body not scanned"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func _on_interact(interactor: Node) -> void:
+func _on_interact(_interactor: Node) -> void:
 	if GameStats.has_scanned:
 		if GameStats.is_scanning:
 			_uninteractable()

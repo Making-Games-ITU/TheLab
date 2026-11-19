@@ -22,7 +22,7 @@ func _update_prompt() -> void:
 			prompt_text = "Vial not empty"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func interact(_interactor: Node) -> void:
 	if GameStats.vial_location == GameStats.VialLocation.NONE:
 		if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
 			_get_new_vial()

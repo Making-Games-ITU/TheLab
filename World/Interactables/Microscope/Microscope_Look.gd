@@ -31,7 +31,7 @@ func _update_prompt() -> void:
 		prompt_text = "No vial placed"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func interact(_interactor: Node) -> void:
 	if %Micrograph.visible:
 		_exit_mircoscope()
 	elif vial_in():

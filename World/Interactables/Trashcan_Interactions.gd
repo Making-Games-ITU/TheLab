@@ -18,7 +18,7 @@ func _update_prompt() -> void:
 		prompt_text = "No vial to dispose"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func interact(_interactor: Node) -> void:
 	if PlayerStats.is_holding == PlayerStats.HoldState.VIAL:
 		_dispose_vial()
 	elif PlayerStats.is_holding == PlayerStats.HoldState.CHEMICAL:

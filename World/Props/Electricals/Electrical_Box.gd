@@ -19,7 +19,7 @@ func _update_prompt() -> void:
 		prompt_text = "Electrical flash drive required"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func interact(_interactor: Node) -> void:
 	if PlayerStats.is_holding == PlayerStats.HoldState.FLASH_DRIVE:
 		_turn_on_electricity()
 		sound_emitter.play()

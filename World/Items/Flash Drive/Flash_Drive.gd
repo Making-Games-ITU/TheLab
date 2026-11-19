@@ -23,7 +23,7 @@ func _update_prompt() -> void:
 		prompt_text = "Hands are full"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func interact(_interactor: Node) -> void:
 	if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
 		_take_flash_drive()
 	else:

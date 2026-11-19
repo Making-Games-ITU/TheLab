@@ -22,7 +22,7 @@ func _update_prompt() -> void:
 		prompt_text = "No body to scan"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func _on_interact(interactor: Node) -> void:
+func _on_interact(_interactor: Node) -> void:
 	press_anim.press()
 	if GameStats.body_exists:
 		if GameStats.is_scanning:

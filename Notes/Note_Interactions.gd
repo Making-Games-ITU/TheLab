@@ -21,7 +21,7 @@ func _update_prompt() -> void:
 		_set_outline(true)
 		InteractionPrompt.instance.show_prompt(prompt_text)
 	
-func interact(interactor: Node) -> void:
+func interact(_interactor: Node) -> void:
 	if not PlayerStats.is_reading:
 		_start_reading()
 	else:

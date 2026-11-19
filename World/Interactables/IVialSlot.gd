@@ -20,7 +20,7 @@ func _update_prompt() -> void:
 			prompt_text = "No vial in hand"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func interact(interactor: Node) -> void:
+func interact(_interactor: Node) -> void:
 	if vial_slot == GameStats.vial_location:
 		if PlayerStats.is_holding == PlayerStats.HoldState.NONE and not GameStats.vial_in_animation:
 			_take_vial()
