@@ -4,17 +4,15 @@ extends Horror_Event
 @export var video_player_layer : VideoStreamPlayer
 @export var eye_control : Control
 @export var microscope : Microscope
-@export var body_dispose : Body_Dispose
-
 
 func _ready() -> void:
 	print("Horror event is set and ready")
 	microscope.microscope_zoomed.connect(func():
 		print("zoomed signal received")
 		print("Interactions: ", microscope.times_interacted)
-		print("Bodies disposed: ", body_dispose.body_disposed)
+		print("Bodies disposed: ", GameStats.body_disposed)
 		
-		if(microscope.times_interacted > 3 && body_dispose.body_disposed > 1 && event_ended != true):
+		if(microscope.times_interacted > 3 && GameStats.body_disposed > 1 && event_ended != true):
 			start_event()
 	)
 	

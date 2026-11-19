@@ -10,10 +10,6 @@ signal progression_update()
 
 func _ready() -> void:
 	progress()
-	#_clear_timer = Timer.new()
-	#_clear_timer.one_shot = true
-	#add_child(_clear_timer)
-	#_clear_timer.start(next_timer)
 
 #short-hand for updating progression level
 func progress() -> void:
@@ -94,7 +90,7 @@ func update_progression_level() -> void:
 			GameStats.progression_level = 0
 			GameStats.cured = 0
 			print("Level: 0 (healthy)")
-	ambientEmmiter.set_parameter("ProgressionLevel",GameStats.progression_level)
+	ambientEmmiter.set_parameter("ProgressionLevel", GameStats.progression_level)
 
 
 func check_if_successful() -> void:
