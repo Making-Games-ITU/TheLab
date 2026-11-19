@@ -35,5 +35,9 @@ const CENTRIFUGE_MIN_SPEED: int = 1
 const CENTRIFUGE_MAX_SPEED: int = 5
 var centrifuge_current_speed: int = 3
 
+# Scanner
+var is_scanning: bool = false
+var has_scanned: bool = false
+
 # Game settings (used this to ensure that it transfers over for now, may be unnecessary)
 var game_brightness: float = 1.0

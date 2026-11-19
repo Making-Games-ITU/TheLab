@@ -33,9 +33,8 @@ func _new_body() -> void:
 	on_body_order.emit()
 
 	GameStats.body_exists = true
-	
+	GameStats.has_scanned = false
 	GameManager.get_body_state()
-	
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
 	# This below doesn't work yet
