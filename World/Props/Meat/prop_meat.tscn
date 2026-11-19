@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dn0a5yjl4x20d"]
+
+[ext_resource type="PackedScene" uid="uid://chcm1nqonfhaq" path="res://World/Props/Meat/Prop_meat.fbx" id="1_onfia"]
+
+[node name="Prop_meat" unique_id=1197802962 instance=ExtResource("1_onfia")]

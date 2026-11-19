@@ -13,6 +13,9 @@ func _ready() -> void:
 	turn_off_all_lights_signal.connect(turn_off_all_lights)
 	turn_on_all_lights_signal.connect(turn_on_all_lights)
 	turn_off_all_lights()
+	turn_off_all_machines()
+	
+	
 
 func turn_off_all_lights():
 	for lamp in lamp_lights:
@@ -26,9 +29,14 @@ func turn_on_all_lights():
 		lamp.show()
 	for area in area_lights:
 		area.show()
-	%WorldEnvironment.environment.set_ambient_light_energy(0.2)
+	%WorldEnvironment.environment.set_ambient_light_energy(0.13)
 
 func turn_on_all_machines():
 	GameStats.power = true
 	for machine in machine_screens:
 		machine.screen_on(true)
+
+func turn_off_all_machines():
+	GameStats.power = false
+	for machine in machine_screens:
+		machine.screen_on(false)

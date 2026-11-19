@@ -1,5 +1,4 @@
 extends Node
-
 @export var next_timer: float =  1.0
 
 var _clear_timer : Timer
@@ -7,12 +6,10 @@ var _progression_level = GameStats.progression_level
 var _cured = GameStats.cured
 @onready var ambientEmmiter = $"/root/Enviroment2/Ambient"
 
+signal progression_update()
+
 func _ready() -> void:
 	progress()
-	#_clear_timer = Timer.new()
-	#_clear_timer.one_shot = true
-	#add_child(_clear_timer)
-	#_clear_timer.start(next_timer)
 
 #short-hand for updating progression level
 func progress() -> void:
@@ -40,6 +37,8 @@ func _set_danger_level() -> void:
 			danger = 0
 	
 	GameStats.danger_level = danger
+	
+	progression_update.emit()
 	#TODO: Set audio param to danger level here. 
 
 #Add a infection type for a given progression level here
@@ -91,7 +90,7 @@ func update_progression_level() -> void:
 			GameStats.progression_level = 0
 			GameStats.cured = 0
 			print("Level: 0 (healthy)")
-	ambientEmmiter.set_parameter("ProgressionLevel",GameStats.progression_level)
+	ambientEmmiter.set_parameter("ProgressionLevel", GameStats.progression_level)
 
 
 func check_if_successful() -> void:

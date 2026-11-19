@@ -120,10 +120,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		if is_instance_valid(_ray_cast_target):
 			_ray_cast_target.interact(self)
 	
-	if event.is_action_pressed("flashlight"):
+	if event.is_action_pressed("flashlight") && PlayerStats.flashlight_is_dead == false:
 		flashlight.visible = !flashlight.visible
 		on_off_sound.play()
 		# flashlight_icon.visible = !flashlight_icon.visible
+
+func force_turn_off_flashlight():
+	flashlight.visible = false
+	on_off_sound.play()
 
 func _handleStepsSFX() -> void:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")

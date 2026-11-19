@@ -13,3 +13,4 @@ var in_cutscene: bool = false
 
 enum HoldState { NONE, VIAL, CHEMICAL, FLASH_DRIVE }
 var is_holding: HoldState = HoldState.NONE
+var flashlight_is_dead = false

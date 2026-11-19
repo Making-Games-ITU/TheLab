@@ -1,10 +1,11 @@
 extends Node
 
 #Game Stats
-var power = false
+var power = true
 var progression_level: int = 0
 var danger_level: int = 0 
 var cured = 0
+var body_disposed = 0
 
 # Where the vial is
 enum VialLocation { NONE, PLAYER, SAMPLER, CENTRIFUGE, MICROSCOPE, PIPETTE }

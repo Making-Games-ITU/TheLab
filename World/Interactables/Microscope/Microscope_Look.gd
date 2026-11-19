@@ -1,11 +1,11 @@
-extends Machine
+extends Interactable
 class_name Microscope
 
 @export var exit_sound: FmodEventEmitter3D
 @export var ambient_sound: FmodEventEmitter3D
 
-var  microscope_zoomed : Signal
-var  microscope_exit : Signal
+signal  microscope_zoomed
+signal  microscope_exit
 var times_interacted : int
 
 func focus() -> void:
@@ -31,7 +31,7 @@ func _update_prompt() -> void:
 		prompt_text = "No vial placed"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
-func _on_interact(interactor: Node) -> void:
+func interact(interactor: Node) -> void:
 	if %Micrograph.visible:
 		_exit_mircoscope()
 	elif vial_in():
@@ -54,6 +54,7 @@ func _enter_microscope() -> void:
 	print("Analyzing")
 
 func _exit_mircoscope() -> void:
+	microscope_exit.emit()
 	%Micrograph.visible = false
 	%ExitFullscreenImage.visible = false
 	PlayerStats.is_analyzing = false

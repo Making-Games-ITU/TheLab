@@ -45,6 +45,10 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
+[global_group]
+
+player=""
+
 [input]
 
 interact={
