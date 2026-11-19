@@ -11,6 +11,6 @@ var is_analyzing: bool = false
 var is_reading: bool = false
 var in_cutscene: bool = false
 
-enum HoldState { NONE, VIAL, CHEMICAL, FLASH_DRIVE }
+enum HoldState { NONE, VIAL, CHEMICAL, FLASH_DRIVE, PRINT }
 var is_holding: HoldState = HoldState.NONE
 var flashlight_is_dead = false
