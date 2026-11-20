@@ -3,12 +3,14 @@ class_name  Character
 
 @export var dialogue_acts: Array[DialogueAct] = []
 @export var audioPlayer : AudioStreamPlayer3D
-
+@export var flashlight : Light3D
+@export var animation : AnimationPlayer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+
 
 
 func start_dialogue(sentence_id: String) -> void:
@@ -24,3 +26,7 @@ func get_sentence_from_act(sentence_id: String) -> Sentence:
 		if(act.get_sentence(sentence_id) != null):
 			return act.get_sentence(sentence_id)
 	return null
+
+func character_leave():
+	flashlight.hide()
+	animation.stop()

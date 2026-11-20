@@ -1,6 +1,7 @@
 extends Note_Interactions
 @export var character_ref : Character 
 @export var collision_shape: CollisionShape3D
+@export var animation : AnimationPlayer
 var already_read : bool = false
 
 func _ready() -> void:
@@ -10,7 +11,9 @@ func _ready() -> void:
 	var request_reading_sentence = character_ref.get_sentence_from_act("e43c0813-d836-499a-9d7f-1879744e3400")
 	request_reading_sentence.on_finished = func(): 
 		show()
+		animation.play("slide_paper")
 		collision_shape.set_deferred("disabled", false)
+		character_ref.animation.play("focus_on_note")
 
 func focus() -> void:
 	super()
@@ -26,3 +29,4 @@ func _stop_reading() -> void:
 	if already_read : return
 	character_ref.start_dialogue("c18da72b-b90b-491d-8be9-84f066fa8570")
 	already_read = true
+	character_ref.animation.play("idle")

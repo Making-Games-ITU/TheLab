@@ -11,6 +11,10 @@ func _ready() -> void:
 	character_ref.get_sentence_from_act("7eb6ec85-442b-4d72-8dd7-9f2558b68c04").on_finished = func():
 		show()
 		collision_shape.set_deferred("disabled", false)
+	
+	character_ref.get_sentence_from_act("940724dd-fe4c-4689-a09e-d38e5a250648").on_finished = func():
+		character_ref.character_leave()
+		
 
 func focus() -> void:
 	_set_outline(true)
