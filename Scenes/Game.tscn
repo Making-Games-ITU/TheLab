@@ -148,6 +148,8 @@
 [ext_resource type="Material" uid="uid://bquoogenmrmo1" path="res://UI/Scanner/scanner_chest_image_material_3.tres" id="128_cjmb0"]
 [ext_resource type="PackedScene" uid="uid://dowd5veaybyfp" path="res://World/Items/Flashlight/item_flashlight.tscn" id="128_g2jwi"]
 [ext_resource type="Material" uid="uid://dsyj6rg6adyam" path="res://UI/Scanner/scanner_chest_image_material_4.tres" id="129_m26da"]
+[ext_resource type="PackedScene" uid="uid://bjjhxtrjjq881" path="res://World/Props/Cigs/Prop_Cig.fbx" id="129_mbf68"]
+[ext_resource type="PackedScene" uid="uid://b460t2jfbywx3" path="res://World/Props/Cigs/Prop_Cig_One.fbx" id="130_grssb"]
 [ext_resource type="Texture2D" uid="uid://dktd4tvwfudpk" path="res://World/Props/Doors/Sliding_Door_Texture.png" id="131_icatu"]
 [ext_resource type="Material" uid="uid://cbgyy02j4e3xn" path="res://Shaders/GlassBlurry.tres" id="132_tq6mg"]
 [ext_resource type="PackedScene" uid="uid://dn0a5yjl4x20d" path="res://World/Props/Meat/prop_meat.tscn" id="136_m26da"]
@@ -10608,7 +10610,7 @@ theme_override_fonts/font = ExtResource("30_r6lsp")
 theme_override_font_sizes/font_size = 24
 text = "Infected body scan. Further treatment is required.
 
-The body had visable parasites, tried injecting 3mg Nitrogen. The worms seem to grow and multiple."
+The body had visable parasites, tried injecting 3ml Nitrogen. The worms seem to grow and multiple."
 autowrap_mode = 2
 
 [node name="StartReadingSound" type="FmodEventEmitter3D" parent="Room/Interactables/Int_Pinboard/Prop_Pin/pin2/Note_document" unique_id=138632297]
@@ -14670,6 +14672,18 @@ event_guid = "{af35a86d-56a8-4c9d-9733-0a354783578f}"
 
 [node name="Props" type="Node3D" parent="Room" unique_id=749016093]
 
+[node name="Prop_Cig" parent="Room/Props" unique_id=955244528 instance=ExtResource("129_mbf68")]
+transform = Transform3D(0.8727531, 0, -0.4881619, 0, 1, 0, 0.4881619, 0, 0.8727531, 2.0213265, 0.74328184, -0.69564056)
+
+[node name="Prop_Cig_One" parent="Room/Props" unique_id=1487405595 instance=ExtResource("130_grssb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9663255, 0.74488807, -0.7211507)
+
+[node name="Prop_Cig_One2" parent="Room/Props" unique_id=1821033676 instance=ExtResource("130_grssb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9575069, 0.74488807, -0.72416115)
+
+[node name="Prop_Cig_One3" parent="Room/Props" unique_id=327440217 instance=ExtResource("130_grssb")]
+transform = Transform3D(0.8943161, 0, 0.4474357, 0, 1, 0, -0.4474357, 0, 0.8943161, 1.9434081, 0.74488807, -0.6648962)
+
 [node name="Prop_Corpse_Tube" type="Node3D" parent="Room/Props" unique_id=2119274750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9501696, 3.7467136, -4.552022)
 
@@ -15583,7 +15597,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.99770856, 0, 0.06760655, 0, 1, 0, -0.06760655, 0, 0.99770856, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.9977085, 0, 0.067606546, 0, 1, 0, -0.067606546, 0, 0.9977085, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]
