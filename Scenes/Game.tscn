@@ -13587,6 +13587,7 @@ event_guid = "{07eeedbc-0b55-4e3e-9515-90dfa24b0483}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009624958, 0.0025100708, -0.0081954)
 
 [node name="SecondRoom" parent="Room" unique_id=1053541891 node_paths=PackedStringArray("horror_start_sound_emitter", "horror_scream_sound_emitter", "horror_eating_sound_emitter", "horror_scare_sound_emitter", "follow_player", "door", "collision_shape_left_door", "collision_shape_right_door", "second_room", "flashlight_spotlight", "flashlight_pointlight", "dining_spotlight", "dining_pointlight", "flashlight_trigger_box", "final_trigger_box", "eating_character", "player") instance=ExtResource("24_0ojlp")]
+visible = false
 script = ExtResource("25_0ojlp")
 horror_start_sound_emitter = NodePath("Horror_Start_Emitter")
 horror_scream_sound_emitter = NodePath("Horror_Scream_Emitter")
@@ -13597,7 +13598,7 @@ door = NodePath("../Doors/Doors_Sliding2 Door Character")
 collision_shape_left_door = NodePath("../Doors/Doors_Sliding2 Door Character/RightDoor/StaticBody3D/CollisionShape3D")
 collision_shape_right_door = NodePath("../Doors/Doors_Sliding2 Door Character/RightDoor_002/StaticBody3D/CollisionShape3D")
 second_room = NodePath(".")
-second_to_start = 10.0
+second_to_start = 900.0
 flashlight_spotlight = NodePath("Item_flashlight/SpotLight3D")
 flashlight_pointlight = NodePath("Item_flashlight/OmniLight3D")
 dining_spotlight = NodePath("env_ceiling_lamp8/Cylinder/SpotLight3D3")
@@ -13982,9 +13983,9 @@ event_guid = "{5f317fe1-9dad-4076-81c4-c415b38dc58b}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.359165, -2.3841858e-07, 16.432909)
 
 [node name="Horror_Running_Emitter" type="FmodEventEmitter3D" parent="Room/SecondRoom" unique_id=1858317964 node_paths=PackedStringArray("footsteps_emitter", "event_dining", "player")]
-event_name = "event:/Walking"
-event_guid = "{438ca093-f602-408e-b164-e277a7b9c0af}"
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.19688, 2.3841858e-07, 18.038279)
+event_name = "event:/MonsterSteps"
+event_guid = "{213b4ac5-66de-4c28-b721-67c04a6e8d79}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.794714, 2.3841858e-07, 19.17594)
 visible = false
 script = ExtResource("116_a3tqg")
 speed = 5.0
@@ -15582,7 +15583,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.9977086, 0, 0.06760655, 0, 1, 0, -0.06760655, 0, 0.9977086, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.99770856, 0, 0.06760655, 0, 1, 0, -0.06760655, 0, 0.99770856, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]
