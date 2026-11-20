@@ -16,11 +16,18 @@ func focus() -> void:
 	_update_prompt()
 
 func _update_prompt() -> void:
-	prompt_text = "Take print"
+	if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
+		prompt_text = "Take print"
+	else:
+		prompt_text = "Hands are full"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func _on_interact(_interactor: Node) -> void:
-	_get_scan_paper()
+	if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
+		_get_scan_paper()
+	else:
+		_uninteractable()
+	
 
 func _hide_all_prints() -> void:
 	chest_print_0_paper.visible = false
