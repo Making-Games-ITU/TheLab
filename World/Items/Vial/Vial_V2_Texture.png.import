@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyijphilbey1t"
-path.s3tc="res://.godot/imported/guard_D.png-5f91edcd00bb2b7ffcfb80e84f57c386.s3tc.ctex"
+uid="uid://dxkjfhn0hog40"
+path.s3tc="res://.godot/imported/Vial_V2_Texture.png-542384a7fdb7c7b4179dcb586153dfd3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Entities/NPCs/Male/guard_D.png"
-dest_files=["res://.godot/imported/guard_D.png-5f91edcd00bb2b7ffcfb80e84f57c386.s3tc.ctex"]
+source_file="res://World/Items/Vial/Vial_V2_Texture.png"
+dest_files=["res://.godot/imported/Vial_V2_Texture.png-542384a7fdb7c7b4179dcb586153dfd3.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch3ublpq6jll8"
-path.s3tc="res://.godot/imported/male_scrubs_2.png-5d7d025e53bd9f08461d8e57b6ef7a7c.s3tc.ctex"
+uid="uid://b8gi5a1plj1lj"
+path.s3tc="res://.godot/imported/head_male_light_D.png-fb6171b023af58498b06ee4201902c20.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Entities/NPCs/Male/male_scrubs_2.png"
-dest_files=["res://.godot/imported/male_scrubs_2.png-5d7d025e53bd9f08461d8e57b6ef7a7c.s3tc.ctex"]
+source_file="res://Entities/NPCs/Male Body/head_male_light_D.png"
+dest_files=["res://.godot/imported/head_male_light_D.png-fb6171b023af58498b06ee4201902c20.s3tc.ctex"]
 
 [params]
 

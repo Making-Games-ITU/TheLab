@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d1seu3usy6sba"
-path="res://.godot/imported/Male.fbx-82db1b4cd4961f217cea29c65bcd3375.scn"
+uid="uid://cuka1mgjpdnlv"
+path="res://.godot/imported/CorpseMale.fbx-47f4b6af44ed8d339ab72104eea31e46.scn"
 
 [deps]
 
-source_file="res://Entities/NPCs/Male/Male.fbx"
-dest_files=["res://.godot/imported/Male.fbx-82db1b4cd4961f217cea29c65bcd3375.scn"]
+source_file="res://Entities/NPCs/Male Body/CorpseMale.fbx"
+dest_files=["res://.godot/imported/CorpseMale.fbx-47f4b6af44ed8d339ab72104eea31e46.scn"]
 
 [params]
 

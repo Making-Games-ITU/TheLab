@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4u6ct3w55xp4"
-path.s3tc="res://.godot/imported/kai_head_D2.jpg-9d55ea6923342dc75a89521679dc2dd1.s3tc.ctex"
+uid="uid://ch3ublpq6jll8"
+path.s3tc="res://.godot/imported/male_scrubs_2.png-b5b2b47d2acc195e85cd259e1e5ae513.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Entities/NPCs/Male/kai_head_D2.jpg"
-dest_files=["res://.godot/imported/kai_head_D2.jpg-9d55ea6923342dc75a89521679dc2dd1.s3tc.ctex"]
+source_file="res://Entities/NPCs/Dining Monster/male_scrubs_2.png"
+dest_files=["res://.godot/imported/male_scrubs_2.png-b5b2b47d2acc195e85cd259e1e5ae513.s3tc.ctex"]
 
 [params]
 
