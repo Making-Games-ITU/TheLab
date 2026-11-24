@@ -10,6 +10,8 @@ signal turn_off_all_lights_signal
 signal turn_on_all_lights_signal
 
 func _ready() -> void:
+	turn_on_all_machines()
+	return
 	turn_off_all_lights_signal.connect(turn_off_all_lights)
 	turn_on_all_lights_signal.connect(turn_on_all_lights)
 	turn_off_all_lights()

@@ -175,7 +175,7 @@ _data = {
 
 [node name="Prop_Corpse_Tube" unique_id=1507349415 instance=ExtResource("1_q52ii")]
 
-[node name="Cylinder_010" parent="Cylinder_004" parent_id_path=PackedInt32Array(27073194) index="0" unique_id=1887747428]
+[node name="Cylinder_010" parent="Cylinder_004" parent_id_path=PackedInt32Array(1611473317) index="0" unique_id=2135632555]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01093483, -1.0005771, 0)
 
 [node name="Corpse2" type="Node3D" parent="Cylinder_004/Cylinder_010" index="0" unique_id=852473659]

@@ -1,6 +1,5 @@
 shader_type spatial;
-render_mode blend_mix, depth_draw_always;
-
+render_mode blend_mix, depth_draw_never;
 uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap_anisotropic;
 
 group_uniforms Color;

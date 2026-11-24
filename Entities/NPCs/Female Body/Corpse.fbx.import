@@ -42,7 +42,7 @@ materials/extract_path=""
 _subresources={
 "nodes": {
 "PATH:AnimationPlayer": {
-"import/skip_import": true
+"optimizer/enabled": false
 }
 }
 }
