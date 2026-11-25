@@ -160,10 +160,16 @@
 [ext_resource type="Texture2D" uid="uid://b8gi5a1plj1lj" path="res://Entities/NPCs/Male Body/head_male_light_D.png" id="137_6gha7"]
 [ext_resource type="PackedScene" uid="uid://2s7e10ywjbpj" path="res://World/Props/Tables/Prop_dining_table.fbx" id="137_r1ony"]
 [ext_resource type="Texture2D" uid="uid://dgti5fxq4seak" path="res://Entities/NPCs/Female Body/head_female_light_D_Mutation.png" id="137_y70h1"]
+[ext_resource type="Script" uid="uid://bwo5vgypto7au" path="res://Entities/NPCs/CorpseSelection.gd" id="138_8v23g"]
 [ext_resource type="Animation" uid="uid://lq4xy3wkmc3e" path="res://Entities/NPCs/Animations/dispose_body.res" id="138_b5esp"]
 [ext_resource type="PackedScene" uid="uid://b758ikjvpeg01" path="res://World/Props/Chairs/Prop_chair.fbx" id="138_r1ony"]
 [ext_resource type="Texture2D" uid="uid://dl4npanstgsb8" path="res://Entities/NPCs/HairTexture.jpg" id="138_y70h1"]
+[ext_resource type="Script" uid="uid://bfv77g527r2lc" path="res://Entities/NPCs/surface_data.gd" id="139_ffck8"]
 [ext_resource type="Animation" uid="uid://cp2fdwjr806h1" path="res://Entities/NPCs/Animations/order_body.res" id="139_on272"]
+[ext_resource type="Texture2D" uid="uid://b1uwudf344x40" path="res://Entities/NPCs/Male Body/male_body_light_D.png" id="140_ij123"]
+[ext_resource type="Texture2D" uid="uid://cmlpolgcijaae" path="res://Entities/NPCs/Male Body/male_body_light_Infected_Parasite.png" id="142_dwt01"]
+[ext_resource type="Texture2D" uid="uid://4fg8sorj7lv1" path="res://Entities/NPCs/Male Body/head_male_light_D_Infected_Parasite.png" id="143_2i8gw"]
+[ext_resource type="Texture2D" uid="uid://be6yqb8r7bysw" path="res://Entities/NPCs/Male Body/male_body_light_Parasite_Mutation.png" id="144_4y2o5"]
 [ext_resource type="Texture2D" uid="uid://djs427lkjgj7c" path="res://Entities/NPCs/Male Body/head_male_light_D_Parasite_Mutation.png" id="145_a6xvn"]
 [ext_resource type="Shader" uid="uid://ckhqpvo72mtd6" path="res://World/Items/Test Tube/stylized_liquid.gdshader" id="165_nvkrt"]
 [ext_resource type="Texture2D" uid="uid://ckr460p2b2nrp" path="res://World/Props/Corpse Tube/Tube Needle/Tube_Needle_Texture.png" id="165_std3y"]
@@ -982,22 +988,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rhknm")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_a6xvn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_8v23g"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8v23g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hoj6u"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_a6xvn")
+albedo_texture = SubResource("ViewportTexture_8v23g")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wse4m"]
 size = Vector3(0.10888672, 0.00920105, 0.10418701)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hoj6u"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_c2x1s"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2x1s"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kt2yo"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_hoj6u")
+albedo_texture = SubResource("ViewportTexture_c2x1s")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnj3y"]
 albedo_texture = ExtResource("29_grssb")
@@ -1114,12 +1120,12 @@ _data = {
 &"slide_paper": SubResource("Animation_b7h5x")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_kt2yo"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_mcuw2"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcuw2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffck8"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_kt2yo")
+albedo_texture = SubResource("ViewportTexture_mcuw2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ridl8"]
 resource_name = "Chair"
@@ -4141,12 +4147,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5wgas")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ffck8"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ij123"]
 viewport_path = NodePath("Note Viewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwt01"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ffck8")
+albedo_texture = SubResource("ViewportTexture_ij123")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7627"]
 albedo_texture = ExtResource("41_a6xvn")
@@ -7958,6 +7964,32 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ij3kj")
 
+[sub_resource type="Resource" id="Resource_c2x1s"]
+script = ExtResource("139_ffck8")
+healthy_head_texture = ExtResource("137_6gha7")
+healthy_body_texture = ExtResource("140_ij123")
+infected_head_texture = ExtResource("143_2i8gw")
+infected_body_texture = ExtResource("142_dwt01")
+metadata/_custom_type_script = "uid://bfv77g527r2lc"
+
+[sub_resource type="Resource" id="Resource_kt2yo"]
+script = ExtResource("139_ffck8")
+sickness = 2
+healthy_head_texture = ExtResource("137_6gha7")
+healthy_body_texture = ExtResource("140_ij123")
+infected_head_texture = ExtResource("145_a6xvn")
+infected_body_texture = ExtResource("144_4y2o5")
+metadata/_custom_type_script = "uid://bfv77g527r2lc"
+
+[sub_resource type="Resource" id="Resource_8v23g"]
+script = ExtResource("139_ffck8")
+sickness = 1
+healthy_head_texture = ExtResource("100_aptb6")
+healthy_body_texture = ExtResource("99_4xu0t")
+infected_head_texture = ExtResource("137_y70h1")
+infected_body_texture = ExtResource("135_on272")
+metadata/_custom_type_script = "uid://bfv77g527r2lc"
+
 [sub_resource type="Shader" id="Shader_6gicp"]
 code = "// NOTE: Shader based on an automatically converted one from Godot Engine 4.6.1.stable's ORMMaterial3D.
 
@@ -11238,16 +11270,16 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 1.2287274e-10, 0.061257716)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Body_request_Note" index="1" unique_id=1832640565]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Body_request_Note" index="1" unique_id=572857682]
 bones/2/position = Vector3(-2.871086e-14, 3.904561e-11, -0.00038575768)
 bones/3/rotation = Quaternion(-0.114502, 0, 0, 0.99342304)
 bones/3/scale = Vector3(1, 0.9999999, 0.9999999)
 bones/4/rotation = Quaternion(-0.20458433, 0, 0, 0.97884893)
 bones/4/scale = Vector3(1, 0.99999994, 0.99999994)
 
-[node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=1766528207]
+[node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=2111988921]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_8v23g")
+surface_material_override/1 = SubResource("StandardMaterial3D_hoj6u")
 
 [node name="Marker3D" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -11286,7 +11318,7 @@ sound_emitter = NodePath("StartReadingSound")
 normal_size = Vector3(0.04, 0.04, 0.04)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document" index="1" unique_id=1187144283]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document" index="1" unique_id=765364303]
 bones/1/position = Vector3(0, 8.715932e-09, -0.19939725)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
@@ -11296,8 +11328,8 @@ bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(0.12414157, 0, 0, 0.9922645)
 bones/5/scale = Vector3(0.99999994, 0.99999994, 1)
 
-[node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=521642798]
-material_overlay = SubResource("StandardMaterial3D_c2x1s")
+[node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=1710546245]
+material_overlay = SubResource("StandardMaterial3D_kt2yo")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
@@ -11476,7 +11508,7 @@ sound_emitter = NodePath("StartReadingSound")
 [node name="interactable_indecator" parent="Room/Interactables/Notes/Note_document3" index="0" unique_id=2142793944]
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document3" index="1" unique_id=1187144283]
+[node name="Skeleton3D" parent="Room/Interactables/Notes/Note_document3" index="1" unique_id=765364303]
 bones/1/position = Vector3(0, 8.4712655e-09, -0.19379997)
 bones/3/position = Vector3(0, 0.0009948967, 8.286428e-20)
 bones/4/position = Vector3(0, 0.0009948967, 8.2864285e-20)
@@ -11486,9 +11518,9 @@ bones/5/position = Vector3(0, 0.0009948967, 8.609377e-18)
 bones/5/rotation = Quaternion(0.38185334, 0, 0, 0.92422295)
 bones/5/scale = Vector3(1, 1, 1)
 
-[node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=521642798]
+[node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=1710546245]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0068823397, 0, 0.0066256523)
-material_overlay = SubResource("StandardMaterial3D_mcuw2")
+material_overlay = SubResource("StandardMaterial3D_ffck8")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
@@ -13194,14 +13226,14 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.010209445, -4.5401977e-10, 0.054237492)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Interactables/Pipette/Pipette_Note" index="1" unique_id=1832640565]
+[node name="Skeleton3D" parent="Room/Interactables/Pipette/Pipette_Note" index="1" unique_id=572857682]
 bones/1/position = Vector3(-1.364242e-10, 2.2035989e-09, -0.04599102)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.068799295, 0, 0, 0.99763054)
 bones/3/scale = Vector3(1.0000002, 1, 1)
 
-[node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=1766528207]
+[node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=2111988921]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
 surface_material_override/1 = SubResource("StandardMaterial3D_dwt01")
 
@@ -14088,7 +14120,7 @@ player = NodePath("../../Player")
 [node name="env_ceiling_lamp8" parent="Room/SecondRoom" unique_id=1858274480 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 12.223913, 2.6358595, 13.462999)
 
-[node name="SpotLight3D3" parent="Room/SecondRoom/env_ceiling_lamp8/Cylinder" parent_id_path=PackedInt32Array(1858274480, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/SecondRoom/env_ceiling_lamp8/Cylinder" parent_id_path=PackedInt32Array(1858274480, 1867769126) index="0" unique_id=1120609968]
 light_energy = 0.362
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -14811,22 +14843,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6473917, 0, -0.7392761)
 [node name="Prop_Closet_Storage" parent="Room/Storage" unique_id=1322947913 instance=ExtResource("89_ymp40")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30165535, 0.030189991, 0.5397688)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1913734634) index="0" unique_id=836803240]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1031409799) index="0" unique_id=1331836476]
 transform = Transform3D(0.9847963, 0, 0.17371324, 0, 1, 0, -0.17371324, 0, 0.9847963, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1913734634) index="2" unique_id=297532873]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage/Closet" parent_id_path=PackedInt32Array(1322947913, 1031409799) index="2" unique_id=598413667]
 transform = Transform3D(0.9980103, 0, -0.06305108, 0, 1, 0, 0.06305108, 0, 0.9980103, 0.40623674, 0.33802077, -0.18920648)
 
 [node name="Prop_Closet_Storage2" parent="Room/Storage" unique_id=792493778 instance=ExtResource("89_ymp40")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1489224, 0.060379982, -1.4530705)
 
-[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="0" unique_id=836803240]
+[node name="Cube_023" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1031409799) index="0" unique_id=1331836476]
 transform = Transform3D(0.9986644, 0, 0.051666856, 0, 1, 0, -0.051666856, 0, 0.9986644, -0.40623677, 1.2193931, -0.18920648)
 
-[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="2" unique_id=297532873]
+[node name="Cube_025" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1031409799) index="2" unique_id=598413667]
 transform = Transform3D(0.99973977, 0, -0.022809424, 0, 1, 0, 0.022809424, 0, 0.99973977, 0.40623665, 0.33802077, -0.18920648)
 
-[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1913734634) index="3" unique_id=1308364603]
+[node name="Cube_026" parent="Room/Storage/Prop_Closet_Storage2/Closet" parent_id_path=PackedInt32Array(792493778, 1031409799) index="3" unique_id=1256624228]
 transform = Transform3D(0.99992776, 0, 0.012020995, 0, 1, 0, -0.012020995, 0, 0.99992776, -0.40623677, 0.33802077, -0.18920648)
 
 [node name="env_locker2" parent="Room/Storage" unique_id=1582727982 instance=ExtResource("90_cshk5")]
@@ -15112,14 +15144,14 @@ outline_meshes = [NodePath("Skeleton3D/Note")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.010209445, -4.5401977e-10, 0.054237492)
 show_distance = 1.0
 
-[node name="Skeleton3D" parent="Room/Machines/Env_Computer/Note_COmputer" index="1" unique_id=1832640565]
+[node name="Skeleton3D" parent="Room/Machines/Env_Computer/Note_COmputer" index="1" unique_id=572857682]
 bones/1/position = Vector3(-5.684342e-12, 1.2587242e-09, -0.03405485)
 bones/2/position = Vector3(-2.891475e-16, -8.0800915e-13, -1.8481736e-05)
 bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/3/rotation = Quaternion(-0.08452872, 0, 0, 0.99642104)
 bones/3/scale = Vector3(1.0000001, 1, 1)
 
-[node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=1766528207]
+[node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=2111988921]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0051287487, 0.05263281)
 surface_material_override/1 = SubResource("StandardMaterial3D_4y2o5")
 
@@ -15457,9 +15489,16 @@ mesh = SubResource("ArrayMesh_jqbuk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01093483, -1.0005771, 0)
 mesh = SubResource("ArrayMesh_c008f")
 
-[node name="Corpse" type="Node3D" parent="Room/Props/Prop_Corpse_Tube/Cylinder_004/Cylinder_010" unique_id=1824012134]
+[node name="Corpse" type="Node3D" parent="Room/Props/Prop_Corpse_Tube/Cylinder_004/Cylinder_010" unique_id=1824012134 node_paths=PackedStringArray("male_head", "male_body", "female_head", "female_body")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.6020322, 0)
 visible = false
+script = ExtResource("138_8v23g")
+male_head = NodePath("Armature/Skeleton3D/male_head_base_002")
+male_body = NodePath("Armature/Skeleton3D/male_body_nude_001")
+male_textures = Array[ExtResource("139_ffck8")]([SubResource("Resource_c2x1s"), SubResource("Resource_kt2yo")])
+female_head = NodePath("Armature/Skeleton3D/female_head_base_001")
+female_body = NodePath("Armature/Skeleton3D/female_body_nude_001")
+female_textures = Array[ExtResource("139_ffck8")]([SubResource("Resource_8v23g")])
 
 [node name="Armature" type="Node3D" parent="Room/Props/Prop_Corpse_Tube/Cylinder_004/Cylinder_010/Corpse" unique_id=2100207298]
 transform = Transform3D(-4.371139e-06, 0, -99.99999, 0, 99.99999, 0, 100, 0, -4.3711384e-06, 0, 0, 0)
@@ -16277,13 +16316,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5917645, 0, 7.336006)
 [node name="env_ceiling_lamp" parent="Room/Lights" unique_id=710454193 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.6584425, 2.6358595, -10.420589)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(710454193, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp/Cylinder" parent_id_path=PackedInt32Array(710454193, 1867769126) index="0" unique_id=1120609968]
 light_energy = 0.251
 
 [node name="env_ceiling_lamp2" parent="Room/Lights" unique_id=431651021 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(431651021, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp2/Cylinder" parent_id_path=PackedInt32Array(431651021, 1867769126) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -16293,7 +16332,7 @@ spot_attenuation = 1.52
 [node name="env_ceiling_lamp7" parent="Room/Lights" unique_id=45645241 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.588459, 2.6358595, -7.4205894)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(45645241, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp7/Cylinder" parent_id_path=PackedInt32Array(45645241, 1867769126) index="0" unique_id=1120609968]
 light_energy = 0.176
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -16302,7 +16341,7 @@ spot_attenuation = 1.37
 [node name="env_ceiling_lamp4" parent="Room/Lights" unique_id=507427365 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.69838953, 2.603364, -11.7987995)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(507427365, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp4/Cylinder" parent_id_path=PackedInt32Array(507427365, 1867769126) index="0" unique_id=1120609968]
 light_energy = 0.08
 spot_range = 4.7193227
 spot_angle = 87.9047
@@ -16310,7 +16349,7 @@ spot_angle = 87.9047
 [node name="env_ceiling_lamp6" parent="Room/Lights" unique_id=2073783679 instance=ExtResource("111_uourf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.6280155, 2.603364, -7.3823385)
 
-[node name="Cylinder" parent="Room/Lights/env_ceiling_lamp6" index="0" unique_id=127635554]
+[node name="Cylinder" parent="Room/Lights/env_ceiling_lamp6" index="0" unique_id=1867769126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12351322, 0, 0.01646936)
 
 [node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp6/Cylinder" index="0" unique_id=1120609968]
@@ -16324,7 +16363,7 @@ light_energy = 9.405
 [node name="env_ceiling_lamp3" parent="Room/Lights" unique_id=1288938063 instance=ExtResource("111_uourf")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.19090223, 1.961021, -11.82384)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(1288938063, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp3/Cylinder" parent_id_path=PackedInt32Array(1288938063, 1867769126) index="0" unique_id=1120609968]
 transform = Transform3D(0.88825995, -2.007844e-08, 0.45934123, -0.45934123, -3.8827075e-08, 0.88825995, 3.731543e-15, -0.99999976, -4.371138e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(0.56323135, 0.52731746, 0.5280909, 1)
 spot_range = 8.914
@@ -16337,7 +16376,7 @@ transform = Transform3D(1, 0, -7.764702e-23, -2.627256e-15, 1, 3.5527137e-15, -3
 [node name="env_ceiling_lamp5" parent="Room/Lights" unique_id=793426471 instance=ExtResource("111_uourf")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1.0000001, 0.94554186, -0.26759893, -11.886757)
 
-[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(793426471, 127635554) index="0" unique_id=1120609968]
+[node name="SpotLight3D3" parent="Room/Lights/env_ceiling_lamp5/Cylinder" parent_id_path=PackedInt32Array(793426471, 1867769126) index="0" unique_id=1120609968]
 transform = Transform3D(0.7008144, -3.1181226e-08, 0.7133435, -0.7133435, -3.063358e-08, 0.7008144, 4.8694323e-15, -0.9999999, -4.371139e-08, -4.7683716e-07, -0.050032616, 0)
 light_color = Color(1, 0, 0.15951031, 1)
 light_energy = 0.4
@@ -16384,7 +16423,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.997708, 0, 0.067606516, 0, 1, 0, -0.067606516, 0, 0.997708, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.99770796, 0, 0.06760651, 0, 1, 0, -0.06760651, 0, 0.99770796, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]
@@ -16615,10 +16654,10 @@ autoplay = &"idle"
 [node name="Doors_Sliding3" parent="Room/Doors" unique_id=868643664 instance=ExtResource("114_yaq7e")]
 transform = Transform3D(-0.9999999, 0, 4.371138e-08, 0, 1, 0, -4.371138e-08, 0, -0.9999999, 0.033169, 1.0764008, -1.1191952)
 
-[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=1265345812]
+[node name="RightDoor" parent="Room/Doors/Doors_Sliding3" index="0" unique_id=726485585]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 0.39810574, 0, 0)
 
-[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1477454735]
+[node name="RightDoor_002" parent="Room/Doors/Doors_Sliding3" index="1" unique_id=1717675311]
 transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -0.40975797, 0, 0)
 
 [node name="Doors_Sliding2" parent="Room/Doors" unique_id=239039258 instance=ExtResource("114_yaq7e")]
