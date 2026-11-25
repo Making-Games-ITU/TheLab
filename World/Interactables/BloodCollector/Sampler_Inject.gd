@@ -1,6 +1,7 @@
 extends Machine
 
 @export var press_anim : ButtonPressAnimation 
+@export var needle_anim : AnimationPlayer
 
 signal sampler_inject_pressed # For micrograph interactions script
 
@@ -38,6 +39,7 @@ func _on_interact(_interactor: Node) -> void:
 func _inject() -> void:
 	#TODO:
 	if anim:
+		_Inject_Needle()
 		GameStats.vial_in_animation = true
 		anim.play("close")
 		await anim.animation_finished
@@ -53,3 +55,10 @@ func _inject() -> void:
 
 func _uninteractable() -> void:
 	print("Vial is empty or No body to inject into or no vial ins collector")
+
+func _Inject_Needle() -> void:
+	needle_anim.play("Tube_Needle/Inject_Needle")
+	await anim.animation_finished
+	await get_tree().create_timer(1).timeout
+	needle_anim.play_backwards("Tube_Needle/Inject_Needle")
+	

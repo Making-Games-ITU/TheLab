@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://dg0nelc18aoj2"]
 
 [ext_resource type="Texture2D" uid="uid://b1uwudf344x40" path="res://Entities/NPCs/Male Body/male_body_light_D.png" id="2_eqww3"]
-[ext_resource type="Texture2D" uid="uid://cmlpolgcijaae" path="res://Entities/NPCs/Male Body/male_body_light_Infected_Parasite.png" id="2_glgvl"]
+[ext_resource type="Texture2D" uid="uid://be6yqb8r7bysw" path="res://Entities/NPCs/Male Body/male_body_light_Parasite_Mutation.png" id="2_glgvl"]
 
 [sub_resource type="Shader" id="Shader_std3y"]
 code = "// NOTE: Shader based on an automatically converted one from Godot Engine 4.6.1.stable's ORMMaterial3D.
