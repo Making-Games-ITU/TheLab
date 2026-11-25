@@ -5,7 +5,6 @@ extends CharacterBody3D
 @export var look_sensitivity: float = 0.0005
 @export var player_speed: float = 5.0
 @export var flashlight: Light3D
-@export var flashlight_icon: TextureRect
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -13,6 +12,10 @@ extends CharacterBody3D
 
 @export var steps:FmodEventEmitter3D
 @export var on_off_sound: FmodEventEmitter3D
+
+@export_group("UI")
+@export var flashlight_on_icon: TextureRect
+@export var flashlight_off_icon: TextureRect
 
 var current_interactable: Interactable
 var is_steps_playing: bool = false
@@ -122,15 +125,20 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("flashlight") && PlayerStats.flashlight_is_dead == false:
 		flashlight.visible = !flashlight.visible
+		flashlight_on_icon.visible = !flashlight_on_icon.visible
+		flashlight_off_icon.visible = !flashlight_off_icon.visible
 		on_off_sound.play()
-		# flashlight_icon.visible = !flashlight_icon.visible
 
 func force_turn_off_flashlight():
 	flashlight.visible = false
+	flashlight_on_icon.visible = false
+	flashlight_off_icon.visible = true
 	on_off_sound.play()
 	
 func force_turn_on_flashlight():
 	flashlight.visible = true
+	flashlight_on_icon.visible = true
+	flashlight_off_icon.visible = false
 	on_off_sound.play()
 
 func _handleStepsSFX() -> void:
