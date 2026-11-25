@@ -3,6 +3,8 @@ extends Machine
 @onready var _pipette_chemical_amount_label: Label = %Pipette_Chemical_Amount_Label
 @export var press_anim : ButtonPressAnimation 
 
+signal pipette_start_pressed
+
 func _ready() -> void:
 	super()
 
@@ -46,6 +48,7 @@ func _start_pipette() -> void:
 	AudioManager.one_shot(sound_emitter)
 	_update_prompt()
 	print("Adding chemical")
+	pipette_start_pressed.emit(_chemical)
 
 func _uninteractable() -> void:
 	print("Not all components in pipette or insufficient amount")
