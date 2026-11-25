@@ -29,6 +29,16 @@ uniform float mutation_percentage : hint_range(0.0, 100.0, 1.0) = 20.0;
 uniform vec4 mutated_color : source_color = vec4(0.35, 0.12, 0.22, 1.0);
 uniform float mutation_distortion : hint_range(0.0, 1.0) = 0.4;
 
+// CHEMICAL_0
+
+uniform vec4 chemical_color_0: source_color = vec4(0.20, 0.25, 0.15, 1.0);
+uniform int chemical_amount_0:  hint_range(0, 30) = 0;
+
+// CHEMICAL_1
+
+uniform vec4 chemical_color_1: source_color = vec4(0.20, 0.25, 0.15, 1.0);
+uniform int chemical_amount_1: hint_range(0, 30) = 0;
+
 
 uniform float aspect_ratio = 1.77778;
 
@@ -125,6 +135,54 @@ float parasite_shape(
 
     return body * ends;
 }
+
+float chemical_shape_0(
+    vec2 uv,
+    vec2 position,
+    float radius,
+    float seed,
+	float rotation
+) {
+    vec2 offset = uv - position;
+
+    float angle = atan(offset.y, offset.x) + rotation;
+    float d = length(offset);
+
+	float slice = 6.2831853 / float(6);
+
+    float poly_dist = cos(floor(0.5 + angle / slice) * slice - angle) * d;
+
+    return 1.0 - smoothstep(
+        radius,
+        radius,
+        poly_dist
+    );
+}
+
+float chemical_shape_1(
+    vec2 uv,
+    vec2 position,
+    float radius,
+    float seed,
+	float rotation
+) {
+    vec2 offset = uv - position;
+
+    float angle = atan(offset.y, offset.x) + rotation;
+    float d = length(offset);
+
+	float slice = 6.2831853 / float(8);
+
+    float poly_dist = cos(floor(0.5 + angle / slice) * slice - angle) * d;
+
+    return 1.0 - smoothstep(
+        radius,
+        radius,
+        poly_dist
+    );
+}
+
+
 
 
 void fragment() {
@@ -269,7 +327,83 @@ void fragment() {
             );
         }
     }
+	
+	// CHEMICALS
+    for (int i = 0; i < chemical_amount_0; i++) {
+        vec2 id = vec2(float(i), 500.0);
 
+        float rx = random(id + vec2(11.0, 3.0));
+        float ry = random(id + vec2(27.0, 14.0));
+        float rs = random(id + vec2(53.0, 29.0));
+        float ra = random(id + vec2(81.0, 47.0));
+
+        float rotation = ra * 6.283185;
+        float speed = movement_speed * (0.6 + rs * 0.8);
+
+        vec2 direction = vec2(
+            cos(rotation),
+            sin(rotation)
+        );
+
+        vec2 position = vec2(rx, ry);
+        position += direction * TIME * speed * 0.03;
+        position = fract(position);
+        position.x *= aspect_ratio;
+
+        float chem_radius = 0.015 * (0.7 + rs * 0.6);
+
+        float chemical = chemical_shape_0(
+            sample_uv,
+            position,
+            chem_radius,
+			rotation,
+            rs * 30.0
+        );
+
+        color = mix(
+            color,
+            chemical_color_0.rgb,
+            chemical * 0.8
+        );
+    }
+	
+    for (int i = 0; i < chemical_amount_1; i++) {
+        vec2 id = vec2(float(i), 500.0);
+
+        float rx = random(id + vec2(11.0, 3.0));
+        float ry = random(id + vec2(27.0, 14.0));
+        float rs = random(id + vec2(53.0, 29.0));
+        float ra = random(id + vec2(81.0, 47.0));
+
+        float rotation = ra * 6.283185;
+        float speed = movement_speed * (0.6 + rs * 0.8);
+
+        vec2 direction = vec2(
+            cos(rotation+2.2),
+            sin(rotation)
+        );
+
+        vec2 position = vec2(rx, ry);
+        position += direction * TIME * speed * 0.03;
+        position = fract(position);
+        position.x *= aspect_ratio;
+
+        float chem_radius = 0.015 * (0.7 + rs * 0.6);
+
+        float chemical = chemical_shape_0(
+            sample_uv,
+            position,
+            chem_radius,
+			rotation,
+            rs * 30.0
+        );
+
+        color = mix(
+            color,
+            chemical_color_1.rgb,
+            chemical * 0.8
+        );
+    }
 
     // MICROSCOPE VIGNETTE
     float dist = distance(
