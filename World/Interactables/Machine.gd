@@ -8,5 +8,5 @@ func interact(interactor: Node) -> void:
 		_uninteractable()
 		
 	
-func _on_interact(interactor: Node) -> void:
+func _on_interact(_interactor: Node) -> void:
 	pass

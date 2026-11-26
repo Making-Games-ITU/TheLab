@@ -1,9 +1,7 @@
 extends Node
 class_name AudioManager
 
-@export var audio_event:FmodEventEmitter3D
-
-@onready var ambient = $Ambient
+@export var audio_event:FmodEventEmitter3D # The Ambient emitter in Game.tscn
 
 static func one_shot(event_emitter_3d: FmodEventEmitter3D) -> void:
 	event_emitter_3d.play_one_shot()
@@ -19,5 +17,5 @@ static func modify_parameter(event_emitter_3d: FmodEventEmitter3D, parameter: St
 
 #Currently only ambient has another parameter, so made a specific function only for ambient
 func update_ambient_param(danger : int) -> void:
-	ambient.set_parameter("ProgressionLevel", danger) 
-	print("Ambient progression level: ",ambient.get_parameter("Progression Level"))
+	audio_event.set_parameter("ProgressionLevel", danger)
+	print("Ambient progression level: ", audio_event.get_parameter("ProgressionLevel"))

@@ -42,10 +42,10 @@ func _process(delta: float) -> void:
 	if dialogue_text_box.visible_characters >= dialogue_text_box.get_total_character_count():
 		_on_finished_dialogue()
 
-func next_sentence(next_sentence : Sentence, next_character : Character):
+func next_sentence(sentence : Sentence, next_character : Character):
 	dialogue_text_box.text = ""
 	
-	for phrase in next_sentence.phrases:
+	for phrase in sentence.phrases:
 		dialogue_text_box.text += phrase["text"]
 		
 	current_audioPlayer = next_character.audioPlayer
@@ -53,8 +53,8 @@ func next_sentence(next_sentence : Sentence, next_character : Character):
 	
 	if(current_audioPlayer != null):
 		current_audioPlayer.play()
-		current_audioPlayer.stream = next_sentence.voice_over
-	current_sentece = next_sentence
+		current_audioPlayer.stream = sentence.voice_over
+	current_sentece = sentence
 	show()
 
 func _on_finished_dialogue():
