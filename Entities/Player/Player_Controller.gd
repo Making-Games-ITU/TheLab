@@ -111,7 +111,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("escape"):
 		if PlayerStats.is_analyzing:
 			%Micrograph.visible = false
+			%ExitFullscreenImage.visible = false
 			PlayerStats.is_analyzing = false
+			print("Escape exit")
 		elif PlayerStats.is_sitting:
 			PlayerStats.current_chair.stand(self)
 			get_viewport().set_input_as_handled() # What is this for again?
