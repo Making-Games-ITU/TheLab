@@ -205,6 +205,24 @@ bg_color = Color(0, 0, 0, 0.49411765)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jt06q"]
 bg_color = Color(0, 0, 0, 0.15686275)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3pyi"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50ws8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50ws8"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg5jm"]
 bg_color = Color(0, 0, 0, 0.78431374)
 border_width_left = 5
@@ -212,6 +230,9 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hatck"]
+bg_color = Color(0, 0, 0, 0)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qt5wh"]
 radius = 0.20166016
@@ -996,22 +1017,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rhknm")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8v23g"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ffck8"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hoj6u"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwt01"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_8v23g")
+albedo_texture = SubResource("ViewportTexture_ffck8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wse4m"]
 size = Vector3(0.10888672, 0.00920105, 0.10418701)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_c2x1s"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_2i8gw"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kt2yo"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4y2o5"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_c2x1s")
+albedo_texture = SubResource("ViewportTexture_2i8gw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnj3y"]
 albedo_texture = ExtResource("29_grssb")
@@ -1128,12 +1149,12 @@ _data = {
 &"slide_paper": SubResource("Animation_b7h5x")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_mcuw2"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_7tj8d"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffck8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oaw2t"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_mcuw2")
+albedo_texture = SubResource("ViewportTexture_7tj8d")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ridl8"]
 resource_name = "Chair"
@@ -4154,12 +4175,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5wgas")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ij123"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0dvtn"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwt01"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucn7y"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ij123")
+albedo_texture = SubResource("ViewportTexture_0dvtn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7627"]
 albedo_texture = ExtResource("41_a6xvn")
@@ -7337,12 +7358,12 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2i8gw"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_bdnt5"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4y2o5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ubud"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_2i8gw")
+albedo_texture = SubResource("ViewportTexture_bdnt5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uammp"]
 resource_name = "Capsule"
@@ -10241,7 +10262,7 @@ theme_override_fonts/normal_font = ExtResource("10_m26da")
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat quam id porta malesuada. Mauris fermentum lobortis urna sit amet iaculis. "
 scroll_active = false
 
-[node name="Notepad" type="Control" parent="Player/HUD" unique_id=482594155 node_paths=PackedStringArray("notepad_main_ui")]
+[node name="Notepad" type="Control" parent="Player/HUD" unique_id=482594155 node_paths=PackedStringArray("notepad_main_ui", "text_edit", "close_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10252,11 +10273,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 script = ExtResource("20_ffck8")
-notepad_main_ui = NodePath("MainPanel")
+notepad_main_ui = NodePath("VBoxContainer")
+text_edit = NodePath("VBoxContainer/MainPanel/TextEdit")
+close_button = NodePath("VBoxContainer/HBoxContainer/Button")
 
-[node name="MainPanel" type="Panel" parent="Player/HUD/Notepad" unique_id=344616726]
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/HUD/Notepad" unique_id=489568927]
 visible = false
-custom_minimum_size = Vector2(500, 500)
+custom_minimum_size = Vector2(1000, 650)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -10265,8 +10288,46 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/HUD/Notepad/VBoxContainer" unique_id=57522338]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Player/HUD/Notepad/VBoxContainer/HBoxContainer" unique_id=1121955268]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_c3pyi")
+text = " Notepad "
+
+[node name="Panel" type="Panel" parent="Player/HUD/Notepad/VBoxContainer/HBoxContainer" unique_id=1637729863]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_50ws8")
+
+[node name="Button" type="Button" parent="Player/HUD/Notepad/VBoxContainer/HBoxContainer" unique_id=1184736262]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_50ws8")
+text = " X "
+
+[node name="MainPanel" type="Panel" parent="Player/HUD/Notepad/VBoxContainer" unique_id=344616726]
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bg5jm")
+
+[node name="TextEdit" type="TextEdit" parent="Player/HUD/Notepad/VBoxContainer/MainPanel" unique_id=1038879319]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_hatck")
+placeholder_text = "Type here"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1411222524 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -11068,7 +11129,7 @@ bones/4/scale = Vector3(1, 0.99999994, 0.99999994)
 
 [node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=2053084288]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_hoj6u")
+surface_material_override/1 = SubResource("StandardMaterial3D_dwt01")
 
 [node name="Marker3D" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -11118,7 +11179,7 @@ bones/5/rotation = Quaternion(0.12414157, 0, 0, 0.9922645)
 bones/5/scale = Vector3(0.99999994, 0.99999994, 1)
 
 [node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=176868951]
-material_overlay = SubResource("StandardMaterial3D_kt2yo")
+material_overlay = SubResource("StandardMaterial3D_4y2o5")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
@@ -11309,7 +11370,7 @@ bones/5/scale = Vector3(1, 1, 1)
 
 [node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=176868951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0068823397, 0, 0.0066256523)
-material_overlay = SubResource("StandardMaterial3D_ffck8")
+material_overlay = SubResource("StandardMaterial3D_oaw2t")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
@@ -13022,7 +13083,7 @@ bones/3/scale = Vector3(1.0000002, 1, 1)
 
 [node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=2053084288]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_dwt01")
+surface_material_override/1 = SubResource("StandardMaterial3D_ucn7y")
 
 [node name="Marker3D" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -14939,7 +15000,7 @@ bones/3/scale = Vector3(1.0000001, 1, 1)
 
 [node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=2053084288]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0051287487, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_4y2o5")
+surface_material_override/1 = SubResource("StandardMaterial3D_7ubud")
 
 [node name="Marker3D" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -15921,7 +15982,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.997708, 0, 0.067606516, 0, 1, 0, -0.067606516, 0, 0.997708, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.9977079, 0, 0.06760651, 0, 1, 0, -0.06760651, 0, 0.9977079, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]

@@ -14,7 +14,7 @@ func _ready() -> void:
 	_default_fov = fov
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("zoom"):
+	if Input.is_action_pressed("zoom") and not PlayerStats.is_typing:
 		goal = zoom_fov
 		zoom_on_icon.visible = true
 		zoom_off_icon.visible = false
