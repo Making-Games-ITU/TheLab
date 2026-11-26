@@ -243,7 +243,45 @@ bg_color = Color(0, 0, 0, 0)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qt5wh"]
 radius = 0.20166016
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6avb6"]
+[sub_resource type="Animation" id="Animation_oaw2t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0dvtn"]
+resource_name = "headbop"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.1, 0, 0), Vector3(0, -0.1, 0), Vector3(0.1, 0, 0), Vector3(0, -0.1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ucn7y"]
+_data = {
+&"RESET": SubResource("Animation_oaw2t"),
+&"headbop": SubResource("Animation_0dvtn")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oaw2t"]
 render_priority = 0
 shader = ExtResource("16_icatu")
 shader_parameter/debug_mode = 0
@@ -261,7 +299,7 @@ shader_parameter/enable_dithering = true
 shader_parameter/dither_strength = 0.350000016625
 
 [sub_resource type="QuadMesh" id="QuadMesh_vweq0"]
-material = SubResource("ShaderMaterial_6avb6")
+material = SubResource("ShaderMaterial_oaw2t")
 size = Vector2(2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8c55"]
@@ -279,7 +317,7 @@ emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6q7df"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0dvtn"]
 _surfaces = [{
 "aabb": AABB(-0.019212987, -0.0068706265, -0.08970342, 0.038425975, 0.013741253, 0.15374877),
 "format": 34359742465,
@@ -333,7 +371,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("oMqouwJllDv7YhM9oMqouwJllDv7YhO9oMqoOwJllDv7YhO9oMqoOwJllDv7YhM9/3////9//7//f////3//v/9/////f/+//3////9//78=")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_6q7df")
+shadow_mesh = SubResource("ArrayMesh_0dvtn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mh6w"]
 albedo_texture = ExtResource("19_hbyo7")
@@ -1023,22 +1061,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rhknm")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_oaw2t"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_bdnt5"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dvtn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ubud"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_oaw2t")
+albedo_texture = SubResource("ViewportTexture_bdnt5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wse4m"]
 size = Vector3(0.10888672, 0.00920105, 0.10418701)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ucn7y"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6x5lk"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdnt5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3jfi"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ucn7y")
+albedo_texture = SubResource("ViewportTexture_6x5lk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnj3y"]
 albedo_texture = ExtResource("29_grssb")
@@ -1155,12 +1193,12 @@ _data = {
 &"slide_paper": SubResource("Animation_b7h5x")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_7ubud"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_73m62"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6x5lk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcmlj"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_7ubud")
+albedo_texture = SubResource("ViewportTexture_73m62")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ridl8"]
 resource_name = "Chair"
@@ -4182,12 +4220,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5wgas")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_g3jfi"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_lwnoy"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73m62"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr1qh"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_g3jfi")
+albedo_texture = SubResource("ViewportTexture_lwnoy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7627"]
 albedo_texture = ExtResource("41_a6xvn")
@@ -7365,12 +7403,12 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_jcmlj"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ym8jw"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwnoy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pku7"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_jcmlj")
+albedo_texture = SubResource("ViewportTexture_ym8jw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6wkt"]
 resource_name = "Tube.001"
@@ -10761,7 +10799,12 @@ event_guid = "{cc12faac-2dbd-4ec2-94b7-bc8d1415ef84}"
 [node name="Head" type="Node3D" parent="Player" unique_id=554348983]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.5, 0)
 
+[node name="HeadBop" type="AnimationPlayer" parent="Player/Head" unique_id=649337421]
+root_node = NodePath("../Camera3D")
+libraries/ = SubResource("AnimationLibrary_ucn7y")
+
 [node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=1583008010 node_paths=PackedStringArray("zoom_on_icon", "zoom_off_icon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
 current = true
 script = ExtResource("15_a5ota")
 zoom_on_icon = NodePath("../../HUD/Icons/Zoom/ZoomOn")
@@ -11531,7 +11574,7 @@ bones/4/scale = Vector3(1, 0.99999994, 0.99999994)
 
 [node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=1766528207]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_0dvtn")
+surface_material_override/1 = SubResource("StandardMaterial3D_7ubud")
 
 [node name="Marker3D" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -11581,7 +11624,7 @@ bones/5/rotation = Quaternion(0.12414157, 0, 0, 0.9922645)
 bones/5/scale = Vector3(0.99999994, 0.99999994, 1)
 
 [node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=521642798]
-material_overlay = SubResource("StandardMaterial3D_bdnt5")
+material_overlay = SubResource("StandardMaterial3D_g3jfi")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
@@ -11772,7 +11815,7 @@ bones/5/scale = Vector3(1, 1, 1)
 
 [node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=521642798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0068823397, 0, 0.0066256523)
-material_overlay = SubResource("StandardMaterial3D_6x5lk")
+material_overlay = SubResource("StandardMaterial3D_jcmlj")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
@@ -13487,7 +13530,7 @@ bones/3/scale = Vector3(1.0000002, 1, 1)
 
 [node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=1766528207]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_73m62")
+surface_material_override/1 = SubResource("StandardMaterial3D_pr1qh")
 
 [node name="Marker3D" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -15405,7 +15448,7 @@ bones/3/scale = Vector3(1.0000001, 1, 1)
 
 [node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=1766528207]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0051287487, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_lwnoy")
+surface_material_override/1 = SubResource("StandardMaterial3D_0pku7")
 
 [node name="Marker3D" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -16676,7 +16719,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.9977078, 0, 0.0676065, 0, 1, 0, -0.0676065, 0, 0.9977078, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.9977077, 0, 0.067606494, 0, 1, 0, -0.067606494, 0, 0.9977077, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]
