@@ -5,6 +5,9 @@ extends Node
 var _progression_level = GameStats.progression_level
 var _cured = GameStats.cured
 @onready var ambientEmmiter = $"/root/Enviroment2/Ambient"
+@onready var Corpse : Corpse_Selection = $"/root/Enviroment2/Room/Props/Prop_Corpse_Tube/Cylinder_004/Cylinder_010/Corpse"
+@onready var CorpseShake : AnimationPlayer = $"/root/Enviroment2/Room/Props/Prop_Corpse_Tube/Cylinder_004/Cylinder_010/Corpse/CorpseShake"
+
 
 signal progression_update()
 
@@ -63,12 +66,20 @@ func get_body_state() -> void:
 		0: #Control (Healthy)
 			GameStats.body_state = 1 # cured
 			GameStats.cured += 1
+			Corpse.change_character(Corpse_Selection.gender_enum.Female, SurfaceData.sickness_enum.M)
+			Corpse.change_character_sickness_level(1)
 		1: #Parasites 
 			GameStats.body_state = 3 # neutral
+			Corpse.change_character(Corpse_Selection.gender_enum.Male, SurfaceData.sickness_enum.P)
+			Corpse.change_character_sickness_level(0.7)
 		2: #Mutation 
 			GameStats.body_state = 3 # neutral
+			Corpse.change_character(Corpse_Selection.gender_enum.Female, SurfaceData.sickness_enum.M)
+			Corpse.change_character_sickness_level(0.7)
 		3: #Both 
 			GameStats.body_state = 3 # neutral
+			Corpse.change_character(Corpse_Selection.gender_enum.Male, SurfaceData.sickness_enum.PM)
+			Corpse.change_character_sickness_level(0.7)
 		_: #Add new stages here
 			GameStats.body_state = 3 # neutral
 
@@ -142,6 +153,7 @@ func check_if_successful() -> void:
 	_check_if_cured()
 
 func _check_if_cured() -> void:
+	Corpse.change_character_sickness_level(1)
 	_set_danger_level()
 	if GameStats.body_state == 1:
 		GameStats.cured += 1
@@ -155,7 +167,12 @@ func _check_wrong_chemical(chemical : VialStats.Composite) -> void:
 
 func _check_game_over() -> void:
 	print(GameStats.body_state)
+	var sickness : float = 1.0 -(GameStats.body_state/6.0)
+	print(sickness)
+	Corpse.change_character_sickness_level(sickness)
 	_set_danger_level()
+	if GameStats.body_state == 5:
+		CorpseShake.play("shaking")
 	if GameStats.body_state == 6:
 		%GameOverScreen.visible = true
 		await get_tree().create_timer(2.0).timeout
