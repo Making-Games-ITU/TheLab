@@ -4,10 +4,12 @@ extends CharacterBody3D
 @export var ray: RayCast3D
 @export var look_sensitivity: float = 0.0005
 @export var player_speed: float = 5.0
+@export var headBop_speed: float = 1.0
 @export var flashlight: Light3D
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var headBop = $Head/HeadBop
 @onready var blood_vial = %PlayerBloodVial
 
 @export var steps:FmodEventEmitter3D
@@ -21,6 +23,7 @@ var current_interactable: Interactable
 var is_steps_playing: bool = false
 
 func _ready() -> void:
+	headBop.play("headbop")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	ray.add_exception(self)
 	steps.started.connect(func(): is_steps_playing = true)
@@ -61,9 +64,13 @@ func _movement_input() -> void:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+		if headBop.speed_scale !=  headBop_speed:
+			headBop.speed_scale = headBop_speed
 		velocity.x = direction.x * player_speed
 		velocity.z = direction.z * player_speed
 	else:
+		if headBop.speed_scale !=  0.0:
+			headBop.speed_scale = 0.0
 		velocity.x = move_toward(velocity.x, 0, player_speed)
 		velocity.z = move_toward(velocity.z, 0, player_speed)
 
@@ -111,7 +118,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("escape"):
 		if PlayerStats.is_analyzing:
 			%Micrograph.visible = false
+			%ExitFullscreenImage.visible = false
 			PlayerStats.is_analyzing = false
+			print("Escape exit")
 		elif PlayerStats.is_sitting:
 			PlayerStats.current_chair.stand(self)
 			get_viewport().set_input_as_handled() # What is this for again?

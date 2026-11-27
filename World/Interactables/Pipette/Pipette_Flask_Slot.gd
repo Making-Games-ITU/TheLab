@@ -27,6 +27,8 @@ func interact(_interactor: Node) -> void:
 	if GameStats.flask_in_pipette:
 		if PlayerStats.is_holding == PlayerStats.HoldState.NONE:
 			_take_flask()
+		elif PlayerStats.is_holding == PlayerStats.HoldState.CHEMICAL:
+			_swap_flask()
 		else:
 			_uninteractable()
 	else:
@@ -62,6 +64,21 @@ func _take_flask():
 	#TODO
 	if anim:
 		anim.play("take")
+		
+func _swap_flask():
+	var swap = GameStats.pipette_current_chemical
+	var swap_name = GameStats.pipette_current_chemical_name
+	print("holding: ", swap)
+	GameStats.pipette_current_chemical = PlayerStats.current_chemical
+	GameStats.pipette_current_chemical_name = PlayerStats.current_chemical_name
+	_pipette_chemical_name_label.text = GameStats.pipette_current_chemical_name
+	PlayerStats.current_chemical = swap
+	PlayerStats.current_chemical_name = swap_name
+	AudioManager.one_shot(sound_emitter)
+	print("Flask inserted into pipette flask slot")
+	#TODO
+	if anim:
+		anim.play("insert")
 
 func _uninteractable() -> void:
 	print("No flask to insert or wrong object in hand or hands are full")
