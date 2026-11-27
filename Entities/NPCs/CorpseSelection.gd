@@ -23,10 +23,11 @@ func _ready():
 	#EXAMPLE ON HOW TO USE THE BODY CHANGER
 	#USE THIS FUNCTION TO CHANGE THE GENDER AND SICKNESS TYPE 
 	##TODO WE NEED ANOTHER SICKNESS ENUM WHEN THE BODY IS HEALTHY AND NOT SICK.
-	change_character(gender_enum.Female, SurfaceData.sickness_enum.M)
+	#change_character(gender_enum.Male, SurfaceData.sickness_enum.M)
 	
 	##USE THIS FUNCTION TO CHANGE THE SICKNESS LEVEL. 1 BEING NOT SICK 0 BEING VERY SICK
-	change_character_sickness_level(1)
+	#change_character_sickness_level(1)
+	pass
 
 #Please use values between 0 and 1. 0 is infected 1 is healthy
 func change_character_sickness_level(sickness_threshold : float):

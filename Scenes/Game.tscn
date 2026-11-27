@@ -1061,22 +1061,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rhknm")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bdnt5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_oaw2t"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ubud"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dvtn"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_bdnt5")
+albedo_texture = SubResource("ViewportTexture_oaw2t")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wse4m"]
 size = Vector3(0.10888672, 0.00920105, 0.10418701)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6x5lk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ucn7y"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3jfi"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdnt5"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_6x5lk")
+albedo_texture = SubResource("ViewportTexture_ucn7y")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnj3y"]
 albedo_texture = ExtResource("29_grssb")
@@ -1193,12 +1193,12 @@ _data = {
 &"slide_paper": SubResource("Animation_b7h5x")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_73m62"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_7ubud"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcmlj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6x5lk"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_73m62")
+albedo_texture = SubResource("ViewportTexture_7ubud")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ridl8"]
 resource_name = "Chair"
@@ -4220,12 +4220,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5wgas")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lwnoy"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_g3jfi"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr1qh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73m62"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_lwnoy")
+albedo_texture = SubResource("ViewportTexture_g3jfi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7627"]
 albedo_texture = ExtResource("41_a6xvn")
@@ -7403,12 +7403,12 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.165
 shader_parameter/vignette_opacity = 0.6010000285475
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ym8jw"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_jcmlj"]
 viewport_path = NodePath("Note Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pku7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwnoy"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ym8jw")
+albedo_texture = SubResource("ViewportTexture_jcmlj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6wkt"]
 resource_name = "Tube.001"
@@ -11574,7 +11574,7 @@ bones/4/scale = Vector3(1, 0.99999994, 0.99999994)
 
 [node name="Note" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="0" unique_id=1766528207]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_7ubud")
+surface_material_override/1 = SubResource("StandardMaterial3D_0dvtn")
 
 [node name="Marker3D" parent="Room/Interactables/Notes/Body_request_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -11624,7 +11624,7 @@ bones/5/rotation = Quaternion(0.12414157, 0, 0, 0.9922645)
 bones/5/scale = Vector3(0.99999994, 0.99999994, 1)
 
 [node name="Cube_027" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="0" unique_id=521642798]
-material_overlay = SubResource("StandardMaterial3D_g3jfi")
+material_overlay = SubResource("StandardMaterial3D_bdnt5")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.98384583, 0.17645861, -0.030162623, 0, 0.16848938, 0.98570347, 0.17901795, -0.96978027, 0.16576758, 0.18000019, 0.27199996, 0.069000244)
@@ -11815,7 +11815,7 @@ bones/5/scale = Vector3(1, 1, 1)
 
 [node name="Cube_027" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="0" unique_id=521642798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0068823397, 0, 0.0066256523)
-material_overlay = SubResource("StandardMaterial3D_jcmlj")
+material_overlay = SubResource("StandardMaterial3D_6x5lk")
 
 [node name="Camera Marker" parent="Room/Interactables/Notes/Note_document3/Skeleton3D" index="1" unique_id=819025313]
 transform = Transform3D(0.9984729, -0.05524332, 0, 0.009307913, 0.16823208, 0.98570347, -0.054453533, -0.9841982, 0.16848938, 0.09720803, 0.1941397, -0.020659897)
@@ -13530,7 +13530,7 @@ bones/3/scale = Vector3(1.0000002, 1, 1)
 
 [node name="Note" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="0" unique_id=1766528207]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0033512115, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_pr1qh")
+surface_material_override/1 = SubResource("StandardMaterial3D_73m62")
 
 [node name="Marker3D" parent="Room/Interactables/Pipette/Pipette_Note/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -15448,7 +15448,7 @@ bones/3/scale = Vector3(1.0000001, 1, 1)
 
 [node name="Note" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="0" unique_id=1766528207]
 transform = Transform3D(1, -2.9802322e-08, 3.7252903e-09, 5.9604645e-08, 1.0000001, 1.3969839e-08, 7.450581e-09, -1.4901161e-08, 1, -0.0077495575, 0.0051287487, 0.05263281)
-surface_material_override/1 = SubResource("StandardMaterial3D_0pku7")
+surface_material_override/1 = SubResource("StandardMaterial3D_lwnoy")
 
 [node name="Marker3D" parent="Room/Machines/Env_Computer/Note_COmputer/Skeleton3D" index="1" unique_id=1478483543]
 transform = Transform3D(0.99945307, -0.020176375, -0.026205225, 0.018402852, -0.31908262, 0.94754815, -0.027479723, -0.947512, -0.31853676, 0.042846773, 0.08923753, 0.022954736)
@@ -16719,7 +16719,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2550454, 2.6475177, -11.17
 mesh = SubResource("ArrayMesh_d113q")
 
 [node name="Lower_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=1131787580]
-transform = Transform3D(0.9977077, 0, 0.067606494, 0, 1, 0, -0.067606494, 0, 0.9977077, -4.7683716e-07, -0.7489284, 4.7683716e-07)
+transform = Transform3D(0.99770766, 0, 0.067606494, 0, 1, 0, -0.067606494, 0, 0.99770766, -4.7683716e-07, -0.7489284, 4.7683716e-07)
 mesh = SubResource("ArrayMesh_biv0e")
 
 [node name="Top_Rotor" type="MeshInstance3D" parent="Room/Lights/Env_Machine_Surgical/Surgical_Machine" unique_id=575798141]

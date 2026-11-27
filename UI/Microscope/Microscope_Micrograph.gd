@@ -43,12 +43,22 @@ func _on_centrifuged() -> void:
 		_set_mutation_parameters(0)
 		_set_parasite_parameters(0)
 	elif VialStats.infection == VialStats.InfectionType.CELL_MUTATION:
-		_set_mutation_parameters(20)
+		if GameStats.body_state == 1:
+			_set_mutation_parameters(0)
+		else:
+			_set_mutation_parameters(20)
 	elif VialStats.infection == VialStats.InfectionType.PARASITES:
-		_set_parasite_parameters(20)
+		if GameStats.body_state == 1:
+			_set_parasite_parameters(0)
+		else:
+			_set_parasite_parameters(20)
 	elif VialStats.infection == VialStats.InfectionType.BOTH:
-		_set_parasite_parameters(20)
-		_set_mutation_parameters(20)
+		if GameStats.body_state == 1:
+			_set_mutation_parameters(0)
+			_set_parasite_parameters(0)
+		else:
+			_set_mutation_parameters(20)
+			_set_parasite_parameters(20)
 
 func _on_blood_injected() -> void:
 	_on_reset_micrograph()
