@@ -6,6 +6,8 @@ var _progression_level = GameStats.progression_level
 var _cured = GameStats.cured
 @onready var ambientEmmiter = $"/root/Enviroment2/Ambient"
 @onready var Corpse : Corpse_Selection = $"/root/Enviroment2/Room/Props/Prop_Corpse_Tube/Cylinder_004/Cylinder_010/Corpse"
+@onready var CorpseShake : AnimationPlayer = $"/root/Enviroment2/Room/Props/Prop_Corpse_Tube/Cylinder_004/Cylinder_010/Corpse/CorpseShake"
+
 
 signal progression_update()
 
@@ -169,6 +171,8 @@ func _check_game_over() -> void:
 	print(sickness)
 	Corpse.change_character_sickness_level(sickness)
 	_set_danger_level()
+	if GameStats.body_state == 5:
+		CorpseShake.play("shaking")
 	if GameStats.body_state == 6:
 		%GameOverScreen.visible = true
 		await get_tree().create_timer(2.0).timeout
