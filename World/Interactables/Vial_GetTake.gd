@@ -19,7 +19,10 @@ func _update_prompt() -> void:
 		if PlayerStats.is_holding == PlayerStats.HoldState.VIAL and VialStats.empty:
 			prompt_text = "Place vial back"
 		else:
-			prompt_text = "Vial not empty"
+			if GameStats.vial_location == GameStats.VialLocation.PLAYER:
+				prompt_text = "Vial not empty"
+			else:
+				prompt_text = "Vial already in use"
 	InteractionPrompt.instance.show_prompt(prompt_text)
 
 func interact(_interactor: Node) -> void:
